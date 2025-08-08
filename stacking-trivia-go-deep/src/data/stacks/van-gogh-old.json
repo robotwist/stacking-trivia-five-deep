@@ -1,0 +1,25 @@
+{
+  "title": "Van Gogh",
+  "questions": [
+    {
+      "q": "Who painted Starry Night?",
+      "a": ["van gogh", "vincent van gogh"]
+    },
+    {
+      "q": "How many paintings did he sell in his lifetime?",
+      "a": ["1", "one"]
+    },
+    {
+      "q": "Who bought it?",
+      "a": ["theo", "anna boch", "theo van gogh"]
+    },
+    {
+      "q": "What was the buyer’s occupation?",
+      "a": ["art dealer", "artist"]
+    },
+    {
+      "q": "What illness did van gogh suffer from?",
+      "a": ["epilepsy", "bipolar", "mania", "depression"]
+    }
+  ]
+}

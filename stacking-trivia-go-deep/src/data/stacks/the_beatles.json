@@ -1,37 +1,36 @@
 {
   "title": "The Beatles",
+  "description": "Deep dive into the Liverpool lads who changed music forever",
   "questions": [
     {
-      "q": "Which city were The Beatles formed in?",
-      "a": [
-        "liverpool"
-      ]
+      "level": 1,
+      "question": "Which English city were The Beatles from?",
+      "answer": "Liverpool",
+      "acceptedAnswers": ["liverpool"]
     },
     {
-      "q": "What was the name of their first studio album?",
-      "a": [
-        "please please me"
-      ]
+      "level": 2,
+      "question": "What famous Liverpool venue did The Beatles regularly play before becoming famous?",
+      "answer": "The Cavern Club",
+      "acceptedAnswers": ["cavern club", "the cavern club", "cavern"]
     },
     {
-      "q": "Which Beatles member was barefoot on the Abbey Road cover?",
-      "a": [
-        "paul",
-        "paul mccartney"
-      ]
+      "level": 3,
+      "question": "Which Beatles song references the Liverpool suburb of Strawberry Field?",
+      "answer": "Strawberry Fields Forever",
+      "acceptedAnswers": ["strawberry fields forever", "strawberry fields"]
     },
     {
-      "q": "What was the last album they recorded together?",
-      "a": [
-        "abbey road"
-      ]
+      "level": 4,
+      "question": "What Liverpool street is mentioned in the Beatles song that pairs with Strawberry Fields?",
+      "answer": "Penny Lane",
+      "acceptedAnswers": ["penny lane"]
     },
     {
-      "q": "What was the name of the Beatles' Apple Corps lawyer?",
-      "a": [
-        "allan klein",
-        "allen klein"
-      ]
+      "level": 5,
+      "question": "Which Beatles member actually lived on Penny Lane as a child?",
+      "answer": "Paul McCartney",
+      "acceptedAnswers": ["paul mccartney", "paul", "mccartney"]
     }
   ]
 }

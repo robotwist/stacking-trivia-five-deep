@@ -1,25 +1,36 @@
 {
-  "title": "Van Gogh",
+  "title": "Vincent van Gogh",
+  "description": "Journey deep into the life and tragic genius of the Dutch master",
   "questions": [
     {
-      "q": "Who painted Starry Night?",
-      "a": ["van gogh", "vincent van gogh"]
+      "level": 1,
+      "question": "Who painted 'The Starry Night'?",
+      "answer": "Vincent van Gogh",
+      "acceptedAnswers": ["vincent van gogh", "van gogh", "vincent"]
     },
     {
-      "q": "How many paintings did he sell in his lifetime?",
-      "a": ["1", "one"]
+      "level": 2,
+      "question": "How many paintings did van Gogh sell during his lifetime?",
+      "answer": "One",
+      "acceptedAnswers": ["one", "1", "only one"]
     },
     {
-      "q": "Who bought it?",
-      "a": ["theo", "anna boch", "theo van gogh"]
+      "level": 3,
+      "question": "What was the title of the only painting van Gogh sold while alive?",
+      "answer": "The Red Vineyard",
+      "acceptedAnswers": ["the red vineyard", "red vineyard"]
     },
     {
-      "q": "What was the buyer’s occupation?",
-      "a": ["art dealer", "artist"]
+      "level": 4,
+      "question": "Who bought 'The Red Vineyard' from van Gogh?",
+      "answer": "Anna Boch",
+      "acceptedAnswers": ["anna boch", "boch"]
     },
     {
-      "q": "What illness did van gogh suffer from?",
-      "a": ["epilepsy", "bipolar", "mania", "depression"]
+      "level": 5,
+      "question": "How much did Anna Boch pay for 'The Red Vineyard' in 1890?",
+      "answer": "400 francs",
+      "acceptedAnswers": ["400 francs", "400", "four hundred francs"]
     }
   ]
 }

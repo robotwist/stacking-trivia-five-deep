@@ -1,35 +1,36 @@
 {
-  "title": "Ancient Greece",
+  "title": "Socrates: The Death of Wisdom",
+  "description": "Follow the philosopher's final journey from hemlock to immortality",
   "questions": [
     {
-      "q": "Who was the most famous student of Socrates?",
-      "a": [
-        "plato"
-      ]
+      "level": 1,
+      "question": "Who was the ancient Greek philosopher known for saying 'I know that I know nothing'?",
+      "answer": "Socrates",
+      "acceptedAnswers": ["socrates"]
     },
     {
-      "q": "Which city-state was known for its military culture?",
-      "a": [
-        "sparta"
-      ]
+      "level": 2,
+      "question": "What poison was Socrates forced to drink as his execution method?",
+      "answer": "Hemlock",
+      "acceptedAnswers": ["hemlock", "hemlock poison"]
     },
     {
-      "q": "What building sat atop the Acropolis?",
-      "a": [
-        "parthenon"
-      ]
+      "level": 3,
+      "question": "What crime was Socrates officially charged with that led to his death sentence?",
+      "answer": "Corrupting the youth",
+      "acceptedAnswers": ["corrupting the youth", "corrupting youth", "impiety and corrupting the youth"]
     },
     {
-      "q": "What was the name of the war between Athens and Sparta?",
-      "a": [
-        "peloponnesian war"
-      ]
+      "level": 4,
+      "question": "Who wrote the detailed account of Socrates' final day in the dialogue 'Phaedo'?",
+      "answer": "Plato",
+      "acceptedAnswers": ["plato"]
     },
     {
-      "q": "Who wrote the 'Histories' documenting Persian wars?",
-      "a": [
-        "herodotus"
-      ]
+      "level": 5,
+      "question": "In Plato's 'Phaedo', what does Socrates say philosophy is a practice for?",
+      "answer": "Dying",
+      "acceptedAnswers": ["dying", "death", "learning to die", "practice for dying"]
     }
   ]
 }

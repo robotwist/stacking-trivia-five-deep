@@ -15,12 +15,28 @@ export default function GameStack({ stack, onComplete }) {
     const userAnswer = input.toLowerCase().trim();
     let isCorrect = false;
     
+    // Enhanced answer matching - more forgiving for variations
+    const normalizeAnswer = (text) => {
+      return text.toLowerCase()
+        .replace(/[^\w\s]/g, '') // Remove punctuation
+        .replace(/\s+/g, ' ')    // Normalize whitespace
+        .trim();
+    };
+    
+    const normalizedUserAnswer = normalizeAnswer(userAnswer);
+    
     // Check if the data format has 'a' array (old format) or 'answer' string (new format)
     if (current.a && Array.isArray(current.a)) {
-      isCorrect = current.a.some(a => userAnswer.includes(a.toLowerCase()));
+      isCorrect = current.a.some(acceptedAnswer => {
+        const normalizedAccepted = normalizeAnswer(acceptedAnswer);
+        // Check both directions: user answer contains accepted OR accepted contains user answer
+        return normalizedUserAnswer.includes(normalizedAccepted) || 
+               normalizedAccepted.includes(normalizedUserAnswer);
+      });
     } else if (current.answer) {
-      isCorrect = userAnswer.includes(current.answer.toLowerCase()) || 
-                 current.answer.toLowerCase().includes(userAnswer);
+      const normalizedCorrectAnswer = normalizeAnswer(current.answer);
+      isCorrect = normalizedUserAnswer.includes(normalizedCorrectAnswer) || 
+                 normalizedCorrectAnswer.includes(normalizedUserAnswer);
     }
     
     if (isCorrect) {

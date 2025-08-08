@@ -1,31 +1,36 @@
 {
-  "title": "Current Olympic Distance Running",
-  "description": "Explore modern champions from the latest Olympic Games, from 800m to 10,000m.",
+  "title": "Olympic 1500m Mastery",
+  "description": "Dive deep into the metric mile - from distance basics to Norwegian dominance",
   "questions": [
     {
       "level": 1,
-      "question": "Who won the men's 800m gold medal at the Tokyo 2020 Olympics?",
-      "answer": "Emmanuel Korir"
+      "question": "How many meters is the metric mile in Olympic track?",
+      "answer": "1500 meters",
+      "acceptedAnswers": ["1500 meters", "1500", "fifteen hundred meters", "1500m"]
     },
     {
       "level": 2,
-      "question": "Which Dutch runner won gold in the women's 5000m and 10,000m at Tokyo 2020?",
-      "answer": "Sifan Hassan"
+      "question": "Which Norwegian runner won the men's 1500m at Tokyo 2020?",
+      "answer": "Jakob Ingebrigtsen",
+      "acceptedAnswers": ["jakob ingebrigtsen", "ingebrigtsen"]
     },
     {
       "level": 3,
-      "question": "Who won the men's 1500m at the Tokyo 2020 Olympics?",
-      "answer": "Jakob Ingebrigtsen"
+      "question": "At what age did Jakob Ingebrigtsen win Olympic 1500m gold?",
+      "answer": "20 years old",
+      "acceptedAnswers": ["20", "20 years old", "twenty"]
     },
     {
       "level": 4,
-      "question": "Which Ugandan runner won the men's 5000m at Tokyo 2020?",
-      "answer": "Joshua Cheptegei"
+      "question": "Which famous Norwegian middle-distance runner is Jakob's father and coach?",
+      "answer": "Gjert Ingebrigtsen",
+      "acceptedAnswers": ["gjert ingebrigtsen", "gjert"]
     },
     {
       "level": 5,
-      "question": "Who claimed silver in the women's 800m at the Tokyo 2020 Olympics?",
-      "answer": "Keely Hodgkinson"
+      "question": "How many of Gjert's sons have competed professionally in middle-distance running?",
+      "answer": "Three",
+      "acceptedAnswers": ["three", "3", "henrik filip and jakob"]
     }
   ]
 }
