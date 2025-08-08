@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
 import GameStack from './components/GameStack'
-import HostMode from './components/HostMode'
-import OpeningImageRound from './components/OpeningImageRound'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -47,8 +45,6 @@ function App() {
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
-  const [gameMode, setGameMode] = useState('solo') // solo, host, opening-round, individual-stacks
-  const [teams, setTeams] = useState([])
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('darkMode') === 'true' || 
            window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -78,7 +74,6 @@ function App() {
     setSelectedCategory(null)
     setSelectedStack(null)
     setGameStarted(false)
-    setGameMode('solo')
   }
 
   const handleBackToStacks = () => {
@@ -88,46 +83,6 @@ function App() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
-  }
-
-  // Host Mode handlers
-  const enterHostMode = () => {
-    setGameMode('host')
-    setSelectedCategory(null)
-    setSelectedStack(null)
-    setGameStarted(false)
-  }
-
-  const exitHostMode = () => {
-    setGameMode('solo')
-    setTeams([])
-  }
-
-  const handleStartGame = (gameData) => {
-    setTeams(gameData.teams)
-    setGameMode('opening-round')
-  }
-
-  const handleOpeningRoundComplete = (results) => {
-    setGameMode('individual-stacks')
-    // Could update team order based on opening round results
-  }
-
-  // Route to Host Mode
-  if (gameMode === 'host') {
-    return <HostMode onStartGame={handleStartGame} onExitHost={exitHostMode} />
-  }
-
-  // Route to Opening Image Round
-  if (gameMode === 'opening-round') {
-    return <OpeningImageRound teams={teams} onRoundComplete={handleOpeningRoundComplete} />
-  }
-
-  // Route to Individual Stacks (multi-team mode)
-  if (gameMode === 'individual-stacks') {
-    // For now, redirect back to categories - this would be enhanced later
-    setGameMode('solo')
-    setSelectedCategory(null)
   }
 
   if (gameStarted && selectedStack && gameStacks[selectedStack]) {
@@ -232,17 +187,7 @@ function App() {
         : 'bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 text-gray-900'
     }`}>
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-8">
-          <button
-            onClick={enterHostMode}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
-              darkMode 
-                ? 'bg-purple-700 hover:bg-purple-600 text-white' 
-                : 'bg-purple-100 hover:bg-purple-200 text-purple-800 shadow-md'
-            }`}
-          >
-            🎭 Host Mode
-          </button>
+        <div className="flex justify-end mb-8">
           <button
             onClick={toggleDarkMode}
             className={`p-3 rounded-lg transition-all duration-200 ${
