@@ -404,52 +404,57 @@ function App() {
           <div className="flex flex-wrap gap-2 sm:gap-3 order-2 sm:order-1 justify-center sm:justify-start">
             <button
               onClick={enterHostMode}
-              className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
+              className={`px-3 sm:px-4 py-2 rounded-sm font-semibold transition-all duration-200 text-sm sm:text-base shadow-md border-2 ${
                 darkMode 
-                  ? 'bg-purple-700 hover:bg-purple-600 text-white border border-purple-600' 
-                  : 'bg-purple-600 hover:bg-purple-700 text-white'
+                  ? 'bg-amber-700 hover:bg-amber-600 text-amber-100 border-amber-600' 
+                  : 'bg-amber-700 hover:bg-amber-800 text-amber-100 border-amber-800'
               }`}
+              style={{ filter: 'sepia(0.1) contrast(1.05)' }}
             >
               Host Mode
             </button>
             <button
               onClick={enterPerformanceFinale}
-              className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
+              className={`px-3 sm:px-4 py-2 rounded-sm font-semibold transition-all duration-200 text-sm sm:text-base shadow-md border-2 ${
                 darkMode 
-                  ? 'bg-yellow-700 hover:bg-yellow-600 text-white border border-yellow-600' 
-                  : 'bg-yellow-600 hover:bg-yellow-700 text-white'
+                  ? 'bg-yellow-700 hover:bg-yellow-600 text-yellow-100 border-yellow-600' 
+                  : 'bg-yellow-700 hover:bg-yellow-800 text-yellow-100 border-yellow-800'
               }`}
+              style={{ filter: 'sepia(0.1) contrast(1.05)' }}
             >
               Performance Finale
             </button>
             <button
               onClick={enterProjectorMode}
-              className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
+              className={`px-3 sm:px-4 py-2 rounded-sm font-semibold transition-all duration-200 text-sm sm:text-base shadow-md border-2 ${
                 darkMode 
-                  ? 'bg-blue-700 hover:bg-blue-600 text-white border border-blue-600' 
-                  : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  ? 'bg-yellow-800 hover:bg-yellow-700 text-yellow-100 border-yellow-600' 
+                  : 'bg-yellow-800 hover:bg-yellow-900 text-yellow-100 border-yellow-900'
               }`}
+              style={{ filter: 'sepia(0.1) contrast(1.05)' }}
             >
               Classic Projector
             </button>
             <button
               onClick={() => enterGilliamProjector('setup')}
-              className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
+              className={`px-3 sm:px-4 py-2 rounded-sm font-semibold transition-all duration-200 text-sm sm:text-base shadow-md border-2 ${
                 darkMode 
-                  ? 'bg-amber-700 hover:bg-amber-600 text-white border border-amber-600' 
-                  : 'bg-amber-600 hover:bg-amber-700 text-white'
+                  ? 'bg-amber-800 hover:bg-amber-700 text-amber-100 border-amber-600' 
+                  : 'bg-amber-800 hover:bg-amber-900 text-amber-100 border-amber-900'
               }`}
+              style={{ filter: 'sepia(0.1) contrast(1.05)' }}
             >
               Gilliam Projector
             </button>
           </div>
           <button
             onClick={toggleDarkMode}
-            className={`p-2 sm:p-3 rounded-lg transition-all duration-200 order-1 sm:order-2 ${
+            className={`p-2 sm:p-3 rounded-sm transition-all duration-200 order-1 sm:order-2 shadow-md border-2 font-semibold ${
               darkMode 
-                ? 'bg-gray-700 hover:bg-gray-600 text-white border border-gray-600' 
-                : 'bg-gray-800 hover:bg-gray-700 text-white'
+                ? 'bg-amber-600 hover:bg-amber-500 text-amber-100 border-amber-500' 
+                : 'bg-amber-900 hover:bg-amber-800 text-amber-100 border-amber-800'
             }`}
+            style={{ filter: 'sepia(0.1) contrast(1.05)' }}
           >
             {darkMode ? 'Light' : 'Dark'}
           </button>
@@ -459,10 +464,10 @@ function App() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-amber-700 via-yellow-600 to-amber-800 bg-clip-text text-transparent">
             DeepStack
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium text-amber-800 dark:text-amber-200">
             Trivia That Dares to Matter
           </p>
-          <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed`}>
+          <p className={`text-base sm:text-lg ${darkMode ? 'text-amber-300' : 'text-amber-700'} max-w-3xl mx-auto leading-relaxed`}>
             Monty Python meets You Don't Know Jack meets bar culture. 
             Choose your realm of knowledge and go five questions deep.
           </p>
@@ -473,27 +478,33 @@ function App() {
             <button
               key={key}
               onClick={() => handleCategorySelect(key)}
-              className={`group p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
+              className={`group p-4 sm:p-6 lg:p-8 rounded-sm sm:rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl border-2 ${
                 darkMode
-                  ? 'bg-gray-800/50 hover:bg-gray-700/70 backdrop-blur-sm border border-gray-700/50'
-                  : 'bg-white/80 hover:bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl border border-gray-200/30'
+                  ? 'bg-amber-900/70 hover:bg-amber-800/80 backdrop-blur-sm border-amber-700/60 shadow-xl'
+                  : 'bg-amber-100/90 hover:bg-amber-200/95 backdrop-blur-sm border-amber-300/60 shadow-xl'
               }`}
+              style={{
+                filter: darkMode ? 'sepia(0.3) contrast(1.2)' : 'sepia(0.2) contrast(1.1)',
+                backgroundImage: darkMode 
+                  ? 'linear-gradient(135deg, rgba(146, 64, 14, 0.2) 0%, rgba(92, 38, 7, 0.3) 100%)'
+                  : 'linear-gradient(135deg, rgba(251, 245, 233, 0.8) 0%, rgba(254, 252, 232, 0.9) 100%)'
+              }}
             >
               <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                 {category.icon}
               </div>
-              <div className={`w-full h-2 sm:h-3 rounded-full mb-4 sm:mb-6 bg-gradient-to-r ${category.color}`}></div>
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+              <div className={`w-full h-2 sm:h-3 rounded-sm mb-4 sm:mb-6 bg-gradient-to-r ${category.color}`} style={{ filter: 'sepia(0.2)' }}></div>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                 {category.title}
               </h2>
-              <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} mb-3 sm:mb-4 text-sm sm:text-base`}>
+              <p className={`${darkMode ? 'text-amber-300' : 'text-amber-700'} mb-3 sm:mb-4 text-sm sm:text-base`}>
                 {category.description}
               </p>
               <div className="flex justify-between items-center text-xs sm:text-sm">
-                <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                <span className={`${darkMode ? 'text-amber-400' : 'text-amber-600'}`}>
                   {category.stacks.length} Stacks Available
                 </span>
-                <span className="text-purple-600 dark:text-purple-400 font-semibold">
+                <span className="text-amber-600 dark:text-amber-400 font-semibold">
                   Explore →
                 </span>
               </div>
@@ -501,7 +512,7 @@ function App() {
           ))}
         </div>
 
-        <div className={`text-center mt-16 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+        <div className={`text-center mt-16 ${darkMode ? 'text-amber-400' : 'text-amber-600'}`}>
           <p className="text-sm">
             Each stack: 5 questions deep • Scoring: 10 → 20 → 40 → 80 → 160 points
           </p>
