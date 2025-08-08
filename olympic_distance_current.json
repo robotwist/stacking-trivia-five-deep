@@ -1,0 +1,31 @@
+{
+  "title": "Current Olympic Distance Running",
+  "description": "Explore modern champions from the latest Olympic Games, from 800m to 10,000m.",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who won the men's 800m gold medal at the Tokyo 2020 Olympics?",
+      "answer": "Emmanuel Korir"
+    },
+    {
+      "level": 2,
+      "question": "Which Dutch runner won gold in the women's 5000m and 10,000m at Tokyo 2020?",
+      "answer": "Sifan Hassan"
+    },
+    {
+      "level": 3,
+      "question": "Who won the men's 1500m at the Tokyo 2020 Olympics?",
+      "answer": "Jakob Ingebrigtsen"
+    },
+    {
+      "level": 4,
+      "question": "Which Ugandan runner won the men's 5000m at Tokyo 2020?",
+      "answer": "Joshua Cheptegei"
+    },
+    {
+      "level": 5,
+      "question": "Who claimed silver in the women's 800m at the Tokyo 2020 Olympics?",
+      "answer": "Keely Hodgkinson"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Nebraska Sports",
+  "description": "A deep dive into the sports culture, history, and legends of Nebraska.",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the name of the University of Nebraska's football team?",
+      "answer": "Cornhuskers"
+    },
+    {
+      "level": 2,
+      "question": "In what stadium do the Nebraska Cornhuskers play their home games?",
+      "answer": "Memorial Stadium"
+    },
+    {
+      "level": 3,
+      "question": "Which Nebraska quarterback won the Heisman Trophy in 2001?",
+      "answer": "Eric Crouch"
+    },
+    {
+      "level": 4,
+      "question": "Who coached the Nebraska football team to three national championships in the 1990s?",
+      "answer": "Tom Osborne"
+    },
+    {
+      "level": 5,
+      "question": "What is the capacity of Memorial Stadium, often referred to as Nebraska\u2019s 'Sea of Red'?",
+      "answer": "85,458"
+    }
+  ]
+}

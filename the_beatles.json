@@ -1,0 +1,37 @@
+{
+  "title": "The Beatles",
+  "questions": [
+    {
+      "q": "Which city were The Beatles formed in?",
+      "a": [
+        "liverpool"
+      ]
+    },
+    {
+      "q": "What was the name of their first studio album?",
+      "a": [
+        "please please me"
+      ]
+    },
+    {
+      "q": "Which Beatles member was barefoot on the Abbey Road cover?",
+      "a": [
+        "paul",
+        "paul mccartney"
+      ]
+    },
+    {
+      "q": "What was the last album they recorded together?",
+      "a": [
+        "abbey road"
+      ]
+    },
+    {
+      "q": "What was the name of the Beatles' Apple Corps lawyer?",
+      "a": [
+        "allan klein",
+        "allen klein"
+      ]
+    }
+  ]
+}
