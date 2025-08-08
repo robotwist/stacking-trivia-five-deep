@@ -1,5 +1,7 @@
 {
   "title": "Blade Runner",
+  "image": "neon-cityscape.jpg",
+  "imageHint": "A futuristic Los Angeles 2019 with towering neon-lit buildings and flying cars",
   "questions": [
     {
       "q": "Who directed Blade Runner?",

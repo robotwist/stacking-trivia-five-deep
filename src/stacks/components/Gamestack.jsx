@@ -18,21 +18,36 @@ export default function GameStack({ stack }) {
   };
 
   if (depth >= stack.questions.length) {
-    return <div>Stack complete! Final score: {score}</div>;
+    return (
+      <div className="p-4 sm:p-6 lg:p-8 max-w-xl mx-auto text-center">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-green-600">Stack Complete!</h2>
+        <p className="text-lg sm:text-xl lg:text-2xl mb-4">Final score: <span className="font-bold">{score}</span></p>
+      </div>
+    );
   }
 
   return (
-    <div className="p-4 max-w-xl mx-auto">
-      <h2 className="text-xl font-bold mb-4">{stack.title} (Depth {depth + 1})</h2>
-      <p className="mb-2">{current.q}</p>
+    <div className="p-4 sm:p-6 lg:p-8 max-w-xl mx-auto">
+      <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center sm:text-left">
+        {stack.title} <span className="text-purple-600">(Depth {depth + 1})</span>
+      </h2>
+      <p className="mb-4 text-base sm:text-lg leading-relaxed">{current.q}</p>
       <input
         type="text"
         value={input}
         onChange={e => setInput(e.target.value)}
-        className="border p-2 w-full mb-2"
+        className="border border-gray-300 rounded-lg p-3 w-full mb-4 text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+        placeholder="Enter your answer..."
       />
-      <button onClick={checkAnswer} className="bg-black text-white px-4 py-2">Submit</button>
-      <p className="mt-4">Current Score: {score}</p>
+      <button 
+        onClick={checkAnswer} 
+        className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg w-full sm:w-auto font-semibold transition-colors duration-200 text-base sm:text-lg"
+      >
+        Submit Answer
+      </button>
+      <p className="mt-4 text-center sm:text-left text-lg sm:text-xl font-medium">
+        Current Score: <span className="text-purple-600 font-bold">{score}</span>
+      </p>
     </div>
   );
 }

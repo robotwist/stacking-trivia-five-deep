@@ -1,5 +1,7 @@
 {
   "title": "Nebraska Sports",
+  "image": "memorial-stadium.jpg",
+  "imageHint": "The iconic football stadium in Lincoln that becomes Nebraska's 3rd largest city on game days",
   "description": "A deep dive into the sports culture, history, and legends of Nebraska.",
   "questions": [
     {

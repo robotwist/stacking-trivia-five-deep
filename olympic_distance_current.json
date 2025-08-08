@@ -1,5 +1,7 @@
 {
   "title": "Current Olympic Distance Running",
+  "image": "olympic-torch.jpg",
+  "imageHint": "The iconic flame that burns throughout the modern Olympic Games",
   "description": "Explore modern champions from the latest Olympic Games, from 800m to 10,000m.",
   "questions": [
     {

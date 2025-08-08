@@ -1,5 +1,7 @@
 {
   "title": "The Beatles",
+  "image": "abbey-road-crossing.jpg",
+  "imageHint": "The iconic zebra crossing from a famous 1969 album cover",
   "questions": [
     {
       "q": "Which city were The Beatles formed in?",

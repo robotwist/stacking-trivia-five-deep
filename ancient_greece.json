@@ -1,5 +1,7 @@
 {
   "title": "Ancient Greece",
+  "image": "parthenon-temple.jpg",
+  "imageHint": "The iconic temple atop the Acropolis in Athens, dedicated to Athena",
   "questions": [
     {
       "q": "Who was the most famous student of Socrates?",
