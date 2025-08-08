@@ -77,36 +77,36 @@ const PerformanceFinale = ({
           ? 'bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white' 
           : 'bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 text-gray-900'
       }`}>
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-6">PERFORMANCE FINALE</h1>
-            <p className="text-xl mb-8">GO THE DEEPEST</p>
-            <p className="text-lg mb-12 max-w-3xl mx-auto">
+        <div className="container mx-auto px-4 py-6 sm:py-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">PERFORMANCE FINALE</h1>
+            <p className="text-lg sm:text-xl mb-6 sm:mb-8">GO THE DEEPEST</p>
+            <p className="text-base sm:text-lg mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
               The ultimate test: Teams create a performance (song, rap, play, spoken word) 
               using the topics we've explored tonight. Props and music available.
             </p>
           </div>
 
-          <div className={`max-w-4xl mx-auto p-8 rounded-2xl shadow-2xl mb-8 ${
+          <div className={`max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-2xl mb-6 sm:mb-8 ${
             darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white'
           }`}>
-            <h2 className="text-2xl font-bold mb-6">Tonight's Deep Topics:</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Tonight's Deep Topics:</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {sessionTopics.map((topic, index) => (
-                <div key={index} className={`p-4 rounded-lg text-center ${
+                <div key={index} className={`p-3 sm:p-4 rounded-lg text-center ${
                   darkMode ? 'bg-gray-700' : 'bg-gray-100'
                 }`}>
-                  <span className="font-medium">{topic}</span>
+                  <span className="font-medium text-sm sm:text-base">{topic}</span>
                 </div>
               ))}
             </div>
 
-            <div className="mb-8">
-              <h3 className="text-xl font-bold mb-4">Performance Guidelines:</h3>
-              <div className="grid md:grid-cols-2 gap-6">
+            <div className="mb-6 sm:mb-8">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Performance Guidelines:</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-2">Available Props:</h4>
-                  <ul className="text-sm space-y-1">
+                  <ul className="text-sm sm:text-base space-y-1">
                     <li>• Guitar (acoustic)</li>
                     <li>• Microphone with backing beats</li>
                     <li>• Simple costumes/hats</li>
@@ -115,7 +115,7 @@ const PerformanceFinale = ({
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Judging Criteria:</h4>
-                  <ul className="text-sm space-y-1">
+                  <ul className="text-sm sm:text-base space-y-1">
                     <li>• <strong>Accuracy:</strong> Use of actual facts from tonight</li>
                     <li>• <strong>Creativity:</strong> Originality and entertainment value</li>
                     <li>• <strong>Cohesion:</strong> How well topics connect together</li>
@@ -128,18 +128,18 @@ const PerformanceFinale = ({
             <div className="text-center">
               <button
                 onClick={startPrep}
-                className={`px-8 py-4 text-xl font-bold rounded-xl transition-all duration-200 ${
+                className={`px-6 sm:px-8 py-3 sm:py-4 text-lg sm:text-xl font-bold rounded-xl transition-all duration-200 ${
                   darkMode 
                     ? 'bg-purple-600 hover:bg-purple-500 text-white' 
                     : 'bg-purple-600 hover:bg-purple-700 text-white'
-                } shadow-lg hover:shadow-xl transform hover:scale-105`}
+                } shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto`}
               >
                 Start 5-Minute Prep Time
               </button>
             </div>
           </div>
 
-          <div className={`text-center text-sm ${
+          <div className={`text-center text-xs sm:text-sm ${
             darkMode ? 'text-gray-400' : 'text-gray-600'
           }`}>
             <p>Teams will have 5 minutes to prepare, then perform in order</p>

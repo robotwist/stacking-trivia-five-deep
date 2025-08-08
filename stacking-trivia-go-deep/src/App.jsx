@@ -308,10 +308,10 @@ function App() {
           : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 text-gray-900'
       }`}>
         <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
             <button 
               onClick={handleBackToCategories}
-              className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+              className={`px-4 py-2 rounded-lg transition-all duration-200 order-2 sm:order-1 ${
                 darkMode 
                   ? 'bg-gray-800 hover:bg-gray-700 text-white' 
                   : 'bg-white hover:bg-gray-50 text-gray-900 shadow-md'
@@ -321,7 +321,7 @@ function App() {
             </button>
             <button
               onClick={toggleDarkMode}
-              className={`p-2 rounded-lg transition-all duration-200 ${
+              className={`p-2 rounded-lg transition-all duration-200 order-1 sm:order-2 ${
                 darkMode 
                   ? 'bg-gray-800 hover:bg-gray-700 text-yellow-400' 
                   : 'bg-white hover:bg-gray-50 text-gray-700 shadow-md'
@@ -455,41 +455,41 @@ function App() {
           </button>
         </div>
         
-        <div className="text-center mb-12">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+        <div className="text-center mb-8 sm:mb-12 px-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
             DeepStack
           </h1>
-          <p className="text-xl sm:text-2xl mb-4 font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium">
             Trivia That Dares to Matter
           </p>
-          <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto`}>
+          <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed`}>
             Monty Python meets You Don't Know Jack meets bar culture. 
             Choose your realm of knowledge and go five questions deep.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-4">
           {Object.entries(categoriesConfig.categories).map(([key, category]) => (
             <button
               key={key}
               onClick={() => handleCategorySelect(key)}
-              className={`group p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
+              className={`group p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
                 darkMode
                   ? 'bg-gray-800/30 hover:bg-gray-700/50 backdrop-blur-sm border border-gray-700/30'
                   : 'bg-white/60 hover:bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl border border-white/40'
               }`}
             >
-              <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                 {category.icon}
               </div>
-              <div className={`w-full h-3 rounded-full mb-6 bg-gradient-to-r ${category.color}`}></div>
-              <h2 className="text-2xl font-bold mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+              <div className={`w-full h-2 sm:h-3 rounded-full mb-4 sm:mb-6 bg-gradient-to-r ${category.color}`}></div>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                 {category.title}
               </h2>
-              <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
+              <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} mb-3 sm:mb-4 text-sm sm:text-base`}>
                 {category.description}
               </p>
-              <div className="flex justify-between items-center text-sm">
+              <div className="flex justify-between items-center text-xs sm:text-sm">
                 <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                   {category.stacks.length} Stacks Available
                 </span>

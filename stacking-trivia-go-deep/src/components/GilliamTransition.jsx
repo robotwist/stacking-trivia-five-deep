@@ -92,10 +92,10 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
     >
       {/* Decorative Victorian border */}
       <motion.div 
-        className="absolute inset-4 border-8 border-amber-800"
+        className="absolute inset-2 sm:inset-4 border-4 sm:border-8 border-amber-800"
         style={{
           borderImage: 'repeating-linear-gradient(45deg, #8b4513, #8b4513 10px, #d4af37 10px, #d4af37 20px) 8',
-          borderRadius: '20px'
+          borderRadius: '10px sm:20px'
         }}
         initial={{ scale: 0.8, rotate: -2 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -104,16 +104,16 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
 
       {/* Title Section */}
       <motion.div 
-        className="absolute top-16 left-0 right-0 text-center z-20"
+        className="absolute top-8 sm:top-16 left-0 right-0 text-center z-20 px-4"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 1, ease: "backOut" }}
       >
-        <h1 className="text-6xl font-bold text-amber-900 mb-4" 
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 mb-2 sm:mb-4" 
             style={{ fontFamily: 'serif', textShadow: '3px 3px 6px rgba(0,0,0,0.3)' }}>
           {transition.title}
         </h1>
-        <p className="text-2xl text-amber-700 italic">
+        <p className="text-lg sm:text-xl md:text-2xl text-amber-700 italic">
           {transition.subtitle}
         </p>
       </motion.div>
@@ -135,17 +135,17 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
 
       {/* Sequence Description */}
       <motion.div 
-        className="absolute bottom-16 left-0 right-0 text-center z-20"
+        className="absolute bottom-8 sm:bottom-16 left-0 right-0 text-center z-20 px-4"
         initial={{ y: 100, opacity: 0 }}
         animate={{ 
-          y: currentPhase === 'climax' ? -20 : 0, 
+          y: currentPhase === 'climax' ? -10 : 0, 
           opacity: 1,
-          scale: currentPhase === 'climax' ? 1.1 : 1
+          scale: currentPhase === 'climax' ? 1.05 : 1
         }}
         transition={{ delay: 2, duration: 1 }}
       >
-        <div className="bg-amber-100 bg-opacity-90 mx-auto px-8 py-4 rounded-lg border-2 border-amber-600 max-w-2xl">
-          <p className="text-xl text-amber-900 font-semibold">
+        <div className="bg-amber-100 bg-opacity-90 mx-auto px-4 sm:px-8 py-2 sm:py-4 rounded-lg border-2 border-amber-600 max-w-xs sm:max-w-2xl">
+          <p className="text-sm sm:text-lg md:text-xl text-amber-900 font-semibold">
             {transition.sequence}
           </p>
         </div>
@@ -153,11 +153,11 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
 
       {/* Animated gears and mechanical elements */}
       <motion.div 
-        className="absolute top-20 right-20"
+        className="absolute top-12 sm:top-20 right-8 sm:right-20"
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
       >
-        <div className="w-16 h-16 border-4 border-amber-700 rounded-full"
+        <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 border-2 sm:border-4 border-amber-700 rounded-full"
              style={{
                background: 'conic-gradient(from 0deg, #d4af37, #b8860b, #d4af37)',
                boxShadow: 'inset 0 0 10px rgba(0,0,0,0.3)'
@@ -166,11 +166,11 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
           {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-2 h-6 bg-amber-700"
+              className="absolute w-1 h-3 sm:w-2 sm:h-6 bg-amber-700"
               style={{
                 left: '50%',
-                top: '-8px',
-                transformOrigin: '50% 40px',
+                top: '-4px',
+                transformOrigin: '50% 20px',
                 transform: `translateX(-50%) rotate(${i * 45}deg)`
               }}
             />
