@@ -1,0 +1,47 @@
+{
+  "categories": {
+    "arts-culture": {
+      "title": "Arts & Culture",
+      "description": "Journey through the minds of creative visionaries",
+      "icon": "🎨",
+      "color": "from-purple-600 to-pink-600",
+      "stacks": [
+        "van-gogh",
+        "the_beatles", 
+        "frida-kahlo",
+        "miles-davis"
+      ]
+    },
+    "sports": {
+      "title": "Sports Legends",
+      "description": "Dive deep into moments that defined greatness",
+      "icon": "🏆",
+      "color": "from-green-600 to-blue-600",
+      "stacks": [
+        "olympic_distance_current",
+        "muhammad-ali",
+        "michael-jordan"
+      ]
+    },
+    "cinema": {
+      "title": "Cinema Classics",
+      "description": "Explore the stories behind cinema's greatest moments",
+      "icon": "🎬",
+      "color": "from-red-600 to-orange-600",
+      "stacks": [
+        "blade_runner",
+        "the-godfather"
+      ]
+    },
+    "history": {
+      "title": "Historical Depths",
+      "description": "Uncover the truth behind civilization's turning points",
+      "icon": "⚔️",
+      "color": "from-yellow-600 to-red-600",
+      "stacks": [
+        "ancient_greece",
+        "cleopatra"
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Michael Jordan: The Last Shot",
+  "description": "Dive deep into MJ's final championship moment that defined a dynasty",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Which NBA player hit 'The Last Shot' in 1998?",
+      "answer": "Michael Jordan",
+      "acceptedAnswers": ["michael jordan", "jordan", "mj"]
+    },
+    {
+      "level": 2,
+      "question": "Against which team did Jordan hit 'The Last Shot'?",
+      "answer": "Utah Jazz",
+      "acceptedAnswers": ["utah jazz", "jazz", "utah"]
+    },
+    {
+      "level": 3,
+      "question": "From whom did Jordan steal the ball before 'The Last Shot'?",
+      "answer": "Karl Malone",
+      "acceptedAnswers": ["karl malone", "malone", "the mailman"]
+    },
+    {
+      "level": 4,
+      "question": "How much time was left on the clock for 'The Last Shot'?",
+      "answer": "5.2 seconds",
+      "acceptedAnswers": ["5.2 seconds", "5.2", "five point two seconds"]
+    },
+    {
+      "level": 5,
+      "question": "What did Jordan do immediately after hitting 'The Last Shot'?",
+      "answer": "Held his follow-through",
+      "acceptedAnswers": ["held his follow-through", "held the pose", "froze his follow-through"]
+    }
+  ],
+  "deeperMode": {
+    "title": "🔥 DEEPER MODE UNLOCKED: Jordan's Secret History",
+    "description": "You've mastered the basics. Now dive into the truly obsessive details...",
+    "questions": [
+      {
+        "level": 6,
+        "question": "What jersey number was Jordan wearing during 'The Last Shot'?",
+        "answer": "23",
+        "acceptedAnswers": ["23", "twenty-three", "number 23"],
+        "bonus": 200
+      },
+      {
+        "level": 7,
+        "question": "What was the exact final score of Jordan's last championship game?",
+        "answer": "87-86",
+        "acceptedAnswers": ["87-86", "87 to 86", "eighty-seven eighty-six"],
+        "bonus": 400
+      },
+      {
+        "level": 8,
+        "question": "How many seconds did Jordan hold his follow-through pose?",
+        "answer": "3 seconds",
+        "acceptedAnswers": ["3 seconds", "three seconds", "3", "about 3 seconds"],
+        "bonus": 800
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Cleopatra: Last Pharaoh's Final Act",
+  "description": "Uncover the truth behind history's most famous queen and her dramatic end",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who was the last pharaoh of Egypt?",
+      "answer": "Cleopatra VII",
+      "acceptedAnswers": ["cleopatra", "cleopatra vii", "cleopatra 7"]
+    },
+    {
+      "level": 2,
+      "question": "Which Roman leader did Cleopatra have a relationship with before Mark Antony?",
+      "answer": "Julius Caesar",
+      "acceptedAnswers": ["julius caesar", "caesar"]
+    },
+    {
+      "level": 3,
+      "question": "What was the name of Cleopatra and Caesar's son?",
+      "answer": "Caesarion",
+      "acceptedAnswers": ["caesarion", "cesarion"]
+    },
+    {
+      "level": 4,
+      "question": "According to legend, how did Cleopatra die?",
+      "answer": "Snake bite",
+      "acceptedAnswers": ["snake bite", "asp bite", "cobra bite", "serpent bite"]
+    },
+    {
+      "level": 5,
+      "question": "What type of snake was supposedly used in Cleopatra's death?",
+      "answer": "Egyptian cobra",
+      "acceptedAnswers": ["egyptian cobra", "cobra", "asp"]
+    }
+  ]
+}

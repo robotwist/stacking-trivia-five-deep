@@ -1,0 +1,36 @@
+{
+  "title": "Miles Davis: Kind of Revolution",
+  "description": "Trace the trumpet genius from bebop to fusion through his landmark album",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Which jazz trumpeter recorded the album 'Kind of Blue'?",
+      "answer": "Miles Davis",
+      "acceptedAnswers": ["miles davis", "davis", "miles"]
+    },
+    {
+      "level": 2,
+      "question": "In what year was 'Kind of Blue' recorded?",
+      "answer": "1959",
+      "acceptedAnswers": ["1959", "nineteen fifty-nine"]
+    },
+    {
+      "level": 3,
+      "question": "Which legendary saxophonist played on 'Kind of Blue' alongside Miles?",
+      "answer": "John Coltrane",
+      "acceptedAnswers": ["john coltrane", "coltrane"]
+    },
+    {
+      "level": 4,
+      "question": "What recording technique did Miles use for 'Kind of Blue' sessions?",
+      "answer": "Modal improvisation",
+      "acceptedAnswers": ["modal improvisation", "modal jazz", "modes", "modal"]
+    },
+    {
+      "level": 5,
+      "question": "How many takes were used for most tracks on 'Kind of Blue'?",
+      "answer": "First take",
+      "acceptedAnswers": ["first take", "one take", "single take", "1 take"]
+    }
+  ]
+}

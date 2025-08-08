@@ -1,0 +1,36 @@
+{
+  "title": "Olympic 1500m Mastery",
+  "description": "Dive deep into the metric mile - from distance basics to Norwegian dominance",
+  "questions": [
+    {
+      "level": 1,
+      "question": "How many meters is the metric mile in Olympic track?",
+      "answer": "1500 meters",
+      "acceptedAnswers": ["1500 meters", "1500", "fifteen hundred meters", "1500m"]
+    },
+    {
+      "level": 2,
+      "question": "Which Norwegian runner won the men's 1500m at Tokyo 2020?",
+      "answer": "Jakob Ingebrigtsen",
+      "acceptedAnswers": ["jakob ingebrigtsen", "ingebrigtsen"]
+    },
+    {
+      "level": 3,
+      "question": "At what age did Jakob Ingebrigtsen win Olympic 1500m gold?",
+      "answer": "20 years old",
+      "acceptedAnswers": ["20", "20 years old", "twenty"]
+    },
+    {
+      "level": 4,
+      "question": "Which famous Norwegian middle-distance runner is Jakob's father and coach?",
+      "answer": "Gjert Ingebrigtsen",
+      "acceptedAnswers": ["gjert ingebrigtsen", "gjert"]
+    },
+    {
+      "level": 5,
+      "question": "How many of Gjert's sons have competed professionally in middle-distance running?",
+      "answer": "Three",
+      "acceptedAnswers": ["three", "3", "henrik filip and jakob"]
+    }
+  ]
+}

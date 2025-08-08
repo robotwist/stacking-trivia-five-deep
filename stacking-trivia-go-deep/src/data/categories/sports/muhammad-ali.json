@@ -1,0 +1,36 @@
+{
+  "title": "Muhammad Ali: Float Like Greatness",
+  "description": "Follow the Greatest from Olympic gold to cultural icon through his defining fights",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who said 'Float like a butterfly, sting like a bee'?",
+      "answer": "Muhammad Ali",
+      "acceptedAnswers": ["muhammad ali", "ali", "cassius clay"]
+    },
+    {
+      "level": 2,
+      "question": "At which Olympics did Ali win gold as Cassius Clay?",
+      "answer": "1960 Rome",
+      "acceptedAnswers": ["1960 rome", "rome 1960", "1960", "rome"]
+    },
+    {
+      "level": 3,
+      "question": "What did Ali reportedly do with his Olympic gold medal?",
+      "answer": "Threw it in a river",
+      "acceptedAnswers": ["threw it in a river", "threw it away", "threw it in the ohio river"]
+    },
+    {
+      "level": 4,
+      "question": "Why did Ali throw away his gold medal?",
+      "answer": "Racial discrimination",
+      "acceptedAnswers": ["racial discrimination", "racism", "segregation", "discrimination"]
+    },
+    {
+      "level": 5,
+      "question": "What year was Ali given a replacement Olympic medal?",
+      "answer": "1996",
+      "acceptedAnswers": ["1996", "nineteen ninety-six"]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Socrates: The Death of Wisdom",
+  "description": "Follow the philosopher's final journey from hemlock to immortality",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who was the ancient Greek philosopher known for saying 'I know that I know nothing'?",
+      "answer": "Socrates",
+      "acceptedAnswers": ["socrates"]
+    },
+    {
+      "level": 2,
+      "question": "What poison was Socrates forced to drink as his execution method?",
+      "answer": "Hemlock",
+      "acceptedAnswers": ["hemlock", "hemlock poison"]
+    },
+    {
+      "level": 3,
+      "question": "What crime was Socrates officially charged with that led to his death sentence?",
+      "answer": "Corrupting the youth",
+      "acceptedAnswers": ["corrupting the youth", "corrupting youth", "impiety and corrupting the youth"]
+    },
+    {
+      "level": 4,
+      "question": "Who wrote the detailed account of Socrates' final day in the dialogue 'Phaedo'?",
+      "answer": "Plato",
+      "acceptedAnswers": ["plato"]
+    },
+    {
+      "level": 5,
+      "question": "In Plato's 'Phaedo', what does Socrates say philosophy is a practice for?",
+      "answer": "Dying",
+      "acceptedAnswers": ["dying", "death", "learning to die", "practice for dying"]
+    }
+  ]
+}

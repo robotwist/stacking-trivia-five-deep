@@ -1,0 +1,63 @@
+{
+  "title": "The Godfather: Offers & Refusals",
+  "description": "Explore cinema's greatest film through its most iconic scene and hidden depths",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who directed 'The Godfather'?",
+      "answer": "Francis Ford Coppola",
+      "acceptedAnswers": ["francis ford coppola", "coppola", "francis coppola"]
+    },
+    {
+      "level": 2,
+      "question": "Complete this famous line: 'I'm gonna make him...'",
+      "answer": "An offer he can't refuse",
+      "acceptedAnswers": ["an offer he can't refuse", "an offer he cant refuse", "offer he can't refuse"]
+    },
+    {
+      "level": 3,
+      "question": "What did Jack Woltz find in his bed?",
+      "answer": "A horse's head",
+      "acceptedAnswers": ["a horse's head", "horse head", "a horses head", "horse's head"]
+    },
+    {
+      "level": 4,
+      "question": "What was the name of Jack Woltz's prized racehorse?",
+      "answer": "Khartoum",
+      "acceptedAnswers": ["khartoum"]
+    },
+    {
+      "level": 5,
+      "question": "How much money was Woltz offered for Khartoum before the 'offer'?",
+      "answer": "600 thousand dollars",
+      "acceptedAnswers": ["600 thousand", "600000", "six hundred thousand"]
+    }
+  ],
+  "deeperMode": {
+    "title": "🎬 DEEPER MODE UNLOCKED: Coppola's Hidden Details",
+    "description": "You know the story. Now discover the obsessive filmmaker's secrets...",
+    "questions": [
+      {
+        "level": 6,
+        "question": "How many real horse heads did the filmmakers use for the scene?",
+        "answer": "One",
+        "acceptedAnswers": ["one", "1", "just one"],
+        "bonus": 200
+      },
+      {
+        "level": 7,
+        "question": "Where did Coppola get the real horse head used in the film?",
+        "answer": "A dog food factory",
+        "acceptedAnswers": ["dog food factory", "pet food factory", "a pet food plant"],
+        "bonus": 400
+      },
+      {
+        "level": 8,
+        "question": "What did actor John Marley NOT know about the horse head scene?",
+        "answer": "It was real",
+        "acceptedAnswers": ["it was real", "the head was real", "they used a real head"],
+        "bonus": 800
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Vincent van Gogh",
+  "description": "Journey deep into the life and tragic genius of the Dutch master",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who painted 'The Starry Night'?",
+      "answer": "Vincent van Gogh",
+      "acceptedAnswers": ["vincent van gogh", "van gogh", "vincent"]
+    },
+    {
+      "level": 2,
+      "question": "How many paintings did van Gogh sell during his lifetime?",
+      "answer": "One",
+      "acceptedAnswers": ["one", "1", "only one"]
+    },
+    {
+      "level": 3,
+      "question": "What was the title of the only painting van Gogh sold while alive?",
+      "answer": "The Red Vineyard",
+      "acceptedAnswers": ["the red vineyard", "red vineyard"]
+    },
+    {
+      "level": 4,
+      "question": "Who bought 'The Red Vineyard' from van Gogh?",
+      "answer": "Anna Boch",
+      "acceptedAnswers": ["anna boch", "boch"]
+    },
+    {
+      "level": 5,
+      "question": "How much did Anna Boch pay for 'The Red Vineyard' in 1890?",
+      "answer": "400 francs",
+      "acceptedAnswers": ["400 francs", "400", "four hundred francs"]
+    }
+  ],
+  "deeperMode": {
+    "title": "🎨 DEEPER MODE UNLOCKED: Van Gogh's Hidden Obsessions",
+    "description": "You know the basics. Now enter the mind of a true obsessive genius...",
+    "questions": [
+      {
+        "level": 6,
+        "question": "What color did van Gogh use most obsessively in his final paintings?",
+        "answer": "Yellow",
+        "acceptedAnswers": ["yellow", "chrome yellow", "cadmium yellow"],
+        "bonus": 200
+      },
+      {
+        "level": 7,
+        "question": "How many self-portraits did van Gogh paint in total?",
+        "answer": "37",
+        "acceptedAnswers": ["37", "thirty-seven", "about 37"],
+        "bonus": 400
+      },
+      {
+        "level": 8,
+        "question": "What was van Gogh doing when he painted 'The Red Vineyard'?",
+        "answer": "Working in the fields with peasants",
+        "acceptedAnswers": ["working in fields", "working with peasants", "in the vineyard", "painting outdoors"],
+        "bonus": 800
+      }
+    ]
+  }
+}
