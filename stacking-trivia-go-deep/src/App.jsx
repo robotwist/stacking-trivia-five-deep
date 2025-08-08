@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import GameStack from './components/GameStack'
 import HostMode from './components/HostMode'
 import OpeningImageRound from './components/OpeningImageRound'
+import PerformanceFinale from './components/PerformanceFinale'
+import ProjectorScoreboard from './components/ProjectorScoreboard'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -47,8 +49,12 @@ function App() {
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
-  const [gameMode, setGameMode] = useState('solo') // solo, host, opening-round, individual-stacks
+  const [gameMode, setGameMode] = useState('solo') // solo, host, opening-round, individual-stacks, performance-finale, projector-scoreboard
   const [teams, setTeams] = useState([])
+  const [gameHistory, setGameHistory] = useState([])
+  const [performanceScores, setPerformanceScores] = useState({})
+  const [currentRound, setCurrentRound] = useState('Game')
+  const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('darkMode') === 'true' || 
            window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -113,6 +119,32 @@ function App() {
     // Could update team order based on opening round results
   }
 
+  // Performance Finale handlers
+  const enterPerformanceFinale = () => {
+    setGameMode('performance-finale')
+    setCurrentRound('Performance Finale')
+    setGamePhase('round-complete')
+  }
+
+  const handlePerformanceComplete = (scores) => {
+    setPerformanceScores(scores)
+    setGamePhase('final-results')
+    setGameMode('projector-scoreboard')
+  }
+
+  // Projector Scoreboard handlers
+  const enterProjectorMode = () => {
+    setGameMode('projector-scoreboard')
+  }
+
+  const trackGameAction = (action, stackTitle = null) => {
+    setGameHistory(prev => [...prev, { 
+      action, 
+      stackTitle, 
+      timestamp: Date.now() 
+    }])
+  }
+
   // Route to Host Mode
   if (gameMode === 'host') {
     return <HostMode onStartGame={handleStartGame} onExitHost={exitHostMode} />
@@ -121,6 +153,31 @@ function App() {
   // Route to Opening Image Round
   if (gameMode === 'opening-round') {
     return <OpeningImageRound teams={teams} onRoundComplete={handleOpeningRoundComplete} />
+  }
+
+  // Route to Performance Finale
+  if (gameMode === 'performance-finale') {
+    return (
+      <PerformanceFinale 
+        teams={teams}
+        gameHistory={gameHistory}
+        onComplete={handlePerformanceComplete}
+        darkMode={darkMode}
+      />
+    )
+  }
+
+  // Route to Projector Scoreboard
+  if (gameMode === 'projector-scoreboard') {
+    return (
+      <ProjectorScoreboard 
+        teams={teams}
+        currentRound={currentRound}
+        gamePhase={gamePhase}
+        performanceScores={performanceScores}
+        darkMode={darkMode}
+      />
+    )
   }
 
   // Route to Individual Stacks (multi-team mode)
@@ -233,30 +290,51 @@ function App() {
     }`}>
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-8">
-          <button
-            onClick={enterHostMode}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
-              darkMode 
-                ? 'bg-purple-700 hover:bg-purple-600 text-white' 
-                : 'bg-purple-100 hover:bg-purple-200 text-purple-800 shadow-md'
-            }`}
-          >
-            🎭 Host Mode
-          </button>
+          <div className="flex space-x-4">
+            <button
+              onClick={enterHostMode}
+              className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+                darkMode 
+                  ? 'bg-purple-700 hover:bg-purple-600 text-white' 
+                  : 'bg-purple-100 hover:bg-purple-200 text-purple-800 shadow-md'
+              }`}
+            >
+              Host Mode
+            </button>
+            <button
+              onClick={enterPerformanceFinale}
+              className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+                darkMode 
+                  ? 'bg-yellow-700 hover:bg-yellow-600 text-white' 
+                  : 'bg-yellow-100 hover:bg-yellow-200 text-yellow-800 shadow-md'
+              }`}
+            >
+              Performance Finale
+            </button>
+            <button
+              onClick={enterProjectorMode}
+              className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+                darkMode 
+                  ? 'bg-blue-700 hover:bg-blue-600 text-white' 
+                  : 'bg-blue-100 hover:bg-blue-200 text-blue-800 shadow-md'
+              }`}
+            >
+              Projector Mode
+            </button>
+          </div>
           <button
             onClick={toggleDarkMode}
             className={`p-3 rounded-lg transition-all duration-200 ${
               darkMode 
-                ? 'bg-gray-800 hover:bg-gray-700 text-yellow-400' 
+                ? 'bg-gray-800 hover:bg-gray-700 text-white' 
                 : 'bg-white hover:bg-gray-50 text-gray-700 shadow-md'
             }`}
           >
-            {darkMode ? '☀️' : '🌙'}
+            {darkMode ? 'Light' : 'Dark'}
           </button>
         </div>
         
         <div className="text-center mb-12">
-          <div className="text-7xl mb-6">🎯</div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
             DeepStack
           </h1>
