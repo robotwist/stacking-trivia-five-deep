@@ -4,6 +4,8 @@ import HostMode from './components/HostMode'
 import OpeningImageRound from './components/OpeningImageRound'
 import PerformanceFinale from './components/PerformanceFinale'
 import ProjectorScoreboard from './components/ProjectorScoreboard'
+import ProjectorMode from './components/ProjectorMode'
+import GilliamTransition from './components/GilliamTransition'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -64,7 +66,7 @@ function App() {
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
-  const [gameMode, setGameMode] = useState('solo') // solo, host, opening-round, individual-stacks, performance-finale, projector-scoreboard
+  const [gameMode, setGameMode] = useState('solo') // solo, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition
   const [teams, setTeams] = useState([])
   const [gameHistory, setGameHistory] = useState([])
   const [performanceScores, setPerformanceScores] = useState({})
@@ -73,6 +75,18 @@ function App() {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('darkMode') === 'true' || 
            window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
+  
+  // Gilliam transition state
+  const [transitionState, setTransitionState] = useState({
+    fromCategory: null,
+    toCategory: null,
+    isTransitioning: false
+  })
+  const [projectorState, setProjectorState] = useState({
+    gameState: 'setup', // setup, question, scoreboard, performance
+    currentQuestion: null,
+    questionNumber: 1
   })
 
   useEffect(() => {
@@ -152,6 +166,39 @@ function App() {
     setGameMode('projector-scoreboard')
   }
 
+  // Gilliam Projector handlers
+  const enterGilliamProjector = (gameState = 'setup') => {
+    setProjectorState({
+      gameState,
+      currentQuestion: null,
+      questionNumber: 1
+    })
+    setGameMode('gilliam-projector')
+  }
+
+  const triggerCategoryTransition = (fromCategory, toCategory) => {
+    setTransitionState({
+      fromCategory,
+      toCategory, 
+      isTransitioning: true
+    })
+    setGameMode('category-transition')
+  }
+
+  const handleTransitionComplete = () => {
+    setTransitionState({
+      fromCategory: null,
+      toCategory: null,
+      isTransitioning: false
+    })
+    // Return to previous mode or default
+    setGameMode('gilliam-projector')
+  }
+
+  const updateProjectorState = (newState) => {
+    setProjectorState(prev => ({ ...prev, ...newState }))
+  }
+
   const trackGameAction = (action, stackTitle = null) => {
     setGameHistory(prev => [...prev, { 
       action, 
@@ -162,7 +209,12 @@ function App() {
 
   // Route to Host Mode
   if (gameMode === 'host') {
-    return <HostMode onStartGame={handleStartGame} onExitHost={exitHostMode} />
+    return <HostMode 
+      onStartGame={handleStartGame} 
+      onExitHost={exitHostMode} 
+      onEnterGilliamProjector={enterGilliamProjector}
+      onTriggerTransition={triggerCategoryTransition}
+    />
   }
 
   // Route to Opening Image Round
@@ -191,6 +243,32 @@ function App() {
         gamePhase={gamePhase}
         performanceScores={performanceScores}
         darkMode={darkMode}
+      />
+    )
+  }
+
+  // Route to Gilliam Projector Mode
+  if (gameMode === 'gilliam-projector') {
+    return (
+      <ProjectorMode
+        gameState={projectorState.gameState}
+        currentStack={selectedStack}
+        question={projectorState.currentQuestion}
+        teams={teams}
+        questionNumber={projectorState.questionNumber}
+        onClose={() => setGameMode('host')}
+      />
+    )
+  }
+
+  // Route to Category Transition
+  if (gameMode === 'category-transition') {
+    return (
+      <GilliamTransition
+        fromCategory={transitionState.fromCategory}
+        toCategory={transitionState.toCategory}
+        onComplete={handleTransitionComplete}
+        duration={6000}
       />
     )
   }
@@ -352,7 +430,17 @@ function App() {
                   : 'bg-blue-100 hover:bg-blue-200 text-blue-800 shadow-md'
               }`}
             >
-              Projector Mode
+              Classic Projector
+            </button>
+            <button
+              onClick={() => enterGilliamProjector('setup')}
+              className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+                darkMode 
+                  ? 'bg-amber-700 hover:bg-amber-600 text-white' 
+                  : 'bg-amber-100 hover:bg-amber-200 text-amber-800 shadow-md'
+              }`}
+            >
+              🎭 Gilliam Projector
             </button>
           </div>
           <button

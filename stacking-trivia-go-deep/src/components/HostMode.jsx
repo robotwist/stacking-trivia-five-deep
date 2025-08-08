@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react'
 
-export default function HostMode({ onStartGame, onExitHost }) {
+export default function HostMode({ 
+  onStartGame, 
+  onExitHost, 
+  onEnterGilliamProjector = () => {}, 
+  onTriggerTransition = () => {} 
+}) {
   const [teams, setTeams] = useState([])
   const [newTeamName, setNewTeamName] = useState('')
   const [gameState, setGameState] = useState('setup') // setup, playing, finished
@@ -199,6 +204,60 @@ export default function HostMode({ onStartGame, onExitHost }) {
               <br />Creative synthesis with props/music
             </div>
           </div>
+        </div>
+
+        {/* Gilliam Projector Controls */}
+        <div className={`p-8 rounded-2xl ${
+          darkMode 
+            ? 'bg-gray-900/50 border border-gray-700' 
+            : 'bg-white/50 border border-gray-200'
+        }`}>
+          <h3 className="text-xl font-bold mb-4">🎭 Terry Gilliam Projector</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button
+              onClick={() => onEnterGilliamProjector('setup')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                darkMode 
+                  ? 'bg-amber-700 hover:bg-amber-600 text-white' 
+                  : 'bg-amber-100 hover:bg-amber-200 text-amber-800 shadow-md'
+              }`}
+            >
+              🎪 Open Gilliam Projector
+            </button>
+            <button
+              onClick={() => onTriggerTransition('arts-culture', 'cinema')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                darkMode 
+                  ? 'bg-purple-700 hover:bg-purple-600 text-white' 
+                  : 'bg-purple-100 hover:bg-purple-200 text-purple-800 shadow-md'
+              }`}
+            >
+              🎨 Test Transition: Arts → Cinema
+            </button>
+            <button
+              onClick={() => onTriggerTransition('history', 'sports')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                darkMode 
+                  ? 'bg-green-700 hover:bg-green-600 text-white' 
+                  : 'bg-green-100 hover:bg-green-200 text-green-800 shadow-md'
+              }`}
+            >
+              🏛️ Test Transition: History → Sports
+            </button>
+            <button
+              onClick={() => onTriggerTransition('actually', 'arts-culture')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                darkMode 
+                  ? 'bg-indigo-700 hover:bg-indigo-600 text-white' 
+                  : 'bg-indigo-100 hover:bg-indigo-200 text-indigo-800 shadow-md'
+              }`}
+            >
+              🔍 Test Transition: Actually → Arts
+            </button>
+          </div>
+          <p className={`text-sm mt-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            Victorian collage animations connecting trivia categories with surreal humor
+          </p>
         </div>
       </div>
     </div>
