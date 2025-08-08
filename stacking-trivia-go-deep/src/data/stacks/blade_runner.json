@@ -1,0 +1,39 @@
+{
+  "title": "Blade Runner",
+  "questions": [
+    {
+      "q": "Who directed Blade Runner?",
+      "a": [
+        "ridley scott"
+      ]
+    },
+    {
+      "q": "What year is the film set in?",
+      "a": [
+        "2019"
+      ]
+    },
+    {
+      "q": "What is the name of the replicant hunter?",
+      "a": [
+        "deckard",
+        "rick deckard"
+      ]
+    },
+    {
+      "q": "Which company created the replicants?",
+      "a": [
+        "tyrell",
+        "tyrell corporation"
+      ]
+    },
+    {
+      "q": "What is the name of the Voight-Kampff test's purpose?",
+      "a": [
+        "empathy",
+        "detect empathy",
+        "measure empathy"
+      ]
+    }
+  ]
+}

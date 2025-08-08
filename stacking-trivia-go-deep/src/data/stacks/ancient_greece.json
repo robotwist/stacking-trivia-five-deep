@@ -1,0 +1,35 @@
+{
+  "title": "Ancient Greece",
+  "questions": [
+    {
+      "q": "Who was the most famous student of Socrates?",
+      "a": [
+        "plato"
+      ]
+    },
+    {
+      "q": "Which city-state was known for its military culture?",
+      "a": [
+        "sparta"
+      ]
+    },
+    {
+      "q": "What building sat atop the Acropolis?",
+      "a": [
+        "parthenon"
+      ]
+    },
+    {
+      "q": "What was the name of the war between Athens and Sparta?",
+      "a": [
+        "peloponnesian war"
+      ]
+    },
+    {
+      "q": "Who wrote the 'Histories' documenting Persian wars?",
+      "a": [
+        "herodotus"
+      ]
+    }
+  ]
+}
