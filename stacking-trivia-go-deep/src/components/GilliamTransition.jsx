@@ -76,13 +76,13 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
 
   return (
     <motion.div 
-      className="fixed inset-0 z-50 overflow-hidden"
+      className="fixed inset-0 z-50 overflow-hidden sepia"
       style={{
-        background: 'linear-gradient(45deg, #f4f1e8 0%, #e8dcc0 50%, #d4c5a0 100%)',
+        background: 'linear-gradient(45deg, #92400e 0%, #b45309 25%, #d97706 50%, #f59e0b 75%, #fbbf24 100%)',
         backgroundImage: `
-          radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 70%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
-          linear-gradient(0deg, rgba(0,0,0,0.05) 1px, transparent 1px)
+          radial-gradient(circle at 20% 30%, rgba(92, 64, 14, 0.2) 0%, transparent 50%),
+          radial-gradient(circle at 80% 70%, rgba(180, 83, 9, 0.2) 0%, transparent 50%),
+          linear-gradient(0deg, rgba(0,0,0,0.1) 1px, transparent 1px)
         `,
         backgroundSize: '100% 100%, 100% 100%, 40px 40px'
       }}
@@ -92,10 +92,9 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
     >
       {/* Decorative Victorian border */}
       <motion.div 
-        className="absolute inset-2 sm:inset-4 border-4 sm:border-8 border-amber-800"
+        className="absolute inset-2 sm:inset-4 border-4 sm:border-8 border-amber-800 rounded-sm"
         style={{
-          borderImage: 'repeating-linear-gradient(45deg, #8b4513, #8b4513 10px, #d4af37 10px, #d4af37 20px) 8',
-          borderRadius: '10px sm:20px'
+          borderImage: 'repeating-linear-gradient(45deg, #92400e, #92400e 10px, #f59e0b 10px, #f59e0b 20px) 8'
         }}
         initial={{ scale: 0.8, rotate: -2 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -110,10 +109,10 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
         transition={{ delay: 0.5, duration: 1, ease: "backOut" }}
       >
         <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 mb-2 sm:mb-4" 
-            style={{ fontFamily: 'serif', textShadow: '3px 3px 6px rgba(0,0,0,0.3)' }}>
+            style={{ fontFamily: 'Baskervville, serif', textShadow: '3px 3px 6px rgba(0,0,0,0.3)' }}>
           {transition.title}
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-amber-700 italic">
+        <p className="text-lg sm:text-xl md:text-2xl text-amber-700 italic" style={{ fontFamily: 'Baskervville, serif' }}>
           {transition.subtitle}
         </p>
       </motion.div>
@@ -144,8 +143,8 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
         }}
         transition={{ delay: 2, duration: 1 }}
       >
-        <div className="bg-amber-100 bg-opacity-90 mx-auto px-4 sm:px-8 py-2 sm:py-4 rounded-lg border-2 border-amber-600 max-w-xs sm:max-w-2xl">
-          <p className="text-sm sm:text-lg md:text-xl text-amber-900 font-semibold">
+        <div className="bg-gradient-to-r from-amber-100/90 to-yellow-100/90 mx-auto px-4 sm:px-8 py-2 sm:py-4 rounded-sm border-2 border-amber-600 max-w-xs sm:max-w-2xl sepia">
+          <p className="text-sm sm:text-lg md:text-xl text-amber-900 font-semibold" style={{ fontFamily: 'Baskervville, serif' }}>
             {transition.sequence}
           </p>
         </div>
@@ -159,14 +158,14 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
       >
         <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 border-2 sm:border-4 border-amber-700 rounded-full"
              style={{
-               background: 'conic-gradient(from 0deg, #d4af37, #b8860b, #d4af37)',
-               boxShadow: 'inset 0 0 10px rgba(0,0,0,0.3)'
+               background: 'conic-gradient(from 0deg, #f59e0b, #d97706, #f59e0b)',
+               boxShadow: 'inset 0 0 10px rgba(0,0,0,0.4)'
              }}>
           {/* Gear teeth */}
           {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-3 sm:w-2 sm:h-6 bg-amber-700"
+              className="absolute w-1 h-3 sm:w-2 sm:h-6 bg-amber-800"
               style={{
                 left: '50%',
                 top: '-4px',
@@ -181,7 +180,7 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
       {/* Phase-specific effects */}
       {currentPhase === 'climax' && (
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200 to-transparent opacity-30"
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300 to-transparent opacity-40 sepia"
           initial={{ x: '-100%' }}
           animate={{ x: '100%' }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -191,7 +190,7 @@ export default function GilliamTransition({ fromCategory, toCategory, onComplete
       {/* Exit countdown */}
       {currentPhase === 'exiting' && (
         <motion.div
-          className="absolute inset-0 bg-black"
+          className="absolute inset-0 bg-gradient-to-br from-amber-900 to-yellow-900"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
