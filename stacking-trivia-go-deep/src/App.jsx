@@ -18,10 +18,15 @@ import michaelJordanData from './data/categories/sports/michael-jordan.json'
 
 import bladeRunnerData from './data/categories/cinema/blade_runner.json'
 import godfatherData from './data/categories/cinema/the-godfather.json'
+import starWarsData from './data/categories/cinema/star-wars.json'
 
 import ancientGreeceData from './data/categories/history/ancient_greece.json'
 import cleopatraData from './data/categories/history/cleopatra.json'
 import einsteinData from './data/categories/history/einstein.json'
+
+import vanGoghMythsData from './data/categories/actually/van-gogh-myths.json'
+import einsteinMythsData from './data/categories/actually/einstein-myths.json'
+import shakespeareMythsData from './data/categories/actually/shakespeare-myths.json'
 
 import categoriesConfig from './data/categories.json'
 import './App.css'
@@ -42,11 +47,17 @@ const gameStacks = {
   // Cinema
   'blade_runner': bladeRunnerData,
   'the-godfather': godfatherData,
+  'star-wars': starWarsData,
   
   // History
   'ancient_greece': ancientGreeceData,
   'cleopatra': cleopatraData,
-  'einstein': einsteinData
+  'einstein': einsteinData,
+  
+  // Actually (Misconceptions)
+  'van-gogh-myths': vanGoghMythsData,
+  'einstein-myths': einsteinMythsData,
+  'shakespeare-myths': shakespeareMythsData
 }
 
 function App() {

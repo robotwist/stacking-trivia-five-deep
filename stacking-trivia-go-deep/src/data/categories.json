@@ -31,7 +31,8 @@
       "color": "from-red-600 to-orange-600",
       "stacks": [
         "blade_runner",
-        "the-godfather"
+        "the-godfather",
+        "star-wars"
       ]
     },
     "history": {
@@ -43,6 +44,17 @@
         "ancient_greece",
         "cleopatra",
         "einstein"
+      ]
+    },
+    "actually": {
+      "title": "Actually...",
+      "description": "For the corrector of the group - bust common myths and misconceptions",
+      "icon": "🤓",
+      "color": "from-indigo-600 to-purple-600",
+      "stacks": [
+        "van-gogh-myths",
+        "einstein-myths",
+        "shakespeare-myths"
       ]
     }
   }

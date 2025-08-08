@@ -1,0 +1,74 @@
+{
+  "title": "Actually: Shakespeare Wasn't Shakespeare?",
+  "image": "question-mark-quill.jpg",
+  "imageHint": "A quill pen forming a question mark - questioning the very authorship of the Bard",
+  "description": "Think you know who wrote Shakespeare? Actually, these authorship myths run deep...",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Actually, Shakespeare didn't write 'Romeo and Romeo.' What's the correct title?",
+      "answer": "Romeo and Juliet",
+      "acceptedAnswers": ["romeo and juliet"]
+    },
+    {
+      "level": 2,
+      "question": "Actually, Shakespeare didn't invent most of his plots. What percentage were original?",
+      "answer": "Almost none",
+      "acceptedAnswers": ["almost none", "none", "very few", "0%", "zero"]
+    },
+    {
+      "level": 3,
+      "question": "Actually, Shakespeare's name wasn't always spelled the same. How many different spellings exist?",
+      "answer": "Over 80",
+      "acceptedAnswers": ["over 80", "80", "more than 80", "about 80"]
+    },
+    {
+      "level": 4,
+      "question": "Actually, Shakespeare didn't write alone. Who likely helped with his later plays?",
+      "answer": "John Fletcher",
+      "acceptedAnswers": ["john fletcher", "fletcher"]
+    },
+    {
+      "level": 5,
+      "question": "Actually, Shakespeare wasn't educated at university. What's the highest education he likely received?",
+      "answer": "Grammar school",
+      "acceptedAnswers": ["grammar school", "primary school", "elementary school"]
+    }
+  ],
+  "deeper": {
+    "title": "DEEPER MODE UNLOCKED: The Authorship Question",
+    "description": "The deepest conspiracy theories about who really wrote Shakespeare's works...",
+    "questions": [
+      {
+        "level": 1,
+        "question": "Actually, some claim Shakespeare was really this Earl. Who do they suggest?",
+        "answer": "Edward de Vere",
+        "acceptedAnswers": ["edward de vere", "de vere", "earl of oxford"]
+      },
+      {
+        "level": 2,
+        "question": "Actually, Shakespeare's will mentions everything but what you'd expect. What's missing?",
+        "answer": "Books or manuscripts",
+        "acceptedAnswers": ["books", "manuscripts", "books or manuscripts", "writings"]
+      },
+      {
+        "level": 3,
+        "question": "Actually, we have no evidence Shakespeare could write. How many examples of his handwriting exist?",
+        "answer": "Six signatures",
+        "acceptedAnswers": ["six", "6", "six signatures", "6 signatures"]
+      },
+      {
+        "level": 4,
+        "question": "Actually, Shakespeare died on the same day as what other famous writer?",
+        "answer": "Miguel de Cervantes",
+        "acceptedAnswers": ["miguel de cervantes", "cervantes"]
+      },
+      {
+        "level": 5,
+        "question": "Actually, the First Folio was published how many years after Shakespeare's death?",
+        "answer": "Seven years",
+        "acceptedAnswers": ["seven", "7", "seven years", "7 years"]
+      }
+    ]
+  }
+}
