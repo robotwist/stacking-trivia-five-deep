@@ -344,10 +344,10 @@ function App() {
                 <button
                   key={stackKey}
                   onClick={() => handleStackSelect(stackKey)}
-                  className={`group p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
+                  className={`group p-4 sm:p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
                     darkMode
-                      ? 'bg-gray-800/50 hover:bg-gray-700/60 backdrop-blur-sm border border-gray-700/50'
-                      : 'bg-white/70 hover:bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl border border-white/50'
+                      ? 'bg-gray-800/50 hover:bg-gray-700/70 backdrop-blur-sm border border-gray-700/50'
+                      : 'bg-white/80 hover:bg-white/95 backdrop-blur-sm shadow-lg hover:shadow-xl border border-gray-200/30'
                   }`}
                 >
                   {/* Visual hint area */}
@@ -400,55 +400,55 @@ function App() {
         : 'bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 text-gray-900'
     }`}>
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-8">
-          <div className="flex space-x-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
+          <div className="flex flex-wrap gap-2 sm:gap-3 order-2 sm:order-1 justify-center sm:justify-start">
             <button
               onClick={enterHostMode}
-              className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+              className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                 darkMode 
-                  ? 'bg-purple-700 hover:bg-purple-600 text-white' 
-                  : 'bg-purple-100 hover:bg-purple-200 text-purple-800 shadow-md'
+                  ? 'bg-purple-700 hover:bg-purple-600 text-white border border-purple-600' 
+                  : 'bg-purple-600 hover:bg-purple-700 text-white'
               }`}
             >
               Host Mode
             </button>
             <button
               onClick={enterPerformanceFinale}
-              className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+              className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                 darkMode 
-                  ? 'bg-yellow-700 hover:bg-yellow-600 text-white' 
-                  : 'bg-yellow-100 hover:bg-yellow-200 text-yellow-800 shadow-md'
+                  ? 'bg-yellow-700 hover:bg-yellow-600 text-white border border-yellow-600' 
+                  : 'bg-yellow-600 hover:bg-yellow-700 text-white'
               }`}
             >
               Performance Finale
             </button>
             <button
               onClick={enterProjectorMode}
-              className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+              className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                 darkMode 
-                  ? 'bg-blue-700 hover:bg-blue-600 text-white' 
-                  : 'bg-blue-100 hover:bg-blue-200 text-blue-800 shadow-md'
+                  ? 'bg-blue-700 hover:bg-blue-600 text-white border border-blue-600' 
+                  : 'bg-blue-600 hover:bg-blue-700 text-white'
               }`}
             >
               Classic Projector
             </button>
             <button
               onClick={() => enterGilliamProjector('setup')}
-              className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+              className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm sm:text-base ${
                 darkMode 
-                  ? 'bg-amber-700 hover:bg-amber-600 text-white' 
-                  : 'bg-amber-100 hover:bg-amber-200 text-amber-800 shadow-md'
+                  ? 'bg-amber-700 hover:bg-amber-600 text-white border border-amber-600' 
+                  : 'bg-amber-600 hover:bg-amber-700 text-white'
               }`}
             >
-              🎭 Gilliam Projector
+              Gilliam Projector
             </button>
           </div>
           <button
             onClick={toggleDarkMode}
-            className={`p-3 rounded-lg transition-all duration-200 ${
+            className={`p-2 sm:p-3 rounded-lg transition-all duration-200 order-1 sm:order-2 ${
               darkMode 
-                ? 'bg-gray-800 hover:bg-gray-700 text-white' 
-                : 'bg-white hover:bg-gray-50 text-gray-700 shadow-md'
+                ? 'bg-gray-700 hover:bg-gray-600 text-white border border-gray-600' 
+                : 'bg-gray-800 hover:bg-gray-700 text-white'
             }`}
           >
             {darkMode ? 'Light' : 'Dark'}
@@ -468,15 +468,15 @@ function App() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-2 sm:px-4">
           {Object.entries(categoriesConfig.categories).map(([key, category]) => (
             <button
               key={key}
               onClick={() => handleCategorySelect(key)}
               className={`group p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
                 darkMode
-                  ? 'bg-gray-800/30 hover:bg-gray-700/50 backdrop-blur-sm border border-gray-700/30'
-                  : 'bg-white/60 hover:bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl border border-white/40'
+                  ? 'bg-gray-800/50 hover:bg-gray-700/70 backdrop-blur-sm border border-gray-700/50'
+                  : 'bg-white/80 hover:bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl border border-gray-200/30'
               }`}
             >
               <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
