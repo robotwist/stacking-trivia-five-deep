@@ -9,7 +9,8 @@
         "van-gogh",
         "the_beatles", 
         "frida-kahlo",
-        "miles-davis"
+        "miles-davis",
+        "shakespeare"
       ]
     },
     "sports": {
@@ -40,7 +41,8 @@
       "color": "from-yellow-600 to-red-600",
       "stacks": [
         "ancient_greece",
-        "cleopatra"
+        "cleopatra",
+        "einstein"
       ]
     }
   }

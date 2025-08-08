@@ -10,6 +10,7 @@ import vanGoghData from './data/categories/arts-culture/van-gogh.json'
 import beatlesData from './data/categories/arts-culture/the_beatles.json'
 import fridaKahloData from './data/categories/arts-culture/frida-kahlo.json'
 import milesDavisData from './data/categories/arts-culture/miles-davis.json'
+import shakespeareData from './data/categories/arts-culture/shakespeare.json'
 
 import olympicCurrentData from './data/categories/sports/olympic_distance_current.json'
 import muhammadAliData from './data/categories/sports/muhammad-ali.json'
@@ -20,6 +21,7 @@ import godfatherData from './data/categories/cinema/the-godfather.json'
 
 import ancientGreeceData from './data/categories/history/ancient_greece.json'
 import cleopatraData from './data/categories/history/cleopatra.json'
+import einsteinData from './data/categories/history/einstein.json'
 
 import categoriesConfig from './data/categories.json'
 import './App.css'
@@ -30,6 +32,7 @@ const gameStacks = {
   'the_beatles': beatlesData,
   'frida-kahlo': fridaKahloData,
   'miles-davis': milesDavisData,
+  'shakespeare': shakespeareData,
   
   // Sports
   'olympic_distance_current': olympicCurrentData,
@@ -42,7 +45,8 @@ const gameStacks = {
   
   // History
   'ancient_greece': ancientGreeceData,
-  'cleopatra': cleopatraData
+  'cleopatra': cleopatraData,
+  'einstein': einsteinData
 }
 
 function App() {
@@ -257,6 +261,24 @@ function App() {
                       : 'bg-white/70 hover:bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl border border-white/50'
                   }`}
                 >
+                  {/* Visual hint area */}
+                  {stack.imageHint && (
+                    <div className={`mb-4 p-4 rounded-lg ${
+                      darkMode ? 'bg-gray-700/30' : 'bg-gray-100/50'
+                    }`}>
+                      <div className={`text-center mb-2 ${
+                        darkMode ? 'text-yellow-400' : 'text-yellow-600'
+                      }`}>
+                        🖼️
+                      </div>
+                      <p className={`text-xs text-center italic ${
+                        darkMode ? 'text-gray-300' : 'text-gray-600'
+                      }`}>
+                        {stack.imageHint}
+                      </p>
+                    </div>
+                  )}
+                  
                   <div className={`w-full h-2 rounded-full mb-4 bg-gradient-to-r ${category.color}`}></div>
                   <h3 className="text-xl font-bold mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {stack.title}
