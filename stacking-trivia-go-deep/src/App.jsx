@@ -396,8 +396,8 @@ function App() {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
       darkMode 
-        ? 'bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white' 
-        : 'bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 text-gray-900'
+        ? 'bg-gradient-to-br from-amber-900 via-yellow-900 to-amber-800 text-amber-50' 
+        : 'bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900'
     }`}>
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
@@ -456,7 +456,7 @@ function App() {
         </div>
         
         <div className="text-center mb-8 sm:mb-12 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-amber-700 via-yellow-600 to-amber-800 bg-clip-text text-transparent">
             DeepStack
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium">
