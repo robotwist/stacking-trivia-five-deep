@@ -19,7 +19,7 @@ export default function ProjectorMode({
   const getCategoryArt = (category) => {
     const artMap = {
       'arts-culture': {
-        background: 'linear-gradient(135deg, #8B4513 0%, #DEB887 50%, #D2691E 100%)',
+        background: 'linear-gradient(135deg, #92400e 0%, #d97706 30%, #f59e0b 60%, #fbbf24 100%)',
         elements: [
           { src: '/art/gilliam/elements/paintbrush.png', x: '5%', y: '15%', animation: 'float' },
           { src: '/art/gilliam/elements/artist-palette.png', x: '85%', y: '75%', animation: 'wobble' },
@@ -27,7 +27,7 @@ export default function ProjectorMode({
         ]
       },
       'cinema': {
-        background: 'linear-gradient(135deg, #2F4F4F 0%, #708090 50%, #4682B4 100%)',
+        background: 'linear-gradient(135deg, #78350f 0%, #a16207 30%, #ca8a04 60%, #eab308 100%)',
         elements: [
           { src: '/art/gilliam/elements/film-reel.png', x: '8%', y: '20%', animation: 'rotate' },
           { src: '/art/gilliam/elements/movie-camera.png', x: '90%', y: '10%', animation: 'drift' },
@@ -35,7 +35,7 @@ export default function ProjectorMode({
         ]
       },
       'history': {
-        background: 'linear-gradient(135deg, #8B0000 0%, #CD853F 50%, #DAA520 100%)',
+        background: 'linear-gradient(135deg, #a16207 0%, #ca8a04 30%, #eab308 60%, #facc15 100%)',
         elements: [
           { src: '/art/gilliam/elements/ancient-scroll.png', x: '7%', y: '25%', animation: 'wobble' },
           { src: '/art/gilliam/elements/colosseum.png', x: '87%', y: '65%', animation: 'pulse' },
@@ -43,7 +43,7 @@ export default function ProjectorMode({
         ]
       },
       'sports': {
-        background: 'linear-gradient(135deg, #228B22 0%, #32CD32 50%, #90EE90 100%)',
+        background: 'linear-gradient(135deg, #92400e 0%, #b45309 30%, #d97706 60%, #f59e0b 100%)',
         elements: [
           { src: '/art/gilliam/elements/boxing-gloves.png', x: '10%', y: '30%', animation: 'wobble' },
           { src: '/art/gilliam/elements/olympic-rings.png', x: '85%', y: '20%', animation: 'pulse' },
@@ -51,7 +51,7 @@ export default function ProjectorMode({
         ]
       },
       'actually': {
-        background: 'linear-gradient(135deg, #4B0082 0%, #8A2BE2 50%, #9932CC 100%)',
+        background: 'linear-gradient(135deg, #a16207 0%, #d97706 30%, #f59e0b 60%, #fbbf24 100%)',
         elements: [
           { src: '/art/gilliam/elements/magnifying-glass.png', x: '12%', y: '18%', animation: 'wobble' },
           { src: '/art/gilliam/elements/question-mark.png', x: '88%', y: '72%', animation: 'float' },
@@ -66,18 +66,18 @@ export default function ProjectorMode({
 
   if (gameState === 'setup') {
     return (
-      <div className="fixed inset-0 bg-black text-white flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-gradient-to-br from-amber-900 via-yellow-900 to-amber-800 text-amber-50 flex items-center justify-center z-50 sepia">
         <motion.div 
           className="text-center"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "backOut" }}
         >
-          <h1 className="text-8xl font-bold mb-8 text-yellow-400" 
-              style={{ fontFamily: 'serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}>
+          <h1 className="text-8xl font-bold mb-8 text-amber-200" 
+              style={{ fontFamily: 'Baskervville, serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}>
             DeepStack
           </h1>
-          <p className="text-3xl text-gray-300 mb-12">Trivia That Dares to Matter</p>
+          <p className="text-3xl text-amber-300 mb-12" style={{ fontFamily: 'Baskervville, serif' }}>Trivia That Dares to Matter</p>
           
           {/* Decorative elements */}
           {showDecoration && (
@@ -91,7 +91,8 @@ export default function ProjectorMode({
           
           <motion.button
             onClick={onClose}
-            className="text-xl bg-yellow-600 hover:bg-yellow-500 px-8 py-4 rounded-lg transition-colors"
+            className="text-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 px-8 py-4 rounded-sm border-2 border-amber-500 hover:border-amber-400 transition-all sepia hover:sepia-0"
+            style={{ fontFamily: 'Baskervville, serif' }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -109,13 +110,13 @@ export default function ProjectorMode({
     >
       {/* Victorian paper texture overlay */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30 sepia"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.3) 0%, transparent 50%),
-            linear-gradient(0deg, rgba(0,0,0,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)
+            radial-gradient(circle at 25% 25%, rgba(92, 64, 14, 0.4) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(180, 83, 9, 0.4) 0%, transparent 50%),
+            linear-gradient(0deg, rgba(0,0,0,0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px)
           `,
           backgroundSize: '200px 200px, 200px 200px, 40px 40px, 40px 40px'
         }}
@@ -135,10 +136,10 @@ export default function ProjectorMode({
       ))}
 
       {/* Ornate border frame */}
-      <div className="absolute inset-8 border-8 border-yellow-400 rounded-3xl"
+      <div className="absolute inset-8 border-8 border-amber-400 rounded-sm sepia"
            style={{
-             borderImage: 'repeating-linear-gradient(45deg, #ffd700, #ffd700 10px, #ffb347 10px, #ffb347 20px) 8',
-             boxShadow: 'inset 0 0 50px rgba(255, 215, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.5)'
+             borderImage: 'repeating-linear-gradient(45deg, #f59e0b, #f59e0b 10px, #fbbf24 10px, #fbbf24 20px) 8',
+             boxShadow: 'inset 0 0 50px rgba(245, 158, 11, 0.3), 0 0 50px rgba(0, 0, 0, 0.6)'
            }} />
 
       {/* Content Area */}
@@ -158,7 +159,7 @@ export default function ProjectorMode({
               animate={{ scale: 1 }}
               transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
             >
-              <div className="inline-block bg-yellow-400 text-black px-4 py-2 sm:px-6 sm:py-3 rounded-full text-lg sm:text-2xl font-bold">
+              <div className="inline-block bg-gradient-to-r from-amber-400 to-yellow-400 text-amber-900 px-4 py-2 sm:px-6 sm:py-3 rounded-sm border-2 border-amber-500 text-lg sm:text-2xl font-bold sepia">
                 Level {questionNumber} • {question.points} Points
               </div>
             </motion.div>
@@ -167,9 +168,9 @@ export default function ProjectorMode({
             <motion.h2 
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-12 leading-tight"
               style={{ 
-                fontFamily: 'serif',
+                fontFamily: 'Baskervville, serif',
                 textShadow: '3px 3px 6px rgba(0,0,0,0.8)',
-                filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.1))'
+                filter: 'drop-shadow(0 0 20px rgba(245,158,11,0.2))'
               }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -180,7 +181,7 @@ export default function ProjectorMode({
 
             {/* Decorative divider */}
             <motion.div 
-              className="w-32 sm:w-48 md:w-64 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-4 sm:mb-8"
+              className="w-32 sm:w-48 md:w-64 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-4 sm:mb-8 sepia"
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
               transition={{ delay: 1.5, duration: 1 }}
@@ -188,7 +189,8 @@ export default function ProjectorMode({
 
             {/* Stack info */}
             <motion.p 
-              className="text-lg sm:text-xl md:text-2xl text-yellow-200"
+              className="text-lg sm:text-xl md:text-2xl text-amber-200"
+              style={{ fontFamily: 'Baskervville, serif' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
@@ -205,7 +207,8 @@ export default function ProjectorMode({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "backOut" }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-12 text-yellow-400">Current Standings</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-12 text-amber-200" 
+                style={{ fontFamily: 'Baskervville, serif' }}>Current Standings</h2>
             
             <div className="space-y-3 sm:space-y-6">
               {teams
@@ -213,18 +216,21 @@ export default function ProjectorMode({
                 .map((team, index) => (
                 <motion.div
                   key={team.id}
-                  className="flex flex-col sm:flex-row justify-between items-center bg-black bg-opacity-50 p-3 sm:p-6 rounded-lg border-2 border-yellow-400"
+                  className="flex flex-col sm:flex-row justify-between items-center bg-gradient-to-r from-amber-900/60 via-yellow-900/50 to-amber-800/60 p-3 sm:p-6 rounded-sm border-2 border-amber-400 sepia"
                   initial={{ x: -100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.2, duration: 0.8 }}
                 >
                   <div className="flex items-center mb-2 sm:mb-0">
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-400 w-8 sm:w-16">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-200 w-8 sm:w-16" 
+                         style={{ fontFamily: 'Baskervville, serif' }}>
                       #{index + 1}
                     </div>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-semibold ml-2">{team.name}</div>
+                    <div className="text-xl sm:text-2xl md:text-3xl font-semibold ml-2 text-amber-100" 
+                         style={{ fontFamily: 'Baskervville, serif' }}>{team.name}</div>
                   </div>
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-400">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-200" 
+                       style={{ fontFamily: 'Baskervville, serif' }}>
                     {team.score}
                   </div>
                 </motion.div>
@@ -240,11 +246,12 @@ export default function ProjectorMode({
             animate={{ opacity: 1, rotateY: 0 }}
             transition={{ duration: 1.5, ease: "backOut" }}
           >
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-8 text-yellow-400" 
-                style={{ fontFamily: 'serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-8 text-amber-200" 
+                style={{ fontFamily: 'Baskervville, serif', textShadow: '4px 4px 8px rgba(0,0,0,0.5)' }}>
               PERFORMANCE FINALE!
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-200 mb-6 sm:mb-12">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-amber-300 mb-6 sm:mb-12" 
+               style={{ fontFamily: 'Baskervville, serif' }}>
               Time to showcase your expertise!
             </p>
             
@@ -261,7 +268,7 @@ export default function ProjectorMode({
                 ease: "easeInOut"
               }}
             >
-              ✨🎪✨
+              — ❦ —
             </motion.div>
           </motion.div>
         )}
@@ -270,7 +277,8 @@ export default function ProjectorMode({
       {/* Close button (always visible) */}
       <motion.button
         onClick={onClose}
-        className="absolute top-4 right-4 sm:top-8 sm:right-8 text-lg sm:text-2xl bg-black bg-opacity-70 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-opacity-90 transition-all z-20"
+        className="absolute top-4 right-4 sm:top-8 sm:right-8 text-lg sm:text-2xl bg-gradient-to-r from-amber-800/80 to-yellow-800/80 text-amber-100 px-3 py-2 sm:px-6 sm:py-3 rounded-sm border-2 border-amber-500 hover:border-amber-400 hover:from-amber-700/90 hover:to-yellow-700/90 transition-all z-20 sepia hover:sepia-0"
+        style={{ fontFamily: 'Baskervville, serif' }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0 }}
