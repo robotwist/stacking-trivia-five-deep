@@ -1,13 +1,18 @@
 # 🎯 DeepStack: Current State → Vision Roadmap
 
-## **Where We Are Now (MDP/MVP)**
+## **Where We Are Now (Enhanced MDP)**
 
 ### ✅ **Implemented**
 - **Core Game Engine**: 5-question stacks with exponential scoring (10 × 2^depth)
-- **Stack System**: JSON-based trivia content with multiple topics
-- **Basic UI**: React + Tailwind, topic selection, answer input
-- **Deployment**: Production-ready on Netlify + Heroku
-- **Content**: 7+ trivia stacks (Van Gogh, Olympics, Beatles, etc.)
+- **DEEPER MODE**: 🔥 Obsessive bonus rounds unlock after completing stacks (200/400/800 pts)
+- **Enhanced Stack System**: Categorized JSON-based trivia with sequential depth progression
+- **Modern UI**: React + Tailwind with dark/light mode, responsive design, interactive animations
+- **Deployment**: Production-ready on Netlify with proper build configuration
+- **Categorized Content**: 12+ trivia stacks organized into Arts & Culture, Sports, Cinema, History
+- **True Sequential Depth**: Each question builds meaningfully on previous answers
+- **Flexible Answer Matching**: Handles variations, punctuation, partial matches
+- **Responsive Design**: Mobile-first approach with professional UX/UI
+- **Risk/Reward Mechanics**: Players can risk their score for bonus obsessive questions
 
 ### ❌ **Missing from Vision**
 - **Opening Image Round**: Visual prompt → 5-deep → determines first player
@@ -72,11 +77,16 @@
 ## **📈 3-Phase Roadmap**
 
 ### **Phase 1: Bar-Ready MDP** *(2-3 weeks)*
+- [x] Enhanced categorized stack system with 12+ stacks
+- [x] True sequential depth progression (each question builds on previous)
+- [x] Professional responsive UI with dark/light mode
+- [x] Flexible answer matching system
+- [x] Interactive stack selection with category organization
 - [ ] Host/Admin mode with team management
 - [ ] Opening image round (hardcoded for now)  
 - [ ] Performance finale placeholder
 - [ ] Projector-friendly scoreboard
-- [ ] Basic "depth descent" UI metaphors
+- [x] Basic "depth descent" UI metaphors and animations
 
 ### **Phase 2: Theatrical Experience** *(1-2 months)*
 - [ ] Animated intros and transitions
