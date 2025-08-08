@@ -5,6 +5,8 @@
 ### ✅ **Implemented**
 - **Core Game Engine**: 5-question stacks with exponential scoring (10 × 2^depth)
 - **DEEPER MODE**: 🔥 Obsessive bonus rounds unlock after completing stacks (200/400/800 pts)
+- **HOST MODE**: 🎭 Multi-team management for bar deployment (2-6 teams supported)
+- **Opening Image Round**: 🎬 Visual prompts (Tesla, Coca-Cola) with collaborative 5-stacks
 - **Enhanced Stack System**: Categorized JSON-based trivia with sequential depth progression
 - **Modern UI**: React + Tailwind with dark/light mode, responsive design, interactive animations
 - **Deployment**: Production-ready on Netlify with proper build configuration
@@ -82,8 +84,8 @@
 - [x] Professional responsive UI with dark/light mode
 - [x] Flexible answer matching system
 - [x] Interactive stack selection with category organization
-- [ ] Host/Admin mode with team management
-- [ ] Opening image round (hardcoded for now)  
+- [x] Host/Admin mode with team management (2-6 teams)
+- [x] Opening image round with visual prompts (Tesla, Coca-Cola ads)
 - [ ] Performance finale placeholder
 - [ ] Projector-friendly scoreboard
 - [x] Basic "depth descent" UI metaphors and animations
