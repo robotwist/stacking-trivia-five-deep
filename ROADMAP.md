@@ -3,7 +3,7 @@
 ## **Where We Are Now (Enhanced MDP)**
 
 ### ✅ **Implemented**
-- **Core Game Engine**: 5-question stacks with exponential scoring (10 × 2^depth)
+- **Core Game Engine**: 5-question stacks with progressive scoring (10 → 20 → 40 → 80 → 160)
 - **DEEPER MODE**: 🔥 Obsessive bonus rounds unlock after completing stacks (200/400/800 pts)
 - **HOST MODE**: 🎭 Multi-team management for bar deployment (2-6 teams supported)
 - **Opening Image Round**: 🎬 Visual prompts (Tesla, Coca-Cola) with collaborative 5-stacks
