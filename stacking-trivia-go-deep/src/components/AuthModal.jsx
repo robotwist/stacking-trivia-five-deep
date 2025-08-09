@@ -76,7 +76,7 @@ const AuthModal = ({ isOpen, onClose, mode: initialMode = 'login' }) => {
         <div className="text-center mb-6">
           <div className="text-4xl mb-4" style={{ fontFamily: 'Baskervville, serif' }} aria-hidden="true">— ❦ —</div>
                     <h1 id="auth-modal-title" className="text-2xl font-bold text-amber-800 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
-            {isLogin ? 'Login to DeepStack' : 'Join DeepStack'}
+            {mode === 'login' ? 'Login to DeepStack' : 'Join DeepStack'}
           </h1>
           <p id="auth-modal-description" className="text-amber-600 dark:text-amber-300 mt-2">
             {mode === 'login' 
