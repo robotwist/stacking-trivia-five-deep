@@ -9,15 +9,9 @@ import GilliamTransition from './components/GilliamTransition'
 import SinglePlayerMode from './components/SinglePlayerMode'
 import BarTriviaNight from './components/BarTriviaNight'
 
-// Utility function to shuffle array
-const shuffleArray = (array) => {
-  const shuffled = [...array]
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
-  }
-  return shuffled
-}
+// Import utilities
+import { shuffleArray } from './utils/arrayUtils'
+import { useDarkMode, useGameHistory } from './hooks/gameHooks'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -117,14 +111,13 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false)
   const [gameMode, setGameMode] = useState('solo') // solo, single-player, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition, bar-trivia
   const [teams, setTeams] = useState([])
-  const [gameHistory, setGameHistory] = useState([])
   const [performanceScores, setPerformanceScores] = useState({})
   const [currentRound, setCurrentRound] = useState('Game')
   const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('darkMode') === 'true' || 
-           window.matchMedia('(prefers-color-scheme: dark)').matches
-  })
+  
+  // Use custom hooks
+  const [darkMode, toggleDarkMode] = useDarkMode()
+  const [gameHistory, addToGameHistory] = useGameHistory()
   
   // Gilliam transition state
   const [transitionState, setTransitionState] = useState({
@@ -137,15 +130,6 @@ function App() {
     currentQuestion: null,
     questionNumber: 1
   })
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', darkMode.toString())
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const handleStackSelect = (stackKey) => {
     setSelectedStack(stackKey)
@@ -168,10 +152,6 @@ function App() {
   const handleBackToStacks = () => {
     setSelectedStack(null)
     setGameStarted(false)
-  }
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
   }
 
   // Host Mode handlers
@@ -249,11 +229,7 @@ function App() {
   }
 
   const trackGameAction = (action, stackTitle = null) => {
-    setGameHistory(prev => [...prev, { 
-      action, 
-      stackTitle, 
-      timestamp: Date.now() 
-    }])
+    addToGameHistory(action, stackTitle)
   }
 
   // Route to Host Mode
