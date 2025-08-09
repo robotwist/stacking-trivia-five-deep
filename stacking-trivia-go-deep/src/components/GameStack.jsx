@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-import GameplayEnhancements from './GameplayEnhancements';
 import QuickHostControls from './QuickHostControls';
-import TransitionCountdown from './TransitionCountdown';
 
 export default function GameStack({ 
   stackData, 
@@ -23,12 +21,10 @@ export default function GameStack({
   const [deepModeDepth, setDeepModeDepth] = useState(0);
   const [showDeeperModeOffer, setShowDeeperModeOffer] = useState(false);
   
-  // Phase 8 enhancements
-  const [celebrationState, setCelebrationState] = useState({ show: false, type: 'correct' });
+  // Phase 8 enhancements - simplified
   const [crowdEnergy, setCrowdEnergy] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
-  const [showTransition, setShowTransition] = useState(false);
-  const [transitionMessage, setTransitionMessage] = useState('');
+  const [scoreAnimation, setScoreAnimation] = useState(false);
   
   const [darkMode, setDarkMode] = useState(() => {
     return document.documentElement.classList.contains('dark')
@@ -58,25 +54,10 @@ export default function GameStack({
   
   const current = getCurrentQuestion();
 
-  // Phase 8: Enhanced celebration triggers
-  const triggerCelebration = (type, callback) => {
-    if (enableCelebrations) {
-      setCelebrationState({ show: true, type });
-      
-      // Adjust crowd energy based on performance
-      if (type === 'correct') {
-        setCrowdEnergy(prev => Math.min(5, prev + 0.5));
-      } else if (type === 'wrong') {
-        setCrowdEnergy(prev => Math.max(1, prev - 0.3));
-      }
-      
-      setTimeout(() => {
-        setCelebrationState({ show: false, type });
-        if (callback) callback();
-      }, type === 'gameComplete' ? 3000 : 1500);
-    } else if (callback) {
-      callback();
-    }
+  // Simplified score animation trigger
+  const animateScore = () => {
+    setScoreAnimation(true);
+    setTimeout(() => setScoreAnimation(false), 1000);
   };
 
   // Phase 8: Host control functions
@@ -98,7 +79,6 @@ export default function GameStack({
       setInput('');
       setFeedback('');
       setShowHint(false);
-      triggerCelebration('levelUp');
     }
   };
 
@@ -106,14 +86,6 @@ export default function GameStack({
     // Placeholder for actual sound implementation
     console.log(`Playing sound: ${soundType}`);
     // Future: integrate with Web Audio API or Howler.js
-  };
-
-  const showLevelTransition = (message) => {
-    setTransitionMessage(message);
-    setShowTransition(true);
-    setTimeout(() => {
-      setShowTransition(false);
-    }, 3000);
   };
 
   const checkAnswer = () => {
@@ -160,59 +132,45 @@ export default function GameStack({
         // Handle Deeper Mode scoring
         const bonusPoints = current.bonus || 100;
         const newScore = score + bonusPoints;
-        setScore(newScore);
-        setFeedback(`DEEPER MODE CORRECT! +${bonusPoints} bonus points!`);
-        
-        // Phase 8: Enhanced celebration for deeper mode
-        triggerCelebration('correct', () => {
+      setScore(newScore);
+      setFeedback(`DEEPER MODE CORRECT! +${bonusPoints} bonus points!`);
+      animateScore();        // Simple deeper mode progression
+        setTimeout(() => {
           if (deepModeDepth + 1 >= stackData.deeperMode.questions.length) {
-            triggerCelebration('gameComplete', () => {
-              if (onComplete) onComplete(newScore);
-            });
+            if (onComplete) onComplete(newScore);
           } else {
             setDeepModeDepth(deepModeDepth + 1);
             setInput('');
             setFeedback('');
             setShowHint(false);
           }
-        });
+        }, 1200); // Brief pause to show bonus points
       } else {
         // Handle regular mode scoring
         const pointsEarned = 10 * Math.pow(2, depth);
         const newScore = score + pointsEarned;
-        setScore(newScore);
-        setFeedback(`Correct! +${pointsEarned} points!`);
-        
-        // Phase 8: Enhanced celebrations and transitions
-        triggerCelebration('correct', () => {
+      setScore(newScore);
+      setFeedback(`Correct! +${pointsEarned} points!`);
+      animateScore();        // Simple progression without complex celebrations
+        setTimeout(() => {
           if (depth + 1 >= stackData.questions.length) {
             // Check if Deeper Mode is available
             if (stackData.deeperMode && !showDeeperModeOffer) {
-              showLevelTransition("Entering Deeper Mode Decision...");
               setShowDeeperModeOffer(true);
               setFeedback('');
               return;
             } else {
-              triggerCelebration('gameComplete', () => {
-                if (onComplete) onComplete(newScore);
-              });
+              if (onComplete) onComplete(newScore);
               return;
             }
           }
           
-          // Regular level progression with transition
-          if (depth + 1 === Math.floor(stackData.questions.length / 2)) {
-            showLevelTransition("Halfway there! Questions getting harder...");
-          } else if (depth + 1 === stackData.questions.length - 1) {
-            showLevelTransition("Final question coming up!");
-          }
-          
-          // Move to next question immediately after correct celebration
+          // Move to next question
           setDepth(depth + 1);
           setInput('');
           setFeedback('');
           setShowHint(false);
-        });
+        }, 1200); // Brief pause to show the points being added
       }
     } else {
       const correctAnswer = current.answer || (current.acceptedAnswers && current.acceptedAnswers[0]) || (current.a && current.a[0]) || 'Unknown';
@@ -221,15 +179,13 @@ export default function GameStack({
       
       console.log('Wrong answer - ending with score:', score); // Debug log
       
-      // Phase 8: Wrong answer celebration and completion
-      triggerCelebration('wrong', () => {
-        setTimeout(() => {
-          if (onComplete) {
-            console.log('Calling onComplete with score:', score); // Debug log
-            onComplete(score);
-          }
-        }, 2000);
-      });
+      // Simple wrong answer handling
+      setTimeout(() => {
+        if (onComplete) {
+          console.log('Calling onComplete with score:', score); // Debug log
+          onComplete(score);
+        }
+      }, 2000);
     }
   };
 
@@ -315,11 +271,7 @@ export default function GameStack({
       : "from-amber-600 to-yellow-600";
     
     return (
-      <GameplayEnhancements
-        isVisible={true}
-        celebrationType="gameComplete"
-      >
-        <div className={`p-8 max-w-2xl mx-auto rounded-sm border-2 border-amber-400 text-center sepia ${
+      <div className={`p-8 max-w-2xl mx-auto rounded-sm border-2 border-amber-400 text-center sepia ${
           darkMode 
             ? 'bg-gradient-to-br from-amber-900/90 via-yellow-900/80 to-amber-800/90 text-amber-50' 
             : 'bg-gradient-to-br from-amber-50/90 via-yellow-50/80 to-amber-100/90 text-amber-900'
@@ -361,7 +313,6 @@ export default function GameStack({
             Choose Another Stack
           </button>
         </div>
-      </GameplayEnhancements>
     );
   }
 
@@ -380,16 +331,6 @@ export default function GameStack({
 
   return (
     <>
-      {/* Phase 8: Transition Countdown */}
-      <TransitionCountdown
-        isVisible={showTransition}
-        countdownFrom={3}
-        message={transitionMessage}
-        crowdEnergy={crowdEnergy}
-        barMode={isHostMode}
-        onComplete={() => setShowTransition(false)}
-      />
-
       {/* Phase 8: Host Controls */}
       {showHostControls && (
         <QuickHostControls
@@ -406,13 +347,8 @@ export default function GameStack({
         />
       )}
 
-      {/* Main Game Interface with Celebrations */}
-      <GameplayEnhancements
-        isVisible={celebrationState.show}
-        celebrationType={celebrationState.type}
-        onAnimationComplete={() => setCelebrationState({ show: false, type: 'correct' })}
-      >
-        <div className={`p-6 sm:p-8 max-w-4xl mx-auto rounded-sm border-2 border-amber-400 sepia ${
+      {/* Main Game Interface - Simplified */}
+      <div className={`p-6 sm:p-8 max-w-4xl mx-auto rounded-sm border-2 border-amber-400 sepia ${
           darkMode 
             ? 'bg-gradient-to-br from-amber-900/90 via-yellow-900/80 to-amber-800/90 text-amber-50' 
             : 'bg-gradient-to-br from-amber-50/90 via-yellow-50/80 to-amber-100/90 text-amber-900'
@@ -474,8 +410,13 @@ export default function GameStack({
                 </div>
               </div>
               <div className="mt-4 sm:mt-0 text-right">
-                <div className="text-2xl sm:text-3xl font-bold text-amber-700 dark:text-amber-300" style={{ fontFamily: 'Baskervville, serif' }}>
+                <div className={`text-2xl sm:text-3xl font-bold transition-all duration-500 ${
+                  scoreAnimation ? 'scale-125 text-green-600 dark:text-green-400' : 'text-amber-700 dark:text-amber-300'
+                }`} style={{ fontFamily: 'Baskervville, serif' }}>
                   {score}
+                  {scoreAnimation && (
+                    <span className="inline-block animate-bounce ml-2">+{10 * Math.pow(2, depth - 1)}</span>
+                  )}
                 </div>
                 <div className={`text-sm ${darkMode ? 'text-amber-400' : 'text-amber-600'}`} style={{ fontFamily: 'Baskervville, serif' }}>
                   Total Score
@@ -599,7 +540,6 @@ export default function GameStack({
             </div>
           </div>
         </div>
-      </GameplayEnhancements>
     </>
   );
 }
