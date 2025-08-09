@@ -15,11 +15,17 @@ export class StackUnlockManager {
 
   loadUnlockedStacks() {
     const saved = localStorage.getItem('deeply-trivial-unlocked-stacks');
-    return saved ? JSON.parse(saved) : new Set();
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      // Ensure we return a Set, whether saved data is array or object
+      return new Set(Array.isArray(parsed) ? parsed : Object.keys(parsed));
+    }
+    return new Set();
   }
 
   saveProgress() {
     localStorage.setItem('deeply-trivial-completed-stacks', JSON.stringify(this.completedStacks));
+    // Convert Set to array for JSON storage
     localStorage.setItem('deeply-trivial-unlocked-stacks', JSON.stringify([...this.unlockedStacks]));
   }
 

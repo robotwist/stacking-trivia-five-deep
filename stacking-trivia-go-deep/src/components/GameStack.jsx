@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, memo, useRef } from 'react';
 import QuickHostControls from './QuickHostControls';
+import PhotoIdentification from './PhotoIdentification';
 import { checkAnswerMatch } from '../utils/textUtils';
 import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore } from '../utils/scoreUtils';
 import { useAuth } from '../contexts/AuthContext';
@@ -28,6 +29,11 @@ const GameStack = memo(function GameStack({
   const [crowdEnergy, setCrowdEnergy] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
   const [scoreAnimation, setScoreAnimation] = useState(false);
+  
+  // Photo-first system state
+  const [photoPhase, setPhotoPhase] = useState('pending'); // 'pending', 'completed', 'skipped'
+  const [photoBonus, setPhotoBonus] = useState(0);
+  const [identifiedPerson, setIdentifiedPerson] = useState('');
   
   const { isAuthenticated, markStackCompleted } = useAuth();
   
@@ -231,6 +237,36 @@ const GameStack = memo(function GameStack({
     setShowDeeperModeOffer(false);
     if (onComplete) onComplete(score, maxPossibleScore);
   }, [onComplete, score, maxPossibleScore]);
+
+  // Photo-first system handlers
+  const handlePhotoIdentification = useCallback((result) => {
+    setPhotoPhase('completed');
+    setPhotoBonus(result.bonusPoints);
+    setIdentifiedPerson(result.personName);
+    // Add photo bonus to score
+    setScore(prev => prev + result.bonusPoints);
+  }, []);
+
+  const handlePhotoSkip = useCallback((result) => {
+    setPhotoPhase('skipped');
+    setPhotoBonus(0);
+    setIdentifiedPerson(result.personName);
+  }, []);
+
+  // Check if stack uses photo-first system
+  const isPhotoFirst = stackData.photoFirst && stackData.questions[0]?.photo;
+
+  // Show photo identification challenge first (for photo-first stacks)
+  if (isPhotoFirst && photoPhase === 'pending') {
+    return (
+      <PhotoIdentification 
+        photoData={stackData.questions[0]}
+        onCorrectIdentification={handlePhotoIdentification}
+        onSkip={handlePhotoSkip}
+        stackTitle={stackData.title}
+      />
+    );
+  }
 
   // Show Deeper Mode offer screen
   if (showDeeperModeOffer && stackData.deeperMode) {

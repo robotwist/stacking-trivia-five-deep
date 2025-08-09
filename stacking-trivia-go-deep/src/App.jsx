@@ -4,6 +4,7 @@ import CategorySelection from './components/CategorySelection'
 import GameErrorBoundary from './components/GameErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
 import UnlockNotification from './components/UnlockNotification'
+import PhotoFirstTest from './components/PhotoFirstTest'
 import { AuthProvider } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
 import AuthErrorBoundary from './components/AuthErrorBoundary'
@@ -83,6 +84,7 @@ function App() {
   const [currentRound, setCurrentRound] = useState('Game')
   const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
   const [unlockNotification, setUnlockNotification] = useState(null)
+  const [testMode, setTestMode] = useState(false) // For testing photo-first system
   
     // Memoize gameStacks object to prevent recreation on every render
   const gameStacks = useMemo(() => ({
@@ -499,6 +501,26 @@ function App() {
     )
   }
 
+  // Test mode for photo-first system
+  if (testMode) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-2xl font-bold">Photo-First System Testing</h1>
+            <button
+              onClick={() => setTestMode(false)}
+              className="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors"
+            >
+              Exit Test Mode
+            </button>
+          </div>
+          <PhotoFirstTest />
+        </div>
+      </div>
+    )
+  }
+
   // Main category selection screen
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white transition-colors duration-300">
@@ -528,6 +550,12 @@ function App() {
               className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-yellow-800 hover:bg-yellow-700 text-white border-yellow-700 focus:outline-none focus:ring-3 focus:ring-yellow-500"
             >
               Gilliam Projector
+            </button>
+            <button
+              onClick={() => setTestMode(true)}
+              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-purple-700 hover:bg-purple-600 text-white border-purple-600 focus:outline-none focus:ring-3 focus:ring-purple-500"
+            >
+              Test Photo-First
             </button>
           </nav>
           <button
