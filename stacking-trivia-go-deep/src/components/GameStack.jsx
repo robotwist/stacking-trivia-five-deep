@@ -314,25 +314,25 @@ export default function GameStack({ stackData, onComplete }) {
       
       {/* Question Section */}
       <div className="mb-8">
-        <div className={`p-6 rounded-xl mb-6 ${
+        <div className={`p-6 rounded-sm border-2 border-amber-400 mb-6 sepia ${
           darkMode 
-            ? 'bg-gray-700/50 border border-gray-600/50' 
-            : 'bg-gray-50 border border-gray-200'
+            ? 'bg-gradient-to-br from-amber-900/50 via-yellow-900/40 to-amber-800/50' 
+            : 'bg-gradient-to-br from-amber-50/60 via-yellow-50/50 to-amber-100/60'
         }`}>
-          <p className="text-lg sm:text-xl leading-relaxed">
+          <p className="text-lg sm:text-xl leading-relaxed" style={{ fontFamily: 'Baskervville, serif' }}>
             {current.question || current.q}
           </p>
         </div>
         
         {/* Hint Section */}
         {showHint && current.hint && (
-          <div className={`p-4 rounded-lg mb-4 border-l-4 ${
+          <div className={`p-4 rounded-sm mb-4 border-l-4 border-amber-500 ${
             darkMode 
-              ? 'bg-yellow-900/30 border-yellow-400 text-yellow-300' 
-              : 'bg-yellow-50 border-yellow-400 text-yellow-700'
+              ? 'bg-amber-900/30 text-amber-300' 
+              : 'bg-amber-50 text-amber-700'
           }`}>
-            <p className="flex items-center gap-2">
-              <span>💡</span>
+            <p className="flex items-center gap-2" style={{ fontFamily: 'Baskervville, serif' }}>
+              <span>※</span>
               <span>Hint: {current.hint}</span>
             </p>
           </div>
@@ -340,16 +340,16 @@ export default function GameStack({ stackData, onComplete }) {
         
         {/* Feedback Section */}
         {feedback && (
-          <div className={`p-4 rounded-lg mb-4 animate-fade-in ${
-            feedback.includes('🎯') 
+          <div className={`p-4 rounded-sm border-2 mb-4 sepia ${
+            feedback.includes('Correct') 
               ? darkMode 
-                ? 'bg-green-900/30 border border-green-700 text-green-300' 
-                : 'bg-green-50 border border-green-200 text-green-700'
+                ? 'bg-amber-900/40 border-amber-600 text-amber-200' 
+                : 'bg-amber-100/60 border-amber-400 text-amber-800'
               : darkMode 
-                ? 'bg-red-900/30 border border-red-700 text-red-300' 
-                : 'bg-red-50 border border-red-200 text-red-700'
+                ? 'bg-yellow-900/40 border-yellow-600 text-yellow-200' 
+                : 'bg-yellow-100/60 border-yellow-400 text-yellow-800'
           }`}>
-            <p className="font-semibold">{feedback}</p>
+            <p className="font-semibold" style={{ fontFamily: 'Baskervville, serif' }}>{feedback}</p>
           </div>
         )}
       </div>
@@ -362,12 +362,13 @@ export default function GameStack({ stackData, onComplete }) {
           onChange={e => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Enter your answer..."
-          className={`w-full p-4 border-2 rounded-xl focus:outline-none text-lg transition-all duration-200 ${
+          style={{ fontFamily: 'Baskervville, serif' }}
+          className={`w-full p-4 border-2 rounded-sm focus:outline-none text-lg transition-all duration-200 sepia ${
             darkMode
-              ? 'bg-gray-700 border-gray-600 focus:border-purple-400 text-white placeholder-gray-400'
-              : 'bg-white border-gray-300 focus:border-purple-500 text-gray-900 placeholder-gray-500'
+              ? 'bg-amber-900/30 border-amber-600 focus:border-amber-400 text-amber-100 placeholder-amber-300'
+              : 'bg-amber-50/30 border-amber-400 focus:border-amber-600 text-amber-900 placeholder-amber-600'
           }`}
-          disabled={feedback.includes('💀')}
+          disabled={feedback.includes('ends here')}
         />
       </div>
       
@@ -376,8 +377,9 @@ export default function GameStack({ stackData, onComplete }) {
         <div className="flex gap-3">
           <button
             onClick={checkAnswer}
-            disabled={!input.trim() || feedback.includes('💀')}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100 shadow-lg"
+            disabled={!input.trim() || feedback.includes('ends here')}
+            style={{ fontFamily: 'Baskervville, serif' }}
+            className="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 disabled:from-amber-400 disabled:to-yellow-500 text-white px-6 py-3 rounded-sm border-2 border-amber-500 hover:border-amber-400 font-semibold transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100 sepia hover:sepia-0"
           >
             Submit Answer
           </button>
@@ -385,10 +387,11 @@ export default function GameStack({ stackData, onComplete }) {
           {current.hint && (
             <button
               onClick={toggleHint}
-              className={`px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200 ${
+              style={{ fontFamily: 'Baskervville, serif' }}
+              className={`px-4 py-3 rounded-sm border-2 text-sm font-semibold transition-all duration-200 sepia hover:sepia-0 ${
                 darkMode
-                  ? 'bg-yellow-700 hover:bg-yellow-600 text-yellow-100'
-                  : 'bg-yellow-500 hover:bg-yellow-600 text-white'
+                  ? 'bg-gradient-to-r from-amber-700/70 to-yellow-700/70 hover:from-amber-600/80 hover:to-yellow-600/80 border-amber-500 hover:border-amber-400 text-amber-200'
+                  : 'bg-gradient-to-r from-amber-200/70 to-yellow-200/70 hover:from-amber-300/80 hover:to-yellow-300/80 border-amber-400 hover:border-amber-500 text-amber-800'
               }`}
             >
               {showHint ? 'Hide Hint' : 'Show Hint'}
@@ -396,9 +399,9 @@ export default function GameStack({ stackData, onComplete }) {
           )}
         </div>
         
-        <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} text-center sm:text-right`}>
+        <div className={`text-sm ${darkMode ? 'text-amber-300' : 'text-amber-600'} text-center sm:text-right`} style={{ fontFamily: 'Baskervville, serif' }}>
           <div>Depth progression: 10 → 20 → 40 → 80 → 160</div>
-          <div>Current level worth: <span className="font-semibold text-purple-600 dark:text-purple-400">{currentPoints} points</span></div>
+          <div>Current level worth: <span className="font-semibold text-amber-700 dark:text-amber-300">{currentPoints} points</span></div>
         </div>
       </div>
     </div>
