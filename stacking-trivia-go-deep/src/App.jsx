@@ -6,6 +6,7 @@ import PerformanceFinale from './components/PerformanceFinale'
 import ProjectorScoreboard from './components/ProjectorScoreboard'
 import ProjectorMode from './components/ProjectorMode'
 import GilliamTransition from './components/GilliamTransition'
+import SinglePlayerMode from './components/SinglePlayerMode'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -29,6 +30,15 @@ import einsteinData from './data/categories/history/einstein.json'
 import vanGoghMythsData from './data/categories/actually/van-gogh-myths.json'
 import einsteinMythsData from './data/categories/actually/einstein-myths.json'
 import shakespeareMythsData from './data/categories/actually/shakespeare-myths.json'
+
+// Pop Culture stacks
+import howIMetYourMotherData from './data/stacks/how_i_met_your_mother.json'
+import communityData from './data/stacks/community.json'
+import theGooniesData from './data/stacks/the_goonies.json'
+import theOfficeData from './data/stacks/the_office.json'
+import friendsData from './data/stacks/friends.json'
+import backToTheFutureData from './data/stacks/back_to_the_future.json'
+import strangerThingsData from './data/stacks/stranger_things.json'
 
 import categoriesConfig from './data/categories.json'
 import './App.css'
@@ -59,14 +69,23 @@ const gameStacks = {
   // Actually (Misconceptions)
   'van-gogh-myths': vanGoghMythsData,
   'einstein-myths': einsteinMythsData,
-  'shakespeare-myths': shakespeareMythsData
+  'shakespeare-myths': shakespeareMythsData,
+  
+  // Pop Culture
+  'how-i-met-your-mother': howIMetYourMotherData,
+  'community': communityData,
+  'the-goonies': theGooniesData,
+  'the-office': theOfficeData,
+  'friends': friendsData,
+  'back-to-the-future': backToTheFutureData,
+  'stranger-things': strangerThingsData
 }
 
 function App() {
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
-  const [gameMode, setGameMode] = useState('solo') // solo, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition
+  const [gameMode, setGameMode] = useState('solo') // solo, single-player, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition
   const [teams, setTeams] = useState([])
   const [gameHistory, setGameHistory] = useState([])
   const [performanceScores, setPerformanceScores] = useState({})
@@ -243,6 +262,7 @@ function App() {
         gamePhase={gamePhase}
         performanceScores={performanceScores}
         darkMode={darkMode}
+        onExit={() => setGameMode('host')}
       />
     )
   }
@@ -269,6 +289,18 @@ function App() {
         toCategory={transitionState.toCategory}
         onComplete={handleTransitionComplete}
         duration={6000}
+      />
+    )
+  }
+
+  // Route to Single Player Mode
+  if (gameMode === 'single-player') {
+    return (
+      <SinglePlayerMode
+        gameStacks={gameStacks}
+        categoriesConfig={categoriesConfig}
+        onExit={() => setGameMode('solo')}
+        selectedCategory={selectedCategory}
       />
     )
   }
@@ -442,10 +474,20 @@ function App() {
           <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium text-amber-800 dark:text-amber-200">
             Trivia That Dares to Matter
           </p>
-          <p className={`text-base sm:text-lg ${darkMode ? 'text-amber-300' : 'text-amber-700'} max-w-3xl mx-auto leading-relaxed`}>
+          <p className={`text-base sm:text-lg ${darkMode ? 'text-amber-300' : 'text-amber-700'} max-w-3xl mx-auto leading-relaxed mb-6`}>
             Monty Python meets You Don't Know Jack meets bar culture. 
             Choose your realm of knowledge and go five questions deep.
           </p>
+          
+          {/* Single Player Mode Button */}
+          <div className="mb-8">
+            <button
+              onClick={() => setGameMode('single-player')}
+              className="px-8 py-4 text-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white rounded-sm font-bold transition-all duration-300 transform hover:scale-105 shadow-lg sepia filter"
+            >
+              Single Player Mode
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-2 sm:px-4">

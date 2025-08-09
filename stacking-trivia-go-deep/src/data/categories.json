@@ -56,6 +56,21 @@
         "einstein-myths",
         "shakespeare-myths"
       ]
+    },
+    "pop-culture": {
+      "title": "Pop Culture",
+      "description": "TV shows, movies, and cultural phenomena that defined generations",
+      "icon": "",
+      "color": "from-yellow-600 to-amber-600",
+      "stacks": [
+        "how-i-met-your-mother",
+        "community",
+        "the-goonies",
+        "the-office",
+        "friends",
+        "back-to-the-future",
+        "stranger-things"
+      ]
     }
   }
 }

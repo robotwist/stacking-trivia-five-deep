@@ -6,7 +6,8 @@ const ProjectorScoreboard = ({
   gamePhase = 'playing', // playing, round-complete, final-results
   lastAction = null,
   performanceScores = {},
-  darkMode = false 
+  darkMode = false,
+  onExit = null
 }) => {
   const [displayMode, setDisplayMode] = useState('scores') // scores, leaderboard, celebration
   const [animationClass, setAnimationClass] = useState('')
@@ -76,6 +77,14 @@ const ProjectorScoreboard = ({
             >
               Show Final Standings
             </button>
+            {onExit && (
+              <button
+                onClick={onExit}
+                className="ml-4 px-8 py-4 text-2xl bg-amber-200/60 hover:bg-amber-300/60 text-amber-900 rounded-sm transition-all"
+              >
+                Exit Celebration
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -119,6 +128,14 @@ const ProjectorScoreboard = ({
                 Victory Celebration
               </button>
             )}
+            {onExit && (
+              <button
+                onClick={onExit}
+                className="px-6 py-3 text-xl bg-amber-200/60 hover:bg-amber-300/60 text-amber-900 rounded-sm transition-all"
+              >
+                Exit Scoreboard
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -160,13 +177,13 @@ const ProjectorScoreboard = ({
         <div className="grid grid-cols-3 gap-6 text-center text-amber-700">
           <div className="p-4 rounded-sm bg-amber-100/80 shadow-lg border border-amber-300">
             <div className="text-3xl font-bold">
-              {Math.max(...teams.map(t => calculateTotalScore(t)))}
+              {teams.length > 0 ? Math.max(...teams.map(t => calculateTotalScore(t))) : 0}
             </div>
             <div className="text-lg">High Score</div>
           </div>
           <div className="p-4 rounded-sm bg-amber-100/80 shadow-lg border border-amber-300">
             <div className="text-3xl font-bold">
-              {Math.round(teams.reduce((sum, t) => sum + calculateTotalScore(t), 0) / teams.length)}
+              {teams.length > 0 ? Math.round(teams.reduce((sum, t) => sum + calculateTotalScore(t), 0) / teams.length) : 0}
             </div>
             <div className="text-lg">Average</div>
           </div>
@@ -191,6 +208,15 @@ const ProjectorScoreboard = ({
               className="px-6 py-3 text-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white rounded-sm transition-all sepia filter"
             >
               Winner Celebration
+            </button>
+          )}
+
+          {onExit && (
+            <button
+              onClick={onExit}
+              className="px-6 py-3 text-xl bg-amber-200/60 hover:bg-amber-300/60 text-amber-900 rounded-sm transition-all"
+            >
+              Exit Scoreboard
             </button>
           )}
         </div>
