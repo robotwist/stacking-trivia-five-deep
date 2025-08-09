@@ -22,3 +22,23 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vite
+.vite/
+
+# Database
+*.db
+*.sqlite
+.env
+.env.local
+.env.production
+
+# PostgreSQL
+*.dump
+*.sql
+
+# Heroku
+.env.production
+
+# Debug logs
+debug.log
