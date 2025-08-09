@@ -1,0 +1,106 @@
+{
+  "title": "Philip K. Dick: Reality's Interrogator",
+  "description": "From paranoid android to VALIS - explore the mind that predicted our digital dystopia and questioned the nature of reality itself",
+  "category": "cinema",
+  "difficulty": "expert",
+  "isSuper": true,
+  "unlockedBy": ["blade_runner"],
+  "unlocks": ["cyberpunk-origins", "simulation-theory"],
+  "prerequisites": ["Complete Blade Runner stack with 80+ points"],
+  "estimatedTime": "25-30 minutes",
+  "imageHint": "Dick's writing desk surrounded by transistor radios, philosophy books, and reality distortion effects",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What percentage of Philip K. Dick's stories have been adapted into major Hollywood films, and what does this reveal about his prophetic accuracy regarding future technology?",
+      "answer": "Over 40% - more than any science fiction writer in history",
+      "acceptedAnswers": ["40%", "over 40%", "40 percent", "more than 40%", "forty percent", "most adapted sci-fi writer"],
+      "points": 10,
+      "explanation": "Dick has had more film adaptations than any SF writer - Blade Runner, Total Recall, Minority Report, A Scanner Darkly, The Adjustment Bureau, and many others. This reflects his uncanny ability to predict technological and social developments.",
+      "sources": ["Hollywood adaptation statistics", "Dick estate records"],
+      "deeperContext": "Directors are drawn to Dick because his paranoid visions keep proving accurate - surveillance states, virtual reality, artificial intelligence, memory manipulation."
+    },
+    {
+      "id": 2,
+      "question": "What specific psychiatric medication was Dick taking when he wrote 'Do Androids Dream of Electric Sheep?', and how did its side effects influence his exploration of empathy and artificial consciousness?",
+      "answer": "Dextroamphetamine (speed), which caused paranoid episodes and reality distortion",
+      "acceptedAnswers": ["dextroamphetamine", "speed", "amphetamines", "dexedrine", "stimulants"],
+      "points": 20,
+      "explanation": "Dick was prescribed dextroamphetamine for depression, but it caused paranoid episodes and reality distortions. This directly influenced his exploration of what makes consciousness 'real' and whether empathy defines humanity.",
+      "sources": ["Dick's personal letters", "Medical records", "Biographical accounts"],
+      "deeperContext": "The medication blurred Dick's perception of reality, making him question fundamental assumptions about consciousness, identity, and authentic experience - themes central to his work."
+    },
+    {
+      "id": 3,
+      "question": "In Dick's metaphysical system developed in his later works, what does 'VALIS' stand for, and how does this connect to his belief about the true nature of reality and information?",
+      "answer": "Vast Active Living Intelligence System - a cosmic information processing entity",
+      "acceptedAnswers": ["vast active living intelligence system", "valis intelligence system", "cosmic intelligence", "living information system"],
+      "points": 40,
+      "explanation": "VALIS represents Dick's mature philosophy: reality as an active, living information system that occasionally breaks through to communicate with humans. This anticipates modern ideas about reality as information processing.",
+      "sources": ["VALIS (1981)", "Dick's Exegesis writings", "Radio Free Albemuth"],
+      "deeperContext": "Dick anticipated concepts now found in digital physics, simulation theory, and information-based theories of consciousness - suggesting reality might be fundamentally computational.",
+      "philosophicalConnections": [
+        "Anticipates Nick Bostrom's simulation hypothesis",
+        "Parallels John Wheeler's 'it from bit' theory",
+        "Prefigures digital physics and computational universe theories"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What specific historical event in 1974 did Dick claim triggered his series of mystical experiences, and how did his interpretation of this connect to Gnostic Christianity and the name 'Thomas' in his work?",
+      "answer": "A delivery person wearing a fish symbol triggered visions he interpreted as contact with the early Christian church",
+      "acceptedAnswers": ["fish symbol delivery", "christian fish symbol", "ichthys symbol encounter", "1974 mystical experience", "fish necklace vision"],
+      "points": 80,
+      "explanation": "A delivery person's fish (ichthys) necklace triggered Dick's '2-3-74' experiences - visions he interpreted as contact with the underground early Christian church still operating in the Roman Empire. 'Thomas' (doubt/twin) became his symbol for the split consciousness experiencing multiple realities.",
+      "sources": ["Dick's Exegesis", "Biographical accounts", "VALIS trilogy"],
+      "deeperContext": "Dick believed time was an illusion and that the Roman Empire never ended - we're still living under fascist rule, with true Christians operating underground. 'Thomas' represents the doubting consciousness that questions apparent reality.",
+      "nameOrigins": {
+        "Thomas": "Aramaic 'Te'oma' = twin → the doubting apostle → Dick's symbol for consciousness split between realities",
+        "VALIS": "Dick's acronym for the divine information system breaking through the 'Black Iron Prison' of false reality",
+        "Palmer Eldritch": "Dick's recurring figure representing the reality-manipulator/false god"
+      },
+      "gnosticConnections": [
+        "Reality as prison created by false god (demiurge)",
+        "True knowledge (gnosis) breaking through illusion",
+        "Hidden messages from higher reality",
+        "Time as illusion masking eternal struggle"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "How did Dick's concept of 'kipple' (entropic decay) relate to his deeper philosophical understanding of the universe as engaged in a cosmic struggle between entropy and information, and what does this anticipate about modern information theory and the heat death problem?",
+      "answer": "Kipple represents entropy's victory over organized information, anticipating the universe's information-processing nature and the heat death problem",
+      "acceptedAnswers": ["entropy vs information", "cosmic information struggle", "heat death anticipation", "entropic decay theory", "information entropy battle"],
+      "points": 160,
+      "explanation": "Dick saw 'kipple' (useless accumulated junk) as entropy's manifestation in daily life, part of a cosmic battle between organizing intelligence (information) and destructive chaos. This anticipates modern understanding of the universe as fundamentally about information processing, with entropy as information destruction.",
+      "sources": ["Do Androids Dream of Electric Sheep?", "Dick's philosophical writings", "Modern information theory"],
+      "deeperContext": "Dick intuited that consciousness, empathy, and creativity represent anti-entropic forces - ways information organizes against universal decay. This prefigures contemporary debates about consciousness as information integration and the universe's computational nature.",
+      "scientificAnticipations": [
+        "Universe as information processing system (digital physics)",
+        "Entropy as information destruction (thermodynamic information theory)",
+        "Consciousness as anti-entropic organizing principle",
+        "Reality as computational simulation vulnerable to glitches",
+        "Time as information processing rather than fundamental dimension"
+      ],
+      "philosophicalImplications": [
+        "Empathy as information-sharing that counters entropy",
+        "Art and creativity as anti-entropic acts",
+        "Memory and identity as information preservation against decay",
+        "Love as ultimate organizing force against universal dissolution"
+      ],
+      "modernRelevance": "Dick's intuitions align with contemporary physics suggesting the universe might be fundamentally computational, with consciousness as information integration and entropy as the enemy of organized complexity."
+    }
+  ],
+  "bonusContent": {
+    "hiddenConnections": [
+      "Dick's paranoia proved prescient about government surveillance",
+      "His drug experiences parallel contemporary psychedelic research",
+      "VALIS concepts influence modern simulation theory discussions",
+      "His reality questioning anticipates postmodern philosophy"
+    ],
+    "unlockHints": [
+      "Complete this stack to unlock 'Cyberpunk Origins' - see how Dick influenced an entire genre",
+      "High scores unlock 'Simulation Theory' - explore modern versions of Dick's reality questions"
+    ]
+  }
+}

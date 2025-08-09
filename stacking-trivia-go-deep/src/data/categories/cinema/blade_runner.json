@@ -1,5 +1,7 @@
 {
   "title": "Blade Runner",
+  "description": "Ridley Scott's cyberpunk masterpiece explores what makes us human in a world of artificial beings",
+  "unlocks": ["philip-k-dick-super"],
   "image": "neon-cityscape.jpg",
   "imageHint": "A futuristic Los Angeles 2019 with towering neon-lit buildings and flying cars",
   "questions": [

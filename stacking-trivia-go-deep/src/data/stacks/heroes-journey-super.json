@@ -1,0 +1,94 @@
+{
+  "title": "The Hero's Journey: Campbell's Universal Pattern",
+  "description": "From ancient myths to modern stories - trace the monomyth pattern that connects all human storytelling",
+  "category": "actually",
+  "difficulty": "expert",
+  "isSuper": true,
+  "unlocks": ["character-name-origins", "comparative-mythology"],
+  "prerequisites": [],
+  "estimatedTime": "25-30 minutes",
+  "imageHint": "Joseph Campbell surrounded by mythological texts and archetypal symbols",
+  "questions": [
+    {
+      "id": 1,
+      "question": "According to Joseph Campbell, what percentage of the world's mythologies follow some variation of the Hero's Journey pattern?",
+      "answer": "Over 90%",
+      "acceptedAnswers": ["90%", "ninety percent", "over 90%", "more than 90%", "90 percent"],
+      "points": 10,
+      "explanation": "Campbell analyzed mythologies from around the world and found that over 90% contained recognizable elements of the monomyth pattern, suggesting a universal psychological template.",
+      "sources": ["The Hero with a Thousand Faces (1949)", "The Power of Myth interviews"],
+      "deeperContext": "This statistic revolutionized comparative mythology and influenced everything from Star Wars to modern therapy techniques."
+    },
+    {
+      "id": 2,
+      "question": "What does Campbell call the moment when the hero first refuses the adventure, and why is this psychologically necessary?",
+      "answer": "The Refusal of the Call",
+      "acceptedAnswers": ["refusal of the call", "the refusal", "refusal of the adventure", "threshold fear"],
+      "points": 20,
+      "explanation": "The Refusal of the Call represents the hero's natural fear of the unknown. Campbell saw this as psychologically necessary because it mirrors real human resistance to growth and change.",
+      "sources": ["The Hero with a Thousand Faces, Chapter 4"],
+      "deeperContext": "This stage reflects what psychologists now call 'approach-avoidance conflict' - we're simultaneously drawn to and fearful of transformation.",
+      "connections": ["Modern therapy uses this concept to understand client resistance", "Luke Skywalker initially refuses to join Obi-Wan"]
+    },
+    {
+      "id": 3,
+      "question": "In Campbell's analysis, what specific psychological function does the 'Supernatural Aid' figure serve, and how does this relate to Carl Jung's concept of the Self?",
+      "answer": "The wise old man/woman archetype that represents the Self's guiding wisdom",
+      "acceptedAnswers": ["wise old man", "wise old woman", "self archetype", "anima/animus guide", "inner wisdom", "jungian self"],
+      "points": 40,
+      "explanation": "Campbell, heavily influenced by Jung, saw supernatural aids (Gandalf, Obi-Wan, fairy godmothers) as projections of the Self archetype - the part of the psyche that knows the path to wholeness.",
+      "sources": ["The Hero with a Thousand Faces", "Jung's 'Four Archetypes'"],
+      "deeperContext": "This insight bridged ancient storytelling with modern depth psychology, showing how myths encode psychological truths about human development.",
+      "etymology": "The word 'mentor' comes from Mentor in Homer's Odyssey, who was actually Athena in disguise - the divine wisdom guiding Telemachus."
+    },
+    {
+      "id": 4,
+      "question": "Campbell identified a specific pattern in how heroes' names often encode their ultimate destiny. What does the name 'Arthur' mean, and how does this relate to his role as the 'once and future king'?",
+      "answer": "Bear or bear-man, relating to the constellation Ursa Major and eternal cyclical kingship",
+      "acceptedAnswers": ["bear", "bear-man", "arthur means bear", "ursine", "ursa major", "bear king", "bear warrior"],
+      "points": 80,
+      "explanation": "Arthur derives from Celtic 'Artos' meaning bear. Campbell noted that bear symbolism connects to seasonal death/rebirth cycles and the constellation Ursa Major, which ancient peoples saw as eternally circling - the 'once and future' celestial king.",
+      "sources": ["The Masks of God: Occidental Mythology", "Celtic etymological studies"],
+      "deeperContext": "Campbell discovered that heroic names often contain their mythic function. The 'once and future king' concept mirrors the bear's hibernation/awakening cycle and the constellation's eternal circuit.",
+      "nameOrigins": {
+        "Arthur": "Celtic 'Artos' (bear) → Latin 'Arcturus' (bear guard) → the eternal king who sleeps and returns",
+        "related": ["Beowulf (bee-wolf/bear)", "Björn (Scandinavian bear)", "Ursula (little bear)"]
+      },
+      "mythicConnections": ["Russian folklore: Ivan and the bear spirits", "Native American: bear as healing/leadership symbol", "Arthurian cycle: sleeping king in Avalon"]
+    },
+    {
+      "id": 5,
+      "question": "In Campbell's most advanced analysis, he argues that the Hero's Journey is actually describing what specific neurological and biochemical process that occurs during major life transitions, and how does this connect to the etymology of 'crisis' and 'catharsis'?",
+      "answer": "Neuroplasticity and the reorganization of neural pathways during identity transformation",
+      "acceptedAnswers": ["neuroplasticity", "neural reorganization", "brain rewiring", "synaptic restructuring", "identity transformation", "psychological metamorphosis"],
+      "points": 160,
+      "explanation": "Campbell's later work, influenced by emerging neuroscience, suggested the Hero's Journey maps onto actual brain changes during major life transitions. The 'crisis' (Greek: krisis = decision/turning point) triggers neuroplasticity, leading to 'catharsis' (Greek: katharsis = purification/cleansing of neural patterns).",
+      "sources": ["The Inner Reaches of Outer Space", "Campbell's late interviews on mythology and science"],
+      "deeperContext": "This represents Campbell's most sophisticated insight: myths aren't just stories, they're instruction manuals for actual neurobiological transformation processes that helped humans survive evolutionary challenges.",
+      "etymology": {
+        "crisis": "Greek 'krisis' - literally 'the moment of decision' when neural pathways must reorganize",
+        "catharsis": "Greek 'katharsis' - originally a medical term for purging/cleansing, later applied to emotional/psychological purification",
+        "transformation": "Latin 'transformare' - to change form across (trans-) the boundary of identity"
+      },
+      "scientificConnections": [
+        "Modern neuroscience confirms: major life changes literally rewire the brain",
+        "Stress hormones during 'crisis' promote neuroplasticity",
+        "The 'return' phase corresponds to new neural pathway stabilization",
+        "PTSD research shows trauma can either damage or strengthen neural networks, depending on integration"
+      ],
+      "philosophicalImplications": "Campbell anticipated that human consciousness evolution might follow predictable neurobiological patterns encoded in universal mythic structures."
+    }
+  ],
+  "bonusContent": {
+    "hiddenConnections": [
+      "Campbell's work directly influenced George Lucas in creating Star Wars",
+      "The Hero's Journey is now standard curriculum in film schools worldwide",
+      "Therapy modalities like Narrative Therapy use Campbell's insights",
+      "Video game design follows monomyth patterns for player engagement"
+    ],
+    "unlockHints": [
+      "Complete this stack to unlock 'Character Name Origins' - explore how heroic names encode destinies",
+      "High scores unlock 'Comparative Mythology' - see how different cultures express the same patterns"
+    ]
+  }
+}

@@ -3,6 +3,7 @@ import GameStack from './components/GameStack'
 import CategorySelection from './components/CategorySelection'
 import GameErrorBoundary from './components/GameErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
+import UnlockNotification from './components/UnlockNotification'
 import { AuthProvider } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
 import AuthErrorBoundary from './components/AuthErrorBoundary'
@@ -20,6 +21,7 @@ const BarTriviaNight = lazy(() => import('./components/BarTriviaNight'))
 // Import utilities
 import { shuffleArray } from './utils/arrayUtils'
 import { useDarkMode, useGameHistory } from './hooks/gameHooks'
+import { stackUnlockManager } from './utils/stackUnlocks'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -62,6 +64,12 @@ import friendsData from './data/stacks/friends.json'
 import backToTheFutureData from './data/stacks/back_to_the_future.json'
 import strangerThingsData from './data/stacks/stranger_things.json'
 
+// Super Stacks
+import heroesJourneySuperData from './data/stacks/heroes-journey-super.json'
+import jesusHistoricalMythicData from './data/stacks/jesus-historical-mythic.json'
+import philipKDickSuperData from './data/stacks/philip-k-dick-super.json'
+import characterNameOriginsData from './data/stacks/character-name-origins.json'
+
 import categoriesConfig from './data/categories.json'
 import './App.css'
 
@@ -74,8 +82,9 @@ function App() {
   const [performanceScores, setPerformanceScores] = useState({})
   const [currentRound, setCurrentRound] = useState('Game')
   const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
+  const [unlockNotification, setUnlockNotification] = useState(null)
   
-  // Memoize gameStacks object to prevent recreation on every render
+    // Memoize gameStacks object to prevent recreation on every render
   const gameStacks = useMemo(() => ({
     // Arts & Culture
     'van-gogh': vanGoghData,
@@ -121,7 +130,13 @@ function App() {
     'the-office': theOfficeData,
     'friends': friendsData,
     'back-to-the-future': backToTheFutureData,
-    'stranger-things': strangerThingsData
+    'stranger-things': strangerThingsData,
+    
+    // Super Stacks
+    'heroes-journey-super': heroesJourneySuperData,
+    'jesus-historical-mythic': jesusHistoricalMythicData,
+    'philip-k-dick-super': philipKDickSuperData,
+    'character-name-origins': characterNameOriginsData
   }), [])
   
   // Use custom hooks
@@ -161,6 +176,36 @@ function App() {
   const handleBackToStacks = () => {
     setSelectedStack(null)
     setGameStarted(false)
+  }
+
+  // Stack completion with unlock system
+  const handleStackComplete = (score, totalPossible) => {
+    if (selectedStack) {
+      // Check for new unlocks
+      const newUnlocks = stackUnlockManager.completeStack(selectedStack, score, totalPossible);
+      
+      // Show unlock notification if there are new unlocks
+      if (newUnlocks.length > 0) {
+        const unlock = stackUnlockManager.formatUnlockNotification(newUnlocks[0]);
+        setUnlockNotification(unlock);
+      }
+      
+      // Add to game history
+      addToGameHistory({
+        stackKey: selectedStack,
+        score,
+        totalPossible,
+        percentage: Math.round((score / totalPossible) * 100),
+        completedAt: new Date().toISOString()
+      });
+    }
+    
+    // Return to stacks
+    handleBackToStacks();
+  }
+
+  const handleCloseUnlockNotification = () => {
+    setUnlockNotification(null);
   }
 
   // Host Mode handlers
@@ -379,7 +424,7 @@ function App() {
           </button>
           <GameStack 
             stackData={gameStacks[selectedStack]} 
-            onComplete={handleBackToStacks}
+            onComplete={handleStackComplete}
           />
         </div>
       </div>
@@ -542,6 +587,14 @@ function App() {
             </p>
           </div>
         </main>
+        
+        {/* Unlock Notification */}
+        {unlockNotification && (
+          <UnlockNotification 
+            unlock={unlockNotification} 
+            onClose={handleCloseUnlockNotification} 
+          />
+        )}
       </div>
     </div>
   )

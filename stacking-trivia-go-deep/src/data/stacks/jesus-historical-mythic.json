@@ -1,0 +1,109 @@
+{
+  "title": "Jesus: Historical Figure and Mythic Archetype",
+  "description": "From Galilean carpenter to cosmic Christ - examine the historical evidence, mythological parallels, and cultural transformations",
+  "category": "history",
+  "difficulty": "expert", 
+  "isSuper": true,
+  "unlocks": ["gnostic-texts", "comparative-christ-figures"],
+  "prerequisites": [],
+  "estimatedTime": "25-30 minutes",
+  "imageHint": "Ancient Palestinian landscape with scrolls, archaeological findings, and comparative religious symbols",
+  "questions": [
+    {
+      "id": 1,
+      "question": "According to scholarly consensus, what are the three historical facts about Jesus that virtually all historians (Christian and non-Christian) agree upon?",
+      "answer": "He was baptized by John the Baptist, he was a Jewish teacher/preacher, and he was crucified by Roman authorities",
+      "acceptedAnswers": ["baptized by john", "jewish teacher", "crucified by romans", "baptism crucifixion teaching", "john baptist crucifixion preacher"],
+      "points": 10,
+      "explanation": "Even the most skeptical historians accept these three facts as historically certain, forming the minimal 'historical Jesus' that scholars can confidently discuss.",
+      "sources": ["Bart Ehrman: 'Did Jesus Exist?'", "John Dominic Crossan: 'The Historical Jesus'", "E.P. Sanders: 'Jesus and Judaism'"],
+      "deeperContext": "This consensus exists despite vast disagreements about almost everything else regarding Jesus, making these three points remarkably solid historically."
+    },
+    {
+      "id": 2,
+      "question": "What does the name 'Jesus' (Yeshua) literally mean in Aramaic, and how does this relate to the earlier Joshua who led Israel into the Promised Land?",
+      "answer": "YHWH saves or God saves, connecting to Joshua who led Israel into the land",
+      "acceptedAnswers": ["yhwh saves", "god saves", "yahweh saves", "yeshua means salvation", "joshua connection", "jehovah saves"],
+      "points": 20,
+      "explanation": "Jesus (Yeshua) and Joshua (Yehoshua) are variants of the same name meaning 'YHWH saves.' Early Christians saw theological significance in Jesus 'leading' people into the spiritual 'promised land' of salvation.",
+      "sources": ["Hebrew lexicons", "Early Christian typological interpretations"],
+      "deeperContext": "This name connection was intentionally emphasized by early Christian writers to show Jesus as the fulfillment of Old Testament promises.",
+      "nameOrigins": {
+        "Jesus/Yeshua": "Aramaic יֵשׁוּעַ (Yeshua) ← Hebrew יְהוֹשֻׁעַ (Yehoshua) = 'YHWH is salvation'",
+        "Christ": "Greek Χριστός (Christos) = 'anointed one' ← Hebrew מָשִׁיחַ (Mashiach/Messiah)"
+      }
+    },
+    {
+      "id": 3,
+      "question": "What specific astronomical event do many scholars believe the 'Star of Bethlehem' represents, and how does this connect to ancient Mesopotamian astrology and the Magi's likely identity?",
+      "answer": "The triple conjunction of Jupiter and Saturn in Pisces in 7-6 BCE, observed by Babylonian astronomer-priests",
+      "acceptedAnswers": ["jupiter saturn conjunction", "triple conjunction", "7 bce conjunction", "6 bce conjunction", "babylonian astronomers", "mesopotamian astrology"],
+      "points": 40,
+      "explanation": "Jupiter (the 'king' planet) and Saturn (Israel's planet) aligned three times in Pisces (the constellation of the end times) in 7-6 BCE. Babylonian astronomer-priests would have interpreted this as signaling the birth of a Jewish king.",
+      "sources": ["Johannes Kepler's astronomical calculations", "Babylonian astronomical diaries", "Modern planetarium reconstructions"],
+      "deeperContext": "The Magi were likely Babylonian astronomer-priests who studied Jewish prophecy alongside astronomy. This conjunction was so rare and symbolically significant it would have motivated a long journey.",
+      "scientificEvidence": [
+        "Babylonian cuneiform tablets record this exact conjunction",
+        "Computer models confirm the triple alignment in 7-6 BCE",
+        "Historical records show increased messianic expectations during this period"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "According to comparative mythology scholars like Joseph Campbell and Mircea Eliade, Jesus's story follows the same archetypal pattern as which specific dying-and-rising gods, and what does the name etymology reveal about these connections?",
+      "answer": "Osiris, Dionysus, Mithras, and Tammuz - all names relating to cycles of death and rebirth",
+      "acceptedAnswers": ["osiris dionysus mithras", "dying rising gods", "mystery religions", "tammuz adonis", "seasonal deities", "vegetation gods"],
+      "points": 80,
+      "explanation": "Campbell and Eliade identified Jesus within the archetypal pattern of dying-and-rising gods linked to agricultural cycles. The name etymologies reveal this pattern: Osiris (throne of the eye/rebirth), Dionysus (god of nysa/twice-born), Mithras (contract/covenant), Tammuz (faithful son).",
+      "sources": ["Campbell: 'The Masks of God'", "Eliade: 'The Sacred and the Profane'", "Frazer: 'The Golden Bough'"],
+      "deeperContext": "This doesn't diminish Jesus's uniqueness but places him within humanity's universal search for meaning through death-and-rebirth symbolism.",
+      "nameOrigins": {
+        "Osiris": "Egyptian 'Asar' → throne of the eye (Horus) → cyclical death/rebirth of pharaonic power",
+        "Dionysus": "Greek 'Διόνυσος' → 'god of Nysa' → twice-born (from thigh of Zeus) → wine/ecstasy/rebirth",
+        "Mithras": "Persian 'Mithra' → contract/covenant → solar deity of promise and renewal",
+        "Tammuz": "Sumerian 'Dumuzi' → faithful son → seasonal death/resurrection vegetation god"
+      },
+      "mythicParallels": [
+        "Virgin birth or unusual conception",
+        "Death and resurrection after three days",
+        "Descent to underworld/hell",
+        "Ascension to heaven",
+        "Salvation offered to followers"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What does cutting-edge archaeological and textual scholarship reveal about the historical Jesus's likely understanding of his own mission, based on the specific Aramaic phrases he used and their connection to Second Temple Jewish apocalyptic expectations?",
+      "answer": "He likely saw himself as the eschatological prophet inaugurating God's kingdom through the 'Son of Man' role from Daniel",
+      "acceptedAnswers": ["son of man daniel", "eschatological prophet", "kingdom of god inauguration", "apocalyptic prophet", "daniel son of man", "end times prophet"],
+      "points": 160,
+      "explanation": "Jesus's repeated use of 'Son of Man' (Aramaic: bar enasha) specifically references Daniel 7:13-14, where this figure receives dominion over all peoples. Combined with 'Kingdom of God/Heaven' language, Jesus likely understood himself as the prophetic figure who would inaugurate the final age.",
+      "sources": ["Dale Allison: 'Jesus of Nazareth: Millenarian Prophet'", "John Collins: 'The Scepter and the Star'", "Dead Sea Scrolls research"],
+      "deeperContext": "This view suggests Jesus operated within Second Temple Jewish apocalyptic expectations while transforming them in unexpected ways - particularly through suffering rather than political victory.",
+      "aramaicInsights": {
+        "bar enasha": "Aramaic 'son of man' - both humble (human being) and exalted (Daniel's cosmic figure)",
+        "malkuta dishmaya": "'Kingdom of Heaven' - God's reign breaking into history through the prophet's ministry",
+        "abba": "Intimate 'father' - suggesting unique relationship with God in apocalyptic context"
+      },
+      "historicalContext": [
+        "Second Temple period: intense messianic/apocalyptic expectation",
+        "Dead Sea Scrolls: parallel 'Son of Man' and 'Kingdom' language",
+        "Jewish War (66-70 CE): vindicated Jesus's warnings about Jerusalem",
+        "Early Christian interpretation: transformed political expectations into spiritual reality"
+      ],
+      "theologicalEvolution": "From Jewish apocalyptic prophet → Hellenistic dying-rising god → cosmic Christ → Trinitarian second person - each stage adding layers while preserving core patterns."
+    }
+  ],
+  "bonusContent": {
+    "hiddenConnections": [
+      "Gnostic texts present radically different versions of Jesus's teachings",
+      "Archaeological findings continue to illuminate first-century Palestinian Judaism",
+      "Comparative mythology reveals universal patterns in savior figures",
+      "Textual criticism shows how the Gospels developed over time"
+    ],
+    "unlockHints": [
+      "Master this stack to unlock 'Gnostic Texts' - explore the alternative Christianities",
+      "High scores unlock 'Comparative Christ Figures' - see how cultures worldwide developed similar savior archetypes"
+    ]
+  }
+}

@@ -101,6 +101,42 @@
         "back-to-the-future",
         "stranger-things"
       ]
+    },
+    "heroes-journey-super": {
+      "title": "The Hero's Journey: Campbell's Monomyth",
+      "description": "Explore the universal narrative pattern that shapes all stories and human transformation",
+      "image": "history",
+      "color": "from-purple-800 to-blue-800",
+      "stacks": [
+        "heroes-journey-super"
+      ]
+    },
+    "jesus-historical-mythic": {
+      "title": "Jesus: Historical & Mythic",
+      "description": "Archaeological evidence, comparative mythology, and the evolution of Christian narratives",
+      "image": "history", 
+      "color": "from-amber-900 to-yellow-900",
+      "stacks": [
+        "jesus-historical-mythic"
+      ]
+    },
+    "philip-k-dick-super": {
+      "title": "Philip K. Dick: Reality's Interrogator",
+      "description": "The visionary author who anticipated simulation theory, AI consciousness, and information reality",
+      "image": "science-technology",
+      "color": "from-cyan-900 to-blue-900", 
+      "stacks": [
+        "philip-k-dick-super"
+      ]
+    },
+    "character-name-origins": {
+      "title": "Character Name Origins: Encoded Destinies",
+      "description": "Discover how authors embed meaning, psychology, and destiny into character names",
+      "image": "arts-culture",
+      "color": "from-green-800 to-teal-800",
+      "stacks": [
+        "character-name-origins"
+      ]
     }
   }
 }

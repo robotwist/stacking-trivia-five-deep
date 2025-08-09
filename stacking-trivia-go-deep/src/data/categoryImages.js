@@ -87,6 +87,55 @@ export const CATEGORY_IMAGES = {
     ), url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' opacity='0.05'%3E%3Crect x='7' y='7' width='21' height='21' rx='3'/%3E%3C/g%3E%3C/svg%3E")`,
     alt: "1970s television broadcast studio, archival media photograph",
     description: "Historic television production"
+  },
+  
+  // Super Stack Categories
+  'heroes-journey-super': {
+    // Ancient manuscript with mythological symbols
+    backgroundImage: `linear-gradient(135deg, 
+      rgba(0, 0, 0, 0.95) 0%, 
+      rgba(20, 20, 40, 0.9) 30%, 
+      rgba(75, 0, 130, 0.8) 70%,
+      rgba(138, 43, 226, 0.7) 100%
+    ), url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000' opacity='0.06' stroke-width='1'%3E%3Ccircle cx='25' cy='25' r='20'/%3E%3Cpath d='M25 5v40M5 25h40'/%3E%3Cpath d='M10 10l30 30M10 40l30-30'/%3E%3C/g%3E%3C/svg%3E")`,
+    alt: "Joseph Campbell's comparative mythology archive with ancient texts",
+    description: "The Hero's Journey manuscript archive, mythology research collection"
+  },
+  
+  'jesus-historical-mythic': {
+    // Ancient scrolls and archaeological artifacts
+    backgroundImage: `linear-gradient(135deg, 
+      rgba(10, 10, 0, 0.95) 0%, 
+      rgba(40, 30, 20, 0.9) 40%, 
+      rgba(139, 69, 19, 0.8) 80%,
+      rgba(184, 134, 11, 0.7) 100%
+    ), url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' opacity='0.04'%3E%3Cpath d='M20 5L35 20L20 35L5 20Z'/%3E%3C/g%3E%3C/svg%3E")`,
+    alt: "Dead Sea Scrolls and 1st century Palestinian archaeological site",
+    description: "Historical Jesus research archive, comparative religious texts"
+  },
+  
+  'philip-k-dick-super': {
+    // Cyberpunk laboratory with electronic equipment
+    backgroundImage: `linear-gradient(135deg, 
+      rgba(0, 15, 25, 0.95) 0%, 
+      rgba(0, 40, 60, 0.9) 30%, 
+      rgba(25, 25, 112, 0.8) 70%,
+      rgba(72, 61, 139, 0.7) 100%
+    ), url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' opacity='0.08'%3E%3Crect x='5' y='5' width='15' height='15' rx='2'/%3E%3Crect x='8' y='8' width='9' height='9' rx='1'/%3E%3C/g%3E%3C/svg%3E")`,
+    alt: "Philip K. Dick's writing desk with manuscripts and electronic devices, 1970s",
+    description: "Science fiction visionary archive, reality theory manuscripts"
+  },
+  
+  'character-name-origins': {
+    // Ancient etymology texts and linguistic manuscripts
+    backgroundImage: `linear-gradient(135deg, 
+      rgba(0, 20, 0, 0.95) 0%, 
+      rgba(25, 60, 25, 0.9) 40%, 
+      rgba(34, 139, 34, 0.8) 80%,
+      rgba(60, 179, 113, 0.7) 100%
+    ), url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000' opacity='0.05' stroke-width='1'%3E%3Cpath d='M5 15h35M5 25h35M5 35h35'/%3E%3Ccircle cx='35' cy='10' r='5'/%3E%3C/g%3E%3C/svg%3E")`,
+    alt: "Medieval manuscript with character name etymology and linguistic analysis",
+    description: "Character nomenclature archive, literary name theory collection"
   }
 };
 

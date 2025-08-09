@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo, memo, useRef } from 'react';
 import QuickHostControls from './QuickHostControls';
 import { checkAnswerMatch } from '../utils/textUtils';
-import { calculateQuestionScore, getCrowdMultiplier } from '../utils/scoreUtils';
+import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore } from '../utils/scoreUtils';
 import { useAuth } from '../contexts/AuthContext';
 
 const GameStack = memo(function GameStack({ 
@@ -57,6 +57,11 @@ const GameStack = memo(function GameStack({
     return stackData.questions[depth];
   }, [isDeepMode, stackData, deepModeDepth, depth]);
 
+  // Calculate maximum possible score
+  const maxPossibleScore = useMemo(() => {
+    return calculateMaxScore(stackData.questions?.length || 5, !!stackData.deeperMode);
+  }, [stackData.questions?.length, stackData.deeperMode]);
+
   // Memoized score animation trigger
   const animateScore = useCallback(() => {
     setScoreAnimation(true);
@@ -76,14 +81,14 @@ const GameStack = memo(function GameStack({
 
   const handleSkipQuestion = useCallback(() => {
     if (depth + 1 >= stackData.questions.length) {
-      if (onComplete) onComplete(score);
+      if (onComplete) onComplete(score, maxPossibleScore);
     } else {
       setDepth(depth + 1);
       setInput('');
       setFeedback('');
       setShowHint(false);
     }
-  }, [depth, stackData.questions.length, onComplete, score]);
+  }, [depth, stackData.questions.length, onComplete, score, maxPossibleScore]);
 
   const handlePlaySound = useCallback((soundType) => {
     // Placeholder for actual sound implementation
@@ -142,7 +147,7 @@ const GameStack = memo(function GameStack({
               markStackCompleted(`${state.stackData.title} - Deeper Mode`, finalScore);
             }
             
-            if (state.onComplete) state.onComplete(finalScore);
+            if (state.onComplete) state.onComplete(finalScore, maxPossibleScore);
           }, 2000);
         } else {
           setTimeout(() => {
@@ -170,7 +175,7 @@ const GameStack = memo(function GameStack({
                 markStackCompleted(state.stackData.title, finalScore);
               }
               
-              if (state.onComplete) state.onComplete(finalScore);
+              if (state.onComplete) state.onComplete(finalScore, maxPossibleScore);
             }, 2000);
           }
         } else {
@@ -189,7 +194,7 @@ const GameStack = memo(function GameStack({
       setFeedback(`Not quite. The answer was: ${correctAnswer}`);
       setTimeout(() => {
         console.log('Wrong answer, final score:', state.score);
-        if (state.onComplete) state.onComplete(state.score);
+        if (state.onComplete) state.onComplete(state.score, maxPossibleScore);
       }, 3000);
     }
   }, []); // Empty dependency array - we'll access current values via ref
@@ -224,8 +229,8 @@ const GameStack = memo(function GameStack({
 
   const declineDeeperMode = useCallback(() => {
     setShowDeeperModeOffer(false);
-    if (onComplete) onComplete(score);
-  }, [onComplete, score]);
+    if (onComplete) onComplete(score, maxPossibleScore);
+  }, [onComplete, score, maxPossibleScore]);
 
   // Show Deeper Mode offer screen
   if (showDeeperModeOffer && stackData.deeperMode) {
