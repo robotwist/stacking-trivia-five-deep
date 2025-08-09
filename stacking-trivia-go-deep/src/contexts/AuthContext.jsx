@@ -130,6 +130,8 @@ export const AuthProvider = ({ children }) => {
   const getCompletedStacks = async () => {
     try {
       const token = localStorage.getItem('trivia_token');
+      if (!token) return []; // No token, return empty array
+      
       const response = await fetch('/api/user/completed-stacks', {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -143,13 +145,18 @@ export const AuthProvider = ({ children }) => {
       return [];
     } catch (error) {
       console.error('Failed to fetch completed stacks:', error);
-      return [];
+      return []; // Return empty array on network error
     }
   };
 
   const markStackCompleted = async (stackName, score) => {
     try {
       const token = localStorage.getItem('trivia_token');
+      if (!token) {
+        console.log('No auth token, skipping stack completion tracking');
+        return; // Gracefully handle no authentication
+      }
+      
       const response = await fetch('/api/user/complete-stack', {
         method: 'POST',
         headers: {
@@ -166,6 +173,7 @@ export const AuthProvider = ({ children }) => {
       }
     } catch (error) {
       console.error('Failed to mark stack completed:', error);
+      // Don't throw error, just log it - game should continue
     }
   };
 

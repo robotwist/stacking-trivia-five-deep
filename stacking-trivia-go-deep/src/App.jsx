@@ -4,6 +4,7 @@ import GameErrorBoundary from './components/GameErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
 import { AuthProvider } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
+import AuthErrorBoundary from './components/AuthErrorBoundary'
 
 // Lazy load heavy components for better performance
 const HostMode = lazy(() => import('./components/HostMode'))
@@ -607,9 +608,11 @@ function App() {
 
 const AppWithAuth = () => {
   return (
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <AuthErrorBoundary>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </AuthErrorBoundary>
   );
 };
 
