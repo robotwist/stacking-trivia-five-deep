@@ -1,0 +1,31 @@
+{
+  "title": "Dinosaurs: Rulers of the Ancient World",
+  "description": "Discover the massive, terrifying, and amazing creatures that ruled Earth millions of years ago!",
+  "questions": [
+    {
+      "q": "What does the name 'Tyrannosaurus Rex' mean?",
+      "a": ["tyrant lizard king", "king tyrant lizard", "tyrant king lizard"],
+      "hint": "It means 'King' and 'Tyrant' and 'Lizard' - think about a scary ruler!"
+    },
+    {
+      "q": "How long were T-Rex's teeth?",
+      "a": ["8 inches", "eight inches", "20 centimeters"],
+      "hint": "About as long as a banana! That's huge for teeth."
+    },
+    {
+      "q": "Which dinosaur had over 500 teeth?",
+      "a": ["nigersaurus", "niger saurus"],
+      "hint": "This dinosaur was like a living lawn mower with hundreds of tiny teeth!"
+    },
+    {
+      "q": "What caused the dinosaurs to go extinct 66 million years ago?",
+      "a": ["asteroid", "meteor", "space rock", "asteroid impact"],
+      "hint": "Something from outer space crashed into Earth with massive force!"
+    },
+    {
+      "q": "Which dinosaur was longer than a school bus?",
+      "a": ["diplodocus", "brontosaurus", "apatosaurus"],
+      "hint": "This long-necked giant could reach leaves at the top of very tall trees!"
+    }
+  ]
+}

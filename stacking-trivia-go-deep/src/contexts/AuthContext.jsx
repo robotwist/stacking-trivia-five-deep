@@ -26,19 +26,32 @@ export const AuthProvider = ({ children }) => {
       const userData = localStorage.getItem('trivia_user');
       
       if (token && userData) {
-        // Verify token is still valid
-        const response = await fetch('/api/auth/verify', {
-          headers: {
-            'Authorization': `Bearer ${token}`
+        // Verify token is still valid - handle missing backend gracefully
+        try {
+          const response = await fetch('/api/auth/verify', {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          
+          if (response.ok) {
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+              setUser(JSON.parse(userData));
+            } else {
+              // Backend not available, clear storage
+              localStorage.removeItem('trivia_token');
+              localStorage.removeItem('trivia_user');
+            }
+          } else {
+            // Token is invalid, clear storage
+            localStorage.removeItem('trivia_token');
+            localStorage.removeItem('trivia_user');
           }
-        });
-        
-        if (response.ok) {
+        } catch (networkError) {
+          // Backend not available, but keep user logged in locally
+          console.log('Backend not available, using local session');
           setUser(JSON.parse(userData));
-        } else {
-          // Token is invalid, clear storage
-          localStorage.removeItem('trivia_token');
-          localStorage.removeItem('trivia_user');
         }
       }
     } catch (error) {
@@ -60,6 +73,12 @@ export const AuthProvider = ({ children }) => {
         },
         body: JSON.stringify({ username, email, password }),
       });
+
+      // Check if response is JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error('Backend not available - authentication disabled');
+      }
 
       const data = await response.json();
 
@@ -93,6 +112,12 @@ export const AuthProvider = ({ children }) => {
         },
         body: JSON.stringify({ username, password }),
       });
+
+      // Check if response is JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error('Backend not available - authentication disabled');
+      }
 
       const data = await response.json();
 

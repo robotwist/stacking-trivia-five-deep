@@ -1,0 +1,31 @@
+{
+  "title": "Space Exploration: Rockets and Planets",
+  "description": "Blast off into the amazing world of space travel and discover incredible facts about our solar system!",
+  "questions": [
+    {
+      "q": "How fast do rockets need to go to escape Earth's gravity?",
+      "a": ["25000 mph", "25,000 mph", "twenty five thousand mph"],
+      "hint": "It's 25 thousand miles per hour - faster than anything on Earth!"
+    },
+    {
+      "q": "Which planet has the biggest volcano in our solar system?",
+      "a": ["mars"],
+      "hint": "It's the red planet, and the volcano is called Olympus Mons!"
+    },
+    {
+      "q": "How many moons does Jupiter have?",
+      "a": ["79", "seventy nine", "over 75"],
+      "hint": "It's almost 80 moons - Jupiter is like a mini solar system!"
+    },
+    {
+      "q": "What did Neil Armstrong say when he first stepped on the moon?",
+      "a": ["one small step for man", "that's one small step for man"],
+      "hint": "He talked about a small step for one person but a giant leap for everyone!"
+    },
+    {
+      "q": "How long does it take for light from the Sun to reach Earth?",
+      "a": ["8 minutes", "eight minutes"],
+      "hint": "About the same time it takes to eat breakfast!"
+    }
+  ]
+}

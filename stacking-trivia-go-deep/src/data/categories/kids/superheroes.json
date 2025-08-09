@@ -1,0 +1,31 @@
+{
+  "title": "Superheroes: Powers and Origins",
+  "description": "Learn the amazing secrets behind your favorite superheroes and their incredible powers!",
+  "questions": [
+    {
+      "q": "What planet is Superman from?",
+      "a": ["krypton"],
+      "hint": "It's a planet that was destroyed, and it sounds like a gas you might find in science class!"
+    },
+    {
+      "q": "What gives Spider-Man his powers?",
+      "a": ["radioactive spider bite", "spider bite", "radioactive spider"],
+      "hint": "A small crawling creature bit him, but it had been affected by dangerous radiation!"
+    },
+    {
+      "q": "What is Batman's real name?",
+      "a": ["bruce wayne"],
+      "hint": "He's a rich guy who lives in Gotham City and his first name is Bruce!"
+    },
+    {
+      "q": "What metal makes up Wolverine's claws and skeleton?",
+      "a": ["adamantium"],
+      "hint": "It's a super-strong fictional metal that makes him nearly indestructible!"
+    },
+    {
+      "q": "Which superhero gets stronger when he gets angry?",
+      "a": ["hulk", "the hulk"],
+      "hint": "He turns green and smashes things when he's mad!"
+    }
+  ]
+}

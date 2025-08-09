@@ -129,6 +129,19 @@
         "philip-k-dick-super"
       ]
     },
+    "kids": {
+      "title": "🎮 Kids Zone",
+      "description": "Awesome trivia for curious kids - dinosaurs, superheroes, space, and more!",
+      "image": "kids",
+      "color": "from-green-500 to-blue-500",
+      "stacks": [
+        "dinosaurs",
+        "superheroes", 
+        "space",
+        "videogames",
+        "animals"
+      ]
+    },
     "character-name-origins": {
       "title": "Character Name Origins: Encoded Destinies",
       "description": "Discover how authors embed meaning, psychology, and destiny into character names",

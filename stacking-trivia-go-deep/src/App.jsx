@@ -48,6 +48,13 @@ import bladeRunnerData from './data/categories/cinema/blade_runner.json'
 import godfatherData from './data/categories/cinema/the-godfather.json'
 import starWarsData from './data/categories/cinema/star-wars.json'
 
+// Kids category imports
+import dinosaursData from './data/categories/kids/dinosaurs.json'
+import superheroesData from './data/categories/kids/superheroes.json'
+import spaceData from './data/categories/kids/space.json'
+import videogamesData from './data/categories/kids/videogames.json'
+import animalsData from './data/categories/kids/animals.json'
+
 import ancientGreeceData from './data/categories/history/ancient_greece.json'
 import cleopatraData from './data/categories/history/cleopatra.json'
 import einsteinData from './data/categories/history/einstein.json'
@@ -133,6 +140,13 @@ function App() {
     'friends': friendsData,
     'back-to-the-future': backToTheFutureData,
     'stranger-things': strangerThingsData,
+    
+    // Kids Zone
+    'dinosaurs': dinosaursData,
+    'superheroes': superheroesData,
+    'space': spaceData,
+    'videogames': videogamesData,
+    'animals': animalsData,
     
     // Super Stacks
     'heroes-journey-super': heroesJourneySuperData,

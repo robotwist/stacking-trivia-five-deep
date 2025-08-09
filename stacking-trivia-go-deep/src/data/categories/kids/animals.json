@@ -1,0 +1,31 @@
+{
+  "title": "Amazing Animals: Wild and Weird",
+  "description": "Discover the most incredible, strange, and awesome animals on our planet!",
+  "questions": [
+    {
+      "q": "Which animal can run faster than a car on the highway?",
+      "a": ["cheetah"],
+      "hint": "This spotted cat can reach 70 mph - faster than most cars in the city!"
+    },
+    {
+      "q": "How many hearts does an octopus have?",
+      "a": ["3", "three"],
+      "hint": "It's more than humans have, but less than five!"
+    },
+    {
+      "q": "Which animal never forgets anything?",
+      "a": ["elephant"],
+      "hint": "There's a saying about these big gray animals having amazing memories!"
+    },
+    {
+      "q": "What's the loudest animal on Earth?",
+      "a": ["blue whale", "whale"],
+      "hint": "This ocean giant's call can be heard from hundreds of miles away!"
+    },
+    {
+      "q": "Which animal can change its color to match its surroundings?",
+      "a": ["chameleon"],
+      "hint": "This lizard is like a living invisibility cloak!"
+    }
+  ]
+}

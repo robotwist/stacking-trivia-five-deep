@@ -1,0 +1,31 @@
+{
+  "title": "Video Games: Epic Adventures",
+  "description": "Test your knowledge about the coolest video games and gaming secrets!",
+  "questions": [
+    {
+      "q": "In Minecraft, what do you need to make a Nether Portal?",
+      "a": ["obsidian", "obsidian blocks"],
+      "hint": "It's a very dark, hard block that you need a diamond pickaxe to mine!"
+    },
+    {
+      "q": "What's the name of Mario's dinosaur companion?",
+      "a": ["yoshi"],
+      "hint": "He's green, friendly, and Mario can ride on his back!"
+    },
+    {
+      "q": "In Fortnite, what happens when the storm closes in?",
+      "a": ["you take damage", "damage", "you get hurt"],
+      "hint": "If you're caught outside the safe zone, your health starts going down!"
+    },
+    {
+      "q": "Which Pokémon is known as the Electric Mouse Pokémon?",
+      "a": ["pikachu"],
+      "hint": "He's yellow, says his own name, and is Ash's best friend!"
+    },
+    {
+      "q": "What color is Sonic the Hedgehog?",
+      "a": ["blue"],
+      "hint": "He's the same color as the sky on a clear day!"
+    }
+  ]
+}
