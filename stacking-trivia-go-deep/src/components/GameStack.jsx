@@ -201,36 +201,36 @@ export default function GameStack({ stackData, onComplete }) {
   const isDeeperModeComplete = isDeepMode && stackData.deeperMode && deepModeDepth >= stackData.deeperMode.questions.length;
   
   if (isStackComplete || isDeeperModeComplete) {
-    const completionEmoji = isDeeperModeComplete ? "🔥" : "🏆";
     const completionTitle = isDeeperModeComplete ? "DEEPER MODE MASTERED!" : "Stack Mastered!";
     const completionGradient = isDeeperModeComplete 
-      ? "from-orange-600 via-red-600 to-purple-600" 
-      : "from-green-600 to-emerald-600";
+      ? "from-amber-700 via-yellow-600 to-amber-800" 
+      : "from-amber-600 to-yellow-600";
     
     return (
-      <div className={`p-8 max-w-2xl mx-auto rounded-2xl shadow-2xl text-center animate-fade-in ${
+      <div className={`p-8 max-w-2xl mx-auto rounded-sm border-2 border-amber-400 text-center sepia ${
         darkMode 
-          ? 'bg-gray-800/90 backdrop-blur-sm border border-gray-700/50' 
-          : 'bg-white/90 backdrop-blur-sm shadow-xl'
+          ? 'bg-gradient-to-br from-amber-900/90 via-yellow-900/80 to-amber-800/90 text-amber-50' 
+          : 'bg-gradient-to-br from-amber-50/90 via-yellow-50/80 to-amber-100/90 text-amber-900'
       }`}>
-        <div className="text-6xl mb-6">{completionEmoji}</div>
-        <h2 className={`text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r ${completionGradient} bg-clip-text text-transparent`}>
+        <div className="text-6xl mb-6" style={{ fontFamily: 'Baskervville, serif' }}>— ❦ —</div>
+        <h2 className={`text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r ${completionGradient} bg-clip-text text-transparent`} style={{ fontFamily: 'Baskervville, serif' }}>
           {completionTitle}
         </h2>
         {isDeeperModeComplete && (
-          <div className="text-lg mb-4 text-orange-600 dark:text-orange-400 font-semibold">
-            You've mastered the obsessive details! 🔥
+          <div className="text-lg mb-4 text-amber-700 dark:text-amber-300 font-semibold" style={{ fontFamily: 'Baskervville, serif' }}>
+            You've mastered the obsessive details!
           </div>
         )}
-        <div className={`text-2xl sm:text-3xl mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-          Final Score: <span className="font-bold text-purple-600">{score} points</span>
+        <div className={`text-2xl sm:text-3xl mb-6 ${darkMode ? 'text-amber-100' : 'text-amber-900'}`} style={{ fontFamily: 'Baskervville, serif' }}>
+          Final Score: <span className="font-bold text-amber-700 dark:text-amber-300">{score} points</span>
         </div>
-        <p className={`text-lg mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+        <p className={`text-lg mb-8 ${darkMode ? 'text-amber-300' : 'text-amber-600'}`} style={{ fontFamily: 'Baskervville, serif' }}>
           You've conquered {stackData.title}{isDeeperModeComplete ? ' AND its deepest secrets!' : '!'}
         </p>
         <button
           onClick={onComplete}
-          className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+          className="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-4 rounded-sm border-2 border-amber-500 hover:border-amber-400 text-lg font-semibold transition-all duration-300 transform hover:scale-105 sepia hover:sepia-0"
+          style={{ fontFamily: 'Baskervville, serif' }}
         >
           Choose Another Stack
         </button>
@@ -240,9 +240,9 @@ export default function GameStack({ stackData, onComplete }) {
 
   if (!current) {
     return (
-      <div className={`p-8 text-center rounded-2xl ${
-        darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
-      }`}>
+      <div className={`p-8 text-center rounded-sm border-2 border-amber-400 sepia ${
+        darkMode ? 'bg-gradient-to-br from-amber-900/80 to-yellow-900/70 text-amber-100' : 'bg-gradient-to-br from-amber-50/80 to-yellow-50/70 text-amber-900'
+      }`} style={{ fontFamily: 'Baskervville, serif' }}>
         No questions available
       </div>
     );
@@ -252,41 +252,41 @@ export default function GameStack({ stackData, onComplete }) {
   const currentPoints = 10 * Math.pow(2, depth);
 
   return (
-    <div className={`p-6 sm:p-8 max-w-4xl mx-auto rounded-2xl shadow-2xl animate-slide-up ${
+    <div className={`p-6 sm:p-8 max-w-4xl mx-auto rounded-sm border-2 border-amber-400 sepia ${
       darkMode 
-        ? 'bg-gray-800/90 backdrop-blur-sm border border-gray-700/50 text-white' 
-        : 'bg-white/90 backdrop-blur-sm shadow-xl text-gray-900'
+        ? 'bg-gradient-to-br from-amber-900/90 via-yellow-900/80 to-amber-800/90 text-amber-50' 
+        : 'bg-gradient-to-br from-amber-50/90 via-yellow-50/80 to-amber-100/90 text-amber-900'
     }`}>
       {/* Header with title and progress */}
       <div className="mb-8">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <h2 className="text-2xl sm:text-3xl font-bold">
+              <h2 className="text-2xl sm:text-3xl font-bold" style={{ fontFamily: 'Baskervville, serif' }}>
                 {stackData.title}
               </h2>
               {isDeepMode && (
-                <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
-                  🔥 DEEPER MODE
+                <div className="bg-gradient-to-r from-amber-600 to-yellow-600 text-amber-900 px-3 py-1 rounded-sm border border-amber-500 text-sm font-bold sepia" style={{ fontFamily: 'Baskervville, serif' }}>
+                  DEEPER MODE
                 </div>
               )}
             </div>
-            <div className="flex items-center gap-4 text-sm">
+            <div className="flex items-center gap-4 text-sm" style={{ fontFamily: 'Baskervville, serif' }}>
               {isDeepMode ? (
                 <>
-                  <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                  <span className={`${darkMode ? 'text-amber-300' : 'text-amber-600'}`}>
                     Deeper Level {deepModeDepth + 1} of {stackData.deeperMode.questions.length}
                   </span>
-                  <span className="text-orange-600 dark:text-orange-400 font-semibold">
+                  <span className="text-amber-700 dark:text-amber-300 font-semibold">
                     {current?.bonus || 100} bonus points at stake
                   </span>
                 </>
               ) : (
                 <>
-                  <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                  <span className={`${darkMode ? 'text-amber-300' : 'text-amber-600'}`}>
                     Level {depth + 1} of {stackData.questions.length}
                   </span>
-                  <span className="text-purple-600 dark:text-purple-400 font-semibold">
+                  <span className="text-amber-700 dark:text-amber-300 font-semibold">
                     {currentPoints} points at stake
                   </span>
                 </>
@@ -294,19 +294,19 @@ export default function GameStack({ stackData, onComplete }) {
             </div>
           </div>
           <div className="mt-4 sm:mt-0 text-right">
-            <div className="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400">
+            <div className="text-2xl sm:text-3xl font-bold text-amber-700 dark:text-amber-300" style={{ fontFamily: 'Baskervville, serif' }}>
               {score}
             </div>
-            <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+            <div className={`text-sm ${darkMode ? 'text-amber-400' : 'text-amber-600'}`} style={{ fontFamily: 'Baskervville, serif' }}>
               Total Score
             </div>
           </div>
         </div>
         
         {/* Progress Bar */}
-        <div className={`w-full rounded-full h-3 ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
+        <div className={`w-full rounded-sm h-3 border border-amber-500 ${darkMode ? 'bg-amber-900/30' : 'bg-amber-100/50'}`}>
           <div 
-            className="bg-gradient-to-r from-purple-600 to-pink-600 h-3 rounded-full transition-all duration-500 ease-out" 
+            className="bg-gradient-to-r from-amber-600 to-yellow-600 h-3 rounded-sm transition-all duration-500 ease-out" 
             style={{ width: `${progressPercentage}%` }}
           ></div>
         </div>
