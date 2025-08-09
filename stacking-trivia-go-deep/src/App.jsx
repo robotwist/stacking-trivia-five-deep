@@ -282,11 +282,11 @@ function App() {
 
   if (gameStarted && selectedStack && gameStacks[selectedStack]) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-gray-900 dark:to-black transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900 transition-colors duration-300" style={{ fontFamily: 'Baskerville, serif' }}>
         <div className="container mx-auto px-4 py-8">
           <button 
             onClick={handleBackToStacks}
-            className="mb-6 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-all duration-200 backdrop-blur-sm"
+            className="mb-6 px-4 py-2 bg-amber-200/60 hover:bg-amber-300/60 rounded-sm text-amber-900 transition-all duration-200"
           >
             ← Back to Stacks
           </button>
@@ -302,32 +302,20 @@ function App() {
   if (selectedCategory) {
     const category = categoriesConfig.categories[selectedCategory]
     return (
-      <div className={`min-h-screen transition-colors duration-300 ${
-        darkMode 
-          ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white' 
-          : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 text-gray-900'
-      }`}>
+      <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900" style={{ fontFamily: 'Baskerville, serif' }}>
         <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
             <button 
               onClick={handleBackToCategories}
-              className={`px-4 py-2 rounded-lg transition-all duration-200 order-2 sm:order-1 ${
-                darkMode 
-                  ? 'bg-gray-800 hover:bg-gray-700 text-white' 
-                  : 'bg-white hover:bg-gray-50 text-gray-900 shadow-md'
-              }`}
+              className="px-4 py-2 rounded-sm transition-all duration-200 order-2 sm:order-1 bg-amber-200/60 hover:bg-amber-300/60 text-amber-900"
             >
               ← Back to Categories
             </button>
             <button
               onClick={toggleDarkMode}
-              className={`p-2 rounded-lg transition-all duration-200 order-1 sm:order-2 ${
-                darkMode 
-                  ? 'bg-gray-800 hover:bg-gray-700 text-yellow-400' 
-                  : 'bg-white hover:bg-gray-50 text-gray-700 shadow-md'
-              }`}
+              className="p-2 rounded-sm transition-all duration-200 order-1 sm:order-2 bg-amber-200/60 hover:bg-amber-300/60 text-amber-800"
             >
-              {darkMode ? 'Light' : 'Dark'}
+              Victorian Mode
             </button>
           </div>
           
@@ -344,42 +332,29 @@ function App() {
                 <button
                   key={stackKey}
                   onClick={() => handleStackSelect(stackKey)}
-                  className={`group p-4 sm:p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
-                    darkMode
-                      ? 'bg-gray-800/50 hover:bg-gray-700/70 backdrop-blur-sm border border-gray-700/50'
-                      : 'bg-white/80 hover:bg-white/95 backdrop-blur-sm shadow-lg hover:shadow-xl border border-gray-200/30'
-                  }`}
+                  className="group p-4 sm:p-6 rounded-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-amber-100/80 hover:bg-amber-200/70 border border-amber-300"
                 >
                   {/* Visual hint area */}
                   {stack.imageHint && (
-                    <div className={`mb-4 p-4 rounded-lg ${
-                      darkMode ? 'bg-gray-700/30' : 'bg-gray-100/50'
-                    }`}>
-                      <div className={`text-center mb-2 ${
-                        darkMode ? 'text-yellow-400' : 'text-yellow-600'
-                      }`}>
-                        🖼️
-                      </div>
-                      <p className={`text-xs text-center italic ${
-                        darkMode ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
+                    <div className="mb-4 p-4 rounded-sm bg-amber-200/40">
+                      <p className="text-xs text-center italic text-amber-700">
                         {stack.imageHint}
                       </p>
                     </div>
                   )}
                   
-                  <div className={`w-full h-2 rounded-full mb-4 bg-gradient-to-r ${category.color}`}></div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  <div className={`w-full h-2 rounded-sm mb-4 bg-gradient-to-r ${category.color}`}></div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-amber-800 transition-colors">
                     {stack.title}
                   </h3>
-                  <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
+                  <p className="text-sm text-amber-700 mb-4">
                     {stack.description || "Dive deep into this fascinating topic"}
                   </p>
                   <div className="flex items-center justify-between text-xs">
-                    <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                    <span className="text-amber-600">
                       5 Questions Deep
                     </span>
-                    <span className="text-purple-600 dark:text-purple-400 font-semibold">
+                    <span className="text-amber-800 font-semibold">
                       160 pts max
                     </span>
                   </div>

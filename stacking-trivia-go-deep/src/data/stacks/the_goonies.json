@@ -1,0 +1,43 @@
+{
+  "id": "the-goonies",
+  "title": "The Goonies: Never Say Die",
+  "category": "pop-culture",
+  "description": "From Astoria to One-Eyed Willy's treasure",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the name of the pirate whose treasure the Goonies are searching for?",
+      "answer": "One-Eyed Willy",
+      "acceptedAnswers": ["one-eyed willy", "one eyed willy", "willy"],
+      "hint": "He's missing an important facial feature"
+    },
+    {
+      "level": 2,
+      "question": "What does Chunk have to do the 'Truffle Shuffle'?",
+      "answer": "Lift his shirt and shake his belly",
+      "acceptedAnswers": ["lift his shirt and shake his belly", "shake his belly", "truffle shuffle", "belly dance"],
+      "hint": "Come on, do the truffle shuffle!"
+    },
+    {
+      "level": 3,
+      "question": "What is the name of the deformed Fratelli brother who befriends the Goonies?",
+      "answer": "Sloth",
+      "acceptedAnswers": ["sloth", "lotney fratelli"],
+      "hint": "Hey you guys!"
+    },
+    {
+      "level": 4,
+      "question": "What must the Goonies play to escape from the bone organ?",
+      "answer": "The correct musical sequence",
+      "acceptedAnswers": ["the correct musical sequence", "the right notes", "the song", "bone organ song"],
+      "hint": "Data knows the right keys to press"
+    },
+    {
+      "level": 5,
+      "question": "What does Mikey find in the museum that starts their treasure hunt?",
+      "answer": "A treasure map in the attic",
+      "acceptedAnswers": ["a treasure map in the attic", "treasure map", "map", "the map"],
+      "hint": "It was hidden in his father's belongings"
+    }
+  ]
+}

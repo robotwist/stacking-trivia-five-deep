@@ -1,0 +1,43 @@
+{
+  "id": "how-i-met-your-mother",
+  "title": "How I Met Your Mother: The Long Con",
+  "category": "pop-culture",
+  "description": "From yellow umbrella to legendary nights at MacLaren's Pub",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the name of the bar where the gang always hangs out?",
+      "answer": "MacLaren's Pub",
+      "acceptedAnswers": ["maclaren's pub", "maclarens pub", "maclaren's", "maclarens"],
+      "hint": "It's right below Ted's apartment"
+    },
+    {
+      "level": 2,
+      "question": "What does Barney say whenever something is awesome?",
+      "answer": "Legendary",
+      "acceptedAnswers": ["legendary", "legen... wait for it... dary", "legend... wait for it... ary"],
+      "hint": "Wait for it..."
+    },
+    {
+      "level": 3,
+      "question": "What is the name of Robin's Canadian pop star alter ego from her teenage years?",
+      "answer": "Robin Sparkles",
+      "acceptedAnswers": ["robin sparkles", "sparkles"],
+      "hint": "She went to the mall... today"
+    },
+    {
+      "level": 4,
+      "question": "What is the color of the umbrella that belongs to the Mother?",
+      "answer": "Yellow",
+      "acceptedAnswers": ["yellow", "yellow umbrella"],
+      "hint": "The title sequence shows it every episode"
+    },
+    {
+      "level": 5,
+      "question": "What is the name of Barney's job that he never explains, only saying 'Please'?",
+      "answer": "Provide Legal Exculpation And Sign Everything",
+      "acceptedAnswers": ["provide legal exculpation and sign everything", "please", "p.l.e.a.s.e"],
+      "hint": "It's literally what P.L.E.A.S.E stands for"
+    }
+  ]
+}
