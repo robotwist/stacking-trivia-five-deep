@@ -28,6 +28,12 @@ export default function CategorySelection({
       >
         {Object.entries(categoriesConfig.categories).map(([key, category]) => {
           const imageData = CATEGORY_IMAGES[key];
+          // Safety check for missing image data
+          if (!imageData) {
+            console.warn(`Missing image data for category: ${key}`);
+            return null;
+          }
+          
           const isAvailable = stackUnlockManager.isStackAvailable(key);
           const unlockRequirements = !isAvailable ? stackUnlockManager.getUnlockRequirements(key) : null;
           const completion = stackUnlockManager.getStackCompletion(key);

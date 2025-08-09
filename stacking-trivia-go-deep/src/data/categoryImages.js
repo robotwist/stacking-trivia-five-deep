@@ -136,6 +136,18 @@ export const CATEGORY_IMAGES = {
     ), url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000' opacity='0.05' stroke-width='1'%3E%3Cpath d='M5 15h35M5 25h35M5 35h35'/%3E%3Ccircle cx='35' cy='10' r='5'/%3E%3C/g%3E%3C/svg%3E")`,
     alt: "Medieval manuscript with character name etymology and linguistic analysis",
     description: "Character nomenclature archive, literary name theory collection"
+  },
+  
+  'kids': {
+    // Fun, colorful design for kids with playful patterns
+    backgroundImage: `linear-gradient(135deg, 
+      rgba(0, 100, 200, 0.9) 0%, 
+      rgba(50, 150, 100, 0.85) 30%, 
+      rgba(255, 200, 0, 0.8) 60%,
+      rgba(255, 100, 50, 0.7) 100%
+    ), url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' opacity='0.15'%3E%3Cstar cx='10' cy='10'/%3E%3Ccircle cx='20' cy='15' r='3'/%3E%3Crect x='5' y='20' width='4' height='4' rx='1'/%3E%3C/g%3E%3C/svg%3E")`,
+    alt: "Colorful kids learning environment with toys and educational materials",
+    description: "Kids Zone - Fun learning adventures for curious minds"
   }
 };
 
