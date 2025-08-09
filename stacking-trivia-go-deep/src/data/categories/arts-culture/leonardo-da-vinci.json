@@ -1,0 +1,91 @@
+{
+  "title": "Leonardo da Vinci: Renaissance Master",
+  "description": "The ultimate Renaissance genius - artist, inventor, scientist, and visionary who painted the Mona Lisa",
+  "category": "Arts & Culture",
+  "difficulty": "intermediate",
+  "imageHint": "🎨 The ultimate Renaissance man of art and invention 📐",
+  "questions": [
+    {
+      "question": "What is Leonardo's most famous painting, known for its subject's mysterious smile?",
+      "acceptedAnswers": [
+        "Mona Lisa",
+        "mona lisa",
+        "La Gioconda",
+        "la gioconda",
+        "monalisa"
+      ],
+      "hint": "It's of a woman with an enigmatic smile, housed in the Louvre"
+    },
+    {
+      "question": "Leonardo's fresco depicting Christ's final meal with his disciples is called what?",
+      "acceptedAnswers": [
+        "The Last Supper",
+        "last supper",
+        "the last supper",
+        "L'Ultima Cena"
+      ],
+      "hint": "It shows Jesus announcing that one of his disciples will betray him"
+    },
+    {
+      "question": "Leonardo wrote his notes in what unusual manner that required a mirror to read easily?",
+      "acceptedAnswers": [
+        "mirror writing",
+        "reverse writing",
+        "backwards",
+        "mirror script",
+        "reversed text"
+      ],
+      "hint": "You need a mirror to read it normally - written from right to left"
+    },
+    {
+      "question": "What flying machine design did Leonardo create centuries before actual flight was achieved?",
+      "acceptedAnswers": [
+        "ornithopter",
+        "flying machine",
+        "mechanical bird",
+        "ornithopter design",
+        "flapping wing machine"
+      ],
+      "hint": "A machine with flapping wings like a bird, from Greek words for 'bird' and 'wing'"
+    },
+    {
+      "question": "Leonardo's detailed anatomical drawings were based on his illegal practice of what?",
+      "acceptedAnswers": [
+        "dissection",
+        "dissecting bodies",
+        "human dissection",
+        "cadaver dissection",
+        "body dissection"
+      ],
+      "hint": "Cutting open dead bodies to study internal structure - forbidden by the church"
+    }
+  ],
+  "deeperMode": {
+    "title": "The Obsessive Perfectionist",
+    "description": "Leonardo's relentless pursuit of knowledge and his unfinished masterpieces",
+    "questions": [
+      {
+        "question": "Leonardo was notorious for leaving works unfinished. Approximately how many paintings did he complete in his lifetime?",
+        "acceptedAnswers": [
+          "15",
+          "fifteen",
+          "about 15",
+          "around 15"
+        ],
+        "bonus": 150,
+        "hint": "Fewer than twenty - his perfectionism often prevented him from finishing"
+      },
+      {
+        "question": "What did Leonardo call the phenomenon where distant objects appear blue or hazy?",
+        "acceptedAnswers": [
+          "aerial perspective",
+          "atmospheric perspective",
+          "sfumato",
+          "aerial perspective technique"
+        ],
+        "bonus": 200,
+        "hint": "A technique that shows depth by making distant objects appear less distinct and bluer"
+      }
+    ]
+  }
+}

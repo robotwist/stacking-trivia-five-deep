@@ -1,0 +1,88 @@
+{
+  "title": "Steve Jobs: Apple Innovation",
+  "description": "The visionary who revolutionized personal computing, phones, and digital media with obsessive attention to design",
+  "category": "Science & Technology",
+  "difficulty": "intermediate",
+  "imageHint": "🍎 Think different - from garage startup to tech empire 📱",
+  "questions": [
+    {
+      "question": "In what year did Steve Jobs co-found Apple Computer Company with Steve Wozniak?",
+      "acceptedAnswers": [
+        "1976",
+        "nineteen seventy-six"
+      ],
+      "hint": "The same year as America's bicentennial celebration"
+    },
+    {
+      "question": "What was the name of the first mass-produced personal computer that made Apple famous?",
+      "acceptedAnswers": [
+        "Apple II",
+        "Apple 2",
+        "Apple Two",
+        "apple ii",
+        "apple 2"
+      ],
+      "hint": "The Roman numeral for two, this computer had color graphics and was hugely successful"
+    },
+    {
+      "question": "After being ousted from Apple, Jobs founded which computer company that was later acquired by Apple?",
+      "acceptedAnswers": [
+        "NeXT",
+        "Next",
+        "NeXT Computer",
+        "next computer"
+      ],
+      "hint": "It was literally what came 'after' Apple for Jobs, spelled with unusual capitalization"
+    },
+    {
+      "question": "What revolutionary product did Jobs introduce in 2007 that changed the smartphone industry forever?",
+      "acceptedAnswers": [
+        "iPhone",
+        "iphone",
+        "i phone",
+        "Apple iPhone"
+      ],
+      "hint": "A phone that starts with 'i' and put the internet in everyone's pocket"
+    },
+    {
+      "question": "Jobs was also CEO of which animation studio that created Toy Story and was later sold to Disney?",
+      "acceptedAnswers": [
+        "Pixar",
+        "pixar",
+        "Pixar Animation Studios",
+        "Pixar Studios"
+      ],
+      "hint": "Named after a computer graphics term, they revolutionized animated movies"
+    }
+  ],
+  "deeperMode": {
+    "title": "The Perfectionist's Obsessions", 
+    "description": "The extreme attention to detail and controversial management style behind Apple's success",
+    "questions": [
+      {
+        "question": "Jobs was famous for his demanding perfectionism. What did he reportedly make his team redesign 67 times for the first iPhone?",
+        "acceptedAnswers": [
+          "packaging",
+          "the box",
+          "iPhone box",
+          "packaging design",
+          "product packaging"
+        ],
+        "bonus": 150,
+        "hint": "The container that holds the product - he wanted the 'unboxing experience' to be perfect"
+      },
+      {
+        "question": "What Zen Buddhist practice did Jobs follow that influenced Apple's minimalist design philosophy?",
+        "acceptedAnswers": [
+          "meditation",
+          "zen meditation",
+          "mindfulness", 
+          "buddhist meditation",
+          "zen practice"
+        ],
+        "bonus": 200,
+        "hint": "A practice of mental focus and awareness that values simplicity and presence"
+      }
+    ]
+  }
+}

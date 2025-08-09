@@ -1,0 +1,85 @@
+{
+  "title": "Serena Williams: Tennis Dominance",
+  "description": "The most successful tennis player in the Open Era, with 23 Grand Slam singles titles and cultural impact beyond sports",
+  "category": "Sports",
+  "difficulty": "intermediate", 
+  "imageHint": "🎾 The GOAT of tennis with unmatched power and determination 🏆",
+  "questions": [
+    {
+      "question": "How many Grand Slam singles titles did Serena Williams win during her career?",
+      "acceptedAnswers": [
+        "23",
+        "twenty-three",
+        "23 titles"
+      ],
+      "hint": "One more than Steffi Graf's previous record, the most in the Open Era"
+    },
+    {
+      "question": "Serena won her first Grand Slam at age 17. Which tournament was it?",
+      "acceptedAnswers": [
+        "US Open",
+        "US Open 1999",
+        "united states open",
+        "u.s. open"
+      ],
+      "hint": "Her home country's major tournament, held in New York"
+    },
+    {
+      "question": "What is the name of Serena's older sister, also a tennis champion and frequent doubles partner?",
+      "acceptedAnswers": [
+        "Venus",
+        "Venus Williams",
+        "venus williams"
+      ],
+      "hint": "Named after a planet (and Roman goddess), she paved the way for Serena's success"
+    },
+    {
+      "question": "Serena won the 2017 Australian Open while pregnant. How many months pregnant was she?",
+      "acceptedAnswers": [
+        "2 months",
+        "two months", 
+        "8 weeks",
+        "about 2 months"
+      ],
+      "hint": "Early in her pregnancy, she was already expecting her daughter Olympia"
+    },
+    {
+      "question": "What phrase did Serena make famous when challenging line calls and bad officiating?",
+      "acceptedAnswers": [
+        "Are you kidding me?",
+        "are you kidding me",
+        "You cannot be serious",
+        "This is not right"
+      ],
+      "hint": "A questioning phrase expressing disbelief at unfair treatment"
+    }
+  ],
+  "deeperMode": {
+    "title": "Queen of the Court",
+    "description": "Serena's battles beyond tennis and her impact on sports culture",
+    "questions": [
+      {
+        "question": "Serena revolutionized tennis fashion. What type of outfit did she wear that was initially banned by the French Open?",
+        "acceptedAnswers": [
+          "catsuit",
+          "black catsuit",
+          "compression suit",
+          "bodysuit"
+        ],
+        "bonus": 150,
+        "hint": "A form-fitting black outfit that helped with blood circulation but was deemed too bold"
+      },
+      {
+        "question": "What life-threatening condition did Serena experience after giving birth to her daughter Olympia?",
+        "acceptedAnswers": [
+          "pulmonary embolism",
+          "blood clots",
+          "pulmonary embolisms",
+          "blood clot"
+        ],
+        "bonus": 200,
+        "hint": "Dangerous blood clots in the lungs that required emergency surgery"
+      }
+    ]
+  }
+}

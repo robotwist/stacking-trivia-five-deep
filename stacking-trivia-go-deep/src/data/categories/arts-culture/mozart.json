@@ -1,0 +1,86 @@
+{
+  "title": "Mozart: Classical Genius", 
+  "description": "The child prodigy who composed over 600 works and died mysteriously at 35, leaving an immortal musical legacy",
+  "category": "Arts & Culture",
+  "difficulty": "intermediate",
+  "imageHint": "🎼 From child prodigy to immortal symphonies 🎹",
+  "questions": [
+    {
+      "question": "At what remarkably young age did Mozart compose his first piece of music?",
+      "acceptedAnswers": [
+        "5",
+        "five",
+        "age 5",
+        "5 years old"
+      ],
+      "hint": "Before he could even write properly, he was creating music"
+    },
+    {
+      "question": "Mozart's opera about a Spanish nobleman's adventures with women is called what?",
+      "acceptedAnswers": [
+        "Don Giovanni",
+        "don giovanni",
+        "Don Juan"
+      ],
+      "hint": "Italian for 'Sir John' - about a legendary seducer who meets a supernatural end"
+    },
+    {
+      "question": "What is the popular name for Mozart's Symphony No. 41 in C major, his final symphony?",
+      "acceptedAnswers": [
+        "Jupiter",
+        "jupiter symphony",
+        "Jupiter Symphony",
+        "the jupiter"
+      ],
+      "hint": "Named after the king of Roman gods - his most majestic symphony"
+    },
+    {
+      "question": "Mozart died while composing which famous piece that deals with death and judgment?",
+      "acceptedAnswers": [
+        "Requiem",
+        "requiem",
+        "Requiem Mass",
+        "Requiem in D minor"
+      ],
+      "hint": "A mass for the dead, left unfinished when the composer himself died"
+    },
+    {
+      "question": "In which Austrian city was Mozart born in 1756?",
+      "acceptedAnswers": [
+        "Salzburg",
+        "salzburg"
+      ],
+      "hint": "Known for its salt trade and baroque architecture, now famous for Mozart tours"
+    }
+  ],
+  "deeperMode": {
+    "title": "The Musical Madman's Secrets",
+    "description": "Mozart's eccentric personality and the mysteries surrounding his death",
+    "questions": [
+      {
+        "question": "Mozart had a peculiar sense of humor. What bodily function did he frequently reference in letters and even compose music about?",
+        "acceptedAnswers": [
+          "flatulence",
+          "farting",
+          "farts",
+          "passing gas",
+          "bodily functions"
+        ],
+        "bonus": 150,
+        "hint": "He wrote several pieces with scatological titles and jokes about this natural bodily function"
+      },
+      {
+        "question": "What mysterious figure commissioned Mozart's final Requiem, leading to legends about death itself ordering the piece?",
+        "acceptedAnswers": [
+          "anonymous patron",
+          "mysterious stranger",
+          "unknown commissioner",
+          "anonymous commissioner",
+          "Count Walsegg"
+        ],
+        "bonus": 200,
+        "hint": "A count who wanted to pass off the work as his own composition for his wife's memorial"
+      }
+    ]
+  }
+}

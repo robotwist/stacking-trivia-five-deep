@@ -25,10 +25,19 @@ import beatlesData from './data/categories/arts-culture/the_beatles.json'
 import fridaKahloData from './data/categories/arts-culture/frida-kahlo.json'
 import milesDavisData from './data/categories/arts-culture/miles-davis.json'
 import shakespeareData from './data/categories/arts-culture/shakespeare.json'
+import leonardoData from './data/categories/arts-culture/leonardo-da-vinci.json'
+import mozartData from './data/categories/arts-culture/mozart.json'
 
 import olympicCurrentData from './data/categories/sports/olympic_distance_current.json'
 import muhammadAliData from './data/categories/sports/muhammad-ali.json'
 import michaelJordanData from './data/categories/sports/michael-jordan.json'
+import serenaWilliamsData from './data/categories/sports/serena-williams.json'
+
+import teslaData from './data/categories/science-technology/tesla.json'
+import darwinData from './data/categories/science-technology/darwin.json'
+import nasaData from './data/categories/science-technology/nasa.json'
+import marieCurieData from './data/categories/science-technology/marie-curie.json'
+import steveJobsData from './data/categories/science-technology/steve-jobs.json'
 
 import bladeRunnerData from './data/categories/cinema/blade_runner.json'
 import godfatherData from './data/categories/cinema/the-godfather.json'
@@ -61,11 +70,21 @@ const gameStacks = {
   'frida-kahlo': fridaKahloData,
   'miles-davis': milesDavisData,
   'shakespeare': shakespeareData,
+  'leonardo-da-vinci': leonardoData,
+  'mozart': mozartData,
   
   // Sports
   'olympic_distance_current': olympicCurrentData,
   'muhammad-ali': muhammadAliData,
   'michael-jordan': michaelJordanData,
+  'serena-williams': serenaWilliamsData,
+  
+  // Science & Technology
+  'tesla': teslaData,
+  'darwin': darwinData,
+  'nasa': nasaData,
+  'marie-curie': marieCurieData,
+  'steve-jobs': steveJobsData,
   
   // Cinema
   'blade_runner': bladeRunnerData,

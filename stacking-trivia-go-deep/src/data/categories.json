@@ -10,7 +10,9 @@
         "the_beatles", 
         "frida-kahlo",
         "miles-davis",
-        "shakespeare"
+        "shakespeare",
+        "leonardo-da-vinci",
+        "mozart"
       ]
     },
     "sports": {
@@ -21,7 +23,21 @@
       "stacks": [
         "olympic_distance_current",
         "muhammad-ali",
-        "michael-jordan"
+        "michael-jordan",
+        "serena-williams"
+      ]
+    },
+    "science-technology": {
+      "title": "Science & Technology", 
+      "description": "Explore the minds that revolutionized our understanding of the universe",
+      "icon": "",
+      "color": "from-blue-600 to-cyan-600",
+      "stacks": [
+        "tesla",
+        "darwin",
+        "nasa", 
+        "marie-curie",
+        "steve-jobs"
       ]
     },
     "cinema": {

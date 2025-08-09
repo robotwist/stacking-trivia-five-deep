@@ -1,0 +1,88 @@
+{
+  "title": "Marie Curie: Radioactivity Pioneer",
+  "description": "The first woman to win a Nobel Prize, who discovered radium and polonium while revolutionizing science",
+  "category": "Science & Technology",
+  "difficulty": "intermediate", 
+  "imageHint": "☢️ Glowing discoveries that changed physics and chemistry ⚛️",
+  "questions": [
+    {
+      "question": "Marie Curie was the first woman to win a Nobel Prize. In which scientific field did she win her first one?",
+      "acceptedAnswers": [
+        "Physics",
+        "physics",
+        "Physical Sciences"
+      ],
+      "hint": "The science of matter, energy, and their interactions - not chemistry"
+    },
+    {
+      "question": "What radioactive element did Marie Curie discover and name after her homeland?",
+      "acceptedAnswers": [
+        "Polonium",
+        "polonium",
+        "Po"
+      ],
+      "hint": "Named after Poland, where she was born, it's element 84 on the periodic table"
+    },
+    {
+      "question": "Marie Curie coined which term to describe the emission of rays from uranium and other elements?",
+      "acceptedAnswers": [
+        "radioactivity",
+        "radioactive",
+        "radiation",
+        "radio activity"
+      ],
+      "hint": "The property of certain elements to emit energy in the form of rays or particles"
+    },
+    {
+      "question": "During World War I, Marie Curie developed mobile X-ray units. What were these vehicles nicknamed?",
+      "acceptedAnswers": [
+        "petites Curies",
+        "petites curies",
+        "little Curies",
+        "mobile X-ray units"
+      ],
+      "hint": "They were called 'little' versions of her name in French"
+    },
+    {
+      "question": "Marie Curie was the first person to win Nobel Prizes in two different scientific fields. Chemistry was her second - what was her groundbreaking work there?",
+      "acceptedAnswers": [
+        "isolation of radium",
+        "pure radium",
+        "radium isolation",
+        "discovering radium",
+        "isolating radium"
+      ],
+      "hint": "She successfully isolated a pure sample of this glowing element"
+    }
+  ],
+  "deeperMode": {
+    "title": "Radium's Deadly Glow",
+    "description": "The dangerous beauty of radioactivity and its ultimate cost to the pioneering scientist",
+    "questions": [
+      {
+        "question": "Marie Curie's laboratory notebooks are still radioactive today. How many years will they remain dangerous?",
+        "acceptedAnswers": [
+          "1500 years",
+          "1,500 years",
+          "fifteen hundred years",
+          "1500",
+          "about 1500 years"
+        ],
+        "bonus": 150,
+        "hint": "More than a millennium and a half - they're kept in lead-lined boxes in Paris"
+      },
+      {
+        "question": "What ultimately caused Marie Curie's death, likely from years of radiation exposure?",
+        "acceptedAnswers": [
+          "aplastic anemia",
+          "aplastic anaemia", 
+          "anemia",
+          "anaemia",
+          "bone marrow failure"
+        ],
+        "bonus": 200,
+        "hint": "A blood disorder where the bone marrow stops producing enough blood cells"
+      }
+    ]
+  }
+}
