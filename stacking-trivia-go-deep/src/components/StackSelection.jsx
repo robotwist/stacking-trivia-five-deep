@@ -54,9 +54,9 @@ export default function StackSelection({
                 )}
                 
                 <div className={`w-full h-2 rounded-sm mb-4 bg-gradient-to-r ${category.color}`}></div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-amber-800 transition-colors">
-                  {stack.title}
-                </h3>
+                                  <h2 className="text-xl font-bold mb-2 group-hover:text-amber-800 transition-colors">
+                    {stack.title}
+                  </h2>
                 <p className="text-sm text-amber-700 mb-4">
                   {stack.description || "Dive deep into this fascinating topic"}
                 </p>

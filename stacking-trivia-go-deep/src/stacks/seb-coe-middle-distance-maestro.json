@@ -1,0 +1,53 @@
+{
+  "title": "Seb Coe: The Middle Distance Maestro",
+  "description": "The strategic genius who redefined 800m and 1500m racing through tactical brilliance and scientific training.",
+  "category": "olympic_distance_1980s", 
+  "difficulty": "expert",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What unique double did Sebastian Coe achieve at both the 1980 and 1984 Olympics?",
+      "answer": "silver in 800m and gold in 1500m at both Games",
+      "points": 10,
+      "hint": "Same medal colors, different events, four years apart",
+      "explanation": "Coe's remarkable consistency: 800m silver and 1500m gold in Moscow 1980, then exactly the same medals in Los Angeles 1984. The only runner in Olympic history to achieve this specific double-double."
+    },
+    {
+      "id": 2,
+      "question": "Which revolutionary training method did Coe's father Peter develop that became the blueprint for modern middle-distance preparation?",
+      "answer": "periodization with speed-based mesocycles",
+      "points": 20,
+      "hint": "It's about organizing training into specific phases focused on different energy systems",
+      "explanation": "Peter Coe pioneered periodization for middle distance - dividing the year into speed, speed-endurance, and competition phases. This replaced the traditional 'just run lots of miles' approach and is now used by every elite middle-distance program globally."
+    },
+    {
+      "id": 3,
+      "question": "What tactical innovation did Coe use to overcome stronger kickers in the 1500m, particularly against Steve Ovett?",
+      "answer": "controlled front-running with strategic surges to break rhythm",
+      "points": 40,
+      "hint": "Instead of waiting for the final kick, he took control early and disrupted his opponents' timing",
+      "explanation": "Coe's 'controlled aggression' - he'd take the lead at 800m, surge at unexpected moments (like 600m to go), then surge again at 300m. This broke his opponents' rhythm and neutered their superior finishing kicks."
+    },
+    {
+      "id": 4,
+      "question": "How did Coe's specific VO2 max training protocol differ from his contemporaries and contribute to his tactical flexibility?",
+      "answer": "5-minute intervals at exactly 100% VO2 max rather than shorter reps at higher intensity",
+      "points": 80,
+      "hint": "It's about the precise duration that maximized oxygen uptake adaptation without creating excessive lactate",
+      "explanation": "While others did 3-minute reps, Coe's 5-minute intervals at exactly 100% VO2 max (determined by lab testing) maximized aerobic power without excessive lactate. This gave him the aerobic base for sustained surges while maintaining speed reserve."
+    },
+    {
+      "id": 5,
+      "question": "What psychological warfare technique did Coe employ in major championships that gave him a mental edge over technically superior runners?",
+      "answer": "deliberate pre-race positioning to force opponents into reactive rather than proactive race strategies",
+      "points": 160,
+      "hint": "It's about championship psychology - making your opponents think about you instead of their own optimal race plan",
+      "explanation": "Coe would position himself prominently during warm-ups and pre-race routines, forcing rivals to react to HIS presence rather than focus on their own race plans. He understood that championship racing is 60% mental - make your opponents run your race, not theirs."
+    }
+  ],
+  "deeperMode": {
+    "title": "The Art of Tactical Supremacy", 
+    "description": "How Coe's strategic mind and scientific approach created a new paradigm for middle-distance racing.",
+    "unlockMessage": "🧠 Ready to dive deeper into the chess match of elite racing strategy!"
+  }
+}

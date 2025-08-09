@@ -1,0 +1,53 @@
+{
+  "title": "Steve Prefontaine: The Rebel's Fire",
+  "description": "Pre's revolutionary approach to distance running that changed American track culture forever.",
+  "category": "olympic_distance_1970s",
+  "difficulty": "expert",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What was Steve Prefontaine's philosophy about racing tactics that made him unique among distance runners?",
+      "answer": "always run from the front to make it a pure test of who wanted it most",
+      "points": 10,
+      "hint": "No tactical hiding, no conserving energy - just pure, relentless aggression from gun to tape",
+      "explanation": "Pre's credo: 'I'm going to work so that it's a pure guts race. In the end, if it is, I am the only one who can win it.' He believed front-running revealed true character - who wanted victory more than they feared pain."
+    },
+    {
+      "id": 2,
+      "question": "What specific innovation did Pre introduce to American distance running training that was considered radical in the 1970s?",
+      "answer": "high-volume training combined with aggressive racing year-round",
+      "points": 20,
+      "hint": "While others periodized and peaked, Pre believed in constant racing at high intensity",
+      "explanation": "Pre pioneered what's now called 'racing into shape' - instead of traditional periodization, he'd race frequently at high intensity while maintaining high training volume. This was heretical in the 1970s but is now standard practice."
+    },
+    {
+      "id": 3,
+      "question": "How did Prefontaine's conflict with the AAU over amateur rules help spark the modern professional running movement?",
+      "answer": "his public criticism of amateurism rules led to the formation of Athletics West and eventual professionalization",
+      "points": 40,
+      "hint": "He openly challenged the system that kept athletes poor while officials got rich",
+      "explanation": "Pre's vocal criticism of AAU amateurism - where athletes couldn't earn money while officials lived lavishly - directly led to the formation of Athletics West and the eventual breakdown of amateur restrictions in track and field."
+    },
+    {
+      "id": 4,
+      "question": "What unique physiological characteristic did Pre possess that allowed him to maintain his aggressive front-running style?",
+      "answer": "exceptionally high lactate tolerance combined with superior cooling efficiency",
+      "points": 80,
+      "hint": "It's about his body's ability to process the acid buildup from sustained high-intensity effort and manage heat",
+      "explanation": "Pre had unusual lactate buffering capacity - his muscles could neutralize lactic acid buildup better than most. Combined with superior thermoregulation (possibly genetic), this allowed sustained high-intensity front-running that would destroy normal physiology."
+    },
+    {
+      "id": 5,
+      "question": "How did Pre's Oregon training environment under Bill Bowerman specifically contribute to his revolutionary racing approach?",
+      "answer": "soft surface training that built strength without impact stress, allowing higher volume aggressive racing",
+      "points": 160,
+      "hint": "It's about the unique training surfaces around Eugene that let him push harder without breaking down",
+      "explanation": "Bowerman's insight: Eugene's soft wood chip trails and grass surfaces allowed enormous training volumes without the impact stress of roads or tracks. This let Pre race aggressively year-round without injury - his legs could handle the racing stress because training stress was minimized through surface selection."
+    }
+  ],
+  "deeperMode": {
+    "title": "The Fire That Changed Everything",
+    "description": "How Pre's philosophy transcended running to influence American athletic culture.",
+    "unlockMessage": "🔥 You've felt the fire - now explore how one runner changed everything!"
+  }
+}

@@ -236,9 +236,9 @@ const GameStack = memo(function GameStack({
           : 'bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-50 text-amber-900'
       }`}>
         <div className="text-7xl mb-6" style={{ fontFamily: 'Baskervville, serif' }}>— ❦ —</div>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
           {stackData.deeperMode.title}
-        </h2>
+        </h1>
         <p className={`text-lg sm:text-xl mb-8 ${darkMode ? 'text-amber-200' : 'text-amber-700'} max-w-2xl mx-auto leading-relaxed`} style={{ fontFamily: 'Baskervville, serif' }}>
           {stackData.deeperMode.description}
         </p>
@@ -350,13 +350,18 @@ const GameStack = memo(function GameStack({
 
       {/* Input */}
       <div className="text-center mb-8">
+        <label htmlFor="trivia-answer-input" className="sr-only">
+          Your answer to the trivia question
+        </label>
         <input
+          id="trivia-answer-input"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           disabled={isPaused || feedback.includes('The answer was:')}
           placeholder="Your answer..."
+          aria-describedby="answer-instructions"
           className={`w-full max-w-md px-4 py-3 text-lg rounded-sm border-2 text-center transition-all duration-200 ${
             darkMode 
               ? 'bg-amber-800/50 border-amber-600 text-amber-100 placeholder-amber-400' 
@@ -364,6 +369,9 @@ const GameStack = memo(function GameStack({
           } focus:outline-none focus:border-amber-500`}
           style={{ fontFamily: 'Baskerville, serif' }}
         />
+        <div id="answer-instructions" className="sr-only">
+          Type your answer and press Enter or click Submit Answer button
+        </div>
         <div className="mt-4">
           <button
             onClick={checkAnswer}
@@ -377,11 +385,16 @@ const GameStack = memo(function GameStack({
 
       {/* Feedback */}
       {feedback && (
-        <div className={`text-center p-4 rounded-sm border-2 mb-6 ${
-          feedback.includes('Correct') 
-            ? (darkMode ? 'bg-green-800/30 border-green-600 text-green-200' : 'bg-green-100 border-green-300 text-green-800')
-            : (darkMode ? 'bg-red-800/30 border-red-600 text-red-200' : 'bg-red-100 border-red-300 text-red-800')
-        }`}>
+        <div 
+          className={`text-center p-4 rounded-sm border-2 mb-6 ${
+            feedback.includes('Correct') 
+              ? (darkMode ? 'bg-green-800/30 border-green-600 text-green-200' : 'bg-green-100 border-green-300 text-green-800')
+              : (darkMode ? 'bg-red-800/30 border-red-600 text-red-200' : 'bg-red-100 border-red-300 text-red-800')
+          }`}
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           <p className="text-lg font-semibold">{feedback}</p>
         </div>
       )}

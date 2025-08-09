@@ -430,9 +430,9 @@ function App() {
                   )}
                   
                   <div className={`w-full h-2 rounded-sm mb-4 bg-gradient-to-r ${category.color}`}></div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-amber-800 transition-colors">
+                  <h2 className="text-xl font-bold mb-2 group-hover:text-amber-800 transition-colors">
                     {stack.title}
-                  </h3>
+                  </h2>
                   <p className="text-sm text-amber-700 mb-4">
                     {stack.description || "Dive deep into this fascinating topic"}
                   </p>
@@ -457,65 +457,60 @@ function App() {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
       darkMode 
-        ? 'bg-gradient-to-br from-amber-900 via-yellow-900 to-amber-800 text-amber-50' 
-        : 'bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900'
+        ? 'bg-gray-900 text-gray-100' 
+        : 'bg-gray-50 text-gray-900'
     }`}>
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
-          <div className="flex flex-wrap gap-2 sm:gap-3 order-2 sm:order-1 justify-center sm:justify-start">
+        <header className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
+          <nav className="flex flex-wrap gap-2 sm:gap-3 order-2 sm:order-1 justify-center sm:justify-start" aria-label="Game modes">
             <button
               onClick={enterHostMode}
-              className={`px-3 sm:px-4 py-2 rounded-sm font-semibold transition-all duration-200 text-sm sm:text-base shadow-md border-2 ${
+              className={`px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border focus:outline-none focus:ring-3 focus:ring-blue-500 ${
                 darkMode 
-                  ? 'bg-amber-700 hover:bg-amber-600 text-amber-100 border-amber-600' 
-                  : 'bg-amber-700 hover:bg-amber-800 text-amber-100 border-amber-800'
+                  ? 'bg-blue-700 hover:bg-blue-600 text-white border-blue-600' 
+                  : 'bg-blue-600 hover:bg-blue-700 text-white border-blue-500'
               }`}
-              style={{ filter: 'sepia(0.1) contrast(1.05)' }}
             >
               Host Mode
             </button>
             <button
               onClick={enterPerformanceFinale}
-              className={`px-3 sm:px-4 py-2 rounded-sm font-semibold transition-all duration-200 text-sm sm:text-base shadow-md border-2 ${
+              className={`px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border focus:outline-none focus:ring-3 focus:ring-green-500 ${
                 darkMode 
-                  ? 'bg-yellow-700 hover:bg-yellow-600 text-yellow-100 border-yellow-600' 
-                  : 'bg-yellow-700 hover:bg-yellow-800 text-yellow-100 border-yellow-800'
+                  ? 'bg-green-700 hover:bg-green-600 text-white border-green-600' 
+                  : 'bg-green-600 hover:bg-green-700 text-white border-green-500'
               }`}
-              style={{ filter: 'sepia(0.1) contrast(1.05)' }}
             >
               Performance Finale
             </button>
             <button
               onClick={enterProjectorMode}
-              className={`px-3 sm:px-4 py-2 rounded-sm font-semibold transition-all duration-200 text-sm sm:text-base shadow-md border-2 ${
+              className={`px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border focus:outline-none focus:ring-3 focus:ring-purple-500 ${
                 darkMode 
-                  ? 'bg-yellow-800 hover:bg-yellow-700 text-yellow-100 border-yellow-600' 
-                  : 'bg-yellow-800 hover:bg-yellow-900 text-yellow-100 border-yellow-900'
+                  ? 'bg-purple-700 hover:bg-purple-600 text-white border-purple-600' 
+                  : 'bg-purple-600 hover:bg-purple-700 text-white border-purple-500'
               }`}
-              style={{ filter: 'sepia(0.1) contrast(1.05)' }}
             >
               Classic Projector
             </button>
             <button
               onClick={() => enterGilliamProjector('setup')}
-              className={`px-3 sm:px-4 py-2 rounded-sm font-semibold transition-all duration-200 text-sm sm:text-base shadow-md border-2 ${
+              className={`px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border focus:outline-none focus:ring-3 focus:ring-indigo-500 ${
                 darkMode 
-                  ? 'bg-amber-800 hover:bg-amber-700 text-amber-100 border-amber-600' 
-                  : 'bg-amber-800 hover:bg-amber-900 text-amber-100 border-amber-900'
+                  ? 'bg-indigo-700 hover:bg-indigo-600 text-white border-indigo-600' 
+                  : 'bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-500'
               }`}
-              style={{ filter: 'sepia(0.1) contrast(1.05)' }}
             >
               Gilliam Projector
             </button>
-          </div>
+          </nav>
           <button
             onClick={toggleDarkMode}
-            className={`p-2 sm:p-3 rounded-sm transition-all duration-200 order-1 sm:order-2 shadow-md border-2 font-semibold ${
+            className={`p-2 sm:p-3 rounded-md transition-all duration-200 order-1 sm:order-2 shadow-sm border font-semibold focus:outline-none focus:ring-3 focus:ring-yellow-500 ${
               darkMode 
-                ? 'bg-amber-600 hover:bg-amber-500 text-amber-100 border-amber-500' 
-                : 'bg-amber-900 hover:bg-amber-800 text-amber-100 border-amber-800'
+                ? 'bg-yellow-600 hover:bg-yellow-500 text-gray-900 border-yellow-500' 
+                : 'bg-gray-800 hover:bg-gray-700 text-white border-gray-700'
             }`}
-            style={{ filter: 'sepia(0.1) contrast(1.05)' }}
           >
             {darkMode ? 'Light' : 'Dark'}
           </button>
@@ -524,83 +519,80 @@ function App() {
           <div className="order-3">
             <UserProfile />
           </div>
-        </div>
+        </header>
         
-        <div className="text-center mb-8 sm:mb-12 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-amber-700 via-yellow-600 to-amber-800 bg-clip-text text-transparent">
-            DeepStack
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium text-amber-800 dark:text-amber-200">
-            Trivia That Dares to Matter
-          </p>
-          <p className={`text-base sm:text-lg ${darkMode ? 'text-amber-300' : 'text-amber-700'} max-w-3xl mx-auto leading-relaxed mb-6`}>
-            Monty Python meets You Don't Know Jack meets bar culture. 
-            Choose your realm of knowledge and go five questions deep.
-          </p>
-          
-          {/* Single Player Mode Button */}
-          <div className="mb-6">
-            <button
-              onClick={() => setGameMode('single-player')}
-              className="px-8 py-4 text-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white rounded-sm font-bold transition-all duration-300 transform hover:scale-105 shadow-lg sepia filter mr-4 mb-4"
-            >
-              Single Player Mode
-            </button>
+        <main>
+          <div className="text-center mb-8 sm:mb-12 px-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Deeply Trivial
+            </h1>
+            <p className={`text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              Trivia That Dares to Matter
+            </p>
+            <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed mb-6`}>
+              Choose your realm of knowledge and go five questions deep - creating nets of learning that connect the trivial to the profound.
+            </p>
             
-            {/* Phase 8: Bar Trivia Night Button */}
-            <button
-              onClick={() => setGameMode('bar-trivia')}
-              className="px-8 py-4 text-xl bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white rounded-sm font-bold transition-all duration-300 transform hover:scale-105 shadow-lg sepia filter mr-4 mb-4"
-            >
-              🍺 Bar Trivia Night
-            </button>
+            {/* Single Player Mode Button */}
+            <div className="mb-6 space-y-4">
+              <button
+                onClick={() => setGameMode('single-player')}
+                className="px-8 py-4 text-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-blue-500 mr-4 mb-4"
+              >
+                Single Player Mode
+              </button>
+              
+              {/* Phase 8: Bar Trivia Night Button */}
+              <button
+                onClick={() => setGameMode('bar-trivia')}
+                className="px-8 py-4 text-xl bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-green-500 mr-4 mb-4"
+              >
+                🍺 Bar Trivia Night
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-2 sm:px-4">
-          {Object.entries(categoriesConfig.categories).map(([key, category]) => (
-            <button
-              key={key}
-              onClick={() => handleCategorySelect(key)}
-              className={`group p-4 sm:p-6 lg:p-8 rounded-sm sm:rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl border-2 ${
-                darkMode
-                  ? 'bg-amber-900/70 hover:bg-amber-800/80 backdrop-blur-sm border-amber-700/60 shadow-xl'
-                  : 'bg-amber-100/90 hover:bg-amber-200/95 backdrop-blur-sm border-amber-300/60 shadow-xl'
-              }`}
-              style={{
-                filter: darkMode ? 'sepia(0.3) contrast(1.2)' : 'sepia(0.2) contrast(1.1)',
-                backgroundImage: darkMode 
-                  ? 'linear-gradient(135deg, rgba(146, 64, 14, 0.2) 0%, rgba(92, 38, 7, 0.3) 100%)'
-                  : 'linear-gradient(135deg, rgba(251, 245, 233, 0.8) 0%, rgba(254, 252, 232, 0.9) 100%)'
-              }}
-            >
-              <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                {category.icon}
-              </div>
-              <div className={`w-full h-2 sm:h-3 rounded-sm mb-4 sm:mb-6 bg-gradient-to-r ${category.color}`} style={{ filter: 'sepia(0.2)' }}></div>
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                {category.title}
-              </h2>
-              <p className={`${darkMode ? 'text-amber-300' : 'text-amber-700'} mb-3 sm:mb-4 text-sm sm:text-base`}>
-                {category.description}
-              </p>
-              <div className="flex justify-between items-center text-xs sm:text-sm">
-                <span className={`${darkMode ? 'text-amber-400' : 'text-amber-600'}`}>
-                  {category.stacks.length} Stacks Available
-                </span>
-                <span className="text-amber-600 dark:text-amber-400 font-semibold">
-                  Explore →
-                </span>
-              </div>
-            </button>
-          ))}
-        </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
+            {Object.entries(categoriesConfig.categories).map(([key, category]) => (
+              <button
+                key={key}
+                onClick={() => handleCategorySelect(key)}
+                className={`group p-6 lg:p-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl border-2 focus:outline-none focus:ring-3 focus:ring-blue-500 ${
+                  darkMode
+                    ? 'bg-gray-800 hover:bg-gray-700 border-gray-600 hover:border-gray-500'
+                    : 'bg-white hover:bg-gray-50 border-gray-200 hover:border-gray-300'
+                } shadow-lg`}
+              >
+                <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {category.icon}
+                </div>
+                <div className={`w-full h-3 rounded-full mb-6 bg-gradient-to-r ${category.color} opacity-80`}></div>
+                <h2 className={`text-lg sm:text-xl lg:text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors ${
+                  darkMode ? 'text-gray-200 group-hover:text-blue-400' : 'text-gray-800 group-hover:text-blue-600'
+                }`}>
+                  {category.title}
+                </h2>
+                <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4 text-sm sm:text-base leading-relaxed`}>
+                  {category.description}
+                </p>
+                <div className="flex justify-between items-center text-xs sm:text-sm">
+                  <span className={`${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
+                    {category.stacks.length} Stacks Available
+                  </span>
+                  <span className="text-blue-600 dark:text-blue-400 font-semibold">
+                    Explore →
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
 
-        <div className={`text-center mt-16 ${darkMode ? 'text-amber-400' : 'text-amber-600'}`}>
-          <p className="text-sm">
-            Each stack: 5 questions deep • Scoring: 10 → 20 → 40 → 80 → 160 points
-          </p>
-        </div>
+          <div className={`text-center mt-16 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            <p className="text-sm">
+              Each stack: 5 questions deep • Scoring: 10 → 20 → 40 → 80 → 160 points
+            </p>
+          </div>
+        </main>
       </div>
     </div>
   )

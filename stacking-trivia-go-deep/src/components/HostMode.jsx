@@ -106,12 +106,15 @@ export default function HostMode({
           
           {/* Add Team Input */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <label htmlFor="team-name-input" className="sr-only">Enter team name</label>
             <input
+              id="team-name-input"
               type="text"
               value={newTeamName}
               onChange={(e) => setNewTeamName(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Enter team name..."
+              aria-describedby="team-input-help"
               className={`flex-1 px-3 sm:px-4 py-2 sm:py-3 rounded-sm border-2 focus:outline-none transition-all duration-200 text-base ${
                 darkMode
                   ? 'bg-amber-900/50 border-amber-600 focus:border-yellow-400 text-amber-50 placeholder-amber-300'
@@ -119,6 +122,9 @@ export default function HostMode({
               }`}
               disabled={teams.length >= 6}
             />
+            <span id="team-input-help" className="sr-only">
+              {teams.length >= 6 ? 'Maximum 6 teams reached' : 'Add up to 6 teams for trivia competition'}
+            </span>
             <button
               onClick={addTeam}
               disabled={!newTeamName.trim() || teams.length >= 6}

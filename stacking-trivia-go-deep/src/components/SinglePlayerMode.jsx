@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import GameStack from './GameStack'
 import { shuffleArray } from '../utils/arrayUtils'
-import { usePersistedState } from '../hooks/gameHooks'
 
 const SinglePlayerMode = ({ 
   gameStacks, 
@@ -87,40 +86,43 @@ const SinglePlayerMode = ({
   // Category selection screen
   if (gamePhase === 'category-select') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900 transition-colors duration-300" style={{ fontFamily: 'Baskerville, serif' }}>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-between items-center mb-8">
             <button 
               onClick={exitGame}
-              className="px-4 py-2 bg-amber-200/60 hover:bg-amber-300/60 rounded-sm text-amber-900 transition-all duration-200"
+              className="px-6 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg text-gray-900 dark:text-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              aria-label="Exit Single Player Mode"
             >
               ← Exit Single Player
             </button>
             <div className="text-right">
-              <div className="text-2xl font-bold">Total Score: {playerScore}</div>
+              <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">Total Score: {playerScore}</div>
             </div>
           </div>
           
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-amber-800 drop-shadow-lg">Single Player Mode</h1>
-            <p className="text-lg text-amber-700">Choose a category to begin your knowledge journey</p>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-100">Single Player Mode</h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300">Choose a category to begin your knowledge journey</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" role="grid" aria-label="Category selection grid">
             {Object.entries(categoriesConfig.categories).map(([categoryKey, category]) => (
               <button
                 key={categoryKey}
                 onClick={() => selectCategory(categoryKey)}
-                className="group p-6 rounded-sm bg-amber-100/80 hover:bg-amber-200/70 border border-amber-300 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="group p-6 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                role="gridcell"
+                aria-label={`Select ${category.title} category with ${category.stacks.length} available stacks`}
               >
-                <div className={`w-full h-2 rounded-sm mb-4 bg-gradient-to-r ${category.color}`}></div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-amber-800 transition-colors">
+                <div className="text-4xl mb-4 text-center">{category.icon}</div>
+                <h2 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {category.title}
-                </h3>
-                <p className="text-sm text-amber-700 mb-4">
+                </h2>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
                   {category.description}
                 </p>
-                <div className="text-xs text-amber-600">
+                <div className="text-xs text-blue-600 dark:text-blue-400">
                   {category.stacks.length} stacks available
                 </div>
               </button>
@@ -135,35 +137,37 @@ const SinglePlayerMode = ({
   if (gamePhase === 'round-complete') {
     const category = categoriesConfig.categories[currentCategory]
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900 flex items-center justify-center" style={{ fontFamily: 'Baskerville, serif' }}>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-center justify-center transition-colors duration-300">
         <div className="text-center max-w-2xl mx-auto p-8">
-          <h1 className="text-4xl font-bold mb-6 text-amber-800 drop-shadow-lg">Stack Complete!</h1>
+          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">Stack Complete!</h1>
           
-          <div className="bg-amber-100/80 border border-amber-300 rounded-sm p-6 mb-6">
-            <div className="text-2xl font-bold mb-4">Current Score: {playerScore}</div>
-            <div className="text-lg mb-4">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6 shadow-lg">
+            <div className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Current Score: {playerScore}</div>
+            <div className="text-lg mb-4 text-gray-600 dark:text-gray-300">
               {completedStacks.length} of {category.stacks.length} stacks completed in {category.title}
             </div>
           </div>
 
           <div className="mb-6">
-            <h2 className="text-2xl font-bold mb-4">Next Stack:</h2>
-            <div className="bg-amber-200/60 border border-amber-300 rounded-sm p-4">
-              <h3 className="text-xl font-bold mb-2">{currentStack?.title}</h3>
-              <p className="text-amber-700">{currentStack?.description}</p>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Next Stack:</h2>
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{currentStack?.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{currentStack?.description}</p>
             </div>
           </div>
 
           <div className="flex justify-center space-x-4">
             <button
               onClick={nextStack}
-              className="px-8 py-4 text-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white rounded-sm font-bold transition-all sepia filter"
+              className="px-8 py-4 text-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              aria-label="Continue to next trivia stack"
             >
               Continue to Next Stack
             </button>
             <button
               onClick={restartGame}
-              className="px-8 py-4 text-xl bg-amber-200/60 hover:bg-amber-300/60 text-amber-900 rounded-sm font-bold transition-all"
+              className="px-8 py-4 text-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 rounded-lg font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              aria-label="Choose a new category to play"
             >
               Choose New Category
             </button>
@@ -177,16 +181,16 @@ const SinglePlayerMode = ({
   if (gamePhase === 'game-complete') {
     const category = categoriesConfig.categories[currentCategory]
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900 flex items-center justify-center" style={{ fontFamily: 'Baskerville, serif' }}>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-center justify-center transition-colors duration-300">
         <div className="text-center max-w-2xl mx-auto p-8">
-          <h1 className="text-5xl font-bold mb-6 text-amber-800 drop-shadow-lg">Category Complete!</h1>
+          <h1 className="text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">Category Complete!</h1>
           
-          <div className="bg-amber-100/80 border border-amber-300 rounded-sm p-8 mb-8">
-            <div className="text-4xl font-bold mb-4">Final Score: {playerScore}</div>
-            <div className="text-xl mb-4">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 mb-8 shadow-lg">
+            <div className="text-4xl font-bold mb-4 text-blue-600 dark:text-blue-400">Final Score: {playerScore}</div>
+            <div className="text-xl mb-4 text-gray-900 dark:text-gray-100">
               You completed all {completedStacks.length} stacks in {category.title}!
             </div>
-            <div className="text-lg text-amber-700">
+            <div className="text-lg text-gray-600 dark:text-gray-300">
               Well done on your knowledge journey through {category.title.toLowerCase()}.
             </div>
           </div>
@@ -194,13 +198,15 @@ const SinglePlayerMode = ({
           <div className="flex justify-center space-x-4">
             <button
               onClick={restartGame}
-              className="px-8 py-4 text-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white rounded-sm font-bold transition-all sepia filter"
+              className="px-8 py-4 text-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              aria-label="Play another category"
             >
               Play Another Category
             </button>
             <button
               onClick={exitGame}
-              className="px-8 py-4 text-xl bg-amber-200/60 hover:bg-amber-300/60 text-amber-900 rounded-sm font-bold transition-all"
+              className="px-8 py-4 text-xl bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 rounded-lg font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              aria-label="Return to main menu"
             >
               Return to Main Menu
             </button>
@@ -214,13 +220,14 @@ const SinglePlayerMode = ({
   if (gamePhase === 'stack-playing' && currentStack) {
     const category = categoriesConfig.categories[currentCategory]
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900 transition-colors duration-300" style={{ fontFamily: 'Baskerville, serif' }}>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4 py-8">
           {/* Header with score and progress */}
           <div className="flex justify-between items-center mb-6">
             <button 
               onClick={restartGame}
-              className="px-4 py-2 bg-amber-200/60 hover:bg-amber-300/60 rounded-sm text-amber-900 transition-all duration-200"
+              className="px-6 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg text-gray-900 dark:text-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              aria-label="Choose different category"
             >
               ← Choose Category
             </button>
@@ -231,8 +238,8 @@ const SinglePlayerMode = ({
               </div>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-bold">Score: {playerScore}</div>
-              <div className="text-sm text-amber-700">
+              <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">Score: {playerScore}</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">
                 {completedStacks.length} stacks complete
               </div>
             </div>
@@ -240,13 +247,17 @@ const SinglePlayerMode = ({
 
           {/* Progress bar */}
           <div className="mb-6">
-            <div className="w-full bg-amber-200/60 rounded-sm h-2">
+            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-lg h-3">
               <div 
-                className="bg-gradient-to-r from-amber-600 to-yellow-600 h-2 rounded-sm transition-all duration-500"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 h-3 rounded-lg transition-all duration-500"
                 style={{ width: `${(completedStacks.length / availableStacks.length) * 100}%` }}
+                role="progressbar"
+                aria-valuenow={completedStacks.length}
+                aria-valuemax={availableStacks.length}
+                aria-label={`Progress: ${completedStacks.length} of ${availableStacks.length} stacks completed`}
               ></div>
             </div>
-            <div className="text-center text-sm text-amber-700 mt-2">
+            <div className="text-center text-sm text-gray-600 dark:text-gray-300 mt-2">
               Progress: {completedStacks.length}/{availableStacks.length} stacks
             </div>
           </div>

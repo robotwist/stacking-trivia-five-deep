@@ -69,16 +69,16 @@ const AuthModal = ({ isOpen, onClose, mode: initialMode = 'login' }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" aria-describedby="auth-modal-description">
       <div className="bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-50 dark:from-amber-900/90 dark:via-yellow-900/90 dark:to-amber-800/90 rounded-lg border-2 border-amber-400 p-8 max-w-md w-full sepia shadow-2xl">
         
         {/* Header */}
         <div className="text-center mb-6">
-          <div className="text-4xl mb-4" style={{ fontFamily: 'Baskervville, serif' }}>— ❦ —</div>
-          <h2 className="text-2xl font-bold text-amber-800 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
-            {mode === 'login' ? 'Welcome Back!' : 'Join the Club'}
-          </h2>
-          <p className="text-amber-600 dark:text-amber-300 mt-2">
+          <div className="text-4xl mb-4" style={{ fontFamily: 'Baskervville, serif' }} aria-hidden="true">— ❦ —</div>
+                    <h1 id="auth-modal-title" className="text-2xl font-bold text-amber-800 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
+            {isLogin ? 'Login to DeepStack' : 'Join DeepStack'}
+          </h1>
+          <p id="auth-modal-description" className="text-amber-600 dark:text-amber-300 mt-2">
             {mode === 'login' 
               ? 'Sign in to track your scores and continue your journey'
               : 'Create an account to save your progress and compete on leaderboards'

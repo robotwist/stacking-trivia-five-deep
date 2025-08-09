@@ -1,0 +1,53 @@
+{
+  "title": "King of the Mile: El Guerrouj's Perfect Distance",
+  "description": "Hicham El Guerrouj's legendary mastery of the mile and 1500m - the greatest middle-distance runner ever.",
+  "category": "olympic_distance_current",
+  "difficulty": "expert", 
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is Hicham El Guerrouj's mile world record time, set in Rome in 1999?",
+      "answer": "3:43.13",
+      "points": 10,
+      "hint": "Three minutes, forty-something, and it was set in the Eternal City",
+      "explanation": "El Guerrouj's 3:43.13 mile in Rome remains untouchable after 25+ years. That's averaging 3:45 per kilometer for 1.6 kilometers - a pace most people can't hold for 400m."
+    },
+    {
+      "id": 2,
+      "question": "What unique achievement did El Guerrouj accomplish at the 2004 Athens Olympics that no man had done since 1920?",
+      "answer": "winning gold in both 1500m and 5000m",
+      "points": 20,
+      "hint": "A double that requires both pure speed and endurance - last done by a Finn during WWI era",
+      "explanation": "The 1500m/5000m double is track's Holy Grail. El Guerrouj became the first man since Finland's Paavo Nurmi in 1924 to win both. The demands are contradictory - 1500m needs speed, 5000m needs endurance."
+    },
+    {
+      "id": 3,
+      "question": "What specific training innovation did El Guerrouj's coach Abdelkader Kada use that revolutionized middle-distance preparation?",
+      "answer": "fartlek sessions at varying altitudes to maximize oxygen adaptation",
+      "points": 40,
+      "hint": "It combines Swedish training philosophy with Morocco's geographic advantages",
+      "explanation": "Kada's genius: fartlek (speed play) sessions moving between sea level Rabat and 6000-foot Ifrane. This constant altitude variation created superior oxygen-carrying capacity and lactate buffering compared to training at single altitude."
+    },
+    {
+      "id": 4,
+      "question": "How did El Guerrouj's unusual stride mechanics - particularly his arm carriage - contribute to his legendary finishing kick?",
+      "answer": "asymmetrical arm pump that created rotational momentum for final acceleration",
+      "points": 80,
+      "hint": "His distinctive arm style wasn't just flamboyant - it was biomechanically brilliant for late-race speed generation",
+      "explanation": "El Guerrouj's signature high, asymmetrical arm pump wasn't style - it was science. The rotational force generated core torque that translated to leg drive in the final 200m, when normal runners' form breaks down from lactate buildup."
+    },
+    {
+      "id": 5,
+      "question": "What psychological technique did El Guerrouj master that allowed him to execute perfect tactical races even when physically struggling?",
+      "answer": "meditation-based flow state visualization that maintained race awareness during oxygen debt",
+      "points": 160,
+      "hint": "It's about staying mentally clear when your body is screaming - a mental skill borrowed from Sufi traditions",
+      "explanation": "El Guerrouj practiced Sufi-influenced meditation that allowed him to maintain tactical awareness even in oxygen debt. While opponents' decision-making deteriorated in the final 300m, he could still process race dynamics and time his moves perfectly - the ultimate racing intelligence."
+    }
+  ],
+  "deeperMode": {
+    "title": "The Science of the Perfect Mile",
+    "description": "How El Guerrouj's combination of Moroccan tradition and modern science created the ultimate miler.",
+    "unlockMessage": "👑 You've earned the crown - now explore the deeper mysteries of mile mastery!"
+  }
+}

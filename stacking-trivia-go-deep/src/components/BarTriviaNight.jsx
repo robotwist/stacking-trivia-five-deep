@@ -182,7 +182,7 @@ const BarTriviaNight = ({
               className="p-6 bg-gradient-to-br from-amber-100 to-yellow-200 rounded-xl border-2 border-amber-400 hover:border-amber-500 transition-all"
             >
               <div className="text-4xl mb-3">🍺</div>
-              <h3 className="text-xl font-bold mb-2">Pub Quiz Night</h3>
+              <h2 className="text-xl font-bold mb-2">Pub Quiz Night</h2>
               <p className="text-amber-700">5 teams with pub-style names</p>
             </motion.button>
 
@@ -193,7 +193,7 @@ const BarTriviaNight = ({
               className="p-6 bg-gradient-to-br from-green-100 to-emerald-200 rounded-xl border-2 border-green-400 hover:border-green-500 transition-all"
             >
               <div className="text-4xl mb-3">👥</div>
-              <h3 className="text-xl font-bold mb-2">Small Group</h3>
+              <h2 className="text-xl font-bold mb-2">Small Group</h2>
               <p className="text-green-700">3 teams for intimate settings</p>
             </motion.button>
 
@@ -204,7 +204,7 @@ const BarTriviaNight = ({
               className="p-6 bg-gradient-to-br from-blue-100 to-cyan-200 rounded-xl border-2 border-blue-400 hover:border-blue-500 transition-all"
             >
               <div className="text-4xl mb-3">🏢</div>
-              <h3 className="text-xl font-bold mb-2">Large Event</h3>
+              <h2 className="text-xl font-bold mb-2">Large Event</h2>
               <p className="text-blue-700">8 tables for big venues</p>
             </motion.button>
           </div>
@@ -212,7 +212,7 @@ const BarTriviaNight = ({
           {/* Current Teams */}
           {teams.length > 0 && (
             <div className="bg-white/50 backdrop-blur rounded-xl p-6 mb-6">
-              <h3 className="text-2xl font-bold mb-4">Teams Ready ({teams.length})</h3>
+              <h2 className="text-2xl font-bold mb-4">Teams Ready ({teams.length})</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {teams.map((team, index) => (
                   <div key={team.id} className="p-3 bg-amber-100 rounded-lg border border-amber-300">
@@ -331,7 +331,7 @@ const BarTriviaNight = ({
           <div className="max-w-4xl mx-auto">
             {/* Game Header */}
             <div className="text-center mb-6">
-              <h1 className="text-3xl font-bold text-amber-800 mb-2">Bar Trivia Night - Round {currentRound}</h1>
+              <h2 className="text-3xl font-bold text-amber-800 mb-2">Bar Trivia Night - Round {currentRound}</h2>
               <div className="text-xl text-amber-700">
                 Current Team: <span className="font-bold text-amber-900">{getCurrentTeamName()}</span>
               </div>
@@ -388,9 +388,9 @@ const BarTriviaNight = ({
             animate={{ scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl font-bold mb-8 bg-gradient-to-r from-yellow-400 to-amber-200 bg-clip-text text-transparent">
-              🏆 Trivia Night Champions! 🏆
-            </h1>
+            <h2 className="text-6xl font-bold mb-8 bg-gradient-to-r from-yellow-400 to-amber-200 bg-clip-text text-transparent">
+              🏆 FINAL RESULTS! 🏆
+            </h2>
           </motion.div>
 
           <div className="space-y-6 mb-12">
@@ -413,7 +413,7 @@ const BarTriviaNight = ({
                       {index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `#${index + 1}`}
                     </span>
                     <div>
-                      <h3 className="text-2xl font-bold">{team.name}</h3>
+                      <h2 className="text-2xl font-bold">{team.name}</h2>
                       <p className="text-lg opacity-80">
                         {team.roundScores.length} rounds completed
                       </p>

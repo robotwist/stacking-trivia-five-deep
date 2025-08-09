@@ -20,9 +20,9 @@ class AuthErrorBoundary extends React.Component {
         <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 flex items-center justify-center p-4">
           <div className="bg-amber-100 dark:bg-amber-900/90 border-2 border-amber-400 rounded-lg p-8 max-w-md text-center sepia">
             <div className="text-4xl mb-4" style={{ fontFamily: 'Baskervville, serif' }}>⚠️</div>
-            <h2 className="text-xl font-bold text-amber-800 dark:text-amber-200 mb-4" style={{ fontFamily: 'Baskervville, serif' }}>
+            <h1 className="text-xl font-bold text-amber-800 dark:text-amber-200 mb-4" style={{ fontFamily: 'Baskervville, serif' }}>
               Authentication Error
-            </h2>
+            </h1>
             <p className="text-amber-700 dark:text-amber-300 mb-6">
               There was a problem with the authentication system. You can still play as a guest.
             </p>

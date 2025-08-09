@@ -1,0 +1,53 @@
+{
+  "title": "800m Mastery: The Rudisha Revolution",
+  "description": "David Rudisha's legendary 2012 world record run that redefined middle-distance racing forever.",
+  "category": "olympic_distance_current",
+  "difficulty": "expert",
+  "questions": [
+    {
+      "id": 1,
+      "question": "In what time did David Rudisha set the 800m world record at the 2012 London Olympics?",
+      "answer": "1:40.91",
+      "points": 10,
+      "hint": "Under 1:41, and those last digits match his uniform number style",
+      "explanation": "Rudisha's 1:40.91 in London wasn't just fast - it was the first time anyone had broken 1:41 in the 800m, shattering his own world record by 0.65 seconds."
+    },
+    {
+      "id": 2,
+      "question": "What running strategy made Rudisha's 800m approach revolutionary compared to traditional 800m tactics?",
+      "answer": "running negative splits from the front",
+      "points": 20,
+      "hint": "Most 800m runners save energy early - Rudisha did the opposite, going out fast and getting even faster",
+      "explanation": "Rudisha ran negative splits (faster second 400m than first), going 49.28 + 51.63. Traditional 800m wisdom says this is impossible - you're supposed to go out conservatively and kick. Rudisha proved the experts wrong."
+    },
+    {
+      "id": 3,
+      "question": "Which legendary coach developed the training philosophy that shaped Rudisha's front-running style?",
+      "answer": "Brother Colm O'Connell",
+      "points": 40,
+      "hint": "An Irish Christian Brother who transformed Kenyan middle-distance running at St. Patrick's High School",
+      "explanation": "Brother Colm O'Connell, an Irish missionary, revolutionized Kenyan middle-distance running. His philosophy: 'Run to your strengths, don't hide from your speed.' This shaped not just Rudisha, but Wilson Kipketer and countless other Kenyan legends."
+    },
+    {
+      "id": 4,
+      "question": "What specific biomechanical advantage did Rudisha possess that allowed him to maintain his stride frequency at high speeds?",
+      "answer": "exceptionally long femur-to-tibia ratio creating optimal lever mechanics",
+      "points": 80,
+      "hint": "It's about the mathematical relationship between his upper and lower leg bones, creating mechanical advantage like a perfectly designed machine",
+      "explanation": "Rudisha's femur-to-tibia ratio of approximately 1.25:1 (compared to 1.1:1 for most runners) created optimal lever mechanics. His longer thigh bone generated more power per stride while his shorter shin bone allowed for quicker turnover - the perfect storm for 800m dominance."
+    },
+    {
+      "id": 5,
+      "question": "How did Rudisha's training at 7,000-foot altitude in the Rift Valley create a physiological advantage that specifically benefits 800m racing's unique demands?",
+      "answer": "increased red blood cell production combined with lactate buffering adaptations from high-intensity hill repeats",
+      "points": 160,
+      "hint": "Altitude affects oxygen delivery, but his specific high-intensity training addressed the 800m's brutal lactic acid accumulation",
+      "explanation": "At 7,000 feet, Rudisha's body produced 15-20% more red blood cells for oxygen transport. But the key was his lactate threshold training on hills - 400m repeats at 3000m pace, teaching his muscles to buffer the massive lactic acid buildup that destroys most 800m runners in the final 200m."
+    }
+  ],
+  "deeperMode": {
+    "title": "The Physics of Perfect Racing",
+    "description": "Beyond the stopwatch - how Rudisha's run revealed the mathematical and physiological limits of human speed endurance.",
+    "unlockMessage": "🏃‍♂️ You've mastered the basics - now dive into the deeper science of speed!"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Billy Mills: The Impossible 10K Dream",
+  "description": "The greatest upset in Olympic history - a unknown Native American's shocking 10,000m gold medal victory.",
+  "category": "olympic_distance_1960s",
+  "difficulty": "expert",
+  "questions": [
+    {
+      "id": 1,
+      "question": "By how much did Billy Mills improve his personal best when he won the 1964 Tokyo Olympic 10,000m gold?",
+      "answer": "46 seconds",
+      "points": 10,
+      "hint": "It was nearly a minute faster - the largest personal best improvement by an Olympic champion in distance running history",
+      "explanation": "Mills went from 29:10 to 28:24.4 in one race - a 46-second improvement that remains the largest PB drop by any Olympic distance champion. Pure impossible-made-real."
+    },
+    {
+      "id": 2,
+      "question": "What specific tactical move in the final 400m allowed Mills to overcome the favored Ron Clarke and Mohamed Gammoudi?",
+      "answer": "outside pass in lane 3 while they battled in lane 1",
+      "points": 20,
+      "hint": "While the favorites fought each other on the inside, Mills took the long way around",
+      "explanation": "With 300m to go, Clarke and Gammoudi were battling in lane 1. Mills, seemingly out of contention, swung wide to lane 3 and used his superior speed to pass them both. Classic tactical brilliance - let the favorites destroy each other, then strike."
+    },
+    {
+      "id": 3,
+      "question": "What unique aspect of Mills' Native American heritage influenced his mental approach to distance running?",
+      "answer": "Oglala Lakota vision quest traditions of enduring physical hardship for spiritual growth",
+      "points": 40,
+      "hint": "It's about his tribal traditions that viewed suffering as a path to something greater",
+      "explanation": "Mills drew on Oglala Lakota vision quest traditions - the belief that enduring physical suffering leads to spiritual enlightenment and inner strength. This gave him an unusual relationship with pain that other runners couldn't match."
+    },
+    {
+      "id": 4,
+      "question": "How did Mills' military training at the University of Kansas specifically prepare him for the tactical demands of championship 10K racing?",
+      "answer": "Marine Corps obstacle course training that developed explosive power from steady-state fatigue",
+      "points": 80,
+      "hint": "It's about developing speed when already tired - a skill that translates perfectly to late-race kicks in distance events",
+      "explanation": "Mills' Marine training included obstacle courses after long runs - developing the ability to generate explosive power while in steady-state fatigue. This is exactly what's needed for a 10K kick after 9000m of hard running."
+    },
+    {
+      "id": 5,
+      "question": "What physiological advantage did Mills possess that was only discovered decades later through genetic analysis of Native American populations?",
+      "answer": "enhanced mitochondrial efficiency in slow-twitch muscle fibers due to high-altitude ancestry adaptations",
+      "points": 160,
+      "hint": "It's about cellular energy production that was shaped by thousands of years of his ancestors living at elevation",
+      "explanation": "Genetic studies revealed that Plains Indian populations, including the Lakota, developed enhanced mitochondrial density and efficiency from millennia at moderate altitude. Mills' cells could extract more energy from less oxygen - a huge advantage in oxygen-debt situations like 10K kicks."
+    }
+  ],
+  "deeperMode": {
+    "title": "Against All Odds: The Science of the Impossible",
+    "description": "How Mills' victory revealed the hidden factors that can overcome talent and training.",
+    "unlockMessage": "🏃‍♂️ You've witnessed the impossible - now discover what made it possible!"
+  }
+}
