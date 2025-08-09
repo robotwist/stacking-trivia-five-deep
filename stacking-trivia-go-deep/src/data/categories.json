@@ -4,7 +4,7 @@
       "title": "Arts & Culture",
       "description": "Journey through the minds of creative visionaries",
       "icon": "",
-      "color": "from-purple-600 to-pink-600",
+      "color": "from-amber-600 to-yellow-600",
       "stacks": [
         "van-gogh",
         "the_beatles", 
@@ -17,7 +17,7 @@
       "title": "Sports Legends",
       "description": "Dive deep into moments that defined greatness",
       "icon": "",
-      "color": "from-green-600 to-blue-600",
+      "color": "from-amber-700 to-yellow-700",
       "stacks": [
         "olympic_distance_current",
         "muhammad-ali",
@@ -28,7 +28,7 @@
       "title": "Cinema Classics",
       "description": "Explore the stories behind cinema's greatest moments",
       "icon": "",
-      "color": "from-red-600 to-orange-600",
+      "color": "from-amber-800 to-yellow-800",
       "stacks": [
         "blade_runner",
         "the-godfather",
@@ -39,7 +39,7 @@
       "title": "Historical Depths",
       "description": "Uncover the truth behind civilization's turning points",
       "icon": "",
-      "color": "from-yellow-600 to-red-600",
+      "color": "from-yellow-700 to-amber-700",
       "stacks": [
         "ancient_greece",
         "cleopatra",
@@ -49,8 +49,8 @@
     "actually": {
       "title": "Actually...",
       "description": "For the corrector of the group - bust common myths and misconceptions",
-      "icon": "🤓",
-      "color": "from-indigo-600 to-purple-600",
+      "icon": "",
+      "color": "from-amber-600 to-yellow-600",
       "stacks": [
         "van-gogh-myths",
         "einstein-myths",
