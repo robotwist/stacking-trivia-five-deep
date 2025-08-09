@@ -27,10 +27,10 @@
     },
     {
       "level": 4,
-      "question": "What must the Goonies play to escape from the bone organ?",
-      "answer": "The correct musical sequence",
-      "acceptedAnswers": ["the correct musical sequence", "the right notes", "the song", "bone organ song"],
-      "hint": "Data knows the right keys to press"
+      "question": "What candy bar does Chunk use to befriend Sloth?",
+      "answer": "Baby Ruth",
+      "acceptedAnswers": ["baby ruth", "babyruth", "ruth"],
+      "hint": "It's named after a famous baseball player's daughter"
     },
     {
       "level": 5,

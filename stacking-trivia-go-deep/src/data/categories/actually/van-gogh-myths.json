@@ -8,7 +8,24 @@
       "level": 1,
       "question": "Actually, Van Gogh didn't cut off his entire ear. What did he really cut?",
       "answer": "Part of his earlobe",
-      "acceptedAnswers": ["part of his earlobe", "earlobe", "part of the earlobe", "just the earlobe"]
+      "acceptedAnswers": [
+        "part of his earlobe", 
+        "earlobe", 
+        "part of the earlobe", 
+        "just the earlobe",
+        "his earlobe",
+        "the earlobe",
+        "part of his ear lobe",
+        "ear lobe",
+        "just his earlobe",
+        "only his earlobe",
+        "portion of his earlobe",
+        "bit of his earlobe",
+        "piece of his earlobe",
+        "bottom of his ear",
+        "lower part of his ear",
+        "tip of his ear"
+      ]
     },
     {
       "level": 2,

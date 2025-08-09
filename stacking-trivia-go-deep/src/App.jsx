@@ -7,6 +7,7 @@ import ProjectorScoreboard from './components/ProjectorScoreboard'
 import ProjectorMode from './components/ProjectorMode'
 import GilliamTransition from './components/GilliamTransition'
 import SinglePlayerMode from './components/SinglePlayerMode'
+import BarTriviaNight from './components/BarTriviaNight'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -85,7 +86,7 @@ function App() {
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
-  const [gameMode, setGameMode] = useState('solo') // solo, single-player, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition
+  const [gameMode, setGameMode] = useState('solo') // solo, single-player, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition, bar-trivia
   const [teams, setTeams] = useState([])
   const [gameHistory, setGameHistory] = useState([])
   const [performanceScores, setPerformanceScores] = useState({})
@@ -305,6 +306,17 @@ function App() {
     )
   }
 
+  // Phase 8: Route to Bar Trivia Night
+  if (gameMode === 'bar-trivia') {
+    return (
+      <BarTriviaNight
+        gameStacks={gameStacks}
+        categoriesConfig={categoriesConfig}
+        onExit={() => setGameMode('solo')}
+      />
+    )
+  }
+
   // Route to Individual Stacks (multi-team mode)
   if (gameMode === 'individual-stacks') {
     // For now, redirect back to categories - this would be enhanced later
@@ -480,12 +492,20 @@ function App() {
           </p>
           
           {/* Single Player Mode Button */}
-          <div className="mb-8">
+          <div className="mb-6">
             <button
               onClick={() => setGameMode('single-player')}
-              className="px-8 py-4 text-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white rounded-sm font-bold transition-all duration-300 transform hover:scale-105 shadow-lg sepia filter"
+              className="px-8 py-4 text-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white rounded-sm font-bold transition-all duration-300 transform hover:scale-105 shadow-lg sepia filter mr-4 mb-4"
             >
               Single Player Mode
+            </button>
+            
+            {/* Phase 8: Bar Trivia Night Button */}
+            <button
+              onClick={() => setGameMode('bar-trivia')}
+              className="px-8 py-4 text-xl bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white rounded-sm font-bold transition-all duration-300 transform hover:scale-105 shadow-lg sepia filter mr-4 mb-4"
+            >
+              🍺 Bar Trivia Night
             </button>
           </div>
         </div>

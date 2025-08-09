@@ -26,7 +26,9 @@ const SinglePlayerMode = ({
   const currentStack = currentStackKey ? gameStacks[currentStackKey] : null
 
   const handleStackComplete = (finalScore) => {
-    const stackScore = finalScore || 0
+    // Ensure we always get a valid score - fix for 0 points bug
+    const stackScore = typeof finalScore === 'number' ? finalScore : 0
+    console.log('Stack completed with score:', finalScore, 'processed as:', stackScore) // Debug log
     setPlayerScore(prev => prev + stackScore)
     setCompletedStacks(prev => [...prev, currentStackKey])
     
