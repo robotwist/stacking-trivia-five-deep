@@ -1,13 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, Suspense, lazy, useMemo } from 'react'
 import GameStack from './components/GameStack'
-import HostMode from './components/HostMode'
-import OpeningImageRound from './components/OpeningImageRound'
-import PerformanceFinale from './components/PerformanceFinale'
-import ProjectorScoreboard from './components/ProjectorScoreboard'
-import ProjectorMode from './components/ProjectorMode'
-import GilliamTransition from './components/GilliamTransition'
-import SinglePlayerMode from './components/SinglePlayerMode'
-import BarTriviaNight from './components/BarTriviaNight'
+import GameErrorBoundary from './components/GameErrorBoundary'
+import LoadingSpinner from './components/LoadingSpinner'
+
+// Lazy load heavy components for better performance
+const HostMode = lazy(() => import('./components/HostMode'))
+const OpeningImageRound = lazy(() => import('./components/OpeningImageRound'))
+const PerformanceFinale = lazy(() => import('./components/PerformanceFinale'))
+const ProjectorScoreboard = lazy(() => import('./components/ProjectorScoreboard'))
+const ProjectorMode = lazy(() => import('./components/ProjectorMode'))
+const GilliamTransition = lazy(() => import('./components/GilliamTransition'))
+const SinglePlayerMode = lazy(() => import('./components/SinglePlayerMode'))
+const BarTriviaNight = lazy(() => import('./components/BarTriviaNight'))
 
 // Import utilities
 import { shuffleArray } from './utils/arrayUtils'
@@ -57,54 +61,6 @@ import strangerThingsData from './data/stacks/stranger_things.json'
 import categoriesConfig from './data/categories.json'
 import './App.css'
 
-const gameStacks = {
-  // Arts & Culture
-  'van-gogh': vanGoghData,
-  'the_beatles': beatlesData,
-  'frida-kahlo': fridaKahloData,
-  'miles-davis': milesDavisData,
-  'shakespeare': shakespeareData,
-  'leonardo-da-vinci': leonardoData,
-  'mozart': mozartData,
-  
-  // Sports
-  'olympic_distance_current': olympicCurrentData,
-  'muhammad-ali': muhammadAliData,
-  'michael-jordan': michaelJordanData,
-  'serena-williams': serenaWilliamsData,
-  
-  // Science & Technology
-  'tesla': teslaData,
-  'darwin': darwinData,
-  'nasa': nasaData,
-  'marie-curie': marieCurieData,
-  'steve-jobs': steveJobsData,
-  
-  // Cinema
-  'blade_runner': bladeRunnerData,
-  'the-godfather': godfatherData,
-  'star-wars': starWarsData,
-  
-  // History
-  'ancient_greece': ancientGreeceData,
-  'cleopatra': cleopatraData,
-  'einstein': einsteinData,
-  
-  // Actually (Misconceptions)
-  'van-gogh-myths': vanGoghMythsData,
-  'einstein-myths': einsteinMythsData,
-  'shakespeare-myths': shakespeareMythsData,
-  
-  // Pop Culture
-  'how-i-met-your-mother': howIMetYourMotherData,
-  'community': communityData,
-  'the-goonies': theGooniesData,
-  'the-office': theOfficeData,
-  'friends': friendsData,
-  'back-to-the-future': backToTheFutureData,
-  'stranger-things': strangerThingsData
-}
-
 function App() {
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
@@ -114,6 +70,55 @@ function App() {
   const [performanceScores, setPerformanceScores] = useState({})
   const [currentRound, setCurrentRound] = useState('Game')
   const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
+  
+  // Memoize gameStacks object to prevent recreation on every render
+  const gameStacks = useMemo(() => ({
+    // Arts & Culture
+    'van-gogh': vanGoghData,
+    'the_beatles': beatlesData,
+    'frida-kahlo': fridaKahloData,
+    'miles-davis': milesDavisData,
+    'shakespeare': shakespeareData,
+    'leonardo-da-vinci': leonardoData,
+    'mozart': mozartData,
+    
+    // Sports
+    'olympic_distance_current': olympicCurrentData,
+    'muhammad-ali': muhammadAliData,
+    'michael-jordan': michaelJordanData,
+    'serena-williams': serenaWilliamsData,
+    
+    // Science & Technology
+    'tesla': teslaData,
+    'darwin': darwinData,
+    'nasa': nasaData,
+    'marie-curie': marieCurieData,
+    'steve-jobs': steveJobsData,
+    
+    // Cinema
+    'blade_runner': bladeRunnerData,
+    'the-godfather': godfatherData,
+    'star-wars': starWarsData,
+    
+    // History
+    'ancient_greece': ancientGreeceData,
+    'cleopatra': cleopatraData,
+    'einstein': einsteinData,
+    
+    // Actually (Misconceptions)
+    'van-gogh-myths': vanGoghMythsData,
+    'einstein-myths': einsteinMythsData,
+    'shakespeare-myths': shakespeareMythsData,
+    
+    // Pop Culture
+    'how-i-met-your-mother': howIMetYourMotherData,
+    'community': communityData,
+    'the-goonies': theGooniesData,
+    'the-office': theOfficeData,
+    'friends': friendsData,
+    'back-to-the-future': backToTheFutureData,
+    'stranger-things': strangerThingsData
+  }), [])
   
   // Use custom hooks
   const [darkMode, toggleDarkMode] = useDarkMode()
@@ -232,93 +237,122 @@ function App() {
     addToGameHistory(action, stackTitle)
   }
 
+  // Higher-order component for lazy-loaded routes with error boundary and loading
+  const LazyRoute = ({ children }) => (
+    <GameErrorBoundary>
+      <Suspense fallback={<LoadingSpinner size="lg" message="Loading game mode..." darkMode={darkMode} />}>
+        {children}
+      </Suspense>
+    </GameErrorBoundary>
+  )
+
   // Route to Host Mode
   if (gameMode === 'host') {
-    return <HostMode 
-      onStartGame={handleStartGame} 
-      onExitHost={exitHostMode} 
-      onEnterGilliamProjector={enterGilliamProjector}
-      onTriggerTransition={triggerCategoryTransition}
-    />
+    return (
+      <LazyRoute>
+        <HostMode 
+          onStartGame={handleStartGame} 
+          onExitHost={exitHostMode} 
+          onEnterGilliamProjector={enterGilliamProjector}
+          onTriggerTransition={triggerCategoryTransition}
+        />
+      </LazyRoute>
+    )
   }
 
   // Route to Opening Image Round
   if (gameMode === 'opening-round') {
-    return <OpeningImageRound teams={teams} onRoundComplete={handleOpeningRoundComplete} />
+    return (
+      <LazyRoute>
+        <OpeningImageRound teams={teams} onRoundComplete={handleOpeningRoundComplete} />
+      </LazyRoute>
+    )
   }
 
   // Route to Performance Finale
   if (gameMode === 'performance-finale') {
     return (
-      <PerformanceFinale 
-        teams={teams}
-        gameHistory={gameHistory}
-        onComplete={handlePerformanceComplete}
-        darkMode={darkMode}
-      />
+      <LazyRoute>
+        <PerformanceFinale 
+          teams={teams}
+          gameHistory={gameHistory}
+          onComplete={handlePerformanceComplete}
+          darkMode={darkMode}
+        />
+      </LazyRoute>
     )
   }
 
   // Route to Projector Scoreboard
   if (gameMode === 'projector-scoreboard') {
     return (
-      <ProjectorScoreboard 
-        teams={teams}
-        currentRound={currentRound}
-        gamePhase={gamePhase}
-        performanceScores={performanceScores}
-        darkMode={darkMode}
-        onExit={() => setGameMode('host')}
-      />
+      <LazyRoute>
+        <ProjectorScoreboard 
+          teams={teams}
+          currentRound={currentRound}
+          gamePhase={gamePhase}
+          performanceScores={performanceScores}
+          darkMode={darkMode}
+          onExit={() => setGameMode('host')}
+        />
+      </LazyRoute>
     )
   }
 
   // Route to Gilliam Projector Mode
   if (gameMode === 'gilliam-projector') {
     return (
-      <ProjectorMode
-        gameState={projectorState.gameState}
-        currentStack={selectedStack}
-        question={projectorState.currentQuestion}
-        teams={teams}
-        questionNumber={projectorState.questionNumber}
-        onClose={() => setGameMode('host')}
-      />
+      <LazyRoute>
+        <ProjectorMode
+          gameState={projectorState.gameState}
+          currentStack={selectedStack}
+          question={projectorState.currentQuestion}
+          teams={teams}
+          questionNumber={projectorState.questionNumber}
+          onClose={() => setGameMode('host')}
+        />
+      </LazyRoute>
     )
   }
 
   // Route to Category Transition
   if (gameMode === 'category-transition') {
     return (
-      <GilliamTransition
-        fromCategory={transitionState.fromCategory}
-        toCategory={transitionState.toCategory}
-        onComplete={handleTransitionComplete}
-        duration={6000}
-      />
+      <LazyRoute>
+        <GilliamTransition
+          fromCategory={transitionState.fromCategory}
+          toCategory={transitionState.toCategory}
+          onComplete={handleTransitionComplete}
+          duration={6000}
+        />
+      </LazyRoute>
     )
   }
 
   // Route to Single Player Mode
   if (gameMode === 'single-player') {
     return (
-      <SinglePlayerMode
-        gameStacks={gameStacks}
-        categoriesConfig={categoriesConfig}
-        onExit={() => setGameMode('solo')}
-        selectedCategory={selectedCategory}
-      />
+      <LazyRoute>
+        <SinglePlayerMode
+          gameStacks={gameStacks}
+          categoriesConfig={categoriesConfig}
+          onExit={() => setGameMode('solo')}
+          selectedCategory={selectedCategory}
+        />
+      </LazyRoute>
     )
   }
 
   // Phase 8: Route to Bar Trivia Night
   if (gameMode === 'bar-trivia') {
     return (
-      <BarTriviaNight
-        gameStacks={gameStacks}
-        categoriesConfig={categoriesConfig}
-        onExit={() => setGameMode('solo')}
-      />
+      <LazyRoute>
+        <BarTriviaNight
+          gameStacks={gameStacks}
+          categoriesConfig={categoriesConfig}
+          onExit={() => setGameMode('solo')}
+        />
+      </LazyRoute>
     )
   }
 

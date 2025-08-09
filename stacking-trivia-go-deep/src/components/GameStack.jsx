@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo, memo } from 'react';
 import QuickHostControls from './QuickHostControls';
 import { checkAnswerMatch } from '../utils/textUtils';
 import { calculateQuestionScore, getCrowdMultiplier } from '../utils/scoreUtils';
 
-export default function GameStack({ 
+const GameStack = memo(function GameStack({ 
   stackData, 
   onComplete,
   isHostMode = false,
@@ -46,34 +46,32 @@ export default function GameStack({
     return () => observer.disconnect()
   }, [])
   
-  // Get current question - either from main questions or deeper mode
-  const getCurrentQuestion = () => {
+  // Get current question - memoized for performance
+  const current = useMemo(() => {
     if (isDeepMode && stackData.deeperMode) {
       return stackData.deeperMode.questions[deepModeDepth];
     }
     return stackData.questions[depth];
-  };
-  
-  const current = getCurrentQuestion();
+  }, [isDeepMode, stackData, deepModeDepth, depth]);
 
-  // Simplified score animation trigger
-  const animateScore = () => {
+  // Memoized score animation trigger
+  const animateScore = useCallback(() => {
     setScoreAnimation(true);
     setTimeout(() => setScoreAnimation(false), 1000);
-  };
+  }, []);
 
-  // Phase 8: Host control functions
-  const handlePause = () => {
+  // Phase 8: Host control functions - memoized
+  const handlePause = useCallback(() => {
     setIsPaused(true);
     onPause();
-  };
+  }, [onPause]);
 
-  const handleResume = () => {
+  const handleResume = useCallback(() => {
     setIsPaused(false);
     onResume();
-  };
+  }, [onResume]);
 
-  const handleSkipQuestion = () => {
+  const handleSkipQuestion = useCallback(() => {
     if (depth + 1 >= stackData.questions.length) {
       if (onComplete) onComplete(score);
     } else {
@@ -82,15 +80,15 @@ export default function GameStack({
       setFeedback('');
       setShowHint(false);
     }
-  };
+  }, [depth, stackData.questions.length, onComplete, score]);
 
-  const handlePlaySound = (soundType) => {
+  const handlePlaySound = useCallback((soundType) => {
     // Placeholder for actual sound implementation
     console.log(`Playing sound: ${soundType}`);
     // Future: integrate with Web Audio API or Howler.js
-  };
+  }, []);
 
-  const checkAnswer = () => {
+  const checkAnswer = useCallback(() => {
     if (!current || isPaused) return;
     
     const userAnswer = input.trim();
@@ -152,31 +150,31 @@ export default function GameStack({
         if (onComplete) onComplete(score);
       }, 3000);
     }
-  };
+  }, [current, isPaused, input, isDeepMode, deepModeDepth, depth, showHostControls, crowdEnergy, score, animateScore, stackData, showDeeperModeOffer, onComplete]);
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = useCallback((e) => {
     if (e.key === 'Enter' && !feedback.includes('The answer was:') && !isPaused) {
       checkAnswer();
     }
-  };
+  }, [feedback, isPaused, checkAnswer]);
 
-  const toggleHint = () => {
+  const toggleHint = useCallback(() => {
     setShowHint(!showHint);
-  };
+  }, [showHint]);
 
-  const enterDeeperMode = () => {
+  const enterDeeperMode = useCallback(() => {
     setIsDeepMode(true);
     setDeepModeDepth(0);
     setShowDeeperModeOffer(false);
     setInput('');
     setFeedback('DEEPER MODE ACTIVATED! The questions get obsessive now...');
     setTimeout(() => setFeedback(''), 2000);
-  };
+  }, []);
 
-  const declineDeeperMode = () => {
+  const declineDeeperMode = useCallback(() => {
     setShowDeeperModeOffer(false);
     if (onComplete) onComplete(score);
-  };
+  }, [onComplete, score]);
 
   // Show Deeper Mode offer screen
   if (showDeeperModeOffer && stackData.deeperMode) {
@@ -350,4 +348,6 @@ export default function GameStack({
       </div>
     </div>
   );
-}
+});
+
+export default GameStack;
