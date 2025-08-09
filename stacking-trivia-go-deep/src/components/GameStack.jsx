@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback, useMemo, memo } from 'react';
+import { useState, useEffect, useCallback, useMemo, memo, useRef } from 'react';
 import QuickHostControls from './QuickHostControls';
 import { checkAnswerMatch } from '../utils/textUtils';
 import { calculateQuestionScore, getCrowdMultiplier } from '../utils/scoreUtils';
+import { useAuth } from '../contexts/AuthContext';
 
 const GameStack = memo(function GameStack({ 
   stackData, 
@@ -27,6 +28,8 @@ const GameStack = memo(function GameStack({
   const [crowdEnergy, setCrowdEnergy] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
   const [scoreAnimation, setScoreAnimation] = useState(false);
+  
+  const { isAuthenticated, markStackCompleted } = useAuth();
   
   const [darkMode, setDarkMode] = useState(() => {
     return document.documentElement.classList.contains('dark')
@@ -88,53 +91,91 @@ const GameStack = memo(function GameStack({
     // Future: integrate with Web Audio API or Howler.js
   }, []);
 
+  // Use refs to capture latest values for callbacks
+  const stateRef = useRef();
+  stateRef.current = {
+    depth,
+    score, 
+    input,
+    isDeepMode,
+    deepModeDepth,
+    showDeeperModeOffer,
+    isPaused,
+    current,
+    stackData,
+    showHostControls,
+    crowdEnergy,
+    onComplete,
+    animateScore
+  };
+
   const checkAnswer = useCallback(() => {
-    if (!current || isPaused) return;
+    const state = stateRef.current;
+    if (!state.current || state.isPaused) return;
     
-    const userAnswer = input.trim();
-    const isCorrect = checkAnswerMatch(userAnswer, current.acceptedAnswers || current.a || [current.answer]);
+    const userAnswer = state.input.trim();
+    const isCorrect = checkAnswerMatch(userAnswer, state.current.acceptedAnswers || state.current.a || [state.current.answer]);
     
     if (isCorrect) {
       // Calculate score with crowd multiplier if in bar mode
-      const baseScore = calculateQuestionScore(isDeepMode ? deepModeDepth : depth, isDeepMode);
-      const multiplier = showHostControls ? getCrowdMultiplier(crowdEnergy) : 1;
+      const currentDepth = state.isDeepMode ? state.deepModeDepth : state.depth;
+      const baseScore = calculateQuestionScore(currentDepth, state.isDeepMode);
+      const multiplier = state.showHostControls ? getCrowdMultiplier(state.crowdEnergy) : 1;
       const questionScore = Math.round(baseScore * multiplier);
       
-      const newScore = score + questionScore;
-      setScore(newScore);
+      console.log(`Score calculation: ${state.score} + ${questionScore} = ${state.score + questionScore}`);
+      
+      // Use functional update to ensure we get the latest score
+      setScore(prevScore => prevScore + questionScore);
       setFeedback(`Correct! +${questionScore} points`);
-      animateScore();
+      state.animateScore();
       
       // Progress logic
-      if (isDeepMode) {
-        if (deepModeDepth + 1 >= (stackData.deeperMode?.questions.length || 0)) {
+      if (state.isDeepMode) {
+        if (state.deepModeDepth + 1 >= (state.stackData.deeperMode?.questions.length || 0)) {
           setTimeout(() => {
-            if (onComplete) onComplete(newScore);
+            const finalScore = state.score + questionScore;
+            console.log('Deep mode complete, final score:', finalScore);
+            
+            // Mark stack as completed for authenticated users
+            if (isAuthenticated) {
+              markStackCompleted(`${state.stackData.title} - Deeper Mode`, finalScore);
+            }
+            
+            if (state.onComplete) state.onComplete(finalScore);
           }, 2000);
         } else {
           setTimeout(() => {
-            setDeepModeDepth(deepModeDepth + 1);
+            setDeepModeDepth(state.deepModeDepth + 1);
             setInput('');
             setFeedback('');
             setShowHint(false);
           }, 2000);
         }
       } else {
-        if (depth + 1 >= stackData.questions.length) {
+        if (state.depth + 1 >= state.stackData.questions.length) {
           // Offer deeper mode if available
-          if (stackData.deeperMode && !showDeeperModeOffer) {
+          if (state.stackData.deeperMode && !state.showDeeperModeOffer) {
             setTimeout(() => {
               setShowDeeperModeOffer(true);
               setFeedback('');
             }, 2000);
           } else {
             setTimeout(() => {
-              if (onComplete) onComplete(newScore);
+              const finalScore = state.score + questionScore;
+              console.log('Stack complete, final score:', finalScore);
+              
+              // Mark stack as completed for authenticated users
+              if (isAuthenticated) {
+                markStackCompleted(state.stackData.title, finalScore);
+              }
+              
+              if (state.onComplete) state.onComplete(finalScore);
             }, 2000);
           }
         } else {
           setTimeout(() => {
-            setDepth(depth + 1);
+            setDepth(state.depth + 1);
             setInput('');
             setFeedback('');
             setShowHint(false);
@@ -142,21 +183,31 @@ const GameStack = memo(function GameStack({
         }
       }
     } else {
-      const correctAnswer = (current.acceptedAnswers && current.acceptedAnswers[0]) || 
-                           (current.a && current.a[0]) || 
-                           current.answer || 'Unknown';
+      const correctAnswer = (state.current.acceptedAnswers && state.current.acceptedAnswers[0]) || 
+                           (state.current.a && state.current.a[0]) || 
+                           state.current.answer || 'Unknown';
       setFeedback(`Not quite. The answer was: ${correctAnswer}`);
       setTimeout(() => {
-        if (onComplete) onComplete(score);
+        console.log('Wrong answer, final score:', state.score);
+        if (state.onComplete) state.onComplete(state.score);
       }, 3000);
     }
-  }, [current, isPaused, input, isDeepMode, deepModeDepth, depth, showHostControls, crowdEnergy, score, animateScore, stackData, showDeeperModeOffer, onComplete]);
+  }, []); // Empty dependency array - we'll access current values via ref
 
   const handleKeyPress = useCallback((e) => {
-    if (e.key === 'Enter' && !feedback.includes('The answer was:') && !isPaused) {
+    if (e.key === 'Enter' && !feedback.includes('The answer was:') && !isPaused && input.trim()) {
+      e.preventDefault();
       checkAnswer();
     }
-  }, [feedback, isPaused, checkAnswer]);
+  }, [feedback, isPaused, input, checkAnswer]);
+
+  // Use onKeyDown instead of onKeyPress (onKeyPress is deprecated)
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'Enter' && !feedback.includes('The answer was:') && !isPaused && input.trim()) {
+      e.preventDefault();
+      checkAnswer();
+    }
+  }, [feedback, isPaused, input, checkAnswer]);
 
   const toggleHint = useCallback(() => {
     setShowHint(!showHint);
@@ -303,7 +354,7 @@ const GameStack = memo(function GameStack({
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
           disabled={isPaused || feedback.includes('The answer was:')}
           placeholder="Your answer..."
           className={`w-full max-w-md px-4 py-3 text-lg rounded-sm border-2 text-center transition-all duration-200 ${

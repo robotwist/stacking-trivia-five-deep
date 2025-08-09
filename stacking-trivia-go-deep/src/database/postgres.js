@@ -18,10 +18,12 @@ export const initDatabase = async () => {
         id SERIAL PRIMARY KEY,
         username VARCHAR(50) UNIQUE NOT NULL,
         email VARCHAR(255) UNIQUE,
+        password_hash VARCHAR(255) NOT NULL,
         total_score INTEGER DEFAULT 0,
         games_played INTEGER DEFAULT 0,
         best_single_stack INTEGER DEFAULT 0,
         achievements JSONB DEFAULT '[]'::jsonb,
+        completed_stacks JSONB DEFAULT '[]'::jsonb,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `)
@@ -71,16 +73,20 @@ export const initDatabase = async () => {
 }
 
 // User management functions
-export const createUser = async (username, email = null) => {
+export const createUser = async (username, email, passwordHash) => {
   try {
     const result = await pool.query(
-      'INSERT INTO users (username, email) VALUES ($1, $2) RETURNING *',
-      [username, email]
+      'INSERT INTO users (username, email, password_hash) VALUES ($1, $2, $3) RETURNING id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at',
+      [username, email, passwordHash]
     )
     return result.rows[0]
   } catch (error) {
     if (error.code === '23505') { // Unique constraint violation
-      throw new Error('Username already exists')
+      if (error.constraint.includes('username')) {
+        throw new Error('Username already exists')
+      } else if (error.constraint.includes('email')) {
+        throw new Error('Email already exists')
+      }
     }
     throw error
   }
@@ -89,6 +95,49 @@ export const createUser = async (username, email = null) => {
 export const getUserByUsername = async (username) => {
   const result = await pool.query('SELECT * FROM users WHERE username = $1', [username])
   return result.rows[0]
+}
+
+export const getUserById = async (id) => {
+  const result = await pool.query('SELECT id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at FROM users WHERE id = $1', [id])
+  return result.rows[0]
+}
+
+export const updateUserCompletedStack = async (userId, stackName, score) => {
+  try {
+    // Get current completed stacks
+    const userResult = await pool.query('SELECT completed_stacks, total_score, games_played, best_single_stack FROM users WHERE id = $1', [userId])
+    const user = userResult.rows[0]
+    
+    if (!user) {
+      throw new Error('User not found')
+    }
+
+    const completedStacks = user.completed_stacks || []
+    
+    // Check if stack already completed
+    if (!completedStacks.includes(stackName)) {
+      completedStacks.push(stackName)
+      
+      // Update user stats
+      const newTotalScore = user.total_score + score
+      const newGamesPlayed = user.games_played + 1
+      const newBestScore = Math.max(user.best_single_stack, score)
+      
+      const result = await pool.query(
+        'UPDATE users SET completed_stacks = $1, total_score = $2, games_played = $3, best_single_stack = $4 WHERE id = $5 RETURNING id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at',
+        [JSON.stringify(completedStacks), newTotalScore, newGamesPlayed, newBestScore, userId]
+      )
+      
+      return result.rows[0]
+    }
+    
+    // If stack already completed, just return current user data
+    const result = await pool.query('SELECT id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at FROM users WHERE id = $1', [userId])
+    return result.rows[0]
+    
+  } catch (error) {
+    throw error
+  }
 }
 
 // Game session management

@@ -2,6 +2,8 @@ import { useState, Suspense, lazy, useMemo } from 'react'
 import GameStack from './components/GameStack'
 import GameErrorBoundary from './components/GameErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
+import { AuthProvider } from './contexts/AuthContext'
+import UserProfile from './components/UserProfile'
 
 // Lazy load heavy components for better performance
 const HostMode = lazy(() => import('./components/HostMode'))
@@ -516,6 +518,11 @@ function App() {
           >
             {darkMode ? 'Light' : 'Dark'}
           </button>
+          
+          {/* User Profile */}
+          <div className="order-3">
+            <UserProfile />
+          </div>
         </div>
         
         <div className="text-center mb-8 sm:mb-12 px-4">
@@ -598,4 +605,12 @@ function App() {
   )
 }
 
-export default App
+const AppWithAuth = () => {
+  return (
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  );
+};
+
+export default AppWithAuth
