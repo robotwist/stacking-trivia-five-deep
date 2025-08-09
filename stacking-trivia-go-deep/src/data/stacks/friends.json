@@ -1,0 +1,43 @@
+{
+  "id": "friends",
+  "title": "Friends: Could This BE Any Deeper?",
+  "category": "pop-culture",
+  "description": "From Central Perk to Monica's apartment",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the name of the coffee shop where the friends frequently hang out?",
+      "answer": "Central Perk",
+      "acceptedAnswers": ["central perk", "central perks"],
+      "hint": "Could this BE any more obvious?"
+    },
+    {
+      "level": 2,
+      "question": "What is Ross's profession?",
+      "answer": "Paleontologist",
+      "acceptedAnswers": ["paleontologist", "paleontology", "dinosaur scientist"],
+      "hint": "He works with dinosaurs"
+    },
+    {
+      "level": 3,
+      "question": "What song makes Ross and Rachel's daughter Emma laugh for the first time?",
+      "answer": "Baby Got Back",
+      "acceptedAnswers": ["baby got back", "baby's got back", "sir mix-a-lot"],
+      "hint": "Sir Mix-a-Lot's famous song"
+    },
+    {
+      "level": 4,
+      "question": "What does Phoebe find in a can of soda that makes her rich?",
+      "answer": "A human thumb",
+      "acceptedAnswers": ["a human thumb", "human thumb", "thumb", "a thumb"],
+      "hint": "Something that definitely shouldn't be in a drink"
+    },
+    {
+      "level": 5,
+      "question": "What is the name of Joey's signature fragrance?",
+      "answer": "Ichiban: Lipstick For Men",
+      "acceptedAnswers": ["ichiban", "ichiban lipstick for men", "lipstick for men"],
+      "hint": "Japanese for 'number one' and it's makeup for guys"
+    }
+  ]
+}
