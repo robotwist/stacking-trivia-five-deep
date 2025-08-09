@@ -1,0 +1,21 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#b8860b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Black background circle for contrast -->
+  <circle cx="16" cy="16" r="16" fill="#1a1a1a"/>
+  
+  <!-- Stack of 5 knowledge layers - simplified for favicon visibility -->
+  <rect x="6" y="22" width="20" height="2.5" rx="1" fill="#8b4513"/>
+  <rect x="6" y="19" width="18" height="2.5" rx="1" fill="#a0522d"/>
+  <rect x="6" y="16" width="16" height="2.5" rx="1" fill="#b8733d"/>
+  <rect x="6" y="13" width="14" height="2.5" rx="1" fill="#cd853f"/>
+  <rect x="6" y="10" width="12" height="2.5" rx="1" fill="url(#goldGradient)"/>
+  
+  <!-- Simple "?" on the top layer -->
+  <text x="12" y="12.2" font-family="serif" font-size="3" font-weight="bold" fill="#1a1a1a" text-anchor="middle">?</text>
+</svg>
