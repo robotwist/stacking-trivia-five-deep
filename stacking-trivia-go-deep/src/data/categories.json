@@ -3,7 +3,7 @@
     "arts-culture": {
       "title": "Arts & Culture",
       "description": "Journey through the minds of creative visionaries",
-      "icon": "🎨",
+      "image": "arts-culture",
       "color": "from-amber-600 to-yellow-600",
       "stacks": [
         "van-gogh",
@@ -18,7 +18,7 @@
     "olympic-distance-legends": {
       "title": "Olympic Distance Legends",
       "description": "The greatest middle and long-distance runners who redefined human speed",
-      "icon": "🏃‍♂️",
+      "image": "olympic-distance-legends",
       "color": "from-red-600 to-orange-600",
       "stacks": [
         "david-rudisha-800m-mastery",
@@ -33,7 +33,7 @@
     "sports": {
       "title": "Sports Legends",
       "description": "Dive deep into moments that defined greatness",
-      "icon": "🏆",
+      "image": "sports",
       "color": "from-amber-700 to-yellow-700",
       "stacks": [
         "muhammad-ali",
@@ -44,7 +44,7 @@
     "science-technology": {
       "title": "Science & Technology", 
       "description": "Explore the minds that revolutionized our understanding of the universe",
-      "icon": "🔬",
+      "image": "science-technology",
       "color": "from-blue-600 to-cyan-600",
       "stacks": [
         "tesla",
@@ -57,7 +57,7 @@
     "cinema": {
       "title": "Cinema Classics",
       "description": "Explore the stories behind cinema's greatest moments",
-      "icon": "🎬",
+      "image": "cinema",
       "color": "from-amber-800 to-yellow-800",
       "stacks": [
         "blade_runner",
@@ -68,7 +68,7 @@
     "history": {
       "title": "Historical Depths",
       "description": "Uncover the truth behind civilization's turning points",
-      "icon": "📜",
+      "image": "history",
       "color": "from-yellow-700 to-amber-700",
       "stacks": [
         "ancient_greece",
@@ -79,7 +79,7 @@
     "actually": {
       "title": "Actually...",
       "description": "For the corrector of the group - bust common myths and misconceptions",
-      "icon": "🤓",
+      "image": "actually",
       "color": "from-amber-600 to-yellow-600",
       "stacks": [
         "van-gogh-myths",
@@ -90,7 +90,7 @@
     "pop-culture": {
       "title": "Pop Culture",
       "description": "TV shows, movies, and cultural phenomena that defined generations",
-      "icon": "📺",
+      "image": "pop-culture",
       "color": "from-yellow-600 to-amber-600",
       "stacks": [
         "how-i-met-your-mother",

@@ -1,5 +1,6 @@
 import { useState, Suspense, lazy, useMemo } from 'react'
 import GameStack from './components/GameStack'
+import CategorySelection from './components/CategorySelection'
 import GameErrorBoundary from './components/GameErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
 import { AuthProvider } from './contexts/AuthContext'
@@ -455,64 +456,40 @@ function App() {
 
   // Main category selection screen
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      darkMode 
-        ? 'bg-gray-900 text-gray-100' 
-        : 'bg-gray-50 text-gray-900'
-    }`}>
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white transition-colors duration-300">
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <header className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
           <nav className="flex flex-wrap gap-2 sm:gap-3 order-2 sm:order-1 justify-center sm:justify-start" aria-label="Game modes">
             <button
               onClick={enterHostMode}
-              className={`px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border focus:outline-none focus:ring-3 focus:ring-blue-500 ${
-                darkMode 
-                  ? 'bg-blue-700 hover:bg-blue-600 text-white border-blue-600' 
-                  : 'bg-blue-600 hover:bg-blue-700 text-white border-blue-500'
-              }`}
+              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-amber-700 hover:bg-amber-600 text-white border-amber-600 focus:outline-none focus:ring-3 focus:ring-amber-500"
             >
               Host Mode
             </button>
             <button
               onClick={enterPerformanceFinale}
-              className={`px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border focus:outline-none focus:ring-3 focus:ring-green-500 ${
-                darkMode 
-                  ? 'bg-green-700 hover:bg-green-600 text-white border-green-600' 
-                  : 'bg-green-600 hover:bg-green-700 text-white border-green-500'
-              }`}
+              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-yellow-700 hover:bg-yellow-600 text-white border-yellow-600 focus:outline-none focus:ring-3 focus:ring-yellow-500"
             >
               Performance Finale
             </button>
             <button
               onClick={enterProjectorMode}
-              className={`px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border focus:outline-none focus:ring-3 focus:ring-purple-500 ${
-                darkMode 
-                  ? 'bg-purple-700 hover:bg-purple-600 text-white border-purple-600' 
-                  : 'bg-purple-600 hover:bg-purple-700 text-white border-purple-500'
-              }`}
+              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-amber-800 hover:bg-amber-700 text-white border-amber-700 focus:outline-none focus:ring-3 focus:ring-amber-500"
             >
               Classic Projector
             </button>
             <button
               onClick={() => enterGilliamProjector('setup')}
-              className={`px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border focus:outline-none focus:ring-3 focus:ring-indigo-500 ${
-                darkMode 
-                  ? 'bg-indigo-700 hover:bg-indigo-600 text-white border-indigo-600' 
-                  : 'bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-500'
-              }`}
+              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-yellow-800 hover:bg-yellow-700 text-white border-yellow-700 focus:outline-none focus:ring-3 focus:ring-yellow-500"
             >
               Gilliam Projector
             </button>
           </nav>
           <button
             onClick={toggleDarkMode}
-            className={`p-2 sm:p-3 rounded-md transition-all duration-200 order-1 sm:order-2 shadow-sm border font-semibold focus:outline-none focus:ring-3 focus:ring-yellow-500 ${
-              darkMode 
-                ? 'bg-yellow-600 hover:bg-yellow-500 text-gray-900 border-yellow-500' 
-                : 'bg-gray-800 hover:bg-gray-700 text-white border-gray-700'
-            }`}
+            className="p-2 sm:p-3 rounded-md transition-all duration-200 order-1 sm:order-2 shadow-sm border font-semibold focus:outline-none focus:ring-3 focus:ring-yellow-500 bg-yellow-600 hover:bg-yellow-500 text-gray-900 border-yellow-500"
           >
-            {darkMode ? 'Light' : 'Dark'}
+            Archival Mode
           </button>
           
           {/* User Profile */}
@@ -523,13 +500,13 @@ function App() {
         
         <main>
           <div className="text-center mb-8 sm:mb-12 px-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">
               Deeply Trivial
             </h1>
-            <p className={`text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium text-gray-300">
               Trivia That Dares to Matter
             </p>
-            <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed mb-6`}>
+            <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-6">
               Choose your realm of knowledge and go five questions deep - creating nets of learning that connect the trivial to the profound.
             </p>
             
@@ -537,7 +514,7 @@ function App() {
             <div className="mb-6 space-y-4">
               <button
                 onClick={() => setGameMode('single-player')}
-                className="px-8 py-4 text-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-blue-500 mr-4 mb-4"
+                className="px-8 py-4 text-xl bg-gradient-to-r from-amber-700 to-yellow-700 hover:from-amber-600 hover:to-yellow-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-amber-500 mr-4 mb-4"
               >
                 Single Player Mode
               </button>
@@ -545,50 +522,22 @@ function App() {
               {/* Phase 8: Bar Trivia Night Button */}
               <button
                 onClick={() => setGameMode('bar-trivia')}
-                className="px-8 py-4 text-xl bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-green-500 mr-4 mb-4"
+                className="px-8 py-4 text-xl bg-gradient-to-r from-yellow-700 to-amber-700 hover:from-yellow-600 hover:to-amber-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-yellow-500 mr-4 mb-4"
               >
                 🍺 Bar Trivia Night
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
-            {Object.entries(categoriesConfig.categories).map(([key, category]) => (
-              <button
-                key={key}
-                onClick={() => handleCategorySelect(key)}
-                className={`group p-6 lg:p-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl border-2 focus:outline-none focus:ring-3 focus:ring-blue-500 ${
-                  darkMode
-                    ? 'bg-gray-800 hover:bg-gray-700 border-gray-600 hover:border-gray-500'
-                    : 'bg-white hover:bg-gray-50 border-gray-200 hover:border-gray-300'
-                } shadow-lg`}
-              >
-                <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {category.icon}
-                </div>
-                <div className={`w-full h-3 rounded-full mb-6 bg-gradient-to-r ${category.color} opacity-80`}></div>
-                <h2 className={`text-lg sm:text-xl lg:text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors ${
-                  darkMode ? 'text-gray-200 group-hover:text-blue-400' : 'text-gray-800 group-hover:text-blue-600'
-                }`}>
-                  {category.title}
-                </h2>
-                <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4 text-sm sm:text-base leading-relaxed`}>
-                  {category.description}
-                </p>
-                <div className="flex justify-between items-center text-xs sm:text-sm">
-                  <span className={`${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
-                    {category.stacks.length} Stacks Available
-                  </span>
-                  <span className="text-blue-600 dark:text-blue-400 font-semibold">
-                    Explore →
-                  </span>
-                </div>
-              </button>
-            ))}
-          </div>
+          {/* Use the new CategorySelection component */}
+          <CategorySelection 
+            categoriesConfig={categoriesConfig}
+            darkMode={true} // Always use archival mode
+            onCategorySelect={handleCategorySelect}
+          />
 
-          <div className={`text-center mt-16 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            <p className="text-sm">
+          <div className="text-center mt-16 text-gray-500">
+            <p className="text-sm font-mono">
               Each stack: 5 questions deep • Scoring: 10 → 20 → 40 → 80 → 160 points
             </p>
           </div>
