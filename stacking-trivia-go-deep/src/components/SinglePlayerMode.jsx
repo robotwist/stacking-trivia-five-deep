@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react'
 import GameStack from './GameStack'
 
+// Utility function to shuffle array
+const shuffleArray = (array) => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
 const SinglePlayerMode = ({ 
   gameStacks, 
   categoriesConfig, 
@@ -12,16 +22,25 @@ const SinglePlayerMode = ({
   const [currentCategory, setCurrentCategory] = useState(selectedCategory)
   const [completedStacks, setCompletedStacks] = useState([])
   const [gamePhase, setGamePhase] = useState('category-select') // category-select, stack-playing, round-complete, game-complete
+  const [shuffledStacks, setShuffledStacks] = useState([]) // Store shuffled order
 
-  // Get available stacks for current category
+  // Get available stacks for current category and shuffle them
   const getAvailableStacks = () => {
     if (!currentCategory || !categoriesConfig.categories[currentCategory]) return []
-    return categoriesConfig.categories[currentCategory].stacks.filter(stackKey => 
+    const availableStacks = categoriesConfig.categories[currentCategory].stacks.filter(stackKey => 
       gameStacks[stackKey] && !completedStacks.includes(stackKey)
     )
+    return shuffleArray(availableStacks)
   }
 
-  const availableStacks = getAvailableStacks()
+  // Update shuffled stacks when category changes
+  useEffect(() => {
+    if (currentCategory) {
+      setShuffledStacks(getAvailableStacks())
+    }
+  }, [currentCategory])
+
+  const availableStacks = shuffledStacks
   const currentStackKey = availableStacks[currentStackIndex]
   const currentStack = currentStackKey ? gameStacks[currentStackKey] : null
 
@@ -50,6 +69,13 @@ const SinglePlayerMode = ({
     setCurrentCategory(categoryKey)
     setCurrentStackIndex(0)
     setCompletedStacks([])
+    // Shuffle stacks for this category immediately
+    if (categoriesConfig.categories[categoryKey]) {
+      const availableStacks = categoriesConfig.categories[categoryKey].stacks.filter(stackKey => 
+        gameStacks[stackKey]
+      )
+      setShuffledStacks(shuffleArray(availableStacks))
+    }
     setGamePhase('stack-playing')
   }
 
@@ -58,6 +84,7 @@ const SinglePlayerMode = ({
     setCurrentStackIndex(0)
     setCurrentCategory(null)
     setCompletedStacks([])
+    setShuffledStacks([]) // Clear shuffled stacks
     setGamePhase('category-select')
   }
 

@@ -9,6 +9,16 @@ import GilliamTransition from './components/GilliamTransition'
 import SinglePlayerMode from './components/SinglePlayerMode'
 import BarTriviaNight from './components/BarTriviaNight'
 
+// Utility function to shuffle array
+const shuffleArray = (array) => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
 import beatlesData from './data/categories/arts-culture/the_beatles.json'
@@ -368,7 +378,7 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {category.stacks.map((stackKey) => {
+            {shuffleArray(category.stacks).map((stackKey) => {
               const stack = gameStacks[stackKey]
               if (!stack) return null
               

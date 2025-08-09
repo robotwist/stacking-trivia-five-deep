@@ -207,12 +207,11 @@ export default function GameStack({
             showLevelTransition("Final question coming up!");
           }
           
-          triggerCelebration('levelUp', () => {
-            setDepth(depth + 1);
-            setInput('');
-            setFeedback('');
-            setShowHint(false);
-          });
+          // Move to next question immediately after correct celebration
+          setDepth(depth + 1);
+          setInput('');
+          setFeedback('');
+          setShowHint(false);
         });
       }
     } else {
