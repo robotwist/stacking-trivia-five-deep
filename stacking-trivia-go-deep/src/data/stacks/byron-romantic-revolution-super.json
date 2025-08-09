@@ -1,0 +1,131 @@
+{
+  "title": "Lord Byron & the Romantic Revolution",
+  "description": "The scandalous poets who rewrote literature, love, and rebellion in the Romantic Age",
+  "unlocks": ["mary-shelley-frankenstein-deep", "percy-shelley-radical-poetry", "ada-lovelace-poetic-mathematics"],
+  "image": "byron-portrait.jpg",
+  "imageHint": "Portrait of Lord Byron in romantic pose, dark curls, intense gaze, white collar",
+  "photoFirst": true,
+  "questions": [
+    {
+      "photo": {
+        "description": "Portrait of a handsome man with dark curly hair, pale complexion, intense brooding eyes, wearing white collar and dark jacket",
+        "era": "Early 19th century Romantic period",
+        "style": "Romantic portraiture with dramatic lighting"
+      },
+      "question": "Name this notorious Romantic poet known for his scandalous affairs and epic poem 'Don Juan'",
+      "acceptedAnswers": ["lord byron", "byron", "george gordon byron", "george gordon", "sixth baron byron"],
+      "hint": "He was described as 'mad, bad, and dangerous to know' by Lady Caroline Lamb",
+      "explanation": "Lord Byron (1788-1824) was the quintessential Romantic poet - handsome, scandalous, and brilliant. His affairs with married women and rumors of incest made him a social pariah, yet his poetry captivated Europe.",
+      "points": 10,
+      "photoContext": "This portrait captures Byron's magnetic appeal that made him the first modern celebrity poet"
+    },
+    {
+      "question": "Byron had a passionate affair with which married woman, who famously described him as 'mad, bad, and dangerous to know'?",
+      "acceptedAnswers": ["lady caroline lamb", "caroline lamb", "lady lamb"],
+      "hint": "She was married to William Lamb, who later became Prime Minister",
+      "explanation": "Lady Caroline Lamb's affair with Byron scandalized London society. When he ended it, she stalked him and publicly burned his letters and portrait.",
+      "points": 20,
+      "connectionHint": "This affair contributed to Byron's exile from England"
+    },
+    {
+      "question": "In which Swiss villa did Byron spend the 'haunted summer' of 1816 with Percy Shelley, Mary Shelley, and Dr. Polidori?",
+      "acceptedAnswers": ["villa diodati", "diodati", "villa diodati geneva"],
+      "hint": "This summer gathering produced both 'Frankenstein' and the first vampire story",
+      "explanation": "Villa Diodati became the birthplace of Gothic horror literature. The ghost story competition led Mary Shelley to write 'Frankenstein' and Polidori to pen 'The Vampyre'.",
+      "points": 40,
+      "literaryBirthplace": "The summer that created modern horror literature"
+    },
+    {
+      "question": "What was the name of Byron's half-sister, with whom he allegedly had an incestuous relationship that scandalized society?",
+      "acceptedAnswers": ["augusta leigh", "augusta", "mrs. leigh"],
+      "hint": "Her daughter Medora was rumored to be Byron's child",
+      "explanation": "Augusta Leigh was Byron's half-sister. Their suspected incestuous affair was one of the greatest scandals of the Regency era and contributed to his exile from England.",
+      "points": 80,
+      "scandalLevel": "Society-destroying revelation that haunted Byron's reputation"
+    },
+    {
+      "question": "Byron died in 1824 while fighting for the independence of which country, becoming a hero to their cause?",
+      "acceptedAnswers": ["greece", "greek independence", "greek war of independence"],
+      "hint": "He died of fever at Missolonghi, becoming a martyr for this nation's freedom",
+      "explanation": "Byron joined the Greek War of Independence against Ottoman rule. He died of fever at Missolonghi in 1824, becoming a heroic figure in Greek national mythology.",
+      "points": 160,
+      "heroicTransformation": "From scandalous exile to freedom fighter martyr"
+    }
+  ],
+  "deeperMode": {
+    "title": "The Shelley-Byron Circle: Literary Alchemy",
+    "description": "The intimate creative dynamics of the most revolutionary literary circle in history",
+    "questions": [
+      {
+        "question": "Mary Shelley's 'Frankenstein' was written during the 1816 ghost story challenge. What specific scientific lectures by Humphry Davy inspired her concept of reanimation?",
+        "acceptedAnswers": ["galvanism", "electrical experiments", "davy's galvanism lectures", "electricity and life"],
+        "hint": "It involved using electricity to animate dead tissue",
+        "explanation": "Humphry Davy's public lectures on galvanism (electrical reanimation of corpses) provided Mary Shelley with the scientific basis for Victor Frankenstein's experiments.",
+        "points": 210,
+        "scientificInspiration": "Real science behind Gothic horror"
+      },
+      {
+        "question": "Percy Shelley's essay 'A Defence of Poetry' argued that poets are what type of legislators for mankind?",
+        "acceptedAnswers": ["unacknowledged legislators", "unacknowledged", "secret legislators"],
+        "hint": "They shape society without official recognition or power",
+        "explanation": "Shelley argued that poets are the 'unacknowledged legislators of the world' - they shape moral and social progress through imagination and vision, not political power.",
+        "points": 210,
+        "poeticPhilosophy": "The revolutionary power of imagination"
+      },
+      {
+        "question": "What was the name of Byron's daughter with Ada Lovelace's mother, Lady Anne Isabella Milbanke Byron?",
+        "acceptedAnswers": ["ada lovelace", "ada", "augusta ada byron", "ada byron"],
+        "hint": "She became the world's first computer programmer",
+        "explanation": "Ada Lovelace, Byron's daughter, inherited his poetic imagination but channeled it into mathematics, creating the first computer algorithm for Babbage's Analytical Engine.",
+        "points": 210,
+        "legacyConnection": "Poetic imagination + mathematical genius = first programmer"
+      },
+      {
+        "question": "The Villa Diodati gathering was sparked by which volcanic eruption that caused the 'Year Without a Summer' in 1816?",
+        "acceptedAnswers": ["mount tambora", "tambora", "tambora eruption"],
+        "hint": "This Indonesian volcano's eruption affected global weather patterns",
+        "explanation": "Mount Tambora's 1815 eruption caused global climate anomalies, keeping the writers indoors at Villa Diodati and leading to the ghost story competition that birthed modern horror.",
+        "points": 210,
+        "climateLiterature": "How volcanic ash created Gothic literature"
+      },
+      {
+        "question": "Byron's epic poem 'Don Juan' was written in what innovative stanza form that allowed for both serious narrative and comic digression?",
+        "acceptedAnswers": ["ottava rima", "octave", "eight-line stanza"],
+        "hint": "This Italian form has eight lines with a specific rhyme scheme",
+        "explanation": "Ottava rima's ABABABCC rhyme scheme let Byron seamlessly blend heroic narrative with satirical asides, creating a revolutionary form of epic poetry.",
+        "points": 210,
+        "poeticInnovation": "Italian form meets English wit"
+      }
+    ]
+  },
+  "sneakyDeepConnections": {
+    "unlockPaths": {
+      "byron → ada": "ada-lovelace-poetic-mathematics",
+      "byron → frankenstein": "mary-shelley-gothic-science",
+      "byron → greek-hero": "byron-greek-martyrdom",
+      "romantic-circle → modern-celebrity": "first-literary-celebrities"
+    },
+    "brainMapNodes": [
+      "romantic-revolution",
+      "literary-scandals-as-marketing",
+      "incest-taboo-literature",
+      "volcanic-winter-creativity",
+      "poetry-mathematics-connection"
+    ],
+    "secretPath": "Complete Byron + Ada + Shelley circle → Unlock 'The Secret Society of Literature' → Eventually leads to hidden Jesus connections through..."
+  },
+  "photoFirstMechanic": {
+    "description": "First question always shows a portrait - players must identify the person before diving deep",
+    "scoringBonus": "Correct photo identification adds 50% bonus to total stack score",
+    "visualLearning": "Connects faces to names to stories to deeper understanding"
+  },
+  "difficulty": "expert",
+  "category": "romantic-literature-archaeology", 
+  "expertiseLevel": "literature-history-intersection",
+  "connections": {
+    "scientific": "Mary Shelley bridged Romantic poetry and emerging science",
+    "mathematical": "Ada Lovelace transformed poetic imagination into computational thinking",
+    "political": "Romantic poets as early rebels against social conventions",
+    "psychological": "Exploration of taboo relationships and desires"
+  }
+}

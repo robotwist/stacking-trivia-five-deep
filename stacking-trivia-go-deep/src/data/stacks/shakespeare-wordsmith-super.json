@@ -1,0 +1,141 @@
+{
+  "title": "Shakespeare: The Great Word-Forger",
+  "description": "The man who invented over 1,700 words and phrases that still shape how we speak today",
+  "unlocks": ["shakespeare-lost-years", "marlowe-conspiracy-theory", "dark-lady-mystery"],
+  "image": "shakespeare-portrait.jpg",
+  "imageHint": "The First Folio portrait: balding man with mustache and beard, elaborate collar, intelligent eyes",
+  "photoFirst": true,
+  "questions": [
+    {
+      "photo": {
+        "description": "Portrait of a balding man with mustache and small pointed beard, wearing an elaborate white ruff collar, intelligent piercing eyes",
+        "era": "Late 16th/early 17th century Elizabethan England", 
+        "style": "Formal Elizabethan portraiture"
+      },
+      "question": "Name this playwright who invented words like 'assassination', 'swagger', and 'eyeball'",
+      "acceptedAnswers": ["william shakespeare", "shakespeare", "william shakspere", "the bard"],
+      "hint": "He wrote approximately 37 plays and 154 sonnets",
+      "explanation": "William Shakespeare (1564-1616) is credited with coining over 1,700 words and phrases that entered English permanently, from 'bedroom' to 'fashionable' to 'lonely'.",
+      "points": 10,
+      "wordInventor": "The greatest linguistic innovator in English history"
+    },
+    {
+      "question": "Shakespeare invented the word 'assassination' for which play about a Roman leader's murder?",
+      "acceptedAnswers": ["julius caesar", "julius caesar", "caesar"],
+      "hint": "The play features the Ides of March warning",
+      "explanation": "Shakespeare coined 'assassination' in 'Julius Caesar' (1599). The word comes from the Arabic 'hashshashin' (hashish users), referring to medieval Muslim sect killers.",
+      "points": 20,
+      "etymologyCreation": "From Arabic hashish-users to Shakespearean invention"
+    },
+    {
+      "question": "What common word meaning 'to kill' did Shakespeare first use in 'Macbeth', derived from a Middle English word for striking?",
+      "acceptedAnswers": ["bump off", "murder", "kill", "bump"],
+      "hint": "It's associated with the phrase 'things that go ___ in the night'",
+      "explanation": "Shakespeare first used 'bump' in its violent sense in 'Macbeth'. The word evolved from Middle English 'bumpen' (to strike) to our modern usage in 'bump off'.",
+      "points": 40,
+      "linguisticEvolution": "How Shakespeare transformed everyday words into violence"
+    },
+    {
+      "question": "Shakespeare created the phrase 'green-eyed monster'. In which play does Iago use this phrase to describe jealousy?",
+      "acceptedAnswers": ["othello", "othello the moor of venice"],
+      "hint": "The play features a Moorish general and his manipulative ensign",
+      "explanation": "In 'Othello', Iago warns: 'O, beware, my lord, of jealousy! It is the green-eyed monster which doth mock the meat it feeds on.' Shakespeare linked green eyes to envy permanently.",
+      "points": 80,
+      "colorPsychology": "How Shakespeare embedded psychological insight into language"
+    },
+    {
+      "question": "What word meaning 'alone' did Shakespeare invent in 'Coriolanus', combining 'one' with 'like'?",
+      "acceptedAnswers": ["lonely", "loneliness"],
+      "hint": "Before Shakespeare, people said 'solitary' or 'alone' but not this emotional word",
+      "explanation": "Shakespeare created 'lonely' in 'Coriolanus' (1608) by combining 'lone' with '-ly'. Before this, English lacked a word for the emotional state of being alone.",
+      "points": 160,
+      "emotionalLanguage": "Shakespeare invented the vocabulary of human feelings"
+    }
+  ],
+  "deeperMode": {
+    "title": "The Shakespeare Authorship Laboratory",
+    "description": "Forensic linguistics and the mysteries surrounding Shakespeare's identity and lost years",
+    "questions": [
+      {
+        "question": "Computational stylometry analysis shows Shakespeare's late plays have unusually high rates of what type of word, suggesting collaboration with younger writers?",
+        "acceptedAnswers": ["function words", "articles", "prepositions", "function morphemes"],
+        "hint": "These are grammatical words rather than content words",
+        "explanation": "Stylometric analysis reveals Shakespeare's late plays show different patterns in function word usage, suggesting collaboration with John Fletcher and others as his style evolved.",
+        "points": 210,
+        "forensicLinguistics": "Computer analysis of Shakespeare's linguistic fingerprint"
+      },
+      {
+        "question": "The 'lost years' (1585-1592) mystery deepens because no contemporary records exist of Shakespeare's whereabouts. What Catholic family's tutor records mention a 'William Shakeshafte'?",
+        "acceptedAnswers": ["houghton family", "houghtons", "alexander houghton", "houghton tower"],
+        "hint": "This Lancashire family employed a tutor with a suspiciously similar name",
+        "explanation": "Alexander Houghton's will mentions 'William Shakeshafte', possibly Shakespeare working as a Catholic tutor during his mysterious lost years, explaining his deep knowledge of law and aristocratic life.",
+        "points": 210,
+        "historicalMystery": "The Catholic connection to Shakespeare's missing years"
+      },
+      {
+        "question": "Anti-Stratfordian theories claim the real author was Christopher Marlowe. What specific linguistic evidence supports this, involving shared rare classical references?",
+        "acceptedAnswers": ["classical allusions", "latin quotations", "ovid references", "parallel passages"],
+        "hint": "Both writers showed identical knowledge of obscure classical texts",
+        "explanation": "Marlowe and Shakespeare share remarkably similar classical allusions and Latin quotations, particularly from Ovid's 'Metamorphoses', leading some to theorize they were the same person.",
+        "points": 210,
+        "marloweTheory": "The linguistic evidence for hidden authorship"
+      },
+      {
+        "question": "Shakespeare's vocabulary is estimated at 15,000-29,000 words. What percentage of these words appear only once in his entire corpus, suggesting vast reading?",
+        "acceptedAnswers": ["40%", "40 percent", "forty percent", "about 40%"],
+        "hint": "It's a surprisingly high percentage, indicating breadth rather than repetition",
+        "explanation": "About 40% of Shakespeare's vocabulary appears only once (hapax legomena), indicating either vast reading or access to specialized knowledge sources.",
+        "points": 210,
+        "vocabularyAnalysis": "The statistical mystery of Shakespeare's word knowledge"
+      },
+      {
+        "question": "The phrase 'wild goose chase' first appears in 'Romeo and Juliet'. What was this originally - a real Renaissance activity?",
+        "acceptedAnswers": ["horse racing game", "equestrian follow-the-leader", "horseback chasing game", "mounted pursuit game"],
+        "hint": "It was an actual game played on horseback",
+        "explanation": "'Wild goose chase' was a real Elizabethan equestrian game where riders followed a leader in formation like migrating geese. Shakespeare transformed the literal game into our metaphor for futile pursuit.",
+        "points": 210,
+        "literalToMetaphorical": "How Shakespeare turned real activities into eternal metaphors"
+      }
+    ]
+  },
+  "sneakyDeepConnections": {
+    "unlockPaths": {
+      "shakespeare → marlowe": "marlowe-conspiracy-theory",
+      "shakespeare → dark-lady": "dark-lady-sonnets-mystery",
+      "shakespeare → catholic": "shakespeare-secret-catholic",
+      "shakespeare → authorship": "edward-de-vere-oxford-theory"
+    },
+    "brainMapNodes": [
+      "forensic-linguistics",
+      "computational-stylometry",
+      "authorship-attribution",
+      "elizabethan-surveillance-state",
+      "catholic-recusant-networks"
+    ],
+    "secretPath": "Master Shakespeare mysteries → Unlock 'The School of Night' → Leads to Marlowe → Leads to government spy networks → Eventually connects to..."
+  },
+  "photoFirstMechanic": {
+    "description": "Identify the Droeshout portrait from First Folio before diving into word archaeology",
+    "scoringBonus": "Photo identification + word etymology correct = 75% bonus",
+    "cognitiveBridge": "Face → Name → Words → Cultural Impact"
+  },
+  "autoGeneration": {
+    "wordInventionPatterns": [
+      "Latin/Greek roots + English suffixes",
+      "Compound word creation (eye + ball = eyeball)",
+      "Verb-to-noun conversions",
+      "Metaphorical extensions"
+    ],
+    "proceduralQuestions": "After base 5 questions, AI can generate infinite word etymology questions using Shakespeare's 1,700+ invented words",
+    "difficultyScaling": "Questions get more linguistically technical and require deeper etymology knowledge"
+  },
+  "difficulty": "expert",
+  "category": "linguistic-archaeology-literature",
+  "expertiseLevel": "requires-shakespearean-and-linguistic-knowledge",
+  "connections": {
+    "linguistic": "How one person can permanently alter a language",
+    "psychological": "The emotional vocabulary Shakespeare gave us",
+    "forensic": "Using computational linguistics to solve historical mysteries",
+    "cultural": "How invented words shape thought and society"
+  }
+}

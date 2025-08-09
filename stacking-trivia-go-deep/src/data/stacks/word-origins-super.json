@@ -1,0 +1,118 @@
+{
+  "title": "Word Origins: Etymology's Hidden Stories",
+  "description": "Trace the secret journeys of words through history, revealing the stories embedded in our language",
+  "unlocks": ["linguistic-archaeology", "shakespeare-wordsmith"],
+  "image": "ancient-manuscript.jpg", 
+  "imageHint": "Ancient manuscripts with etymology charts showing word evolution across languages",
+  "questions": [
+    {
+      "question": "The word 'salary' comes from the Latin 'salarium', which originally referred to what payment to Roman soldiers?",
+      "acceptedAnswers": ["salt", "salt rations", "salt allowance", "payment in salt"],
+      "hint": "It's a white crystalline substance that was once as valuable as gold",
+      "explanation": "Roman soldiers were sometimes paid in salt or given a salt allowance, making them worth their 'salt'. Salt was incredibly valuable for food preservation before refrigeration.",
+      "points": 10,
+      "etymologyChain": ["Latin: salarium", "sal (salt)", "Proto-Indo-European: *sal-"]
+    },
+    {
+      "question": "The word 'muscle' derives from the Latin 'musculus', which literally means what small creature?",
+      "acceptedAnswers": ["little mouse", "mouse", "small mouse"],
+      "hint": "When flexed, muscles were thought to resemble this small rodent moving under the skin",
+      "explanation": "Romans observed that flexed muscles looked like small mice scurrying beneath the skin, leading to 'musculus' (little mouse) becoming our word 'muscle'.",
+      "points": 20,
+      "etymologyChain": ["Latin: musculus", "mus (mouse)", "Proto-Indo-European: *muHs"]
+    },
+    {
+      "question": "The word 'sinister' originally meant what direction in Latin, before acquiring its dark connotations?",
+      "acceptedAnswers": ["left", "left-hand", "left side", "leftward"],
+      "hint": "In augury, omens from this direction were considered unlucky by Romans",
+      "explanation": "Latin 'sinister' meant 'left' or 'on the left side'. Since left-handed omens were considered unlucky in Roman divination, the word gained its ominous meaning.",
+      "points": 40,
+      "etymologyChain": ["Latin: sinister", "Proto-Indo-European: *sen- (apart, without)"]
+    },
+    {
+      "question": "The word 'mortgage' combines Old French 'mort' (dead) with 'gage' (pledge). What does this literally translate to?",
+      "acceptedAnswers": ["dead pledge", "death pledge", "dead contract"],
+      "hint": "It refers to what happens to the agreement when the debt is paid off",
+      "explanation": "A 'mortgage' is literally a 'dead pledge' - the agreement 'dies' when the loan is fully repaid, or the borrower 'dies' (financially) if they default.",
+      "points": 80,
+      "etymologyChain": ["Old French: mort-gage", "Latin: mortuus + Frankish: wadi"]
+    },
+    {
+      "question": "The word 'tragedy' comes from Greek 'tragoidia', combining 'tragos' (goat) with 'oidia' (song). What was the original connection to goats?",
+      "acceptedAnswers": ["goat sacrifice", "prize was a goat", "goat as prize", "sacrificial goat", "ritual goat sacrifice"],
+      "hint": "Early Greek dramatic competitions involved this animal as either a prize or offering to Dionysus",
+      "explanation": "Greek tragic performances were part of religious festivals honoring Dionysus. Winners received a goat as prize, or goats were sacrificed, creating the 'goat song' - tragoidia.",
+      "points": 160,
+      "etymologyChain": ["Greek: tragos-oidia", "Proto-Indo-European: *trāgos", "Semitic influence possible"]
+    }
+  ],
+  "deeperMode": {
+    "title": "Linguistic Archaeology: Proto-Word Reconstruction", 
+    "description": "Dive into the deepest layers of language evolution, tracing words to their prehistoric roots",
+    "questions": [
+      {
+        "question": "The reconstructed Proto-Indo-European root *gʷen- gave rise to words for 'woman' and 'queen' across many languages. Name the Sanskrit word for woman that derives from this root.",
+        "acceptedAnswers": ["gna", "gnā", "jani", "janī"],
+        "hint": "It's also related to Greek 'gyne' and English 'gynecology'",
+        "explanation": "Sanskrit 'gnā' (woman) comes from PIE *gʷen-, as do Greek 'gyne', Latin 'genus', and ultimately English 'queen' and 'gynecology'.",
+        "points": 210,
+        "protoReconstruction": "*gʷen- → *gʷneh₂- → gná (Sanskrit)"
+      },
+      {
+        "question": "The Proto-Indo-European root *h₂eḱ- meaning 'sharp' evolved into words for edge, axis, and even 'acid'. What English word beginning with 'a' comes from this root via Latin 'acus'?",
+        "acceptedAnswers": ["acute", "acumen"],
+        "hint": "It describes something mentally sharp or severe",
+        "explanation": "'Acute' comes from Latin 'acutus' (sharp), from 'acus' (needle), all tracing back to PIE *h₂eḱ- meaning sharp or pointed.",
+        "points": 210,
+        "protoReconstruction": "*h₂eḱ- → *h₂ḱros → acus → acutus → acute"
+      },
+      {
+        "question": "What Proto-Indo-European root meaning 'to know' gave rise to English 'know', Latin 'noscere', Greek 'gignoskein', and Sanskrit 'jñā'?",
+        "acceptedAnswers": ["*ǵneh₃-", "*gneh3", "*ǵneH-", "gne", "*ǵnō-"],
+        "hint": "The laryngeal *h₃ often became 'o' in many daughter languages",
+        "explanation": "PIE *ǵneh₃- (to know) became 'know', 'noscere', 'gignoskein', and 'jñā' through regular sound changes across Indo-European branches.",
+        "points": 210,
+        "protoReconstruction": "*ǵneh₃- → Germanic *knēaną → know"
+      },
+      {
+        "question": "The reconstructed Proto-Indo-European word *h₁éḱwos gave us words for horse across many branches. What is the Latin descendant of this word?",
+        "acceptedAnswers": ["equus", "equos"],
+        "hint": "It's related to English 'equine' and 'equestrian'",
+        "explanation": "PIE *h₁éḱwos became Latin 'equus' (horse), giving us 'equine', 'equestrian', and related terms for horse-related concepts.",
+        "points": 210,
+        "protoReconstruction": "*h₁éḱwos → *ekwos → equus"
+      },
+      {
+        "question": "The PIE root *bʰréh₂tēr (brother) maintained remarkable similarity across Indo-European languages. What is the Sanskrit form of this word?",
+        "acceptedAnswers": ["bhrātar", "bhrata", "bhrātṛ"],
+        "hint": "The vowel pattern changes but the consonant structure remains nearly identical",
+        "explanation": "Sanskrit 'bhrātā' (brother) shows the incredible preservation of PIE *bʰréh₂tēr across millennia, demonstrating Indo-European linguistic unity.",
+        "points": 210,
+        "protoReconstruction": "*bʰréh₂tēr → bhrā́tā (Sanskrit)"
+      }
+    ]
+  },
+  "sneakyDeepConnections": {
+    "unlockPaths": {
+      "etymology → names": "character-name-origins",
+      "etymology → shakespeare": "shakespeare-wordsmith-super", 
+      "etymology → biblical": "biblical-names-hidden-meanings",
+      "etymology → mythology": "mythological-name-powers"
+    },
+    "brainMapNodes": [
+      "linguistic-archaeology",
+      "proto-indo-european-roots", 
+      "semantic-shift-patterns",
+      "phonetic-evolution-laws",
+      "borrowing-contact-linguistics"
+    ]
+  },
+  "difficulty": "expert",
+  "category": "linguistics-archaeology",
+  "expertiseLevel": "requires-linguistic-background",
+  "connections": {
+    "philosophical": "How language shapes thought - Sapir-Whorf hypothesis",
+    "historical": "Language as archaeology of human migration and contact",
+    "cognitive": "How the brain processes etymological relationships"
+  }
+}

@@ -325,8 +325,8 @@ const GameStack = memo(function GameStack({
 
       {/* Question */}
       <div className="text-center mb-8">
-        <h3 className="text-xl sm:text-2xl mb-6 leading-relaxed font-medium">
-          {current.question}
+        <h3 className="text-xl sm:text-2xl mb-6 leading-relaxed font-medium text-gray-900 dark:text-gray-100">
+          {current.question || current.q}
         </h3>
         
         {/* Hint */}
