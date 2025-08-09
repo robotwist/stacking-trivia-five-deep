@@ -82,7 +82,7 @@ export default function GameStack({ stackData, onComplete }) {
         const bonusPoints = current.bonus || 100;
         const newScore = score + bonusPoints;
         setScore(newScore);
-        setFeedback(`🔥 DEEPER MODE CORRECT! +${bonusPoints} bonus points!`);
+        setFeedback(`DEEPER MODE CORRECT! +${bonusPoints} bonus points!`);
         
         setTimeout(() => {
           if (deepModeDepth + 1 >= stackData.deeperMode.questions.length) {
@@ -98,7 +98,7 @@ export default function GameStack({ stackData, onComplete }) {
         const pointsEarned = 10 * Math.pow(2, depth);
         const newScore = score + pointsEarned;
         setScore(newScore);
-        setFeedback(`🎯 Correct! +${pointsEarned} points!`);
+        setFeedback(`Correct! +${pointsEarned} points!`);
         
         setTimeout(() => {
           if (depth + 1 >= stackData.questions.length) {
@@ -118,7 +118,7 @@ export default function GameStack({ stackData, onComplete }) {
     } else {
       const correctAnswer = current.answer || (current.acceptedAnswers && current.acceptedAnswers[0]) || (current.a && current.a[0]) || 'Unknown';
       const modeText = isDeepMode ? "DEEPER MODE" : "Stack";
-      setFeedback(`💀 The answer was: ${correctAnswer}. ${modeText} ends here.`);
+      setFeedback(`The answer was: ${correctAnswer}. ${modeText} ends here.`);
       setTimeout(() => {
         if (onComplete) onComplete();
       }, 3000);
@@ -126,7 +126,7 @@ export default function GameStack({ stackData, onComplete }) {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && !feedback.includes('💀')) {
+    if (e.key === 'Enter' && !feedback.includes('The answer was:')) {
       checkAnswer();
     }
   };
@@ -140,7 +140,7 @@ export default function GameStack({ stackData, onComplete }) {
     setDeepModeDepth(0);
     setShowDeeperModeOffer(false);
     setInput('');
-    setFeedback('🔥 DEEPER MODE ACTIVATED! The questions get obsessive now...');
+    setFeedback('DEEPER MODE ACTIVATED! The questions get obsessive now...');
     setTimeout(() => setFeedback(''), 2000);
   };
 
@@ -152,40 +152,42 @@ export default function GameStack({ stackData, onComplete }) {
   // Show Deeper Mode offer screen
   if (showDeeperModeOffer && stackData.deeperMode) {
     return (
-      <div className={`p-8 max-w-3xl mx-auto rounded-2xl shadow-2xl text-center animate-fade-in ${
+      <div className={`p-8 max-w-3xl mx-auto rounded-sm border-2 border-amber-400 text-center sepia ${
         darkMode 
-          ? 'bg-gradient-to-br from-orange-900/90 via-red-900/90 to-purple-900/90 backdrop-blur-sm border border-orange-700/50 text-white' 
-          : 'bg-gradient-to-br from-orange-100 via-red-100 to-purple-100 backdrop-blur-sm shadow-xl text-gray-900'
+          ? 'bg-gradient-to-br from-amber-900/90 via-yellow-900/90 to-amber-800/90 text-amber-50' 
+          : 'bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-50 text-amber-900'
       }`}>
-        <div className="text-7xl mb-6 animate-pulse-slow">🔥</div>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-600 to-purple-600 bg-clip-text text-transparent">
+        <div className="text-7xl mb-6" style={{ fontFamily: 'Baskervville, serif' }}>— ❦ —</div>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
           {stackData.deeperMode.title}
         </h2>
-        <p className={`text-lg sm:text-xl mb-8 ${darkMode ? 'text-gray-200' : 'text-gray-700'} max-w-2xl mx-auto leading-relaxed`}>
+        <p className={`text-lg sm:text-xl mb-8 ${darkMode ? 'text-amber-200' : 'text-amber-700'} max-w-2xl mx-auto leading-relaxed`} style={{ fontFamily: 'Baskervville, serif' }}>
           {stackData.deeperMode.description}
         </p>
-        <div className={`p-6 rounded-xl mb-8 ${
-          darkMode ? 'bg-black/30 border border-orange-700/50' : 'bg-white/50 border border-orange-200'
+        <div className={`p-6 rounded-sm border-2 border-amber-500 mb-8 ${
+          darkMode ? 'bg-amber-900/30' : 'bg-amber-50/50'
         }`}>
-          <div className="text-2xl font-bold mb-2 text-purple-600">Current Score: {score}</div>
-          <div className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <div className="text-2xl font-bold mb-2 text-amber-700 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>Current Score: {score}</div>
+          <div className={`text-sm ${darkMode ? 'text-amber-300' : 'text-amber-600'}`} style={{ fontFamily: 'Baskervville, serif' }}>
             Risk it all for bonus points: {stackData.deeperMode.questions.map(q => q.bonus || 100).join(' + ')} possible
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={enterDeeperMode}
-            className="bg-gradient-to-r from-orange-600 via-red-600 to-purple-600 hover:from-orange-700 hover:via-red-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 text-white px-8 py-4 rounded-sm border-2 border-amber-500 hover:border-amber-400 text-lg font-semibold transition-all duration-300 transform hover:scale-105 sepia hover:sepia-0"
+            style={{ fontFamily: 'Baskervville, serif' }}
           >
-            🔥 ENTER DEEPER MODE
+            ENTER DEEPER MODE
           </button>
           <button
             onClick={declineDeeperMode}
-            className={`px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${
+            className={`px-8 py-4 rounded-sm border-2 border-amber-400 hover:border-amber-300 text-lg font-semibold transition-all duration-300 sepia hover:sepia-0 ${
               darkMode 
-                ? 'bg-gray-700 hover:bg-gray-600 text-gray-200' 
-                : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+                ? 'bg-gradient-to-r from-amber-800/50 to-yellow-800/50 hover:from-amber-700/60 hover:to-yellow-700/60 text-amber-200' 
+                : 'bg-gradient-to-r from-amber-100/50 to-yellow-100/50 hover:from-amber-200/60 hover:to-yellow-200/60 text-amber-800'
             }`}
+            style={{ fontFamily: 'Baskervville, serif' }}
           >
             Take My Score & Run
           </button>
