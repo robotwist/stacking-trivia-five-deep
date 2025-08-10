@@ -38,6 +38,42 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
 });
 
+// Database health check
+app.get('/api/db-health', async (req, res) => {
+  try {
+    const { pool } = await import('./src/database/postgres.js');
+    const client = await pool.connect();
+    
+    // Test query
+    const result = await client.query('SELECT NOW() as current_time, version() as postgres_version');
+    
+    // Check tables
+    const tables = await client.query(`
+      SELECT table_name 
+      FROM information_schema.tables 
+      WHERE table_schema = 'public'
+    `);
+    
+    client.release();
+    
+    res.json({ 
+      status: 'Database connected successfully',
+      timestamp: new Date().toISOString(),
+      current_time: result.rows[0].current_time,
+      postgres_version: result.rows[0].postgres_version,
+      tables: tables.rows.map(row => row.table_name),
+      database_url_exists: !!process.env.DATABASE_URL
+    });
+  } catch (error) {
+    res.status(500).json({ 
+      status: 'Database connection failed',
+      error: error.message,
+      timestamp: new Date().toISOString(),
+      database_url_exists: !!process.env.DATABASE_URL
+    });
+  }
+});
+
 // Serve React app for all other routes (SPA support)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));

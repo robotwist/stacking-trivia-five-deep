@@ -1,14 +1,17 @@
-// Database configuration for Heroku PostgreSQL
+// Database configuration for Railway PostgreSQL
 import pg from 'pg'
 const { Pool } = pg
 
-// Heroku automatically provides DATABASE_URL environment variable
+// Railway automatically provides DATABASE_URL environment variable
 const connectionString = process.env.DATABASE_URL || 'postgresql://localhost:5432/deepstack_trivia'
 
 const pool = new Pool({
   connectionString,
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 })
+
+// Export pool for health checks
+export { pool }
 
 // Test database connection
 pool.on('connect', () => {
