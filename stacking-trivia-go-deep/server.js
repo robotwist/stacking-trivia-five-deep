@@ -18,8 +18,6 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(express.json());
-// Serve static files from dist directory
-app.use(express.static(path.join(__dirname, 'dist')));
 
 // Initialize database asynchronously
 async function initializeServer() {
@@ -35,15 +33,18 @@ async function initializeServer() {
 // Start database initialization (don't block server startup)
 initializeServer();
 
-// API Routes
+// API Routes MUST come before static file serving
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/game', gameRoutes);
 
-// Health check
+// Health check endpoints
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
 });
+
+// Serve static files from dist directory AFTER API routes
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Database health check
 app.get('/api/db-health', async (req, res) => {
