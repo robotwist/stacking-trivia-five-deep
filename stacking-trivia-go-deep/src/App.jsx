@@ -9,6 +9,8 @@ import { AuthProvider } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
 import AuthErrorBoundary from './components/AuthErrorBoundary'
 
+import { gamePersistence } from './services/gamePersistence'
+
 // Lazy load heavy components for better performance
 const HostMode = lazy(() => import('./components/HostMode'))
 const OpeningImageRound = lazy(() => import('./components/OpeningImageRound'))
@@ -196,8 +198,15 @@ function App() {
   }
 
   // Stack completion with unlock system
-  const handleStackComplete = (score, totalPossible) => {
+  const handleStackComplete = async (score, totalPossible) => {
     if (selectedStack) {
+      // Save to backend if user is authenticated
+      try {
+        await gamePersistence.saveGameScore(score, selectedStack);
+      } catch (error) {
+        console.log('Backend save failed, using local storage:', error);
+      }
+      
       // Check for new unlocks
       const newUnlocks = stackUnlockManager.completeStack(selectedStack, score, totalPossible);
       
