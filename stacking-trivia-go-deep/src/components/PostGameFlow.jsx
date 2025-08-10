@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { getRecommendations, stackMetadata, getDifficultyColor } from '../utils/stackMetadata';
+import SmartRecommendations from './SmartRecommendations';
+import { AchievementBadge } from './AchievementDisplay';
 
 const PostGameFlow = ({ 
   score, 
@@ -19,7 +21,17 @@ const PostGameFlow = ({
   const completedStacks = ['van-gogh', 'tesla']; // Add the just completed stack
   completedStacks.push(completedStack);
 
-  const recommendations = getRecommendations(userStats, completedStacks);
+  // PRIORITY 2: Get smart ML-driven recommendations
+  const smartRecommendations = SmartRecommendations.getPersonalizedRecommendations(
+    user, 
+    completedStack, 
+    3
+  );
+  
+  // Fallback to original recommendations if smart ones fail
+  const recommendations = smartRecommendations.length > 0 ? 
+    smartRecommendations : 
+    getRecommendations(userStats, completedStacks);
 
   useEffect(() => {
     // Show celebration for 3 seconds, then recommendations
@@ -133,8 +145,13 @@ const PostGameFlow = ({
 
             {/* Recommendations */}
             <div className="grid grid-cols-1 gap-4">
-              {recommendations.map((stackKey, index) => {
-                const metadata = stackMetadata[stackKey];
+              {recommendations.map((recommendation, index) => {
+                // Handle both smart recommendations (objects) and old format (strings)
+                const stackKey = typeof recommendation === 'string' ? recommendation : recommendation.stackName;
+                const metadata = typeof recommendation === 'string' ? stackMetadata[stackKey] : recommendation.metadata;
+                const reasoning = typeof recommendation === 'string' ? null : recommendation.reasoning;
+                const confidence = typeof recommendation === 'string' ? null : recommendation.confidence;
+                
                 if (!metadata) return null;
 
                 return (
@@ -150,7 +167,7 @@ const PostGameFlow = ({
                       <div className="flex gap-2 items-center">
                         {index === 0 && (
                           <span className="px-2 py-1 bg-green-500 text-white rounded-full text-xs font-bold">
-                            RECOMMENDED
+                            {confidence ? `${Math.round(confidence)}% MATCH` : 'RECOMMENDED'}
                           </span>
                         )}
                         <span className={`px-2 py-1 rounded-full text-xs font-semibold ${getDifficultyColor(metadata.difficulty)}`}>
@@ -161,12 +178,20 @@ const PostGameFlow = ({
                     <p className="text-sm text-amber-700 dark:text-amber-300 mb-2">
                       {metadata.description}
                     </p>
+                    
+                    {/* PRIORITY 2: Smart reasoning */}
+                    {reasoning && (
+                      <p className="text-xs text-amber-600 dark:text-amber-400 mb-2 italic">
+                        💡 {reasoning}
+                      </p>
+                    )}
+                    
                     <div className="flex justify-between items-center">
                       <span className="text-xs text-amber-600 dark:text-amber-400">
                         {metadata.estimatedTime}
                       </span>
                       <div className="flex gap-1">
-                        {metadata.tags.slice(0, 3).map((tag) => (
+                        {metadata.tags && metadata.tags.slice(0, 3).map((tag) => (
                           <span key={tag} className="text-xs px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded">
                             {tag}
                           </span>

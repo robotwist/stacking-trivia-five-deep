@@ -8,6 +8,11 @@ import FeedbackModal from './components/FeedbackModal'
 import PhotoFirstTest from './components/PhotoFirstTest'
 import OnboardingFlow from './components/OnboardingFlow'
 import PostGameFlow from './components/PostGameFlow'
+import ProgressResume from './components/ProgressResume'
+import { AchievementUnlock } from './components/AchievementDisplay'
+import AchievementSystem from './components/AchievementSystem'
+import SmartRecommendations from './components/SmartRecommendations'
+import ProgressStorage from './utils/progressStorage'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
 import AuthErrorBoundary from './components/AuthErrorBoundary'
@@ -154,6 +159,10 @@ function AuthenticatedGameApp() {
   const [showOnboarding, setShowOnboarding] = useState(false)
   const [showPostGame, setShowPostGame] = useState(false)
   const [lastGameResult, setLastGameResult] = useState(null)
+
+  // Priority 2 Features: Progress Persistence & Achievement System
+  const [achievementToShow, setAchievementToShow] = useState(null)
+  const [resumeData, setResumeData] = useState(null)
 
   // Check if user needs onboarding (first time user)
   useEffect(() => {
@@ -363,18 +372,51 @@ function AuthenticatedGameApp() {
 
   // Enhanced stack completion with post-game flow
   const handleEnhancedStackComplete = (score, totalPossible, questionsAnswered, accuracy) => {
+    // PRIORITY 2: Clear any saved progress (stack completed)
+    ProgressStorage.clearProgress();
+    
+    // PRIORITY 2: Track completion for ML recommendations
+    ProgressStorage.trackAction('stack_completed', {
+      stackName: selectedStack,
+      score,
+      totalPossible,
+      questionsAnswered,
+      accuracy,
+      timeTaken: Date.now() - (gamePersistence.getStartTime() || Date.now())
+    });
+    
+    // PRIORITY 2: Check for achievement unlocks
+    const gameStats = {
+      perfectScores: accuracy === 100 ? 1 : 0,
+      highScores: accuracy >= 90 ? 1 : 0,
+      consistentHighAccuracy: accuracy >= 80 ? 1 : 0,
+      fastestCompletion: (Date.now() - (gamePersistence.getStartTime() || Date.now())) / 1000,
+      longestStreak: questionsAnswered, // Simplified for now
+      resumeCompletions: resumeData ? 1 : 0
+    };
+    
+    const newAchievements = AchievementSystem.checkAchievements(gameStats, user);
+    if (newAchievements.length > 0) {
+      // Show first achievement, queue others
+      setAchievementToShow(newAchievements[0]);
+    }
+    
     // Store game result for post-game screen
     setLastGameResult({
       score,
       totalPossible,
       questionsAnswered,
       accuracy,
-      completedStack: selectedStack
+      completedStack: selectedStack,
+      newAchievements
     });
     
     // Show post-game flow
     setShowPostGame(true);
     setGameStarted(false);
+    
+    // Clear resume data if it was used
+    setResumeData(null);
     
     // Original stack completion logic
     handleStackComplete(score, totalPossible);
@@ -386,6 +428,34 @@ function AuthenticatedGameApp() {
     setGameStarted(true);
     setShowPostGame(false);
     setLastGameResult(null);
+  }
+
+  // PRIORITY 2: Progress Resume Handlers
+  const handleResumeStack = (progressData) => {
+    setResumeData(progressData);
+    setSelectedStack(progressData.stackName);
+    setGameStarted(true);
+    setShowPostGame(false);
+    
+    // Track resume action for ML
+    ProgressStorage.trackAction('stack_resumed', {
+      stackName: progressData.stackName,
+      resumeIndex: progressData.currentIndex,
+      timeAway: Date.now() - progressData.timestamp
+    });
+  }
+
+  const handleStartFresh = () => {
+    // Clear any saved progress and restart selection
+    ProgressStorage.clearProgress();
+    setResumeData(null);
+    setSelectedStack(null);
+    setGameStarted(false);
+  }
+
+  // PRIORITY 2: Achievement System Handlers  
+  const handleCloseAchievement = () => {
+    setAchievementToShow(null);
   }
 
   const handleReturnToMenu = () => {
@@ -615,6 +685,7 @@ function AuthenticatedGameApp() {
           <GameStack 
             stackData={gameStacks[selectedStack]} 
             onComplete={handleEnhancedStackComplete}
+            resumeData={resumeData}
           />
         </div>
       </div>
@@ -835,6 +906,14 @@ function AuthenticatedGameApp() {
             onCategorySelect={handleCategorySelect}
           />
 
+          {/* PRIORITY 2: Progress Resume Component */}
+          <div className="max-w-4xl mx-auto mt-8 px-4">
+            <ProgressResume 
+              onResumeStack={handleResumeStack}
+              onStartFresh={handleStartFresh}
+            />
+          </div>
+
           {/* Featured Stack Recommendations */}
           <div className="max-w-4xl mx-auto mt-12 mb-8 px-4">
             <h2 className="text-2xl font-bold text-center mb-6 text-gray-200">Featured Deep Dives</h2>
@@ -897,6 +976,14 @@ function AuthenticatedGameApp() {
           <UnlockNotification 
             unlock={unlockNotification} 
             onClose={handleCloseUnlockNotification} 
+          />
+        )}
+
+        {/* PRIORITY 2: Achievement Unlock Modal */}
+        {achievementToShow && (
+          <AchievementUnlock 
+            achievement={achievementToShow}
+            onClose={handleCloseAchievement}
           />
         )}
       </div>

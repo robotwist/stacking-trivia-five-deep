@@ -4,6 +4,7 @@ import PhotoIdentification from './PhotoIdentification';
 import { checkAnswerMatch } from '../utils/textUtils';
 import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore } from '../utils/scoreUtils';
 import { useAuth } from '../contexts/AuthContext';
+import ProgressStorage from '../utils/progressStorage';
 
 const GameStack = memo(function GameStack({ 
   stackData, 
@@ -14,7 +15,8 @@ const GameStack = memo(function GameStack({
   onPause = () => {},
   onResume = () => {},
   gameState = 'playing',
-  enableCelebrations = true
+  enableCelebrations = true,
+  resumeData = null // PRIORITY 2: Resume from saved progress
 }) {
   const [depth, setDepth] = useState(0);
   const [score, setScore] = useState(0);
@@ -58,6 +60,30 @@ const GameStack = memo(function GameStack({
     observer.observe(document.documentElement, { attributes: true })
     return () => observer.disconnect()
   }, [])
+
+  // PRIORITY 2: Initialize from resume data if provided
+  useEffect(() => {
+    if (resumeData) {
+      setDepth(resumeData.currentIndex);
+      setScore(resumeData.score);
+      setCorrectAnswers(resumeData.userAnswers.filter(a => a.correct).length);
+      setTotalAttempts(resumeData.userAnswers.length);
+      
+      // Track start of resumed game
+      ProgressStorage.trackAction('stack_started', {
+        stackName: stackData.name,
+        resumed: true,
+        startIndex: resumeData.currentIndex
+      });
+    } else {
+      // Track start of new game
+      ProgressStorage.trackAction('stack_started', {
+        stackName: stackData.name,
+        resumed: false,
+        startIndex: 0
+      });
+    }
+  }, [resumeData, stackData.name])
   
   // Get current question - memoized for performance
   const current = useMemo(() => {
@@ -202,10 +228,21 @@ const GameStack = memo(function GameStack({
           }
         } else {
           setTimeout(() => {
-            setDepth(state.depth + 1);
+            const newDepth = state.depth + 1;
+            setDepth(newDepth);
             setInput('');
             setFeedback('');
             setShowHint(false);
+            
+            // PRIORITY 2: Auto-save progress after each question
+            const userAnswers = []; // TODO: Track all user answers properly
+            ProgressStorage.saveProgress(
+              state.stackData.name,
+              newDepth,
+              state.score + questionScore,
+              maxPossibleScore,
+              userAnswers
+            );
           }, 2000);
         }
       }
