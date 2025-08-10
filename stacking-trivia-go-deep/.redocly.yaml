@@ -1,0 +1,58 @@
+apis:
+  main:
+    root: openapi.yaml
+
+lint:
+  extends:
+    - recommended
+  rules:
+    # Core REST compliance
+    operation-ids: error
+    operation-summary: error
+    operation-description: warn
+    path-params-defined: error
+    path-declaration-must-exist: error
+    no-unused-components: error
+    
+    # Response standards
+    operation-2xx-response: error
+    operation-4xx-response: warn
+    
+    # Schema standards  
+    component-name-unique: error
+    no-invalid-media-type-examples: error
+    
+    # Security standards
+    operation-security-defined: warn
+    
+    # Custom rules for strict REST compliance
+    no-verbs-in-paths:
+      description: "Don't put verbs in paths, use HTTP methods instead"
+      severity: error
+      given: $.paths[*]~
+      then:
+        function: pattern
+        functionOptions:
+          notMatch: "/(get|post|put|delete|create|update|remove|add)(/|$)"
+    
+    plural-collections:
+      description: "Collection endpoints must use plural nouns"
+      severity: error  
+      given: $.paths[*]~
+      then:
+        function: pattern
+        functionOptions:
+          match: "^/(?!auth|login|logout|health|api)([a-z]+s)(/.*)?$|^/(auth|login|logout|health|api)(/.*)?$"
+    
+    consistent-param-naming:
+      description: "Path parameters should follow consistent naming"
+      severity: error
+      given: $.paths..parameters[?(@.in == 'path')]
+      then:
+        function: pattern
+        field: name
+        functionOptions:
+          match: "^[a-z][a-zA-Z0-9]*$"
+
+decorators:
+  remove-unused-components: error

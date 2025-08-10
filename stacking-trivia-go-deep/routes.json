@@ -1,110 +1,188 @@
-[
-  {
-    "path": "/api/auth/signup",
-    "methods": [
-      "POST"
-    ]
+{
+  "routes": [
+    {
+      "path": "/api/auth/signup",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/auth/login",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/auth/verify",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/user/profile",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/user/completed-stacks",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/user/complete-stack",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/user/available-stacks",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/game/session",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/game/session/:sessionId",
+      "methods": [
+        "PUT"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/game/session/:sessionId/stack",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/game/history",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/game/leaderboard",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/game/stats",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "authenticateToken",
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/health",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/game/leaderboard-test",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/debug/routes",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "anonymous"
+      ]
+    },
+    {
+      "path": "/api/db-health",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "anonymous"
+      ]
+    },
+    {
+      "path": "*",
+      "methods": [
+        "GET"
+      ],
+      "middleware": [
+        "anonymous"
+      ]
+    }
+  ],
+  "summary": {
+    "totalRoutes": 18,
+    "totalEndpoints": 18,
+    "pathsByMethod": {
+      "POST": 5,
+      "GET": 12,
+      "PUT": 1
+    },
+    "duplicateCheck": [],
+    "securityAnalysis": []
   },
-  {
-    "path": "/api/auth/login",
-    "methods": [
-      "POST"
-    ]
-  },
-  {
-    "path": "/api/auth/verify",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/user/profile",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/user/completed-stacks",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/user/complete-stack",
-    "methods": [
-      "POST"
-    ]
-  },
-  {
-    "path": "/api/user/available-stacks",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/game/session",
-    "methods": [
-      "POST"
-    ]
-  },
-  {
-    "path": "/api/game/session/:sessionId",
-    "methods": [
-      "PUT"
-    ]
-  },
-  {
-    "path": "/api/game/session/:sessionId/stack",
-    "methods": [
-      "POST"
-    ]
-  },
-  {
-    "path": "/api/game/history",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/game/leaderboard",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/game/stats",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/health",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/game/leaderboard-test",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/debug/routes",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "/api/db-health",
-    "methods": [
-      "GET"
-    ]
-  },
-  {
-    "path": "*",
-    "methods": [
-      "GET"
-    ]
-  }
-]
+  "loadTime": 125.767907
+}

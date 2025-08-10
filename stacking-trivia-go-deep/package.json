@@ -21,7 +21,12 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "api:lint": "npx redocly lint openapi.yaml",
+    "api:audit": "npm run api:routes && npm run api:compare",
+    "api:routes": "node scripts/listRoutes.js",
+    "api:compare": "node scripts/compareRoutes.js",
+    "api:full": "npm run api:lint && npm run api:audit"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
