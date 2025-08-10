@@ -1,0 +1,185 @@
+openapi: 3.0.3
+info:
+  title: Stacking Trivia API
+  version: 1.0.0
+  description: API for the Stacking Trivia PWA game
+servers:
+  - url: https://quizzical-cherry-production.up.railway.app
+    description: Production server
+paths:
+  # Health endpoints
+  /api/health:
+    get:
+      summary: Server health check
+      responses:
+        '200':
+          description: Server is running
+  
+  /api/db-health:
+    get:
+      summary: Database health check
+      responses:
+        '200':
+          description: Database connected successfully
+  
+  # Authentication endpoints
+  /api/auth/signup:
+    post:
+      summary: Create new user account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: User created successfully
+  
+  /api/auth/login:
+    post:
+      summary: Login user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login successful
+  
+  /api/auth/logout:
+    post:
+      summary: Logout user
+      responses:
+        '200':
+          description: Logout successful
+  
+  # User endpoints
+  /api/user/profile:
+    get:
+      summary: Get user profile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User profile data
+    put:
+      summary: Update user profile
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Profile updated successfully
+  
+  # Game endpoints
+  /api/game/leaderboard:
+    get:
+      summary: Get game leaderboard
+      responses:
+        '200':
+          description: Leaderboard data
+  
+  /api/game/sessions:
+    post:
+      summary: Create new game session
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionType:
+                  type: string
+      responses:
+        '201':
+          description: Game session created
+  
+  /api/game/sessions/{sessionId}:
+    put:
+      summary: Update game session
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Session updated successfully
+  
+  /api/game/sessions/{sessionId}/stacks:
+    post:
+      summary: Record stack result
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Stack result recorded
+  
+  /api/game/history:
+    get:
+      summary: Get user game history
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Game history data
+  
+  /api/game/stats:
+    get:
+      summary: Get user game statistics
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Game statistics
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
