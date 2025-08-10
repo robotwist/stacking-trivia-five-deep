@@ -21,14 +21,19 @@ app.use(express.json());
 // Serve static files from dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Initialize database
-try {
-  await initDatabase();
-  console.log('Database initialized successfully');
-} catch (error) {
-  console.error('Database initialization failed:', error);
-  console.log('Server will continue without database features');
+// Initialize database asynchronously
+async function initializeServer() {
+  try {
+    await initDatabase();
+    console.log('Database initialized successfully');
+  } catch (error) {
+    console.error('Database initialization failed:', error);
+    console.log('Server will continue without database features');
+  }
 }
+
+// Start database initialization (don't block server startup)
+initializeServer();
 
 // API Routes
 app.use('/api/auth', authRoutes);
