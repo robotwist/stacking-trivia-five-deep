@@ -33,7 +33,7 @@ const authenticateToken = (req, res, next) => {
 router.post('/session', authenticateToken, async (req, res) => {
   try {
     const { sessionType = 'single-player' } = req.body
-    const sessionId = await createGameSession(req.user.id, sessionType)
+    const sessionId = await createGameSession(req.user.userId, sessionType)
     res.json({ sessionId })
   } catch (error) {
     res.status(500).json({ error: 'Failed to create game session' })
@@ -79,7 +79,7 @@ router.post('/session/:sessionId/stack', authenticateToken, async (req, res) => 
     
     // Update leaderboard
     if (category) {
-      await updateLeaderboard(req.user.id, category, stackName, finalScore)
+      await updateLeaderboard(req.user.userId, category, stackName, finalScore)
     }
     
     res.json({ success: true })
@@ -92,7 +92,7 @@ router.post('/session/:sessionId/stack', authenticateToken, async (req, res) => 
 router.get('/history', authenticateToken, async (req, res) => {
   try {
     const { limit = 10 } = req.query
-    const history = await getUserGameHistory(req.user.id, parseInt(limit))
+    const history = await getUserGameHistory(req.user.userId, parseInt(limit))
     res.json({ history })
   } catch (error) {
     res.status(500).json({ error: 'Failed to get game history' })
@@ -113,7 +113,7 @@ router.get('/leaderboard', async (req, res) => {
 // Get user stats
 router.get('/stats', authenticateToken, async (req, res) => {
   try {
-    const history = await getUserGameHistory(req.user.id, 100) // Get more for stats
+    const history = await getUserGameHistory(req.user.userId, 100) // Get more for stats
     
     const stats = {
       totalGames: history.length,
