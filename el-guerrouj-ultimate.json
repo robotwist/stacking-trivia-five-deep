@@ -1,0 +1,252 @@
+{
+  "title": "Hicham El Guerrouj: King of the Mile - Ultimate Deep Dive",
+  "image": "el-guerrouj-rome-mile.jpg", 
+  "imageHint": "El Guerrouj breaking the mile world record in Rome's Stadio Olimpico, 1999",
+  "description": "The most comprehensive exploration of the greatest middle-distance runner in history - from his Moroccan training secrets to his legendary world records and Olympic double triumph.",
+  "category": "sports",
+  "difficulty_level": 5,
+  "tags": ["hicham-el-guerrouj", "morocco", "middle-distance", "mile-record", "1500m", "olympics", "world-records"],
+  "questions": [
+    {
+      "level": 1,
+      "question": "What country did Hicham El Guerrouj represent in international competition?",
+      "answer": "Morocco",
+      "hint": "A North African nation known for producing great distance runners"
+    },
+    {
+      "level": 2,
+      "question": "What is considered El Guerrouj's signature event?",
+      "answer": "1500 meters",
+      "alternative_answers": ["1500m", "the mile"],
+      "explanation": "Though he held records in multiple distances, the 1500m was his specialty"
+    },
+    {
+      "level": 3,
+      "question": "In what year did El Guerrouj set his famous mile world record?",
+      "answer": "1999",
+      "explanation": "Set in Rome's Stadio Olimpico on July 7, 1999"
+    },
+    {
+      "level": 4,
+      "question": "What is El Guerrouj's mile world record time?",
+      "answer": "3:43.13",
+      "alternative_answers": ["3 minutes 43.13 seconds", "three forty-three thirteen"],
+      "explanation": "This record, set in Rome, remains untouchable after 25+ years"
+    },
+    {
+      "level": 5,
+      "question": "At which Olympics did El Guerrouj finally win his first gold medal?",
+      "answer": "2004 Athens Olympics",
+      "alternative_answers": ["Athens 2004", "2004"],
+      "explanation": "After heartbreaking defeats in 1996 and 2000, El Guerrouj finally captured Olympic gold"
+    },
+    {
+      "level": 6,
+      "question": "What unique Olympic achievement did El Guerrouj accomplish in Athens 2004?",
+      "answer": "winning gold in both 1500m and 5000m",
+      "alternative_answers": ["double gold", "1500m and 5000m double"],
+      "explanation": "The first man since Paavo Nurmi in 1924 to win both middle-distance events"
+    },
+    {
+      "level": 7,
+      "question": "Who was El Guerrouj's longtime coach?",
+      "answer": "Abdelkader Kada",
+      "explanation": "Kada developed the training methods that made El Guerrouj the greatest miler ever"
+    },
+    {
+      "level": 8,
+      "question": "What is El Guerrouj's 1500m world record time?",
+      "answer": "3:26.00",
+      "alternative_answers": ["3 minutes 26 seconds", "three twenty-six"],
+      "explanation": "Set in Rome in 1998, this record has stood for over 25 years"
+    },
+    {
+      "level": 9,
+      "question": "At what altitude did El Guerrouj often train in the Atlas Mountains?",
+      "answer": "6000 feet",
+      "alternative_answers": ["around 6000 feet", "6000 foot elevation"],
+      "explanation": "Training in Ifrane at 6000 feet provided optimal altitude adaptation"
+    },
+    {
+      "level": 10,
+      "question": "What was El Guerrouj's racing nickname?",
+      "answer": "King of the Mile",
+      "alternative_answers": ["The King of the Mile"],
+      "explanation": "Earned through his dominance and world record in the glamour distance"
+    },
+    {
+      "level": 11,
+      "question": "What training innovation did coach Kada use involving altitude variation?",
+      "answer": "fartlek sessions at varying altitudes to maximize oxygen adaptation",
+      "alternative_answers": ["altitude variation training", "multi-altitude fartlek"],
+      "explanation": "Moving between sea level Rabat and 6000-foot Ifrane created superior oxygen-carrying capacity"
+    },
+    {
+      "level": 12,
+      "question": "How many consecutive years was El Guerrouj undefeated at 1500m?",
+      "answer": "5 years",
+      "alternative_answers": ["five years", "5 consecutive years"],
+      "explanation": "From 1997-2002, El Guerrouj was virtually unbeatable at his specialty distance"
+    },
+    {
+      "level": 13,
+      "question": "What tactical approach made El Guerrouj nearly unbeatable?",
+      "answer": "devastating final 400m kick combined with strategic positioning",
+      "alternative_answers": ["killer kick", "final 400m speed"],
+      "explanation": "His ability to unleash sub-50 second final 400m splits was unmatched"
+    },
+    {
+      "level": 14,
+      "question": "In what city did El Guerrouj set both his mile and 1500m world records?",
+      "answer": "Rome",
+      "explanation": "Rome's Stadio Olimpico was the site of both legendary performances"
+    },
+    {
+      "level": 15,
+      "question": "What was unique about El Guerrouj's physiological makeup for middle distance?",
+      "answer": "exceptional VO2 max combined with superior lactate clearance ability",
+      "alternative_answers": ["high VO2 max and lactate tolerance", "superior oxygen processing"],
+      "explanation": "His body could both deliver and process oxygen at elite levels while clearing lactate efficiently"
+    },
+    {
+      "level": 16,
+      "question": "What psychological strategy did El Guerrouj employ in major championships?",
+      "answer": "patient tactical racing followed by explosive finishing speed",
+      "alternative_answers": ["tactical patience then explosive finish", "wait and kick strategy"],
+      "explanation": "He would sit and wait, then unleash a kick that few could match"
+    },
+    {
+      "level": 17,
+      "question": "How did El Guerrouj's training differ from typical European middle-distance programs?",
+      "answer": "higher volume with more emphasis on tempo runs and natural fartlek",
+      "alternative_answers": ["high volume tempo training", "natural fartlek emphasis"],
+      "explanation": "Moroccan training emphasized feel and flow rather than rigid interval prescriptions"
+    },
+    {
+      "level": 18,
+      "question": "What was El Guerrouj's typical weekly training mileage during peak preparation?",
+      "answer": "90-110 miles per week",
+      "alternative_answers": ["100 miles per week", "90-110 miles"],
+      "explanation": "Higher volume than most milers, building exceptional aerobic base"
+    },
+    {
+      "level": 19,
+      "question": "What specific track surface seemed to bring out El Guerrouj's best performances?",
+      "answer": "European synthetic tracks with optimal rebound characteristics",
+      "alternative_answers": ["synthetic tracks", "European tracks"],
+      "explanation": "The energy return from quality synthetic surfaces enhanced his explosive finishing kick"
+    },
+    {
+      "level": 20,
+      "question": "How did El Guerrouj's racing strategy evolve throughout his career?",
+      "answer": "from front-running to tactical waiting to explosive finishing",
+      "alternative_answers": ["evolved from front-running to tactical racing", "tactical evolution"],
+      "explanation": "Early career front-running gave way to devastating finishing speed as his tactical awareness matured"
+    },
+    {
+      "level": 21,
+      "question": "What biomechanical advantage did El Guerrouj possess for middle-distance racing?",
+      "answer": "exceptionally efficient stride mechanics with minimal energy waste",
+      "alternative_answers": ["efficient stride mechanics", "biomechanical efficiency"],
+      "explanation": "His running economy was superior, allowing him to cover distance with less energy expenditure"
+    },
+    {
+      "level": 22,
+      "question": "What was El Guerrouj's fastest indoor mile time?",
+      "answer": "3:48.45",
+      "alternative_answers": ["3 minutes 48.45 seconds", "three forty-eight forty-five"],
+      "explanation": "Set indoors, demonstrating his speed across different racing environments"
+    },
+    {
+      "level": 23,
+      "question": "How did El Guerrouj's altitude training protocol differ from East African runners?",
+      "answer": "alternated between different altitudes rather than staying at constant elevation",
+      "alternative_answers": ["altitude variation approach", "multi-altitude training"],
+      "explanation": "The variation provided broader physiological adaptations than single-altitude training"
+    },
+    {
+      "level": 24,
+      "question": "What specific interval training did El Guerrouj use to develop his finishing kick?",
+      "answer": "400m repeats at race pace with short recovery to build lactate tolerance",
+      "alternative_answers": ["400m intervals", "race pace 400s"],
+      "explanation": "These sessions built the speed endurance necessary for devastating finishing kicks"
+    },
+    {
+      "level": 25,
+      "question": "What mental training technique helped El Guerrouj overcome early Olympic disappointments?",
+      "answer": "visualization of perfect race execution combined with outcome detachment",
+      "alternative_answers": ["race visualization", "mental preparation techniques"],
+      "explanation": "Learning to visualize success while detaching from outcome pressure was key to his Olympic breakthrough"
+    },
+    {
+      "level": 26,
+      "question": "How did El Guerrouj's final 400m splits compare to his competitors at world record pace?",
+      "answer": "consistently 2-3 seconds faster than field in sub-50 second range",
+      "alternative_answers": ["sub-50 second final 400m", "2-3 seconds faster finish"],
+      "explanation": "His ability to run sub-50 final 400m splits at world record pace was unmatched"
+    },
+    {
+      "level": 27,
+      "question": "What nutritional strategy did El Guerrouj employ for optimal performance?",
+      "answer": "traditional Moroccan diet emphasizing natural carbohydrates and mint tea for recovery",
+      "alternative_answers": ["traditional Moroccan nutrition", "natural carbohydrates and mint tea"],
+      "explanation": "His nutrition relied on traditional foods rather than modern sports supplements"
+    },
+    {
+      "level": 28,
+      "question": "What was unique about El Guerrouj's approach to race day preparation?",
+      "answer": "extended warm-up with multiple acceleration buildups to activate fast-twitch fibers",
+      "alternative_answers": ["extended warm-up routine", "multiple acceleration buildups"],
+      "explanation": "His thorough preparation ensured his explosive finishing speed was ready when needed"
+    },
+    {
+      "level": 29,
+      "question": "How did El Guerrouj's VO2 max measurements compare to other elite middle-distance runners?",
+      "answer": "measured above 80 ml/kg/min, among the highest ever recorded for middle distance",
+      "alternative_answers": ["over 80 VO2 max", "exceptionally high VO2 max"],
+      "explanation": "His oxygen processing capacity was at the absolute elite level for middle-distance running"
+    },
+    {
+      "level": 30,
+      "question": "What specific track conditions brought out El Guerrouj's fastest times?",
+      "answer": "warm evening temperatures with minimal wind on synthetic surfaces",
+      "alternative_answers": ["warm evening conditions", "optimal track conditions"],
+      "explanation": "These conditions maximized his physiological efficiency and track surface energy return"
+    },
+    {
+      "level": 31,
+      "question": "What neuromuscular training gave El Guerrouj his devastating kick?",
+      "answer": "plyometric work combined with short hill sprints to develop power endurance",
+      "alternative_answers": ["plyometrics and hill sprints", "power endurance training"],
+      "explanation": "This training developed the explosive power necessary for sub-50 second finishing 400m splits"
+    },
+    {
+      "level": 32,
+      "question": "How did El Guerrouj's lactate threshold measurements compare to other elite runners?",
+      "answer": "lactate threshold at 92% of VO2 max, exceptionally high for middle distance",
+      "alternative_answers": ["92% VO2 max threshold", "exceptionally high lactate threshold"],
+      "explanation": "This allowed him to race at speeds that put others into oxygen debt"
+    },
+    {
+      "level": 33,
+      "question": "What recovery methodology did El Guerrouj use between interval sessions?",
+      "answer": "active recovery at altitude combined with traditional Moroccan massage techniques",
+      "alternative_answers": ["altitude recovery", "traditional massage recovery"],
+      "explanation": "This combination optimized both physiological and muscular recovery between hard sessions"
+    },
+    {
+      "level": 34,
+      "question": "What specific biomechanical efficiency made El Guerrouj's stride so economical?",
+      "answer": "minimal vertical oscillation with maximum forward propulsion per stride",
+      "alternative_answers": ["minimal vertical movement", "maximum forward propulsion"],
+      "explanation": "His stride wasted minimal energy on vertical movement, directing all force forward"
+    },
+    {
+      "level": 35,
+      "question": "How did El Guerrouj's approach to tapering differ from conventional middle-distance preparation?",
+      "answer": "maintained race-specific intensity right up to competition instead of traditional volume reduction",
+      "alternative_answers": ["maintained race intensity", "non-traditional tapering"],
+      "explanation": "He stayed sharp through continued speed work rather than reducing training loads significantly"
+    }
+  ]
+}
