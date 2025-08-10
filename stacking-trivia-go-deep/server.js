@@ -7,6 +7,7 @@ import { initDatabase } from './src/database/postgres.js';
 import authRoutes from './src/api/auth.js';
 import userRoutes from './src/api/user.js';
 import gameRoutes from './src/api/game.js';
+import stacksRoutes from './src/api/stacks.js';
 
 // Fix for ES modules __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -37,6 +38,7 @@ initializeServer();
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/game', gameRoutes);
+app.use('/api/stacks', stacksRoutes);
 
 // Health check endpoints
 app.get('/api/health', (req, res) => {

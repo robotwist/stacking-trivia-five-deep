@@ -26,7 +26,10 @@
     "api:audit": "npm run api:routes && npm run api:compare",
     "api:routes": "node scripts/listRoutes.js",
     "api:compare": "node scripts/compareRoutes.js",
-    "api:full": "npm run api:lint && npm run api:audit"
+    "api:full": "npm run api:lint && npm run api:audit",
+    "db:migrate": "node tools/migrate.js",
+    "content:import": "node tools/bulkImport.js",
+    "content:import:confirm": "node tools/bulkImport.js --confirm"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
