@@ -79,6 +79,90 @@ export const initDatabase = async () => {
       );
     `)
 
+    // Content management tables
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS stacks (
+        id SERIAL PRIMARY KEY,
+        slug VARCHAR(100) UNIQUE NOT NULL,
+        title VARCHAR(200) NOT NULL,
+        description TEXT,
+        category VARCHAR(50) NOT NULL,
+        difficulty_level INTEGER DEFAULT 1 CHECK (difficulty_level BETWEEN 1 AND 5),
+        image_url VARCHAR(500),
+        image_hint TEXT,
+        tags JSONB DEFAULT '[]'::jsonb,
+        is_published BOOLEAN DEFAULT false,
+        is_featured BOOLEAN DEFAULT false,
+        created_by INTEGER REFERENCES users(id),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        version INTEGER DEFAULT 1
+      );
+    `)
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS questions (
+        id SERIAL PRIMARY KEY,
+        stack_id INTEGER REFERENCES stacks(id) ON DELETE CASCADE,
+        level INTEGER NOT NULL CHECK (level > 0),
+        question_text TEXT NOT NULL,
+        question_type VARCHAR(20) DEFAULT 'text' CHECK (question_type IN ('text', 'multiple_choice', 'true_false', 'image')),
+        correct_answer TEXT NOT NULL,
+        alternative_answers JSONB DEFAULT '[]'::jsonb,
+        multiple_choice_options JSONB,
+        explanation TEXT,
+        hint TEXT,
+        image_url VARCHAR(500),
+        difficulty_modifier DECIMAL(3,2) DEFAULT 1.0,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+    `)
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS stack_categories (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(50) UNIQUE NOT NULL,
+        display_name VARCHAR(100) NOT NULL,
+        description TEXT,
+        icon VARCHAR(50),
+        color VARCHAR(7),
+        is_active BOOLEAN DEFAULT true,
+        sort_order INTEGER DEFAULT 0
+      );
+    `)
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS user_roles (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER REFERENCES users(id) UNIQUE,
+        role VARCHAR(20) DEFAULT 'player' CHECK (role IN ('player', 'creator', 'moderator', 'admin')),
+        permissions JSONB DEFAULT '["play_games"]'::jsonb,
+        granted_by INTEGER REFERENCES users(id),
+        granted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+    `)
+
+    // Insert default categories
+    await pool.query(`
+      INSERT INTO stack_categories (name, display_name, description, icon, color, sort_order) VALUES
+        ('arts-culture', 'Arts & Culture', 'Painting, music, literature, and cultural movements', '🎨', '#e91e63', 1),
+        ('sports', 'Sports', 'Athletes, competitions, and sporting history', '⚽', '#ff9800', 2),
+        ('science-technology', 'Science & Technology', 'Discoveries, inventors, and innovations', '🧬', '#2196f3', 3),
+        ('cinema', 'Cinema', 'Movies, directors, and film history', '🎬', '#9c27b0', 4),
+        ('history', 'History', 'Historical figures, events, and civilizations', '📚', '#795548', 5),
+        ('actually', 'Actually (Misconceptions)', 'Debunking common myths and misconceptions', '🤔', '#607d8b', 6),
+        ('pop-culture', 'Pop Culture', 'TV shows, celebrities, and cultural phenomena', '📺', '#ff5722', 7),
+        ('kids-zone', 'Kids Zone', 'Age-appropriate content for young players', '🦕', '#4caf50', 8),
+        ('super-stacks', 'Super Stacks', 'Extended deep-dive challenges', '🚀', '#673ab7', 9)
+      ON CONFLICT (name) DO NOTHING
+    `)
+
+    // Create indexes
+    await pool.query(`CREATE INDEX IF NOT EXISTS idx_stacks_category ON stacks(category)`)
+    await pool.query(`CREATE INDEX IF NOT EXISTS idx_stacks_published ON stacks(is_published)`)
+    await pool.query(`CREATE INDEX IF NOT EXISTS idx_questions_stack_level ON questions(stack_id, level)`)
+
     console.log('Database tables initialized successfully')
   } catch (error) {
     console.error('Error initializing database:', error)

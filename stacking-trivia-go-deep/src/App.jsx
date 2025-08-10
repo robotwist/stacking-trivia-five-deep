@@ -37,6 +37,7 @@ import leonardoData from './data/categories/arts-culture/leonardo-da-vinci.json'
 import mozartData from './data/categories/arts-culture/mozart.json'
 
 import olympicCurrentData from './data/categories/sports/olympic_distance_current.json'
+import nebraskaUltimateData from './data/categories/sports/nebraska-sports-ultimate.json'
 import muhammadAliData from './data/categories/sports/muhammad-ali.json'
 import michaelJordanData from './data/categories/sports/michael-jordan.json'
 import serenaWilliamsData from './data/categories/sports/serena-williams.json'
@@ -109,6 +110,7 @@ function App() {
     
     // Sports
     'olympic_distance_current': olympicCurrentData,
+    'nebraska-sports-ultimate': nebraskaUltimateData,
     'muhammad-ali': muhammadAliData,
     'michael-jordan': michaelJordanData,
     'serena-williams': serenaWilliamsData,
