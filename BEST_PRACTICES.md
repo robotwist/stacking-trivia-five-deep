@@ -5,16 +5,16 @@ This document outlines the best practices and standards to be followed across al
 ## 1. Clean code
 
 *   **1.1 Naming conventions:** Use descriptive names for variables, functions, and classes (e.g., `calculateTotalPrice()` instead of `calc()`).
-*   **1.2 Code formatting:** Adhere to [insert specific formatting guidelines, e.g., Prettier, ESLint rules].
+*   **1.2 Code formatting:** Adhere to ESLint configuration with React hooks rules, JSX accessibility standards, and Prettier for consistent formatting.
 *   **1.3 Modularity:** Break down code into small, focused functions and modules.
 *   **1.4 Error handling:** Implement robust error handling mechanisms, logging errors appropriately.
 *   **1.5 Code comments:** Use comments judiciously to explain complex logic or non-obvious code.
 
 ## 2. Systems design
 
-*   **2.1 Architecture principles:** Follow [insert architecture principles, e.g., layered architecture, microservices].
-*   **2.2 Design patterns:** Utilize appropriate design patterns to solve common problems effectively.
-*   **2.3 Scalability:** Design components to scale horizontally and handle increasing load.
+*   **2.1 Architecture principles:** Follow layered architecture with clear separation: React UI → API Routes → Services → Database. Use lazy loading for components and memoization for performance.
+*   **2.2 Design patterns:** Utilize Context API for authentication, Higher-Order Components for error boundaries, and Service Layer pattern for database operations.
+*   **2.3 Scalability:** Design components to scale horizontally using Railway auto-scaling, PostgreSQL connection pooling, and component-based architecture for easy feature additions.
 *   **2.4 Reliability:** Implement fault tolerance and resilience mechanisms.
 *   **2.5 Security design:** Embed security considerations from the outset.
 
