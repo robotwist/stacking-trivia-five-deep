@@ -4,6 +4,7 @@ import CategorySelection from './components/CategorySelection'
 import GameErrorBoundary from './components/GameErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
 import UnlockNotification from './components/UnlockNotification'
+import FeedbackModal from './components/FeedbackModal'
 import PhotoFirstTest from './components/PhotoFirstTest'
 import { AuthProvider } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
@@ -29,7 +30,7 @@ import { stackUnlockManager } from './utils/stackUnlocks'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
-import beatlesData from './data/categories/arts-culture/the_beatles.json'
+import beatlesData from './data/categories/arts-culture/the-beatles-ultimate.json'
 import fridaKahloData from './data/categories/arts-culture/frida-kahlo.json'
 import milesDavisData from './data/categories/arts-culture/miles-davis.json'
 import shakespeareData from './data/categories/arts-culture/shakespeare.json'
@@ -38,6 +39,8 @@ import mozartData from './data/categories/arts-culture/mozart.json'
 
 import olympicCurrentData from './data/categories/sports/olympic_distance_current.json'
 import nebraskaUltimateData from './data/categories/sports/nebraska-sports-ultimate.json'
+import elGuerroujData from './data/categories/sports/el-guerrouj-ultimate.json'
+import prefontaineData from './data/categories/sports/prefontaine-ultimate.json'
 import muhammadAliData from './data/categories/sports/muhammad-ali.json'
 import michaelJordanData from './data/categories/sports/michael-jordan.json'
 import serenaWilliamsData from './data/categories/sports/serena-williams.json'
@@ -111,6 +114,8 @@ function App() {
     // Sports
     'olympic_distance_current': olympicCurrentData,
     'nebraska-sports-ultimate': nebraskaUltimateData,
+    'el-guerrouj-ultimate': elGuerroujData,
+    'prefontaine-ultimate': prefontaineData,
     'muhammad-ali': muhammadAliData,
     'michael-jordan': michaelJordanData,
     'serena-williams': serenaWilliamsData,
@@ -622,13 +627,43 @@ function App() {
               Choose your realm of knowledge and go five questions deep - creating nets of learning that connect the trivial to the profound.
             </p>
             
+            {/* Quick Stats Display */}
+            <div className="bg-gray-800/50 rounded-lg p-4 mb-6 max-w-2xl mx-auto border border-gray-700">
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-bold text-yellow-400">140+</div>
+                  <div className="text-sm text-gray-400">Premium Questions</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-blue-400">4</div>
+                  <div className="text-sm text-gray-400">Deep Dive Stacks</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-green-400">35</div>
+                  <div className="text-sm text-gray-400">Max Stack Depth</div>
+                </div>
+              </div>
+            </div>
+            
             {/* Single Player Mode Button */}
             <div className="mb-6 space-y-4">
+              {/* Quick Start with Nebraska Stack */}
+              <button
+                onClick={() => {
+                  setSelectedCategory('sports')
+                  setSelectedStack('nebraska-sports-ultimate')
+                  setGameStarted(true)
+                }}
+                className="px-10 py-5 text-xl bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-red-500 mr-4 mb-4 border-2 border-red-400"
+              >
+                Quick Start - Nebraska Sports
+              </button>
+
               <button
                 onClick={() => setGameMode('single-player')}
                 className="px-8 py-4 text-xl bg-gradient-to-r from-amber-700 to-yellow-700 hover:from-amber-600 hover:to-yellow-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-amber-500 mr-4 mb-4"
               >
-                Single Player Mode
+                Browse All Topics
               </button>
 
               {/* Multi-Stack Challenge Button */}
@@ -636,7 +671,7 @@ function App() {
                 onClick={() => setGameMode('multi-stack')}
                 className="px-8 py-4 text-xl bg-gradient-to-r from-blue-700 to-purple-700 hover:from-blue-600 hover:to-purple-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-blue-500 mr-4 mb-4"
               >
-                🌟 Multi-Stack Challenge
+                Multi-Stack Challenge
               </button>
               
               {/* Phase 8: Bar Trivia Night Button */}
@@ -644,7 +679,7 @@ function App() {
                 onClick={() => setGameMode('bar-trivia')}
                 className="px-8 py-4 text-xl bg-gradient-to-r from-yellow-700 to-amber-700 hover:from-yellow-600 hover:to-amber-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-yellow-500 mr-4 mb-4"
               >
-                🍺 Bar Trivia Night
+                Bar Trivia Night
               </button>
             </div>
           </div>
@@ -655,6 +690,56 @@ function App() {
             darkMode={true} // Always use archival mode
             onCategorySelect={handleCategorySelect}
           />
+
+          {/* Featured Stack Recommendations */}
+          <div className="max-w-4xl mx-auto mt-12 mb-8 px-4">
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-200">Featured Deep Dives</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-gradient-to-br from-red-900/30 to-red-800/30 border border-red-700/50 rounded-lg p-4 cursor-pointer hover:scale-105 transition-transform"
+                   onClick={() => {
+                     setSelectedCategory('sports')
+                     setSelectedStack('nebraska-sports-ultimate')
+                     setGameStarted(true)
+                   }}>
+                <h3 className="font-bold text-red-400 mb-2">Nebraska Sports Ultimate</h3>
+                <p className="text-sm text-gray-300 mb-3">35 questions diving deep into Cornhusker sports history</p>
+                <div className="text-xs text-red-300">Sports • Expert Level</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 border border-purple-700/50 rounded-lg p-4 cursor-pointer hover:scale-105 transition-transform"
+                   onClick={() => {
+                     setSelectedCategory('arts-culture')
+                     setSelectedStack('the_beatles')
+                     setGameStarted(true)
+                   }}>
+                <h3 className="font-bold text-purple-400 mb-2">The Beatles Ultimate</h3>
+                <p className="text-sm text-gray-300 mb-3">35 questions from Liverpool to legend</p>
+                <div className="text-xs text-purple-300">Music • Expert Level</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-green-900/30 to-green-800/30 border border-green-700/50 rounded-lg p-4 cursor-pointer hover:scale-105 transition-transform"
+                   onClick={() => {
+                     setSelectedCategory('sports')
+                     setSelectedStack('prefontaine-ultimate')
+                     setGameStarted(true)
+                   }}>
+                <h3 className="font-bold text-green-400 mb-2">Prefontaine Ultimate</h3>
+                <p className="text-sm text-gray-300 mb-3">35 questions on the rebel runner who changed everything</p>
+                <div className="text-xs text-green-300">Sports • Expert Level</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 border border-blue-700/50 rounded-lg p-4 cursor-pointer hover:scale-105 transition-transform"
+                   onClick={() => {
+                     setSelectedCategory('sports')
+                     setSelectedStack('el-guerrouj-ultimate')
+                     setGameStarted(true)
+                   }}>
+                <h3 className="font-bold text-blue-400 mb-2">El Guerrouj Ultimate</h3>
+                <p className="text-sm text-gray-300 mb-3">35 questions on the greatest miler in history</p>
+                <div className="text-xs text-blue-300">Sports • Expert Level</div>
+              </div>
+            </div>
+          </div>
 
           <div className="text-center mt-16 text-gray-500">
             <p className="text-sm font-mono">
