@@ -25,6 +25,10 @@ const GameStack = memo(function GameStack({
   const [deepModeDepth, setDeepModeDepth] = useState(0);
   const [showDeeperModeOffer, setShowDeeperModeOffer] = useState(false);
   
+  // Track game statistics for post-game flow
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [totalAttempts, setTotalAttempts] = useState(0);
+  
   // Phase 8 enhancements - simplified
   const [crowdEnergy, setCrowdEnergy] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
@@ -87,14 +91,16 @@ const GameStack = memo(function GameStack({
 
   const handleSkipQuestion = useCallback(() => {
     if (depth + 1 >= stackData.questions.length) {
-      if (onComplete) onComplete(score, maxPossibleScore);
+      const questionsAnswered = depth + 1;
+      const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
+      if (onComplete) onComplete(score, maxPossibleScore, questionsAnswered, accuracy);
     } else {
       setDepth(depth + 1);
       setInput('');
       setFeedback('');
       setShowHint(false);
     }
-  }, [depth, stackData.questions.length, onComplete, score, maxPossibleScore]);
+  }, [depth, stackData.questions.length, onComplete, score, maxPossibleScore, correctAnswers, totalAttempts]);
 
   const handlePlaySound = useCallback((soundType) => {
     // Placeholder for actual sound implementation
@@ -127,6 +133,12 @@ const GameStack = memo(function GameStack({
     const userAnswer = state.input.trim();
     const isCorrect = checkAnswerMatch(userAnswer, state.current.acceptedAnswers || state.current.a || [state.current.answer]);
     
+    // Track attempts and correct answers for statistics
+    setTotalAttempts(prev => prev + 1);
+    if (isCorrect) {
+      setCorrectAnswers(prev => prev + 1);
+    }
+    
     if (isCorrect) {
       // Calculate score with crowd multiplier if in bar mode
       const currentDepth = state.isDeepMode ? state.deepModeDepth : state.depth;
@@ -146,6 +158,8 @@ const GameStack = memo(function GameStack({
         if (state.deepModeDepth + 1 >= (state.stackData.deeperMode?.questions.length || 0)) {
           setTimeout(() => {
             const finalScore = state.score + questionScore;
+            const questionsAnswered = state.deepModeDepth + 1;
+            const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
             console.log('Deep mode complete, final score:', finalScore);
             
             // Mark stack as completed for authenticated users
@@ -153,7 +167,7 @@ const GameStack = memo(function GameStack({
               markStackCompleted(`${state.stackData.title} - Deeper Mode`, finalScore);
             }
             
-            if (state.onComplete) state.onComplete(finalScore, maxPossibleScore);
+            if (state.onComplete) state.onComplete(finalScore, maxPossibleScore, questionsAnswered, accuracy);
           }, 2000);
         } else {
           setTimeout(() => {
@@ -174,6 +188,8 @@ const GameStack = memo(function GameStack({
           } else {
             setTimeout(() => {
               const finalScore = state.score + questionScore;
+              const questionsAnswered = state.depth + 1;
+              const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
               console.log('Stack complete, final score:', finalScore);
               
               // Mark stack as completed for authenticated users
@@ -181,7 +197,7 @@ const GameStack = memo(function GameStack({
                 markStackCompleted(state.stackData.title, finalScore);
               }
               
-              if (state.onComplete) state.onComplete(finalScore, maxPossibleScore);
+              if (state.onComplete) state.onComplete(finalScore, maxPossibleScore, questionsAnswered, accuracy);
             }, 2000);
           }
         } else {
@@ -199,8 +215,10 @@ const GameStack = memo(function GameStack({
                            state.current.answer || 'Unknown';
       setFeedback(`Not quite. The answer was: ${correctAnswer}`);
       setTimeout(() => {
+        const questionsAnswered = state.depth + 1;
+        const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
         console.log('Wrong answer, final score:', state.score);
-        if (state.onComplete) state.onComplete(state.score, maxPossibleScore);
+        if (state.onComplete) state.onComplete(state.score, maxPossibleScore, questionsAnswered, accuracy);
       }, 3000);
     }
   }, []); // Empty dependency array - we'll access current values via ref
@@ -234,9 +252,11 @@ const GameStack = memo(function GameStack({
   }, []);
 
   const declineDeeperMode = useCallback(() => {
+    const questionsAnswered = depth + 1;
+    const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
     setShowDeeperModeOffer(false);
-    if (onComplete) onComplete(score, maxPossibleScore);
-  }, [onComplete, score, maxPossibleScore]);
+    if (onComplete) onComplete(score, maxPossibleScore, questionsAnswered, accuracy);
+  }, [onComplete, score, maxPossibleScore, depth, correctAnswers, totalAttempts]);
 
   // Photo-first system handlers
   const handlePhotoIdentification = useCallback((result) => {

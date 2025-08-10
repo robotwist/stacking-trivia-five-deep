@@ -1,4 +1,4 @@
-import { useState, Suspense, lazy, useMemo } from 'react'
+import { useState, Suspense, lazy, useMemo, useEffect } from 'react'
 import GameStack from './components/GameStack'
 import CategorySelection from './components/CategorySelection'
 import GameErrorBoundary from './components/GameErrorBoundary'
@@ -6,6 +6,8 @@ import LoadingSpinner from './components/LoadingSpinner'
 import UnlockNotification from './components/UnlockNotification'
 import FeedbackModal from './components/FeedbackModal'
 import PhotoFirstTest from './components/PhotoFirstTest'
+import OnboardingFlow from './components/OnboardingFlow'
+import PostGameFlow from './components/PostGameFlow'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
 import AuthErrorBoundary from './components/AuthErrorBoundary'
@@ -136,6 +138,7 @@ function App() {
 }
 
 function AuthenticatedGameApp() {
+  const { user } = useAuth();
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
@@ -146,6 +149,29 @@ function AuthenticatedGameApp() {
   const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
   const [unlockNotification, setUnlockNotification] = useState(null)
   const [testMode, setTestMode] = useState(false) // For testing photo-first system
+  
+  // New onboarding and post-game states
+  const [showOnboarding, setShowOnboarding] = useState(false)
+  const [showPostGame, setShowPostGame] = useState(false)
+  const [lastGameResult, setLastGameResult] = useState(null)
+
+  // Check if user needs onboarding (first time user)
+  useEffect(() => {
+    if (user && (!user.games_played || user.games_played === 0)) {
+      setShowOnboarding(true);
+    }
+  }, [user]);
+
+  // Mock user stats - in real app this would come from the user object
+  const userStats = {
+    totalScore: user?.total_score || 2847,
+    stacksCompleted: user?.games_played || 12,
+    currentStreak: user?.current_streak || 7,
+    accuracy: Math.round((user?.correct_answers / Math.max(user?.total_questions, 1)) * 100) || 87,
+    level: Math.floor((user?.total_score || 2847) / 1000) + 1,
+    globalRank: user?.global_rank || 156,
+    questionsAnswered: user?.total_questions || 423
+  };
   
     // Memoize gameStacks object to prevent recreation on every render
   const gameStacks = useMemo(() => ({
@@ -324,6 +350,52 @@ function AuthenticatedGameApp() {
     setGameMode('projector-scoreboard')
   }
 
+  // Onboarding handlers
+  const handleOnboardingComplete = () => {
+    setShowOnboarding(false);
+  }
+
+  const handleOnboardingStackSelect = (stackKey) => {
+    setSelectedStack(stackKey);
+    setGameStarted(true);
+    setShowOnboarding(false);
+  }
+
+  // Enhanced stack completion with post-game flow
+  const handleEnhancedStackComplete = (score, totalPossible, questionsAnswered, accuracy) => {
+    // Store game result for post-game screen
+    setLastGameResult({
+      score,
+      totalPossible,
+      questionsAnswered,
+      accuracy,
+      completedStack: selectedStack
+    });
+    
+    // Show post-game flow
+    setShowPostGame(true);
+    setGameStarted(false);
+    
+    // Original stack completion logic
+    handleStackComplete(score, totalPossible);
+  }
+
+  // Post-game handlers
+  const handleSelectNextStack = (stackKey) => {
+    setSelectedStack(stackKey);
+    setGameStarted(true);
+    setShowPostGame(false);
+    setLastGameResult(null);
+  }
+
+  const handleReturnToMenu = () => {
+    setSelectedStack(null);
+    setSelectedCategory(null);
+    setGameStarted(false);
+    setShowPostGame(false);
+    setLastGameResult(null);
+  }
+
   // Projector Scoreboard handlers
   const enterProjectorMode = () => {
     setGameMode('projector-scoreboard')
@@ -374,6 +446,31 @@ function AuthenticatedGameApp() {
       </Suspense>
     </GameErrorBoundary>
   )
+
+  // Show onboarding for new users
+  if (showOnboarding) {
+    return (
+      <OnboardingFlow 
+        onComplete={handleOnboardingComplete}
+        onSelectStack={handleOnboardingStackSelect}
+      />
+    );
+  }
+
+  // Show post-game flow after stack completion
+  if (showPostGame && lastGameResult) {
+    return (
+      <PostGameFlow 
+        score={lastGameResult.score}
+        questionsAnswered={lastGameResult.questionsAnswered}
+        accuracy={lastGameResult.accuracy}
+        completedStack={lastGameResult.completedStack}
+        onSelectNextStack={handleSelectNextStack}
+        onReturnToMenu={handleReturnToMenu}
+        userStats={userStats}
+      />
+    );
+  }
 
   // Route to Host Mode
   if (gameMode === 'host') {
@@ -517,7 +614,7 @@ function AuthenticatedGameApp() {
           </button>
           <GameStack 
             stackData={gameStacks[selectedStack]} 
-            onComplete={handleStackComplete}
+            onComplete={handleEnhancedStackComplete}
           />
         </div>
       </div>
