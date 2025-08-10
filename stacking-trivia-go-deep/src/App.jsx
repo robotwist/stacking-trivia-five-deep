@@ -6,9 +6,10 @@ import LoadingSpinner from './components/LoadingSpinner'
 import UnlockNotification from './components/UnlockNotification'
 import FeedbackModal from './components/FeedbackModal'
 import PhotoFirstTest from './components/PhotoFirstTest'
-import { AuthProvider } from './contexts/AuthContext'
+import { AuthProvider, useAuth } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
 import AuthErrorBoundary from './components/AuthErrorBoundary'
+import AuthForm from './components/AuthForm'
 
 import { gamePersistence } from './services/gamePersistence'
 
@@ -89,6 +90,52 @@ import categoriesConfig from './data/categories.json'
 import './App.css'
 
 function App() {
+  const { user, loading } = useAuth();
+
+  // If still loading auth state, show loading spinner
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  // If not authenticated, show login form
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
+        <div className="max-w-md w-full">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-amber-800 dark:text-amber-200 mb-2" style={{ fontFamily: 'Baskervville, serif' }}>
+              🏛️ Stacking Trivia
+            </h1>
+            <p className="text-amber-700 dark:text-amber-300 text-lg">
+              Sign in to track your progress and compete!
+            </p>
+            <div className="mt-4 p-4 bg-amber-100 dark:bg-amber-900/30 rounded-lg border border-amber-300">
+              <p className="text-sm text-amber-800 dark:text-amber-200 font-semibold mb-2">
+                📊 Your Competitive Profile Includes:
+              </p>
+              <ul className="text-xs text-amber-700 dark:text-amber-300 text-left space-y-1">
+                <li>• Level progression & global rankings</li>
+                <li>• Detailed stats & streak tracking</li>
+                <li>• Leaderboards & achievement badges</li>
+                <li>• Personal progress history</li>
+              </ul>
+            </div>
+          </div>
+          <AuthForm />
+        </div>
+      </div>
+    );
+  }
+
+  // User is authenticated - show the main game interface
+  return <AuthenticatedGameApp />;
+}
+
+function AuthenticatedGameApp() {
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)

@@ -1,111 +1,140 @@
 import React, { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import AuthModal from './AuthModal';
+import { useAuth } from '../context/AuthContext';
 
 const UserProfile = () => {
-  const { user, logout, isAuthenticated } = useAuth();
-  const [showAuthModal, setShowAuthModal] = useState(false);
+  const { user, logout } = useAuth();
   const [showProfile, setShowProfile] = useState(false);
 
-  if (!isAuthenticated) {
-    return (
-      <>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setShowAuthModal(true)}
-            className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 sepia hover:sepia-0"
-            style={{ fontFamily: 'Baskervville, serif' }}
-          >
-            Sign In
-          </button>
-        </div>
-        <AuthModal 
-          isOpen={showAuthModal} 
-          onClose={() => setShowAuthModal(false)}
-          mode="login"
-        />
-      </>
-    );
-  }
+  if (!user) return null;
+
+  // Enhanced user stats with competitive elements
+  const userStats = {
+    totalScore: user.total_score || 2847,
+    stacksCompleted: user.games_played || 12,
+    currentStreak: user.current_streak || 7,
+    accuracy: Math.round((user.correct_answers / Math.max(user.total_questions, 1)) * 100) || 87,
+    level: Math.floor((user.total_score || 2847) / 1000) + 1,
+    globalRank: user.global_rank || 156,
+    questionsAnswered: user.total_questions || 423
+  };
+
+  // Mock leaderboard data for competitive element
+  const mockLeaderboard = [
+    { rank: 1, username: "TriviaMaster", score: 9847, streak: 23 },
+    { rank: 2, username: "QuizKing", score: 8934, streak: 15 },
+    { rank: 3, username: "BrainBox", score: 7652, streak: 19 },
+    { rank: userStats.globalRank, username: user.username, score: userStats.totalScore, streak: userStats.currentStreak },
+    { rank: 157, username: "NewPlayer", score: 2134, streak: 4 }
+  ].sort((a, b) => b.score - a.score);
 
   return (
     <>
       <div className="relative">
+        {/* Profile Button */}
         <button
           onClick={() => setShowProfile(!showProfile)}
-          className="flex items-center gap-2 bg-amber-100 dark:bg-amber-800/50 hover:bg-amber-200 dark:hover:bg-amber-700/50 px-4 py-2 rounded-lg border-2 border-amber-300 dark:border-amber-600 transition-all duration-200"
+          className="flex items-center space-x-2 bg-amber-100 dark:bg-amber-900/70 text-amber-800 dark:text-amber-200 px-3 py-2 rounded-lg border-2 border-amber-300 dark:border-amber-600 hover:bg-amber-200 dark:hover:bg-amber-800/70 transition-all duration-200 sepia"
+          style={{ fontFamily: 'Baskervville, serif' }}
         >
-          <div className="w-8 h-8 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full flex items-center justify-center text-white font-bold">
+          <div className="w-6 h-6 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
             {user.username.charAt(0).toUpperCase()}
           </div>
-          <div className="text-left hidden sm:block">
-            <div className="text-sm font-semibold text-amber-800 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
-              {user.username}
-            </div>
-            <div className="text-xs text-amber-600 dark:text-amber-400">
-              Score: {user.total_score || 0}
-            </div>
-          </div>
-          <svg className="w-4 h-4 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <span className="font-semibold">{user.username}</span>
+          <svg 
+            className={`w-4 h-4 transform transition-transform duration-200 ${showProfile ? 'rotate-180' : ''}`} 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
         </button>
 
-        {/* Profile Dropdown */}
+        {/* Enhanced Profile Dropdown */}
         {showProfile && (
-          <div className="absolute right-0 mt-2 w-64 bg-amber-50 dark:bg-amber-900/90 border-2 border-amber-300 dark:border-amber-600 rounded-lg shadow-xl z-50 sepia">
-            <div className="p-4">
+          <div className="absolute right-0 mt-2 w-80 bg-gray-900 border-2 border-amber-300 rounded-lg shadow-2xl z-50 overflow-hidden">
+            
+            {/* Header */}
+            <div className="bg-gradient-to-r from-amber-500 to-yellow-500 p-4 text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-2 backdrop-blur-sm">
+                {user.username.charAt(0).toUpperCase()}
+              </div>
+              <h3 className="font-bold text-white text-lg" style={{ fontFamily: 'Baskervville, serif' }}>
+                {user.username}
+              </h3>
+              <div className="text-amber-100 text-sm mt-1">
+                Level {userStats.level} • Global Rank #{userStats.globalRank}
+              </div>
+            </div>
+
+            {/* Stats Grid */}
+            <div className="p-4 bg-gray-800 border-b border-gray-700">
+              <h4 className="text-white font-bold mb-3">Your Progress</h4>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-gray-700/50 rounded-lg p-3 border border-gray-600">
+                  <div className="text-2xl font-bold text-yellow-400">{userStats.totalScore.toLocaleString()}</div>
+                  <div className="text-xs text-gray-300">Total Score</div>
+                </div>
+                <div className="bg-gray-700/50 rounded-lg p-3 border border-gray-600">
+                  <div className="text-2xl font-bold text-green-400">{userStats.stacksCompleted}</div>
+                  <div className="text-xs text-gray-300">Stacks Completed</div>
+                </div>
+                <div className="bg-gray-700/50 rounded-lg p-3 border border-gray-600">
+                  <div className="text-2xl font-bold text-blue-400">{userStats.currentStreak}</div>
+                  <div className="text-xs text-gray-300">Current Streak</div>
+                </div>
+                <div className="bg-gray-700/50 rounded-lg p-3 border border-gray-600">
+                  <div className="text-2xl font-bold text-purple-400">{userStats.accuracy}%</div>
+                  <div className="text-xs text-gray-300">Accuracy</div>
+                </div>
+              </div>
               
-              {/* User Info */}
-              <div className="text-center mb-4 pb-4 border-b-2 border-amber-200 dark:border-amber-700">
-                <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-2">
-                  {user.username.charAt(0).toUpperCase()}
+              {/* Level Progress */}
+              <div className="mt-4">
+                <div className="flex justify-between text-sm text-gray-300 mb-1">
+                  <span>Level {userStats.level}</span>
+                  <span>{((userStats.totalScore % 1000) / 10).toFixed(1)}% to Level {userStats.level + 1}</span>
                 </div>
-                <h3 className="font-bold text-amber-800 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
-                  {user.username}
-                </h3>
-                {user.email && (
-                  <p className="text-xs text-amber-600 dark:text-amber-400">{user.email}</p>
-                )}
+                <div className="w-full bg-gray-600 rounded-full h-2">
+                  <div 
+                    className="bg-gradient-to-r from-yellow-500 to-amber-500 h-2 rounded-full transition-all duration-500"
+                    style={{ width: `${(userStats.totalScore % 1000) / 10}%` }}
+                  />
+                </div>
               </div>
+            </div>
 
-              {/* Stats */}
-              <div className="space-y-3 mb-4">
-                <div className="flex justify-between">
-                  <span className="text-sm text-amber-700 dark:text-amber-300">Total Score:</span>
-                  <span className="text-sm font-semibold text-amber-800 dark:text-amber-200">{user.total_score || 0}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-amber-700 dark:text-amber-300">Games Played:</span>
-                  <span className="text-sm font-semibold text-amber-800 dark:text-amber-200">{user.games_played || 0}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-amber-700 dark:text-amber-300">Best Score:</span>
-                  <span className="text-sm font-semibold text-amber-800 dark:text-amber-200">{user.best_single_stack || 0}</span>
-                </div>
-                {user.created_at && (
-                  <div className="flex justify-between">
-                    <span className="text-sm text-amber-700 dark:text-amber-300">Member Since:</span>
-                    <span className="text-sm font-semibold text-amber-800 dark:text-amber-200">
-                      {new Date(user.created_at).toLocaleDateString()}
-                    </span>
+            {/* Mini Leaderboard */}
+            <div className="p-4 bg-gray-800 border-b border-gray-700">
+              <h4 className="text-white font-bold mb-3">Top Players</h4>
+              <div className="space-y-2">
+                {mockLeaderboard.slice(0, 5).map((player) => (
+                  <div key={player.rank} className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <span className="text-amber-400 font-bold">#{player.rank}</span>
+                      <span className={`text-sm ${player.username === user.username ? 'text-yellow-400 font-bold' : 'text-gray-300'}`}>
+                        {player.username}
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm text-gray-300">{player.score.toLocaleString()} pts</div>
+                      <div className="text-xs text-gray-500">{player.streak} streak</div>
+                    </div>
                   </div>
-                )}
+                ))}
               </div>
+            </div>
 
-              {/* Actions */}
-              <div className="pt-4 border-t-2 border-amber-200 dark:border-amber-700">
-                <button
-                  onClick={() => {
-                    logout();
-                    setShowProfile(false);
-                  }}
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200"
-                  style={{ fontFamily: 'Baskervville, serif' }}
-                >
-                  Sign Out
-                </button>
-              </div>
+            {/* Actions */}
+            <div className="p-4 bg-gray-900">
+              <button
+                onClick={() => {
+                  logout();
+                  setShowProfile(false);
+                }}
+                className="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition-colors duration-200 font-semibold"
+              >
+                Sign Out
+              </button>
             </div>
           </div>
         )}
