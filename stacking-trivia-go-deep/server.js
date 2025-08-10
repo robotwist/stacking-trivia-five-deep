@@ -43,6 +43,36 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
 });
 
+// TEMPORARY: Direct game leaderboard endpoint for testing
+app.get('/api/game/leaderboard-test', (req, res) => {
+  res.json({ 
+    message: 'DIRECT game endpoint working!',
+    leaderboard: [],
+    timestamp: new Date().toISOString() 
+  });
+});
+
+// WORKING GAME ENDPOINTS - Direct implementation for immediate functionality
+app.get('/api/game/leaderboard', async (req, res) => {
+  try {
+    const { pool } = await import('./src/database/postgres.js');
+    const result = await pool.query(
+      'SELECT username, total_score, games_played FROM users ORDER BY total_score DESC LIMIT 10'
+    );
+    res.json({ 
+      leaderboard: result.rows,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Leaderboard error:', error);
+    res.json({ 
+      leaderboard: [],
+      message: 'Leaderboard temporarily unavailable',
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
 // Debug endpoint to check registered routes
 app.get('/api/debug/routes', (req, res) => {
   const routes = [];
@@ -106,6 +136,23 @@ app.get('/api/db-health', async (req, res) => {
       timestamp: new Date().toISOString(),
       database_url_exists: !!process.env.DATABASE_URL
     });
+  }
+});
+
+// Simple game leaderboard endpoint
+app.get('/api/game/leaderboard', async (req, res) => {
+  try {
+    const { pool } = await import('./src/database/postgres.js');
+    const result = await pool.query(`
+      SELECT username, total_score, games_played, best_single_stack 
+      FROM users 
+      WHERE total_score > 0 
+      ORDER BY total_score DESC 
+      LIMIT 10
+    `);
+    res.json({ leaderboard: result.rows });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to get leaderboard' });
   }
 });
 
