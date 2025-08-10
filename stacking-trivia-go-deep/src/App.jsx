@@ -17,6 +17,7 @@ const ProjectorScoreboard = lazy(() => import('./components/ProjectorScoreboard'
 const ProjectorMode = lazy(() => import('./components/ProjectorMode'))
 const GilliamTransition = lazy(() => import('./components/GilliamTransition'))
 const SinglePlayerMode = lazy(() => import('./components/SinglePlayerMode'))
+const MultiStackMode = lazy(() => import('./components/MultiStackMode'))
 const BarTriviaNight = lazy(() => import('./components/BarTriviaNight'))
 
 // Import utilities
@@ -408,6 +409,19 @@ function App() {
     )
   }
 
+  // Route to Multi-Stack Mode
+  if (gameMode === 'multi-stack') {
+    return (
+      <LazyRoute>
+        <MultiStackMode
+          gameStacks={gameStacks}
+          categoriesConfig={categoriesConfig}
+          onExit={() => setGameMode('solo')}
+        />
+      </LazyRoute>
+    )
+  }
+
   // Phase 8: Route to Bar Trivia Night
   if (gameMode === 'bar-trivia') {
     return (
@@ -604,6 +618,14 @@ function App() {
                 className="px-8 py-4 text-xl bg-gradient-to-r from-amber-700 to-yellow-700 hover:from-amber-600 hover:to-yellow-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-amber-500 mr-4 mb-4"
               >
                 Single Player Mode
+              </button>
+
+              {/* Multi-Stack Challenge Button */}
+              <button
+                onClick={() => setGameMode('multi-stack')}
+                className="px-8 py-4 text-xl bg-gradient-to-r from-blue-700 to-purple-700 hover:from-blue-600 hover:to-purple-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-blue-500 mr-4 mb-4"
+              >
+                🌟 Multi-Stack Challenge
               </button>
               
               {/* Phase 8: Bar Trivia Night Button */}

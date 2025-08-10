@@ -18,7 +18,10 @@
     "a11y:lighthouse": "lighthouse http://localhost:3000 --only-categories=accessibility --chrome-flags='--headless'",
     "a11y:check": "npm run lint && echo '🔍 Run npm start, then npm run a11y:audit for accessibility check'",
     "preview": "vite preview",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -34,6 +37,9 @@
     "@axe-core/cli": "^4.10.2",
     "@axe-core/react": "^4.10.2",
     "@eslint/js": "^9.32.0",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^4.7.0",
@@ -44,10 +50,12 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "jsdom": "^26.1.0",
     "lighthouse": "^12.8.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
     "terser": "^5.24.0",
-    "vite": "^7.1.0"
+    "vite": "^7.1.0",
+    "vitest": "^3.2.4"
   }
 }

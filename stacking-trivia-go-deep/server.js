@@ -6,6 +6,7 @@ import { dirname } from 'path';
 import { initDatabase } from './src/database/postgres.js';
 import authRoutes from './src/api/auth.js';
 import userRoutes from './src/api/user.js';
+import gameRoutes from './src/api/game.js';
 
 // Fix for ES modules __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -32,6 +33,7 @@ try {
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/game', gameRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import GameStack from './GameStack'
 import { shuffleArray } from '../utils/arrayUtils'
+import { useAuth } from '../contexts/AuthContext'
+import { createGameSession, updateGameSession, recordStackResult } from '../services/gameSessionClient'
 
 const SinglePlayerMode = ({ 
   gameStacks, 
@@ -14,6 +16,10 @@ const SinglePlayerMode = ({
   const [completedStacks, setCompletedStacks] = useState([])
   const [gamePhase, setGamePhase] = useState('category-select') // category-select, stack-playing, round-complete, game-complete
   const [shuffledStacks, setShuffledStacks] = useState([]) // Store shuffled order
+  const [gameSession, setGameSession] = useState(null)
+  const [gameStartTime, setGameStartTime] = useState(null)
+
+  const { isAuthenticated, user } = useAuth()
 
   // Get available stacks for current category and shuffle them
   const getAvailableStacks = () => {
@@ -35,19 +41,51 @@ const SinglePlayerMode = ({
   const currentStackKey = availableStacks[currentStackIndex]
   const currentStack = currentStackKey ? gameStacks[currentStackKey] : null
 
-  const handleStackComplete = (finalScore) => {
+  const handleStackComplete = async (finalScore) => {
     // Ensure we always get a valid score - fix for 0 points bug
     const stackScore = typeof finalScore === 'number' ? finalScore : 0
     console.log('Stack completed with score:', finalScore, 'processed as:', stackScore) // Debug log
     setPlayerScore(prev => prev + stackScore)
     setCompletedStacks(prev => [...prev, currentStackKey])
     
+    // Record stack result if we have a game session
+    if (gameSession && currentStack) {
+      try {
+        await recordStackResult(
+          gameSession,
+          currentStack.title,
+          currentStack.questions?.length || 5,
+          Math.floor(stackScore / 50), // Rough estimate of correct answers
+          stackScore,
+          false, // deeper mode attempted
+          false, // deeper mode completed  
+          currentCategory
+        )
+      } catch (error) {
+        console.error('Failed to record stack result:', error)
+      }
+    }
+    
     // Check if more stacks available in this category
     if (currentStackIndex + 1 < availableStacks.length) {
       setCurrentStackIndex(prev => prev + 1)
       setGamePhase('round-complete')
     } else {
-      // Category complete
+      // Category complete - update final session
+      if (gameSession) {
+        try {
+          const finalTotalScore = playerScore + stackScore
+          const duration = gameStartTime ? Math.floor((Date.now() - gameStartTime) / 60000) : 0
+          await updateGameSession(
+            gameSession,
+            finalTotalScore,
+            [...completedStacks, currentStackKey],
+            duration
+          )
+        } catch (error) {
+          console.error('Failed to update final game session:', error)
+        }
+      }
       setGamePhase('game-complete')
     }
   }
@@ -56,10 +94,20 @@ const SinglePlayerMode = ({
     setGamePhase('stack-playing')
   }
 
-  const selectCategory = (categoryKey) => {
+  const selectCategory = async (categoryKey) => {
     setCurrentCategory(categoryKey)
     setCurrentStackIndex(0)
     setCompletedStacks([])
+    setGameStartTime(Date.now())
+    
+    // Create game session
+    try {
+      const sessionId = await createGameSession(user?.id, 'single-player')
+      setGameSession(sessionId)
+    } catch (error) {
+      console.error('Failed to create game session:', error)
+    }
+    
     // Shuffle stacks for this category immediately
     if (categoriesConfig.categories[categoryKey]) {
       const availableStacks = categoriesConfig.categories[categoryKey].stacks.filter(stackKey => 
@@ -76,6 +124,8 @@ const SinglePlayerMode = ({
     setCurrentCategory(null)
     setCompletedStacks([])
     setShuffledStacks([]) // Clear shuffled stacks
+    setGameSession(null)
+    setGameStartTime(null)
     setGamePhase('category-select')
   }
 
