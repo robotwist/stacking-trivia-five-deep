@@ -4,7 +4,7 @@
  */
 
 import ProgressStorage from '../utils/progressStorage.js';
-import { stackMetadata } from './stackMetadata.js';
+import { stackMetadata } from '../utils/stackMetadata.js';
 
 export class SmartRecommendations {
   /**

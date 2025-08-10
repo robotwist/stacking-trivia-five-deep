@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import ProgressStorage from '../utils/progressStorage.js';
-import { stackMetadata } from './stackMetadata.js';
+import { stackMetadata } from '../utils/stackMetadata.js';
 
 export const ProgressResume = ({ onResumeStack, onStartFresh }) => {
   const [savedProgress, setSavedProgress] = useState(() => ProgressStorage.getCurrentProgress());
