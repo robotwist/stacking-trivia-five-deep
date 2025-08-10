@@ -108,16 +108,16 @@ function App() {
         <div className="max-w-md w-full">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-amber-800 dark:text-amber-200 mb-2" style={{ fontFamily: 'Baskervville, serif' }}>
-              🏛️ Stacking Trivia
+              Deeply Trivial
             </h1>
-            <p className="text-amber-700 dark:text-amber-300 text-lg">
+            <p className="text-amber-700 dark:text-amber-300 text-lg mb-4">
+              A Game that is Deep (But Only Trivially So)
+            </p>
+            <p className="text-amber-700 dark:text-amber-300 text-sm mb-4">
               Sign in to track your progress and compete!
             </p>
             <div className="mt-4 p-4 bg-amber-100 dark:bg-amber-900/30 rounded-lg border border-amber-300">
-              <p className="text-sm text-amber-800 dark:text-amber-200 font-semibold mb-2">
-                📊 Your Competitive Profile Includes:
-              </p>
-              <ul className="text-xs text-amber-700 dark:text-amber-300 text-left space-y-1">
+              <ul className="text-base text-amber-700 dark:text-amber-300 text-left space-y-2">
                 <li>• Level progression & global rankings</li>
                 <li>• Detailed stats & streak tracking</li>
                 <li>• Leaderboards & achievement badges</li>
