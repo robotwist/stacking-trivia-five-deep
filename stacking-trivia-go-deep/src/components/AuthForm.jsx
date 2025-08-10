@@ -104,6 +104,7 @@ const AuthForm = () => {
             value={formData.username}
             onChange={handleInputChange}
             required
+            autoComplete="username"
             className="w-full px-3 py-2 border border-amber-300 dark:border-amber-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 dark:bg-gray-700 dark:text-white"
             placeholder="Enter your username"
           />
@@ -122,6 +123,7 @@ const AuthForm = () => {
               value={formData.email}
               onChange={handleInputChange}
               required
+              autoComplete="email"
               className="w-full px-3 py-2 border border-amber-300 dark:border-amber-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 dark:bg-gray-700 dark:text-white"
               placeholder="Enter your email"
             />
@@ -140,6 +142,7 @@ const AuthForm = () => {
             value={formData.password}
             onChange={handleInputChange}
             required
+            autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
             className="w-full px-3 py-2 border border-amber-300 dark:border-amber-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 dark:bg-gray-700 dark:text-white"
             placeholder="Enter your password"
           />
@@ -158,6 +161,7 @@ const AuthForm = () => {
               value={formData.confirmPassword}
               onChange={handleInputChange}
               required
+              autoComplete="new-password"
               className="w-full px-3 py-2 border border-amber-300 dark:border-amber-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 dark:bg-gray-700 dark:text-white"
               placeholder="Confirm your password"
             />

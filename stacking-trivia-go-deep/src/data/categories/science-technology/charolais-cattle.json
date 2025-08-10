@@ -1,0 +1,65 @@
+{
+  "title": "Charolais Cattle: The White Giants of French Agriculture",
+  "image": "charolais-cattle-pasture.jpg",
+  "imageHint": "Majestic white cattle with muscular builds grazing in French countryside",
+  "description": "From the Burgundy region of France to ranches worldwide, Charolais cattle represent centuries of selective breeding for superior meat quality, maternal ability, and adaptability to diverse climates.",
+  "category": "science-technology",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the distinctive color of purebred Charolais cattle?",
+      "answer": "White",
+      "acceptableAnswers": ["White", "white", "cream", "Cream"],
+      "explanation": "Charolais cattle are characterized by their distinctive white or cream-colored coats, which help them adapt to hot climates by reflecting sunlight."
+    },
+    {
+      "level": 2,
+      "question": "In which French region did the Charolais breed originate?",
+      "answer": "Burgundy",
+      "acceptableAnswers": ["Burgundy", "burgundy", "Bourgogne"],
+      "explanation": "Charolais cattle originated in the Burgundy region (Bourgogne) of east-central France, specifically around the town of Charolles, from which they get their name."
+    },
+    {
+      "level": 3,
+      "question": "What is the primary reason Charolais cattle are prized in beef production?",
+      "answer": "Lean muscle mass",
+      "acceptableAnswers": ["Lean muscle mass", "muscle mass", "lean meat", "muscling"],
+      "explanation": "Charolais are renowned for their exceptional muscle development and lean meat production, making them highly valued for beef quality and yield."
+    },
+    {
+      "level": 4,
+      "question": "Approximately how much can a mature Charolais bull weigh?",
+      "answer": "2400 pounds",
+      "acceptableAnswers": ["2400 pounds", "2400", "2200-2500 pounds", "around 2400 pounds"],
+      "explanation": "Mature Charolais bulls typically weigh between 2200-2500 pounds, making them one of the larger European beef breeds, prized for their size and meat production."
+    },
+    {
+      "level": 5,
+      "question": "What genetic advantage do Charolais cattle have that makes them excellent for crossbreeding programs?",
+      "answer": "Heterosis",
+      "acceptableAnswers": ["Heterosis", "hybrid vigor", "heterosis effect", "genetic diversity"],
+      "explanation": "Charolais cattle contribute significant heterosis (hybrid vigor) when crossbred, improving traits like growth rate, disease resistance, and overall performance in offspring."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "tomato-breeds",
+      "sharedThemes": ["agriculture", "genetics", "breeding"],
+      "connectionStrength": 3,
+      "trigger": "Both involve centuries of selective breeding for specific traits and genetic improvement"
+    },
+    {
+      "targetStack": "early-childhood-education",
+      "sharedThemes": ["development", "growth"],
+      "connectionStrength": 1,
+      "trigger": "Both involve understanding developmental stages and optimizing growth conditions"
+    }
+  ],
+  "qualityScore": 91,
+  "familyRequest": {
+    "originalTopic": "Charlois Cattle",
+    "priority": 2,
+    "generatedAt": "2024-08-10T21:25:00.000Z",
+    "notes": "French cattle breed known for excellent meat quality"
+  }
+}

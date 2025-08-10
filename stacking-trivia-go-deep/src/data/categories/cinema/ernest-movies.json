@@ -1,0 +1,65 @@
+{
+  "title": "Ernest P. Worrell: The Beloved Goofball's Movie Universe",
+  "image": "ernest-know-what-i-mean.jpg",
+  "imageHint": "The rubber-faced character in his signature denim vest and baseball cap, ready to cause chaos",
+  "description": "Jim Varney's Ernest P. Worrell became a cultural phenomenon through a series of comedy films that defined family entertainment in the late 80s and 90s. Know what I mean, Vern?",
+  "category": "cinema",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is Ernest's famous catchphrase that he says to his unseen neighbor?",
+      "answer": "Know what I mean, Vern?",
+      "acceptableAnswers": ["Know what I mean, Vern?", "know what I mean vern", "Know what I mean Vern", "hey vern"],
+      "explanation": "Ernest's signature catchphrase \"Know what I mean, Vern?\" became iconic, spoken to his off-screen neighbor Vern who was never shown on camera."
+    },
+    {
+      "level": 2,
+      "question": "What was the first theatrical Ernest movie, released in 1987?",
+      "answer": "Ernest Goes to Camp",
+      "acceptableAnswers": ["Ernest Goes to Camp", "ernest goes to camp", "Goes to Camp"],
+      "explanation": "\"Ernest Goes to Camp\" (1987) was Ernest's first feature film, where he works as a handyman at a summer camp and eventually becomes a counselor to a group of juvenile delinquents."
+    },
+    {
+      "level": 3,
+      "question": "In which Ernest movie does he travel back in time and meet historical figures including Benjamin Franklin?",
+      "answer": "Ernest Rides Again",
+      "acceptableAnswers": ["Ernest Rides Again", "ernest rides again", "Rides Again"],
+      "explanation": "In \"Ernest Rides Again\" (1993), Ernest discovers a time machine and travels through different historical periods, including meeting Benjamin Franklin and other historical figures."
+    },
+    {
+      "level": 4,
+      "question": "What actor played Ernest P. Worrell in all the theatrical films?",
+      "answer": "Jim Varney",
+      "acceptableAnswers": ["Jim Varney", "jim varney", "James Varney"],
+      "explanation": "Jim Varney created and portrayed Ernest P. Worrell throughout the character's entire run, from commercials to TV shows to feature films until his death in 2000."
+    },
+    {
+      "level": 5,
+      "question": "In \"Ernest Scared Stupid\" (1991), what type of creatures does Ernest accidentally unleash?",
+      "answer": "Trolls",
+      "acceptableAnswers": ["Trolls", "trolls", "troll"],
+      "explanation": "In \"Ernest Scared Stupid,\" Ernest accidentally releases an ancient troll named Trantor who can turn children into wooden dolls, creating an army of trolls that terrorize the town."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "wes-anderson",
+      "sharedThemes": ["cinema", "family"],
+      "connectionStrength": 2,
+      "trigger": "Both create distinctive visual comedy worlds, though with very different styles"
+    },
+    {
+      "targetStack": "blippi",
+      "sharedThemes": ["family", "comedy"],
+      "connectionStrength": 2,
+      "trigger": "Both entertainers who became beloved by children and families"
+    }
+  ],
+  "qualityScore": 88,
+  "familyRequest": {
+    "originalTopic": "Ernest Movies",
+    "priority": 1,
+    "generatedAt": "2024-12-28T21:50:00.000Z",
+    "notes": "Jim Varney's beloved character across multiple films"
+  }
+}

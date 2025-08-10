@@ -97,10 +97,19 @@ import categoriesConfig from './data/categories.json'
 import './App.css'
 
 function App() {
+  console.log('🚀 App: Component rendering...');
+  
   const { user, loading } = useAuth();
+
+  console.log('🔐 App: Auth state check:', { 
+    user: user?.email || user?.uid || 'no user', 
+    loading,
+    userExists: !!user
+  });
 
   // If still loading auth state, show loading spinner
   if (loading) {
+    console.log('⏳ App: Showing loading spinner');
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <LoadingSpinner />
@@ -110,6 +119,7 @@ function App() {
 
   // If not authenticated, show login form
   if (!user) {
+    console.log('🚪 App: Showing auth form');
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
         <div className="max-w-md w-full">
@@ -139,11 +149,21 @@ function App() {
   }
 
   // User is authenticated - show the main game interface
+  console.log('✅ App: User authenticated, loading main game...');
   return <AuthenticatedGameApp />;
 }
 
 function AuthenticatedGameApp() {
+  console.log('🎮 AuthenticatedGameApp: Component rendering...');
+  
   const { user } = useAuth();
+  
+  console.log('👤 AuthenticatedGameApp: User data:', { 
+    user: user?.email || user?.uid || 'no user identifier',
+    gamesPlayed: user?.games_played,
+    userExists: !!user
+  });
+  
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
@@ -166,7 +186,13 @@ function AuthenticatedGameApp() {
 
   // Check if user needs onboarding (first time user)
   useEffect(() => {
+    console.log('🎯 AuthenticatedGameApp: Onboarding effect triggered:', { 
+      user: !!user, 
+      gamesPlayed: user?.games_played 
+    });
+    
     if (user && (!user.games_played || user.games_played === 0)) {
+      console.log('👋 AuthenticatedGameApp: Showing onboarding for new user');
       setShowOnboarding(true);
     }
   }, [user]);
@@ -992,6 +1018,8 @@ function AuthenticatedGameApp() {
 }
 
 const AppWithAuth = () => {
+  console.log('🏗️ AppWithAuth: Wrapper component rendering...');
+  
   return (
     <AuthErrorBoundary>
       <AuthProvider>

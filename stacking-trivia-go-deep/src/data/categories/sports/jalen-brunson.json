@@ -1,0 +1,65 @@
+{
+  "title": "Jalen Brunson: The Clutch Conductor",
+  "image": "jalen-brunson-knicks-clutch.jpg",
+  "imageHint": "The steady point guard in Knicks blue and orange, orchestrating plays with calm precision in pressure moments",
+  "description": "From Villanova champion to Dallas role player to New York's franchise cornerstone, Jalen Brunson has proven that basketball IQ and clutch performance matter more than athletic measurables.",
+  "category": "sports",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Which NBA team did Jalen Brunson sign with in 2022 as a free agent, leaving the Dallas Mavericks?",
+      "answer": "New York Knicks",
+      "acceptableAnswers": ["New York Knicks", "Knicks", "knicks", "new york knicks"],
+      "explanation": "Brunson signed a 4-year, $104 million contract with the New York Knicks in 2022, immediately becoming their starting point guard and team leader."
+    },
+    {
+      "level": 2,
+      "question": "How many NCAA Championships did Jalen Brunson win at Villanova University?",
+      "answer": "Two",
+      "acceptableAnswers": ["Two", "2", "two"],
+      "explanation": "Brunson won NCAA Championships with Villanova in 2016 and 2018, earning Most Outstanding Player honors in the 2018 tournament for his clutch performances."
+    },
+    {
+      "level": 3,
+      "question": "What position did Jalen Brunson's father, Rick Brunson, play during his NBA career?",
+      "answer": "Point guard",
+      "acceptableAnswers": ["Point guard", "point guard", "PG", "guard"],
+      "explanation": "Rick Brunson was an NBA point guard who played for nine teams during his career, including the Knicks. His basketball knowledge greatly influenced Jalen's development."
+    },
+    {
+      "level": 4,
+      "question": "In the 2022 playoffs with Dallas, Brunson had a breakout performance against which Western Conference team, averaging over 21 points per game?",
+      "answer": "Utah Jazz",
+      "acceptableAnswers": ["Utah Jazz", "Jazz", "utah jazz", "the Jazz"],
+      "explanation": "Brunson averaged 21.6 points per game against Utah in the 2022 first round, showcasing the clutch gene that would make him a coveted free agent that summer."
+    },
+    {
+      "level": 5,
+      "question": "What specific advanced basketball metric improved dramatically for Brunson after joining the Knicks, reflecting his increased usage and efficiency?",
+      "answer": "Usage rate",
+      "acceptableAnswers": ["Usage rate", "usage", "USG%", "usage percentage"],
+      "explanation": "Brunson's usage rate jumped from 22% in Dallas to over 28% with the Knicks, reflecting his evolution from role player to primary offensive initiator while maintaining high efficiency."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "okc-thunder",
+      "sharedThemes": ["sports", "NBA", "point guard"],
+      "connectionStrength": 3,
+      "trigger": "Both connected to NBA point guard excellence and small-market to big-market team dynamics"
+    },
+    {
+      "targetStack": "minecraft",
+      "sharedThemes": ["strategy", "building"],
+      "connectionStrength": 1,
+      "trigger": "Both involve strategic thinking and building something brick by brick"
+    }
+  ],
+  "qualityScore": 86,
+  "familyRequest": {
+    "originalTopic": "Jalen Brunson",
+    "priority": 1,
+    "generatedAt": "2024-08-10T21:15:00.000Z",
+    "notes": "NBA point guard known for clutch performances"
+  }
+}

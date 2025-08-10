@@ -1,0 +1,65 @@
+{
+  "title": "Oklahoma City Thunder: Prairie Thunder Basketball",
+  "image": "okc-thunder-paycom-center.jpg",
+  "imageHint": "The electric blue and orange of Paycom Center with passionate fans creating one of the NBA's loudest atmospheres",
+  "description": "From the Seattle SuperSonics relocation to building a young, exciting team around Shai Gilgeous-Alexander, the Thunder have become synonymous with passionate fanbase support and smart team building.",
+  "category": "sports",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What year did the Seattle SuperSonics relocate to Oklahoma City to become the Thunder?",
+      "answer": "2008",
+      "acceptableAnswers": ["2008", "Two thousand eight"],
+      "explanation": "The Seattle SuperSonics moved to Oklahoma City in 2008, becoming the Thunder and bringing NBA basketball to Oklahoma for the first time."
+    },
+    {
+      "level": 2,
+      "question": "Who is the current superstar player and face of the Thunder franchise, known for his exceptional length and scoring ability?",
+      "answer": "Shai Gilgeous-Alexander",
+      "acceptableAnswers": ["Shai Gilgeous-Alexander", "SGA", "shai", "Gilgeous-Alexander"],
+      "explanation": "Shai Gilgeous-Alexander has emerged as one of the NBA's brightest young stars, leading the Thunder's rebuild with his elite scoring and playmaking."
+    },
+    {
+      "level": 3,
+      "question": "What is the name of the Thunder's home arena in downtown Oklahoma City?",
+      "answer": "Paycom Center",
+      "acceptableAnswers": ["Paycom Center", "paycom center", "Paycom"],
+      "explanation": "The Thunder play at Paycom Center (formerly Chesapeake Energy Arena), known for having one of the loudest and most passionate fanbases in the NBA."
+    },
+    {
+      "level": 4,
+      "question": "Which former Thunder player known as \"The Brodie\" was famous for averaging a triple-double multiple seasons?",
+      "answer": "Russell Westbrook",
+      "acceptableAnswers": ["Russell Westbrook", "westbrook", "Russ", "Russell"],
+      "explanation": "Russell Westbrook, nicknamed \"The Brodie,\" became the first player since Oscar Robertson to average a triple-double for a season, doing it three times with the Thunder."
+    },
+    {
+      "level": 5,
+      "question": "What unique draft strategy has Thunder GM Sam Presti employed, accumulating an unprecedented number of what type of assets?",
+      "answer": "Draft picks",
+      "acceptableAnswers": ["Draft picks", "first round picks", "picks", "draft capital"],
+      "explanation": "Sam Presti has masterfully accumulated over 30 first-round draft picks through trades, giving the Thunder unprecedented flexibility for team building and player development."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "jalen-brunson",
+      "sharedThemes": ["sports", "NBA", "point guard"],
+      "connectionStrength": 3,
+      "trigger": "Both represent basketball excellence and the importance of smart point guard play in team success"
+    },
+    {
+      "targetStack": "minecraft",
+      "sharedThemes": ["building", "community"],
+      "connectionStrength": 2,
+      "trigger": "Both involve building something special from the ground up with community support"
+    }
+  ],
+  "qualityScore": 88,
+  "familyRequest": {
+    "originalTopic": "OKC Thunder",
+    "priority": 1,
+    "generatedAt": "2024-08-10T21:20:00.000Z",
+    "notes": "Oklahoma City's NBA team with passionate fanbase"
+  }
+}

@@ -1,104 +1,68 @@
 {
-  "name": "Deeply Trivial - Trivia That Dares to Matter",
+  "name": "Deeply Trivial",
   "short_name": "Deeply Trivial",
-  "description": "Go five questions deep in trivia across arts, science, sports, and more. Single player, multi-stack challenges, and bar trivia modes.",
+  "description": "A Game that is Deep (But Only Trivially So)",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1f2937",
   "theme_color": "#f59e0b",
   "orientation": "portrait-primary",
-  "categories": ["games", "education", "entertainment"],
   "icons": [
     {
-      "src": "/pwa-icons/icon-72x72.png",
+      "src": "/icons/icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "/pwa-icons/icon-96x96.png",
+      "src": "/icons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "/pwa-icons/icon-128x128.png",
+      "src": "/icons/icon-128x128.png",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "/pwa-icons/icon-144x144.png",
+      "src": "/icons/icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "/pwa-icons/icon-152x152.png",
+      "src": "/icons/icon-152x152.png",
       "sizes": "152x152",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "/pwa-icons/icon-192x192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "maskable any"
     },
     {
-      "src": "/pwa-icons/icon-384x384.png",
+      "src": "/icons/icon-384x384.png",
       "sizes": "384x384",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "/pwa-icons/icon-512x512.png",
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "maskable any"
     }
   ],
+  "categories": ["games", "entertainment", "education"],
   "screenshots": [
     {
-      "src": "/screenshots/desktop-home.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/screenshots/mobile-game.png",
-      "sizes": "375x812",
-      "type": "image/png",
-      "form_factor": "narrow"
+      "src": "/screenshots/game-play.png",
+      "sizes": "540x720",
+      "type": "image/png"
     }
-  ],
-  "features": [
-    "Cross Platform",
-    "Fast",
-    "Simple"
-  ],
-  "shortcuts": [
-    {
-      "name": "Single Player",
-      "short_name": "Play Solo",
-      "description": "Start a single player trivia game",
-      "url": "/?mode=single-player",
-      "icons": [
-        {
-          "src": "/pwa-icons/single-player-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Multi-Stack Challenge",
-      "short_name": "Multi-Stack",
-      "description": "Play across multiple trivia categories",
-      "url": "/?mode=multi-stack",
-      "icons": [
-        {
-          "src": "/pwa-icons/multi-stack-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    }
-  ],
-  "display_override": [
-    "window-controls-overlay",
-    "minimal-ui"
   ]
 }

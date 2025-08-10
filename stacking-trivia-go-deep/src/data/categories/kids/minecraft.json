@@ -1,0 +1,38 @@
+{
+  "title": "Minecraft",
+  "image": "minecraft-creeper.jpg",
+  "imageHint": "The iconic green pixelated mob that quietly approaches and explodes - every player's nightmare",
+  "description": "A deep dive into the blocky world of Minecraft - from basic crafting to advanced redstone engineering.",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the name of the green explosive mob that silently approaches players?",
+      "answer": "Creeper",
+      "acceptableAnswers": ["Creeper", "creeper"]
+    },
+    {
+      "level": 2,
+      "question": "What material do you need to craft a pickaxe handle?",
+      "answer": "Sticks",
+      "acceptableAnswers": ["Sticks", "sticks", "Stick", "stick", "Wood sticks", "wood sticks"]
+    },
+    {
+      "level": 3,
+      "question": "In which dimension do you find Nether Wart, essential for brewing potions?",
+      "answer": "The Nether",
+      "acceptableAnswers": ["The Nether", "Nether", "the nether", "nether"]
+    },
+    {
+      "level": 4,
+      "question": "What is the maximum level of enchantment you can apply to most tools and weapons without combining enchanted books?",
+      "answer": "30",
+      "acceptableAnswers": ["30", "Level 30", "level 30", "thirty"]
+    },
+    {
+      "level": 5,
+      "question": "What redstone component can store and release a redstone signal, essential for creating memory circuits and pulse limiters?",
+      "answer": "Redstone Repeater",
+      "acceptableAnswers": ["Redstone Repeater", "redstone repeater", "Repeater", "repeater"]
+    }
+  ]
+}

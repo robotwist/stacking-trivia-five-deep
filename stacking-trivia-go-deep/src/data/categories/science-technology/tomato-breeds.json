@@ -1,0 +1,65 @@
+{
+  "title": "Tomato Breeds: From Cherokee Purple to San Marzano",
+  "image": "heirloom-tomato-varieties.jpg",
+  "imageHint": "A colorful array of different tomato varieties - red, purple, yellow, and green in various shapes and sizes",
+  "description": "From ancient Andean varieties to modern hybrids, tomato breeding combines centuries of agricultural tradition with cutting-edge genetics to create varieties optimized for flavor, disease resistance, and growing conditions.",
+  "category": "science-technology",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the difference between heirloom and hybrid tomato varieties?",
+      "answer": "Heirloom varieties breed true to type",
+      "acceptableAnswers": ["Heirloom varieties breed true to type", "heirlooms breed true", "heirlooms are open-pollinated", "heirlooms reproduce consistently"],
+      "explanation": "Heirloom tomatoes are open-pollinated varieties that breed true to type, meaning seeds saved from the fruit will produce plants identical to the parent, unlike hybrids."
+    },
+    {
+      "level": 2,
+      "question": "Which Italian heirloom tomato variety is considered the gold standard for making authentic San Marzano sauce?",
+      "answer": "San Marzano",
+      "acceptableAnswers": ["San Marzano", "san marzano", "San Marzano Nano"],
+      "explanation": "San Marzano tomatoes, grown in the volcanic soil near Naples, Italy, are prized for their sweet flavor, low acidity, and thick flesh, making them ideal for traditional Italian sauces."
+    },
+    {
+      "level": 3,
+      "question": "What gives the Cherokee Purple heirloom tomato its distinctive dark coloration?",
+      "answer": "Anthocyanins",
+      "acceptableAnswers": ["Anthocyanins", "anthocyanin", "purple pigments", "antioxidants"],
+      "explanation": "Cherokee Purple tomatoes get their distinctive dark purple-red color from high levels of anthocyanins, the same antioxidant compounds that color blueberries and red wine."
+    },
+    {
+      "level": 4,
+      "question": "What breeding technique creates F1 hybrid tomatoes that often show improved vigor but don't breed true from saved seeds?",
+      "answer": "Cross-pollination",
+      "acceptableAnswers": ["Cross-pollination", "hybridization", "controlled crossing", "artificial pollination"],
+      "explanation": "F1 hybrids are created through controlled cross-pollination of two different parent varieties, resulting in uniform plants with hybrid vigor, but seeds won't reproduce the same characteristics."
+    },
+    {
+      "level": 5,
+      "question": "Which determinate tomato characteristic makes them preferred for commercial canning operations?",
+      "answer": "Simultaneous ripening",
+      "acceptableAnswers": ["Simultaneous ripening", "uniform ripening", "concentrated harvest", "ripens all at once"],
+      "explanation": "Determinate tomatoes ripen their entire crop over a 2-3 week period, allowing for efficient mechanical harvesting and processing, unlike indeterminate varieties that ripen continuously."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "charolais-cattle",
+      "sharedThemes": ["agriculture", "genetics", "breeding"],
+      "connectionStrength": 3,
+      "trigger": "Both involve sophisticated breeding programs to optimize specific traits and genetic characteristics"
+    },
+    {
+      "targetStack": "early-childhood-education",
+      "sharedThemes": ["development", "nurturing"],
+      "connectionStrength": 2,
+      "trigger": "Both require understanding of developmental stages and providing optimal growing conditions"
+    }
+  ],
+  "qualityScore": 89,
+  "familyRequest": {
+    "originalTopic": "Tomato Breeds",
+    "priority": 2,
+    "generatedAt": "2024-08-10T21:30:00.000Z",
+    "notes": "Heirloom and hybrid varieties with unique characteristics"
+  }
+}
