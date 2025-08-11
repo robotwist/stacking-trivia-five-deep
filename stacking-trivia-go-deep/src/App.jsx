@@ -30,6 +30,8 @@ const GilliamTransition = lazy(() => import('./components/GilliamTransition'))
 const SinglePlayerMode = lazy(() => import('./components/SinglePlayerMode'))
 const MultiStackMode = lazy(() => import('./components/MultiStackMode'))
 const BarTriviaNight = lazy(() => import('./components/BarTriviaNight'))
+const MultiDeviceHost = lazy(() => import('./components/MultiDeviceHost'))
+const MobilePlayerJoin = lazy(() => import('./components/MobilePlayerJoin'))
 
 // Import utilities
 import { shuffleArray } from './utils/arrayUtils'
@@ -167,13 +169,43 @@ function AuthenticatedGameApp() {
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
-  const [gameMode, setGameMode] = useState('solo') // solo, single-player, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition, bar-trivia
+  const [gameMode, setGameMode] = useState('solo') // solo, single-player, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition, bar-trivia, multi-device-host, mobile-join
   const [teams, setTeams] = useState([])
   const [performanceScores, setPerformanceScores] = useState({})
   const [currentRound, setCurrentRound] = useState('Game')
   const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
   const [unlockNotification, setUnlockNotification] = useState(null)
   const [testMode, setTestMode] = useState(false) // For testing photo-first system
+  
+  // URL routing for multi-device functionality
+  const [roomCode, setRoomCode] = useState('')
+  
+  // Check URL for special routes on component mount
+  useEffect(() => {
+    const path = window.location.pathname
+    
+    // Handle /join/:roomCode URLs
+    if (path.startsWith('/join/')) {
+      const code = path.split('/join/')[1]
+      if (code && code.length === 6) {
+        setRoomCode(code)
+        setGameMode('mobile-join')
+        return
+      }
+    }
+    
+    // Handle /join route (no code provided)
+    if (path === '/join') {
+      setGameMode('mobile-join')
+      return
+    }
+    
+    // Handle /host route for multi-device hosting
+    if (path === '/host') {
+      setGameMode('multi-device-host')
+      return
+    }
+  }, [])
   
   // New onboarding and post-game states
   const [showOnboarding, setShowOnboarding] = useState(false)
@@ -678,6 +710,38 @@ function AuthenticatedGameApp() {
     )
   }
 
+  // Multi-Device Host Mode
+  if (gameMode === 'multi-device-host') {
+    return (
+      <LazyRoute>
+        <MultiDeviceHost
+          gameStacks={gameStacks}
+          onStartGame={(gameData) => {
+            console.log('Starting multi-device game:', gameData)
+            // Here you would transition to the actual game mode
+            // For now, redirect back to solo mode
+            setGameMode('solo')
+          }}
+        />
+      </LazyRoute>
+    )
+  }
+
+  // Mobile Player Join Mode
+  if (gameMode === 'mobile-join') {
+    return (
+      <LazyRoute>
+        <MobilePlayerJoin
+          roomCode={roomCode}
+          onJoinSuccess={(playerData) => {
+            console.log('Player joined:', playerData)
+            // Player successfully joined, stay in this mode for game play
+          }}
+        />
+      </LazyRoute>
+    )
+  }
+
   // Phase 8: Route to Bar Trivia Night
   if (gameMode === 'bar-trivia') {
     return (
@@ -921,6 +985,14 @@ function AuthenticatedGameApp() {
                 className="px-8 py-4 text-xl bg-gradient-to-r from-yellow-700 to-amber-700 hover:from-yellow-600 hover:to-amber-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-yellow-500 mr-4 mb-4"
               >
                 Bar Trivia Night
+              </button>
+              
+              {/* Multi-Device Host Button */}
+              <button
+                onClick={() => setGameMode('multi-device-host')}
+                className="px-8 py-4 text-xl bg-gradient-to-r from-green-700 to-teal-700 hover:from-green-600 hover:to-teal-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-green-500 mr-4 mb-4"
+              >
+                📱 Multi-Device Trivia
               </button>
             </div>
           </div>
