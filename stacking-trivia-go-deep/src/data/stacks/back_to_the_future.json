@@ -27,7 +27,7 @@
     },
     {
       "level": 4,
-      "question": "What dance does Marty perform at the Enchantment Under the Sea dance?",
+      "question": "What song does Marty perform at the Enchantment Under the Sea dance?",
       "answer": "Johnny B. Goode",
       "acceptedAnswers": ["johnny b. goode", "johnny b goode", "chuck berry"],
       "hint": "Chuck Berry song that's a little before their time"
