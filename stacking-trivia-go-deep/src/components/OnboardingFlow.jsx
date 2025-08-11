@@ -73,7 +73,7 @@ const OnboardingFlow = ({ onComplete, onSelectStack }) => {
                 >
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-bold text-amber-800 dark:text-amber-200 text-lg capitalize">
-                      {stackKey.replace(/-/g, ' ').replace(/_/g, ' ')}
+                      {(stackKey || '').replace(/-/g, ' ').replace(/_/g, ' ')}
                     </h3>
                     <span className={`px-2 py-1 rounded-full text-xs font-semibold ${getDifficultyColor(metadata.difficulty)}`}>
                       {metadata.difficulty}

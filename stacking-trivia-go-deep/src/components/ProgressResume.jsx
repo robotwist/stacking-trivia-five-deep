@@ -61,7 +61,7 @@ export const ProgressResume = ({ onResumeStack, onStartFresh }) => {
           
           <div className="space-y-2 mb-4">
             <p className="text-gray-700">
-              <span className="font-medium">{savedProgress.stackName.replace(/[_-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
+              <span className="font-medium">{(savedProgress.stackName || '').replace(/[_-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
             </p>
             
             <div className="flex items-center space-x-4 text-sm text-gray-600">

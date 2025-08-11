@@ -14,7 +14,7 @@ const StackCard = ({ stackKey, stackData, onSelect, isLocked = false }) => {
   };
 
   const formatStackName = (key) => {
-    return key
+    return (key || '')
       .replace(/-/g, ' ')
       .replace(/_/g, ' ')
       .replace(/\b\w/g, l => l.toUpperCase());

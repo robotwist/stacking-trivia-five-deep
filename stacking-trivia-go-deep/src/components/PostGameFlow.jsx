@@ -162,7 +162,7 @@ const PostGameFlow = ({
                   >
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-bold text-amber-800 dark:text-amber-200 text-lg capitalize">
-                        {stackKey.replace(/-/g, ' ').replace(/_/g, ' ')}
+                        {(stackKey || '').replace(/-/g, ' ').replace(/_/g, ' ')}
                       </h4>
                       <div className="flex gap-2 items-center">
                         {index === 0 && (

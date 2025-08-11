@@ -195,7 +195,7 @@ export default function ProjectorMode({
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
             >
-              {currentStack?.title} • {currentStack?.category?.replace('-', ' & ').toUpperCase()}
+              {currentStack?.title} • {(currentStack?.category || '').replace('-', ' & ').toUpperCase()}
             </motion.p>
           </motion.div>
         )}
