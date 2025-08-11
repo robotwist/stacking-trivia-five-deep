@@ -34,5 +34,27 @@
       "answer": "Redstone Repeater",
       "acceptableAnswers": ["Redstone Repeater", "redstone repeater", "Repeater", "repeater"]
     }
-  ]
+  ],
+  "category": "kids",
+  "connections": [
+    {
+      "targetStack": "early-childhood-education",
+      "sharedThemes": ["learning", "development", "creativity"],
+      "connectionStrength": 3,
+      "trigger": "Both involve developmental progression, creativity, and building foundational skills through hands-on learning"
+    },
+    {
+      "targetStack": "blippi",
+      "sharedThemes": ["education", "children"],
+      "connectionStrength": 2,
+      "trigger": "Both are educational content designed for children and families"
+    }
+  ],
+  "qualityScore": 86,
+  "familyRequest": {
+    "originalTopic": "Minecraft",
+    "priority": 1,
+    "generatedAt": "2024-08-10T20:00:00.000Z",
+    "notes": "Cross-generational gaming knowledge from basic to advanced"
+  }
 }
