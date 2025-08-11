@@ -32,12 +32,14 @@ const SinglePlayerMode = lazy(() => import('./components/SinglePlayerMode'))
 const MultiStackMode = lazy(() => import('./components/MultiStackMode'))
 const BarTriviaNight = lazy(() => import('./components/BarTriviaNight'))
 const MultiDeviceHost = lazy(() => import('./components/MultiDeviceHost'))
+  const HostUpsell = lazy(() => import('./components/HostUpsell'))
 const MobilePlayerJoin = lazy(() => import('./components/MobilePlayerJoin'))
 
 // Import utilities
 import { shuffleArray } from './utils/arrayUtils'
 import { useDarkMode, useGameHistory } from './hooks/gameHooks'
 import { stackUnlockManager } from './utils/stackUnlocks'
+import { parsePlayParams } from './utils/url'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -205,6 +207,17 @@ function AuthenticatedGameApp() {
     if (path === '/host') {
       setGameMode('multi-device-host')
       return
+    }
+
+    // Deep link: /play?stack=<key>&category=<key>
+    if (path === '/play' || path === '/play/') {
+      const { stack, category } = parsePlayParams()
+      if (stack) {
+        if (category) setSelectedCategory(category)
+        setSelectedStack(stack)
+        setGameStarted(true)
+        return
+      }
     }
   }, [])
   
@@ -596,6 +609,15 @@ function AuthenticatedGameApp() {
       <LazyRoute>
         {/* Host upsell gate could be shown here in free tier */}
         <HostMode onStartGame={handleStartGame} onExitHost={exitHostMode} onEnterGilliamProjector={enterGilliamProjector} onTriggerTransition={triggerCategoryTransition} />
+      </LazyRoute>
+    )
+  }
+
+  // Route: Host Upsell Pro
+  if (gameMode === 'host-upsell') {
+    return (
+      <LazyRoute>
+        <HostUpsell />
       </LazyRoute>
     )
   }
