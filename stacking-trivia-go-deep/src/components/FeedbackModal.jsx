@@ -4,6 +4,7 @@ const FeedbackModal = ({ isOpen, onClose, stackTitle, onSubmitFeedback }) => {
   const [rating, setRating] = useState(0)
   const [feedback, setFeedback] = useState('')
   const [category, setCategory] = useState('')
+  const [difficultyTag, setDifficultyTag] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -12,6 +13,7 @@ const FeedbackModal = ({ isOpen, onClose, stackTitle, onSubmitFeedback }) => {
       rating, 
       feedback, 
       category,
+      difficultyTag,
       timestamp: new Date().toISOString()
     })
     setRating(0)
@@ -51,6 +53,18 @@ const FeedbackModal = ({ isOpen, onClose, stackTitle, onSubmitFeedback }) => {
                   ⭐
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* Perceived Difficulty */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              How did this stack feel?
+            </label>
+            <div className="flex items-center gap-2">
+              <button type="button" onClick={() => setDifficultyTag('too-easy')} className={`px-3 py-1 rounded border ${difficultyTag==='too-easy' ? 'bg-green-100 border-green-400 text-green-700' : 'border-gray-300 text-gray-600'}`}>Too easy</button>
+              <button type="button" onClick={() => setDifficultyTag('too-hard')} className={`px-3 py-1 rounded border ${difficultyTag==='too-hard' ? 'bg-red-100 border-red-400 text-red-700' : 'border-gray-300 text-gray-600'}`}>Too hard</button>
+              <button type="button" onClick={() => setDifficultyTag('')} className={`px-3 py-1 rounded border ${difficultyTag==='' ? 'bg-gray-100 border-gray-300 text-gray-700' : 'border-gray-300 text-gray-600'}`}>Just right</button>
             </div>
           </div>
 

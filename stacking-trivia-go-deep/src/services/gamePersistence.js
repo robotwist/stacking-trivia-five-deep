@@ -1,8 +1,9 @@
 // Direct game persistence functions for frontend
 export class GamePersistence {
   constructor() {
-    this.baseURL = import.meta.env.VITE_API_BASE_URL || 'https://quizzical-cherry-production.up.railway.app';
-    this.token = localStorage.getItem('auth_token');
+    this.baseURL = import.meta.env.VITE_API_BASE_URL || '';
+    // Align token key with AuthContext which uses 'trivia_token'
+    this.token = localStorage.getItem('trivia_token');
   }
 
   async request(endpoint, options = {}) {
@@ -70,7 +71,7 @@ export class GamePersistence {
       }
       
       return { leaderboard: [] };
-    } catch (error) {
+    } catch {
       return { leaderboard: [] };
     }
   }

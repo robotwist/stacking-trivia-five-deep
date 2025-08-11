@@ -1,0 +1,29 @@
+{
+  "title": "Famous Redheads (Women)",
+  "description": "A 20-deep dive into iconic red‑haired women across film, TV, music, and culture.",
+  "imageHint": "Scarlet strands, legendary careers",
+  "questions": [
+    { "q": "Comedy legend who starred in 'I Love Lucy'", "a": ["lucille ball"] },
+    { "q": "Oscar-winning actress known for 'Still Alice' and 'Far from Heaven'", "a": ["julianne moore"] },
+    { "q": "Australian star of 'Moulin Rouge!' and 'The Hours'", "a": ["nicole kidman"] },
+    { "q": "Academy Award winner for 'The Eyes of Tammy Faye'", "a": ["jessica chastain"] },
+    { "q": "Star of 'La La Land' and 'Easy A'", "a": ["emma stone"] },
+    { "q": "'Will & Grace' actress who played Grace Adler", "a": ["debra messing"] },
+    { "q": "Scottish singer of 'Dog Days Are Over' (Florence + The Machine)", "a": ["florence welch"] },
+    { "q": "Singer nicknamed the 'Queen of Country' behind 'Fancy'", "a": ["reba mcentire", "reba mcEntire", "reba"] },
+    { "q": "'Mad Men' actress who played Joan Holloway", "a": ["christina hendricks"] },
+    { "q": "'Sex and the City' actress who played Miranda Hobbes", "a": ["cynthia nixon"] },
+    { "q": "'Doctor Who' and 'Guardians of the Galaxy' actress who played Amy Pond and Nebula", "a": ["karen gillan"] },
+    { "q": "'The X-Files' star who played Dana Scully", "a": ["gillian anderson"] },
+    { "q": "Singer of 'Sweet Dreams (Are Made of This)'", "a": ["annie lennox"] },
+    { "q": "'Desperate Housewives' actress who played Bree Van de Kamp", "a": ["marcia cross"] },
+    { "q": "'American Pie' and 'How I Met Your Mother' actress who played Lily Aldrin", "a": ["alyson hannigan"] },
+    { "q": "Actress often confused with Jessica Chastain; starred in 'Jurassic World'", "a": ["bryce dallas howard", "bryce howard"] },
+    { "q": "'Wedding Crashers' and 'Now You See Me' actress, married to Sacha Baron Cohen", "a": ["isla fisher"] },
+    { "q": "'Enchanted' and 'Arrival' actress with multiple Oscar nominations", "a": ["amy adams"] },
+    { "q": "Brat Pack icon who starred in 'Sixteen Candles' and 'The Breakfast Club'", "a": ["molly ringwald"] },
+    { "q": "'Grey's Anatomy' and 'Private Practice' actress who played Addison Montgomery", "a": ["kate walsh"] }
+  ]
+}
+
+

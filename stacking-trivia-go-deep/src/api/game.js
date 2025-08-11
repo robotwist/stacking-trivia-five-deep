@@ -13,7 +13,8 @@ const router = express.Router()
 
 // Middleware to verify JWT token
 const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers['authorization']
+  // Support both canonical and lowercase header forms
+  const authHeader = req.get('Authorization') || req.headers['authorization'] // Authorization
   const token = authHeader && authHeader.split(' ')[1]
 
   if (!token) {
@@ -35,7 +36,7 @@ router.post('/session', authenticateToken, async (req, res) => {
     const { sessionType = 'single-player' } = req.body
     const sessionId = await createGameSession(req.user.userId, sessionType)
     res.json({ sessionId })
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to create game session' })
   }
 })
@@ -48,7 +49,7 @@ router.put('/session/:sessionId', authenticateToken, async (req, res) => {
     
     await updateGameSession(sessionId, totalScore, stacksCompleted, durationMinutes)
     res.json({ success: true })
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to update game session' })
   }
 })
@@ -83,7 +84,7 @@ router.post('/session/:sessionId/stack', authenticateToken, async (req, res) => 
     }
     
     res.json({ success: true })
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to record stack result' })
   }
 })
@@ -94,7 +95,7 @@ router.get('/history', authenticateToken, async (req, res) => {
     const { limit = 10 } = req.query
     const history = await getUserGameHistory(req.user.userId, parseInt(limit))
     res.json({ history })
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to get game history' })
   }
 })
@@ -105,7 +106,7 @@ router.get('/leaderboard', async (req, res) => {
     const { category, limit = 10 } = req.query
     const leaderboard = await getLeaderboard(category, parseInt(limit))
     res.json({ leaderboard })
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to get leaderboard' })
   }
 })
@@ -125,7 +126,7 @@ router.get('/stats', authenticateToken, async (req, res) => {
     }
     
     res.json({ stats })
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to get user stats' })
   }
 })

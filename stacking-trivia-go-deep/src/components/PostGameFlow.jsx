@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { submitFeedback } from '../services/feedbackService';
+import FeedbackModal from './FeedbackModal';
 import { useAuth } from '../contexts/AuthContext';
 import { getRecommendations, stackMetadata, getDifficultyColor } from '../utils/stackMetadata';
 import SmartRecommendations from './SmartRecommendations';
@@ -16,6 +18,22 @@ const PostGameFlow = ({
   const { user } = useAuth();
   const [showRecommendations, setShowRecommendations] = useState(false);
   const [celebrationPhase, setCelebrationPhase] = useState(true);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [toast, setToast] = useState('');
+
+  const shareScore = async () => {
+    const shareText = `I just scored ${score} pts on "${(completedStack || '').replace(/-/g,' ')}" in Deeply Trivial!`;
+    const shareUrl = window.location.origin;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: 'Deeply Trivial', text: shareText, url: shareUrl });
+      } else {
+        await navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+        setToast('Share link copied to clipboard');
+        setTimeout(() => setToast(''), 2000);
+      }
+    } catch {}
+  }
 
   // Mock user completed stacks for demo - in real app this would come from database
   const completedStacks = ['van-gogh', 'tesla']; // Add the just completed stack
@@ -38,6 +56,7 @@ const PostGameFlow = ({
     const timer = setTimeout(() => {
       setCelebrationPhase(false);
       setShowRecommendations(true);
+      setShowFeedback(true);
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -217,6 +236,12 @@ const PostGameFlow = ({
               >
                 Play Again
               </button>
+              <button
+                onClick={shareScore}
+                className="px-4 py-2 text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 text-sm"
+              >
+                Share Score
+              </button>
             </div>
           </div>
         </div>
@@ -225,6 +250,24 @@ const PostGameFlow = ({
         <div className="text-center mt-4 text-sm text-amber-700 dark:text-amber-300">
           You're now Level {currentLevel} with {userStats.totalScore} total points!
         </div>
+
+        {/* Feedback Modal */}
+        <FeedbackModal
+          isOpen={showFeedback}
+          onClose={() => setShowFeedback(false)}
+          stackTitle={completedStack}
+          onSubmitFeedback={async ({ stackTitle, rating, category, feedback, difficultyTag }) => {
+            const res = await submitFeedback({ stackTitle, rating, category, message: feedback, difficultyTag });
+            setToast(res.ok ? 'Thanks! Feedback saved.' : 'Saved locally; will sync later.');
+            setTimeout(() => setToast(''), 2500);
+          }}
+        />
+
+        {toast && (
+          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded shadow-lg border border-gray-700">
+            {toast}
+          </div>
+        )}
       </div>
     </div>
   );

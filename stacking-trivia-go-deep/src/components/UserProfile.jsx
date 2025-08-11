@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import AvatarStudio from './AvatarStudio';
+import { loadAvatar } from '../utils/avatarStorage';
 
 const UserProfile = () => {
   const { user, logout } = useAuth();
   const [showProfile, setShowProfile] = useState(false);
+  const [showAvatarStudio, setShowAvatarStudio] = useState(false);
+  const [avatar, setAvatar] = useState(user ? loadAvatar(user.id || user.uid || user.username) : null);
 
   if (!user) return null;
 
@@ -27,6 +31,14 @@ const UserProfile = () => {
     { rank: 157, username: "NewPlayer", score: 2134, streak: 4 }
   ].sort((a, b) => b.score - a.score);
 
+  const avatarUserId = user.id || user.uid || user.username;
+  const frameMap = {
+    'torn-1': 'rotate-[-2deg] border-4 border-yellow-300 shadow-[6px_6px_0_rgba(0,0,0,0.4)]',
+    'tape-1': 'rotate-[3deg] border-2 border-amber-400 shadow-[4px_4px_0_rgba(0,0,0,0.45)]',
+    'polaroid': 'rotate-[-1deg] bg-white p-1 shadow-[8px_8px_0_rgba(0,0,0,0.5)]',
+    'ransom': 'rotate-[1deg] border-2 border-pink-400 shadow-[4px_4px_0_rgba(0,0,0,0.45)]'
+  };
+
   return (
     <>
       <div className="relative">
@@ -36,8 +48,12 @@ const UserProfile = () => {
           className="flex items-center space-x-2 bg-amber-100 dark:bg-amber-900/70 text-amber-800 dark:text-amber-200 px-3 py-2 rounded-lg border-2 border-amber-300 dark:border-amber-600 hover:bg-amber-200 dark:hover:bg-amber-800/70 transition-all duration-200 sepia"
           style={{ fontFamily: 'Baskervville, serif' }}
         >
-          <div className="w-6 h-6 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
-            {user.username.charAt(0).toUpperCase()}
+          <div className={`w-7 h-7 rounded-full overflow-hidden flex items-center justify-center ${avatar ? frameMap[avatar.frame] : 'bg-gradient-to-r from-amber-500 to-yellow-500'} text-white text-xs font-bold`} style={{ background: avatar?.bgColor }}>
+            {avatar?.imageSrc ? (
+              <img src={avatar.imageSrc} alt="avatar" className="w-full h-full object-cover" />
+            ) : (
+              user.username.charAt(0).toUpperCase()
+            )}
           </div>
           <span className="font-semibold">{user.username}</span>
           <svg 
@@ -55,14 +71,24 @@ const UserProfile = () => {
             
             {/* Header */}
             <div className="bg-gradient-to-r from-amber-500 to-yellow-500 p-4 text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-2 backdrop-blur-sm">
-                {user.username.charAt(0).toUpperCase()}
+              <div className={`w-16 h-16 rounded-full mx-auto mb-2 overflow-hidden flex items-center justify-center ${avatar ? frameMap[avatar.frame] : 'bg-white/20'} backdrop-blur-sm`} style={{ background: avatar?.bgColor }}>
+                {avatar?.imageSrc ? (
+                  <img src={avatar.imageSrc} alt="avatar" className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-white font-bold text-2xl">{user.username.charAt(0).toUpperCase()}</span>
+                )}
               </div>
               <h3 className="font-bold text-white text-lg" style={{ fontFamily: 'Baskervville, serif' }}>
                 {user.username}
               </h3>
               <div className="text-amber-100 text-sm mt-1">
                 Level {userStats.level} • Global Rank #{userStats.globalRank}
+              </div>
+              <div className="mt-2">
+                <button
+                  onClick={() => setShowAvatarStudio(true)}
+                  className="px-3 py-1 bg-gray-900/20 hover:bg-gray-900/30 text-white border border-white/30 rounded"
+                >Customize Avatar</button>
               </div>
             </div>
 
@@ -126,6 +152,14 @@ const UserProfile = () => {
 
             {/* Actions */}
             <div className="p-4 bg-gray-900">
+              <a
+                href="https://buymeacoffee.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full mb-2 inline-block text-center bg-yellow-500 hover:bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg transition-colors duration-200 font-semibold"
+              >
+                ☕ Tip Jar
+              </a>
               <button
                 onClick={() => {
                   logout();
@@ -145,6 +179,14 @@ const UserProfile = () => {
         <div 
           className="fixed inset-0 z-40" 
           onClick={() => setShowProfile(false)}
+        />
+      )}
+
+      {showAvatarStudio && (
+        <AvatarStudio
+          userId={avatarUserId}
+          onClose={() => setShowAvatarStudio(false)}
+          onSave={(data) => setAvatar(data)}
         />
       )}
     </>

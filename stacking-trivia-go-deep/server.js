@@ -8,6 +8,7 @@ import authRoutes from './src/api/auth.js';
 import userRoutes from './src/api/user.js';
 import gameRoutes from './src/api/game.js';
 import stacksRoutes from './src/api/stacks.js';
+import feedbackRoutes from './src/api/feedback.js';
 
 // Fix for ES modules __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +40,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/game', gameRoutes);
 app.use('/api/stacks', stacksRoutes);
+app.use('/api/feedback', feedbackRoutes);
 
 // Health check endpoints
 app.get('/api/health', (req, res) => {
@@ -54,26 +56,7 @@ app.get('/api/game/leaderboard-test', (req, res) => {
   });
 });
 
-// WORKING GAME ENDPOINTS - Direct implementation for immediate functionality
-app.get('/api/game/leaderboard', async (req, res) => {
-  try {
-    const { pool } = await import('./src/database/postgres.js');
-    const result = await pool.query(
-      'SELECT username, total_score, games_played FROM users ORDER BY total_score DESC LIMIT 10'
-    );
-    res.json({ 
-      leaderboard: result.rows,
-      timestamp: new Date().toISOString()
-    });
-  } catch (error) {
-    console.error('Leaderboard error:', error);
-    res.json({ 
-      leaderboard: [],
-      message: 'Leaderboard temporarily unavailable',
-      timestamp: new Date().toISOString()
-    });
-  }
-});
+// WORKING GAME ENDPOINTS - legacy block removed (duplicate)
 
 // Debug endpoint to check registered routes
 app.get('/api/debug/routes', (req, res) => {
@@ -142,7 +125,7 @@ app.get('/api/db-health', async (req, res) => {
 });
 
 // Simple game leaderboard endpoint
-app.get('/api/game/leaderboard', async (req, res) => {
+app.get('/api/game/leaderboard', async (_req, res) => {
   try {
     const { pool } = await import('./src/database/postgres.js');
     const result = await pool.query(`
@@ -153,7 +136,7 @@ app.get('/api/game/leaderboard', async (req, res) => {
       LIMIT 10
     `);
     res.json({ leaderboard: result.rows });
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to get leaderboard' });
   }
 });
@@ -164,7 +147,7 @@ app.get('*', (req, res) => {
 });
 
 // Error handling middleware
-app.use((error, req, res, next) => {
+app.use((error, _req, res) => {
   console.error('Unhandled error:', error);
   res.status(500).json({ 
     error: 'Internal server error',

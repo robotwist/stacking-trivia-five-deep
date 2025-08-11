@@ -6,6 +6,7 @@ import LoadingSpinner from './components/LoadingSpinner'
 import UnlockNotification from './components/UnlockNotification'
 import FeedbackModal from './components/FeedbackModal'
 import PhotoFirstTest from './components/PhotoFirstTest'
+import MoreModesDrawer from './components/MoreModesDrawer'
 import OnboardingFlow from './components/OnboardingFlow'
 import PostGameFlow from './components/PostGameFlow'
 import ProgressResume from './components/ProgressResume'
@@ -172,7 +173,7 @@ function AuthenticatedGameApp() {
   const [gameMode, setGameMode] = useState('solo') // solo, single-player, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition, bar-trivia, multi-device-host, mobile-join
   const [teams, setTeams] = useState([])
   const [performanceScores, setPerformanceScores] = useState({})
-  const [currentRound, setCurrentRound] = useState('Game')
+  const [currentRound, _setCurrentRound] = useState('Game')
   const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
   const [unlockNotification, setUnlockNotification] = useState(null)
   const [testMode, setTestMode] = useState(false) // For testing photo-first system
@@ -320,6 +321,7 @@ function AuthenticatedGameApp() {
     currentQuestion: null,
     questionNumber: 1
   })
+  const [showMore, setShowMore] = useState(false)
 
   const handleStackSelect = (stackKey) => {
     setSelectedStack(stackKey)
@@ -399,17 +401,13 @@ function AuthenticatedGameApp() {
     setGameMode('opening-round')
   }
 
-  const handleOpeningRoundComplete = (results) => {
+  const handleOpeningRoundComplete = () => {
     setGameMode('individual-stacks')
     // Could update team order based on opening round results
   }
 
   // Performance Finale handlers
-  const enterPerformanceFinale = () => {
-    setGameMode('performance-finale')
-    setCurrentRound('Performance Finale')
-    setGamePhase('round-complete')
-  }
+  // Performance finale is accessible from More drawer via setGameMode
 
   const handlePerformanceComplete = (scores) => {
     setPerformanceScores(scores)
@@ -525,9 +523,8 @@ function AuthenticatedGameApp() {
   }
 
   // Projector Scoreboard handlers
-  const enterProjectorMode = () => {
-    setGameMode('projector-scoreboard')
-  }
+  // removed direct projector button in header; kept function for More drawer use via handler
+  // Projector mode is accessible from More drawer via setGameMode
 
   // Gilliam Projector handlers
   const enterGilliamProjector = (gameState = 'setup') => {
@@ -558,13 +555,11 @@ function AuthenticatedGameApp() {
     setGameMode('gilliam-projector')
   }
 
-  const updateProjectorState = (newState) => {
-    setProjectorState(prev => ({ ...prev, ...newState }))
-  }
+  // Projector state updater (kept if needed)
+  // const updateProjectorState = (newState) => setProjectorState(prev => ({ ...prev, ...newState }))
 
-  const trackGameAction = (action, stackTitle = null) => {
-    addToGameHistory(action, stackTitle)
-  }
+  // Analytics hook (enable when needed)
+  // const trackGameAction = (action, stackTitle = null) => addToGameHistory(action, stackTitle)
 
   // Higher-order component for lazy-loaded routes with error boundary and loading
   const LazyRoute = ({ children }) => (
@@ -875,36 +870,39 @@ function AuthenticatedGameApp() {
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white transition-colors duration-300">
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <header className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
-          <nav className="flex flex-wrap gap-2 sm:gap-3 order-2 sm:order-1 justify-center sm:justify-start" aria-label="Game modes">
+          <nav className="flex flex-wrap gap-2 sm:gap-3 order-2 sm:order-1 justify-center sm:justify-start" aria-label="Primary actions">
             <button
-              onClick={enterHostMode}
+              onClick={() => {
+                setSelectedCategory(null)
+                setSelectedStack(null)
+                // Play Now: choose a recommended stack (first of first category)
+                const firstCategoryKey = Object.keys(categoriesConfig.categories)[0]
+                const firstStackKey = categoriesConfig.categories[firstCategoryKey].stacks[0]
+                setSelectedCategory(firstCategoryKey)
+                setSelectedStack(firstStackKey)
+                setGameStarted(true)
+              }}
+              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-amber-600 hover:bg-amber-500 text-white border-amber-500 focus:outline-none focus:ring-3 focus:ring-amber-500"
+            >
+              Play Now
+            </button>
+            <button
+              onClick={() => setGameMode('single-player')}
               className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-amber-700 hover:bg-amber-600 text-white border-amber-600 focus:outline-none focus:ring-3 focus:ring-amber-500"
             >
-              Host Mode
+              Browse Topics
             </button>
             <button
-              onClick={enterPerformanceFinale}
+              onClick={enterHostMode}
               className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-yellow-700 hover:bg-yellow-600 text-white border-yellow-600 focus:outline-none focus:ring-3 focus:ring-yellow-500"
             >
-              Performance Finale
+              Host a Game
             </button>
             <button
-              onClick={enterProjectorMode}
-              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-amber-800 hover:bg-amber-700 text-white border-amber-700 focus:outline-none focus:ring-3 focus:ring-amber-500"
+              onClick={() => setShowMore(true)}
+              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-gray-800 hover:bg-gray-700 text-white border-gray-700 focus:outline-none focus:ring-3 focus:ring-gray-600"
             >
-              Classic Projector
-            </button>
-            <button
-              onClick={() => enterGilliamProjector('setup')}
-              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-yellow-800 hover:bg-yellow-700 text-white border-yellow-700 focus:outline-none focus:ring-3 focus:ring-yellow-500"
-            >
-              Gilliam Projector
-            </button>
-            <button
-              onClick={() => setTestMode(true)}
-              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-purple-700 hover:bg-purple-600 text-white border-purple-600 focus:outline-none focus:ring-3 focus:ring-purple-500"
-            >
-              Test Photo-First
+              More
             </button>
           </nav>
           <button
@@ -1085,6 +1083,17 @@ function AuthenticatedGameApp() {
           />
         )}
       </div>
+
+      {/* More Modes Drawer */}
+      {showMore && (
+        <MoreModesDrawer
+          isOpen={showMore}
+          onClose={() => setShowMore(false)}
+          onSelectMode={(mode) => setGameMode(mode)}
+          onEnterGilliamProjector={enterGilliamProjector}
+          onSetTestPhoto={setTestMode}
+        />
+      )}
     </div>
   )
 }

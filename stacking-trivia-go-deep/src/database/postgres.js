@@ -44,38 +44,41 @@ export const initDatabase = async () => {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS game_sessions (
         id SERIAL PRIMARY KEY,
-        user_id INTEGER REFERENCES users(id),
+        user_id INTEGER,
         session_type VARCHAR(20) NOT NULL, -- 'single-player', 'bar-trivia', 'host-mode'
         total_score INTEGER DEFAULT 0,
         stacks_completed JSONB DEFAULT '[]'::jsonb,
         duration_minutes INTEGER,
-        completed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        completed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(id)
       );
     `)
 
     await pool.query(`
       CREATE TABLE IF NOT EXISTS stack_results (
         id SERIAL PRIMARY KEY,
-        session_id INTEGER REFERENCES game_sessions(id),
+        session_id INTEGER,
         stack_name VARCHAR(100) NOT NULL,
         questions_answered INTEGER DEFAULT 0,
         questions_correct INTEGER DEFAULT 0,
         final_score INTEGER DEFAULT 0,
         deeper_mode_attempted BOOLEAN DEFAULT false,
         deeper_mode_completed BOOLEAN DEFAULT false,
-        completed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        completed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (session_id) REFERENCES game_sessions(id)
       );
     `)
 
     await pool.query(`
       CREATE TABLE IF NOT EXISTS leaderboards (
         id SERIAL PRIMARY KEY,
-        user_id INTEGER REFERENCES users(id),
+        user_id INTEGER,
         category VARCHAR(50) NOT NULL,
         stack_name VARCHAR(100) NOT NULL,
         score INTEGER NOT NULL,
         achieved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        UNIQUE(user_id, stack_name)
+        UNIQUE(user_id, stack_name),
+        FOREIGN KEY (user_id) REFERENCES users(id)
       );
     `)
 
@@ -93,17 +96,18 @@ export const initDatabase = async () => {
         tags JSONB DEFAULT '[]'::jsonb,
         is_published BOOLEAN DEFAULT false,
         is_featured BOOLEAN DEFAULT false,
-        created_by INTEGER REFERENCES users(id),
+        created_by INTEGER,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        version INTEGER DEFAULT 1
+        version INTEGER DEFAULT 1,
+        FOREIGN KEY (created_by) REFERENCES users(id)
       );
     `)
 
     await pool.query(`
       CREATE TABLE IF NOT EXISTS questions (
         id SERIAL PRIMARY KEY,
-        stack_id INTEGER REFERENCES stacks(id) ON DELETE CASCADE,
+        stack_id INTEGER,
         level INTEGER NOT NULL CHECK (level > 0),
         question_text TEXT NOT NULL,
         question_type VARCHAR(20) DEFAULT 'text' CHECK (question_type IN ('text', 'multiple_choice', 'true_false', 'image')),
@@ -115,7 +119,8 @@ export const initDatabase = async () => {
         image_url VARCHAR(500),
         difficulty_modifier DECIMAL(3,2) DEFAULT 1.0,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (stack_id) REFERENCES stacks(id) ON DELETE CASCADE
       );
     `)
 
@@ -140,6 +145,21 @@ export const initDatabase = async () => {
         permissions JSONB DEFAULT '["play_games"]'::jsonb,
         granted_by INTEGER REFERENCES users(id),
         granted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+    `)
+
+    // Feedback table for playtest and production insights
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS feedback (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER,
+        stack_title VARCHAR(200),
+        rating INTEGER CHECK (rating BETWEEN 1 AND 5),
+        difficulty_tag VARCHAR(30), -- 'too-easy' | 'too-hard' | null
+        category VARCHAR(50),
+        message TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(id)
       );
     `)
 
@@ -200,41 +220,36 @@ export const getUserById = async (id) => {
 }
 
 export const updateUserCompletedStack = async (userId, stackName, score) => {
-  try {
-    // Get current completed stacks
-    const userResult = await pool.query('SELECT completed_stacks, total_score, games_played, best_single_stack FROM users WHERE id = $1', [userId])
-    const user = userResult.rows[0]
-    
-    if (!user) {
-      throw new Error('User not found')
-    }
-
-    const completedStacks = user.completed_stacks || []
-    
-    // Check if stack already completed
-    if (!completedStacks.includes(stackName)) {
-      completedStacks.push(stackName)
-      
-      // Update user stats
-      const newTotalScore = user.total_score + score
-      const newGamesPlayed = user.games_played + 1
-      const newBestScore = Math.max(user.best_single_stack, score)
-      
-      const result = await pool.query(
-        'UPDATE users SET completed_stacks = $1, total_score = $2, games_played = $3, best_single_stack = $4 WHERE id = $5 RETURNING id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at',
-        [JSON.stringify(completedStacks), newTotalScore, newGamesPlayed, newBestScore, userId]
-      )
-      
-      return result.rows[0]
-    }
-    
-    // If stack already completed, just return current user data
-    const result = await pool.query('SELECT id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at FROM users WHERE id = $1', [userId])
-    return result.rows[0]
-    
-  } catch (error) {
-    throw error
+  // Get current completed stacks
+  const userResult = await pool.query('SELECT completed_stacks, total_score, games_played, best_single_stack FROM users WHERE id = $1', [userId])
+  const user = userResult.rows[0]
+  
+  if (!user) {
+    throw new Error('User not found')
   }
+
+  const completedStacks = user.completed_stacks || []
+  
+  // Check if stack already completed
+  if (!completedStacks.includes(stackName)) {
+    completedStacks.push(stackName)
+    
+    // Update user stats
+    const newTotalScore = user.total_score + score
+    const newGamesPlayed = user.games_played + 1
+    const newBestScore = Math.max(user.best_single_stack, score)
+    
+    const result = await pool.query(
+      'UPDATE users SET completed_stacks = $1, total_score = $2, games_played = $3, best_single_stack = $4 WHERE id = $5 RETURNING id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at',
+      [JSON.stringify(completedStacks), newTotalScore, newGamesPlayed, newBestScore, userId]
+    )
+    
+    return result.rows[0]
+  }
+  
+  // If stack already completed, just return current user data
+  const result = await pool.query('SELECT id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at FROM users WHERE id = $1', [userId])
+  return result.rows[0]
 }
 
 // Game session management
