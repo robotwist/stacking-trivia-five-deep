@@ -9,6 +9,7 @@ import userRoutes from './src/api/user.js';
 import gameRoutes from './src/api/game.js';
 import stacksRoutes from './src/api/stacks.js';
 import feedbackRoutes from './src/api/feedback.js';
+import billingRoutes from './src/api/billing.js';
 
 // Fix for ES modules __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -41,6 +42,7 @@ app.use('/api/user', userRoutes);
 app.use('/api/game', gameRoutes);
 app.use('/api/stacks', stacksRoutes);
 app.use('/api/feedback', feedbackRoutes);
+app.use('/api/billing', billingRoutes);
 
 // Health check endpoints
 app.get('/api/health', (req, res) => {

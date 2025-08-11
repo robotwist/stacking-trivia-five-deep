@@ -384,12 +384,7 @@ function AuthenticatedGameApp() {
   }
 
   // Host Mode handlers
-  const enterHostMode = () => {
-    setGameMode('host')
-    setSelectedCategory(null)
-    setSelectedStack(null)
-    setGameStarted(false)
-  }
+  // Host mode entry handled inline in header button
 
   const exitHostMode = () => {
     setGameMode('solo')
@@ -599,12 +594,8 @@ function AuthenticatedGameApp() {
   if (gameMode === 'host') {
     return (
       <LazyRoute>
-        <HostMode 
-          onStartGame={handleStartGame} 
-          onExitHost={exitHostMode} 
-          onEnterGilliamProjector={enterGilliamProjector}
-          onTriggerTransition={triggerCategoryTransition}
-        />
+        {/* Host upsell gate could be shown here in free tier */}
+        <HostMode onStartGame={handleStartGame} onExitHost={exitHostMode} onEnterGilliamProjector={enterGilliamProjector} onTriggerTransition={triggerCategoryTransition} />
       </LazyRoute>
     )
   }
@@ -892,12 +883,7 @@ function AuthenticatedGameApp() {
             >
               Browse Topics
             </button>
-            <button
-              onClick={enterHostMode}
-              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-yellow-700 hover:bg-yellow-600 text-white border-yellow-600 focus:outline-none focus:ring-3 focus:ring-yellow-500"
-            >
-              Host a Game
-            </button>
+            <button onClick={() => setGameMode('host')} className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-yellow-700 hover:bg-yellow-600 text-white border-yellow-600 focus:outline-none focus:ring-3 focus:ring-yellow-500">Host a Game</button>
             <button
               onClick={() => setShowMore(true)}
               className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-gray-800 hover:bg-gray-700 text-white border-gray-700 focus:outline-none focus:ring-3 focus:ring-gray-600"
