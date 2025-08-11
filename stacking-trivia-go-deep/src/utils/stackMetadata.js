@@ -104,6 +104,48 @@ export const stackMetadata = {
     nextRecommendations: ['broadway-classics', 'family-movies']
   },
 
+  // FAMILY MOVIE COLLECTION
+  'stripes-movie': {
+    difficulty: 'Intermediate',
+    estimatedTime: '8-10 min',
+    difficultyScore: 6,
+    description: 'Bill Murray\'s army comedy classic with military mishaps and laughs',
+    tags: ['Movies', 'Comedy', '1980s', 'Bill Murray'],
+    recommendedFor: 'Comedy fans, Bill Murray enthusiasts',
+    prerequisites: 'Familiarity with 1980s comedies',
+    nextRecommendations: ['what-about-bob', 'big-movie']
+  },
+  'big-movie': {
+    difficulty: 'Intermediate',
+    estimatedTime: '8-10 min',
+    difficultyScore: 6,
+    description: 'Tom Hanks\' magical coming-of-age tale about childhood wishes',
+    tags: ['Movies', 'Family', '1980s', 'Tom Hanks'],
+    recommendedFor: 'Family movie fans, Tom Hanks lovers',
+    prerequisites: 'Love for heartwarming stories',
+    nextRecommendations: ['goofy-movie', 'stripes-movie']
+  },
+  'what-about-bob': {
+    difficulty: 'Intermediate',
+    estimatedTime: '8-10 min',
+    difficultyScore: 6,
+    description: 'Bill Murray\'s psychiatric comedy about therapy gone wrong',
+    tags: ['Movies', 'Comedy', '1990s', 'Bill Murray'],
+    recommendedFor: 'Bill Murray fans, comedy enthusiasts',
+    prerequisites: 'Appreciation for neurotic humor',
+    nextRecommendations: ['stripes-movie', 'big-movie']
+  },
+  'goofy-movie': {
+    difficulty: 'Intermediate',
+    estimatedTime: '8-10 min',
+    difficultyScore: 6,
+    description: 'Disney\'s heartwarming father-son road trip adventure',
+    tags: ['Movies', 'Disney', 'Animation', 'Family'],
+    recommendedFor: 'Disney fans, family movie enthusiasts',
+    prerequisites: 'Love for Disney animation',
+    nextRecommendations: ['big-movie', 'disney-classics']
+  },
+
   // Intermediate Stacks
   'olympic_distance_current': {
     difficulty: 'Advanced',

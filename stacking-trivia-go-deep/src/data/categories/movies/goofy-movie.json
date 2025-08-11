@@ -1,0 +1,65 @@
+{
+  "title": "A Goofy Movie: Father-Son Road Trip Adventure",
+  "image": "goofy-max-car-trip.jpg",
+  "imageHint": "Cartoon father and teenage son in a car on a road trip with camping gear and maps",
+  "description": "Goofy tries to reconnect with his teenage son Max through an unforgettable cross-country road trip filled with mishaps, music, and heartfelt moments.",
+  "category": "movies",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the name of Goofy's teenage son?",
+      "answer": "Max",
+      "acceptableAnswers": ["Max", "max", "Maximilian", "maximilian"],
+      "explanation": "Max Goof is Goofy's teenage son who is embarrassed by his father and dreams of impressing his crush Roxanne."
+    },
+    {
+      "level": 2,
+      "question": "What singer does Max pretend to be at the school assembly?",
+      "answer": "Powerline",
+      "acceptableAnswers": ["Powerline", "powerline"],
+      "explanation": "Max impersonates the pop star Powerline during a school assembly performance to impress Roxanne, which gets him in trouble with the principal."
+    },
+    {
+      "level": 3,
+      "question": "What is the name of Max's crush?",
+      "answer": "Roxanne",
+      "acceptableAnswers": ["Roxanne", "roxanne"],
+      "explanation": "Roxanne is Max's high school crush, and his desire to impress her drives much of the plot, including his lie about knowing Powerline personally."
+    },
+    {
+      "level": 4,
+      "question": "Where does Goofy originally plan to take Max on their road trip?",
+      "answer": "Lake Destiny",
+      "acceptableAnswers": ["Lake Destiny", "lake destiny"],
+      "explanation": "Goofy plans a father-son fishing trip to Lake Destiny, but Max secretly changes their route to go to the Powerline concert in Los Angeles."
+    },
+    {
+      "level": 5,
+      "question": "What famous Powerline song do Goofy and Max sing together at the end?",
+      "answer": "I2I",
+      "acceptableAnswers": ["I2I", "i2i", "Eye to Eye", "eye to eye"],
+      "explanation": "'I2I' (Eye to Eye) is Powerline's hit song that becomes the emotional centerpiece when Goofy and Max finally connect and perform it together on stage."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "disney-classics",
+      "sharedThemes": ["Disney", "animation", "family"],
+      "connectionStrength": 3,
+      "trigger": "Disney animated feature focusing on family relationships and growing up"
+    },
+    {
+      "targetStack": "father-son-movies",
+      "sharedThemes": ["father-son", "growing up", "family bonding"],
+      "connectionStrength": 2,
+      "trigger": "Heartwarming story about father-son relationships and understanding"
+    }
+  ],
+  "qualityScore": 92,
+  "familyRequest": {
+    "originalTopic": "Goofy the movie",
+    "priority": 1,
+    "generatedAt": "2024-08-10T23:03:00.000Z",
+    "notes": "Disney's A Goofy Movie - father-son road trip classic"
+  }
+}

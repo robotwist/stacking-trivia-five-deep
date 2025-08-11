@@ -1,0 +1,65 @@
+{
+  "title": "Big: Tom Hanks' Magical Coming-of-Age Classic",
+  "image": "toy-store-piano-scene.jpg",
+  "imageHint": "Large piano keyboard on the floor of a toy store with someone dancing on the keys",
+  "description": "When 12-year-old Josh Baskin makes a wish to be 'big' at a carnival machine, he gets more than he bargained for in this heartwarming tale of childhood wonder.",
+  "category": "movies",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who plays the adult Josh Baskin after he makes his wish?",
+      "answer": "Tom Hanks",
+      "acceptableAnswers": ["Tom Hanks", "tom hanks"],
+      "explanation": "Tom Hanks delivers an Oscar-nominated performance as the adult Josh, perfectly capturing the innocence and wonder of a child in a man's body."
+    },
+    {
+      "level": 2,
+      "question": "What is the name of the carnival fortune-telling machine that grants Josh's wish?",
+      "answer": "Zoltar",
+      "acceptableAnswers": ["Zoltar", "zoltar", "Zoltar Speaks"],
+      "explanation": "The Zoltar fortune-telling machine is the mystical device that transforms young Josh into an adult after he wishes to be 'big.'"
+    },
+    {
+      "level": 3,
+      "question": "What song do Josh and his boss play together on the giant piano at FAO Schwarz?",
+      "answer": "Heart and Soul",
+      "acceptableAnswers": ["Heart and Soul", "heart and soul", "Chopsticks"],
+      "explanation": "Josh and Mr. MacMillan play 'Heart and Soul' on the famous floor piano at FAO Schwarz in one of cinema's most memorable scenes."
+    },
+    {
+      "level": 4,
+      "question": "What toy company does Josh work for as an adult?",
+      "answer": "MacMillan Toy Company",
+      "acceptableAnswers": ["MacMillan Toy Company", "macmillan toy company", "MacMillan", "macmillan"],
+      "explanation": "Josh lands a job at MacMillan Toy Company, where his childlike perspective on toys makes him incredibly valuable to the business."
+    },
+    {
+      "level": 5,
+      "question": "What is the name of Josh's love interest at the toy company?",
+      "answer": "Susan Lawrence",
+      "acceptableAnswers": ["Susan Lawrence", "susan lawrence", "Susan", "susan"],
+      "explanation": "Susan Lawrence, played by Elizabeth Perkins, is the marketing executive who falls for Josh's unique charm and childlike wonder."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "tom-hanks-classics",
+      "sharedThemes": ["Tom Hanks", "1980s", "heartwarming"],
+      "connectionStrength": 3,
+      "trigger": "Tom Hanks' breakout dramatic role that earned him an Oscar nomination"
+    },
+    {
+      "targetStack": "childhood-magic",
+      "sharedThemes": ["growing up", "wishes", "childhood"],
+      "connectionStrength": 2,
+      "trigger": "Magical transformation stories and coming-of-age themes"
+    }
+  ],
+  "qualityScore": 91,
+  "familyRequest": {
+    "originalTopic": "Big the movie",
+    "priority": 1,
+    "generatedAt": "2024-08-10T23:01:00.000Z",
+    "notes": "Tom Hanks classic family film about childhood wishes"
+  }
+}

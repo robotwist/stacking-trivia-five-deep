@@ -1,0 +1,65 @@
+{
+  "title": "What About Bob?: Bill Murray's Psychiatric Comedy",
+  "image": "therapy-session-chaos.jpg",
+  "imageHint": "Therapist's office in disarray with patient causing comedic mayhem and doctor looking exasperated",
+  "description": "Bob Wiley, a multi-phobic psychiatric patient, follows his therapist on vacation, leading to hilarious chaos and unexpected life lessons.",
+  "category": "movies",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who plays Bob Wiley, the neurotic patient with multiple phobias?",
+      "answer": "Bill Murray",
+      "acceptableAnswers": ["Bill Murray", "bill murray"],
+      "explanation": "Bill Murray brilliantly portrays Bob Wiley, a lovably neurotic patient suffering from multiple phobias who becomes obsessed with his psychiatrist."
+    },
+    {
+      "level": 2,
+      "question": "Who plays Dr. Leo Marvin, Bob's increasingly frustrated psychiatrist?",
+      "answer": "Richard Dreyfuss",
+      "acceptableAnswers": ["Richard Dreyfuss", "richard dreyfuss"],
+      "explanation": "Richard Dreyfuss plays Dr. Leo Marvin, the self-important psychiatrist whose vacation is ruined when Bob follows him to Lake Winnipesaukee."
+    },
+    {
+      "level": 3,
+      "question": "What is Dr. Marvin's therapeutic technique that he teaches Bob?",
+      "answer": "Baby steps",
+      "acceptableAnswers": ["Baby steps", "baby steps", "Baby Steps"],
+      "explanation": "Dr. Marvin teaches Bob the 'baby steps' method - taking small, manageable steps toward overcoming fears and achieving goals."
+    },
+    {
+      "level": 4,
+      "question": "What is the name of the lake where Dr. Marvin has his vacation home?",
+      "answer": "Lake Winnipesaukee",
+      "acceptableAnswers": ["Lake Winnipesaukee", "lake winnipesaukee", "Winnipesaukee"],
+      "explanation": "Lake Winnipesaukee in New Hampshire is where Dr. Marvin's family vacation takes place, and where Bob creates chaos by following them."
+    },
+    {
+      "level": 5,
+      "question": "What is the title of Dr. Marvin's new book that he's promoting?",
+      "answer": "Baby Steps",
+      "acceptableAnswers": ["Baby Steps", "baby steps", "Baby Steps to Success"],
+      "explanation": "Dr. Marvin has written a self-help book called 'Baby Steps' which ironically becomes the method that actually helps Bob improve his life."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "bill-murray-classics",
+      "sharedThemes": ["Bill Murray", "comedy", "1990s"],
+      "connectionStrength": 3,
+      "trigger": "Another classic Bill Murray comedy performance showcasing his neurotic character work"
+    },
+    {
+      "targetStack": "therapy-comedies",
+      "sharedThemes": ["psychology", "therapy", "mental health humor"],
+      "connectionStrength": 2,
+      "trigger": "Comedy exploring therapy and psychiatrist-patient relationships"
+    }
+  ],
+  "qualityScore": 89,
+  "familyRequest": {
+    "originalTopic": "What About Bob the movie",
+    "priority": 1,
+    "generatedAt": "2024-08-10T23:02:00.000Z",
+    "notes": "Bill Murray psychiatric comedy classic for family laughs"
+  }
+}

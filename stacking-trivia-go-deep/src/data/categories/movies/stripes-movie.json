@@ -1,0 +1,65 @@
+{
+  "title": "Stripes: Bill Murray's Army Comedy Classic",
+  "image": "army-boot-camp-comedy.jpg",
+  "imageHint": "Military boot camp scene with comedic chaos, drill sergeant, and recruits in formation",
+  "description": "Join John Winger and Russell Ziskey in their hilariously disastrous military adventure. From basic training mishaps to European escapades.",
+  "category": "movies",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Who plays John Winger, the laid-back slacker who joins the Army?",
+      "answer": "Bill Murray",
+      "acceptableAnswers": ["Bill Murray", "bill murray"],
+      "explanation": "Bill Murray stars as John Winger, the quintessential slacker who impulsively enlists in the Army after losing his job and girlfriend."
+    },
+    {
+      "level": 2,
+      "question": "What is the name of John's best friend who reluctantly joins the Army with him?",
+      "answer": "Russell Ziskey",
+      "acceptableAnswers": ["Russell Ziskey", "russell ziskey", "Russell", "russell"],
+      "explanation": "Russell Ziskey, played by Harold Ramis, is John's neurotic best friend who gets talked into enlisting alongside him."
+    },
+    {
+      "level": 3,
+      "question": "What is the name of their tough drill sergeant?",
+      "answer": "Sergeant Hulka",
+      "acceptableAnswers": ["Sergeant Hulka", "sergeant hulka", "Hulka", "hulka"],
+      "explanation": "Sergeant Hulka, played by Warren Oates, is the no-nonsense drill instructor trying to whip the misfits into shape."
+    },
+    {
+      "level": 4,
+      "question": "What military vehicle do they accidentally commandeer in Europe?",
+      "answer": "RV",
+      "acceptableAnswers": ["RV", "recreational vehicle", "motorhome", "Winnebago"],
+      "explanation": "The squad steals what they think is a military vehicle but turns out to be a recreational vehicle, leading to their European adventure."
+    },
+    {
+      "level": 5,
+      "question": "What year was Stripes released?",
+      "answer": "1981",
+      "acceptableAnswers": ["1981"],
+      "explanation": "Stripes was released in 1981, becoming one of Bill Murray's breakout film roles and a comedy classic."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "bill-murray-classics",
+      "sharedThemes": ["comedy", "1980s", "Bill Murray"],
+      "connectionStrength": 3,
+      "trigger": "Bill Murray's iconic comedy performance in his early film career"
+    },
+    {
+      "targetStack": "military-comedies",
+      "sharedThemes": ["army", "boot camp", "military humor"],
+      "connectionStrength": 2,
+      "trigger": "Classic military comedy alongside films like MASH and Private Benjamin"
+    }
+  ],
+  "qualityScore": 88,
+  "familyRequest": {
+    "originalTopic": "Stripes the movie",
+    "priority": 1,
+    "generatedAt": "2024-08-10T23:00:00.000Z",
+    "notes": "Bill Murray army comedy classic for family enjoyment"
+  }
+}
