@@ -42,6 +42,48 @@ export const stackMetadata = {
     nextRecommendations: ['miles-davis', 'mozart']
   },
   
+  // NEW DEEP EXPLORATION STACKS
+  'native-american-nations': {
+    difficulty: 'Expert',
+    estimatedTime: '15-18 min',
+    difficultyScore: 9,
+    description: 'Comprehensive exploration of Indigenous sovereignty and heritage',
+    tags: ['History', 'Culture', 'Sovereignty'],
+    recommendedFor: 'History enthusiasts, cultural studies',
+    prerequisites: 'Interest in American history',
+    nextRecommendations: ['wild-west-legends', 'classic-short-fiction']
+  },
+  'wild-west-legends': {
+    difficulty: 'Expert',
+    estimatedTime: '15-18 min',
+    difficultyScore: 8,
+    description: 'Outlaws, lawmen, and frontier life in the American West',
+    tags: ['History', 'Americana', 'Frontier'],
+    recommendedFor: 'Western fans, history buffs',
+    prerequisites: 'Interest in American frontier history',
+    nextRecommendations: ['native-american-nations', 'classic-short-fiction']
+  },
+  'neuroscience-frontiers': {
+    difficulty: 'Expert',
+    estimatedTime: '15-20 min',
+    difficultyScore: 10,
+    description: 'From neurons to consciousness - cutting edge brain science',
+    tags: ['Science', 'Brain', 'Psychology'],
+    recommendedFor: 'Science enthusiasts, pre-med students',
+    prerequisites: 'Basic biology knowledge',
+    nextRecommendations: ['classic-short-fiction', 'early-childhood-education']
+  },
+  'classic-short-fiction': {
+    difficulty: 'Expert',
+    estimatedTime: '15-18 min',
+    difficultyScore: 9,
+    description: 'Masters of the short story form from Poe to Munro',
+    tags: ['Literature', 'Writing', 'Classics'],
+    recommendedFor: 'Literature lovers, writers',
+    prerequisites: 'Interest in literary fiction',
+    nextRecommendations: ['neuroscience-frontiers', 'native-american-nations']
+  },
+
   // Intermediate Stacks
   'olympic_distance_current': {
     difficulty: 'Advanced',

@@ -1,0 +1,65 @@
+{
+  "title": "Wild West Legends: Outlaws, Lawmen, and Frontier Life",
+  "image": "dusty-main-street-showdown.jpg",
+  "imageHint": "Classic western town main street at high noon with a lone figure in the dusty road, saloon and general store visible",
+  "description": "Saddle up for the untamed frontier era: legendary gunfighters, notorious outlaws, brave lawmen, and the harsh realities of life in America's last frontier.",
+  "category": "history",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What famous outlaw was known as 'Billy the Kid'?",
+      "answer": "Henry McCarty",
+      "acceptableAnswers": ["Henry McCarty", "henry mccarty", "William Bonney", "william bonney", "Henry Antrim", "henry antrim", "Billy the Kid", "billy the kid"],
+      "explanation": "Billy the Kid, born Henry McCarty (also known as William Bonney), was a notorious outlaw who allegedly killed 21 men before being shot by Sheriff Pat Garrett in 1881 at age 21."
+    },
+    {
+      "level": 2,
+      "question": "Which lawman was known as the 'Prince of Pistoleers' and served as marshal in several Kansas cow towns?",
+      "answer": "Wild Bill Hickok",
+      "acceptableAnswers": ["Wild Bill Hickok", "wild bill hickok", "James Butler Hickok", "james butler hickok"],
+      "explanation": "Wild Bill Hickok earned his reputation as a lightning-fast gunfighter and lawman in Abilene and Deadwood, famously preferring to sit with his back to the wall - a habit that failed him on his final night."
+    },
+    {
+      "level": 3,
+      "question": "What was the name of the most famous cattle drive route from Texas to Kansas railheads?",
+      "answer": "Chisholm Trail",
+      "acceptableAnswers": ["Chisholm Trail", "chisholm trail", "The Chisholm Trail"],
+      "explanation": "The Chisholm Trail, named after trader Jesse Chisholm, was the major route for driving Texas longhorns to Kansas railheads like Abilene, moving over 5 million cattle between 1867-1884."
+    },
+    {
+      "level": 4,
+      "question": "Which female outlaw was known as the 'Bandit Queen' and was associated with the James-Younger gang?",
+      "answer": "Belle Starr",
+      "acceptableAnswers": ["Belle Starr", "belle starr", "Myra Maybelle Shirley", "myra maybelle shirley"],
+      "explanation": "Belle Starr (Myra Maybelle Shirley) became the 'Bandit Queen' through her associations with outlaws including Cole Younger and her husband Sam Starr, leading a gang that rustled horses and robbed travelers in Indian Territory."
+    },
+    {
+      "level": 5,
+      "question": "What was the name of the mining technique that used high-pressure water to blast away hillsides in California gold mining?",
+      "answer": "Hydraulic mining",
+      "acceptableAnswers": ["Hydraulic mining", "hydraulic mining", "hydraulicking", "Hydraulic Mining", "water cannons"],
+      "explanation": "Hydraulic mining used massive water cannons called monitors to wash away entire hillsides, extracting gold but causing devastating environmental damage. It was eventually banned in California after the 1884 Sawyer Decision."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "native-american-nations",
+      "sharedThemes": ["frontier", "conflict", "territory"],
+      "connectionStrength": 3,
+      "trigger": "The Wild West era directly involved conflicts and interactions with Native American tribes"
+    },
+    {
+      "targetStack": "classic-short-fiction",
+      "sharedThemes": ["americana", "mythology", "heroes"],
+      "connectionStrength": 2,
+      "trigger": "Wild West legends inspired countless American short stories and folk tales"
+    }
+  ],
+  "qualityScore": 92,
+  "familyRequest": {
+    "originalTopic": "Wild West",
+    "priority": 1,
+    "generatedAt": "2024-08-10T22:01:00.000Z",
+    "notes": "Legends, outlaws, lawmen, and frontier life"
+  }
+}

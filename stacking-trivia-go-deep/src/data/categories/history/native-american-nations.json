@@ -1,0 +1,65 @@
+{
+  "title": "Native American Nations: Sovereignty and Heritage",
+  "image": "native-american-treaty-council.jpg",
+  "imageHint": "Traditional council meeting with tribal leaders discussing treaties and sovereignty",
+  "description": "From ancient civilizations to modern sovereignty movements, explore the rich history, diverse cultures, and ongoing struggles of Indigenous peoples across North America.",
+  "category": "history",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the largest Native American reservation in the United States by land area?",
+      "answer": "Navajo Nation",
+      "acceptableAnswers": ["Navajo Nation", "navajo nation", "Navajo", "navajo"],
+      "explanation": "The Navajo Nation spans over 27,000 square miles across Arizona, New Mexico, and Utah, making it larger than 10 U.S. states and home to over 300,000 tribal members."
+    },
+    {
+      "level": 2,
+      "question": "Which Native American woman served as a guide for the Lewis and Clark Expedition?",
+      "answer": "Sacagawea",
+      "acceptableAnswers": ["Sacagawea", "sacagawea", "Sacajawea", "sacajawea"],
+      "explanation": "Sacagawea, a Shoshone woman, was instrumental in the success of the Corps of Discovery, providing navigation, interpretation, and diplomatic relations with other tribes from 1804-1806."
+    },
+    {
+      "level": 3,
+      "question": "What was the name of the 1830 federal law that forced the relocation of southeastern tribes to western territories?",
+      "answer": "Indian Removal Act",
+      "acceptableAnswers": ["Indian Removal Act", "indian removal act", "Indian Removal Act of 1830"],
+      "explanation": "The Indian Removal Act of 1830, signed by Andrew Jackson, led to the forced relocation of over 100,000 Native Americans, including the infamous Trail of Tears that killed thousands of Cherokee."
+    },
+    {
+      "level": 4,
+      "question": "Which Native American leader led the resistance at the Battle of Little Bighorn in 1876?",
+      "answer": "Sitting Bull",
+      "acceptableAnswers": ["Sitting Bull", "sitting bull", "Tatanka Iyotake"],
+      "explanation": "Sitting Bull (Tatanka Iyotake), a Hunkpapa Lakota leader, united several tribes in the victory over Custer's 7th Cavalry, though he was in the camp rather than directly fighting due to a vision he'd received."
+    },
+    {
+      "level": 5,
+      "question": "What legal doctrine, established in Cherokee Nation v. Georgia (1831), defined tribes as 'domestic dependent nations'?",
+      "answer": "Marshall Trilogy",
+      "acceptableAnswers": ["Marshall Trilogy", "marshall trilogy", "domestic dependent nations doctrine", "Cherokee Nation v Georgia"],
+      "explanation": "Chief Justice John Marshall's decisions in the Marshall Trilogy (1823-1832) established that tribes are 'domestic dependent nations' with inherent sovereignty but under federal protection, forming the legal foundation of modern tribal-federal relations."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "wild-west-legends",
+      "sharedThemes": ["history", "conflict", "territory"],
+      "connectionStrength": 3,
+      "trigger": "Both stories intersect during westward expansion and frontier conflicts"
+    },
+    {
+      "targetStack": "classic-short-fiction",
+      "sharedThemes": ["storytelling", "oral tradition"],
+      "connectionStrength": 2,
+      "trigger": "Rich oral traditions that influenced American storytelling traditions"
+    }
+  ],
+  "qualityScore": 95,
+  "familyRequest": {
+    "originalTopic": "Native Americans",
+    "priority": 1,
+    "generatedAt": "2024-08-10T22:00:00.000Z",
+    "notes": "Deep dive into sovereignty, history, and cultural heritage"
+  }
+}
