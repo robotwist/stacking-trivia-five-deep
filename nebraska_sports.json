@@ -26,8 +26,9 @@
     },
     {
       "level": 5,
-      "question": "What is the capacity of Memorial Stadium, often referred to as Nebraska\u2019s 'Sea of Red'?",
-      "answer": "85,458"
+      "question": "What is the capacity of Memorial Stadium, often referred to as Nebraska's 'Sea of Red'?",
+      "answer": "85,458",
+      "acceptableAnswers": ["85,458", "85458", "85,000", "85000"]
     }
   ]
 }
