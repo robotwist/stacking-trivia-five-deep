@@ -1,0 +1,135 @@
+{
+  "title": "Annie: The Sun Will Come Out Tomorrow",
+  "image": "annie-broadway-stage.jpg",
+  "imageHint": "Broadway stage with red curly-haired girl in red dress, NYC skyline backdrop, golden spotlight",
+  "description": "From Little Orphan Annie comic strip to Broadway sensation to beloved movie adaptations - explore the complete story of everyone's favorite optimistic orphan.",
+  "category": "entertainment",
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is Annie's most famous song that she sings about hope for the future?",
+      "answer": "Tomorrow",
+      "acceptableAnswers": ["Tomorrow", "tomorrow", "The sun will come out tomorrow"],
+      "explanation": "Tomorrow is Annie's signature song, expressing her unwavering optimism that 'the sun will come out tomorrow' despite her difficult circumstances."
+    },
+    {
+      "level": 2,
+      "question": "What is the name of the wealthy businessman who adopts Annie?",
+      "answer": "Oliver Warbucks",
+      "acceptableAnswers": ["Oliver Warbucks", "oliver warbucks", "Daddy Warbucks", "daddy warbucks", "Mr. Warbucks"],
+      "explanation": "Oliver 'Daddy' Warbucks is the billionaire industrialist who initially invites Annie for a week but eventually adopts her permanently."
+    },
+    {
+      "level": 3,
+      "question": "What is the name of the cruel orphanage matron who mistreats the children?",
+      "answer": "Miss Hannigan",
+      "acceptableAnswers": ["Miss Hannigan", "miss hannigan", "Agatha Hannigan"],
+      "explanation": "Miss Agatha Hannigan runs the Municipal Orphanage for Girls and is known for her harsh treatment of the children and her alcoholism."
+    },
+    {
+      "level": 4,
+      "question": "What breed of dog is Annie's loyal companion Sandy?",
+      "answer": "Mixed breed",
+      "acceptableAnswers": ["Mixed breed", "mixed breed", "mutt", "stray dog", "mongrel"],
+      "explanation": "Sandy is portrayed as a mixed-breed stray dog that Annie befriends. The original Broadway production used an Otterhound mix."
+    },
+    {
+      "level": 5,
+      "question": "What year did the original Annie musical premiere on Broadway?",
+      "answer": "1977",
+      "acceptableAnswers": ["1977"],
+      "explanation": "Annie opened at the Alvin Theatre on April 21, 1977, and ran for 2,377 performances, becoming one of the longest-running Broadway musicals."
+    },
+    {
+      "level": 6,
+      "question": "Who composed the music for Annie, including songs like 'Tomorrow' and 'Hard Knock Life'?",
+      "answer": "Charles Strouse",
+      "acceptableAnswers": ["Charles Strouse", "charles strouse"],
+      "explanation": "Charles Strouse composed the music, with lyrics by Martin Charnin. Strouse was known for his work on Bye Bye Birdie and other Broadway hits."
+    },
+    {
+      "level": 7,
+      "question": "What is the name of Warbucks' faithful butler and bodyguard?",
+      "answer": "Punjab",
+      "acceptableAnswers": ["Punjab", "punjab"],
+      "explanation": "Punjab is Warbucks' East Indian bodyguard and assistant, known for his martial arts skills and loyalty to both Warbucks and Annie."
+    },
+    {
+      "level": 8,
+      "question": "In what decade is Annie set?",
+      "answer": "1930s",
+      "acceptableAnswers": ["1930s", "1930's", "thirties", "Great Depression"],
+      "explanation": "Annie is set in December 1933 during the Great Depression, which provides context for the economic hardship and Annie's optimistic message."
+    },
+    {
+      "level": 9,
+      "question": "What is the name of Annie's locket that contains a note from her parents?",
+      "answer": "Half a locket",
+      "acceptableAnswers": ["half a locket", "locket", "half locket", "broken locket"],
+      "explanation": "Annie has half of a silver locket with a note saying her parents will return for her. The other half would be with her parents as proof of identity."
+    },
+    {
+      "level": 10,
+      "question": "Who played Annie in the original 1982 movie directed by John Huston?",
+      "answer": "Aileen Quinn",
+      "acceptableAnswers": ["Aileen Quinn", "aileen quinn"],
+      "explanation": "Aileen Quinn was chosen from thousands of auditions to play Annie in the 1982 film adaptation, her first major acting role at age 10."
+    },
+    {
+      "level": 11,
+      "question": "What is the opening number sung by the orphans about their hard life?",
+      "answer": "Hard Knock Life",
+      "acceptableAnswers": ["Hard Knock Life", "hard knock life", "It's the Hard Knock Life"],
+      "explanation": "Hard Knock Life is the energetic opening number where the orphan girls sing about their difficult circumstances while doing chores."
+    },
+    {
+      "level": 12,
+      "question": "What fake names do Miss Hannigan's brother and his girlfriend use when pretending to be Annie's parents?",
+      "answer": "Ralph and Shirley Mudge",
+      "acceptableAnswers": ["Ralph and Shirley Mudge", "ralph and shirley mudge", "Mudge", "mudge"],
+      "explanation": "Rooster Hannigan and Lily St. Regis pose as Ralph and Shirley Mudge to try to collect the reward money Warbucks offered for Annie's parents."
+    },
+    {
+      "level": 13,
+      "question": "What Tony Award did Annie win in 1977?",
+      "answer": "Best Musical",
+      "acceptableAnswers": ["Best Musical", "best musical", "Tony Award for Best Musical"],
+      "explanation": "Annie won seven Tony Awards in 1977, including Best Musical. It also won for Best Book, Best Original Score, and several other categories."
+    },
+    {
+      "level": 14,
+      "question": "What is the name of the original comic strip character that Annie was based on?",
+      "answer": "Little Orphan Annie",
+      "acceptableAnswers": ["Little Orphan Annie", "little orphan annie"],
+      "explanation": "Annie was based on Harold Gray's comic strip 'Little Orphan Annie' that ran from 1924 to 2010, though the musical took many creative liberties."
+    },
+    {
+      "level": 15,
+      "question": "What is the name of Warbucks' secretary who helps care for Annie?",
+      "answer": "Grace Farrell",
+      "acceptableAnswers": ["Grace Farrell", "grace farrell", "Miss Farrell"],
+      "explanation": "Grace Farrell is Warbucks' personal secretary who suggests inviting an orphan for Christmas and becomes a mother figure to Annie."
+    }
+  ],
+  "connections": [
+    {
+      "targetStack": "broadway-musicals",
+      "sharedThemes": ["musical theater", "broadway", "songs"],
+      "connectionStrength": 3,
+      "trigger": "Annie is one of Broadway's most beloved musicals with iconic songs"
+    },
+    {
+      "targetStack": "great-depression",
+      "sharedThemes": ["1930s", "economic hardship", "hope"],
+      "connectionStrength": 2,
+      "trigger": "Set during the Great Depression, Annie's optimism contrasts with the era's struggles"
+    }
+  ],
+  "qualityScore": 94,
+  "familyRequest": {
+    "originalTopic": "Annie the Movie",
+    "priority": 1,
+    "generatedAt": "2024-08-10T22:30:00.000Z",
+    "notes": "15-question deep dive into the Broadway musical and movie adaptations"
+  }
+}

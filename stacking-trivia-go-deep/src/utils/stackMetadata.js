@@ -83,6 +83,26 @@ export const stackMetadata = {
     prerequisites: 'Interest in literary fiction',
     nextRecommendations: ['neuroscience-frontiers', 'native-american-nations']
   },
+  'annie-musical': {
+    difficulty: 'Ultra Expert',
+    estimatedTime: '20-25 min',
+    difficultyScore: 10,
+    description: 'From Broadway to movie magic - the complete Annie story in 15 levels',
+    tags: ['Entertainment', 'Broadway', 'Musical Theater', '15 Levels'],
+    recommendedFor: 'Musical theater fans, movie buffs, Broadway enthusiasts',
+    prerequisites: 'Familiarity with Annie musical or movies',
+    nextRecommendations: ['broadway-classics', 'family-movies']
+  },
+  'annie-musical': {
+    difficulty: 'Ultra Expert',
+    estimatedTime: '20-25 min',
+    difficultyScore: 10,
+    description: 'From Broadway to movie magic - the complete Annie story in 15 levels',
+    tags: ['Entertainment', 'Broadway', 'Musical Theater', '15 Levels'],
+    recommendedFor: 'Musical theater fans, movie buffs, Broadway enthusiasts',
+    prerequisites: 'Familiarity with Annie musical or movies',
+    nextRecommendations: ['broadway-classics', 'family-movies']
+  },
 
   // Intermediate Stacks
   'olympic_distance_current': {
