@@ -136,14 +136,17 @@ const GameStack = memo(function GameStack({
     if (depth + 1 >= stackData.questions.length) {
       const questionsAnswered = depth + 1;
       const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
-      if (onComplete) onComplete(score, maxPossibleScore, questionsAnswered, accuracy);
+      if (onComplete) {
+        const runMax = calculateMaxScore(stackData.questions.length, isDeepMode && !!stackData.deeperMode);
+        onComplete(score, runMax, questionsAnswered, accuracy);
+      }
     } else {
       setDepth(depth + 1);
       setInput('');
       setFeedback('');
       setShowHint(false);
     }
-  }, [depth, stackData.questions.length, onComplete, score, maxPossibleScore, correctAnswers, totalAttempts]);
+  }, [depth, stackData.questions.length, onComplete, score, isDeepMode, correctAnswers, totalAttempts]);
 
   const handlePlaySound = useCallback((soundType) => {
     // Placeholder for actual sound implementation
@@ -298,7 +301,7 @@ const GameStack = memo(function GameStack({
               state.stackData.name,
               newDepth,
               state.score + questionScore,
-              maxPossibleScore,
+              calculateMaxScore(state.stackData.questions.length, false),
               nextAnswers
             );
             setLocked(false);
@@ -329,7 +332,7 @@ const GameStack = memo(function GameStack({
         state.stackData.name,
         currentDepth,
         state.score,
-        maxPossibleScore,
+        calculateMaxScore(state.stackData.questions.length, false),
         nextAnswers
       );
       setTimeout(() => {
@@ -377,7 +380,7 @@ const GameStack = memo(function GameStack({
       const runMax = calculateMaxScore(stackData.questions.length, false);
       onComplete(score, runMax, questionsAnswered, accuracy);
     }
-  }, [onComplete, score, maxPossibleScore, depth, correctAnswers, totalAttempts]);
+  }, [onComplete, score, depth, correctAnswers, totalAttempts, stackData.questions.length]);
 
   // Photo-first system handlers
   const handlePhotoIdentification = useCallback((result) => {
