@@ -11,6 +11,7 @@ import OnboardingFlow from './components/OnboardingFlow'
 import PostGameFlow from './components/PostGameFlow'
 import ProgressResume from './components/ProgressResume'
 import { AchievementUnlock } from './components/AchievementDisplay'
+import { persistUserAchievements } from './services/userService'
 import AchievementSystem from './components/AchievementSystem'
 import SmartRecommendations from './components/SmartRecommendations'
 import ProgressStorage from './utils/progressStorage'
@@ -463,6 +464,22 @@ function AuthenticatedGameApp() {
     if (newAchievements.length > 0) {
       // Show first achievement, queue others
       setAchievementToShow(newAchievements[0]);
+      // Persist to backend for authenticated users
+      try {
+        const payload = {}
+        newAchievements.forEach(a => {
+          payload[a.id] = {
+            title: a.title,
+            description: a.description,
+            icon: a.icon,
+            unlockedAt: Date.now()
+          }
+        })
+        persistUserAchievements(payload).catch(() => {})
+      } catch (e) {
+        // Non-blocking
+        console.error('Failed to persist achievements', e)
+      }
     }
     
     // Store game result for post-game screen

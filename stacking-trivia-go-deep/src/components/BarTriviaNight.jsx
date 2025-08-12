@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import GameStack from './GameStack'
 import QuickHostControls from './QuickHostControls'
 import TransitionCountdown from './TransitionCountdown'
+import { useAuth } from '../contexts/AuthContext'
+import { createGameSession, recordStackServed } from '../services/gameSessionClient'
 
 const BarTriviaNight = ({ 
   gameStacks, 
@@ -19,6 +21,10 @@ const BarTriviaNight = ({
   const [roundScores, setRoundScores] = useState({})
   const [crowdEnergy, setCrowdEnergy] = useState(3)
   const [autoProgressTimer, setAutoProgressTimer] = useState(null)
+  const [servedStackSlugs, setServedStackSlugs] = useState(new Set())
+  const [sessionId, setSessionId] = useState(null)
+
+  const { isAuthenticated, user } = useAuth()
 
   // Phase 8: Bar-friendly team management
   const addQuickTeam = (teamName = '') => {
@@ -146,13 +152,24 @@ const BarTriviaNight = ({
   // Phase 8: Get random stack for variety
   const getRandomStack = () => {
     const allStackKeys = Object.keys(gameStacks)
-    const randomKey = allStackKeys[Math.floor(Math.random() * allStackKeys.length)]
+    const unserved = allStackKeys.filter(k => !servedStackSlugs.has(k))
+    const pool = unserved.length > 0 ? unserved : allStackKeys
+    const randomKey = pool[Math.floor(Math.random() * pool.length)]
     return { key: randomKey, data: gameStacks[randomKey] }
   }
 
   // Start playing with random stack
-  const startGame = () => {
+  const startGame = async () => {
     if (teams.length >= 2) {
+      // Ensure a host session exists for served tracking
+      if (isAuthenticated && !sessionId) {
+        try {
+          const sid = await createGameSession(user?.id, 'host')
+          setSessionId(sid)
+        } catch (e) {
+          console.error('Failed to create host session', e)
+        }
+      }
       const stack = getRandomStack()
       setCurrentStack(stack)
       setGamePhase('playing')
@@ -335,7 +352,7 @@ const BarTriviaNight = ({
               <div className="text-xl text-amber-700">
                 Current Team: <span className="font-bold text-amber-900">{getCurrentTeamName()}</span>
               </div>
-              <div className="text-sm text-amber-600 mt-2">
+            <div className="text-sm text-amber-600 mt-2">
                 Team {currentTeam + 1} of {teams.length} • Stack: {currentStack.data.title}
               </div>
             </div>
@@ -361,7 +378,19 @@ const BarTriviaNight = ({
             {/* GameStack with enhanced features */}
             <GameStack
               stackData={currentStack.data}
-              onComplete={(score) => nextTeam(score)}
+              onComplete={async (score) => {
+                // Record served stack for freshness if authenticated
+                try {
+                  const slug = currentStack.key
+                  setServedStackSlugs(prev => new Set(prev).add(slug))
+                  if (isAuthenticated && sessionId) {
+                    await recordStackServed(sessionId, slug)
+                  }
+                } catch (e) {
+                  console.error('Failed to record served stack', e)
+                }
+                nextTeam(score)
+              }}
               isHostMode={true}
               showHostControls={false} // Using floating controls instead
               teamName={getCurrentTeamName()}

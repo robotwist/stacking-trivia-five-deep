@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './ContentCreator.css'
+import { contentManager } from '../services/contentManager'
 
 const QUESTION_TYPES = {
   text: 'Text Answer',
@@ -470,6 +471,24 @@ function ContentCreator({ onClose, userRole }) {
     </div>
   )
 
+  const handleTrash = async () => {
+    try {
+      // Slug mirrors backend creation: kebab-case title
+      const slug = (stackData?.title || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+      if (!slug) {
+        setErrors({ save: 'Cannot trash: missing stack title' })
+        return
+      }
+      await contentManager.trashStack(slug)
+      onClose && onClose({ trashed: true, slug })
+    } catch (e) {
+      setErrors({ save: e?.message || 'Failed to trash stack' })
+    }
+  }
+
   const renderReview = () => (
     <div className="stack-review">
       <h2>Review Your Stack</h2>
@@ -519,6 +538,15 @@ function ContentCreator({ onClose, userRole }) {
           className="publish"
         >
           {saving ? 'Publishing...' : 'Publish Stack'}
+        </button>
+        <button
+          type="button"
+          onClick={handleTrash}
+          className="danger"
+          aria-label="Trash this stack"
+          title="Move this stack to trash (soft delete)"
+        >
+          🗑️ Trash Stack
         </button>
       </div>
     </div>

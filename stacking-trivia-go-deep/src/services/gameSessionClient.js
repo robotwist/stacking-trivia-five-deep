@@ -121,6 +121,22 @@ export const recordStackResult = async (sessionId, stackName, questionsAnswered,
   }
 }
 
+// Record that a specific stack (by slug) was served in a host session
+export const recordStackServed = async (sessionId, stackSlug) => {
+  try {
+    if (sessionId && !sessionId.startsWith('local_')) {
+      await makeAuthenticatedRequest(`${API_BASE}/session/${sessionId}/served`, {
+        method: 'POST',
+        body: JSON.stringify({ stackSlug })
+      })
+    }
+    return { success: true }
+  } catch (error) {
+    console.error('gameSessionClient.recordStackServed error', error)
+    return { success: false }
+  }
+}
+
 export const getUserGameHistory = async (limit = 10) => {
   try {
     const result = await makeAuthenticatedRequest(`${API_BASE}/history?limit=${limit}`)

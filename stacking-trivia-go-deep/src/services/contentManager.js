@@ -145,6 +145,36 @@ class ContentManager {
   }
 
   /**
+   * Soft-delete (trash) a stack by slug
+   */
+  async trashStack(slug) {
+    try {
+      const token = localStorage.getItem('trivia_token') || localStorage.getItem('authToken')
+      const response = await fetch(`/api/stacks/${encodeURIComponent(slug)}/trash`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token ? { Authorization: `Bearer ${token}` } : {})
+        }
+      })
+
+      if (!response.ok) {
+        const text = await response.text()
+        throw new Error(text || 'Failed to trash stack')
+      }
+
+      const result = await response.json()
+      // Remove from in-memory caches if present
+      if (this.dbStacks.has(slug)) this.dbStacks.delete(slug)
+      if (this.localStacks.has(slug)) this.localStacks.delete(slug)
+      return result
+    } catch (error) {
+      console.error('Failed to trash stack:', error)
+      throw error
+    }
+  }
+
+  /**
    * Extract stack key from file path
    */
   extractStackKey(path) {
