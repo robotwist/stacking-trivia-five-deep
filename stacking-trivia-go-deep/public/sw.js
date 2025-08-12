@@ -1,14 +1,13 @@
 const CACHE_NAME = 'deeply-trivial-v1.0.0'
-const STATIC_CACHE = 'static-resources-v1'
-const DYNAMIC_CACHE = 'dynamic-content-v1'
+// Bump these to force-cache refresh on deploys
+const STATIC_CACHE = 'static-resources-v2'
+const DYNAMIC_CACHE = 'dynamic-content-v2'
 
 // Assets to cache immediately
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
+  // Intentionally avoid precaching '/' and '/index.html' to reduce stale app-shell issues
   '/manifest.json',
-  '/vite.svg',
-  // Add built assets - these will be updated during build
+  '/vite.svg'
 ]
 
 // Trivia data to cache for offline play

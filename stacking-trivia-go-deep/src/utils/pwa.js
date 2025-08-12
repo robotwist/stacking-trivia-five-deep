@@ -10,6 +10,14 @@ export const registerServiceWorker = () => {
         
         console.log('[PWA] Service Worker registered successfully:', registration.scope)
         
+        // Auto-reload when a new service worker takes control
+        let refreshing = false
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (refreshing) return
+          refreshing = true
+          window.location.reload()
+        })
+
         // Handle updates
         registration.addEventListener('updatefound', () => {
           const newWorker = registration.installing
@@ -17,8 +25,8 @@ export const registerServiceWorker = () => {
           if (newWorker) {
             newWorker.addEventListener('statechange', () => {
               if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                // New content is available
-                showUpdateNotification()
+                // New content is available; prefer auto-reload via controllerchange
+                // showUpdateNotification()
               }
             })
           }
