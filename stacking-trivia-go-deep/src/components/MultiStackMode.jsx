@@ -92,11 +92,10 @@ const MultiStackMode = ({
     
     // Check if more stacks available
     if (currentStackIndex + 1 < selectedStacks.length) {
-      setCurrentStackIndex(prev => prev + 1)
-      // Continue to next stack after a brief pause
+      // Small delay for UX, then advance
       setTimeout(() => {
-        // Game continues automatically
-      }, 1000)
+        setCurrentStackIndex(prev => prev + 1)
+      }, 300)
     } else {
       // All stacks complete
       if (isAuthenticated && gameSession) {
@@ -352,6 +351,7 @@ const MultiStackMode = ({
           </div>
 
           <GameStack 
+            key={currentStack.key}
             stackData={currentStack.data} 
             onComplete={handleStackComplete}
           />
