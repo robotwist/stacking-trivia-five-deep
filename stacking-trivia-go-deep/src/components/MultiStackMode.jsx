@@ -18,6 +18,9 @@ const MultiStackMode = ({
   const [selectedStacks, setSelectedStacks] = useState([])
   const [gameSession, setGameSession] = useState(null)
   const [gameStartTime, setGameStartTime] = useState(null)
+  // Moved out of conditional render to comply with React hooks rules
+  const [selectedStackKeys, setSelectedStackKeys] = useState(new Set())
+  const [numberOfStacks, setNumberOfStacks] = useState(5)
 
   const { isAuthenticated, user } = useAuth()
 
@@ -129,8 +132,6 @@ const MultiStackMode = ({
 
   // Stack selection screen
   if (gamePhase === 'stack-select') {
-    const [selectedStackKeys, setSelectedStackKeys] = useState(new Set())
-    const [numberOfStacks, setNumberOfStacks] = useState(5)
 
     const toggleStackSelection = (stackKey) => {
       const newSelection = new Set(selectedStackKeys)
