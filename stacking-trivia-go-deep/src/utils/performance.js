@@ -205,7 +205,7 @@ class PerformanceMonitor {
         })
       }
 
-      // Send to your own analytics endpoint
+      // Send to your own analytics endpoint (best effort, ignore 404)
       fetch('/api/analytics/performance', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -215,9 +215,11 @@ class PerformanceMonitor {
           url: window.location.href,
           session: this.getSessionId()
         })
-      }).catch(error => {
-        console.warn('[Performance] Failed to send metric:', error)
-      })
+      }).then(res => {
+        if (!res.ok && res.status !== 404) {
+          console.warn('[Performance] Analytics endpoint error:', res.status)
+        }
+      }).catch(() => {/* no-op */})
     } catch (error) {
       console.warn('[Performance] Error sending metric:', error)
     }

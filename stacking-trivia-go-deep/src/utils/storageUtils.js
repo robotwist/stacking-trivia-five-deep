@@ -27,9 +27,18 @@ export const setStorageItem = (key, value) => {
 export const getStorageItem = (key, defaultValue = null) => {
   try {
     const item = localStorage.getItem(key)
-    return item ? JSON.parse(item) : defaultValue
+    // Gracefully handle invalid stored primitives like 'undefined' or 'null'
+    if (item === null || item === '' || item === 'undefined' || item === 'null') {
+      if (item === 'undefined' || item === 'null') {
+        // Clean up bad values written by older code paths
+        try { localStorage.removeItem(key) } catch {}
+      }
+      return defaultValue
+    }
+    return JSON.parse(item)
   } catch (error) {
-    console.warn(`Failed to get localStorage item ${key}:`, error)
+    // Fallback silently to reduce console noise for benign corruptions
+    // console.warn(`Failed to get localStorage item ${key}:`, error)
     return defaultValue
   }
 }
