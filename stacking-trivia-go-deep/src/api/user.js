@@ -21,6 +21,7 @@ router.get('/profile', authenticateToken, async (req, res) => {
         games_played: user.games_played,
         best_single_stack: user.best_single_stack,
         completed_stacks: user.completed_stacks,
+        achievements: user.achievements,
         created_at: user.created_at
       }
     });
@@ -140,3 +141,19 @@ router.get('/available-stacks', authenticateToken, async (req, res) => {
 });
 
 export default router;
+
+// Achievements persistence (create/update)
+router.post('/achievements', authenticateToken, async (req, res) => {
+  try {
+    const { achievements } = req.body
+    if (!Array.isArray(achievements)) return res.status(400).json({ error: 'Achievements must be an array' })
+    const { pool } = await import('../database/postgres.js')
+    const result = await pool.query(
+      'UPDATE users SET achievements = $1 WHERE id = $2 RETURNING id, achievements',
+      [JSON.stringify(achievements), req.user.userId]
+    )
+    res.json({ user: result.rows[0] })
+  } catch (e) {
+    res.status(500).json({ error: 'Failed to save achievements' })
+  }
+})

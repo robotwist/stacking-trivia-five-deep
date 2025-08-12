@@ -498,8 +498,24 @@ const GameStack = memo(function GameStack({
         )}
       </div>
 
-      {/* Input */}
+      {/* Input / Multiple Choice */}
       <div className="text-center mb-8">
+        {Array.isArray(current.multiple_choice_options) && current.multiple_choice_options.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto mb-6">
+            {current.multiple_choice_options.map((opt, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setInput(String(opt))
+                  checkAnswer()
+                }}
+                className="px-4 py-3 rounded-sm border-2 bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-800/60 transition-colors"
+              >
+                {opt}
+              </button>
+            ))}
+          </div>
+        ) : null}
         <label htmlFor="trivia-answer-input" className="sr-only">
           Your answer to the trivia question
         </label>

@@ -56,7 +56,7 @@ router.get('/', async (req, res) => {
       LEFT JOIN stack_categories sc ON s.category = sc.name
       LEFT JOIN questions q ON s.id = q.stack_id
       LEFT JOIN users u ON s.created_by = u.id
-      WHERE s.is_published = true
+      WHERE s.is_published = true AND s.is_trashed = false
     `
     
     const params = []
@@ -129,7 +129,7 @@ router.get('/:slug', async (req, res) => {
       FROM stacks s
       LEFT JOIN stack_categories sc ON s.category = sc.name
       LEFT JOIN users u ON s.created_by = u.id
-      WHERE s.slug = $1 AND s.is_published = true
+      WHERE s.slug = $1 AND s.is_published = true AND s.is_trashed = false
     `, [slug])
     
     if (stackResult.rows.length === 0) {
@@ -372,3 +372,15 @@ router.post('/bulk-import', authenticateToken, requireCreatorRole, async (req, r
 })
 
 export default router
+
+// Admin/creator soft-delete (trash) endpoint
+router.post('/:slug/trash', authenticateToken, requireCreatorRole, async (req, res) => {
+  try {
+    const { slug } = req.params
+    const result = await pool.query('UPDATE stacks SET is_trashed = true, is_published = false WHERE slug = $1 RETURNING id, slug, title', [slug])
+    if (result.rowCount === 0) return res.status(404).json({ error: 'Stack not found' })
+    res.json({ message: 'Stack trashed', stack: result.rows[0] })
+  } catch (e) {
+    res.status(500).json({ error: 'Failed to trash stack' })
+  }
+})

@@ -8,6 +8,7 @@ import {
   updateLeaderboard, 
   getLeaderboard 
 } from '../services/gameSessionService.js'
+import { pool } from '../database/postgres.js'
 
 const router = express.Router()
 
@@ -35,6 +36,8 @@ router.post('/session', authenticateToken, async (req, res) => {
   try {
     const { sessionType = 'single-player' } = req.body
     const sessionId = await createGameSession(req.user.userId, sessionType)
+    // initialize served history for host
+    await pool.query('INSERT INTO game_sessions_served (session_id, served) VALUES ($1, $2) ON CONFLICT DO NOTHING', [sessionId, JSON.stringify([])])
     res.json({ sessionId })
   } catch {
     res.status(500).json({ error: 'Failed to create game session' })
@@ -128,6 +131,22 @@ router.get('/stats', authenticateToken, async (req, res) => {
     res.json({ stats })
   } catch {
     res.status(500).json({ error: 'Failed to get user stats' })
+  }
+})
+
+// Record served stack for a session (host freshness)
+router.post('/session/:sessionId/served', authenticateToken, async (req, res) => {
+  try {
+    const { sessionId } = req.params
+    const { stackSlug } = req.body
+    if (!stackSlug) return res.status(400).json({ error: 'stackSlug required' })
+    const existing = await pool.query('SELECT served FROM game_sessions_served WHERE session_id = $1', [sessionId])
+    const served = existing.rows[0]?.served || []
+    if (!served.includes(stackSlug)) served.push(stackSlug)
+    await pool.query('INSERT INTO game_sessions_served (session_id, served) VALUES ($1, $2) ON CONFLICT (session_id) DO UPDATE SET served = $2', [sessionId, JSON.stringify(served)])
+    res.json({ served })
+  } catch {
+    res.status(500).json({ error: 'Failed to record served stack' })
   }
 })
 

@@ -104,6 +104,9 @@ export const initDatabase = async () => {
       );
     `)
 
+    // Add soft-delete flag if missing
+    await pool.query(`ALTER TABLE stacks ADD COLUMN IF NOT EXISTS is_trashed BOOLEAN DEFAULT false`)
+
     await pool.query(`
       CREATE TABLE IF NOT EXISTS questions (
         id SERIAL PRIMARY KEY,
@@ -181,6 +184,7 @@ export const initDatabase = async () => {
     // Create indexes
     await pool.query(`CREATE INDEX IF NOT EXISTS idx_stacks_category ON stacks(category)`)
     await pool.query(`CREATE INDEX IF NOT EXISTS idx_stacks_published ON stacks(is_published)`)
+    await pool.query(`CREATE INDEX IF NOT EXISTS idx_stacks_trashed ON stacks(is_trashed)`)
     await pool.query(`CREATE INDEX IF NOT EXISTS idx_questions_stack_level ON questions(stack_id, level)`)
 
     console.log('Database tables initialized successfully')
@@ -215,7 +219,7 @@ export const getUserByUsername = async (username) => {
 }
 
 export const getUserById = async (id) => {
-  const result = await pool.query('SELECT id, username, email, total_score, games_played, best_single_stack, completed_stacks, created_at FROM users WHERE id = $1', [id])
+  const result = await pool.query('SELECT id, username, email, total_score, games_played, best_single_stack, completed_stacks, achievements, created_at FROM users WHERE id = $1', [id])
   return result.rows[0]
 }
 

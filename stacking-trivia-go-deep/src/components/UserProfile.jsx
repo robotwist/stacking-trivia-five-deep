@@ -129,6 +129,21 @@ const UserProfile = () => {
               </div>
             </div>
 
+            {/* Owned Stacks */}
+            <div className="p-4 bg-gray-800 border-b border-gray-700">
+              <h4 className="text-white font-bold mb-3">Owned Stacks</h4>
+              <div className="grid grid-cols-2 gap-2 max-h-40 overflow-auto pr-1">
+                {(user.completed_stacks || []).slice(-8).reverse().map((stackKey) => (
+                  <div key={stackKey} className="px-2 py-1 text-xs bg-gray-700/60 border border-gray-600 rounded text-gray-200 truncate" title={stackKey}>
+                    {(stackKey || '').replace(/-/g,' ').replace(/_/g,' ')}
+                  </div>
+                ))}
+                {(!user.completed_stacks || user.completed_stacks.length === 0) && (
+                  <div className="text-xs text-gray-400">No stacks owned yet</div>
+                )}
+              </div>
+            </div>
+
             {/* Mini Leaderboard */}
             <div className="p-4 bg-gray-800 border-b border-gray-700">
               <h4 className="text-white font-bold mb-3">Top Players</h4>
@@ -147,6 +162,22 @@ const UserProfile = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Achievements */}
+            <div className="p-4 bg-gray-800 border-b border-gray-700">
+              <h4 className="text-white font-bold mb-3">Achievements</h4>
+              <div className="flex flex-wrap gap-2">
+                {Array.isArray(user.achievements) && user.achievements.length > 0 ? (
+                  user.achievements.slice(-8).map((ach, idx) => (
+                    <span key={idx} className="px-2 py-1 text-xs bg-yellow-500/20 border border-yellow-500/40 text-yellow-200 rounded">
+                      {ach.title || ach}
+                    </span>
+                  ))
+                ) : (
+                  <span className="text-xs text-gray-400">No achievements yet</span>
+                )}
               </div>
             </div>
 
