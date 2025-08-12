@@ -39,6 +39,18 @@ const GameStack = memo(function GameStack({
   const [crowdEnergy, setCrowdEnergy] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
   const [scoreAnimation, setScoreAnimation] = useState(false);
+  const [questionLocked, setQuestionLocked] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
+  const questionLockedRef = useRef(false);
+  const completedRef = useRef(false);
+  const setLocked = (locked) => {
+    questionLockedRef.current = locked;
+    setQuestionLocked(locked);
+  };
+  const setCompleted = (completed) => {
+    completedRef.current = completed;
+    setIsCompleted(completed);
+  };
   
   // Photo-first system state
   const [photoPhase, setPhotoPhase] = useState('pending'); // 'pending', 'completed', 'skipped'
@@ -98,9 +110,10 @@ const GameStack = memo(function GameStack({
   }, [isDeepMode, stackData, deepModeDepth, depth]);
 
   // Calculate maximum possible score
-  const maxPossibleScore = useMemo(() => {
-    return calculateMaxScore(stackData.questions?.length || 5, !!stackData.deeperMode);
-  }, [stackData.questions?.length, stackData.deeperMode]);
+  // Base max score for standard mode; actual run max will be computed at completion time
+  const baseMaxPossibleScore = useMemo(() => {
+    return calculateMaxScore(stackData.questions?.length || 5, false);
+  }, [stackData.questions?.length]);
 
   // Memoized score animation trigger
   const animateScore = useCallback(() => {
@@ -148,6 +161,8 @@ const GameStack = memo(function GameStack({
     deepModeDepth,
     showDeeperModeOffer,
     isPaused,
+    questionLocked: questionLockedRef.current,
+    isCompleted: completedRef.current,
     current,
     stackData,
     showHostControls,
@@ -158,7 +173,9 @@ const GameStack = memo(function GameStack({
 
   const checkAnswer = useCallback(() => {
     const state = stateRef.current;
-    if (!state.current || state.isPaused) return;
+    if (!state.current || state.isPaused || state.questionLocked || state.isCompleted) return;
+    // Lock immediately to prevent double submissions
+    setLocked(true);
     
     const userAnswer = state.input.trim();
     const isCorrect = checkAnswerMatch(userAnswer, state.current.acceptedAnswers || state.current.a || [state.current.answer]);
@@ -204,6 +221,7 @@ const GameStack = memo(function GameStack({
             const questionsAnswered = state.deepModeDepth + 1;
             const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
             console.log('Deep mode complete, final score:', finalScore);
+            setCompleted(true);
             
             // Mark stack as completed for authenticated users
             if (isAuthenticated) {
@@ -212,8 +230,9 @@ const GameStack = memo(function GameStack({
             
             if (state.onComplete) {
               const call = state.onComplete;
-              if (call.length <= 2) call(finalScore, maxPossibleScore);
-              else call(finalScore, maxPossibleScore, questionsAnswered, accuracy);
+              const runMax = calculateMaxScore(state.stackData.questions.length, !!state.stackData.deeperMode);
+              if (call.length <= 2) call(finalScore, runMax);
+              else call(finalScore, runMax, questionsAnswered, accuracy);
             }
           }, ANSWER_DELAY_MS);
         } else {
@@ -222,6 +241,7 @@ const GameStack = memo(function GameStack({
             setInput('');
             setFeedback('');
             setShowHint(false);
+            setLocked(false);
           }, ANSWER_DELAY_MS);
         }
       } else {
@@ -231,6 +251,7 @@ const GameStack = memo(function GameStack({
             setTimeout(() => {
               setShowDeeperModeOffer(true);
               setFeedback('');
+              setLocked(false);
             }, ANSWER_DELAY_MS);
           } else {
             setTimeout(() => {
@@ -238,6 +259,7 @@ const GameStack = memo(function GameStack({
               const questionsAnswered = state.depth + 1;
               const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
               console.log('Stack complete, final score:', finalScore);
+              setCompleted(true);
               
               // Mark stack as completed for authenticated users
               if (isAuthenticated) {
@@ -246,8 +268,9 @@ const GameStack = memo(function GameStack({
               
               if (state.onComplete) {
                 const call = state.onComplete;
-                if (call.length <= 2) call(finalScore, maxPossibleScore);
-                else call(finalScore, maxPossibleScore, questionsAnswered, accuracy);
+                const runMax = calculateMaxScore(state.stackData.questions.length, false);
+                if (call.length <= 2) call(finalScore, runMax);
+                else call(finalScore, runMax, questionsAnswered, accuracy);
               }
             }, ANSWER_DELAY_MS);
           }
@@ -278,6 +301,7 @@ const GameStack = memo(function GameStack({
               maxPossibleScore,
               nextAnswers
             );
+            setLocked(false);
           }, ANSWER_DELAY_MS);
         }
       }
@@ -311,11 +335,13 @@ const GameStack = memo(function GameStack({
       setTimeout(() => {
         const questionsAnswered = state.depth + 1;
         const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
-        console.log('Wrong answer, final score:', state.score);
+         console.log('Wrong answer, final score:', state.score);
+        setCompleted(true);
         if (state.onComplete) {
           const call = state.onComplete;
-          if (call.length <= 2) call(state.score, maxPossibleScore);
-          else call(state.score, maxPossibleScore, questionsAnswered, accuracy);
+           const runMax = calculateMaxScore(state.stackData.questions.length, false);
+           if (call.length <= 2) call(state.score, runMax);
+           else call(state.score, runMax, questionsAnswered, accuracy);
         }
       }, FAIL_DELAY_MS);
     }
@@ -346,7 +372,11 @@ const GameStack = memo(function GameStack({
     const questionsAnswered = depth + 1;
     const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
     setShowDeeperModeOffer(false);
-    if (onComplete) onComplete(score, maxPossibleScore, questionsAnswered, accuracy);
+    setCompleted(true);
+    if (onComplete) {
+      const runMax = calculateMaxScore(stackData.questions.length, false);
+      onComplete(score, runMax, questionsAnswered, accuracy);
+    }
   }, [onComplete, score, maxPossibleScore, depth, correctAnswers, totalAttempts]);
 
   // Photo-first system handlers
@@ -506,9 +536,12 @@ const GameStack = memo(function GameStack({
               <button
                 key={idx}
                 onClick={() => {
-                  setInput(String(opt))
-                  checkAnswer()
+                  if (!isPaused && !questionLocked && !isCompleted) {
+                    setInput(String(opt))
+                    checkAnswer()
+                  }
                 }}
+                disabled={isPaused || questionLocked || isCompleted}
                 className="px-4 py-3 rounded-sm border-2 bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-800/60 transition-colors"
               >
                 {opt}
@@ -525,7 +558,7 @@ const GameStack = memo(function GameStack({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          disabled={isPaused || feedback.includes('The answer was:')}
+          disabled={isPaused || feedback.includes('The answer was:') || questionLocked || isCompleted}
           placeholder="Your answer..."
           aria-describedby="answer-instructions"
           className={`w-full max-w-md px-4 py-3 text-lg rounded-sm border-2 text-center transition-all duration-200 ${
@@ -542,7 +575,7 @@ const GameStack = memo(function GameStack({
           <button
             aria-label="Submit answer"
             onClick={checkAnswer}
-            disabled={isPaused || feedback.includes('The answer was:') || !input.trim()}
+            disabled={isPaused || feedback.includes('The answer was:') || !input.trim() || questionLocked || isCompleted}
             className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 disabled:from-amber-400 disabled:to-amber-500 text-white px-8 py-3 rounded-sm text-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:scale-100 sepia hover:sepia-0 disabled:cursor-not-allowed"
           >
             Submit Answer
