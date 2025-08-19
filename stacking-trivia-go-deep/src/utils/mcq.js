@@ -130,6 +130,55 @@ const similarityScore = (correct, candidate) => {
   return score
 }
 
+const filterPlausible = (correct, candidates, required = 3) => {
+  const c = normalize(correct)
+  const cLen = c.length
+  const cWords = wordCount(c)
+  const cProper = isProperNounish(c)
+
+  // Stage 1: strict constraints
+  let filtered = candidates.filter(d => {
+    const dNorm = normalize(d)
+    if (!dNorm) return false
+    if (dNorm.toLowerCase() === c.toLowerCase()) return false
+    const dLen = dNorm.length
+    const dWords = wordCount(dNorm)
+    const dProper = isProperNounish(dNorm)
+    // same word count, similar length (+/- 2 if short, +/- 4 if longer)
+    const lenTol = cLen <= 10 ? 2 : 4
+    const lengthClose = Math.abs(cLen - dLen) <= lenTol
+    const wordsClose = dWords === cWords
+    const properMatch = cWords > 1 ? (cProper === dProper) : true
+    return wordsClose && lengthClose && properMatch
+  })
+
+  if (filtered.length >= required) return filtered
+
+  // Stage 2: relax length; keep word count and capitalization
+  filtered = candidates.filter(d => {
+    const dNorm = normalize(d)
+    if (!dNorm) return false
+    if (dNorm.toLowerCase() === c.toLowerCase()) return false
+    const dWords = wordCount(dNorm)
+    const dProper = isProperNounish(dNorm)
+    const wordsClose = dWords === cWords
+    const properMatch = cWords > 1 ? (cProper === dProper) : true
+    return wordsClose && properMatch
+  })
+  if (filtered.length >= required) return filtered
+
+  // Stage 3: keep similar length only
+  filtered = candidates.filter(d => {
+    const dNorm = normalize(d)
+    if (!dNorm) return false
+    if (dNorm.toLowerCase() === c.toLowerCase()) return false
+    const dLen = dNorm.length
+    const lenTol = cLen <= 10 ? 2 : Math.ceil(cLen * 0.25)
+    return Math.abs(cLen - dLen) <= lenTol
+  })
+  return filtered
+}
+
 export const generateMultipleChoiceOptions = (stackData, questionIndex, numOptions = 4) => {
   const question = stackData.questions?.[questionIndex]
   if (!question) return []
@@ -163,10 +212,13 @@ export const generateMultipleChoiceOptions = (stackData, questionIndex, numOptio
 
   // Rank pool by similarity to correct to get plausible distractors
   uniquePool = uniqueCaseInsensitive([...numericCandidates, ...uniquePool])
-  const ranked = uniquePool
+  let ranked = uniquePool
     .map(v => ({ v, s: similarityScore(correct, v) }))
     .sort((a, b) => b.s - a.s)
     .map(x => x.v)
+
+  // Apply plausibility filtering in stages
+  ranked = filterPlausible(correct, ranked, numOptions - 1)
 
   const distractors = []
   for (const v of ranked) {
