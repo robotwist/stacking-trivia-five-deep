@@ -3,6 +3,7 @@ import QuickHostControls from './QuickHostControls';
 import PhotoIdentification from './PhotoIdentification';
 import { checkAnswerMatch } from '../utils/textUtils';
 import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore } from '../utils/scoreUtils';
+import { generateMultipleChoiceOptions } from '../utils/mcq';
 import { useAuth } from '../contexts/AuthContext';
 import ProgressStorage from '../utils/progressStorage';
 
@@ -108,6 +109,13 @@ const GameStack = memo(function GameStack({
     }
     return stackData.questions[depth];
   }, [isDeepMode, stackData, deepModeDepth, depth]);
+
+  // Generate multiple choice options by default (without showing them if text-only mode desired)
+  const mcqOptions = useMemo(() => {
+    if (!stackData?.questions?.length || !current) return []
+    const index = isDeepMode ? deepModeDepth : depth
+    return generateMultipleChoiceOptions(stackData, index, 4)
+  }, [stackData, current, isDeepMode, deepModeDepth, depth])
 
   // Calculate maximum possible score
   // Base max score for standard mode; actual run max will be computed at completion time
@@ -533,9 +541,9 @@ const GameStack = memo(function GameStack({
 
       {/* Input / Multiple Choice */}
       <div className="text-center mb-8">
-        {Array.isArray(current.multiple_choice_options) && current.multiple_choice_options.length > 0 ? (
+        {mcqOptions && mcqOptions.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto mb-6">
-            {current.multiple_choice_options.map((opt, idx) => (
+            {mcqOptions.map((opt, idx) => (
               <button
                 key={idx}
                 onClick={() => {
