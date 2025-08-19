@@ -42,6 +42,7 @@ const GameStack = memo(function GameStack({
   const [scoreAnimation, setScoreAnimation] = useState(false);
   const [questionLocked, setQuestionLocked] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
   const questionLockedRef = useRef(false);
   const completedRef = useRef(false);
   const setLocked = (locked) => {
@@ -168,6 +169,7 @@ const GameStack = memo(function GameStack({
     depth,
     score, 
     input,
+    selectedOption,
     isDeepMode,
     deepModeDepth,
     showDeeperModeOffer,
@@ -188,7 +190,7 @@ const GameStack = memo(function GameStack({
     // Lock immediately to prevent double submissions
     setLocked(true);
     
-    const userAnswer = state.input.trim();
+    const userAnswer = (state.selectedOption && String(state.selectedOption)) || state.input.trim();
     const isCorrect = checkAnswerMatch(userAnswer, state.current.acceptedAnswers || state.current.a || [state.current.answer]);
     
     // Track attempts and correct answers for statistics
@@ -250,6 +252,7 @@ const GameStack = memo(function GameStack({
           setTimeout(() => {
             setDeepModeDepth(state.deepModeDepth + 1);
             setInput('');
+            setSelectedOption(null);
             setFeedback('');
             setShowHint(false);
             setLocked(false);
@@ -290,6 +293,7 @@ const GameStack = memo(function GameStack({
             const newDepth = state.depth + 1;
             setDepth(newDepth);
             setInput('');
+            setSelectedOption(null);
             setFeedback('');
             setShowHint(false);
             
@@ -360,11 +364,11 @@ const GameStack = memo(function GameStack({
 
   // Use onKeyDown instead of onKeyPress (onKeyPress is deprecated)
   const handleKeyDown = useCallback((e) => {
-    if (e.key === 'Enter' && !feedback.includes('The answer was:') && !isPaused && input.trim()) {
+    if (e.key === 'Enter' && !feedback.includes('The answer was:') && !isPaused && (input.trim() || selectedOption)) {
       e.preventDefault();
       checkAnswer();
     }
-  }, [feedback, isPaused, input, checkAnswer]);
+  }, [feedback, isPaused, input, selectedOption, checkAnswer]);
 
   const toggleHint = useCallback(() => {
     setShowHint(!showHint);
@@ -548,12 +552,17 @@ const GameStack = memo(function GameStack({
                 key={idx}
                 onClick={() => {
                   if (!isPaused && !questionLocked && !isCompleted) {
-                    setInput(String(opt))
-                    checkAnswer()
+                    setSelectedOption(String(opt))
+                    setInput('')
                   }
                 }}
                 disabled={isPaused || questionLocked || isCompleted}
-                className="px-4 py-3 rounded-sm border-2 bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-800/60 transition-colors"
+                aria-pressed={selectedOption === String(opt)}
+                className={`px-4 py-3 rounded-sm border-2 transition-colors ${
+                  selectedOption === String(opt)
+                    ? 'bg-amber-300 dark:bg-amber-700 border-amber-500 dark:border-amber-500 text-amber-900 dark:text-amber-50'
+                    : 'bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-800/60'
+                }`}
               >
                 {opt}
               </button>
@@ -586,7 +595,7 @@ const GameStack = memo(function GameStack({
           <button
             aria-label="Submit answer"
             onClick={checkAnswer}
-            disabled={isPaused || feedback.includes('The answer was:') || !input.trim() || questionLocked || isCompleted}
+            disabled={isPaused || feedback.includes('The answer was:') || !(input.trim() || selectedOption) || questionLocked || isCompleted}
             className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 disabled:from-amber-400 disabled:to-amber-500 text-white px-8 py-3 rounded-sm text-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:scale-100 sepia hover:sepia-0 disabled:cursor-not-allowed"
           >
             Submit Answer
