@@ -8,6 +8,8 @@ import FeedbackModal from './components/FeedbackModal'
 import PhotoFirstTest from './components/PhotoFirstTest'
 import MoreModesDrawer from './components/MoreModesDrawer'
 import OnboardingFlow from './components/OnboardingFlow'
+import UniversalOnboarding from './components/UniversalOnboarding'
+import RecommendationDisplay from './components/RecommendationDisplay'
 import PostGameFlow from './components/PostGameFlow'
 import ProgressResume from './components/ProgressResume'
 import { AchievementUnlock } from './components/AchievementDisplay'
@@ -224,6 +226,8 @@ function AuthenticatedGameApp() {
   
   // New onboarding and post-game states
   const [showOnboarding, setShowOnboarding] = useState(false)
+  const [showRecommendation, setShowRecommendation] = useState(false)
+  const [onboardingResult, setOnboardingResult] = useState(null)
   const [showPostGame, setShowPostGame] = useState(false)
   const [lastGameResult, setLastGameResult] = useState(null)
 
@@ -231,14 +235,16 @@ function AuthenticatedGameApp() {
   const [achievementToShow, setAchievementToShow] = useState(null)
   const [resumeData, setResumeData] = useState(null)
 
-  // Check if user needs onboarding (first time user)
+  // Check if user needs onboarding (first time user or wants to try new onboarding)
   useEffect(() => {
     console.log('🎯 AuthenticatedGameApp: Onboarding effect triggered:', { 
       user: !!user, 
       gamesPlayed: user?.games_played 
     });
     
-    if (user && (!user.games_played || user.games_played === 0)) {
+    // Show onboarding for new users or if user wants to try the new onboarding
+    const hasCompletedOnboarding = localStorage.getItem('deepstack_onboarding_completed');
+    if (!hasCompletedOnboarding) {
       console.log('👋 AuthenticatedGameApp: Showing onboarding for new user');
       setShowOnboarding(true);
     }
@@ -425,8 +431,19 @@ function AuthenticatedGameApp() {
   }
 
   // Onboarding handlers
-  const handleOnboardingComplete = () => {
+  const handleOnboardingComplete = (result) => {
+    setOnboardingResult(result);
     setShowOnboarding(false);
+    setShowRecommendation(true);
+    // Mark onboarding as completed
+    localStorage.setItem('deepstack_onboarding_completed', 'true');
+  }
+
+  const handleResetOnboarding = () => {
+    localStorage.removeItem('deepstack_onboarding_completed');
+    setShowOnboarding(true);
+    setShowRecommendation(false);
+    setOnboardingResult(null);
   }
 
   const handleOnboardingStackSelect = (stackKey) => {
@@ -598,9 +615,38 @@ function AuthenticatedGameApp() {
   // Show onboarding for new users
   if (showOnboarding) {
     return (
-      <OnboardingFlow 
+      <UniversalOnboarding 
         onComplete={handleOnboardingComplete}
-        onSelectStack={handleOnboardingStackSelect}
+        onSkip={() => setShowOnboarding(false)}
+      />
+    );
+  }
+
+  // Show recommendation after onboarding
+  if (showRecommendation && onboardingResult) {
+    return (
+      <RecommendationDisplay
+        recommendation={onboardingResult.recommendation}
+        onStartGame={(rec) => {
+          if (rec.stack && gameStacks[rec.stack]) {
+            setSelectedStack(rec.stack);
+            setGameMode(rec.mode);
+            setGameStarted(true);
+            setShowRecommendation(false);
+          } else {
+            setSelectedCategory(rec.category);
+            setGameMode(rec.mode);
+            setShowRecommendation(false);
+          }
+        }}
+        onBrowseAll={() => {
+          setShowRecommendation(false);
+          setGameMode('single-player');
+        }}
+        onCustomize={() => {
+          setShowRecommendation(false);
+          setShowOnboarding(true);
+        }}
       />
     );
   }
@@ -1117,6 +1163,7 @@ function AuthenticatedGameApp() {
           onSelectMode={(mode) => setGameMode(mode)}
           onEnterGilliamProjector={enterGilliamProjector}
           onSetTestPhoto={setTestMode}
+          onResetOnboarding={handleResetOnboarding}
         />
       )}
     </div>

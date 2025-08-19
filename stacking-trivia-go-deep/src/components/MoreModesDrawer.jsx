@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MoreModesDrawer = ({ isOpen, onClose, onSelectMode, onEnterGilliamProjector, onSetTestPhoto }) => {
+const MoreModesDrawer = ({ isOpen, onClose, onSelectMode, onEnterGilliamProjector, onSetTestPhoto, onResetOnboarding }) => {
   if (!isOpen) return null
   return (
     <div className="fixed inset-0 z-50">
@@ -18,6 +18,7 @@ const MoreModesDrawer = ({ isOpen, onClose, onSelectMode, onEnterGilliamProjecto
           <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onEnterGilliamProjector('setup'); onClose(); }}>Gilliam Projector</button>
           <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onSelectMode('multi-device-host'); onClose(); }}>Multi-Device Trivia</button>
           <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onSetTestPhoto(true); onClose(); }}>Test Photo-First</button>
+          <button className="w-full text-left p-3 bg-blue-700 rounded hover:bg-blue-600 text-white" onClick={() => { onResetOnboarding(); onClose(); }}>Try New Onboarding</button>
           <hr className="my-3 border-gray-700" />
           <button className="w-full text-left p-3 bg-yellow-700 rounded hover:bg-yellow-600 text-white" onClick={() => { onSelectMode('host-upsell'); onClose(); }}>Become a Host (Pro)</button>
         </div>
