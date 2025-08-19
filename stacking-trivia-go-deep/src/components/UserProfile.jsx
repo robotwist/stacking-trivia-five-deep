@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import AvatarStudio from './AvatarStudio';
 import { loadAvatar } from '../utils/avatarStorage';
@@ -8,28 +8,70 @@ const UserProfile = () => {
   const [showProfile, setShowProfile] = useState(false);
   const [showAvatarStudio, setShowAvatarStudio] = useState(false);
   const [avatar, setAvatar] = useState(user ? loadAvatar(user.id || user.uid || user.username) : null);
+  const [completedStacks, setCompletedStacks] = useState([]);
+  const [leaderboard, setLeaderboard] = useState([]);
+  const [profileFresh, setProfileFresh] = useState(null);
 
   if (!user) return null;
 
-  // Enhanced user stats with competitive elements
+  // Fetch fresh profile data and leaderboard when opened
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem('trivia_token');
+        if (token) {
+          const [profileRes, stacksRes] = await Promise.all([
+            fetch('/api/user/profile', { headers: { Authorization: `Bearer ${token}` } }),
+            fetch('/api/user/completed-stacks', { headers: { Authorization: `Bearer ${token}` } })
+          ]);
+          if (profileRes.ok) {
+            const { user: fresh } = await profileRes.json();
+            setProfileFresh(fresh);
+          }
+          if (stacksRes.ok) {
+            const { completedStacks } = await stacksRes.json();
+            setCompletedStacks(Array.isArray(completedStacks) ? completedStacks : []);
+          }
+        } else {
+          setCompletedStacks([]);
+        }
+      } catch {
+        // keep existing state on failure
+      }
+      try {
+        const lbRes = await fetch('/api/game/leaderboard?limit=10');
+        if (lbRes.ok) {
+          const { leaderboard } = await lbRes.json();
+          setLeaderboard(Array.isArray(leaderboard) ? leaderboard : []);
+        }
+      } catch {
+        setLeaderboard([]);
+      }
+    };
+    if (showProfile) fetchData();
+  }, [showProfile]);
+
+  // Enhanced user stats with competitive elements from fresh profile if available
+  const basis = profileFresh || user;
+  const totalScoreVal = Number(basis?.total_score || 0);
   const userStats = {
-    totalScore: user.total_score || 2847,
-    stacksCompleted: user.games_played || 12,
-    currentStreak: user.current_streak || 7,
-    accuracy: Math.round((user.correct_answers / Math.max(user.total_questions, 1)) * 100) || 87,
-    level: Math.floor((user.total_score || 2847) / 1000) + 1,
-    globalRank: user.global_rank || 156,
-    questionsAnswered: user.total_questions || 423
+    totalScore: totalScoreVal,
+    stacksCompleted: Number(basis?.games_played || 0),
+    currentStreak: Number(basis?.current_streak || 0),
+    accuracy: basis && basis.total_questions ? Math.round((basis.correct_answers / Math.max(basis.total_questions, 1)) * 100) : 0,
+    level: Math.floor(totalScoreVal / 1000) + 1,
+    globalRank: Number(basis?.global_rank || 0) || undefined,
+    questionsAnswered: Number(basis?.total_questions || 0)
   };
 
-  // Mock leaderboard data for competitive element
-  const mockLeaderboard = [
-    { rank: 1, username: "TriviaMaster", score: 9847, streak: 23 },
-    { rank: 2, username: "QuizKing", score: 8934, streak: 15 },
-    { rank: 3, username: "BrainBox", score: 7652, streak: 19 },
-    { rank: userStats.globalRank, username: user.username, score: userStats.totalScore, streak: userStats.currentStreak },
-    { rank: 157, username: "NewPlayer", score: 2134, streak: 4 }
-  ].sort((a, b) => b.score - a.score);
+  const displayLeaderboard = leaderboard.length > 0 
+    ? leaderboard.map((row, idx) => ({
+        rank: idx + 1,
+        username: row.username || row.user || 'Player',
+        score: Number(row.score || row.total_score || 0),
+        streak: row.streak || 0
+      }))
+    : [];
 
   const avatarUserId = user.id || user.uid || user.username;
   const frameMap = {
@@ -133,12 +175,15 @@ const UserProfile = () => {
             <div className="p-4 bg-gray-800 border-b border-gray-700">
               <h4 className="text-white font-bold mb-3">Owned Stacks</h4>
               <div className="grid grid-cols-2 gap-2 max-h-40 overflow-auto pr-1">
-                {(user.completed_stacks || []).slice(-8).reverse().map((stackKey) => (
+                {(completedStacks.length > 0 ? completedStacks : (basis?.completed_stacks || []))
+                  .slice(-8)
+                  .reverse()
+                  .map((stackKey) => (
                   <div key={stackKey} className="px-2 py-1 text-xs bg-gray-700/60 border border-gray-600 rounded text-gray-200 truncate" title={stackKey}>
                     {(stackKey || '').replace(/-/g,' ').replace(/_/g,' ')}
                   </div>
                 ))}
-                {(!user.completed_stacks || user.completed_stacks.length === 0) && (
+                {((completedStacks.length === 0) && (!basis?.completed_stacks || basis.completed_stacks.length === 0)) && (
                   <div className="text-xs text-gray-400">No stacks owned yet</div>
                 )}
               </div>
@@ -148,7 +193,7 @@ const UserProfile = () => {
             <div className="p-4 bg-gray-800 border-b border-gray-700">
               <h4 className="text-white font-bold mb-3">Top Players</h4>
               <div className="space-y-2">
-                {mockLeaderboard.slice(0, 5).map((player) => (
+                {displayLeaderboard.slice(0, 5).map((player) => (
                   <div key={player.rank} className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
                       <span className="text-amber-400 font-bold">#{player.rank}</span>
@@ -162,6 +207,9 @@ const UserProfile = () => {
                     </div>
                   </div>
                 ))}
+                {displayLeaderboard.length === 0 && (
+                  <div className="text-xs text-gray-400">Leaderboard unavailable</div>
+                )}
               </div>
             </div>
 
