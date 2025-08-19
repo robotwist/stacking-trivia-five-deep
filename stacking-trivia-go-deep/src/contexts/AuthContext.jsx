@@ -151,7 +151,8 @@ export const AuthProvider = ({ children }) => {
         console.log('✅ AuthContext: Signup successful via backend');
         return data;
       } catch (networkError) {
-        console.log('🏠 AuthContext: Backend unavailable, creating local demo account');
+        if (!import.meta.env.VITE_DEMO_MODE) throw networkError
+        console.log('🏠 AuthContext: Backend unavailable, creating local demo account (demo mode)');
         
         // Create a demo user for offline mode
         const demoUser = {
@@ -222,7 +223,8 @@ export const AuthProvider = ({ children }) => {
         console.log('✅ AuthContext: Login successful via backend');
         return data;
       } catch (networkError) {
-        console.log('🏠 AuthContext: Backend unavailable, creating demo session for login');
+        if (!import.meta.env.VITE_DEMO_MODE) throw networkError
+        console.log('🏠 AuthContext: Backend unavailable, creating demo session for login (demo mode)');
         
         // Create a demo user session for offline mode
         const demoUser = {

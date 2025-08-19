@@ -149,6 +149,27 @@ router.get('/:slug', async (req, res) => {
     `, [stack.id])
     
     stack.questions = questionsResult.rows
+
+    // Compute or fetch depth-focus quality metric
+    const quality = await pool.query('SELECT depth_focus_score, metrics FROM stack_quality WHERE stack_id = $1', [stack.id])
+    if (quality.rows.length > 0) {
+      stack.depth_focus_score = Number(quality.rows[0].depth_focus_score)
+      stack.quality_metrics = quality.rows[0].metrics
+    } else {
+      // Lightweight heuristic: consistency of topic tokens across levels and increasing difficulty modifiers
+      const tokens = (stack.title || '').toLowerCase().split(/[^a-z0-9]+/).filter(Boolean)
+      const topic = tokens.filter(t => t.length > 3)
+      const qTexts = questionsResult.rows.map(q => (q.question_text || '').toLowerCase())
+      const topicalHits = qTexts.map(t => topic.some(tok => t.includes(tok)) ? 1 : 0)
+      const topicalConsistency = topicalHits.length ? topicalHits.reduce((a,b)=>a+b,0)/topicalHits.length : 0
+      const diffs = questionsResult.rows.map(q => Number(q.difficulty_modifier || 1))
+      let increasing = 0
+      for (let i=1;i<diffs.length;i++) if (diffs[i] >= diffs[i-1]) increasing++
+      const difficultyTrend = diffs.length > 1 ? increasing/(diffs.length-1) : 1
+      const depthScore = Math.round((0.6*topicalConsistency + 0.4*difficultyTrend) * 100) / 1
+      stack.depth_focus_score = depthScore
+      stack.quality_metrics = { topicalConsistency, difficultyTrend }
+    }
     
     res.json(stack)
   } catch (error) {

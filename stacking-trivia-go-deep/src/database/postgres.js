@@ -140,6 +140,17 @@ export const initDatabase = async () => {
       );
     `)
 
+    // Stack quality metrics
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS stack_quality (
+        id SERIAL PRIMARY KEY,
+        stack_id INTEGER UNIQUE REFERENCES stacks(id) ON DELETE CASCADE,
+        depth_focus_score DECIMAL(5,2) DEFAULT 0.00,
+        metrics JSONB DEFAULT '{}'::jsonb,
+        computed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+    `)
+
     await pool.query(`
       CREATE TABLE IF NOT EXISTS user_roles (
         id SERIAL PRIMARY KEY,

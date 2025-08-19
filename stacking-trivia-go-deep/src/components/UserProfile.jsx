@@ -232,7 +232,7 @@ const UserProfile = () => {
             {/* Actions */}
             <div className="p-4 bg-gray-900">
               <a
-                href="https://buymeacoffee.com/"
+                href={import.meta.env.VITE_TIP_JAR_URL || 'https://buymeacoffee.com/'}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full mb-2 inline-block text-center bg-yellow-500 hover:bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg transition-colors duration-200 font-semibold"
