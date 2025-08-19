@@ -61,13 +61,21 @@ export default function StackSelection({
                   {stack.description || "Dive deep into this fascinating topic"}
                 </p>
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-amber-600">
+                  <span className="text-amber-600 flex items-center gap-1">
                     5 Questions Deep
                   </span>
                   <span className="text-amber-800 font-semibold">
                     160 pts max
                   </span>
                 </div>
+                {typeof stack.depth_focus_score !== 'undefined' && (
+                  <div className="mt-3 text-xs flex items-center justify-between">
+                    <span className="text-amber-700">Depth Focus</span>
+                    <span className="px-2 py-0.5 rounded-sm bg-amber-200 text-amber-900 font-bold">
+                      {Math.round(Number(stack.depth_focus_score))}/100
+                    </span>
+                  </div>
+                )}
               </button>
             )
           })}

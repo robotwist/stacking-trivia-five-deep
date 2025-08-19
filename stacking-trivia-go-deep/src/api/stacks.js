@@ -45,7 +45,7 @@ const requireCreatorRole = async (req, res, next) => {
 // GET /api/stacks - List all published stacks
 router.get('/', async (req, res) => {
   try {
-    const { category, featured, search, limit = 50, offset = 0 } = req.query
+    const { category, featured, search, limit = 50, offset = 0, sort } = req.query
     
     let query = `
       SELECT s.*, 
@@ -78,9 +78,14 @@ router.get('/', async (req, res) => {
     
     query += `
       GROUP BY s.id, sc.display_name, u.username
-      ORDER BY s.is_featured DESC, s.updated_at DESC
-      LIMIT $${++paramCount} OFFSET $${++paramCount}
     `
+    // Sorting
+    if (sort === 'depth') {
+      query += ` ORDER BY s.difficulty_level DESC, s.updated_at DESC`
+    } else {
+      query += ` ORDER BY s.is_featured DESC, s.updated_at DESC`
+    }
+    query += ` LIMIT $${++paramCount} OFFSET $${++paramCount}`
     params.push(limit, offset)
     
     const result = await pool.query(query, params)
