@@ -10,6 +10,8 @@ import MoreModesDrawer from './components/MoreModesDrawer'
 import OnboardingFlow from './components/OnboardingFlow'
 import UniversalOnboarding from './components/UniversalOnboarding'
 import RecommendationDisplay from './components/RecommendationDisplay'
+import QuickStats from './components/QuickStats'
+import DailyChallenge from './components/DailyChallenge'
 import PostGameFlow from './components/PostGameFlow'
 import ProgressResume from './components/ProgressResume'
 import { AchievementUnlock } from './components/AchievementDisplay'
@@ -43,6 +45,9 @@ import { shuffleArray } from './utils/arrayUtils'
 import { useDarkMode, useGameHistory } from './hooks/gameHooks'
 import { stackUnlockManager } from './utils/stackUnlocks'
 import { parsePlayParams } from './utils/url'
+import { playSound, initAudio } from './utils/audio.js'
+import { celebratePerfectScore, celebrateFirstCompletion } from './utils/celebrations.js'
+import { shareScore } from './utils/share.js'
 
 // Import categorized stacks
 import vanGoghData from './data/categories/arts-culture/van-gogh.json'
@@ -250,6 +255,11 @@ function AuthenticatedGameApp() {
     }
   }, [user]);
 
+  // Initialize audio on first user interaction
+  useEffect(() => {
+    initAudio();
+  }, []);
+
   // Mock user stats - in real app this would come from the user object
   const userStats = {
     totalScore: user?.total_score || 2847,
@@ -446,6 +456,12 @@ function AuthenticatedGameApp() {
     setOnboardingResult(null);
   }
 
+  const handleDailyChallenge = (challenge) => {
+    setSelectedCategory(challenge.category);
+    setSelectedStack(challenge.stack);
+    setGameStarted(true);
+  }
+
   const handleOnboardingStackSelect = (stackKey) => {
     setSelectedStack(stackKey);
     setGameStarted(true);
@@ -466,6 +482,21 @@ function AuthenticatedGameApp() {
       accuracy,
       timeTaken: Date.now() - (gamePersistence.getStartTime() || Date.now())
     });
+    
+    // NEW: Play completion sound and celebrate
+    if (accuracy === 100) {
+      celebratePerfectScore();
+    } else if (accuracy >= 80) {
+      playSound('achievement');
+    }
+    
+    // Check if this is user's first completion
+    const completedStacks = JSON.parse(localStorage.getItem('completedStacks') || '[]');
+    if (!completedStacks.includes(selectedStack)) {
+      celebrateFirstCompletion();
+      completedStacks.push(selectedStack);
+      localStorage.setItem('completedStacks', JSON.stringify(completedStacks));
+    }
     
     // PRIORITY 2: Check for achievement unlocks
     const gameStats = {
@@ -1001,23 +1032,11 @@ function AuthenticatedGameApp() {
               Choose your realm of knowledge and go five questions deep - creating nets of learning that connect the trivial to the profound.
             </p>
             
+            {/* Daily Challenge */}
+            <DailyChallenge onStartChallenge={handleDailyChallenge} />
+            
             {/* Quick Stats Display */}
-            <div className="bg-gray-800/50 rounded-lg p-4 mb-6 max-w-2xl mx-auto border border-gray-700">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-yellow-400">140+</div>
-                  <div className="text-sm text-gray-400">Premium Questions</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-blue-400">4</div>
-                  <div className="text-sm text-gray-400">Deep Dive Stacks</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-green-400">35</div>
-                  <div className="text-sm text-gray-400">Max Stack Depth</div>
-                </div>
-              </div>
-            </div>
+            <QuickStats />
             
             {/* Single Player Mode Button */}
             <div className="mb-6 space-y-4">

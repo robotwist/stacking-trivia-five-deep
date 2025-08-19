@@ -5,6 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { getRecommendations, stackMetadata, getDifficultyColor } from '../utils/stackMetadata';
 import SmartRecommendations from './SmartRecommendations';
 import { AchievementBadge } from './AchievementDisplay';
+import { shareScore } from '../utils/share.js';
 
 const PostGameFlow = ({ 
   score, 
@@ -21,18 +22,8 @@ const PostGameFlow = ({
   const [showFeedback, setShowFeedback] = useState(false);
   const [toast, setToast] = useState('');
 
-  const shareScore = async () => {
-    const shareText = `I just scored ${score} pts on "${(completedStack || '').replace(/-/g,' ')}" in Deeply Trivial!`;
-    const shareUrl = window.location.origin;
-    try {
-      if (navigator.share) {
-        await navigator.share({ title: 'Deeply Trivial', text: shareText, url: shareUrl });
-      } else {
-        await navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
-        setToast('Share link copied to clipboard');
-        setTimeout(() => setToast(''), 2000);
-      }
-    } catch {}
+  const handleShareScore = () => {
+    shareScore(score, 160, completedStack, accuracy);
   }
 
   // Mock user completed stacks for demo - in real app this would come from database
@@ -237,7 +228,7 @@ const PostGameFlow = ({
                 Play Again
               </button>
               <button
-                onClick={shareScore}
+                onClick={handleShareScore}
                 className="px-4 py-2 text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 text-sm"
               >
                 Share Score

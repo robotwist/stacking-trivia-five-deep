@@ -6,6 +6,7 @@ import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore } from '.
 import { generateMultipleChoiceOptions } from '../utils/mcq';
 import { useAuth } from '../contexts/AuthContext';
 import ProgressStorage from '../utils/progressStorage';
+import { playSound } from '../utils/audio.js';
 
 const GameStack = memo(function GameStack({ 
   stackData, 
@@ -192,6 +193,13 @@ const GameStack = memo(function GameStack({
     
     const userAnswer = (state.selectedOption && String(state.selectedOption)) || state.input.trim();
     const isCorrect = checkAnswerMatch(userAnswer, state.current.acceptedAnswers || state.current.a || [state.current.answer]);
+    
+    // Play sound effect based on result
+    if (isCorrect) {
+      playSound('correct');
+    } else {
+      playSound('incorrect');
+    }
     
     // Track attempts and correct answers for statistics
     setTotalAttempts(prev => prev + 1);
