@@ -1,63 +1,58 @@
 // Railway Backend API Client
 class RailwayAPIClient {
   constructor() {
-    // Temporary hardcode for testing - remove this after fixing env var
-    this.baseURL = 'https://quizzical-cherry-production.up.railway.app';
-    
-    // Original code (commented out for now):
-    // this.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+    // Use environment variable with fallback
+    this.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
     
     this.token = localStorage.getItem('auth_token');
     
-    // Debug logging
-    console.log('🚂 RailwayAPI Client initialized with baseURL:', this.baseURL);
-    console.log('🌍 Environment variables:', {
-      VITE_API_BASE_URL: import.meta.env.VITE_API_BASE_URL,
-      NODE_ENV: import.meta.env.NODE_ENV,
-      MODE: import.meta.env.MODE
-    });
+    // Debug logging (development only)
+    if (import.meta.env.DEV) {
+      console.log('🚂 RailwayAPI Client initialized with baseURL:', this.baseURL);
+      console.log('🌍 Environment variables:', {
+        VITE_API_BASE_URL: import.meta.env.VITE_API_BASE_URL,
+        NODE_ENV: import.meta.env.NODE_ENV,
+        MODE: import.meta.env.MODE
+      });
+    }
   }
 
   // Helper method to make authenticated requests
   async request(endpoint, options = {}) {
     const url = `${this.baseURL}${endpoint}`;
+    
+    // Debug logging (development only)
+    if (import.meta.env.DEV) {
+      console.log('🌐 RailwayAPI Request:', options.method || 'GET', url);
+    }
+    
     const config = {
+      method: options.method || 'GET',
       headers: {
         'Content-Type': 'application/json',
-        ...options.headers,
+        ...options.headers
       },
-      ...options,
+      ...options
     };
 
-    // Add auth token if available
     if (this.token) {
       config.headers.Authorization = `Bearer ${this.token}`;
     }
-
-    console.log(`🌐 Making API request to: ${url}`);
 
     try {
       const response = await fetch(url, config);
       
       if (!response.ok) {
-        const error = await response.text();
-        console.error(`❌ API Error ${response.status}:`, error);
-        throw new Error(`API Error: ${response.status} - ${error}`);
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
       }
 
-      const contentType = response.headers.get('Content-Type');
-      if (contentType && contentType.includes('application/json')) {
-        return await response.json();
-      }
-      return await response.text();
+      return await response.json();
     } catch (error) {
-      console.error(`❌ API request failed: ${endpoint}`, error);
-      
-      // Check if it's a network/connection error
-      if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-        throw new Error('Backend not available - please check your connection');
+      // Check if it's a network error (backend not available)
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        throw new Error('Backend not available');
       }
-      
       throw error;
     }
   }
@@ -194,8 +189,8 @@ class RailwayAPIClient {
 // Create and export singleton instance
 export const railwayAPI = new RailwayAPIClient();
 
-// Make it available globally for debugging
-if (typeof window !== 'undefined') {
+// Make it available globally for debugging (development only)
+if (typeof window !== 'undefined' && import.meta.env.DEV) {
   window.railwayAPI = railwayAPI;
   window.testBackendConnection = () => railwayAPI.testConnection();
 }

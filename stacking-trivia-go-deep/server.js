@@ -37,11 +37,13 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Add request logging for debugging
-app.use((req, res, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.path} - Origin: ${req.headers.origin || 'unknown'}`);
-  next();
-});
+// Add request logging for debugging (development only)
+if (process.env.NODE_ENV === 'development') {
+  app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path} - ${new Date().toISOString()}`);
+    next();
+  });
+}
 
 // Initialize database asynchronously
 async function initializeServer() {
@@ -65,28 +67,33 @@ app.use('/api/stacks', stacksRoutes);
 app.use('/api/feedback', feedbackRoutes);
 app.use('/api/billing', billingRoutes);
 
-// Health check endpoints
+// Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
-});
-
-// Connection test endpoint for debugging
-app.get('/api/connection-test', (req, res) => {
-  res.json({ 
-    status: 'Backend connection successful',
-    timestamp: new Date().toISOString(),
-    cors: {
-      origin: req.headers.origin || 'unknown',
-      method: req.method,
-      headers: req.headers
-    },
-    environment: {
-      node_env: process.env.NODE_ENV,
-      port: process.env.PORT,
-      database_url_exists: !!process.env.DATABASE_URL
-    }
+  res.json({
+    status: 'Server is running',
+    timestamp: new Date().toISOString()
   });
 });
+
+// Connection test endpoint (development only)
+if (process.env.NODE_ENV === 'development') {
+  app.get('/api/connection-test', (req, res) => {
+    res.json({
+      status: 'Backend connection successful',
+      timestamp: new Date().toISOString(),
+      cors: {
+        origin: req.headers.origin || 'unknown',
+        method: req.method,
+        headers: req.headers
+      },
+      environment: {
+        node_env: process.env.NODE_ENV,
+        port: process.env.PORT,
+        database_url_exists: !!process.env.DATABASE_URL
+      }
+    });
+  });
+}
 
 // TEMPORARY: Direct game leaderboard endpoint for testing
 app.get('/api/game/leaderboard-test', (req, res) => {
@@ -99,32 +106,34 @@ app.get('/api/game/leaderboard-test', (req, res) => {
 
 // WORKING GAME ENDPOINTS - legacy block removed (duplicate)
 
-// Debug endpoint to check registered routes
-app.get('/api/debug/routes', (req, res) => {
-  const routes = [];
-  app._router.stack.forEach((middleware) => {
-    if (middleware.route) {
-      routes.push({
-        path: middleware.route.path,
-        methods: Object.keys(middleware.route.methods)
-      });
-    } else if (middleware.name === 'router') {
-      middleware.handle.stack.forEach((handler) => {
-        if (handler.route) {
-          routes.push({
-            path: handler.route.path,
-            methods: Object.keys(handler.route.methods)
-          });
-        }
-      });
-    }
+// Debug endpoint to check registered routes (development only)
+if (process.env.NODE_ENV === 'development') {
+  app.get('/api/debug/routes', (req, res) => {
+    const routes = [];
+    app._router.stack.forEach((middleware) => {
+      if (middleware.route) {
+        routes.push({
+          path: middleware.route.path,
+          methods: Object.keys(middleware.route.methods)
+        });
+      } else if (middleware.name === 'router') {
+        middleware.handle.stack.forEach((handler) => {
+          if (handler.route) {
+            routes.push({
+              path: handler.route.path,
+              methods: Object.keys(handler.route.methods)
+            });
+          }
+        });
+      }
+    });
+    res.json({ 
+      message: 'Registered routes debug info',
+      routeCount: routes.length,
+      routes: routes.slice(0, 20) // Limit output
+    });
   });
-  res.json({ 
-    message: 'Registered routes debug info',
-    routeCount: routes.length,
-    routes: routes.slice(0, 20) // Limit output
-  });
-});
+}
 
 // Serve static files from dist directory AFTER API routes
 // Only serve static files in development or when explicitly configured

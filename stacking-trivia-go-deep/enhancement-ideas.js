@@ -1,7 +1,7 @@
 // Single Player Enhancement Ideas
 
 // 1. Add Streak System
-const [currentStreak, setCurrentStreak] = useState(0)
+const [_currentStreak, _setCurrentStreak] = useState(0)
 const [bestStreak, setBestStreak] = useState(0)
 
 // 2. Add Player Profile

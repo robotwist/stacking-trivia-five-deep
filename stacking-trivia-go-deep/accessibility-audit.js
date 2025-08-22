@@ -82,8 +82,8 @@ function scanJSXFile(filePath) {
       });
     }
     
-  } catch (error) {
-    console.error(`Error scanning ${filePath}:`, error.message);
+  } catch (_error) {
+    console.error(`Error scanning ${filePath}:`, _error.message);
   }
 }
 
@@ -132,7 +132,7 @@ function checkTriviaSpecificIssues() {
         suggestion: 'Add aria-live="polite" to feedback messages for screen readers'
       });
     }
-  } catch (error) {
+  } catch (_error) {
     console.log('❌ Could not analyze GameStack component');
   }
   
@@ -155,7 +155,7 @@ function checkTriviaSpecificIssues() {
         suggestion: 'Add aria-labelledby for title and aria-describedby for description'
       });
     }
-  } catch (error) {
+  } catch (_error) {
     console.log('❌ Could not analyze AuthModal component');
   }
 }
