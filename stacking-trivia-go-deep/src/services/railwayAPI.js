@@ -3,6 +3,14 @@ class RailwayAPIClient {
   constructor() {
     this.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
     this.token = localStorage.getItem('auth_token');
+    
+    // Debug logging
+    console.log('🚂 RailwayAPI Client initialized with baseURL:', this.baseURL);
+    console.log('🌍 Environment variables:', {
+      VITE_API_BASE_URL: import.meta.env.VITE_API_BASE_URL,
+      NODE_ENV: import.meta.env.NODE_ENV,
+      MODE: import.meta.env.MODE
+    });
   }
 
   // Helper method to make authenticated requests
@@ -21,11 +29,14 @@ class RailwayAPIClient {
       config.headers.Authorization = `Bearer ${this.token}`;
     }
 
+    console.log(`🌐 Making API request to: ${url}`);
+
     try {
       const response = await fetch(url, config);
       
       if (!response.ok) {
         const error = await response.text();
+        console.error(`❌ API Error ${response.status}:`, error);
         throw new Error(`API Error: ${response.status} - ${error}`);
       }
 
@@ -35,7 +46,13 @@ class RailwayAPIClient {
       }
       return await response.text();
     } catch (error) {
-      console.error(`API request failed: ${endpoint}`, error);
+      console.error(`❌ API request failed: ${endpoint}`, error);
+      
+      // Check if it's a network/connection error
+      if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+        throw new Error('Backend not available - please check your connection');
+      }
+      
       throw error;
     }
   }
