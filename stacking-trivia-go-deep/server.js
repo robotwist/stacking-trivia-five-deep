@@ -127,7 +127,34 @@ app.get('/api/debug/routes', (req, res) => {
 });
 
 // Serve static files from dist directory AFTER API routes
-app.use(express.static(path.join(__dirname, 'dist')));
+// Only serve static files in development or when explicitly configured
+if (process.env.NODE_ENV !== 'production' || process.env.SERVE_STATIC === 'true') {
+  app.use(express.static(path.join(__dirname, 'dist')));
+  
+  // Serve React app for all other routes (SPA support)
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  });
+} else {
+  // In production (Railway), only serve API endpoints
+  app.get('/', (req, res) => {
+    res.json({ 
+      message: 'Stacking Trivia API Server',
+      status: 'running',
+      timestamp: new Date().toISOString(),
+      endpoints: [
+        '/api/health',
+        '/api/connection-test',
+        '/api/auth/*',
+        '/api/user/*',
+        '/api/game/*',
+        '/api/stacks/*',
+        '/api/feedback/*',
+        '/api/billing/*'
+      ]
+    });
+  });
+}
 
 // Database health check
 app.get('/api/db-health', async (req, res) => {
@@ -180,11 +207,6 @@ app.get('/api/game/leaderboard', async (_req, res) => {
   } catch {
     res.status(500).json({ error: 'Failed to get leaderboard' });
   }
-});
-
-// Serve React app for all other routes (SPA support)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Error handling middleware
