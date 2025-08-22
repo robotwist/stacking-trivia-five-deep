@@ -123,33 +123,15 @@ export const AuthProvider = ({ children }) => {
       
       // For development/demo purposes, create a mock user when backend is unavailable
       try {
-        const response = await fetch('/api/auth/signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ username, email, password }),
-        });
-
-        // Check if response is JSON
-        const contentType = response.headers.get('content-type');
-        if (!contentType || !contentType.includes('application/json')) {
-          throw new Error('Backend not available');
-        }
-
-        const data = await response.json();
-
-        if (!response.ok) {
-          throw new Error(data.error || 'Signup failed');
-        }
+        const response = await railwayAPI.signup(username, email, password);
 
         // Store auth data
-        localStorage.setItem('trivia_token', data.token);
-        localStorage.setItem('trivia_user', JSON.stringify(data.user));
-        setUser(data.user);
+        localStorage.setItem('trivia_token', response.token);
+        localStorage.setItem('trivia_user', JSON.stringify(response.user));
+        setUser(response.user);
         
         console.log('✅ AuthContext: Signup successful via backend');
-        return data;
+        return response;
       } catch (networkError) {
         if (!import.meta.env.VITE_DEMO_MODE) throw networkError
         console.log('🏠 AuthContext: Backend unavailable, creating local demo account (demo mode)');
@@ -195,44 +177,26 @@ export const AuthProvider = ({ children }) => {
       
       // For development/demo purposes, handle login when backend is unavailable
       try {
-        const response = await fetch('/api/auth/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ username, password }),
-        });
-
-        // Check if response is JSON
-        const contentType = response.headers.get('content-type');
-        if (!contentType || !contentType.includes('application/json')) {
-          throw new Error('Backend not available');
-        }
-
-        const data = await response.json();
-
-        if (!response.ok) {
-          throw new Error(data.error || 'Login failed');
-        }
+        const response = await railwayAPI.login(username, password);
 
         // Store auth data
-        localStorage.setItem('trivia_token', data.token);
-        localStorage.setItem('trivia_user', JSON.stringify(data.user));
-        setUser(data.user);
+        localStorage.setItem('trivia_token', response.token);
+        localStorage.setItem('trivia_user', JSON.stringify(response.user));
+        setUser(response.user);
         
         console.log('✅ AuthContext: Login successful via backend');
-        return data;
+        return response;
       } catch (networkError) {
         if (!import.meta.env.VITE_DEMO_MODE) throw networkError
-        console.log('🏠 AuthContext: Backend unavailable, creating demo session for login (demo mode)');
+        console.log('🏠 AuthContext: Backend unavailable, creating local demo account (demo mode)');
         
-        // Create a demo user session for offline mode
+        // Create a demo user for offline mode
         const demoUser = {
-          uid: `demo_${username}_${Date.now()}`,
+          uid: `demo_${Date.now()}`,
           username,
           email: `${username}@demo.local`,
           total_score: Math.floor(Math.random() * 5000) + 1000,
-          games_played: Math.floor(Math.random() * 20) + 5,
+          games_played: Math.floor(Math.random() * 50) + 10,
           current_streak: Math.floor(Math.random() * 10) + 1,
           correct_answers: Math.floor(Math.random() * 200) + 50,
           total_questions: Math.floor(Math.random() * 300) + 100,
@@ -240,19 +204,18 @@ export const AuthProvider = ({ children }) => {
           created_at: new Date().toISOString()
         };
         
-        const demoToken = `demo_token_${username}_${Date.now()}`;
+        const demoToken = `demo_token_${Date.now()}`;
         
         // Store demo auth data
         localStorage.setItem('trivia_token', demoToken);
         localStorage.setItem('trivia_user', JSON.stringify(demoUser));
         setUser(demoUser);
         
-        console.log('✅ AuthContext: Demo session created for login');
+        console.log('✅ AuthContext: Demo login successful');
         return { user: demoUser, token: demoToken };
       }
     } catch (error) {
       console.error('❌ AuthContext: Login failed:', error);
-      setError(error.message);
       setError(error.message);
       throw error;
     } finally {
