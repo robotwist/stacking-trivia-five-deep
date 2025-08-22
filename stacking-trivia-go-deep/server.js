@@ -18,9 +18,30 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Enhanced CORS configuration
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001', 
+    'https://stacking-trivia-five-deep.netlify.app',
+    'https://stacking-trivia-go-deep.netlify.app',
+    /\.netlify\.app$/,
+    /\.railway\.app$/
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
+
+// Add request logging for debugging
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.path} - Origin: ${req.headers.origin || 'unknown'}`);
+  next();
+});
 
 // Initialize database asynchronously
 async function initializeServer() {
@@ -47,6 +68,24 @@ app.use('/api/billing', billingRoutes);
 // Health check endpoints
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
+});
+
+// Connection test endpoint for debugging
+app.get('/api/connection-test', (req, res) => {
+  res.json({ 
+    status: 'Backend connection successful',
+    timestamp: new Date().toISOString(),
+    cors: {
+      origin: req.headers.origin || 'unknown',
+      method: req.method,
+      headers: req.headers
+    },
+    environment: {
+      node_env: process.env.NODE_ENV,
+      port: process.env.PORT,
+      database_url_exists: !!process.env.DATABASE_URL
+    }
+  });
 });
 
 // TEMPORARY: Direct game leaderboard endpoint for testing
