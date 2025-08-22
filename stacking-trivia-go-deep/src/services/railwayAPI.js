@@ -1,7 +1,12 @@
 // Railway Backend API Client
 class RailwayAPIClient {
   constructor() {
-    this.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+    // Temporary hardcode for testing - remove this after fixing env var
+    this.baseURL = 'https://quizzical-cherry-production.up.railway.app';
+    
+    // Original code (commented out for now):
+    // this.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+    
     this.token = localStorage.getItem('auth_token');
     
     // Debug logging
