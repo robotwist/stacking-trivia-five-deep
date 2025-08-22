@@ -144,6 +144,32 @@ class RailwayAPIClient {
     return await this.request('/api/db-health');
   }
 
+  // Test connection method for debugging
+  async testConnection() {
+    console.log('🔍 Testing backend connection...');
+    console.log('📍 Base URL:', this.baseURL);
+    console.log('🌍 Environment:', import.meta.env.MODE);
+    
+    try {
+      const response = await fetch(`${this.baseURL}/api/health`);
+      console.log('📡 Response status:', response.status);
+      console.log('📡 Response ok:', response.ok);
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('✅ Backend is working:', data);
+        return { success: true, data };
+      } else {
+        console.log('❌ Backend returned error status:', response.status);
+        return { success: false, status: response.status };
+      }
+    } catch (error) {
+      console.log('❌ Network error:', error.message);
+      console.log('❌ Error type:', error.constructor.name);
+      return { success: false, error: error.message };
+    }
+  }
+
   // Token management
   setToken(token) {
     this.token = token;
@@ -162,6 +188,12 @@ class RailwayAPIClient {
 
 // Create and export singleton instance
 export const railwayAPI = new RailwayAPIClient();
+
+// Make it available globally for debugging
+if (typeof window !== 'undefined') {
+  window.railwayAPI = railwayAPI;
+  window.testBackendConnection = () => railwayAPI.testConnection();
+}
 
 // React hook for using the API client
 export const useRailwayAPI = () => {
