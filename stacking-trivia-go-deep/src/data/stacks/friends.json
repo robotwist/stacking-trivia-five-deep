@@ -1,43 +1,70 @@
 {
-  "id": "friends",
   "title": "Friends: Could This BE Any Deeper?",
-  "category": "pop-culture",
-  "description": "From Central Perk to Monica's apartment",
+  "description": "Six friends, one city, and sitcom history—five iconic depths.",
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of the coffee shop where the friends frequently hang out?",
+      "question": "What coffee shop do the friends hang out at?",
       "answer": "Central Perk",
-      "acceptedAnswers": ["central perk", "central perks"],
+      "acceptedAnswers": [
+        "Central Perk",
+        "central perk",
+        "central perks",
+        "centralperk"
+      ],
       "hint": "Could this BE any more obvious?"
     },
     {
       "level": 2,
-      "question": "What is Ross's profession?",
+      "question": "At Central Perk, what is Ross's profession?",
       "answer": "Paleontologist",
-      "acceptedAnswers": ["paleontologist", "paleontology", "dinosaur scientist"],
+      "acceptedAnswers": [
+        "Paleontologist",
+        "paleontologist",
+        "paleontology",
+        "dinosaur scientist"
+      ],
       "hint": "He works with dinosaurs"
     },
     {
       "level": 3,
-      "question": "What song makes Ross and Rachel's daughter Emma laugh for the first time?",
+      "question": "Ross's daughter Emma first laughed when he sang what song?",
       "answer": "Baby Got Back",
-      "acceptedAnswers": ["baby got back", "baby's got back", "sir mix-a-lot"],
-      "hint": "Sir Mix-a-Lot's famous song"
+      "acceptedAnswers": [
+        "Baby Got Back",
+        "baby got back",
+        "baby's got back",
+        "sir mix-a-lot",
+        "baby got back song"
+      ],
+      "hint": "Sir Mix-a-Lot"
     },
     {
       "level": 4,
-      "question": "What does Phoebe find in a can of soda that makes her rich?",
+      "question": "Phoebe once found what in a soda can—and sued?",
       "answer": "A human thumb",
-      "acceptedAnswers": ["a human thumb", "human thumb", "thumb", "a thumb"],
-      "hint": "Something that definitely shouldn't be in a drink"
+      "acceptedAnswers": [
+        "A human thumb",
+        "a human thumb",
+        "human thumb",
+        "thumb",
+        "a thumb"
+      ],
+      "hint": "Definitely should not be in a drink"
     },
     {
       "level": 5,
-      "question": "What is the name of Joey's signature fragrance?",
-      "answer": "Ichiban: Lipstick For Men",
-      "acceptedAnswers": ["ichiban", "ichiban lipstick for men", "lipstick for men"],
-      "hint": "Japanese for 'number one' and it's makeup for guys"
+      "question": "After that lawsuit, Joey pitched what men's fragrance?",
+      "answer": "Ichiban",
+      "acceptedAnswers": [
+        "Ichiban",
+        "ichiban",
+        "ichiban lipstick for men",
+        "lipstick for men",
+        "ichiban lipstick"
+      ],
+      "hint": "Japanese for number one"
     }
-  ]
+  ],
+  "category": "pop-culture"
 }

@@ -1,12 +1,11 @@
 {
   "title": "Leonardo da Vinci: Renaissance Master",
-  "description": "The ultimate Renaissance genius - artist, inventor, scientist, and visionary who painted the Mona Lisa",
-  "category": "Arts & Culture",
-  "difficulty": "intermediate",
-  "imageHint": "🎨 The ultimate Renaissance man of art and invention 📐",
+  "description": "Renaissance genius—painter, inventor, and relentless experimenter.",
   "questions": [
     {
+      "level": 1,
       "question": "What is Leonardo's most famous painting, known for its subject's mysterious smile?",
+      "answer": "Mona Lisa",
       "acceptedAnswers": [
         "Mona Lisa",
         "mona lisa",
@@ -17,7 +16,9 @@
       "hint": "It's of a woman with an enigmatic smile, housed in the Louvre"
     },
     {
+      "level": 2,
       "question": "Leonardo's fresco depicting Christ's final meal with his disciples is called what?",
+      "answer": "The Last Supper",
       "acceptedAnswers": [
         "The Last Supper",
         "last supper",
@@ -27,7 +28,9 @@
       "hint": "It shows Jesus announcing that one of his disciples will betray him"
     },
     {
+      "level": 3,
       "question": "Leonardo wrote his notes in what unusual manner that required a mirror to read easily?",
+      "answer": "mirror writing",
       "acceptedAnswers": [
         "mirror writing",
         "reverse writing",
@@ -38,7 +41,9 @@
       "hint": "You need a mirror to read it normally - written from right to left"
     },
     {
+      "level": 4,
       "question": "What flying machine design did Leonardo create centuries before actual flight was achieved?",
+      "answer": "ornithopter",
       "acceptedAnswers": [
         "ornithopter",
         "flying machine",
@@ -49,7 +54,9 @@
       "hint": "A machine with flapping wings like a bird, from Greek words for 'bird' and 'wing'"
     },
     {
+      "level": 5,
       "question": "Leonardo's detailed anatomical drawings were based on his illegal practice of what?",
+      "answer": "dissection",
       "acceptedAnswers": [
         "dissection",
         "dissecting bodies",
@@ -60,6 +67,8 @@
       "hint": "Cutting open dead bodies to study internal structure - forbidden by the church"
     }
   ],
+  "imageHint": "Sketches and inventions of a mind centuries ahead of its time",
+  "category": "Arts & Culture",
   "deeperMode": {
     "title": "The Obsessive Perfectionist",
     "description": "Leonardo's relentless pursuit of knowledge and his unfinished masterpieces",

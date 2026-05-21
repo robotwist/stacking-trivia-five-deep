@@ -1,12 +1,11 @@
 {
   "title": "Tesla: Electrical Genius",
-  "description": "The brilliant inventor who illuminated the modern world with alternating current and wireless technology",
-  "category": "Science & Technology",
-  "difficulty": "intermediate",
-  "imageHint": "⚡ The wizard of electricity and wireless power ⚡",
+  "description": "Electrical wizardry, fierce rivalry, and wireless dreams—five inventor depths.",
   "questions": [
     {
+      "level": 1,
       "question": "What type of electrical current did Tesla champion that became the standard for power transmission?",
+      "answer": "alternating current",
       "acceptedAnswers": [
         "alternating current",
         "AC current",
@@ -17,7 +16,9 @@
       "hint": "It's abbreviated as AC and changes direction periodically"
     },
     {
+      "level": 2,
       "question": "Which famous inventor and businessman was Tesla's rival in the 'War of Currents'?",
+      "answer": "Thomas Edison",
       "acceptedAnswers": [
         "Thomas Edison",
         "Edison",
@@ -27,7 +28,9 @@
       "hint": "He invented the light bulb and preferred direct current (DC)"
     },
     {
-      "question": "What is the name of the rotating magnetic field principle that Tesla discovered, crucial to AC motors?",
+      "level": 3,
+      "question": "What principle did Tesla discover that made practical AC motors possible?",
+      "answer": "Rotating magnetic field",
       "acceptedAnswers": [
         "rotating magnetic field",
         "rotating field",
@@ -38,7 +41,9 @@
       "hint": "It involves magnetic fields that spin around in a circle"
     },
     {
+      "level": 4,
       "question": "Tesla demonstrated wireless power transmission at which famous laboratory location?",
+      "answer": "Colorado Springs",
       "acceptedAnswers": [
         "Colorado Springs",
         "Colorado Springs Laboratory",
@@ -49,7 +54,9 @@
       "hint": "A mountainous state's springs-named city where he created artificial lightning"
     },
     {
+      "level": 5,
       "question": "What ambitious wireless transmission tower did Tesla build on Long Island that was never completed?",
+      "answer": "Wardenclyffe",
       "acceptedAnswers": [
         "Wardenclyffe",
         "Wardenclyffe Tower",
@@ -60,9 +67,11 @@
       "hint": "Named after the benefactor James S. Warden, it was meant to transmit power wirelessly across the Atlantic"
     }
   ],
+  "imageHint": "Lightning, coils, and the age of electricity",
+  "category": "Science & Technology",
   "deeperMode": {
     "title": "Tesla's Obsessive Inventions",
-    "description": "Dive into the mind of a genius who claimed to communicate with Mars and predicted smartphones",
+    "description": "Obsessive habits and visions ahead of their time",
     "questions": [
       {
         "question": "Tesla had an obsessive fear of this round object and refused to touch jewelry containing them.",

@@ -1,37 +1,63 @@
 {
   "title": "Ancient Greece",
-  "image": "parthenon-temple.jpg",
-  "imageHint": "The iconic temple atop the Acropolis in Athens, dedicated to Athena",
+  "description": "Philosophy, sacred hills, and the historian who chronicled war—classical Greece in five steps.",
   "questions": [
     {
-      "q": "Who was the most famous student of Socrates?",
-      "a": [
-        "plato"
+      "level": 1,
+      "question": "Who was the most famous student of Socrates?",
+      "answer": "Plato",
+      "acceptedAnswers": [
+        "Plato",
+        "plato",
+        "platon",
+        "plato of athens"
       ]
     },
     {
-      "q": "Which city-state was known for its military culture?",
-      "a": [
-        "sparta"
+      "level": 2,
+      "question": "Plato founded a school in Athens called what?",
+      "answer": "Academy",
+      "acceptedAnswers": [
+        "Academy",
+        "academy",
+        "the academy",
+        "plato's academy"
       ]
     },
     {
-      "q": "What building sat atop the Acropolis?",
-      "a": [
-        "parthenon"
+      "level": 3,
+      "question": "The Academy overlooked Athens from near what sacred hill?",
+      "answer": "Acropolis",
+      "acceptedAnswers": [
+        "Acropolis",
+        "acropolis",
+        "the acropolis",
+        "acropolis hill"
       ]
     },
     {
-      "q": "What was the name of the war between Athens and Sparta?",
-      "a": [
-        "peloponnesian war"
+      "level": 4,
+      "question": "What temple dedicated to Athena crowns the Acropolis?",
+      "answer": "Parthenon",
+      "acceptedAnswers": [
+        "Parthenon",
+        "parthenon",
+        "the parthenon",
+        "parthenon temple"
       ]
     },
     {
-      "q": "Who wrote the 'Histories' documenting Persian wars?",
-      "a": [
-        "herodotus"
+      "level": 5,
+      "question": "Who wrote the Histories documenting the Persian Wars?",
+      "answer": "Herodotus",
+      "acceptedAnswers": [
+        "Herodotus",
+        "herodotus",
+        "herodotos",
+        "father of history"
       ]
     }
-  ]
+  ],
+  "image": "parthenon-temple.jpg",
+  "imageHint": "Marble columns and the legacy of Athens"
 }

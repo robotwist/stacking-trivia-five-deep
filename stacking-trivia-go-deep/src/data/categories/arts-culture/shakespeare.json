@@ -1,74 +1,63 @@
 {
   "title": "William Shakespeare: The Eternal Bard",
-  "image": "first-folio-1623.jpg",
-  "imageHint": "The historic 1623 collection that preserved 18 of the Bard's plays for posterity",
-  "description": "Journey through the timeless works of England's greatest playwright and poet",
+  "description": "Plays, places, and numbers—five steps through England's greatest playwright.",
   "questions": [
     {
       "level": 1,
       "question": "Who wrote 'Romeo and Juliet'?",
       "answer": "William Shakespeare",
-      "acceptedAnswers": ["william shakespeare", "shakespeare", "the bard"]
+      "acceptedAnswers": [
+        "William Shakespeare",
+        "william shakespeare",
+        "shakespeare",
+        "the bard"
+      ]
     },
     {
       "level": 2,
       "question": "In which English town was Shakespeare born?",
       "answer": "Stratford-upon-Avon",
-      "acceptedAnswers": ["stratford-upon-avon", "stratford upon avon", "stratford"]
+      "acceptedAnswers": [
+        "Stratford-upon-Avon",
+        "stratford-upon-avon",
+        "stratford upon avon",
+        "stratford"
+      ]
     },
     {
       "level": 3,
       "question": "What famous line begins Hamlet's most famous soliloquy?",
       "answer": "To be or not to be",
-      "acceptedAnswers": ["to be or not to be", "to be, or not to be"]
+      "acceptedAnswers": [
+        "To be or not to be",
+        "to be or not to be",
+        "to be, or not to be"
+      ]
     },
     {
       "level": 4,
       "question": "Which theater was associated with Shakespeare's company, the King's Men?",
       "answer": "The Globe Theatre",
-      "acceptedAnswers": ["the globe theatre", "globe theatre", "the globe", "globe"]
+      "acceptedAnswers": [
+        "The Globe Theatre",
+        "the globe theatre",
+        "globe theatre",
+        "the globe",
+        "globe"
+      ]
     },
     {
       "level": 5,
       "question": "How many sonnets did Shakespeare write?",
       "answer": "154",
-      "acceptedAnswers": ["154", "one hundred fifty-four"]
+      "acceptedAnswers": [
+        "154",
+        "one hundred fifty-four",
+        "one hundred fifty four",
+        "154 sonnets"
+      ]
     }
   ],
-  "deeper": {
-    "title": "DEEPER MODE UNLOCKED: Shakespeare's Hidden Mysteries",
-    "description": "Venture into the enigmas that still puzzle scholars centuries later",
-    "questions": [
-      {
-        "level": 1,
-        "question": "What are the 'lost years' in Shakespeare's biography?",
-        "answer": "1585 to 1592",
-        "acceptedAnswers": ["1585 to 1592", "1585-1592", "seven years between 1585 and 1592"]
-      },
-      {
-        "level": 2,
-        "question": "What nickname was given to the 1623 collection of Shakespeare's plays?",
-        "answer": "The First Folio",
-        "acceptedAnswers": ["the first folio", "first folio"]
-      },
-      {
-        "level": 3,
-        "question": "Which contemporary playwright famously called Shakespeare 'not of an age, but for all time'?",
-        "answer": "Ben Jonson",
-        "acceptedAnswers": ["ben jonson", "jonson"]
-      },
-      {
-        "level": 4,
-        "question": "What was left to Shakespeare's wife Anne in his will that puzzled historians?",
-        "answer": "His second-best bed",
-        "acceptedAnswers": ["his second-best bed", "second-best bed", "the second-best bed"]
-      },
-      {
-        "level": 5,
-        "question": "What is the curse inscribed on Shakespeare's gravestone?",
-        "answer": "Cursed be he that moves my bones",
-        "acceptedAnswers": ["cursed be he that moves my bones", "cvrst be he that moves my bones"]
-      }
-    ]
-  }
+  "image": "first-folio-1623.jpg",
+  "imageHint": "A historic 1623 folio that preserved many of his plays for posterity"
 }

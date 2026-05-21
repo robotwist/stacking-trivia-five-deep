@@ -1,43 +1,70 @@
 {
-  "id": "the-goonies",
   "title": "The Goonies: Never Say Die",
-  "category": "pop-culture",
-  "description": "From Astoria to One-Eyed Willy's treasure",
+  "description": "Small-town kids, old maps, and treasure—five adventure depths.",
   "questions": [
     {
       "level": 1,
       "question": "What is the name of the pirate whose treasure the Goonies are searching for?",
       "answer": "One-Eyed Willy",
-      "acceptedAnswers": ["one-eyed willy", "one eyed willy", "willy"],
+      "acceptedAnswers": [
+        "One-Eyed Willy",
+        "one-eyed willy",
+        "one eyed willy",
+        "willy",
+        "1"
+      ],
       "hint": "He's missing an important facial feature"
     },
     {
       "level": 2,
       "question": "What does Chunk have to do the 'Truffle Shuffle'?",
       "answer": "Lift his shirt and shake his belly",
-      "acceptedAnswers": ["lift his shirt and shake his belly", "shake his belly", "truffle shuffle", "belly dance"],
+      "acceptedAnswers": [
+        "Lift his shirt and shake his belly",
+        "lift his shirt and shake his belly",
+        "shake his belly",
+        "truffle shuffle",
+        "belly dance"
+      ],
       "hint": "Come on, do the truffle shuffle!"
     },
     {
       "level": 3,
       "question": "What is the name of the deformed Fratelli brother who befriends the Goonies?",
       "answer": "Sloth",
-      "acceptedAnswers": ["sloth", "lotney fratelli"],
+      "acceptedAnswers": [
+        "Sloth",
+        "sloth",
+        "lotney fratelli"
+      ],
       "hint": "Hey you guys!"
     },
     {
       "level": 4,
       "question": "What candy bar does Chunk use to befriend Sloth?",
       "answer": "Baby Ruth",
-      "acceptedAnswers": ["baby ruth", "babyruth", "ruth"],
+      "acceptedAnswers": [
+        "Baby Ruth",
+        "baby ruth",
+        "babyruth",
+        "ruth"
+      ],
       "hint": "It's named after a famous baseball player's daughter"
     },
     {
       "level": 5,
       "question": "What does Mikey find in the museum that starts their treasure hunt?",
       "answer": "A treasure map in the attic",
-      "acceptedAnswers": ["a treasure map in the attic", "treasure map", "map", "the map"],
+      "acceptedAnswers": [
+        "A treasure map in the attic",
+        "a treasure map in the attic",
+        "treasure map",
+        "map",
+        "the map",
+        "treasure map in the attic"
+      ],
       "hint": "It was hidden in his father's belongings"
     }
-  ]
+  ],
+  "category": "pop-culture"
 }

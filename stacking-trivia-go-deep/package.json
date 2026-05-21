@@ -13,6 +13,7 @@
     "start": "npm run build && node server.js",
     "serve": "node server.js",
     "lint": "eslint .",
+    "lint:quality": "eslint src/utils/textUtils.js src/utils/normalizeStack.js src/utils/scoreUtils.js tools/stackValidator.js tools/validateStacks.js tools/stackLint.js tools/playableStacksManifest.js",
     "lint:fix": "eslint . --fix",
     "a11y:audit": "axe http://localhost:3000 --exit",
     "a11y:lighthouse": "lighthouse http://localhost:3000 --only-categories=accessibility --chrome-flags='--headless'",
@@ -29,7 +30,11 @@
     "api:full": "npm run api:lint && npm run api:audit",
     "db:migrate": "node tools/migrate.js",
     "content:import": "node tools/bulkImport.js",
-    "content:import:confirm": "node tools/bulkImport.js --confirm"
+    "content:import:confirm": "node tools/bulkImport.js --confirm",
+    "validate:stacks": "node tools/validateStacks.js",
+    "stacks:migrate": "node tools/migrateStacks.js --write",
+    "stacks:lint": "node tools/stackLint.js",
+    "ci": "npm run lint:quality && npm run validate:stacks && npm run test:run && npm run build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

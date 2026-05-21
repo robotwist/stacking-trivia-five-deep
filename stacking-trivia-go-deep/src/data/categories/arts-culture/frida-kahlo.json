@@ -1,38 +1,68 @@
 {
   "title": "Frida Kahlo: Pain into Art",
-  "image": "self-portrait-thorn-necklace.jpg",
-  "imageHint": "A 1940 self-portrait featuring a thorn necklace and hummingbird, symbolic of pain and renewal",
-  "description": "Journey through the revolutionary Mexican artist's life of suffering and creation",
+  "description": "Pain, resilience, and color—the life of a revolutionary Mexican artist.",
   "questions": [
     {
       "level": 1,
       "question": "Which Mexican artist painted 'The Two Fridas'?",
       "answer": "Frida Kahlo",
-      "acceptedAnswers": ["frida kahlo", "kahlo", "frida"]
+      "acceptedAnswers": [
+        "Frida Kahlo",
+        "frida kahlo",
+        "kahlo",
+        "frida"
+      ]
     },
     {
       "level": 2,
       "question": "At what age did Frida Kahlo contract polio?",
       "answer": "Six",
-      "acceptedAnswers": ["six", "6", "six years old"]
+      "acceptedAnswers": [
+        "Six",
+        "six",
+        "6",
+        "six years old",
+        "age six"
+      ]
     },
     {
       "level": 3,
       "question": "What accident at age 18 changed Kahlo's life forever?",
       "answer": "Bus accident",
-      "acceptedAnswers": ["bus accident", "bus crash", "trolley accident"]
+      "acceptedAnswers": [
+        "Bus accident",
+        "bus accident",
+        "bus crash",
+        "trolley accident",
+        "streetcar accident"
+      ]
     },
     {
       "level": 4,
-      "question": "What metal rod pierced through Frida's pelvis in the accident?",
+      "question": "What metal object pierced through Frida's pelvis in that bus accident?",
       "answer": "Iron handrail",
-      "acceptedAnswers": ["iron handrail", "handrail", "metal handrail", "iron rod"]
+      "acceptedAnswers": [
+        "Iron handrail",
+        "iron handrail",
+        "handrail",
+        "metal handrail",
+        "iron rod"
+      ]
     },
     {
       "level": 5,
-      "question": "How many surgeries did Frida endure throughout her life due to the accident?",
+      "question": "After the handrail injury, roughly how many surgeries did Frida endure?",
       "answer": "Over 30",
-      "acceptedAnswers": ["over 30", "30", "more than 30", "thirty"]
+      "acceptedAnswers": [
+        "Over 30",
+        "over 30",
+        "30",
+        "more than 30",
+        "thirty",
+        "30+"
+      ]
     }
-  ]
+  ],
+  "image": "self-portrait-thorn-necklace.jpg",
+  "imageHint": "A 1940 self-portrait with thorn necklace and hummingbird"
 }

@@ -46,3 +46,4 @@ This document outlines the best practices and standards to be followed across al
 *   **6.1 CI/CD Integration:** Integrate SAST, DAST, SCA, and accessibility testing tools into the CI/CD pipeline.
 *   **6.2 Code Reviews:** Conduct thorough code reviews, including AI-generated code.
 *   **6.3 Documentation:** Update this document regularly and ensure all new features and changes are documented.
+*   **6.4 Trivia content:** Follow [`stacking-trivia-go-deep/docs/GOLD_STANDARD_STACK.md`](stacking-trivia-go-deep/docs/GOLD_STANDARD_STACK.md); run `npm run validate:stacks` from the app directory before merging stack JSON changes.

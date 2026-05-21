@@ -1,85 +1,77 @@
 {
-  "title": "Serena Williams: Tennis Dominance",
-  "description": "The most successful tennis player in the Open Era, with 23 Grand Slam singles titles and cultural impact beyond sports",
-  "category": "Sports",
-  "difficulty": "intermediate", 
-  "imageHint": "🎾 The GOAT of tennis with unmatched power and determination 🏆",
+  "title": "Serena Williams: Seven Matches, One Secret",
+  "description": "She lifted a trophy while hiding life-changing news—five steps from a secret title to motherhood.",
   "questions": [
     {
-      "question": "How many Grand Slam singles titles did Serena Williams win during her career?",
+      "level": 1,
+      "question": "In January 2017, Serena Williams won which Grand Slam while newly pregnant?",
+      "answer": "Australian Open",
       "acceptedAnswers": [
-        "23",
-        "twenty-three",
-        "23 titles"
+        "Australian Open",
+        "australian open",
+        "aus open",
+        "australia open"
       ],
-      "hint": "One more than Steffi Graf's previous record, the most in the Open Era"
+      "explanation": "She won the title in Melbourne without revealing she was expecting—one of the most talked-about victories in Open-era tennis."
     },
     {
-      "question": "Serena won her first Grand Slam at age 17. Which tournament was it?",
+      "level": 2,
+      "question": "At that Australian Open, Serena beat her older sister in the final—who?",
+      "answer": "Venus Williams",
       "acceptedAnswers": [
-        "US Open",
-        "US Open 1999",
-        "united states open",
-        "u.s. open"
-      ],
-      "hint": "Her home country's major tournament, held in New York"
-    },
-    {
-      "question": "What is the name of Serena's older sister, also a tennis champion and frequent doubles partner?",
-      "acceptedAnswers": [
-        "Venus",
         "Venus Williams",
-        "venus williams"
+        "venus williams",
+        "venus",
+        "venus williams sister"
       ],
-      "hint": "Named after a planet (and Roman goddess), she paved the way for Serena's success"
+      "explanation": "Serena defeated Venus 6–4, 6–4 in the final—their 28th major final meeting, with the pregnancy still a secret to the public."
     },
     {
-      "question": "Serena won the 2017 Australian Open while pregnant. How many months pregnant was she?",
+      "level": 3,
+      "question": "Serena was roughly how many weeks pregnant when she won that Australian Open?",
+      "answer": "Eight",
       "acceptedAnswers": [
-        "2 months",
-        "two months", 
+        "Eight",
+        "eight",
+        "8",
+        "eight weeks",
         "8 weeks",
-        "about 2 months"
+        "about eight",
+        "about 8"
       ],
-      "hint": "Early in her pregnancy, she was already expecting her daughter Olympia"
+      "explanation": "She later said she found out she was pregnant about a week before the tournament—roughly eight weeks along when she hoisted the trophy."
     },
     {
-      "question": "What phrase did Serena make famous when challenging line calls and bad officiating?",
+      "level": 4,
+      "question": "In April 2017, Serena revealed her pregnancy with a selfie on which app?",
+      "answer": "Snapchat",
       "acceptedAnswers": [
-        "Are you kidding me?",
-        "are you kidding me",
-        "You cannot be serious",
-        "This is not right"
+        "Snapchat",
+        "snapchat",
+        "snap chat",
+        "snap"
       ],
-      "hint": "A questioning phrase expressing disbelief at unfair treatment"
+      "explanation": "The mirror selfie on Snapchat—captioned with a baby emoji—announced the news to the world months after the Melbourne triumph."
+    },
+    {
+      "level": 5,
+      "question": "Serena and Alexis Ohanian's daughter, born in September 2017, is named what?",
+      "answer": "Olympia",
+      "acceptedAnswers": [
+        "Olympia",
+        "olympia",
+        "alexis olympia",
+        "olympia ohanian",
+        "alexis olympia ohanian"
+      ],
+      "explanation": "Alexis Olympia Ohanian Jr.—\"Olympia\"—closed the arc from secret champion to public motherhood."
     }
   ],
+  "imageHint": "A trophy lift with a story still unspoken",
+  "category": "Sports",
   "deeperMode": {
     "title": "Queen of the Court",
-    "description": "Serena's battles beyond tennis and her impact on sports culture",
-    "questions": [
-      {
-        "question": "Serena revolutionized tennis fashion. What type of outfit did she wear that was initially banned by the French Open?",
-        "acceptedAnswers": [
-          "catsuit",
-          "black catsuit",
-          "compression suit",
-          "bodysuit"
-        ],
-        "bonus": 150,
-        "hint": "A form-fitting black outfit that helped with blood circulation but was deemed too bold"
-      },
-      {
-        "question": "What life-threatening condition did Serena experience after giving birth to her daughter Olympia?",
-        "acceptedAnswers": [
-          "pulmonary embolism",
-          "blood clots",
-          "pulmonary embolisms",
-          "blood clot"
-        ],
-        "bonus": 200,
-        "hint": "Dangerous blood clots in the lungs that required emergency surgery"
-      }
-    ]
+    "description": "Career records and battles beyond this Melbourne chapter",
+    "questions": []
   }
 }

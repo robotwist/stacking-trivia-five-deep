@@ -1,36 +1,59 @@
 {
   "title": "Vincent van Gogh",
-  "description": "Journey deep into the life and tragic genius of the Dutch master",
+  "description": "The Dutch master—fame, struggle, and a single sale that echoes through art history.",
   "questions": [
     {
       "level": 1,
       "question": "Who painted 'The Starry Night'?",
       "answer": "Vincent van Gogh",
-      "acceptedAnswers": ["vincent van gogh", "van gogh", "vincent"]
+      "acceptedAnswers": [
+        "Vincent van Gogh",
+        "vincent van gogh",
+        "van gogh",
+        "vincent"
+      ]
     },
     {
       "level": 2,
       "question": "How many paintings did van Gogh sell during his lifetime?",
       "answer": "One",
-      "acceptedAnswers": ["one", "1", "only one"]
+      "acceptedAnswers": [
+        "One",
+        "one",
+        "1",
+        "only one"
+      ]
     },
     {
       "level": 3,
       "question": "What was the title of the only painting van Gogh sold while alive?",
       "answer": "The Red Vineyard",
-      "acceptedAnswers": ["the red vineyard", "red vineyard"]
+      "acceptedAnswers": [
+        "The Red Vineyard",
+        "the red vineyard",
+        "red vineyard"
+      ]
     },
     {
       "level": 4,
       "question": "Who bought 'The Red Vineyard' from van Gogh?",
       "answer": "Anna Boch",
-      "acceptedAnswers": ["anna boch", "boch"]
+      "acceptedAnswers": [
+        "Anna Boch",
+        "anna boch",
+        "boch"
+      ]
     },
     {
       "level": 5,
       "question": "How much did Anna Boch pay for 'The Red Vineyard' in 1890?",
       "answer": "400 francs",
-      "acceptedAnswers": ["400 francs", "400", "four hundred francs"]
+      "acceptedAnswers": [
+        "400 francs",
+        "400",
+        "four hundred francs",
+        "four hundred"
+      ]
     }
   ]
 }

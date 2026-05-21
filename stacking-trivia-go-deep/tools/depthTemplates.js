@@ -1,6 +1,8 @@
 /**
  * Deep Dive Question Templates
- * Ready-to-use templates that ensure proper depth progression
+ *
+ * LEGACY: Written for 35-question "ultimate" stacks. Playable stacks use exactly 5
+ * questions per docs/GOLD_STANDARD_STACK.md and tools/stackValidator.js.
  */
 
 export const DEPTH_TEMPLATES = {

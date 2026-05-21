@@ -1,38 +1,66 @@
 {
   "title": "Miles Davis: Kind of Revolution",
-  "image": "kind-of-blue-album.jpg",
-  "imageHint": "The legendary 1959 modal jazz album cover that revolutionized music forever",
-  "description": "Trace the trumpet genius from bebop to fusion through his landmark album",
+  "description": "Cool jazz and restless innovation—one legendary recording era.",
   "questions": [
     {
       "level": 1,
       "question": "Which jazz trumpeter recorded the album 'Kind of Blue'?",
       "answer": "Miles Davis",
-      "acceptedAnswers": ["miles davis", "davis", "miles"]
+      "acceptedAnswers": [
+        "Miles Davis",
+        "miles davis",
+        "davis",
+        "miles"
+      ]
     },
     {
       "level": 2,
-      "question": "In what year was 'Kind of Blue' recorded?",
+      "question": "In what year was Miles Davis's 'Kind of Blue' recorded?",
       "answer": "1959",
-      "acceptedAnswers": ["1959", "nineteen fifty-nine"]
+      "acceptedAnswers": [
+        "1959",
+        "nineteen fifty-nine",
+        "fifty-nine"
+      ]
     },
     {
       "level": 3,
-      "question": "Which legendary saxophonist played on 'Kind of Blue' alongside Miles?",
+      "question": "Which saxophonist played on 'Kind of Blue' alongside Miles?",
       "answer": "John Coltrane",
-      "acceptedAnswers": ["john coltrane", "coltrane"]
+      "acceptedAnswers": [
+        "John Coltrane",
+        "john coltrane",
+        "coltrane",
+        "trane"
+      ]
     },
     {
       "level": 4,
-      "question": "What recording technique did Miles use for 'Kind of Blue' sessions?",
-      "answer": "Modal improvisation",
-      "acceptedAnswers": ["modal improvisation", "modal jazz", "modes", "modal"]
+      "question": "Coltrane joined Miles in what jazz approach on 'Kind of Blue'?",
+      "answer": "Modal jazz",
+      "acceptedAnswers": [
+        "Modal jazz",
+        "modal jazz",
+        "modal improvisation",
+        "modes",
+        "modal"
+      ]
     },
     {
       "level": 5,
-      "question": "How many takes were used for most tracks on 'Kind of Blue'?",
-      "answer": "First take",
-      "acceptedAnswers": ["first take", "one take", "single take", "1 take"]
+      "question": "Most 'Kind of Blue' tracks were captured in how many takes?",
+      "answer": "One take",
+      "acceptedAnswers": [
+        "One take",
+        "one take",
+        "first take",
+        "single take",
+        "1 take",
+        "one",
+        "1"
+      ]
     }
-  ]
+  ],
+  "image": "kind-of-blue-album.jpg",
+  "imageHint": "An iconic album cover from a pivotal jazz session"
 }

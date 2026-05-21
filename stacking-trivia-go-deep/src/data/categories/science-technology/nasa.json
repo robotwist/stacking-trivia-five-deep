@@ -1,22 +1,23 @@
 {
-  "title": "NASA: Space Race Milestones", 
-  "description": "From Mercury missions to Mars rovers, the incredible journey of America's space program",
-  "category": "Science & Technology",
-  "difficulty": "intermediate",
-  "imageHint": "🚀 One giant leap for mankind and beyond 🌙",
+  "title": "NASA: Space Race Milestones",
+  "description": "Rockets, astronauts, and the push beyond our planet—five space-program depths.",
   "questions": [
     {
+      "level": 1,
       "question": "What does NASA stand for?",
+      "answer": "National Aeronautics and Space Administration",
       "acceptedAnswers": [
         "National Aeronautics and Space Administration",
-        "national aeronautics and space administration", 
+        "national aeronautics and space administration",
         "National Aeronautics & Space Administration",
         "aeronautics and space administration"
       ],
       "hint": "It includes the words 'National', 'Aeronautics', 'Space', and 'Administration'"
     },
     {
+      "level": 2,
       "question": "Who was the first American astronaut to orbit Earth in 1962?",
+      "answer": "John Glenn",
       "acceptedAnswers": [
         "John Glenn",
         "Glenn",
@@ -26,7 +27,9 @@
       "hint": "His first name is John, and he later became a U.S. Senator"
     },
     {
+      "level": 3,
       "question": "What was the name of the NASA program that successfully landed humans on the Moon?",
+      "answer": "Apollo",
       "acceptedAnswers": [
         "Apollo",
         "Apollo Program",
@@ -37,7 +40,9 @@
       "hint": "Named after a Greek god, this program achieved Kennedy's goal of lunar landing"
     },
     {
+      "level": 4,
       "question": "Which space shuttle tragically exploded 73 seconds after launch in 1986?",
+      "answer": "Challenger",
       "acceptedAnswers": [
         "Challenger",
         "Space Shuttle Challenger",
@@ -47,7 +52,9 @@
       "hint": "It carried teacher Christa McAuliffe and was named after a British naval research vessel"
     },
     {
+      "level": 5,
       "question": "What is the name of NASA's Mars rover that landed in 2021 and is searching for signs of ancient life?",
+      "answer": "Perseverance",
       "acceptedAnswers": [
         "Perseverance",
         "perseverance",
@@ -57,9 +64,11 @@
       "hint": "Named for the quality of continuing despite difficulties, nicknamed 'Percy'"
     }
   ],
+  "imageHint": "🚀 One giant leap for mankind and beyond 🌙",
+  "category": "Science & Technology",
   "deeperMode": {
     "title": "Mission Control Secrets",
-    "description": "The hidden stories and critical moments that defined space exploration",
+    "description": "Hidden moments that shaped exploration",
     "questions": [
       {
         "question": "What phrase did flight controllers use to describe the successful problem-solving during Apollo 13's crisis?",
@@ -75,7 +84,7 @@
         "question": "NASA's Deep Space Network uses giant radio dishes to communicate with spacecraft. What is the diameter of the largest dishes?",
         "acceptedAnswers": [
           "70 meters",
-          "70 metres", 
+          "70 metres",
           "70m",
           "230 feet"
         ],

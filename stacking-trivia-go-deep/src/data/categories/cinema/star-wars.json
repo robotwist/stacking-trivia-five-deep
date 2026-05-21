@@ -1,74 +1,60 @@
 {
   "title": "Star Wars: A New Hope Deep Dive",
-  "image": "death-star-plans.jpg",
-  "imageHint": "Technical blueprints of the Empire's ultimate weapon with a critical weakness",
-  "description": "Test your knowledge of the galaxy far, far away from the original trilogy",
+  "description": "A galaxy of heroes, ships, and quotable lore—original-trilogy depths.",
   "questions": [
     {
       "level": 1,
       "question": "What is the name of Luke Skywalker's home planet?",
       "answer": "Tatooine",
-      "acceptedAnswers": ["tatooine"]
+      "acceptedAnswers": [
+        "Tatooine",
+        "tatooine",
+        "tatooine planet",
+        "planet tatooine"
+      ]
     },
     {
       "level": 2,
       "question": "What is the name of Han Solo's ship?",
       "answer": "Millennium Falcon",
-      "acceptedAnswers": ["millennium falcon", "the millennium falcon"]
+      "acceptedAnswers": [
+        "Millennium Falcon",
+        "millennium falcon",
+        "the millennium falcon"
+      ]
     },
     {
       "level": 3,
       "question": "Who is Luke's mentor in using the Force?",
       "answer": "Obi-Wan Kenobi",
-      "acceptedAnswers": ["obi-wan kenobi", "obi wan kenobi", "ben kenobi"]
+      "acceptedAnswers": [
+        "Obi-Wan Kenobi",
+        "obi-wan kenobi",
+        "obi wan kenobi",
+        "ben kenobi"
+      ]
     },
     {
       "level": 4,
       "question": "What is the weapon used by Jedi Knights?",
       "answer": "Lightsaber",
-      "acceptedAnswers": ["lightsaber", "light saber"]
+      "acceptedAnswers": [
+        "Lightsaber",
+        "lightsaber",
+        "light saber"
+      ]
     },
     {
       "level": 5,
       "question": "What phrase does Obi-Wan say about the Force?",
       "answer": "May the Force be with you",
-      "acceptedAnswers": ["may the force be with you", "may the force be with you."]
+      "acceptedAnswers": [
+        "May the Force be with you",
+        "may the force be with you",
+        "may the force be with you."
+      ]
     }
   ],
-  "deeper": {
-    "title": "DEEPER MODE UNLOCKED: Galactic Secrets",
-    "description": "Beyond the basics - dive into the hidden details of the Star Wars universe",
-    "questions": [
-      {
-        "level": 1,
-        "question": "What species is Chewbacca?",
-        "answer": "Wookiee",
-        "acceptedAnswers": ["wookiee", "wookie"]
-      },
-      {
-        "level": 2,
-        "question": "What is the name of the cantina band in A New Hope?",
-        "answer": "Figrin D'an and the Modal Nodes",
-        "acceptedAnswers": ["figrin d'an and the modal nodes", "modal nodes", "cantina band"]
-      },
-      {
-        "level": 3,
-        "question": "What did George Lucas originally want to call Luke Skywalker?",
-        "answer": "Luke Starkiller",
-        "acceptedAnswers": ["luke starkiller", "starkiller"]
-      },
-      {
-        "level": 4,
-        "question": "Which planet was destroyed by the Death Star in A New Hope?",
-        "answer": "Alderaan",
-        "acceptedAnswers": ["alderaan"]
-      },
-      {
-        "level": 5,
-        "question": "What does THX-1138 refer to in Star Wars lore?",
-        "answer": "George Lucas's first film",
-        "acceptedAnswers": ["george lucas's first film", "lucas's first film", "his first movie"]
-      }
-    ]
-  }
+  "image": "death-star-plans.jpg",
+  "imageHint": "Technical blueprints of the Empire's ultimate weapon with a critical weakness"
 }

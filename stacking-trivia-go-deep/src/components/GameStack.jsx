@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useMemo, memo, useRef } from 'react';
 import QuickHostControls from './QuickHostControls';
 import PhotoIdentification from './PhotoIdentification';
 import { checkAnswerMatch } from '../utils/textUtils';
+import { getLevelLabel } from '../utils/normalizeStack';
 import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore } from '../utils/scoreUtils';
 import { generateMultipleChoiceOptions } from '../utils/mcq';
 import { useAuth } from '../contexts/AuthContext';
@@ -44,6 +45,13 @@ const GameStack = memo(function GameStack({
   const [questionLocked, setQuestionLocked] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [showMcqHint, setShowMcqHint] = useState(() => {
+    try {
+      return localStorage.getItem('deepstack_answer_input_mode') === 'mcq-hint'
+    } catch {
+      return false
+    }
+  });
   const questionLockedRef = useRef(false);
   const completedRef = useRef(false);
   const setLocked = (locked) => {
@@ -112,12 +120,22 @@ const GameStack = memo(function GameStack({
     return stackData.questions[depth];
   }, [isDeepMode, stackData, deepModeDepth, depth]);
 
-  // Generate multiple choice options by default (without showing them if text-only mode desired)
+  const toggleMcqHint = useCallback(() => {
+    setShowMcqHint((prev) => {
+      const next = !prev
+      try {
+        localStorage.setItem('deepstack_answer_input_mode', next ? 'mcq-hint' : 'type')
+      } catch { /* ignore */ }
+      return next
+    })
+  }, [])
+
+  // Generate multiple choice options when hint mode is enabled
   const mcqOptions = useMemo(() => {
-    if (!stackData?.questions?.length || !current) return []
+    if (!showMcqHint || !stackData?.questions?.length || !current) return []
     const index = isDeepMode ? deepModeDepth : depth
     return generateMultipleChoiceOptions(stackData, index, 4)
-  }, [stackData, current, isDeepMode, deepModeDepth, depth])
+  }, [showMcqHint, stackData, current, isDeepMode, deepModeDepth, depth])
 
   // Calculate maximum possible score
   // Base max score for standard mode; actual run max will be computed at completion time
@@ -516,7 +534,7 @@ const GameStack = memo(function GameStack({
           <span className="text-sm text-amber-600 dark:text-amber-400">
             {isDeepMode 
               ? `Deeper ${deepModeDepth + 1}/${stackData.deeperMode?.questions.length || 5}` 
-              : `Question ${depth + 1}/${stackData.questions.length}`}
+              : `Level ${current?.level || depth + 1} of ${stackData.questions.length} — ${getLevelLabel(current?.level || depth + 1)}`}
           </span>
         </div>
       </div>
@@ -553,6 +571,20 @@ const GameStack = memo(function GameStack({
 
       {/* Input / Multiple Choice */}
       <div className="text-center mb-8">
+        <div className="mb-4">
+          <button
+            type="button"
+            onClick={toggleMcqHint}
+            disabled={isPaused || questionLocked || isCompleted}
+            className={`px-4 py-2 rounded-sm border-2 text-sm transition-colors ${
+              showMcqHint
+                ? 'bg-amber-300 dark:bg-amber-700 border-amber-500 text-amber-900 dark:text-amber-50'
+                : 'bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-800 dark:text-amber-200 hover:bg-amber-100'
+            }`}
+          >
+            {showMcqHint ? 'Hide answer choices' : 'Show answer choices'}
+          </button>
+        </div>
         {mcqOptions && mcqOptions.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto mb-6">
             {mcqOptions.map((opt, idx) => (
@@ -624,6 +656,13 @@ const GameStack = memo(function GameStack({
           aria-atomic="true"
         >
           <p className="text-lg font-semibold">{feedback}</p>
+          {feedback.includes('Correct') && current.explanation && (
+            <p className={`mt-3 text-base font-normal italic ${
+              darkMode ? 'text-amber-200' : 'text-amber-800'
+            }`}>
+              {current.explanation}
+            </p>
+          )}
         </div>
       )}
 

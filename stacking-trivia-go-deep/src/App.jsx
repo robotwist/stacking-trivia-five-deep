@@ -49,75 +49,30 @@ import { playSound, initAudio } from './utils/audio.js'
 import { celebratePerfectScore, celebrateFirstCompletion } from './utils/celebrations.js'
 import { shareScore } from './utils/share.js'
 
-// Import categorized stacks
-import vanGoghData from './data/categories/arts-culture/van-gogh.json'
-import beatlesData from './data/categories/arts-culture/the-beatles-ultimate.json'
-import fridaKahloData from './data/categories/arts-culture/frida-kahlo.json'
-import milesDavisData from './data/categories/arts-culture/miles-davis.json'
-import shakespeareData from './data/categories/arts-culture/shakespeare.json'
-import leonardoData from './data/categories/arts-culture/leonardo-da-vinci.json'
-import mozartData from './data/categories/arts-culture/mozart.json'
-
-import olympicCurrentData from './data/categories/sports/olympic_distance_current.json'
-import nebraskaUltimateData from './data/categories/sports/nebraska-sports-ultimate.json'
-import elGuerroujData from './data/categories/sports/el-guerrouj-ultimate.json'
-import prefontaineData from './data/categories/sports/prefontaine-ultimate.json'
-import muhammadAliData from './data/categories/sports/muhammad-ali.json'
-import michaelJordanData from './data/categories/sports/michael-jordan.json'
-import serenaWilliamsData from './data/categories/sports/serena-williams.json'
-
-import teslaData from './data/categories/science-technology/tesla.json'
-import darwinData from './data/categories/science-technology/darwin.json'
-import nasaData from './data/categories/science-technology/nasa.json'
-import marieCurieData from './data/categories/science-technology/marie-curie.json'
-import steveJobsData from './data/categories/science-technology/steve-jobs.json'
-
-import bladeRunnerData from './data/categories/cinema/blade_runner.json'
-import godfatherData from './data/categories/cinema/the-godfather.json'
-import starWarsData from './data/categories/cinema/star-wars.json'
-
-// Kids category imports
-import dinosaursData from './data/categories/kids/dinosaurs.json'
-import superheroesData from './data/categories/kids/superheroes.json'
-import spaceData from './data/categories/kids/space.json'
-import videogamesData from './data/categories/kids/videogames.json'
-import animalsData from './data/categories/kids/animals.json'
-
-import ancientGreeceData from './data/categories/history/ancient_greece.json'
-import cleopatraData from './data/categories/history/cleopatra.json'
-import einsteinData from './data/categories/history/einstein.json'
-
-import vanGoghMythsData from './data/categories/actually/van-gogh-myths.json'
-import einsteinMythsData from './data/categories/actually/einstein-myths.json'
-import shakespeareMythsData from './data/categories/actually/shakespeare-myths.json'
-
-// Pop Culture stacks
-import howIMetYourMotherData from './data/stacks/how_i_met_your_mother.json'
-import communityData from './data/stacks/community.json'
-import theGooniesData from './data/stacks/the_goonies.json'
-import theOfficeData from './data/stacks/the_office.json'
-import friendsData from './data/stacks/friends.json'
-import backToTheFutureData from './data/stacks/back_to_the_future.json'
-import strangerThingsData from './data/stacks/stranger_things.json'
-
-// Super Stacks
-import heroesJourneySuperData from './data/stacks/heroes-journey-super.json'
-import jesusHistoricalMythicData from './data/stacks/jesus-historical-mythic.json'
-import philipKDickSuperData from './data/stacks/philip-k-dick-super.json'
-import characterNameOriginsData from './data/stacks/character-name-origins.json'
-
 import categoriesConfig from './data/categories.json'
+import { loadPlayableStacks } from './data/loadPlayableStacks.js'
 import './App.css'
 
 function App() {
   console.log('🚀 App: Component rendering...');
   
-  const { user, loading } = useAuth();
+  const { user, loading, enterGuestMode, canPlay } = useAuth();
+
+  // Deep link /play?stack=… — enter guest session so Netlify works without login
+  useEffect(() => {
+    if (loading || user) return;
+    const path = window.location.pathname;
+    const { stack } = parsePlayParams();
+    if (stack && (path === '/play' || path === '/play/')) {
+      enterGuestMode();
+    }
+  }, [loading, user, enterGuestMode]);
 
   console.log('🔐 App: Auth state check:', { 
     user: user?.email || user?.uid || 'no user', 
     loading,
-    userExists: !!user
+    userExists: !!user,
+    isGuest: user?.isGuest,
   });
 
   // If still loading auth state, show loading spinner
@@ -130,8 +85,8 @@ function App() {
     );
   }
 
-  // If not authenticated, show login form
-  if (!user) {
+  // Sign-in screen (guests with canPlay skip this via enterGuestMode)
+  if (!canPlay) {
     console.log('🚪 App: Showing auth form');
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
@@ -144,14 +99,12 @@ function App() {
               A Game that is Deep (But Only Trivially So)
             </p>
             <p className="text-amber-700 dark:text-amber-300 text-sm mb-4">
-              Sign in to track your progress and compete!
+              Play free as a guest, or sign in to save progress and rank globally.
             </p>
             <div className="mt-4 p-4 bg-amber-100 dark:bg-amber-900/30 rounded-lg border border-amber-300">
               <ul className="text-base text-amber-700 dark:text-amber-300 text-left space-y-2">
-                <li>• Level progression & global rankings</li>
-                <li>• Detailed stats & streak tracking</li>
-                <li>• Leaderboards & achievement badges</li>
-                <li>• Personal progress history</li>
+                <li>• Guest: all stacks, progress on this device</li>
+                <li>• Account: leaderboards, streaks, cloud saves</li>
               </ul>
             </div>
           </div>
@@ -161,15 +114,14 @@ function App() {
     );
   }
 
-  // User is authenticated - show the main game interface
-  console.log('✅ App: User authenticated, loading main game...');
+  console.log('✅ App: Player session active, loading main game...');
   return <AuthenticatedGameApp />;
 }
 
 function AuthenticatedGameApp() {
   console.log('🎮 AuthenticatedGameApp: Component rendering...');
   
-  const { user } = useAuth();
+  const { user, isGuest, logout } = useAuth();
   
   console.log('👤 AuthenticatedGameApp: User data:', { 
     user: user?.email || user?.uid || 'no user identifier',
@@ -248,6 +200,8 @@ function AuthenticatedGameApp() {
     });
     
     // Show onboarding for new users or if user wants to try the new onboarding
+    if (user?.isGuest) return;
+
     const hasCompletedOnboarding = localStorage.getItem('deepstack_onboarding_completed');
     if (!hasCompletedOnboarding) {
       console.log('👋 AuthenticatedGameApp: Showing onboarding for new user');
@@ -271,70 +225,7 @@ function AuthenticatedGameApp() {
     questionsAnswered: user?.total_questions || 423
   };
   
-    // Memoize gameStacks object to prevent recreation on every render
-  const gameStacks = useMemo(() => ({
-    // Arts & Culture
-    'van-gogh': vanGoghData,
-    'the_beatles': beatlesData,
-    'frida-kahlo': fridaKahloData,
-    'miles-davis': milesDavisData,
-    'shakespeare': shakespeareData,
-    'leonardo-da-vinci': leonardoData,
-    'mozart': mozartData,
-    
-    // Sports
-    'olympic_distance_current': olympicCurrentData,
-    'nebraska-sports-ultimate': nebraskaUltimateData,
-    'el-guerrouj-ultimate': elGuerroujData,
-    'prefontaine-ultimate': prefontaineData,
-    'muhammad-ali': muhammadAliData,
-    'michael-jordan': michaelJordanData,
-    'serena-williams': serenaWilliamsData,
-    
-    // Science & Technology
-    'tesla': teslaData,
-    'darwin': darwinData,
-    'nasa': nasaData,
-    'marie-curie': marieCurieData,
-    'steve-jobs': steveJobsData,
-    
-    // Cinema
-    'blade_runner': bladeRunnerData,
-    'the-godfather': godfatherData,
-    'star-wars': starWarsData,
-    
-    // History
-    'ancient_greece': ancientGreeceData,
-    'cleopatra': cleopatraData,
-    'einstein': einsteinData,
-    
-    // Actually (Misconceptions)
-    'van-gogh-myths': vanGoghMythsData,
-    'einstein-myths': einsteinMythsData,
-    'shakespeare-myths': shakespeareMythsData,
-    
-    // Pop Culture
-    'how-i-met-your-mother': howIMetYourMotherData,
-    'community': communityData,
-    'the-goonies': theGooniesData,
-    'the-office': theOfficeData,
-    'friends': friendsData,
-    'back-to-the-future': backToTheFutureData,
-    'stranger-things': strangerThingsData,
-    
-    // Kids Zone
-    'dinosaurs': dinosaursData,
-    'superheroes': superheroesData,
-    'space': spaceData,
-    'videogames': videogamesData,
-    'animals': animalsData,
-    
-    // Super Stacks
-    'heroes-journey-super': heroesJourneySuperData,
-    'jesus-historical-mythic': jesusHistoricalMythicData,
-    'philip-k-dick-super': philipKDickSuperData,
-    'character-name-origins': characterNameOriginsData
-  }), [])
+  const gameStacks = useMemo(() => loadPlayableStacks(), [])
   
   // Use custom hooks
   const [darkMode, toggleDarkMode] = useDarkMode()
@@ -1031,6 +922,20 @@ function AuthenticatedGameApp() {
             <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-6">
               Choose your realm of knowledge and go five questions deep - creating nets of learning that connect the trivial to the profound.
             </p>
+
+            {isGuest && (
+              <div className="max-w-xl mx-auto mb-6 px-4 py-3 rounded-lg border border-amber-500/40 bg-amber-900/20 text-amber-100 text-sm">
+                Playing as guest — progress stays on this device.{' '}
+                <button
+                  type="button"
+                  onClick={logout}
+                  className="underline hover:text-white font-medium"
+                >
+                  Sign in
+                </button>{' '}
+                to save scores and rank globally.
+              </div>
+            )}
             
             {/* Daily Challenge */}
             <DailyChallenge onStartChallenge={handleDailyChallenge} />

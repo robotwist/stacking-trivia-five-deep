@@ -1,31 +1,64 @@
 {
   "title": "Superheroes: Powers and Origins",
-  "description": "Learn the amazing secrets behind your favorite superheroes and their incredible powers!",
+  "description": "Origins, secret identities, and superpowers—hero lore in five steps.",
   "questions": [
     {
-      "q": "What planet is Superman from?",
-      "a": ["krypton"],
-      "hint": "It's a planet that was destroyed, and it sounds like a gas you might find in science class!"
+      "level": 1,
+      "question": "What planet is Superman from?",
+      "answer": "Krypton",
+      "acceptedAnswers": [
+        "krypton",
+        "planet krypton",
+        "the planet krypton"
+      ],
+      "hint": "A destroyed planet that sounds like a science gas"
     },
     {
-      "q": "What gives Spider-Man his powers?",
-      "a": ["radioactive spider bite", "spider bite", "radioactive spider"],
-      "hint": "A small crawling creature bit him, but it had been affected by dangerous radiation!"
+      "level": 2,
+      "question": "After leaving Krypton, Superman was raised on what planet?",
+      "answer": "Earth",
+      "acceptedAnswers": [
+        "earth",
+        "planet earth",
+        "the earth"
+      ],
+      "hint": "Our home planet"
     },
     {
-      "q": "What is Batman's real name?",
-      "a": ["bruce wayne"],
-      "hint": "He's a rich guy who lives in Gotham City and his first name is Bruce!"
+      "level": 3,
+      "question": "On Earth, what gives Spider-Man his powers?",
+      "answer": "Radioactive spider bite",
+      "acceptedAnswers": [
+        "radioactive spider bite",
+        "spider bite",
+        "radioactive spider",
+        "bit by spider"
+      ],
+      "hint": "A tiny creature plus dangerous radiation"
     },
     {
-      "q": "What metal makes up Wolverine's claws and skeleton?",
-      "a": ["adamantium"],
-      "hint": "It's a super-strong fictional metal that makes him nearly indestructible!"
+      "level": 4,
+      "question": "Spider-Man's real name is Peter Parker—what is Batman's?",
+      "answer": "Bruce Wayne",
+      "acceptedAnswers": [
+        "bruce wayne",
+        "brucewayne",
+        "wayne",
+        "bruce"
+      ],
+      "hint": "A rich Gotham citizen named Bruce"
     },
     {
-      "q": "Which superhero gets stronger when he gets angry?",
-      "a": ["hulk", "the hulk"],
-      "hint": "He turns green and smashes things when he's mad!"
+      "level": 5,
+      "question": "Bruce Wayne fights crime as Batman; who gets stronger when angry?",
+      "answer": "Hulk",
+      "acceptedAnswers": [
+        "hulk",
+        "the hulk",
+        "incredible hulk",
+        "bruce banner"
+      ],
+      "hint": "He turns green and smashes things"
     }
   ]
 }

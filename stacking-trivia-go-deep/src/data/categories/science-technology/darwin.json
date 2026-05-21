@@ -1,37 +1,42 @@
 {
   "title": "Darwin: Evolution Revolution",
-  "description": "The naturalist who forever changed how we understand life on Earth through natural selection",
-  "category": "Science & Technology", 
-  "difficulty": "intermediate",
-  "imageHint": "🐒 From Galápagos finches to the tree of life 🌳",
+  "description": "The naturalist whose voyage rewrote how we see life on Earth.",
   "questions": [
     {
+      "level": 1,
       "question": "What is the title of Darwin's groundbreaking 1859 book that introduced the theory of evolution?",
+      "answer": "On the Origin of Species",
       "acceptedAnswers": [
         "On the Origin of Species",
         "The Origin of Species",
         "origin of species",
         "on the origin of species by means of natural selection",
-        "origin species"
+        "origin species",
+        "on the origin of species"
       ],
       "hint": "It's about the 'origin' of all living things and their different types"
     },
     {
+      "level": 2,
       "question": "Which Pacific island chain provided Darwin with crucial evidence for evolution, especially the finches?",
+      "answer": "Galápagos Islands",
       "acceptedAnswers": [
         "Galápagos Islands",
-        "Galapagos Islands", 
+        "Galapagos Islands",
         "Galápagos",
         "Galapagos",
-        "galapagos islands"
+        "galapagos islands",
+        "galápagos islands"
       ],
       "hint": "These volcanic islands are off the coast of Ecuador, famous for unique species"
     },
     {
+      "level": 3,
       "question": "What is the term for Darwin's principle that organisms best adapted to their environment survive and reproduce?",
+      "answer": "natural selection",
       "acceptedAnswers": [
         "natural selection",
-        "survival of the fittest", 
+        "survival of the fittest",
         "natural selection theory",
         "selection natural",
         "evolutionary selection"
@@ -39,7 +44,9 @@
       "hint": "Nature 'selects' the best traits, or only the 'fittest' survive"
     },
     {
+      "level": 4,
       "question": "On which famous ship did young Darwin serve as the naturalist during his five-year voyage?",
+      "answer": "HMS Beagle",
       "acceptedAnswers": [
         "HMS Beagle",
         "Beagle",
@@ -50,7 +57,9 @@
       "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world"
     },
     {
+      "level": 5,
       "question": "Darwin delayed publishing his theory for decades partly due to conflict with his religious beliefs. What was his original field of study?",
+      "answer": "theology",
       "acceptedAnswers": [
         "theology",
         "divinity",
@@ -61,29 +70,32 @@
       "hint": "He originally studied to become a clergyman and understand God's word"
     }
   ],
+  "imageHint": "Finches, fossils, and the puzzle of adaptation",
+  "category": "Science & Technology",
   "deeperMode": {
     "title": "Darwin's Tormented Genius",
-    "description": "The personal struggles and obsessive details behind the theory that shook the world",
+    "description": "Personal struggle behind a world-changing theory",
     "questions": [
       {
-        "question": "Darwin kept a detailed 'thinking path' in his garden where he would walk while pondering evolution. What did he call this path?",
+        "question": "Darwin paced a gravel path in his garden while pondering evolution. What did he call it?",
+        "answer": "Sandwalk",
         "acceptedAnswers": [
-          "thinking path",
-          "thinking walk", 
-          "the thinking path",
-          "contemplation path"
+          "sandwalk",
+          "the sandwalk",
+          "darwin's sandwalk",
+          "sand walk"
         ],
         "bonus": 150,
         "hint": "He would drop pebbles to count his laps while deep in thought about natural selection"
       },
       {
-        "question": "What chronic illness plagued Darwin for most of his adult life, possibly caused by stress over his revolutionary theory?",
+        "question": "What chronic health problem plagued Darwin for most of his adult life, possibly worsened by stress over his revolutionary theory?",
+        "answer": "Stomach problems",
         "acceptedAnswers": [
-          "chronic fatigue",
-          "mysterious illness",
-          "chronic illness",
-          "nervous disorder", 
-          "anxiety disorder"
+          "stomach problems",
+          "digestive problems",
+          "gastric distress",
+          "chronic stomach problems"
         ],
         "bonus": 200,
         "hint": "Modern doctors think it was stress-related, causing stomach problems and exhaustion"

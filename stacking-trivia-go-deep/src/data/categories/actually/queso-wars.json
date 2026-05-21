@@ -1,0 +1,71 @@
+{
+  "title": "Queso Wars: Texas vs Arkansas",
+  "description": "Two states, one melty feud, and a Capitol Hill showdown—five steps into cheese-dip lore.",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Texas and Arkansas feud over who invented what party dip?",
+      "answer": "Cheese dip",
+      "acceptedAnswers": [
+        "Cheese dip",
+        "cheese dip",
+        "queso",
+        "chile con queso",
+        "chili con queso",
+        "tex-mex queso",
+        "melted cheese dip"
+      ],
+      "explanation": "Arkansas champions \"cheese dip\"; Texas claims chile con queso as its own Tex-Mex birthright—the rivalry is cultural, not just culinary."
+    },
+    {
+      "level": 2,
+      "question": "In December 2016, which state's senator challenged Texas to a blind Capitol taste test?",
+      "answer": "Arkansas",
+      "acceptedAnswers": [
+        "Arkansas",
+        "arkansas",
+        "ar",
+        "state of arkansas"
+      ],
+      "explanation": "Senator Tom Cotton (R-Arkansas) threw down the gauntlet; Texas senators accepted—and Arkansas took the Senate vote, fueling the feud."
+    },
+    {
+      "level": 3,
+      "question": "Arkansas's cheese-dip origin story often credits Mexico Chiquito, founded in what city?",
+      "answer": "North Little Rock",
+      "acceptedAnswers": [
+        "North Little Rock",
+        "north little rock",
+        "nlr",
+        "north littlerock"
+      ],
+      "explanation": "Mexico Chiquito opened in North Little Rock in 1935; Arkansas partisans tie the state's dip dynasty to that restaurant line."
+    },
+    {
+      "level": 4,
+      "question": "The classic Velveeta party dip pairs processed cheese with what canned tomato-chile brand?",
+      "answer": "Rotel",
+      "acceptedAnswers": [
+        "Rotel",
+        "rotel",
+        "rotel tomatoes",
+        "rotel dip"
+      ],
+      "explanation": "Carl Roettele created Rotel in Elsa, Texas, in 1943—the brand became inseparable from tailgates and living-room crock pots on the Texas side of the feud."
+    },
+    {
+      "level": 5,
+      "question": "Rotel was first canned in Elsa in what year?",
+      "answer": "1943",
+      "acceptedAnswers": [
+        "1943",
+        "nineteen forty-three",
+        "nineteen forty three",
+        "in 1943"
+      ],
+      "explanation": "That year locks the Texas side of the story: a border-state canning innovation later married to Velveeta in countless home recipes."
+    }
+  ],
+  "imageHint": "A steaming bowl at a tailgate—no state names on the menu",
+  "category": "Actually"
+}

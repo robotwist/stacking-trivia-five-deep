@@ -1,17 +1,16 @@
 {
   "title": "Actually: Van Gogh Myths Busted",
-  "image": "detective-magnifying-glass.jpg",
-  "imageHint": "A magnifying glass revealing hidden truths, perfect for the fact-checker of the group",
-  "description": "Think you know Van Gogh? Actually, these 'facts' might surprise you...",
+  "description": "Popular stories about a tortured master—which hold up under scrutiny?",
   "questions": [
     {
       "level": 1,
       "question": "Actually, Van Gogh didn't cut off his entire ear. What did he really cut?",
       "answer": "Part of his earlobe",
       "acceptedAnswers": [
-        "part of his earlobe", 
-        "earlobe", 
-        "part of the earlobe", 
+        "Part of his earlobe",
+        "part of his earlobe",
+        "earlobe",
+        "part of the earlobe",
         "just the earlobe",
         "his earlobe",
         "the earlobe",
@@ -31,61 +30,49 @@
       "level": 2,
       "question": "Actually, Van Gogh wasn't completely unknown. How many exhibitions did he participate in during his lifetime?",
       "answer": "Four",
-      "acceptedAnswers": ["four", "4", "four exhibitions"]
+      "acceptedAnswers": [
+        "Four",
+        "four",
+        "4",
+        "four exhibitions"
+      ]
     },
     {
       "level": 3,
       "question": "Actually, Van Gogh didn't paint 'Starry Night' outdoors. Where did he paint it?",
       "answer": "From his asylum window",
-      "acceptedAnswers": ["from his asylum window", "asylum window", "from his window", "inside the asylum"]
+      "acceptedAnswers": [
+        "From his asylum window",
+        "from his asylum window",
+        "asylum window",
+        "from his window",
+        "inside the asylum"
+      ]
     },
     {
       "level": 4,
       "question": "Actually, Van Gogh wasn't always poor. What profession earned him good money before painting?",
       "answer": "Art dealer",
-      "acceptedAnswers": ["art dealer", "dealer", "art dealership"]
+      "acceptedAnswers": [
+        "Art dealer",
+        "art dealer",
+        "dealer",
+        "art dealership"
+      ]
     },
     {
       "level": 5,
       "question": "Actually, Van Gogh didn't commit suicide according to recent theories. What likely killed him?",
       "answer": "Accidental shooting",
-      "acceptedAnswers": ["accidental shooting", "accident", "accidental gunshot", "was shot accidentally"]
+      "acceptedAnswers": [
+        "Accidental shooting",
+        "accidental shooting",
+        "accident",
+        "accidental gunshot",
+        "was shot accidentally"
+      ]
     }
   ],
-  "deeper": {
-    "title": "DEEPER MODE UNLOCKED: Van Gogh Truth Bombs",
-    "description": "The deepest misconceptions that even art experts get wrong...",
-    "questions": [
-      {
-        "level": 1,
-        "question": "Actually, Van Gogh's famous thick paint technique has a name. What is it?",
-        "answer": "Impasto",
-        "acceptedAnswers": ["impasto"]
-      },
-      {
-        "level": 2,
-        "question": "Actually, Van Gogh sold more than one painting. Recent research suggests how many?",
-        "answer": "Two or three",
-        "acceptedAnswers": ["two", "three", "2", "3", "two or three", "2 or 3"]
-      },
-      {
-        "level": 3,
-        "question": "Actually, Van Gogh wasn't Dutch by choice. What nationality did he want to become?",
-        "answer": "French",
-        "acceptedAnswers": ["french"]
-      },
-      {
-        "level": 4,
-        "question": "Actually, Van Gogh didn't paint 'Sunflowers' for joy. Why did he paint them?",
-        "answer": "To decorate Gauguin's room",
-        "acceptedAnswers": ["to decorate gauguin's room", "for gauguin's room", "for gauguin"]
-      },
-      {
-        "level": 5,
-        "question": "Actually, Van Gogh's brother Theo didn't just support him. What was Theo's profession?",
-        "answer": "Successful art dealer",
-        "acceptedAnswers": ["successful art dealer", "art dealer", "dealer"]
-      }
-    ]
-  }
+  "image": "detective-magnifying-glass.jpg",
+  "imageHint": "A magnifying glass revealing hidden truths, perfect for the fact-checker of the group"
 }

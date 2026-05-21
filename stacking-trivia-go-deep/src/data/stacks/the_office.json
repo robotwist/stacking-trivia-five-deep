@@ -1,43 +1,64 @@
 {
-  "id": "the-office",
   "title": "The Office: That's What She Said",
-  "category": "pop-culture",
-  "description": "From Scranton to corporate comedy gold",
+  "description": "Workplace absurdity in a Pennsylvania paper company—five sitcom depths.",
   "questions": [
     {
       "level": 1,
       "question": "What is the name of the paper company where the show takes place?",
       "answer": "Dunder Mifflin",
-      "acceptedAnswers": ["dunder mifflin", "dunder-mifflin"],
+      "acceptedAnswers": [
+        "Dunder Mifflin",
+        "dunder mifflin",
+        "dunder-mifflin"
+      ],
       "hint": "The People Person's Paper People"
     },
     {
       "level": 2,
       "question": "What is Michael Scott's favorite catchphrase when something sounds suggestive?",
       "answer": "That's what she said",
-      "acceptedAnswers": ["that's what she said", "thats what she said"],
+      "acceptedAnswers": [
+        "That's what she said",
+        "that's what she said",
+        "thats what she said"
+      ],
       "hint": "Michael's go-to inappropriate joke"
     },
     {
       "level": 3,
       "question": "What is the name of Dwight's beet farm?",
       "answer": "Schrute Farms",
-      "acceptedAnswers": ["schrute farms", "schrute farm"],
+      "acceptedAnswers": [
+        "Schrute Farms",
+        "schrute farms",
+        "schrute farm"
+      ],
       "hint": "Bears, beets, Battlestar Galactica"
     },
     {
       "level": 4,
       "question": "What yearly office tradition involves Secret Santa and white elephant gifts?",
       "answer": "Yankee Swap",
-      "acceptedAnswers": ["yankee swap", "white elephant", "secret santa"],
+      "acceptedAnswers": [
+        "Yankee Swap",
+        "yankee swap",
+        "white elephant",
+        "secret santa"
+      ],
       "hint": "iPod, iPod, iPod!"
     },
     {
       "level": 5,
       "question": "What is the name of the documentary crew member who Jim sometimes talks to?",
       "answer": "The cameraman",
-      "acceptedAnswers": ["the cameraman", "cameraman", "documentary crew"],
+      "acceptedAnswers": [
+        "The cameraman",
+        "the cameraman",
+        "cameraman",
+        "documentary crew"
+      ],
       "hint": "Jim's knowing glances go to this person"
     }
-  ]
+  ],
+  "category": "pop-culture"
 }

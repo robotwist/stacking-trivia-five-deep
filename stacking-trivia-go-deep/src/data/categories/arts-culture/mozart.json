@@ -1,12 +1,11 @@
 {
-  "title": "Mozart: Classical Genius", 
-  "description": "The child prodigy who composed over 600 works and died mysteriously at 35, leaving an immortal musical legacy",
-  "category": "Arts & Culture",
-  "difficulty": "intermediate",
-  "imageHint": "🎼 From child prodigy to immortal symphonies 🎹",
+  "title": "Mozart: Classical Genius",
+  "description": "Child prodigy, operatic drama, and unfinished mystery—a short climb through classical lore.",
   "questions": [
     {
+      "level": 1,
       "question": "At what remarkably young age did Mozart compose his first piece of music?",
+      "answer": "5",
       "acceptedAnswers": [
         "5",
         "five",
@@ -16,7 +15,9 @@
       "hint": "Before he could even write properly, he was creating music"
     },
     {
+      "level": 2,
       "question": "Mozart's opera about a Spanish nobleman's adventures with women is called what?",
+      "answer": "Don Giovanni",
       "acceptedAnswers": [
         "Don Giovanni",
         "don giovanni",
@@ -25,17 +26,22 @@
       "hint": "Italian for 'Sir John' - about a legendary seducer who meets a supernatural end"
     },
     {
+      "level": 3,
       "question": "What is the popular name for Mozart's Symphony No. 41 in C major, his final symphony?",
+      "answer": "Jupiter",
       "acceptedAnswers": [
         "Jupiter",
         "jupiter symphony",
         "Jupiter Symphony",
-        "the jupiter"
+        "the jupiter",
+        "jupiter"
       ],
       "hint": "Named after the king of Roman gods - his most majestic symphony"
     },
     {
+      "level": 4,
       "question": "Mozart died while composing which famous piece that deals with death and judgment?",
+      "answer": "Requiem",
       "acceptedAnswers": [
         "Requiem",
         "requiem",
@@ -45,14 +51,20 @@
       "hint": "A mass for the dead, left unfinished when the composer himself died"
     },
     {
+      "level": 5,
       "question": "In which Austrian city was Mozart born in 1756?",
+      "answer": "Salzburg",
       "acceptedAnswers": [
         "Salzburg",
-        "salzburg"
+        "salzburg",
+        "salzburg austria",
+        "austria"
       ],
       "hint": "Known for its salt trade and baroque architecture, now famous for Mozart tours"
     }
   ],
+  "imageHint": "🎼 From child prodigy to immortal symphonies 🎹",
+  "category": "Arts & Culture",
   "deeperMode": {
     "title": "The Musical Madman's Secrets",
     "description": "Mozart's eccentric personality and the mysteries surrounding his death",

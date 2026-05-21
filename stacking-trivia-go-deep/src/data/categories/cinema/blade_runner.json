@@ -1,41 +1,63 @@
 {
   "title": "Blade Runner",
-  "image": "neon-cityscape.jpg",
-  "imageHint": "A futuristic Los Angeles 2019 with towering neon-lit buildings and flying cars",
+  "description": "Neo-noir futures, synthetic life, and what makes us human—five cinematic depths.",
   "questions": [
     {
-      "q": "Who directed Blade Runner?",
-      "a": [
-        "ridley scott"
+      "level": 1,
+      "question": "Who directed Blade Runner?",
+      "answer": "Ridley Scott",
+      "acceptedAnswers": [
+        "Ridley Scott",
+        "ridley scott",
+        "scott",
+        "ridley"
       ]
     },
     {
-      "q": "What year is the film set in?",
-      "a": [
-        "2019"
+      "level": 2,
+      "question": "Scott's Blade Runner is set in what year?",
+      "answer": "2019",
+      "acceptedAnswers": [
+        "2019",
+        "nineteen nineteen",
+        "year 2019"
       ]
     },
     {
-      "q": "What is the name of the replicant hunter?",
-      "a": [
+      "level": 3,
+      "question": "In that 2019 LA, who is the replicant hunter protagonist?",
+      "answer": "Rick Deckard",
+      "acceptedAnswers": [
+        "Rick Deckard",
+        "rick deckard",
         "deckard",
-        "rick deckard"
+        "deckard rick"
       ]
     },
     {
-      "q": "Which company created the replicants?",
-      "a": [
+      "level": 4,
+      "question": "Deckard hunts replicants made by which corporation?",
+      "answer": "Tyrell Corporation",
+      "acceptedAnswers": [
+        "Tyrell Corporation",
+        "tyrell corporation",
         "tyrell",
-        "tyrell corporation"
+        "tyrell corp"
       ]
     },
     {
-      "q": "What is the name of the Voight-Kampff test's purpose?",
-      "a": [
+      "level": 5,
+      "question": "Tyrell uses the Voight-Kampff test to measure what human trait?",
+      "answer": "Empathy",
+      "acceptedAnswers": [
+        "Empathy",
         "empathy",
-        "detect empathy",
-        "measure empathy"
+        "empathic response",
+        "emotional response",
+        "lack of empathy"
       ]
     }
-  ]
+  ],
+  "image": "neon-cityscape.jpg",
+  "imageHint": "Rain-slick streets and neon in a dystopian cityscape"
 }

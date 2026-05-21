@@ -1,7 +1,24 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { railwayAPI } from '../services/railwayAPI';
 
+const GUEST_SESSION_KEY = 'trivia_guest_session';
+
 const AuthContext = createContext();
+
+export function createGuestUser() {
+  return {
+    uid: 'guest',
+    username: 'Guest',
+    isGuest: true,
+    total_score: 0,
+    games_played: 0,
+    current_streak: 0,
+    correct_answers: 0,
+    total_questions: 0,
+    global_rank: null,
+    created_at: new Date().toISOString(),
+  };
+}
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -51,6 +68,12 @@ export const AuthProvider = ({ children }) => {
       
       console.log('🔍 AuthContext: token exists?', !!token, 'userData exists?', !!userData);
       
+      const guestSession = sessionStorage.getItem(GUEST_SESSION_KEY);
+      if (guestSession === '1') {
+        setUser(createGuestUser());
+        return;
+      }
+
       if (token && userData) {
         console.log('🔍 AuthContext: Found stored auth data, verifying...');
         // Verify token is still valid - handle missing backend gracefully with timeout
@@ -223,7 +246,17 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const enterGuestMode = useCallback(() => {
+    sessionStorage.setItem(GUEST_SESSION_KEY, '1');
+    localStorage.removeItem('trivia_token');
+    localStorage.removeItem('trivia_user');
+    setUser(createGuestUser());
+    setError(null);
+    setLoading(false);
+  }, []);
+
   const logout = () => {
+    sessionStorage.removeItem(GUEST_SESSION_KEY);
     localStorage.removeItem('trivia_token');
     localStorage.removeItem('trivia_user');
     setUser(null);
@@ -259,6 +292,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const markStackCompleted = async (stackName, score) => {
+    if (user?.isGuest) {
+      return;
+    }
     try {
       const token = localStorage.getItem('trivia_token');
       if (!token) {
@@ -286,6 +322,8 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const isGuest = !!user?.isGuest;
+
   const value = {
     user,
     loading,
@@ -293,10 +331,13 @@ export const AuthProvider = ({ children }) => {
     signup,
     login,
     logout,
+    enterGuestMode,
     updateUserStats,
     getCompletedStacks,
     markStackCompleted,
-    isAuthenticated: !!user
+    isGuest,
+    isAuthenticated: !!user && !isGuest,
+    canPlay: !!user,
   };
 
   return (

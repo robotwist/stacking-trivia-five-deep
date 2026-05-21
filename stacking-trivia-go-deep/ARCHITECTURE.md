@@ -1,7 +1,22 @@
 # Code Architecture & Modularity Guide
 
 ## Overview
-This codebase has been refactored into a modular architecture for better maintainability, reusability, and scalability.
+
+Modular React app for **DeepStack** trivia: five-question narrative stacks, typed answers with fuzzy matching, optional MCQ hints, and group/host modes. Content rules are documented in [`docs/GOLD_STANDARD_STACK.md`](docs/GOLD_STANDARD_STACK.md).
+
+## Runtime flow
+
+```
+User → AuthContext (sign-in OR guest session)
+     → CategorySelection / StackSelection
+     → gameStacks = loadPlayableStacks() from playableStacks.manifest.js
+     → GameStack (depth 0–4, scoreUtils, textUtils, optional deeperMode)
+     → PostGameFlow / progress (API when VITE_API_BASE_URL set)
+```
+
+- **Content source of truth:** JSON under `src/data/stacks/` and `src/data/categories/`, registered in `src/data/playableStacks.manifest.js`, loaded by `loadPlayableStacks.js` (validated via `tools/playableStacksManifest.js`).
+- **Quality gate:** `npm run validate:stacks` → `tools/stackValidator.js` (schema, leakage in questions/descriptions, 5 levels).
+- **Not yet the main path:** `ContentManager` glob loader and Postgres-published stacks (see `docs/archive/app/CONTENT_STRATEGY.md`).
 
 ## Directory Structure
 
@@ -18,8 +33,9 @@ src/
 │   └── index.js         # Hook exports
 ├── utils/               # Utility functions
 │   ├── arrayUtils.js    # Array manipulation utilities
-│   ├── textUtils.js     # Text processing and answer matching
-│   ├── scoreUtils.js    # Scoring calculations
+│   ├── textUtils.js     # Answer matching (fuzzy / typo tolerance)
+│   ├── normalizeStack.js # Legacy q/a → gold-standard schema
+│   ├── scoreUtils.js    # Scoring calculations (10–160 per level)
 │   ├── storageUtils.js  # LocalStorage helpers
 │   ├── dataUtils.js     # Data management utilities
 │   └── index.js         # Utility exports

@@ -1,33 +1,65 @@
 {
-  "title": "Current Olympic Distance Running",
-  "image": "olympic-torch.jpg",
-  "imageHint": "The iconic flame that burns throughout the modern Olympic Games",
-  "description": "Explore modern champions from the latest Olympic Games, from 800m to 10,000m.",
+  "title": "Tokyo 2020 Olympic Distance Running",
+  "description": "Middle-distance drama at a recent Summer Games—five races, five revelations.",
   "questions": [
     {
       "level": 1,
-      "question": "Who won the men's 800m gold medal at the Tokyo 2020 Olympics?",
-      "answer": "Emmanuel Korir"
+      "question": "Who won the men's 800m gold at the Tokyo 2020 Olympics?",
+      "answer": "Emmanuel Korir",
+      "acceptedAnswers": [
+        "Emmanuel Korir",
+        "emmanuel korir",
+        "korir",
+        "emmanuel kiprono korir"
+      ]
     },
     {
       "level": 2,
-      "question": "Which Dutch runner won gold in the women's 5000m and 10,000m at Tokyo 2020?",
-      "answer": "Sifan Hassan"
+      "question": "Korir's event spans how many meters in total?",
+      "answer": "800",
+      "acceptedAnswers": [
+        "800",
+        "800 meters",
+        "800m",
+        "eight hundred"
+      ]
     },
     {
       "level": 3,
-      "question": "Who won the men's 1500m at the Tokyo 2020 Olympics?",
-      "answer": "Jakob Ingebrigtsen"
+      "question": "Who won the women's 800m gold at the same Tokyo Games?",
+      "answer": "Athing Mu",
+      "acceptedAnswers": [
+        "Athing Mu",
+        "athing mu",
+        "mu",
+        "athing"
+      ]
     },
     {
       "level": 4,
-      "question": "Which Ugandan runner won the men's 5000m at Tokyo 2020?",
-      "answer": "Joshua Cheptegei"
+      "question": "Who finished second behind Athing Mu in that 800m final?",
+      "answer": "Keely Hodgkinson",
+      "acceptedAnswers": [
+        "Keely Hodgkinson",
+        "keely hodgkinson",
+        "hodgkinson",
+        "keely"
+      ]
     },
     {
       "level": 5,
-      "question": "Who claimed silver in the women's 800m at the Tokyo 2020 Olympics?",
-      "answer": "Keely Hodgkinson"
+      "question": "Which country did Keely Hodgkinson represent?",
+      "answer": "Great Britain",
+      "acceptedAnswers": [
+        "Great Britain",
+        "great britain",
+        "britain",
+        "uk",
+        "united kingdom",
+        "england"
+      ]
     }
-  ]
+  ],
+  "image": "olympic-torch.jpg",
+  "imageHint": "The flame and track that define Olympic distance running"
 }

@@ -1,66 +1,89 @@
-# 🧠 DeepStack: Trivia That Dares to Matter
+# DeepStack (Stacking Trivia: Go Deep)
 
-**DeepStack** is not your average trivia game. It’s a dive into the meaningful, the absurd, and the wonderfully obscure — a radical rethinking of bar trivia for the curious, the cultured, and the courageously nerdy.
+Bar- and group-friendly trivia where each round **unlocks one story** in **five linked questions**—not five random facts on a topic. Answer each level correctly to keep diving; scoring doubles per level (10 → 20 → 40 → 80 → 160). Wrong answer ends the run.
 
----
+**Content strategy:** Stacks are hand-architected micro-narratives (Serena’s secret pregnancy, Texas–Arkansas queso feud, Prefontaine’s rebel arc). See [NARRATIVE_STACK_DESIGN.md](stacking-trivia-go-deep/docs/NARRATIVE_STACK_DESIGN.md).
 
-## 🔮 Concept
-
-In DeepStack, players don’t just answer *one* trivia question — they go **five levels deep** on a subject. Each level uncovers more specificity, more absurdity, and more delight. You must answer correctly at each level to keep diving. The further you go, the richer the rewards (and the weirder the facts).
-
-Every session starts with a visual prompt (think: a face, a logo, a landmark) and spirals downward — from the obvious to the esoteric. Think *Monty Python meets Jeopardy meets your smartest group chat*.
+The shipped UI title is **Deeply Trivial**; the product name in docs is **DeepStack**.
 
 ---
 
-## ✨ Game Modes
+## Core loop (implemented)
 
-### 🎲 Core Loop
-1. **Image Reveal:** An image is shown. The first to guess the surface-level fact (e.g., "Who painted this?") starts the round.
-2. **Stack Dive:** The group works through a 5-question stack on that subject — each one doubling the score from the last.
-3. **Regional Stack:** Every group session includes a stack tied to regional/local knowledge (e.g., Nebraska Sports, Silicon Valley History).
-4. **Performance Finale (optional):** Teams can write a rap, play, or song that synthesizes their stack knowledge for bonus points.
+1. Choose a category and stack (45+ playable stacks in JSON).
+2. Answer five linked questions — each level should build on the previous answer.
+3. Type your answer (fuzzy matching for typos); optional “Show answer choices” for MCQ hints.
+4. Optional **Deeper Mode** after a perfect run (where the stack defines bonus questions).
+5. Host, projector, and bar modes exist for group play.
 
----
+**Not required for every stack:** photo-first opening (`photoFirst` on select stacks only).
 
-## 🧱 Example Stack: Van Gogh
-
-1. Who painted *Starry Night*?
-2. How many paintings did he sell in his lifetime?
-3. Who did he sell it to?
-4. How much was it sold for?
-5. What was the occupation of the buyer?
+**Auth:** **Play as Guest** works without an API (bundled JSON). Sign-in optional for cloud progress and leaderboards. Deep link: `/play?stack=<key>&category=<key>`.
 
 ---
 
-## 🎯 Goals
+## Canonical example: Van Gogh
 
-- Replace boring bar trivia with something rich and layered.
-- Reward true knowledge and curiosity.
-- Create a format that can scale from bars to classrooms to livestreams.
+This is the gold-standard chain ([`stacking-trivia-go-deep/src/data/stacks/van-gogh.json`](stacking-trivia-go-deep/src/data/stacks/van-gogh.json)):
 
----
+| Level | Question | Answer |
+|-------|----------|--------|
+| 1 | Who painted *The Starry Night*? | Vincent van Gogh |
+| 2 | How many paintings did van Gogh sell in his lifetime? | One |
+| 3 | Title of the only painting sold while alive? | The Red Vineyard |
+| 4 | Who bought *The Red Vineyard*? | Anna Boch |
+| 5 | How much did Anna Boch pay in 1890? | 400 francs |
 
-## 💻 MVP / MDP Scope
-
-- JSON-based stacks (5-question depth model).
-- Local or hosted app that reads, displays, and scores stacks.
-- Stack loader: manually or randomly assign stacks.
-- Score multiplier logic (2x per depth level).
-- Team/Player structure and leaderboard.
-- Simple UI — mobile-first or projector-friendly.
-- Optional performance upload/presentation mode.
+Descriptions and image hints must **not** spoil answers (e.g. do not write “23 majors” in the blurb if Q1 asks for that count).
 
 ---
 
-## 🛠 Stack
+## Documentation
 
-- Frontend: React or Svelte (TBD based on iteration speed)
-- Backend (optional for now): Node.js or Python Flask
-- Deployment: Netlify (static) or Heroku (for backend-enabled version)
-- Stack Storage: JSON files or light database
-- Auth (later): Supabase or Firebase if needed
+| Doc | Path |
+|-----|------|
+| **Content contract** | [`stacking-trivia-go-deep/docs/GOLD_STANDARD_STACK.md`](stacking-trivia-go-deep/docs/GOLD_STANDARD_STACK.md) |
+| **Authoring guide** | [`stacking-trivia-go-deep/docs/STACK_AUTHORING.md`](stacking-trivia-go-deep/docs/STACK_AUTHORING.md) |
+| **Doc index** | [`docs/README.md`](docs/README.md) |
+| **Archived (historical)** | [`docs/archive/README.md`](docs/archive/README.md) |
+| **Development** | [`stacking-trivia-go-deep/README.md`](stacking-trivia-go-deep/README.md) |
+| **Architecture** | [`stacking-trivia-go-deep/ARCHITECTURE.md`](stacking-trivia-go-deep/ARCHITECTURE.md) |
+
+## CI
+
+From `stacking-trivia-go-deep/`: `npm run ci` (lint quality core, validate all stacks, tests, build). GitHub Actions: [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
 
 ---
 
-## 📂 Directory Example
+## Repository layout
 
+```
+stacking-trivia-go-deep/     # React + Vite app (run npm commands here)
+  src/data/stacks/           # Canonical stack JSON
+  src/data/categories/       # Categorized stack JSON
+  tools/                     # validate:stacks, stackLint, migrate
+  docs/                      # GOLD_STANDARD_STACK, STACK_AUTHORING
+README.md                    # This file — product overview
+```
+
+---
+
+## Goals
+
+- Replace shallow bar trivia with layered, literate stacks.
+- Reward curiosity and fair typed answers (not trick questions in the description).
+- Scale from bars to classrooms; host/projector modes for groups.
+
+## Aspirational (partially built)
+
+- Branch back to a prior node and dive on a tangent.
+- Regional stack every session; performance finale.
+- Database-driven content loader (stacks still wired in `App.jsx` today).
+
+---
+
+## Tech (current)
+
+- **Frontend:** React 19, Vite 7, Tailwind
+- **Content:** JSON + `normalizeStack` at load; `npm run validate:stacks`
+- **Deploy:** Netlify (static frontend); API/backend separate (see app `README` for Railway/Heroku notes)

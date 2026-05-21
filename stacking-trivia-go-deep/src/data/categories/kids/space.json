@@ -1,31 +1,63 @@
 {
-  "title": "Space Exploration: Rockets and Planets",
-  "description": "Blast off into the amazing world of space travel and discover incredible facts about our solar system!",
+  "title": "Space: Beyond Our World",
+  "description": "Stars, planets, and humankind’s small steps beyond Earth.",
   "questions": [
     {
-      "q": "How fast do rockets need to go to escape Earth's gravity?",
-      "a": ["25000 mph", "25,000 mph", "twenty five thousand mph"],
-      "hint": "It's 25 thousand miles per hour - faster than anything on Earth!"
+      "level": 1,
+      "question": "What is the closest star to Earth?",
+      "answer": "The Sun",
+      "acceptedAnswers": [
+        "the sun",
+        "sun",
+        "our sun",
+        "sol"
+      ],
+      "hint": "It lights up our day"
     },
     {
-      "q": "Which planet has the biggest volcano in our solar system?",
-      "a": ["mars"],
-      "hint": "It's the red planet, and the volcano is called Olympus Mons!"
+      "level": 2,
+      "question": "The Sun is a star at the center of what system?",
+      "answer": "Solar system",
+      "acceptedAnswers": [
+        "solar system",
+        "the solar system",
+        "our solar system"
+      ],
+      "hint": "Earth and the planets orbit the Sun"
     },
     {
-      "q": "How many moons does Jupiter have?",
-      "a": ["79", "seventy nine", "over 75"],
-      "hint": "It's almost 80 moons - Jupiter is like a mini solar system!"
+      "level": 3,
+      "question": "Which planet in our solar system is known as the Red Planet?",
+      "answer": "Mars",
+      "acceptedAnswers": [
+        "mars",
+        "the red planet",
+        "planet mars"
+      ],
+      "hint": "Named after the Roman god of war"
     },
     {
-      "q": "What did Neil Armstrong say when he first stepped on the moon?",
-      "a": ["one small step for man", "that's one small step for man"],
-      "hint": "He talked about a small step for one person but a giant leap for everyone!"
+      "level": 4,
+      "question": "Mars has two small moons—what is the larger one called?",
+      "answer": "Phobos",
+      "acceptedAnswers": [
+        "phobos",
+        "phobos moon",
+        "moon phobos"
+      ],
+      "hint": "Greek for fear"
     },
     {
-      "q": "How long does it take for light from the Sun to reach Earth?",
-      "a": ["8 minutes", "eight minutes"],
-      "hint": "About the same time it takes to eat breakfast!"
+      "level": 5,
+      "question": "Humans first walked on the Moon in what year?",
+      "answer": "1969",
+      "acceptedAnswers": [
+        "1969",
+        "nineteen sixty-nine",
+        "sixty-nine",
+        "1969 ad"
+      ],
+      "hint": "Apollo 11 mission"
     }
   ]
 }

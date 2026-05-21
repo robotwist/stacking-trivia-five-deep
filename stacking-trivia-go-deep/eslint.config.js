@@ -5,7 +5,14 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
   {
-    ignores: ['dist/**'],
+    ignores: [
+      'dist/**',
+      'test-*.js',
+      'tools/depthTemplates.js',
+      'tools/depthAnalyzer.js',
+      'tools/AutonomousStackGenerator.js',
+      'tools/bulkImport.js',
+    ],
   },
   js.configs.recommended,
   {

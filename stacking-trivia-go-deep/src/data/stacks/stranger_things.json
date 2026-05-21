@@ -1,43 +1,65 @@
 {
-  "id": "stranger-things",
   "title": "Stranger Things: Welcome to the Upside Down",
-  "category": "pop-culture",
-  "description": "From Hawkins to the Mind Flayer",
+  "description": "Small-town mystery, secret labs, and things that go bump in the night.",
   "questions": [
     {
       "level": 1,
       "question": "What is the name of the town where Stranger Things takes place?",
       "answer": "Hawkins",
-      "acceptedAnswers": ["hawkins", "hawkins indiana"],
+      "acceptedAnswers": [
+        "Hawkins",
+        "hawkins",
+        "hawkins indiana"
+      ],
       "hint": "This Indiana town has some strange secrets"
     },
     {
       "level": 2,
       "question": "What is Eleven's favorite food?",
       "answer": "Eggo waffles",
-      "acceptedAnswers": ["eggo waffles", "eggos", "waffles"],
+      "acceptedAnswers": [
+        "Eggo waffles",
+        "eggo waffles",
+        "eggos",
+        "waffles"
+      ],
       "hint": "L'eggo my..."
     },
     {
       "level": 3,
       "question": "What board game do the boys play in the first episode?",
       "answer": "Dungeons and Dragons",
-      "acceptedAnswers": ["dungeons and dragons", "d&d", "dnd"],
+      "acceptedAnswers": [
+        "Dungeons and Dragons",
+        "dungeons and dragons",
+        "d&d",
+        "dnd"
+      ],
       "hint": "Will gets captured by the Demogorgon in this game"
     },
     {
       "level": 4,
       "question": "What is the name of the parallel dimension that mirrors Hawkins?",
       "answer": "The Upside Down",
-      "acceptedAnswers": ["the upside down", "upside down"],
+      "acceptedAnswers": [
+        "The Upside Down",
+        "the upside down",
+        "upside down"
+      ],
       "hint": "Everything is dark and decaying in this place"
     },
     {
       "level": 5,
       "question": "What government laboratory is responsible for opening the portal?",
       "answer": "Hawkins National Laboratory",
-      "acceptedAnswers": ["hawkins national laboratory", "hawkins lab", "the lab"],
+      "acceptedAnswers": [
+        "Hawkins National Laboratory",
+        "hawkins national laboratory",
+        "hawkins lab",
+        "the lab"
+      ],
       "hint": "Dr. Brenner's workplace"
     }
-  ]
+  ],
+  "category": "pop-culture"
 }

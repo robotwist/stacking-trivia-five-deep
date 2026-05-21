@@ -1,43 +1,66 @@
 {
-  "id": "community",
   "title": "Community: Study Group Shenanigans",
-  "category": "pop-culture", 
-  "description": "From Greendale Community College to paintball warfare",
+  "description": "A study group at the world’s most chaotic community college.",
   "questions": [
     {
       "level": 1,
       "question": "What is the name of the community college where the show takes place?",
       "answer": "Greendale Community College",
-      "acceptedAnswers": ["greendale community college", "greendale", "greendale cc"],
+      "acceptedAnswers": [
+        "Greendale Community College",
+        "greendale community college",
+        "greendale",
+        "greendale cc"
+      ],
       "hint": "Go Human Beings!"
     },
     {
       "level": 2,
       "question": "What subject does Jeff pretend to need help with to get closer to Britta?",
       "answer": "Spanish",
-      "acceptedAnswers": ["spanish", "español"],
+      "acceptedAnswers": [
+        "Spanish",
+        "spanish",
+        "español"
+      ],
       "hint": "Señor Chang teaches this class"
     },
     {
       "level": 3,
       "question": "What is Abed's favorite TV trope that he often references?",
       "answer": "Meta",
-      "acceptedAnswers": ["meta", "being meta", "meta-humor"],
+      "acceptedAnswers": [
+        "Meta",
+        "meta",
+        "being meta",
+        "meta-humor"
+      ],
       "hint": "Cool. Cool cool cool."
     },
     {
       "level": 4,
       "question": "What annual Greendale event becomes an elaborate battle simulation?",
       "answer": "Paintball",
-      "acceptedAnswers": ["paintball", "paintball assassin", "paintball game"],
+      "acceptedAnswers": [
+        "Paintball",
+        "paintball",
+        "paintball assassin",
+        "paintball game"
+      ],
       "hint": "Modern Warfare and A Fistful of Paintballs"
     },
     {
       "level": 5,
       "question": "What is the name of the Dean's condition where he can't stop making puns?",
       "answer": "Dean-a-mania",
-      "acceptedAnswers": ["dean-a-mania", "deanamania", "dean mania"],
+      "acceptedAnswers": [
+        "Dean-a-mania",
+        "dean-a-mania",
+        "deanamania",
+        "dean mania"
+      ],
       "hint": "I hope this doesn't awaken anything in me..."
     }
-  ]
+  ],
+  "category": "pop-culture"
 }

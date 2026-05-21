@@ -230,7 +230,7 @@ describe('Best Practices Assessment', () => {
       const testFiles = [
         'src/utils/__tests__/scoreUtils.test.js',
         'src/components/__tests__/GameStack.test.jsx',
-        'src/__tests__/answerLeakage.test.js'
+        'src/__tests__/stackValidation.test.js'
       ]
       
       testFiles.forEach(file => {

@@ -1,31 +1,65 @@
 {
   "title": "Dinosaurs: Rulers of the Ancient World",
-  "description": "Discover the massive, terrifying, and amazing creatures that ruled Earth millions of years ago!",
+  "description": "Teeth, giants, and the day the rulers fell—dino facts for curious minds.",
   "questions": [
     {
-      "q": "What does the name 'Tyrannosaurus Rex' mean?",
-      "a": ["tyrant lizard king", "king tyrant lizard", "tyrant king lizard"],
-      "hint": "It means 'King' and 'Tyrant' and 'Lizard' - think about a scary ruler!"
+      "level": 1,
+      "question": "What does 'Tyrannosaurus Rex' mean?",
+      "answer": "Tyrant lizard king",
+      "acceptedAnswers": [
+        "tyrant lizard king",
+        "king tyrant lizard",
+        "tyrant king lizard"
+      ],
+      "hint": "Tyrant + lizard + king"
     },
     {
-      "q": "How long were T-Rex's teeth?",
-      "a": ["8 inches", "eight inches", "20 centimeters"],
-      "hint": "About as long as a banana! That's huge for teeth."
+      "level": 2,
+      "question": "How long were T-Rex teeth?",
+      "answer": "8 inches",
+      "acceptedAnswers": [
+        "8 inches",
+        "eight inches",
+        "8",
+        "eight",
+        "20 centimeters"
+      ],
+      "hint": "About as long as a banana"
     },
     {
-      "q": "Which dinosaur had over 500 teeth?",
-      "a": ["nigersaurus", "niger saurus"],
-      "hint": "This dinosaur was like a living lawn mower with hundreds of tiny teeth!"
+      "level": 3,
+      "question": "Which dinosaur had over 500 teeth?",
+      "answer": "Nigersaurus",
+      "acceptedAnswers": [
+        "nigersaurus",
+        "niger saurus",
+        "niger lizard"
+      ],
+      "hint": "A living lawn mower of tiny teeth"
     },
     {
-      "q": "What caused the dinosaurs to go extinct 66 million years ago?",
-      "a": ["asteroid", "meteor", "space rock", "asteroid impact"],
-      "hint": "Something from outer space crashed into Earth with massive force!"
+      "level": 4,
+      "question": "Nigersaurus lived until what ended the dinosaurs 66 million years ago?",
+      "answer": "Asteroid",
+      "acceptedAnswers": [
+        "asteroid",
+        "meteor",
+        "space rock",
+        "asteroid impact"
+      ],
+      "hint": "Something from space crashed into Earth"
     },
     {
-      "q": "Which dinosaur was longer than a school bus?",
-      "a": ["diplodocus", "brontosaurus", "apatosaurus"],
-      "hint": "This long-necked giant could reach leaves at the top of very tall trees!"
+      "level": 5,
+      "question": "After the asteroid, which long-necked dinosaur was longer than a school bus?",
+      "answer": "Diplodocus",
+      "acceptedAnswers": [
+        "diplodocus",
+        "brontosaurus",
+        "apatosaurus",
+        "diplo docus"
+      ],
+      "hint": "A giant plant-eater with a very long neck"
     }
   ]
 }

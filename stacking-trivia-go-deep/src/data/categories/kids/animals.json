@@ -1,31 +1,62 @@
 {
-  "title": "Amazing Animals: Wild and Weird",
-  "description": "Discover the most incredible, strange, and awesome animals on our planet!",
+  "title": "Animals: Wild Wonders",
+  "description": "Speed, size, and survival—remarkable creatures in five facts.",
   "questions": [
     {
-      "q": "Which animal can run faster than a car on the highway?",
-      "a": ["cheetah"],
-      "hint": "This spotted cat can reach 70 mph - faster than most cars in the city!"
+      "level": 1,
+      "question": "What is the fastest land animal?",
+      "answer": "Cheetah",
+      "acceptedAnswers": [
+        "cheetah",
+        "the cheetah",
+        "cheetahs"
+      ],
+      "hint": "Spotted cat that can sprint 70 mph"
     },
     {
-      "q": "How many hearts does an octopus have?",
-      "a": ["3", "three"],
-      "hint": "It's more than humans have, but less than five!"
+      "level": 2,
+      "question": "Cheetahs can accelerate to 60 mph in about how many seconds?",
+      "answer": "Three",
+      "acceptedAnswers": [
+        "three",
+        "3",
+        "three seconds",
+        "3 seconds"
+      ],
+      "hint": "Less than five seconds"
     },
     {
-      "q": "Which animal never forgets anything?",
-      "a": ["elephant"],
-      "hint": "There's a saying about these big gray animals having amazing memories!"
+      "level": 3,
+      "question": "What is the largest animal on Earth?",
+      "answer": "Blue whale",
+      "acceptedAnswers": [
+        "blue whale",
+        "blue whales",
+        "balaenoptera musculus"
+      ],
+      "hint": "An ocean giant bigger than any dinosaur"
     },
     {
-      "q": "What's the loudest animal on Earth?",
-      "a": ["blue whale", "whale"],
-      "hint": "This ocean giant's call can be heard from hundreds of miles away!"
+      "level": 4,
+      "question": "Blue whales eat tiny shrimplike creatures called what?",
+      "answer": "Krill",
+      "acceptedAnswers": [
+        "krill",
+        "krill shrimp",
+        "euphausiids"
+      ],
+      "hint": "Swarms of small ocean crustaceans"
     },
     {
-      "q": "Which animal can change its color to match its surroundings?",
-      "a": ["chameleon"],
-      "hint": "This lizard is like a living invisibility cloak!"
+      "level": 5,
+      "question": "Krill are hunted by whales—and which black-and-white bird?",
+      "answer": "Penguin",
+      "acceptedAnswers": [
+        "penguin",
+        "penguins",
+        "emperor penguin"
+      ],
+      "hint": "Lives in Antarctica and loves fish"
     }
   ]
 }

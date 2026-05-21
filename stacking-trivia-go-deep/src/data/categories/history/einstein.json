@@ -1,74 +1,60 @@
 {
   "title": "Albert Einstein: Relativity's Genius",
-  "image": "einstein-wild-hair.jpg", 
-  "imageHint": "The iconic wild-haired portrait of the physicist who redefined our understanding of space and time",
-  "description": "Explore the mind that gave us E=mc² and revolutionized physics forever",
+  "description": "Relativity, awards, and the mind that reimagined the cosmos.",
   "questions": [
     {
       "level": 1,
       "question": "Who developed the theory of relativity?",
       "answer": "Albert Einstein",
-      "acceptedAnswers": ["albert einstein", "einstein"]
+      "acceptedAnswers": [
+        "Albert Einstein",
+        "albert einstein",
+        "einstein"
+      ]
     },
     {
       "level": 2,
       "question": "What is Einstein's most famous equation?",
       "answer": "E=mc²",
-      "acceptedAnswers": ["e=mc²", "e=mc2", "e equals mc squared"]
+      "acceptedAnswers": [
+        "E=mc²",
+        "e=mc²",
+        "e=mc2",
+        "e equals mc squared"
+      ]
     },
     {
       "level": 3,
       "question": "For which discovery did Einstein win the Nobel Prize in Physics?",
       "answer": "Photoelectric effect",
-      "acceptedAnswers": ["photoelectric effect", "the photoelectric effect"]
+      "acceptedAnswers": [
+        "Photoelectric effect",
+        "photoelectric effect",
+        "the photoelectric effect"
+      ]
     },
     {
       "level": 4,
       "question": "In which year did Einstein win the Nobel Prize?",
       "answer": "1921",
-      "acceptedAnswers": ["1921", "nineteen twenty-one"]
+      "acceptedAnswers": [
+        "1921",
+        "nineteen twenty-one",
+        "nineteen twenty one",
+        "year 1921"
+      ]
     },
     {
       "level": 5,
       "question": "Which university did Einstein work at when he died?",
       "answer": "Princeton University",
-      "acceptedAnswers": ["princeton university", "princeton"]
+      "acceptedAnswers": [
+        "Princeton University",
+        "princeton university",
+        "princeton"
+      ]
     }
   ],
-  "deeper": {
-    "title": "DEEPER MODE UNLOCKED: Einstein's Hidden Dimensions",
-    "description": "Journey beyond relativity into the physicist's lesser-known contributions and personal mysteries",
-    "questions": [
-      {
-        "level": 1,
-        "question": "What phenomenon did Einstein call 'spooky action at a distance'?",
-        "answer": "Quantum entanglement",
-        "acceptedAnswers": ["quantum entanglement", "entanglement"]
-      },
-      {
-        "level": 2,
-        "question": "What was Einstein's nationality when he won the Nobel Prize?",
-        "answer": "German",
-        "acceptedAnswers": ["german", "germany"]
-      },
-      {
-        "level": 3,
-        "question": "Which thought experiment involves Einstein in an elevator?",
-        "answer": "The equivalence principle",
-        "acceptedAnswers": ["equivalence principle", "the equivalence principle", "einstein's elevator"]
-      },
-      {
-        "level": 4,
-        "question": "What did Einstein contribute to the development of Brownian motion?",
-        "answer": "Mathematical proof of atoms",
-        "acceptedAnswers": ["mathematical proof of atoms", "proof of atoms", "atomic theory proof"]
-      },
-      {
-        "level": 5,
-        "question": "What was Einstein's final unfinished project?",
-        "answer": "Theory of everything",
-        "acceptedAnswers": ["theory of everything", "unified field theory", "the theory of everything"]
-      }
-    ]
-  }
+  "image": "einstein-wild-hair.jpg",
+  "imageHint": "Wild hair and equations that bent spacetime"
 }

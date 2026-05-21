@@ -1,43 +1,70 @@
 {
-  "id": "back-to-the-future",
   "title": "Back to the Future: Great Scott!",
-  "category": "pop-culture",
-  "description": "From Hill Valley to 88 mph time travel",
+  "description": "Clock towers, flux capacitors, and teenage destiny—time-travel depths.",
   "questions": [
     {
       "level": 1,
       "question": "What speed must the DeLorean reach to travel through time?",
       "answer": "88 mph",
-      "acceptedAnswers": ["88 mph", "88 miles per hour", "eighty-eight mph"],
+      "acceptedAnswers": [
+        "88 mph",
+        "88 miles per hour",
+        "eighty-eight mph",
+        "88"
+      ],
       "hint": "Great Scott! This is the magic number"
     },
     {
       "level": 2,
       "question": "What powers the flux capacitor in the DeLorean?",
       "answer": "1.21 gigawatts",
-      "acceptedAnswers": ["1.21 gigawatts", "one point twenty-one gigawatts", "1.21 jigawatts"],
+      "acceptedAnswers": [
+        "1.21 gigawatts",
+        "one point twenty-one gigawatts",
+        "1.21 jigawatts",
+        "1",
+        "one",
+        "one .21 gigawatts"
+      ],
       "hint": "Doc Brown's famous power requirement"
     },
     {
       "level": 3,
       "question": "What is the name of the high school bully who picks on George McFly?",
       "answer": "Biff Tannen",
-      "acceptedAnswers": ["biff tannen", "biff", "tannen"],
+      "acceptedAnswers": [
+        "Biff Tannen",
+        "biff tannen",
+        "biff",
+        "tannen"
+      ],
       "hint": "Make like a tree and get outta here!"
     },
     {
       "level": 4,
       "question": "What song does Marty perform at the Enchantment Under the Sea dance?",
       "answer": "Johnny B. Goode",
-      "acceptedAnswers": ["johnny b. goode", "johnny b goode", "chuck berry"],
+      "acceptedAnswers": [
+        "Johnny B. Goode",
+        "johnny b. goode",
+        "johnny b goode",
+        "chuck berry"
+      ],
       "hint": "Chuck Berry song that's a little before their time"
     },
     {
       "level": 5,
       "question": "What is Doc Brown's full name?",
       "answer": "Dr. Emmett Lathrop Brown",
-      "acceptedAnswers": ["emmett brown", "emmett lathrop brown", "dr. emmett brown"],
+      "acceptedAnswers": [
+        "Dr. Emmett Lathrop Brown",
+        "emmett brown",
+        "emmett lathrop brown",
+        "dr. emmett brown",
+        "dr. emmett lathrop brown"
+      ],
       "hint": "His middle name is Lathrop"
     }
-  ]
+  ],
+  "category": "pop-culture"
 }

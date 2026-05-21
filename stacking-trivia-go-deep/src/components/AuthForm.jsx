@@ -12,7 +12,7 @@ const AuthForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [localError, setLocalError] = useState('');
 
-  const { signup, login, loading } = useAuth();
+  const { signup, login, loading, enterGuestMode } = useAuth();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -181,21 +181,14 @@ const AuthForm = () => {
         {/* Guest Play */}
         <button
           type="button"
-          onClick={async () => {
-            try {
-              setIsSubmitting(true)
-              // Create a temporary guest user via offline-friendly login fallback
-              const guestName = `guest_${Math.random().toString(36).slice(2,7)}`
-              await login(guestName, 'guest')
-            } catch (e) {
-              setLocalError('Guest login failed. Please try again.')
-            } finally {
-              setIsSubmitting(false)
-            }
+          disabled={isSubmitting}
+          onClick={() => {
+            setLocalError('');
+            enterGuestMode();
           }}
-          className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg font-semibold transition-colors duration-200"
+          className="w-full bg-gray-100 hover:bg-gray-200 disabled:opacity-60 text-gray-800 py-2 px-4 rounded-lg font-semibold transition-colors duration-200"
         >
-          Continue as Guest
+          Play as Guest
         </button>
 
         {/* Mode Switch */}

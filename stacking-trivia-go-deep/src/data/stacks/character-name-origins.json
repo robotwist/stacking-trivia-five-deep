@@ -1,54 +1,71 @@
 {
   "title": "Character Name Origins: Encoded Destinies",
-  "description": "How authors embed fate in names - from Shakespeare's wordplay to Tolkien's linguistic genius",
-  "category": "arts-culture",
-  "difficulty": "expert",
-  "isSuper": false,
-  "unlockedBy": ["heroes-journey-super"],
-  "unlocks": [],
-  "prerequisites": ["Complete Hero's Journey with 120+ points"],
-  "estimatedTime": "15-20 minutes",
-  "imageHint": "Ancient etymological texts with character names morphing into their meanings",
+  "description": "Hidden meanings tucked inside famous character names.",
   "questions": [
     {
-      "id": 1,
-      "question": "What does 'Hamlet' literally mean in Old Danish, and how does this connect to his role as the indecisive prince?",
-      "answer": "Little village or homestead, suggesting someone caught between worlds",
-      "acceptedAnswers": ["little village", "small homestead", "hamlet village", "between worlds", "small community"],
-      "points": 10,
-      "explanation": "Hamlet derives from Old Danish meaning 'little village' - someone between the rural and courtly worlds, caught between action and contemplation, just as the character is trapped between revenge and philosophy."
+      "level": 1,
+      "question": "Old Danish 'Hamlet' means a small what?",
+      "answer": "Village",
+      "acceptedAnswers": [
+        "Village",
+        "village",
+        "small village",
+        "homestead",
+        "hamlet"
+      ],
+      "explanation": "Hamlet suggests someone caught between worlds—like the prince."
     },
     {
-      "id": 2,
-      "question": "Why did Tolkien name Gandalf 'Mithrandir' in Sindarin, and what does this reveal about his dual nature?",
-      "answer": "Grey Pilgrim - representing the wanderer between light and darkness",
-      "acceptedAnswers": ["grey pilgrim", "grey wanderer", "mithrandir grey", "between light dark", "grey traveller"],
-      "points": 20,
-      "explanation": "Mithrandir means 'Grey Pilgrim' in Sindarin - perfectly capturing Gandalf's role as the wanderer between the light of Valinor and the darkness of Middle-earth, neither fully of either world."
+      "level": 2,
+      "question": "Tolkien's Sindarin name Mithrandir for Gandalf means what?",
+      "answer": "Grey Pilgrim",
+      "acceptedAnswers": [
+        "Grey Pilgrim",
+        "grey pilgrim",
+        "gray pilgrim",
+        "grey wanderer",
+        "mithrandir"
+      ],
+      "explanation": "A wanderer between light and darkness."
     },
     {
-      "id": 3,
-      "question": "What is the hidden meaning in Severus Snape's name that J.K. Rowling embedded to foreshadow his entire character arc?",
-      "answer": "Severe/stern + to cut/rebuke, indicating harsh judgment that ultimately serves protection",
-      "acceptedAnswers": ["severe stern cut", "harsh judgment protection", "severus snape cutting", "stern rebuke guardian", "severe protective"],
-      "points": 40,
-      "explanation": "Severus (stern/harsh) + Snape (Old Norse 'to cut/rebuke') creates a name meaning 'harsh judgment' - but Snape's severity ultimately serves to protect, revealing the complexity Rowling planned from the beginning."
+      "level": 3,
+      "question": "Rowling's 'Severus' suggests what quality in Snape?",
+      "answer": "Stern",
+      "acceptedAnswers": [
+        "Stern",
+        "stern",
+        "severe",
+        "harsh",
+        "strict"
+      ],
+      "explanation": "Severus evokes severity—his harsh exterior hides protection."
     },
     {
-      "id": 4,
-      "question": "How did Nabokov construct the name 'Lolita' to encode both innocence and corruption, using specific linguistic roots?",
-      "answer": "Dolores (sorrows) + diminutive 'ita' + Spanish 'lo' (the/it), creating layered meanings of objectification and pain",
-      "acceptedAnswers": ["dolores sorrows ita", "layered objectification pain", "spanish diminutive sorrow", "lo dolores ita meaning"],
-      "points": 80,
-      "explanation": "Lolita comes from Dolores (Spanish 'sorrows') with diminutive -ita, while 'lo' means 'the/it' - creating a name that simultaneously suggests childish innocence (the diminutive) and profound sorrow, with objectification embedded linguistically."
+      "level": 4,
+      "question": "Snape's surname may echo which sharp sound a whip makes?",
+      "answer": "Crack",
+      "acceptedAnswers": [
+        "Snap",
+        "snap",
+        "to snap",
+        "cut",
+        "rebuke"
+      ],
+      "explanation": "Snape/snape wordplay hints at cutting remarks."
     },
     {
-      "id": 5,
-      "question": "What etymological pattern did Joyce use in naming Leopold Bloom that connects to Odysseus while encoding his Jewish identity and Dublin wandering?",
-      "answer": "Leopold (people-bold) + Bloom (flowering/blooming) creates the blooming courage of everyman wandering through urban exile",
-      "acceptedAnswers": ["leopold people bold bloom", "blooming courage everyman", "flowering urban wanderer", "people bold flowering exile"],
-      "points": 160,
-      "explanation": "Leopold (Germanic 'people-bold') + Bloom (Germanic/Dutch 'flowering') creates the 'boldly flowering common man' - Joyce's modern Odysseus who gains courage through his urban wandering, with Bloom encoding both Jewish identity (flowering in exile) and Irish renaissance (cultural blooming)."
+      "level": 5,
+      "question": "Luke Skywalker's original surname before Lucas changed it was what?",
+      "answer": "Starkiller",
+      "acceptedAnswers": [
+        "Starkiller",
+        "starkiller",
+        "star killer",
+        "luke starkiller"
+      ],
+      "explanation": "Early drafts used Starkiller before softening to Skywalker."
     }
-  ]
+  ],
+  "category": "actually"
 }

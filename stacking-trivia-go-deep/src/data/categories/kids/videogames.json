@@ -1,31 +1,61 @@
 {
-  "title": "Video Games: Epic Adventures",
-  "description": "Test your knowledge about the coolest video games and gaming secrets!",
+  "title": "Video Games: Pixel Adventures",
+  "description": "Arcades to blocky worlds—gaming history in five fun facts.",
   "questions": [
     {
-      "q": "In Minecraft, what do you need to make a Nether Portal?",
-      "a": ["obsidian", "obsidian blocks"],
-      "hint": "It's a very dark, hard block that you need a diamond pickaxe to mine!"
+      "level": 1,
+      "question": "What is Mario's brother's name?",
+      "answer": "Luigi",
+      "acceptedAnswers": [
+        "luigi",
+        "luigi mario",
+        "brother luigi"
+      ],
+      "hint": "He wears green"
     },
     {
-      "q": "What's the name of Mario's dinosaur companion?",
-      "a": ["yoshi"],
-      "hint": "He's green, friendly, and Mario can ride on his back!"
+      "level": 2,
+      "question": "Luigi's brother Mario first appeared in what arcade game?",
+      "answer": "Donkey Kong",
+      "acceptedAnswers": [
+        "donkey kong",
+        "dk",
+        "donkeykong"
+      ],
+      "hint": "He was originally called Jumpman"
     },
     {
-      "q": "In Fortnite, what happens when the storm closes in?",
-      "a": ["you take damage", "damage", "you get hurt"],
-      "hint": "If you're caught outside the safe zone, your health starts going down!"
+      "level": 3,
+      "question": "Donkey Kong was made by which Japanese company?",
+      "answer": "Nintendo",
+      "acceptedAnswers": [
+        "nintendo",
+        "nintendo co",
+        "nintendo company"
+      ],
+      "hint": "Also makes Zelda and Pokémon"
     },
     {
-      "q": "Which Pokémon is known as the Electric Mouse Pokémon?",
-      "a": ["pikachu"],
-      "hint": "He's yellow, says his own name, and is Ash's best friend!"
+      "level": 4,
+      "question": "Nintendo's handheld with two screens was called what?",
+      "answer": "Nintendo DS",
+      "acceptedAnswers": [
+        "nintendo ds",
+        "ds",
+        "nintendo dual screen"
+      ],
+      "hint": "DS stands for Dual Screen"
     },
     {
-      "q": "What color is Sonic the Hedgehog?",
-      "a": ["blue"],
-      "hint": "He's the same color as the sky on a clear day!"
+      "level": 5,
+      "question": "What blocky sandbox game did Mojang create?",
+      "answer": "Minecraft",
+      "acceptedAnswers": [
+        "minecraft",
+        "mine craft",
+        "mc"
+      ],
+      "hint": "You mine blocks and craft tools"
     }
   ]
 }

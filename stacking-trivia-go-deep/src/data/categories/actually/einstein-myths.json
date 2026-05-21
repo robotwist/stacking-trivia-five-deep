@@ -1,74 +1,61 @@
 {
   "title": "Actually: Einstein Misconceptions",
-  "image": "myth-buster-stamp.jpg",
-  "imageHint": "A rubber stamp marked 'MYTH BUSTED' - perfect for correcting common misconceptions",
-  "description": "Think Einstein was just about E=mc²? Actually, these myths need busting...",
+  "description": "Famous Einstein “facts” that deserve a second look.",
   "questions": [
     {
       "level": 1,
       "question": "Actually, Einstein didn't fail math as a child. What did he master by age 12?",
       "answer": "Calculus",
-      "acceptedAnswers": ["calculus", "differential calculus"]
+      "acceptedAnswers": [
+        "Calculus",
+        "calculus",
+        "differential calculus"
+      ]
     },
     {
       "level": 2,
       "question": "Actually, Einstein didn't say 'God does not play dice.' What did he actually say?",
       "answer": "God does not play dice with the universe",
-      "acceptedAnswers": ["god does not play dice with the universe", "god doesn't play dice with the universe"]
+      "acceptedAnswers": [
+        "God does not play dice with the universe",
+        "god does not play dice with the universe",
+        "god doesn't play dice with the universe"
+      ]
     },
     {
       "level": 3,
       "question": "Actually, Einstein didn't win the Nobel Prize for relativity. What did he win it for?",
       "answer": "Photoelectric effect",
-      "acceptedAnswers": ["photoelectric effect", "the photoelectric effect"]
+      "acceptedAnswers": [
+        "Photoelectric effect",
+        "photoelectric effect",
+        "the photoelectric effect"
+      ]
     },
     {
       "level": 4,
       "question": "Actually, Einstein wasn't a pacifist his whole life. What did he support during WWII?",
       "answer": "The atomic bomb development",
-      "acceptedAnswers": ["atomic bomb development", "the atomic bomb", "manhattan project", "building the atomic bomb"]
+      "acceptedAnswers": [
+        "The atomic bomb development",
+        "atomic bomb development",
+        "the atomic bomb",
+        "manhattan project",
+        "building the atomic bomb",
+        "the atomic bomb development"
+      ]
     },
     {
       "level": 5,
       "question": "Actually, Einstein didn't develop relativity alone. Who was his first wife and collaborator?",
       "answer": "Mileva Marić",
-      "acceptedAnswers": ["mileva maric", "mileva marić"]
+      "acceptedAnswers": [
+        "Mileva Marić",
+        "mileva maric",
+        "mileva marić"
+      ]
     }
   ],
-  "deeper": {
-    "title": "DEEPER MODE UNLOCKED: Einstein Reality Check",
-    "description": "The deepest Einstein myths that even physicists believe...",
-    "questions": [
-      {
-        "level": 1,
-        "question": "Actually, Einstein's brain wasn't larger. What was different about it?",
-        "answer": "Missing groove in parietal lobe",
-        "acceptedAnswers": ["missing groove", "missing groove in parietal lobe", "no groove in parietal lobe"]
-      },
-      {
-        "level": 2,
-        "question": "Actually, Einstein didn't start speaking late due to genius. What condition might he have had?",
-        "answer": "Autism spectrum disorder",
-        "acceptedAnswers": ["autism", "autism spectrum disorder", "asperger's"]
-      },
-      {
-        "level": 3,
-        "question": "Actually, Einstein didn't invent the atomic bomb. What did his letter to FDR do?",
-        "answer": "Started the Manhattan Project",
-        "acceptedAnswers": ["started the manhattan project", "started manhattan project", "launched manhattan project"]
-      },
-      {
-        "level": 4,
-        "question": "Actually, Einstein wasn't German-born. Where was he really born?",
-        "answer": "Germany (he was German-born)",
-        "acceptedAnswers": ["germany", "he was german", "ulm, germany"]
-      },
-      {
-        "level": 5,
-        "question": "Actually, Einstein didn't die working on unified field theory. What was his last project?",
-        "answer": "A speech for Israel's 7th anniversary",
-        "acceptedAnswers": ["speech for israel", "israel speech", "speech for israel's anniversary"]
-      }
-    ]
-  }
+  "image": "myth-buster-stamp.jpg",
+  "imageHint": "A rubber stamp marked 'MYTH BUSTED' - perfect for correcting common misconceptions"
 }

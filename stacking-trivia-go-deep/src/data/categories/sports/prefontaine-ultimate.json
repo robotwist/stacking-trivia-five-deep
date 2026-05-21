@@ -1,254 +1,72 @@
 {
-  "title": "Steve Prefontaine: The Rebel's Fire - Ultimate Deep Dive",
-  "image": "prefontaine-hayward-field.jpg",
-  "imageHint": "Pre racing at Hayward Field, where legends are made and records broken",
-  "description": "The most comprehensive exploration of Pre's revolutionary impact on distance running, training philosophy, and American track culture - from his early days to his lasting influence on modern athletics.",
-  "category": "sports",
-  "difficulty_level": 4,
-  "tags": ["steve-prefontaine", "oregon", "distance-running", "track-and-field", "1970s-athletics", "bill-bowerman"],
+  "title": "Steve Prefontaine: Go Pre",
+  "description": "A 1970s rebel who packed a historic track and challenged the system—five depths into myth and loss.",
   "questions": [
     {
       "level": 1,
-      "question": "What university did Steve Prefontaine attend?",
-      "answer": "University of Oregon",
-      "alternative_answers": ["Oregon", "U of O"],
-      "hint": "Home of the famous Hayward Field and Bill Bowerman"
+      "question": "Which 1970s American distance runner had Hayward Field crowds chanting \"Go Pre\"?",
+      "answer": "Steve Prefontaine",
+      "acceptedAnswers": [
+        "Steve Prefontaine",
+        "steve prefontaine",
+        "prefontaine",
+        "pre",
+        "pre fontaine",
+        "steve pre"
+      ],
+      "explanation": "Steve \"Pre\" Prefontaine turned Eugene's Hayward Field into a rock concert—front-running charisma that redefined track's fan culture."
     },
     {
       "level": 2,
-      "question": "What was Steve Prefontaine's preferred racing strategy?",
-      "answer": "front-running",
-      "alternative_answers": ["leading from the front", "aggressive front running"],
-      "explanation": "Pre believed in making races 'honest' by going out hard from the beginning"
+      "question": "Prefontaine ran collegiately for which university in Eugene?",
+      "answer": "Oregon",
+      "acceptedAnswers": [
+        "Oregon",
+        "oregon",
+        "university of oregon",
+        "oregon ducks",
+        "uo"
+      ],
+      "explanation": "He never lost an NCAA race on his home track while at Oregon—Bowerman's program became synonymous with Pre's swagger."
     },
     {
       "level": 3,
-      "question": "Who was Steve Prefontaine's famous coach at Oregon?",
-      "answer": "Bill Bowerman",
-      "explanation": "Bowerman co-founded Nike and revolutionized distance running training methods"
+      "question": "Pre's coach Bill Bowerman, with Phil Knight, co-founded what shoe company?",
+      "answer": "Nike",
+      "acceptedAnswers": [
+        "Nike",
+        "nike",
+        "nike inc",
+        "blue ribbon sports"
+      ],
+      "explanation": "Bowerman's waffle-iron sole experiments and Knight's Blue Ribbon Sports became Nike—Pre wore the prototypes that sold the dream."
     },
     {
       "level": 4,
-      "question": "In what year did Steve Prefontaine die tragically in a car accident?",
-      "answer": "1975",
-      "explanation": "Pre died at age 24, cutting short one of the most promising careers in American distance running"
+      "question": "Prefontaine died May 30, 1975, when his gold British sports car flipped—a what?",
+      "answer": "MGB",
+      "acceptedAnswers": [
+        "MGB",
+        "mgb",
+        "mg b",
+        "mg mgb",
+        "mgb roadster"
+      ],
+      "explanation": "He crashed his MGB roadster after a party in Eugene—24 years old, at the peak of his fight against amateurism's limits."
     },
     {
       "level": 5,
-      "question": "What was Steve Prefontaine's philosophy about racing tactics that made him unique?",
-      "answer": "always run from the front to make it a pure test of who wanted it most",
-      "alternative_answers": ["front running philosophy", "make it a guts race"],
-      "explanation": "Pre's credo: 'I'm going to work so that it's a pure guts race. In the end, if it is, I am the only one who can win it.'"
-    },
-    {
-      "level": 6,
-      "question": "What American record distance did Prefontaine hold at the time of his death?",
-      "answer": "2 miles to 10,000 meters",
-      "alternative_answers": ["2 mile through 10K", "every distance from 2 miles to 10000m"],
-      "explanation": "Pre held American records in every distance from 2 miles through 10,000 meters - an unprecedented achievement"
-    },
-    {
-      "level": 7,
-      "question": "What training innovation did Pre help popularize under Bowerman's guidance?",
-      "answer": "high-volume training on soft surfaces",
-      "alternative_answers": ["wood chip trail training", "soft surface training"],
-      "explanation": "Eugene's soft wood chip trails allowed enormous training volumes without impact stress"
-    },
-    {
-      "level": 8,
-      "question": "What organization did Prefontaine famously clash with over amateur rules?",
-      "answer": "AAU",
-      "alternative_answers": ["Amateur Athletic Union"],
-      "explanation": "Pre publicly criticized the AAU's hypocrisy - keeping athletes poor while officials lived lavishly"
-    },
-    {
-      "level": 9,
-      "question": "What was Pre's racing nickname that reflected his aggressive style?",
-      "answer": "The Oregon Express",
-      "alternative_answers": ["Oregon Express"],
-      "explanation": "The nickname captured both his Oregon roots and his relentless, unstoppable racing style"
-    },
-    {
-      "level": 10,
-      "question": "In the 1972 Olympics, what place did Prefontaine finish in the 5000m?",
-      "answer": "4th",
-      "alternative_answers": ["fourth", "fourth place"],
-      "explanation": "Pre finished 4th in Munich, missing a medal by just 0.2 seconds in a tactical race that didn't suit his style"
-    },
-    {
-      "level": 11,
-      "question": "What specific training philosophy did Pre introduce that was radical in the 1970s?",
-      "answer": "racing into shape with high-volume year-round training",
-      "alternative_answers": ["racing into shape", "year-round racing"],
-      "explanation": "Instead of traditional periodization, Pre raced frequently at high intensity while maintaining high training volume"
-    },
-    {
-      "level": 12,
-      "question": "What famous quote embodies Pre's philosophy about giving everything in competition?",
-      "answer": "To give anything less than your best is to sacrifice the gift",
-      "alternative_answers": ["give anything less than your best"],
-      "explanation": "This quote became iconic in distance running culture, emphasizing total commitment to excellence"
-    },
-    {
-      "level": 13,
-      "question": "What physiological advantage did Pre possess that enabled his front-running style?",
-      "answer": "exceptionally high lactate tolerance",
-      "alternative_answers": ["lactate buffering capacity", "lactic acid tolerance"],
-      "explanation": "Pre's muscles could neutralize lactic acid buildup better than most, allowing sustained high-intensity running"
-    },
-    {
-      "level": 14,
-      "question": "What track meet did Pre help establish that became legendary in distance running?",
-      "answer": "Hayward Classic",
-      "alternative_answers": ["Oregon Classic"],
-      "explanation": "The meet at Hayward Field became a showcase for world-class distance running"
-    },
-    {
-      "level": 15,
-      "question": "How did Pre's conflict with the AAU help spark the modern professional running movement?",
-      "answer": "his public criticism led to the formation of Athletics West and eventual professionalization",
-      "alternative_answers": ["led to Athletics West formation"],
-      "explanation": "Pre's vocal criticism directly led to Athletics West and the breakdown of amateur restrictions"
-    },
-    {
-      "level": 16,
-      "question": "What was Pre's best event where he was considered nearly unbeatable?",
-      "answer": "5000 meters",
-      "alternative_answers": ["5000m", "5K"],
-      "explanation": "The 5000m was Pre's signature distance, combining his speed and tactical front-running perfectly"
-    },
-    {
-      "level": 17,
-      "question": "What unique cooling advantage did Pre possess that aided his aggressive racing?",
-      "answer": "superior thermoregulation and heat management",
-      "alternative_answers": ["exceptional cooling efficiency", "heat management"],
-      "explanation": "Pre's superior thermoregulation, possibly genetic, allowed sustained high-intensity efforts"
-    },
-    {
-      "level": 18,
-      "question": "What training surface innovation around Eugene allowed Pre's high-volume approach?",
-      "answer": "wood chip trails",
-      "alternative_answers": ["soft wood chip surfaces", "chip trails"],
-      "explanation": "Eugene's wood chip trails provided cushioning that prevented injury despite enormous training volumes"
-    },
-    {
-      "level": 19,
-      "question": "What documentary immortalized Pre's story and philosophy?",
-      "answer": "Fire on the Track",
-      "alternative_answers": ["Fire on the Track documentary"],
-      "explanation": "This documentary captured Pre's revolutionary impact on American distance running culture"
-    },
-    {
-      "level": 20,
-      "question": "What was Pre's strategy for dealing with tactical, slow early pace races?",
-      "answer": "surge repeatedly to break up the field and force honest pace",
-      "alternative_answers": ["multiple surges to force pace", "break up tactical races"],
-      "explanation": "Pre would inject multiple surges to prevent 'sit and kick' tactics, forcing races to be run honestly"
-    },
-    {
-      "level": 21,
-      "question": "How fast was Pre's American record in the 5000 meters?",
-      "answer": "13:21.87",
-      "alternative_answers": ["13:21", "thirteen twenty-one"],
-      "explanation": "This time stood as an American record for years and demonstrated Pre's world-class speed"
-    },
-    {
-      "level": 22,
-      "question": "What psychological warfare tactic did Pre use before races?",
-      "answer": "staring down competitors during warm-ups and introductions",
-      "alternative_answers": ["intimidating stare-downs", "psychological intimidation"],
-      "explanation": "Pre's intense pre-race demeanor was designed to let opponents know they were in for a war"
-    },
-    {
-      "level": 23,
-      "question": "What specific injury prevention benefit came from Eugene's training surfaces?",
-      "answer": "reduced impact stress allowing higher weekly mileage without breakdown",
-      "alternative_answers": ["higher mileage without injury", "impact stress reduction"],
-      "explanation": "Soft surfaces let Pre handle 120+ mile weeks without the injuries that plagued road-training athletes"
-    },
-    {
-      "level": 24,
-      "question": "What was Pre's philosophy about the relationship between pain and performance?",
-      "answer": "embrace pain as the price of excellence and competitive advantage",
-      "alternative_answers": ["pain as competitive advantage", "embrace the pain"],
-      "explanation": "Pre believed superior pain tolerance separated champions from also-rans"
-    },
-    {
-      "level": 25,
-      "question": "How did Pre's legacy influence modern American distance running training?",
-      "answer": "legitimized high-volume training and frequent racing for American athletes",
-      "alternative_answers": ["high volume training acceptance", "racing into shape method"],
-      "explanation": "Pre proved Americans could handle European-style high volume training, changing American coaching philosophy"
-    },
-    {
-      "level": 26,
-      "question": "What specific weekly mileage did Pre regularly handle during peak training phases?",
-      "answer": "120-140 miles per week",
-      "alternative_answers": ["120+ miles", "over 120 miles per week"],
-      "explanation": "Pre's extraordinary volume on soft surfaces allowed mileage that would destroy most athletes on roads"
-    },
-    {
-      "level": 27,
-      "question": "What biomechanical advantage did Pre's running form provide for front-running?",
-      "answer": "efficient stride mechanics that minimized energy cost at sustained high speeds",
-      "alternative_answers": ["efficient stride at high speed", "biomechanical efficiency"],
-      "explanation": "Pre's natural running economy allowed him to maintain speeds that were metabolically unsustainable for others"
-    },
-    {
-      "level": 28,
-      "question": "How did Pre's training periodization differ from European distance runners of his era?",
-      "answer": "eliminated traditional base/build/peak cycles in favor of constant high-intensity racing",
-      "alternative_answers": ["no traditional periodization", "constant racing approach"],
-      "explanation": "While Europeans built fitness then peaked, Pre maintained race fitness year-round through constant competition"
-    },
-    {
-      "level": 29,
-      "question": "What psychological tactic did Pre use during races to break competitors mentally?",
-      "answer": "surge at moments when opponents expected him to tire, demonstrating superior fitness",
-      "alternative_answers": ["strategic surging", "psychological surges"],
-      "explanation": "Pre would surge precisely when opponents expected fatigue, proving his fitness was on another level"
-    },
-    {
-      "level": 30,
-      "question": "What training intensity distribution did Pre pioneer that became standard in modern coaching?",
-      "answer": "80% easy volume with 20% race-pace or faster intensities",
-      "alternative_answers": ["80/20 training distribution", "polarized training model"],
-      "explanation": "Pre's approach of high easy volume with intense racing efforts became the foundation of modern polarized training"
-    },
-    {
-      "level": 31,
-      "question": "What specific lactate threshold advantage did Pre possess that enabled sustained front-running?",
-      "answer": "lactate threshold at 90%+ of VO2 max compared to typical 85%",
-      "alternative_answers": ["exceptionally high lactate threshold", "90% VO2 max threshold"],
-      "explanation": "Pre's unusually high lactate threshold meant he could run at speeds that put others into oxygen debt"
-    },
-    {
-      "level": 32,
-      "question": "How did Pre's revolutionary approach to race preparation differ from traditional taper methods?",
-      "answer": "maintained high training loads right up to major competitions instead of traditional tapering",
-      "alternative_answers": ["no tapering approach", "high loads before races"],
-      "explanation": "Pre believed traditional tapering made athletes soft; he stayed sharp through continued high-intensity work"
-    },
-    {
-      "level": 33,
-      "question": "What specific environmental adaptation gave Pre an advantage in oxygen utilization?",
-      "answer": "training at Eugene's elevation enhanced oxygen extraction efficiency without altitude stress",
-      "alternative_answers": ["Eugene elevation advantage", "oxygen extraction efficiency"],
-      "explanation": "Eugene's modest elevation provided just enough stimulus for adaptation without the stress of high altitude"
-    },
-    {
-      "level": 34,
-      "question": "What was Pre's revolutionary approach to in-race hydration that influenced modern practices?",
-      "answer": "practiced dehydration tolerance training to race without water in longer events",
-      "alternative_answers": ["dehydration tolerance training", "racing without hydration"],
-      "explanation": "Pre trained his body to perform at high levels while dehydrated, giving him tactical advantages in races"
-    },
-    {
-      "level": 35,
-      "question": "How did Pre's neuromuscular training innovations contribute to his kick resistance?",
-      "answer": "power endurance intervals that maintained fast-twitch recruitment during sustained efforts",
-      "alternative_answers": ["power endurance training", "fast-twitch recruitment maintenance"],
-      "explanation": "Pre's interval work maintained neuromuscular power late in races when others' fast-twitch fibers were exhausted"
+      "question": "The annual Eugene track meet honoring Pre at Hayward is the what Classic?",
+      "answer": "Prefontaine",
+      "acceptedAnswers": [
+        "Prefontaine",
+        "prefontaine",
+        "prefontaine classic",
+        "pre classic",
+        "pre fontaine classic"
+      ],
+      "explanation": "The Prefontaine Classic (part of the Diamond League circuit) keeps his name on the same track where \"Go Pre\" once shook the stands."
     }
-  ]
+  ],
+  "imageHint": "A historic track under lights—legend still in the air"
 }
