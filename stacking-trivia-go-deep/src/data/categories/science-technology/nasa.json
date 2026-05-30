@@ -16,7 +16,7 @@
     },
     {
       "level": 2,
-      "question": "Who was the first American astronaut to orbit Earth in 1962?",
+      "question": "NASA—the National Aeronautics and Space Administration—sent who as the first American to orbit Earth in 1962?",
       "answer": "John Glenn",
       "acceptedAnswers": [
         "John Glenn",
@@ -28,7 +28,7 @@
     },
     {
       "level": 3,
-      "question": "What was the name of the NASA program that successfully landed humans on the Moon?",
+      "question": "After Glenn's 1962 orbit, what NASA program successfully landed humans on the Moon?",
       "answer": "Apollo",
       "acceptedAnswers": [
         "Apollo",
@@ -41,7 +41,7 @@
     },
     {
       "level": 4,
-      "question": "Which space shuttle tragically exploded 73 seconds after launch in 1986?",
+      "question": "NASA's Apollo glory gave way to tragedy—which space shuttle exploded 73 seconds after launch in 1986?",
       "answer": "Challenger",
       "acceptedAnswers": [
         "Challenger",
@@ -53,7 +53,7 @@
     },
     {
       "level": 5,
-      "question": "What is the name of NASA's Mars rover that landed in 2021 and is searching for signs of ancient life?",
+      "question": "After Challenger, NASA kept pushing outward—what Mars rover landed in 2021 searching for ancient life?",
       "answer": "Perseverance",
       "acceptedAnswers": [
         "Perseverance",

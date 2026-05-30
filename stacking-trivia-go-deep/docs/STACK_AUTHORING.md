@@ -72,6 +72,12 @@ Good: `Grand slam greatness, family, and life beyond the court—five tennis dep
 
 No imports in `App.jsx` — stacks load via [`loadPlayableStacks.js`](../src/data/loadPlayableStacks.js).
 
+## Bar / host deep links
+
+Each stack card offers **Copy play link** — a `/play?stack=<key>&category=<key>` URL that opens guest mode and starts that stack. Share after a round or text the link before trivia night.
+
+Example: `https://stacking-trivia-five-deep.netlify.app/play?stack=queso-wars&category=actually`
+
 ## Playtest input modes
 
 - Default: **type your answer** (with fuzzy matching).

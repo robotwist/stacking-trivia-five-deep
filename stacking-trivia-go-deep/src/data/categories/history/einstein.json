@@ -25,7 +25,7 @@
     },
     {
       "level": 3,
-      "question": "For which discovery did Einstein win the Nobel Prize in Physics?",
+      "question": "Fame from E=mc² aside, Einstein's Nobel Prize honored what effect?",
       "answer": "Photoelectric effect",
       "acceptedAnswers": [
         "Photoelectric effect",
@@ -35,7 +35,7 @@
     },
     {
       "level": 4,
-      "question": "In which year did Einstein win the Nobel Prize?",
+      "question": "That photoelectric effect work earned Einstein the Nobel in what year?",
       "answer": "1921",
       "acceptedAnswers": [
         "1921",
@@ -46,7 +46,7 @@
     },
     {
       "level": 5,
-      "question": "Which university did Einstein work at when he died?",
+      "question": "After his 1921 Nobel, Einstein eventually taught at what university when he died?",
       "answer": "Princeton University",
       "acceptedAnswers": [
         "Princeton University",

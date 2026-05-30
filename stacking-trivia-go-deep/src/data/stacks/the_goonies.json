@@ -1,10 +1,24 @@
 {
   "title": "The Goonies: Never Say Die",
-  "description": "Small-town kids, old maps, and treasure—five adventure depths.",
+  "description": "An attic map, a pirate legend, and a candy-bar friendship—five adventure beats.",
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of the pirate whose treasure the Goonies are searching for?",
+      "question": "What does Mikey find in the museum attic that starts the Goonies' treasure hunt?",
+      "answer": "A treasure map in the attic",
+      "acceptedAnswers": [
+        "A treasure map in the attic",
+        "a treasure map in the attic",
+        "treasure map",
+        "map",
+        "the map",
+        "treasure map in the attic"
+      ],
+      "hint": "It was hidden in his father's belongings"
+    },
+    {
+      "level": 2,
+      "question": "That treasure map leads the Goonies to the booty of what one-eyed pirate?",
       "answer": "One-Eyed Willy",
       "acceptedAnswers": [
         "One-Eyed Willy",
@@ -16,8 +30,8 @@
       "hint": "He's missing an important facial feature"
     },
     {
-      "level": 2,
-      "question": "What does Chunk have to do the 'Truffle Shuffle'?",
+      "level": 3,
+      "question": "Hunting One-Eyed Willy's treasure, what must Chunk do for the Truffle Shuffle?",
       "answer": "Lift his shirt and shake his belly",
       "acceptedAnswers": [
         "Lift his shirt and shake his belly",
@@ -29,8 +43,8 @@
       "hint": "Come on, do the truffle shuffle!"
     },
     {
-      "level": 3,
-      "question": "What is the name of the deformed Fratelli brother who befriends the Goonies?",
+      "level": 4,
+      "question": "After Chunk lifted his shirt for the Truffle Shuffle, the Goonies befriend what deformed Fratelli brother?",
       "answer": "Sloth",
       "acceptedAnswers": [
         "Sloth",
@@ -40,8 +54,8 @@
       "hint": "Hey you guys!"
     },
     {
-      "level": 4,
-      "question": "What candy bar does Chunk use to befriend Sloth?",
+      "level": 5,
+      "question": "Chunk wins Sloth over with what candy bar?",
       "answer": "Baby Ruth",
       "acceptedAnswers": [
         "Baby Ruth",
@@ -50,20 +64,6 @@
         "ruth"
       ],
       "hint": "It's named after a famous baseball player's daughter"
-    },
-    {
-      "level": 5,
-      "question": "What does Mikey find in the museum that starts their treasure hunt?",
-      "answer": "A treasure map in the attic",
-      "acceptedAnswers": [
-        "A treasure map in the attic",
-        "a treasure map in the attic",
-        "treasure map",
-        "map",
-        "the map",
-        "treasure map in the attic"
-      ],
-      "hint": "It was hidden in his father's belongings"
     }
   ],
   "category": "pop-culture"

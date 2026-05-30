@@ -26,7 +26,7 @@
     },
     {
       "level": 3,
-      "question": "From whom did Jordan steal the ball before 'The Last Shot'?",
+      "question": "Against the Utah Jazz, from whom did Jordan steal the ball before 'The Last Shot'?",
       "answer": "Karl Malone",
       "acceptedAnswers": [
         "Karl Malone",
@@ -37,7 +37,7 @@
     },
     {
       "level": 4,
-      "question": "How much time was left on the clock for 'The Last Shot'?",
+      "question": "After stripping Karl Malone, how much time was left on the clock for 'The Last Shot'?",
       "answer": "5.2 seconds",
       "acceptedAnswers": [
         "5.2 seconds",
@@ -50,7 +50,7 @@
     },
     {
       "level": 5,
-      "question": "What did Jordan do immediately after hitting 'The Last Shot'?",
+      "question": "With 5.2 seconds left, Jordan hit the shot—what did he do immediately after?",
       "answer": "Held his follow-through",
       "acceptedAnswers": [
         "Held his follow-through",

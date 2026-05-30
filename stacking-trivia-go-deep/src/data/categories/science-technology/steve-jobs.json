@@ -16,7 +16,7 @@
     },
     {
       "level": 2,
-      "question": "What was the name of the first mass-produced personal computer that made Apple famous?",
+      "question": "That 1976 garage startup's first mass-produced hit computer was called what?",
       "answer": "Apple II",
       "acceptedAnswers": [
         "Apple II",
@@ -29,7 +29,7 @@
     },
     {
       "level": 3,
-      "question": "After being ousted from Apple, Jobs founded which computer company that was later acquired by Apple?",
+      "question": "After the Apple II era and his ouster, Jobs founded what computer company later acquired by Apple?",
       "answer": "NeXT",
       "acceptedAnswers": [
         "NeXT",
@@ -42,7 +42,7 @@
     },
     {
       "level": 4,
-      "question": "What revolutionary product did Jobs introduce in 2007 that changed the smartphone industry forever?",
+      "question": "NeXT's return to Apple brought what 2007 product that changed smartphones forever?",
       "answer": "iPhone",
       "acceptedAnswers": [
         "iPhone",
@@ -54,7 +54,7 @@
     },
     {
       "level": 5,
-      "question": "Jobs was also CEO of which animation studio that created Toy Story and was later sold to Disney?",
+      "question": "Before the iPhone era, Jobs ran what animation studio that created Toy Story and sold to Disney?",
       "answer": "Pixar",
       "acceptedAnswers": [
         "Pixar",

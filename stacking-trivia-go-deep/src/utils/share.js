@@ -1,13 +1,16 @@
+import { buildPlayUrl, getSiteOrigin } from './url'
+
 // Enhanced sharing utilities
-export const shareScore = (score, totalPossible, stackName, accuracy) => {
+export const shareScore = (score, totalPossible, stackName, accuracy, stackKey, categoryKey) => {
   const emoji = getScoreEmoji(score, totalPossible);
-  const message = generateShareMessage(score, totalPossible, stackName, accuracy, emoji);
+  const playUrl = stackKey ? buildPlayUrl(stackKey, categoryKey) : getSiteOrigin();
+  const message = generateShareMessage(score, totalPossible, stackName, accuracy, emoji, playUrl);
   
   if (navigator.share) {
     navigator.share({
       title: 'DeepStack Trivia Score',
       text: message,
-      url: 'https://stacking-trivia-five-deep.netlify.app'
+      url: playUrl
     }).catch(() => {
       // Fallback to clipboard
       copyToClipboard(message);
@@ -21,13 +24,13 @@ export const shareAchievement = (achievement) => {
   const message = `🏆 Just unlocked "${achievement.title}" in DeepStack Trivia! 
 ${achievement.description}
 🧠 Can you unlock it too? 
-🌐 Play at: https://stacking-trivia-five-deep.netlify.app`;
+🌐 Play at: ${getSiteOrigin()}`;
   
   if (navigator.share) {
     navigator.share({
       title: 'DeepStack Achievement Unlocked!',
       text: message,
-      url: 'https://stacking-trivia-five-deep.netlify.app'
+      url: getSiteOrigin()
     }).catch(() => {
       copyToClipboard(message);
     });
@@ -40,13 +43,13 @@ export const shareStreak = (streakCount, totalScore) => {
   const message = `🔥 ${streakCount}-day streak in DeepStack Trivia! 
 Total score: ${totalScore} points
 🧠 Think you can beat my streak? 
-🌐 Play at: https://stacking-trivia-five-deep.netlify.app`;
+🌐 Play at: ${getSiteOrigin()}`;
   
   if (navigator.share) {
     navigator.share({
       title: 'DeepStack Streak!',
       text: message,
-      url: 'https://stacking-trivia-five-deep.netlify.app'
+      url: getSiteOrigin()
     }).catch(() => {
       copyToClipboard(message);
     });
@@ -66,24 +69,24 @@ const getScoreEmoji = (score, totalPossible) => {
   return '🤔';
 };
 
-const generateShareMessage = (score, totalPossible, stackName, accuracy, emoji) => {
+const generateShareMessage = (score, totalPossible, stackName, accuracy, emoji, playUrl) => {
   const percentage = Math.round((score / totalPossible) * 100);
   
   if (percentage === 100) {
     return `${emoji} PERFECT SCORE! ${score}/${totalPossible} on "${stackName}" in DeepStack Trivia!
 🧠 100% accuracy - can you match this perfect run?
-🌐 Play at: https://stacking-trivia-five-deep.netlify.app`;
+🌐 Play: ${playUrl}`;
   }
   
   if (percentage >= 80) {
     return `${emoji} Great score! ${score}/${totalPossible} (${percentage}%) on "${stackName}" in DeepStack Trivia!
 🎯 ${accuracy}% accuracy - think you can beat it?
-🌐 Play at: https://stacking-trivia-five-deep.netlify.app`;
+🌐 Play: ${playUrl}`;
   }
   
   return `${emoji} Scored ${score}/${totalPossible} (${percentage}%) on "${stackName}" in DeepStack Trivia!
 🧠 ${accuracy}% accuracy - challenge accepted?
-🌐 Play at: https://stacking-trivia-five-deep.netlify.app`;
+🌐 Play: ${playUrl}`;
 };
 
 const copyToClipboard = async (text) => {

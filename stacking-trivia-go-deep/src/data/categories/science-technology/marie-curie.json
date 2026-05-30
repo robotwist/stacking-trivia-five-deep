@@ -15,7 +15,7 @@
     },
     {
       "level": 2,
-      "question": "What radioactive element did Marie Curie discover and name after her homeland?",
+      "question": "Her Physics Nobel work led Curie to discover what element named for her homeland?",
       "answer": "Polonium",
       "acceptedAnswers": [
         "Polonium",
@@ -26,7 +26,7 @@
     },
     {
       "level": 3,
-      "question": "Marie Curie coined which term to describe the emission of rays from uranium and other elements?",
+      "question": "Studying polonium, Curie coined what term for the emission of rays from uranium?",
       "answer": "radioactivity",
       "acceptedAnswers": [
         "radioactivity",
@@ -38,7 +38,7 @@
     },
     {
       "level": 4,
-      "question": "During World War I, Marie Curie developed mobile X-ray units. What were these vehicles nicknamed?",
+      "question": "Applying radioactivity research in World War I, Curie built mobile X-ray units nicknamed what?",
       "answer": "petites Curies",
       "acceptedAnswers": [
         "petites Curies",
@@ -50,7 +50,7 @@
     },
     {
       "level": 5,
-      "question": "Marie Curie was the first person to win Nobel Prizes in two different scientific fields. Chemistry was her second - what was her groundbreaking work there?",
+      "question": "Those petites Curies served the front—her Chemistry Nobel honored what achievement with radium?",
       "answer": "isolation of radium",
       "acceptedAnswers": [
         "isolation of radium",

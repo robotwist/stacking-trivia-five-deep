@@ -16,7 +16,7 @@
     },
     {
       "level": 2,
-      "question": "What subject does Jeff pretend to need help with to get closer to Britta?",
+      "question": "At Greendale Community College, what subject does Jeff pretend to need help with to get closer to Britta?",
       "answer": "Spanish",
       "acceptedAnswers": [
         "Spanish",
@@ -27,7 +27,7 @@
     },
     {
       "level": 3,
-      "question": "What is Abed's favorite TV trope that he often references?",
+      "question": "In Spanish class at Greendale, what TV trope does Abed reference constantly?",
       "answer": "Meta",
       "acceptedAnswers": [
         "Meta",
@@ -39,7 +39,7 @@
     },
     {
       "level": 4,
-      "question": "What annual Greendale event becomes an elaborate battle simulation?",
+      "question": "Abed's meta humor peaks during what annual Greendale battle simulation?",
       "answer": "Paintball",
       "acceptedAnswers": [
         "Paintball",
@@ -51,7 +51,7 @@
     },
     {
       "level": 5,
-      "question": "What is the name of the Dean's condition where he can't stop making puns?",
+      "question": "After Paintball, the Dean's pun-making condition is nicknamed what?",
       "answer": "Dean-a-mania",
       "acceptedAnswers": [
         "Dean-a-mania",

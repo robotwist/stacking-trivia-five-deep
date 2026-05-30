@@ -16,7 +16,7 @@
     },
     {
       "level": 2,
-      "question": "What powers the flux capacitor in the DeLorean?",
+      "question": "Hitting 88 mph, the DeLorean's flux capacitor needs how much power?",
       "answer": "1.21 gigawatts",
       "acceptedAnswers": [
         "1.21 gigawatts",
@@ -30,7 +30,7 @@
     },
     {
       "level": 3,
-      "question": "What is the name of the high school bully who picks on George McFly?",
+      "question": "With 1.21 gigawatts aboard, Marty confronts what bullying Tannen at Hill Valley High?",
       "answer": "Biff Tannen",
       "acceptedAnswers": [
         "Biff Tannen",
@@ -42,7 +42,7 @@
     },
     {
       "level": 4,
-      "question": "What song does Marty perform at the Enchantment Under the Sea dance?",
+      "question": "After confronting Biff Tannen, Marty performs what song at the Enchantment Under the Sea dance?",
       "answer": "Johnny B. Goode",
       "acceptedAnswers": [
         "Johnny B. Goode",
@@ -54,7 +54,7 @@
     },
     {
       "level": 5,
-      "question": "What is Doc Brown's full name?",
+      "question": "After Johnny B. Goode rocked the dance, what is Doc Brown's full name?",
       "answer": "Dr. Emmett Lathrop Brown",
       "acceptedAnswers": [
         "Dr. Emmett Lathrop Brown",

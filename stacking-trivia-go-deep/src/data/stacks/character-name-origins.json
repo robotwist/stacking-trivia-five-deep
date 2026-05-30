@@ -17,7 +17,7 @@
     },
     {
       "level": 2,
-      "question": "Tolkien's Sindarin name Mithrandir for Gandalf means what?",
+      "question": "Hamlet means village—Tolkien's Sindarin name Mithrandir for Gandalf means what?",
       "answer": "Grey Pilgrim",
       "acceptedAnswers": [
         "Grey Pilgrim",
@@ -30,7 +30,7 @@
     },
     {
       "level": 3,
-      "question": "Rowling's 'Severus' suggests what quality in Snape?",
+      "question": "Grey Pilgrim aside—Rowling's 'Severus' suggests what quality in Snape?",
       "answer": "Stern",
       "acceptedAnswers": [
         "Stern",
@@ -43,20 +43,21 @@
     },
     {
       "level": 4,
-      "question": "Snape's surname may echo which sharp sound a whip makes?",
+      "question": "That stern Severus—his surname echoes what sharp sound a whip makes?",
       "answer": "Crack",
       "acceptedAnswers": [
-        "Snap",
+        "Crack",
+        "crack",
         "snap",
         "to snap",
         "cut",
         "rebuke"
       ],
-      "explanation": "Snape/snape wordplay hints at cutting remarks."
+      "explanation": "Snape/snape wordplay hints at cutting remarks—a whip's crack."
     },
     {
       "level": 5,
-      "question": "Luke Skywalker's original surname before Lucas changed it was what?",
+      "question": "That whip-crack surname aside—Luke Skywalker's original name before Lucas changed it was what?",
       "answer": "Starkiller",
       "acceptedAnswers": [
         "Starkiller",

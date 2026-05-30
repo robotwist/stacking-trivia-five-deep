@@ -15,7 +15,7 @@
     },
     {
       "level": 2,
-      "question": "Actually, Shakespeare didn't invent most of his plots. What percentage were original?",
+      "question": "Romeo and Juliet wasn't original—what percentage of Shakespeare's plots were his own?",
       "answer": "Almost none",
       "acceptedAnswers": [
         "Almost none",
@@ -28,7 +28,7 @@
     },
     {
       "level": 3,
-      "question": "Actually, Shakespeare's name wasn't always spelled the same. How many different spellings exist?",
+      "question": "With almost none of his plots original, how many spellings of Shakespeare's name exist?",
       "answer": "Over 80",
       "acceptedAnswers": [
         "Over 80",
@@ -40,7 +40,7 @@
     },
     {
       "level": 4,
-      "question": "Actually, Shakespeare didn't write alone. Who likely helped with his later plays?",
+      "question": "Over 80 name spellings later—who likely co-wrote Shakespeare's later plays?",
       "answer": "John Fletcher",
       "acceptedAnswers": [
         "John Fletcher",
@@ -50,7 +50,7 @@
     },
     {
       "level": 5,
-      "question": "Actually, Shakespeare wasn't educated at university. What's the highest education he likely received?",
+      "question": "John Fletcher may have helped—but what's the highest education Shakespeare likely received?",
       "answer": "Grammar school",
       "acceptedAnswers": [
         "Grammar school",

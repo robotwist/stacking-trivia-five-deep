@@ -6,12 +6,14 @@ import { getRecommendations, stackMetadata, getDifficultyColor } from '../utils/
 import SmartRecommendations from './SmartRecommendations';
 import { AchievementBadge } from './AchievementDisplay';
 import { shareScore } from '../utils/share.js';
+import StackPlayLink from './StackPlayLink';
 
 const PostGameFlow = ({ 
   score, 
   questionsAnswered, 
   accuracy, 
-  completedStack, 
+  completedStack,
+  categoryKey,
   onSelectNextStack, 
   onReturnToMenu,
   userStats 
@@ -23,7 +25,7 @@ const PostGameFlow = ({
   const [toast, setToast] = useState('');
 
   const handleShareScore = () => {
-    shareScore(score, 160, completedStack, accuracy);
+    shareScore(score, 160, completedStack, accuracy, completedStack, categoryKey);
   }
 
   // Mock user completed stacks for demo - in real app this would come from database
@@ -233,6 +235,13 @@ const PostGameFlow = ({
               >
                 Share Score
               </button>
+              {completedStack && (
+                <StackPlayLink
+                  stackKey={completedStack}
+                  categoryKey={categoryKey}
+                  className="px-4 py-2 text-amber-800 dark:text-amber-200 text-sm font-medium"
+                />
+              )}
             </div>
           </div>
         </div>

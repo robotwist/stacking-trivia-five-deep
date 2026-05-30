@@ -15,7 +15,7 @@
     },
     {
       "level": 2,
-      "question": "At which Olympics did Ali win gold as Cassius Clay?",
+      "question": "Young Muhammad Ali won Olympic gold as Cassius Clay at which 1960 Games?",
       "answer": "1960 Rome",
       "acceptedAnswers": [
         "1960 Rome",
@@ -27,7 +27,7 @@
     },
     {
       "level": 3,
-      "question": "What did Ali reportedly do with his Olympic gold medal?",
+      "question": "After his 1960 Rome gold, Ali reportedly threw his Olympic medal where?",
       "answer": "Threw it in a river",
       "acceptedAnswers": [
         "Threw it in a river",
@@ -38,7 +38,7 @@
     },
     {
       "level": 4,
-      "question": "Why did Ali throw away his gold medal?",
+      "question": "After throwing his medal in the Ohio River, Ali cited what injustice?",
       "answer": "Racial discrimination",
       "acceptedAnswers": [
         "Racial discrimination",
@@ -50,7 +50,7 @@
     },
     {
       "level": 5,
-      "question": "What year was Ali given a replacement Olympic medal?",
+      "question": "Recognizing the racial discrimination he protested, officials gave Ali a replacement medal in what year?",
       "answer": "1996",
       "acceptedAnswers": [
         "1996",

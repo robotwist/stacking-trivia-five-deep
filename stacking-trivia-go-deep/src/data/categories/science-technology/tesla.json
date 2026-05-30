@@ -17,7 +17,7 @@
     },
     {
       "level": 2,
-      "question": "Which famous inventor and businessman was Tesla's rival in the 'War of Currents'?",
+      "question": "Tesla's alternating current drew a fierce rival—which inventor led the War of Currents?",
       "answer": "Thomas Edison",
       "acceptedAnswers": [
         "Thomas Edison",
@@ -29,7 +29,7 @@
     },
     {
       "level": 3,
-      "question": "What principle did Tesla discover that made practical AC motors possible?",
+      "question": "Edison's DC rival Tesla discovered what principle that made practical AC motors possible?",
       "answer": "Rotating magnetic field",
       "acceptedAnswers": [
         "rotating magnetic field",
@@ -42,7 +42,7 @@
     },
     {
       "level": 4,
-      "question": "Tesla demonstrated wireless power transmission at which famous laboratory location?",
+      "question": "That rotating magnetic field lit up experiments at what Colorado laboratory?",
       "answer": "Colorado Springs",
       "acceptedAnswers": [
         "Colorado Springs",
@@ -55,7 +55,7 @@
     },
     {
       "level": 5,
-      "question": "What ambitious wireless transmission tower did Tesla build on Long Island that was never completed?",
+      "question": "From Colorado Springs, Tesla moved east to build what unfinished Long Island wireless tower?",
       "answer": "Wardenclyffe",
       "acceptedAnswers": [
         "Wardenclyffe",

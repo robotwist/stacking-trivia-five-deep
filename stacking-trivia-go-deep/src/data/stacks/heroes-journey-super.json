@@ -18,7 +18,7 @@
     },
     {
       "level": 2,
-      "question": "After the call to adventure, what does Campbell call the hero's initial reluctance?",
+      "question": "In over 90% of myths Campbell studied, what does he call the hero's reluctance after the call?",
       "answer": "Refusal of the Call",
       "acceptedAnswers": [
         "Refusal of the Call",
@@ -31,7 +31,7 @@
     },
     {
       "level": 3,
-      "question": "Campbell's 'Supernatural Aid' figure (Gandalf, Obi-Wan) represents what Jungian archetype?",
+      "question": "After the Refusal of the Call, Campbell's Supernatural Aid figure represents what Jungian archetype?",
       "answer": "The Self",
       "acceptedAnswers": [
         "The Self",
@@ -46,7 +46,7 @@
     },
     {
       "level": 4,
-      "question": "Campbell noted the name 'Arthur' derives from a word meaning what animal?",
+      "question": "Campbell's Self archetype surfaces in kings—Arthur's name derives from a word meaning what animal?",
       "answer": "Bear",
       "acceptedAnswers": [
         "Bear",
@@ -60,7 +60,7 @@
     },
     {
       "level": 5,
-      "question": "Campbell linked the Hero's Journey crisis to what Greek word for a turning point?",
+      "question": "That bear-king pattern leads to crisis—what Greek word for turning point did Campbell cite?",
       "answer": "Krisis",
       "acceptedAnswers": [
         "Krisis",

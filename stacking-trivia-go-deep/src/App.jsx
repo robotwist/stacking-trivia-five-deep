@@ -45,6 +45,7 @@ import { shuffleArray } from './utils/arrayUtils'
 import { useDarkMode, useGameHistory } from './hooks/gameHooks'
 import { stackUnlockManager } from './utils/stackUnlocks'
 import { parsePlayParams } from './utils/url'
+import StackPlayLink from './components/StackPlayLink'
 import { playSound, initAudio } from './utils/audio.js'
 import { celebratePerfectScore, celebrateFirstCompletion } from './utils/celebrations.js'
 import { shareScore } from './utils/share.js'
@@ -142,6 +143,8 @@ function AuthenticatedGameApp() {
   
   // URL routing for multi-device functionality
   const [roomCode, setRoomCode] = useState('')
+
+  const gameStacks = useMemo(() => loadPlayableStacks(), [])
   
   // Check URL for special routes on component mount
   useEffect(() => {
@@ -172,14 +175,14 @@ function AuthenticatedGameApp() {
     // Deep link: /play?stack=<key>&category=<key>
     if (path === '/play' || path === '/play/') {
       const { stack, category } = parsePlayParams()
-      if (stack) {
+      if (stack && gameStacks[stack]) {
         if (category) setSelectedCategory(category)
         setSelectedStack(stack)
         setGameStarted(true)
         return
       }
     }
-  }, [])
+  }, [gameStacks])
   
   // New onboarding and post-game states
   const [showOnboarding, setShowOnboarding] = useState(false)
@@ -224,8 +227,6 @@ function AuthenticatedGameApp() {
     globalRank: user?.global_rank || 156,
     questionsAnswered: user?.total_questions || 423
   };
-  
-  const gameStacks = useMemo(() => loadPlayableStacks(), [])
   
   // Use custom hooks
   const [darkMode, toggleDarkMode] = useDarkMode()
@@ -581,6 +582,7 @@ function AuthenticatedGameApp() {
         questionsAnswered={lastGameResult.questionsAnswered}
         accuracy={lastGameResult.accuracy}
         completedStack={lastGameResult.completedStack}
+        categoryKey={selectedCategory}
         onSelectNextStack={handleSelectNextStack}
         onReturnToMenu={handleReturnToMenu}
         userStats={userStats}
@@ -826,13 +828,20 @@ function AuthenticatedGameApp() {
                   <p className="text-sm text-amber-700 mb-4">
                     {stack.description || "Dive deep into this fascinating topic"}
                   </p>
-                  <div className="flex items-center justify-between text-xs">
+                  <div className="flex items-center justify-between text-xs gap-2">
                     <span className="text-amber-600">
                       5 Questions Deep
                     </span>
                     <span className="text-amber-800 font-semibold">
                       160 pts max
                     </span>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-amber-300/60">
+                    <StackPlayLink
+                      stackKey={stackKey}
+                      categoryKey={selectedCategory}
+                      className="text-xs font-semibold text-amber-800 hover:text-amber-950"
+                    />
                   </div>
                 </button>
               )

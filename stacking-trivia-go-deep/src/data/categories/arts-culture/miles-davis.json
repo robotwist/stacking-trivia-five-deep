@@ -25,7 +25,7 @@
     },
     {
       "level": 3,
-      "question": "Which saxophonist played on 'Kind of Blue' alongside Miles?",
+      "question": "On the 1959 'Kind of Blue' sessions, which saxophonist played alongside Miles?",
       "answer": "John Coltrane",
       "acceptedAnswers": [
         "John Coltrane",
@@ -48,7 +48,7 @@
     },
     {
       "level": 5,
-      "question": "Most 'Kind of Blue' tracks were captured in how many takes?",
+      "question": "Those modal jazz tracks were mostly captured in how many takes?",
       "answer": "One take",
       "acceptedAnswers": [
         "One take",

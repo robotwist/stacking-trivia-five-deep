@@ -1,6 +1,6 @@
 {
   "title": "Darwin: Evolution Revolution",
-  "description": "The naturalist whose voyage rewrote how we see life on Earth.",
+  "description": "One voyage, one book—five steps from a Royal Navy ship to the theory that changed biology.",
   "questions": [
     {
       "level": 1,
@@ -18,7 +18,20 @@
     },
     {
       "level": 2,
-      "question": "Which Pacific island chain provided Darwin with crucial evidence for evolution, especially the finches?",
+      "question": "Darwin's Origin draws on years aboard what Royal Navy survey ship?",
+      "answer": "HMS Beagle",
+      "acceptedAnswers": [
+        "HMS Beagle",
+        "Beagle",
+        "The Beagle",
+        "hms beagle",
+        "H.M.S. Beagle"
+      ],
+      "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world"
+    },
+    {
+      "level": 3,
+      "question": "Aboard the Beagle, Darwin collected finches from what Pacific island chain?",
       "answer": "Galápagos Islands",
       "acceptedAnswers": [
         "Galápagos Islands",
@@ -31,8 +44,8 @@
       "hint": "These volcanic islands are off the coast of Ecuador, famous for unique species"
     },
     {
-      "level": 3,
-      "question": "What is the term for Darwin's principle that organisms best adapted to their environment survive and reproduce?",
+      "level": 4,
+      "question": "Those Galápagos finches helped Darwin formulate what survival mechanism?",
       "answer": "natural selection",
       "acceptedAnswers": [
         "natural selection",
@@ -44,21 +57,8 @@
       "hint": "Nature 'selects' the best traits, or only the 'fittest' survive"
     },
     {
-      "level": 4,
-      "question": "On which famous ship did young Darwin serve as the naturalist during his five-year voyage?",
-      "answer": "HMS Beagle",
-      "acceptedAnswers": [
-        "HMS Beagle",
-        "Beagle",
-        "The Beagle",
-        "hms beagle",
-        "H.M.S. Beagle"
-      ],
-      "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world"
-    },
-    {
       "level": 5,
-      "question": "Darwin delayed publishing his theory for decades partly due to conflict with his religious beliefs. What was his original field of study?",
+      "question": "Publishing natural selection conflicted with the clerical studies Darwin once pursued—what field was that?",
       "answer": "theology",
       "acceptedAnswers": [
         "theology",

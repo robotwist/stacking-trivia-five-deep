@@ -1,6 +1,6 @@
 {
   "title": "Mozart: Classical Genius",
-  "description": "Child prodigy, operatic drama, and unfinished mystery—a short climb through classical lore.",
+  "description": "Prodigy to unfinished masterpiece—from child wonder to a mass left incomplete.",
   "questions": [
     {
       "level": 1,
@@ -16,7 +16,19 @@
     },
     {
       "level": 2,
-      "question": "Mozart's opera about a Spanish nobleman's adventures with women is called what?",
+      "question": "Mozart was only five when he began composing—where was he born in 1756?",
+      "answer": "Salzburg",
+      "acceptedAnswers": [
+        "Salzburg",
+        "salzburg",
+        "salzburg austria",
+        "austria"
+      ],
+      "hint": "Known for its salt trade and baroque architecture, now famous for Mozart tours"
+    },
+    {
+      "level": 3,
+      "question": "Salzburg's prodigy later wrote an opera about a legendary seducer—what is it called?",
       "answer": "Don Giovanni",
       "acceptedAnswers": [
         "Don Giovanni",
@@ -26,8 +38,8 @@
       "hint": "Italian for 'Sir John' - about a legendary seducer who meets a supernatural end"
     },
     {
-      "level": 3,
-      "question": "What is the popular name for Mozart's Symphony No. 41 in C major, his final symphony?",
+      "level": 4,
+      "question": "After Don Giovanni, his final symphony earned what planetary nickname?",
       "answer": "Jupiter",
       "acceptedAnswers": [
         "Jupiter",
@@ -39,8 +51,8 @@
       "hint": "Named after the king of Roman gods - his most majestic symphony"
     },
     {
-      "level": 4,
-      "question": "Mozart died while composing which famous piece that deals with death and judgment?",
+      "level": 5,
+      "question": "Mozart died mid-composition of what mass for the dead after the Jupiter Symphony?",
       "answer": "Requiem",
       "acceptedAnswers": [
         "Requiem",
@@ -49,18 +61,6 @@
         "Requiem in D minor"
       ],
       "hint": "A mass for the dead, left unfinished when the composer himself died"
-    },
-    {
-      "level": 5,
-      "question": "In which Austrian city was Mozart born in 1756?",
-      "answer": "Salzburg",
-      "acceptedAnswers": [
-        "Salzburg",
-        "salzburg",
-        "salzburg austria",
-        "austria"
-      ],
-      "hint": "Known for its salt trade and baroque architecture, now famous for Mozart tours"
     }
   ],
   "imageHint": "🎼 From child prodigy to immortal symphonies 🎹",

@@ -1,6 +1,6 @@
 {
   "title": "Star Wars: A New Hope Deep Dive",
-  "description": "A galaxy of heroes, ships, and quotable lore—original-trilogy depths.",
+  "description": "From a desert farm to a famous farewell—Luke's first adventure in five beats.",
   "questions": [
     {
       "level": 1,
@@ -15,17 +15,7 @@
     },
     {
       "level": 2,
-      "question": "What is the name of Han Solo's ship?",
-      "answer": "Millennium Falcon",
-      "acceptedAnswers": [
-        "Millennium Falcon",
-        "millennium falcon",
-        "the millennium falcon"
-      ]
-    },
-    {
-      "level": 3,
-      "question": "Who is Luke's mentor in using the Force?",
+      "question": "On Tatooine, who becomes Luke's mentor in using the Force?",
       "answer": "Obi-Wan Kenobi",
       "acceptedAnswers": [
         "Obi-Wan Kenobi",
@@ -35,8 +25,8 @@
       ]
     },
     {
-      "level": 4,
-      "question": "What is the weapon used by Jedi Knights?",
+      "level": 3,
+      "question": "Obi-Wan gives Luke what iconic Jedi weapon?",
       "answer": "Lightsaber",
       "acceptedAnswers": [
         "Lightsaber",
@@ -45,8 +35,18 @@
       ]
     },
     {
+      "level": 4,
+      "question": "Lightsaber in hand, Luke escapes Tatooine aboard whose famous ship?",
+      "answer": "Millennium Falcon",
+      "acceptedAnswers": [
+        "Millennium Falcon",
+        "millennium falcon",
+        "the millennium falcon"
+      ]
+    },
+    {
       "level": 5,
-      "question": "What phrase does Obi-Wan say about the Force?",
+      "question": "Before the Millennium Falcon jumps to hyperspace, Obi-Wan tells Luke what famous phrase about the Force?",
       "answer": "May the Force be with you",
       "acceptedAnswers": [
         "May the Force be with you",

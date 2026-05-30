@@ -26,7 +26,7 @@
     },
     {
       "level": 3,
-      "question": "What famous line begins Hamlet's most famous soliloquy?",
+      "question": "After leaving Stratford-upon-Avon for London, Shakespeare wrote Hamlet—what line opens its famous soliloquy?",
       "answer": "To be or not to be",
       "acceptedAnswers": [
         "To be or not to be",
@@ -48,7 +48,7 @@
     },
     {
       "level": 5,
-      "question": "How many sonnets did Shakespeare write?",
+      "question": "At the Globe Theatre, Shakespeare's company performed plays—and he published how many sonnets?",
       "answer": "154",
       "acceptedAnswers": [
         "154",
