@@ -7,7 +7,7 @@
       "color": "from-amber-600 to-yellow-600",
       "stacks": [
         "van-gogh",
-        "the_beatles", 
+        "the_beatles",
         "frida-kahlo",
         "miles-davis",
         "shakespeare",
@@ -39,14 +39,14 @@
       ]
     },
     "science-technology": {
-      "title": "Science & Technology", 
+      "title": "Science & Technology",
       "description": "Explore the minds that revolutionized our understanding of the universe",
       "image": "science-technology",
       "color": "from-blue-600 to-cyan-600",
       "stacks": [
         "tesla",
         "darwin",
-        "nasa", 
+        "nasa",
         "marie-curie",
         "steve-jobs"
       ]
@@ -59,7 +59,21 @@
       "stacks": [
         "blade_runner",
         "the-godfather",
-        "star-wars"
+        "star-wars",
+        "wes-anderson"
+      ]
+    },
+    "vhs-shelf": {
+      "title": "The VHS Shelf",
+      "description": "The comedies you wore out on tape, and the deep cuts only rewinders know",
+      "image": "cinema",
+      "color": "from-orange-700 to-amber-600",
+      "stacks": [
+        "big-movie",
+        "stripes-movie",
+        "what-about-bob",
+        "ernest-movies",
+        "goofy-movie"
       ]
     },
     "history": {
@@ -97,7 +111,8 @@
         "the-office",
         "friends",
         "back-to-the-future",
-        "stranger-things"
+        "stranger-things",
+        "annie-musical"
       ]
     },
     "heroes-journey-super": {
@@ -112,7 +127,7 @@
     "jesus-historical-mythic": {
       "title": "Jesus: Historical & Mythic",
       "description": "Archaeological evidence, comparative mythology, and the evolution of Christian narratives",
-      "image": "history", 
+      "image": "history",
       "color": "from-amber-900 to-yellow-900",
       "stacks": [
         "jesus-historical-mythic"
@@ -122,7 +137,7 @@
       "title": "Philip K. Dick: Reality's Interrogator",
       "description": "The visionary author who anticipated simulation theory, AI consciousness, and information reality",
       "image": "science-technology",
-      "color": "from-cyan-900 to-blue-900", 
+      "color": "from-cyan-900 to-blue-900",
       "stacks": [
         "philip-k-dick-super"
       ]
@@ -134,7 +149,7 @@
       "color": "from-green-500 to-blue-500",
       "stacks": [
         "dinosaurs",
-        "superheroes", 
+        "superheroes",
         "space",
         "videogames",
         "animals"

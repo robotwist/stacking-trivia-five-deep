@@ -56,6 +56,17 @@ export const CATEGORY_IMAGES = {
     alt: "1940s Hollywood film studio, archival photograph",
     description: "Golden Age of Cinema behind-the-scenes"
   },
+  'vhs-shelf': {
+    // Worn tape labels and CRT glow
+    backgroundImage: `linear-gradient(135deg, 
+      rgba(10, 10, 10, 0.95) 0%, 
+      rgba(30, 20, 15, 0.9) 40%, 
+      rgba(194, 65, 12, 0.85) 80%,
+      rgba(245, 158, 11, 0.7) 100%
+    ), url("data:image/svg+xml,%3Csvg width='60' height='40' viewBox='0 0 60 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' opacity='0.05'%3E%3Crect x='6' y='8' width='48' height='24' rx='3'/%3E%3Ccircle cx='20' cy='20' r='5'/%3E%3Ccircle cx='40' cy='20' r='5'/%3E%3C/g%3E%3C/svg%3E")`,
+    alt: "Stack of worn VHS tapes beside a glowing CRT television",
+    description: "Be kind, rewind"
+  },
   'history': {
     // Ancient manuscripts and archaeological sites
     backgroundImage: `linear-gradient(135deg, 

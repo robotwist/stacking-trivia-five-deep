@@ -1,71 +1,98 @@
 {
-  "title": "Wes Anderson: The Grand Budapest Hotel of Cinematic Style",
+  "title": "Wes Anderson: The Lobby Boy's Caper",
+  "description": "A pink box, a stolen portrait, and a country that never existed—five steps into Wes Anderson's grandest caper.",
   "image": "wes-anderson-symmetrical-shot.jpg",
   "imageHint": "A perfectly centered, symmetrical shot with vintage colors and meticulous production design",
-  "description": "From \"Bottle Rocket\" to \"The French Dispatch,\" Wes Anderson has created a distinctive cinematic universe characterized by symmetrical compositions, vintage aesthetics, and deadpan humor that's instantly recognizable.",
   "category": "cinema",
   "questions": [
     {
       "level": 1,
-      "question": "Which 2014 Wes Anderson film won him his first Academy Award nomination for Best Original Screenplay?",
+      "question": "Wes Anderson's 2014 caper follows the concierge M. Gustave and his lobby boy, Zero, at what pink mountaintop establishment?",
       "answer": "The Grand Budapest Hotel",
-      "acceptableAnswers": ["The Grand Budapest Hotel", "grand budapest hotel", "Budapest Hotel"],
-      "explanation": "\"The Grand Budapest Hotel\" (2014) earned Anderson his first Oscar nomination for Best Original Screenplay and won four Academy Awards for its distinctive visual design."
+      "acceptedAnswers": [
+        "The Grand Budapest Hotel",
+        "grand budapest hotel",
+        "the grand budapest",
+        "grand budapest"
+      ],
+      "choices": [
+        "Hotel Chevalier",
+        "The Excelsior",
+        "The Darjeeling"
+      ],
+      "explanation": "Hotel Chevalier is Anderson's own 2007 short, and the Darjeeling Limited is his train. The 1930s scenes are shot in the boxy 1.37:1 frame of films from that era."
     },
     {
       "level": 2,
-      "question": "What distinctive camera technique does Wes Anderson frequently use, where subjects are placed exactly in the center of the frame?",
-      "answer": "Symmetrical composition",
-      "acceptableAnswers": ["Symmetrical composition", "symmetrical framing", "centered framing", "symmetry"],
-      "explanation": "Anderson is famous for his symmetrical compositions and centered framing, creating a dollhouse-like aesthetic that makes his films instantly recognizable."
+      "question": "At the Grand Budapest, nothing says love like a pink box from Mendl's. What is the bakery's signature pastry?",
+      "answer": "Courtesan au chocolat",
+      "acceptedAnswers": [
+        "Courtesan au chocolat",
+        "courtesan au chocolat",
+        "courtesan",
+        "the courtesan",
+        "courtesans au chocolat"
+      ],
+      "choices": [
+        "Religieuse",
+        "Mille-feuille",
+        "Sachertorte"
+      ],
+      "explanation": "It's a riff on the real French religieuse. A pastry chef from Görlitz, where much of the film was shot, created the courtesan before working with Anderson on the final design."
     },
     {
       "level": 3,
-      "question": "Which actor has appeared in every Wes Anderson film since \"Bottle Rocket\" (1996)?",
-      "answer": "Owen Wilson",
-      "acceptableAnswers": ["Owen Wilson", "owen wilson", "Wilson"],
-      "explanation": "Owen Wilson, Anderson's former college roommate, has appeared in every Anderson film and co-wrote \"Bottle Rocket,\" \"Rushmore,\" and \"The Royal Tenenbaums\" with him."
+      "question": "Courtesans smuggle tools into Gustave's prison, but the whole mess began with what priceless painting Madame D. left him?",
+      "answer": "Boy with Apple",
+      "acceptedAnswers": [
+        "Boy with Apple",
+        "boy with apple",
+        "the boy with apple",
+        "boy with an apple"
+      ],
+      "choices": [
+        "Girl with a Pearl Earring",
+        "Portrait of Madame D.",
+        "The Lobby Boy"
+      ],
+      "explanation": "It's credited to the fictional \"Johannes Van Hoytl the Younger,\" but British artist Michael Taylor really painted it in 2012 as a prop. A London dancer, Ed Munro, posed."
     },
     {
       "level": 4,
-      "question": "What aspect ratio did Anderson use for \"The Grand Budapest Hotel\" to create different time periods, switching between 1.37:1, 1.85:1, and 2.35:1?",
-      "answer": "Multiple aspect ratios",
-      "acceptableAnswers": ["Multiple aspect ratios", "different aspect ratios", "changing aspect ratios", "three aspect ratios"],
-      "explanation": "Anderson used three different aspect ratios in \"The Grand Budapest Hotel\" to represent different time periods: 1.37:1 for the 1930s, 1.85:1 for the 1960s, and 2.35:1 for the 1980s."
+      "question": "Boy with Apple is the pride of what fictional European republic where the film is set?",
+      "answer": "Zubrowka",
+      "acceptedAnswers": [
+        "Zubrowka",
+        "zubrowka",
+        "republic of zubrowka",
+        "żubrówka"
+      ],
+      "choices": [
+        "Freedonia",
+        "Sylvania",
+        "Latveria"
+      ],
+      "explanation": "Anderson gave it a full history: belle époque glamour, a fascist takeover in the '30s, then Communist decline. Żubrówka is also a Polish bison-grass vodka."
     },
     {
       "level": 5,
-      "question": "What production design technique does Anderson use where he builds elaborate, detailed sets that can be filmed from multiple angles like dollhouses?",
-      "answer": "Miniature aesthetics",
-      "acceptableAnswers": ["Miniature aesthetics", "dollhouse aesthetic", "miniature sets", "dollhouse style"],
-      "explanation": "Anderson creates elaborate, detailed sets designed like miniatures or dollhouses, allowing for his signature camera movements and creating the whimsical, toy-like quality of his films."
+      "question": "Zubrowka's world is credited, in the closing titles, to the writings of which Austrian author?",
+      "answer": "Stefan Zweig",
+      "acceptedAnswers": [
+        "Stefan Zweig",
+        "stefan zweig",
+        "zweig"
+      ],
+      "choices": [
+        "Franz Kafka",
+        "Thomas Mann",
+        "Joseph Roth"
+      ],
+      "explanation": "Anderson fell for Zweig's novel Beware of Pity and his memoir The World of Yesterday, a portrait of a vanished pre-war Europe. The film is his love letter to it."
     }
   ],
-  "connections": [
-    {
-      "targetStack": "tyler-the-creator",
-      "sharedThemes": ["visual-style", "aesthetics", "creativity"],
-      "connectionStrength": 3,
-      "trigger": "Both artists obsessed with distinctive visual aesthetics and meticulous attention to creative details"
-    },
-    {
-      "targetStack": "ernest-movies",
-      "sharedThemes": ["cinema", "comedy"],
-      "connectionStrength": 2,
-      "trigger": "Both create distinctive cinematic comedy worlds, though with vastly different approaches"
-    },
-    {
-      "targetStack": "tame-impala",
-      "sharedThemes": ["aesthetics", "vintage"],
-      "connectionStrength": 2,
-      "trigger": "Both create meticulously crafted aesthetic universes with vintage influences and modern sensibilities"
-    }
-  ],
-  "qualityScore": 87,
-  "familyRequest": {
-    "originalTopic": "Wes Anderson",
-    "priority": 1,
-    "generatedAt": "2024-08-10T21:10:00.000Z",
-    "notes": "Distinctive visual style and storytelling approach"
+  "easterEgg": {
+    "title": "A lobby with a past",
+    "text": "The hotel lobby is real: the Görlitzer Warenhaus, a 1913 department store in Görlitz, Germany, empty and near demolition when the crew moved in. Anderson reportedly came close to buying it."
   }
 }

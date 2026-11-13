@@ -1,65 +1,97 @@
 {
-  "title": "A Goofy Movie: Father-Son Road Trip Adventure",
+  "title": "A Goofy Movie: Eye to Eye",
+  "description": "A school-assembly stunt, a fishing trip, and a family move that brings down the house—five steps deep into the Goofs.",
   "image": "goofy-max-car-trip.jpg",
   "imageHint": "Cartoon father and teenage son in a car on a road trip with camping gear and maps",
-  "description": "Goofy tries to reconnect with his teenage son Max through an unforgettable cross-country road trip filled with mishaps, music, and heartfelt moments.",
   "category": "movies",
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of Goofy's teenage son?",
+      "question": "In 1995's A Goofy Movie, which teenage son is mortified that he inherited his dad's laugh?",
       "answer": "Max",
-      "acceptableAnswers": ["Max", "max", "Maximilian", "maximilian"],
-      "explanation": "Max Goof is Goofy's teenage son who is embarrassed by his father and dreams of impressing his crush Roxanne."
+      "acceptedAnswers": [
+        "Max",
+        "max",
+        "max goof",
+        "maximilian goof"
+      ],
+      "choices": [
+        "P.J.",
+        "Bobby",
+        "Huey"
+      ],
+      "explanation": "Jason Marsden took over Max's voice from the Goof Troop TV series. The whole road-trip idea came from Jeffrey Katzenberg planning a real car trip with his daughter."
     },
     {
       "level": 2,
-      "question": "What singer does Max pretend to be at the school assembly?",
+      "question": "On the last day of school, Max hijacks the assembly dressed as what pop star, lip-syncing \"Stand Out\"?",
       "answer": "Powerline",
-      "acceptableAnswers": ["Powerline", "powerline"],
-      "explanation": "Max impersonates the pop star Powerline during a school assembly performance to impress Roxanne, which gets him in trouble with the principal."
+      "acceptedAnswers": [
+        "Powerline",
+        "powerline",
+        "power line"
+      ],
+      "choices": [
+        "Prince",
+        "Bobby Brown",
+        "Vanilla Ice"
+      ],
+      "explanation": "The stunt makes Max famous and lands him in Principal Mazur's office. Mazur, voiced by Wallace Shawn, warns Goofy his son is headed for the electric chair."
     },
     {
       "level": 3,
-      "question": "What is the name of Max's crush?",
-      "answer": "Roxanne",
-      "acceptableAnswers": ["Roxanne", "roxanne"],
-      "explanation": "Roxanne is Max's high school crush, and his desire to impress her drives much of the plot, including his lie about knowing Powerline personally."
+      "question": "Determined to end Max's Powerline phase, Goofy drags him on a father-son fishing trip to what spot in Idaho?",
+      "answer": "Lake Destiny",
+      "acceptedAnswers": [
+        "Lake Destiny",
+        "lake destiny",
+        "destiny",
+        "lake destiny idaho"
+      ],
+      "choices": [
+        "Lester's Possum Park",
+        "Lake Wobegon",
+        "Lake Tahoe"
+      ],
+      "explanation": "Max secretly redraws the route on Goofy's map, heading for the Powerline concert in L.A. instead. Lester's Possum Park is just one of the stops they really do make."
     },
     {
       "level": 4,
-      "question": "Where does Goofy originally plan to take Max on their road trip?",
-      "answer": "Lake Destiny",
-      "acceptableAnswers": ["Lake Destiny", "lake destiny"],
-      "explanation": "Goofy plans a father-son fishing trip to Lake Destiny, but Max secretly changes their route to go to the Powerline concert in Los Angeles."
+      "question": "On the road to Lake Destiny, Goofy teaches Max the fishing move his own father taught him. What's it called?",
+      "answer": "The Perfect Cast",
+      "acceptedAnswers": [
+        "The Perfect Cast",
+        "the perfect cast",
+        "perfect cast"
+      ],
+      "choices": [
+        "The Goofy Holler",
+        "The Fly Fling",
+        "Hook, Line, and Sinker"
+      ],
+      "explanation": "Max later uses it to save Goofy from going over a waterfall. Director Kevin Lima built the concert finale around it, adding, \"I don't know if you've ever tried it, but it is quite difficult.\""
     },
     {
       "level": 5,
-      "question": "What famous Powerline song do Goofy and Max sing together at the end?",
+      "question": "Onstage at the Powerline concert, Goofy turns the Perfect Cast into a dance move during what song?",
       "answer": "I2I",
-      "acceptableAnswers": ["I2I", "i2i", "Eye to Eye", "eye to eye"],
-      "explanation": "'I2I' (Eye to Eye) is Powerline's hit song that becomes the emotional centerpiece when Goofy and Max finally connect and perform it together on stage."
+      "acceptedAnswers": [
+        "I2I",
+        "i2i",
+        "i 2 i",
+        "eye to eye",
+        "i to i"
+      ],
+      "choices": [
+        "Stand Out",
+        "After Today",
+        "On the Open Road"
+      ],
+      "explanation": "Powerline's look was shaped by Prince, and his voice is R&B singer Tevin Campbell, once known as \"Prince's protégé.\" Rosie Gaines, from Prince's own band, sings the high part."
     }
   ],
-  "connections": [
-    {
-      "targetStack": "disney-classics",
-      "sharedThemes": ["Disney", "animation", "family"],
-      "connectionStrength": 3,
-      "trigger": "Disney animated feature focusing on family relationships and growing up"
-    },
-    {
-      "targetStack": "father-son-movies",
-      "sharedThemes": ["father-son", "growing up", "family bonding"],
-      "connectionStrength": 2,
-      "trigger": "Heartwarming story about father-son relationships and understanding"
-    }
-  ],
-  "qualityScore": 92,
-  "familyRequest": {
-    "originalTopic": "Goofy the movie",
-    "priority": 1,
-    "generatedAt": "2024-08-10T23:03:00.000Z",
-    "notes": "Disney's A Goofy Movie - father-son road trip classic"
+  "easterEgg": {
+    "title": "Hidden voices",
+    "text": "Bobby, Max's spray-cheese-loving sidekick, is an uncredited Pauly Shore. Bigfoot's growls are Frank Welker, and director Kevin Lima himself voices a walk-around mascot at Lester's Possum Park."
   }
 }

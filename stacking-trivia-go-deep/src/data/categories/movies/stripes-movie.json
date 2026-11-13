@@ -1,65 +1,103 @@
 {
-  "title": "Stripes: Bill Murray's Army Comedy Classic",
+  "title": "Stripes: The Mutts of Basic Training",
+  "description": "A worst day ever, a drill sergeant, a recruit named Psycho, and a very strange RV—five steps into Bill Murray's boot camp.",
   "image": "army-boot-camp-comedy.jpg",
   "imageHint": "Military boot camp scene with comedic chaos, drill sergeant, and recruits in formation",
-  "description": "Join John Winger and Russell Ziskey in their hilariously disastrous military adventure. From basic training mishaps to European escapades.",
   "category": "movies",
   "questions": [
     {
       "level": 1,
-      "question": "Who plays John Winger, the laid-back slacker who joins the Army?",
-      "answer": "Bill Murray",
-      "acceptableAnswers": ["Bill Murray", "bill murray"],
-      "explanation": "Bill Murray stars as John Winger, the quintessential slacker who impulsively enlists in the Army after losing his job and girlfriend."
+      "question": "Cabbie John Winger loses his job, car, apartment, and girlfriend in one day, so he talks his buddy Russell into joining what?",
+      "answer": "The Army",
+      "acceptedAnswers": [
+        "The Army",
+        "the army",
+        "army",
+        "us army",
+        "u.s. army"
+      ],
+      "choices": [
+        "The Marines",
+        "The Navy",
+        "The Peace Corps"
+      ],
+      "explanation": "Ivan Reitman pitched it after Meatballs. Harold Ramis tailored the script to Bill Murray and cast himself as Russell to help lure Murray in."
     },
     {
       "level": 2,
-      "question": "What is the name of John's best friend who reluctantly joins the Army with him?",
-      "answer": "Russell Ziskey",
-      "acceptableAnswers": ["Russell Ziskey", "russell ziskey", "Russell", "russell"],
-      "explanation": "Russell Ziskey, played by Harold Ramis, is John's neurotic best friend who gets talked into enlisting alongside him."
+      "question": "In Army basic training, the platoon's tough drill instructor is played by Western legend Warren Oates. What's his name?",
+      "answer": "Sergeant Hulka",
+      "acceptedAnswers": [
+        "Sergeant Hulka",
+        "sergeant hulka",
+        "sgt. hulka",
+        "sgt hulka",
+        "hulka"
+      ],
+      "choices": [
+        "Sergeant Foley",
+        "Sergeant Hartman",
+        "Sergeant Carter"
+      ],
+      "explanation": "Oates, a veteran of Peckinpah films like The Wild Bunch, gives the comedy its spine. It was one of his last major roles; he died the following year."
     },
     {
       "level": 3,
-      "question": "What is the name of their tough drill sergeant?",
-      "answer": "Sergeant Hulka",
-      "acceptableAnswers": ["Sergeant Hulka", "sergeant hulka", "Hulka", "hulka"],
-      "explanation": "Sergeant Hulka, played by Warren Oates, is the no-nonsense drill instructor trying to whip the misfits into shape."
+      "question": "Hulka meets a recruit called Psycho, who'll kill anyone who touches his stuff or uses his real first name. Hulka's reply: \"Lighten up,\" what?",
+      "answer": "Francis",
+      "acceptedAnswers": [
+        "Francis",
+        "francis",
+        "lighten up francis",
+        "francis soyer"
+      ],
+      "choices": [
+        "Travis",
+        "Leon",
+        "Elmo"
+      ],
+      "explanation": "The full line: \"Lighten up, Francis. We're all in this together.\" Psycho is a not-so-subtle riff on Taxi Driver's Travis Bickle. Elmo is Judge Reinhold's recruit."
     },
     {
       "level": 4,
-      "question": "What military vehicle do they accidentally commandeer in Europe?",
-      "answer": "RV",
-      "acceptableAnswers": ["RV", "recreational vehicle", "motorhome", "Winnebago"],
-      "explanation": "The squad steals what they think is a military vehicle but turns out to be a recreational vehicle, leading to their European adventure."
+      "question": "With Hulka injured, Francis and the misfits train themselves overnight. At graduation, a general asks if it's true. What does Winger shout back?",
+      "answer": "That's the fact, Jack",
+      "acceptedAnswers": [
+        "That's the fact, Jack",
+        "that's the fact jack",
+        "thats the fact jack",
+        "that's the fact, jack!",
+        "the fact jack"
+      ],
+      "choices": [
+        "Army training, sir!",
+        "Blown up, sir!",
+        "We're mutts!"
+      ],
+      "explanation": "The decoys are real lines from the same scene; \"Blown up, sir!\" is where Hulka went. Murray improvised freely, and this line named a 40th-anniversary featurette."
     },
     {
       "level": 5,
-      "question": "What year was Stripes released?",
-      "answer": "1981",
-      "acceptableAnswers": ["1981"],
-      "explanation": "Stripes was released in 1981, becoming one of Bill Murray's breakout film roles and a comedy classic."
+      "question": "\"That's the fact, Jack!\" wins the general over, and he assigns the platoon to guard his top-secret weapon, disguised as an RV. What's it called?",
+      "answer": "The EM-50 Urban Assault Vehicle",
+      "acceptedAnswers": [
+        "The EM-50 Urban Assault Vehicle",
+        "em-50",
+        "em 50",
+        "em50",
+        "urban assault vehicle",
+        "the em-50"
+      ],
+      "choices": [
+        "Ecto-1",
+        "KITT",
+        "The Mystery Machine"
+      ],
+      "explanation": "It's basically an armed GMC Motorhome. Three years later, Reitman, Murray, and Ramis traded it for a converted Cadillac ambulance called Ecto-1."
     }
   ],
-  "connections": [
-    {
-      "targetStack": "bill-murray-classics",
-      "sharedThemes": ["comedy", "1980s", "Bill Murray"],
-      "connectionStrength": 3,
-      "trigger": "Bill Murray's iconic comedy performance in his early film career"
-    },
-    {
-      "targetStack": "military-comedies",
-      "sharedThemes": ["army", "boot camp", "military humor"],
-      "connectionStrength": 2,
-      "trigger": "Classic military comedy alongside films like MASH and Private Benjamin"
-    }
-  ],
-  "qualityScore": 88,
-  "familyRequest": {
-    "originalTopic": "Stripes the movie",
-    "priority": 1,
-    "generatedAt": "2024-08-10T23:00:00.000Z",
-    "notes": "Bill Murray army comedy classic for family enjoyment"
+  "easterEgg": {
+    "title": "Cheech & Chong Go to the Army",
+    "text": "Reitman first pitched Stripes as a military comedy for Cheech & Chong. The stoner duo became two slackers instead, and the project went to Bill Murray."
   }
 }
