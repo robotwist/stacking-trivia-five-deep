@@ -17,6 +17,38 @@ Our best stacks today, to copy from: **Queso Wars**, **Serena Williams**, **Actu
 | **Fairness** | Ambiguous, two right answers, or the answer is in the question | Fair, one right answer | Fair, typeable, and the decoys are tempting misconceptions |
 | **Accuracy** | Unverified or popular myth stated as fact | Correct | Correct, and contested points are flagged in the explanation |
 
+## Fan craft: what makes people wait for this trivia
+
+Our audience is fans. A stack is dialed in when a devotee grins at least three times: at a wink in the wording, at a decoy that's an in-joke, and at a level-5 deep cut they're proud to know. The reference stack is **Star Wars: The Death Star Rescue**.
+
+### The deep-track ladder
+
+Every level should feel like going one layer further into the fandom.
+
+| Level | Who gets it | Star Wars example |
+|---|---|---|
+| 1 | Anyone who saw it once | Which princess do they rescue? (Leia) |
+| 2 | A fan | Luke's "prisoner transfer from cell block ___" (1138, Lucas's first film) |
+| 3 | A superfan | Leia's cell number (2187, a tribute to the short film 21-87) |
+| 4 | A deep-tracker | The trash-compactor creature's name (dianoga; the film never says it) |
+| 5 | A devotee, with a payoff | The line that became the saga's running gag |
+
+### The toolbox
+
+- **Winks in the wording.** Quote the source inside the question ("one of them 'a little short'"). Fans hear the line in the actor's voice.
+- **In-joke decoys.** Make the wrong choices real numbers, names, and lines from the same world (TK-421, Docking Bay 327, Docking Bay 94). Even a wrong guess should make a fan smile.
+- **Deep cuts with receipts.** Behind-the-scenes facts in the creator's own words beat summaries ("I purposely made myself red-faced for a strangulated look"). Always find the primary quote; fandom myths get corrected loudly.
+- **Callbacks across levels.** Let a later level pay off an earlier one (the cell-block bluff sets up the cell number).
+- **The easter egg.** An optional `easterEgg` (`title`, `text`) is revealed only on a perfect dive: the nod that rewards going all the way down (Finn's stormtrooper number is FN-2187, Leia's cell). Players who miss see that one exists, which pulls them back.
+
+### Fan-craft checklist before shipping
+
+- [ ] Would a casual fan get level 1, and would a devotee be proud to get level 5?
+- [ ] Is there a quote or catchphrase in at least two questions?
+- [ ] Are at least half the decoys in-world in-jokes rather than generic wrong answers?
+- [ ] Is every behind-the-scenes claim sourced to the person who was there?
+- [ ] Is there an easter egg worth finding?
+
 ## Writing explanations (the reveal card)
 
 The explanation is shown right after the answer, win or lose. It is the reward.

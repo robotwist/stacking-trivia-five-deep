@@ -102,6 +102,9 @@ const PostGameFlow = ({
               <span className="font-bold text-3xl">{score}</span>
               <span className="opacity-90"> / {maxScore} points</span>
             </p>
+            {stack?.easterEgg && levelsCleared >= totalLevels && (
+              <p className="mt-2 text-sm font-semibold">🥚 You found the easter egg</p>
+            )}
             {isNewBest && previousBest !== null && (
               <p className="mt-2 inline-block px-3 py-1 rounded-full bg-white/25 text-sm font-semibold">
                 New best! Previous: {previousBest}
@@ -155,6 +158,25 @@ const PostGameFlow = ({
             </button>
           </div>
         </section>
+
+        {stack?.easterEgg && (
+          levelsCleared >= totalLevels ? (
+            <section
+              aria-label="Easter egg unlocked"
+              className="rounded-xl border-2 border-dashed border-amber-400 bg-gradient-to-br from-amber-100 to-yellow-50 dark:from-amber-900/40 dark:to-gray-800 p-5"
+            >
+              <p className="text-xs uppercase tracking-[0.25em] text-amber-700 dark:text-amber-300">🥚 Easter egg unlocked</p>
+              <h2 className="text-xl font-bold text-amber-900 dark:text-amber-100 mt-1" style={{ fontFamily: 'Baskervville, serif' }}>
+                {stack.easterEgg.title}
+              </h2>
+              <p className="mt-2 text-amber-900 dark:text-amber-100">{stack.easterEgg.text}</p>
+            </section>
+          ) : (
+            <p className="text-center text-sm text-amber-700 dark:text-amber-300">
+              🥚 This story hides an easter egg. Go all five levels deep to find it.
+            </p>
+          )
+        )}
 
         <section className="bg-white dark:bg-gray-800 rounded-xl shadow border border-amber-200 dark:border-amber-700 p-5">
           <h2 className="text-xl font-bold text-amber-800 dark:text-amber-200 mb-4" style={{ fontFamily: 'Baskervville, serif' }}>

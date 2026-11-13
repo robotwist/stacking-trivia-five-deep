@@ -212,6 +212,12 @@ export function validateStack(stack) {
       warnings.push(`Main Q${index + 1}: explanation is ${length} characters; aim for ${MAX_EXPLANATION_LENGTH} or fewer so it reads aloud quickly`)
     }
   })
+  if (stack.easterEgg) {
+    const { title, text } = stack.easterEgg
+    if (!title || !text) errors.push('easterEgg needs both a title and text')
+    else if (text.length > 280) warnings.push(`easterEgg text is ${text.length} characters; keep it under 280 so it reads in one breath`)
+  }
+
   findAnswerLeaks(stack).forEach(({ level, detail }) => {
     errors.push(`Main Q${level}: gives away its answer: ${detail}`)
   })

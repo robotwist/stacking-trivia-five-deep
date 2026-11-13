@@ -379,6 +379,7 @@ function AuthenticatedGameApp() {
       score,
       levels_cleared: levelsCleared,
       perfect: levelsCleared >= totalLevels,
+      easter_egg_found: levelsCleared >= totalLevels && !!stack?.easterEgg,
       choices_used: answers.filter((a) => a.usedChoices).length,
       deeper_answered: answers.filter((a) => a.deeper).length,
       first_play: isFirstPlay,

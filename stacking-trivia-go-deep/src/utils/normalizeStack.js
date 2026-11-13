@@ -131,6 +131,7 @@ export const normalizeStack = (rawStack) => {
   if (rawStack.category) stack.category = rawStack.category
   if (rawStack.deeperMode) stack.deeperMode = rawStack.deeperMode
   if (rawStack.choicesByDefault) stack.choicesByDefault = true
+  if (rawStack.easterEgg?.text) stack.easterEgg = rawStack.easterEgg
 
   return stack
 }
