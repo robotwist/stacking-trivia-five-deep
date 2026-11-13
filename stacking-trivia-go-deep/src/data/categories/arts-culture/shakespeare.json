@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Who wrote 'Romeo and Juliet'?",
+      "question": "Who wrote 'Romeo and Juliet,' where \"Wherefore art thou Romeo?\" means \"why,\" not \"where\"?",
       "answer": "William Shakespeare",
       "acceptedAnswers": [
         "William Shakespeare",
@@ -16,7 +16,8 @@
         "Christopher Marlowe",
         "Ben Jonson",
         "Thomas Kyd"
-      ]
+      ],
+      "explanation": "Juliet isn't looking for him; she's lamenting that he's a Montague. Bonus myth: the word \"balcony\" never appears in the play. Stage tradition added it."
     },
     {
       "level": 2,
@@ -32,7 +33,8 @@
         "Canterbury",
         "Warwick",
         "Coventry"
-      ]
+      ],
+      "explanation": "He was baptized there on April 26, 1564. Tradition puts his birthday on April 23, the same date he died in 1616. Neat, though only the baptism is on record."
     },
     {
       "level": 3,
@@ -47,11 +49,12 @@
         "Alas, poor Yorick",
         "Now is the winter of our discontent",
         "All the world's a stage"
-      ]
+      ],
+      "explanation": "In the 1603 \"bad quarto,\" it reads \"To be, or not to be—ay, there's the point.\" The version everyone quotes arrived with the Second Quarto a year later."
     },
     {
       "level": 4,
-      "question": "Which theater was associated with Shakespeare's company, the King's Men?",
+      "question": "Hamlet's 'To be or not to be' likely premiered at which Bankside playhouse, built by Shakespeare's company in 1599?",
       "answer": "The Globe Theatre",
       "acceptedAnswers": [
         "The Globe Theatre",
@@ -64,11 +67,12 @@
         "The Rose Theatre",
         "The Swan Theatre",
         "The Fortune Theatre"
-      ]
+      ],
+      "explanation": "They built it from the timbers of their old playhouse, dismantled over Christmas 1598. In 1613 a stage cannon torched the thatch; one man's burning breeches were doused with ale."
     },
     {
       "level": 5,
-      "question": "At the Globe Theatre, Shakespeare's company performed his plays—and how many sonnets did Shakespeare write?",
+      "question": "Beyond the Globe stage, Shakespeare wrote poetry too—how many sonnets appear in his 1609 collection?",
       "answer": "154",
       "acceptedAnswers": [
         "154",
@@ -81,7 +85,7 @@
         "100",
         "246"
       ],
-      "explanation": "All 154 appeared in a 1609 edition published by Thomas Thorpe, possibly without Shakespeare's blessing."
+      "explanation": "Publisher Thomas Thorpe dedicated them to a mysterious \"Mr. W.H.,\" still unidentified. Sonnet 145 may pun on his wife, Anne Hathaway: \"'I hate' from hate away she threw.\""
     }
   ],
   "image": "first-folio-1623.jpg",

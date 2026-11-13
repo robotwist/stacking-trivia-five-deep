@@ -19,7 +19,8 @@
         "Principles of Geology",
         "Zoonomia"
       ],
-      "hint": "It's about the 'origin' of all living things and their different types"
+      "hint": "It's about the 'origin' of all living things and their different types",
+      "explanation": "Irony: the word \"evolution\" never appears in the first edition—its very last word is \"evolved.\" Booksellers ordered more copies than the 1,250 printed."
     },
     {
       "level": 2,
@@ -37,7 +38,8 @@
         "HMS Bounty",
         "HMS Challenger"
       ],
-      "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world"
+      "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world",
+      "explanation": "Captain Robert FitzRoy, a believer in reading faces, nearly rejected Darwin over the shape of his nose, Darwin later wrote. The voyage ran almost five years; he was seasick throughout."
     },
     {
       "level": 3,
@@ -56,7 +58,8 @@
         "Falkland Islands",
         "Hawaiian Islands"
       ],
-      "hint": "These volcanic islands are off the coast of Ecuador, famous for unique species"
+      "hint": "These volcanic islands are off the coast of Ecuador, famous for unique species",
+      "explanation": "The Beagle stayed just five weeks. The vice-governor said he could tell a tortoise's home island by its shell—Darwin missed the hint, and the crew ate their tortoises."
     },
     {
       "level": 4,
@@ -79,7 +82,7 @@
     },
     {
       "level": 5,
-      "question": "Publishing natural selection conflicted with the clerical studies Darwin once pursued—what field was that?",
+      "question": "Long before natural selection, Darwin went to Cambridge to train as a country parson—studying what?",
       "answer": "theology",
       "acceptedAnswers": [
         "theology",
@@ -93,7 +96,8 @@
         "law",
         "botany"
       ],
-      "hint": "He originally studied to become a clergyman and understand God's word"
+      "hint": "He originally studied to become a clergyman and understand God's word",
+      "explanation": "Strictly, it was an ordinary Cambridge BA, the usual route to ordination. The twist: the would-be parson who rattled the Church was buried in Westminster Abbey, near Isaac Newton."
     }
   ],
   "imageHint": "Finches, fossils, and the puzzle of adaptation",

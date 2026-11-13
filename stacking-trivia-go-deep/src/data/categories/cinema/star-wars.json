@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of Luke Skywalker's home planet?",
+      "question": "Luke's desert home world borrows its name from a town in Tunisia, the country where Lucas shot its desert scenes. Name the planet.",
       "answer": "Tatooine",
       "acceptedAnswers": [
         "Tatooine",
@@ -16,11 +16,12 @@
         "Naboo",
         "Dagobah",
         "Alderaan"
-      ]
+      ],
+      "explanation": "The name comes from Tataouine. Luke's underground home was filmed at the Hotel Sidi Driss in Matmata, which still takes overnight guests."
     },
     {
       "level": 2,
-      "question": "On Tatooine, who becomes Luke's mentor in using the Force?",
+      "question": "On Tatooine, the hermit Luke knows as \"old Ben\" turns out to be which Jedi Knight?",
       "answer": "Obi-Wan Kenobi",
       "acceptedAnswers": [
         "Obi-Wan Kenobi",
@@ -32,11 +33,12 @@
         "Qui-Gon Jinn",
         "Yoda",
         "Owen Lars"
-      ]
+      ],
+      "explanation": "Alec Guinness grumbled in a 1976 letter that \"new rubbish dialogue reaches me every other day on wadges of pink paper.\" The role went on to make him rich."
     },
     {
       "level": 3,
-      "question": "Obi-Wan gives Luke what iconic Jedi weapon?",
+      "question": "Obi-Wan hands Luke his father's \"elegant weapon for a more civilized age.\" What is it?",
       "answer": "Lightsaber",
       "acceptedAnswers": [
         "Lightsaber",
@@ -47,11 +49,12 @@
         "Blaster",
         "Bowcaster",
         "Vibroblade"
-      ]
+      ],
+      "explanation": "The prop hilt was an old Graflex press-camera flash handle. The hum? Ben Burtt mixed an idling film-projector motor with buzz picked up from a TV picture tube."
     },
     {
       "level": 4,
-      "question": "Lightsaber in hand, Luke escapes Tatooine aboard what famous smuggler's ship?",
+      "question": "Lightsaber packed, Luke leaves Tatooine on the ship Han Solo brags \"made the Kessel Run in less than twelve parsecs.\" Name the ship.",
       "answer": "Millennium Falcon",
       "acceptedAnswers": [
         "Millennium Falcon",
@@ -62,11 +65,12 @@
         "Tantive IV",
         "Slave I",
         "Razor Crest"
-      ]
+      ],
+      "explanation": "Pedants note a parsec measures distance, not time; Solo (2018) explained that Han took a shortcut. Lucas has said the ship's shape was inspired by a hamburger."
     },
     {
       "level": 5,
-      "question": "Before the Death Star battle, the Millennium Falcon's captain Han Solo wishes Luke luck with what famous phrase?",
+      "question": "Before flying the Millennium Falcon away from the Death Star fight, Han, who scoffed at \"hokey religions,\" sends Luke off with what phrase?",
       "answer": "May the Force be with you",
       "acceptedAnswers": [
         "May the Force be with you",
@@ -77,7 +81,8 @@
         "Use the Force, Luke",
         "Never tell me the odds",
         "I have a bad feeling about this"
-      ]
+      ],
+      "explanation": "The skeptic's blessing comes true: Han swoops back in the Falcon (\"You're all clear, kid!\") so Luke can take his shot. AFI ranks the line No. 8 among movie quotes."
     }
   ],
   "image": "death-star-plans.jpg",

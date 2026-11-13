@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What speed must the DeLorean reach to travel through time?",
+      "question": "Real DeLorean speedometers stopped at 85 mph, so the movie car needed a custom one. What speed sends Doc's DeLorean through time?",
       "answer": "88 mph",
       "acceptedAnswers": [
         "88 mph",
@@ -17,7 +17,8 @@
         "100 mph",
         "142 mph"
       ],
-      "hint": "Great Scott! This is the magic number"
+      "hint": "Great Scott! This is the magic number",
+      "explanation": "Bob Gale wanted a speed nobody would hit by accident and everybody would remember: \"88 just had the right ring to it.\" The movie car got a digital readout to show it off."
     },
     {
       "level": 2,
@@ -34,7 +35,8 @@
         "10 gigawatts",
         "500 megawatts"
       ],
-      "hint": "Doc Brown's famous power requirement"
+      "hint": "Doc Brown's famous power requirement",
+      "explanation": "Doc says \"jigowatts\" because an engineer the writers consulted pronounced it that way, and Bob Gale spelled it \"jigowatt\" in the script. In 1955, only a lightning bolt packs that punch."
     },
     {
       "level": 3,
@@ -51,7 +53,8 @@
         "Douglas Needles",
         "Marvin Berry"
       ],
-      "hint": "Make like a tree and get outta here!"
+      "hint": "Make like a tree and get outta here!",
+      "explanation": "Zemeckis and Gale named Biff after Universal exec Ned Tanen, who blew up at them over an earlier script. Biff's comeuppance in 1955: a crash into a manure truck."
     },
     {
       "level": 4,
@@ -61,32 +64,34 @@
         "Johnny B. Goode",
         "johnny b. goode",
         "johnny b goode",
-        "chuck berry"
+        "johnny be good"
       ],
       "choices": [
         "The Power of Love",
         "Mr. Sandman",
         "Rock Around the Clock"
       ],
-      "hint": "Chuck Berry song that's a little before their time"
+      "hint": "Chuck Berry song that's a little before their time",
+      "explanation": "Marvin Berry phones his cousin Chuck: \"You know that new sound you're looking for? Well, listen to this!\" Marty's verdict on the stunned crowd: \"Your kids are gonna love it.\""
     },
     {
       "level": 5,
-      "question": "After Johnny B. Goode rocked the dance, what is Doc Brown's full name?",
-      "answer": "Dr. Emmett Lathrop Brown",
+      "question": "Michael J. Fox lip-synced \"Johnny B. Goode,\" but he wasn't the first Marty. Which actor filmed the role for weeks before being replaced?",
+      "answer": "Eric Stoltz",
       "acceptedAnswers": [
-        "Dr. Emmett Lathrop Brown",
-        "emmett brown",
-        "emmett lathrop brown",
-        "dr. emmett brown",
-        "dr. emmett lathrop brown"
+        "Eric Stoltz",
+        "eric stoltz",
+        "stoltz",
+        "eric stolz",
+        "stolz"
       ],
       "choices": [
-        "Dr. Jules Verne Brown",
-        "Dr. Verne Clayton Brown",
-        "Dr. Erhardt von Braun"
+        "C. Thomas Howell",
+        "Ralph Macchio",
+        "John Cusack"
       ],
-      "hint": "His middle name is Lathrop"
+      "hint": "He later played Lance in Pulp Fiction",
+      "explanation": "About five weeks in, Zemeckis felt the comedy wasn't landing and recast in January 1985. Fox then shot Family Ties by day and Hill Valley by night, often until 2 a.m."
     }
   ],
   "category": "pop-culture"

@@ -17,7 +17,8 @@
         "Toad",
         "Yoshi"
       ],
-      "hint": "He wears green"
+      "hint": "He wears green",
+      "explanation": "Luigi started in 1983's Mario Bros. as a green copy of Mario, so two friends could play together. His name sounds like \"ruiji,\" Japanese for \"similar,\" a lucky accident!"
     },
     {
       "level": 2,
@@ -33,7 +34,8 @@
         "Space Invaders",
         "Super Mario Bros."
       ],
-      "hint": "He was originally called Jumpman"
+      "hint": "He was originally called Jumpman",
+      "explanation": "Back in 1981 he was called Jumpman, and he was a carpenter, not a plumber! Nintendo later named him after Mario Segale, the landlord of its warehouse in America."
     },
     {
       "level": 3,
@@ -49,7 +51,8 @@
         "Sony",
         "Capcom"
       ],
-      "hint": "Also makes Zelda and Pokémon"
+      "hint": "Also makes Zelda and Pokémon",
+      "explanation": "Nintendo started way back in 1889 in Kyoto, Japan, making playing cards called hanafuda. That's before airplanes were even invented!"
     },
     {
       "level": 4,
@@ -67,11 +70,12 @@
         "Wii",
         "Switch"
       ],
-      "hint": "DS stands for Dual Screen"
+      "hint": "DS stands for Dual Screen",
+      "explanation": "Nintendo sold about 154 million DS systems! It was Nintendo's best-selling console ever, until its newer system, the Switch, finally passed it in 2025."
     },
     {
       "level": 5,
-      "question": "Long after the Nintendo DS, what blocky sandbox game made by Mojang landed on Nintendo's Switch?",
+      "question": "The Switch beat the DS, but the best-selling video game of all time isn't made by Nintendo at all! What blocky building game is it?",
       "answer": "Minecraft",
       "acceptedAnswers": [
         "minecraft",
@@ -83,7 +87,8 @@
         "Fortnite",
         "Terraria"
       ],
-      "hint": "You mine blocks and craft tools"
+      "hint": "You mine blocks and craft tools",
+      "explanation": "Minecraft has sold more than 350 million copies, more than any other video game ever. It started out in 2009, made by a small studio in Sweden called Mojang."
     }
   ]
 }

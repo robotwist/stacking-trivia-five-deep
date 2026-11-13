@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What is the University of Nebraska's football team called?",
+      "question": "Nebraska's football team once played as the Bugeaters—what nickname do they go by today?",
       "answer": "Cornhuskers",
       "acceptedAnswers": [
         "Cornhuskers",
@@ -16,11 +16,12 @@
         "Hawkeyes",
         "Sooners",
         "Jayhawks"
-      ]
+      ],
+      "explanation": "Lincoln sportswriter Cy Sherman tired of \"Bugeaters\" and borrowed a name sometimes pinned on Iowa. The 1900 team was first to wear it; the state adopted it in 1945."
     },
     {
       "level": 2,
-      "question": "Where do the Cornhuskers play home football games?",
+      "question": "On Cornhuskers game days, which Lincoln venue becomes, by crowd size, Nebraska's \"third-largest city\"?",
       "answer": "Memorial Stadium",
       "acceptedAnswers": [
         "Memorial Stadium",
@@ -31,8 +32,9 @@
       "choices": [
         "Haymarket Park",
         "Kinnick Stadium",
-        "Arrowhead Stadium"
-      ]
+        "Pinnacle Bank Arena"
+      ],
+      "explanation": "Dedicated in 1923 to Nebraskans who served in the nation's wars. In 2023 a volleyball match drew 92,003 there, a record crowd for a women's sporting event."
     },
     {
       "level": 3,
@@ -50,7 +52,7 @@
         "Shutouts",
         "Bowl games"
       ],
-      "explanation": "The streak began Nov. 3, 1962, passed 400 games in 2024, and is more than twice as long as any other in college sports."
+      "explanation": "It began Nov. 3, 1962, with 36,501 fans for Missouri. No. 400 came in 2024—an overtime loss to Illinois—and the streak is still more than double any other school's."
     },
     {
       "level": 4,
@@ -66,7 +68,8 @@
         "Bob Devaney",
         "Frank Solich",
         "Barry Switzer"
-      ]
+      ],
+      "explanation": "Titles in '94, '95 and '97 (shared with Michigan). Fans still debate the 1984 Orange Bowl: down 31-30 to Miami, he went for two instead of a likely title-winning tie—and missed."
     },
     {
       "level": 5,
@@ -82,7 +85,8 @@
         "Blackshirts",
         "Hogs",
         "Steel Curtain"
-      ]
+      ],
+      "explanation": "Line coach Milt Tenopir lost four starters after 1994, and the 1995 Pipeline still paved the way for 399.8 rushing yards a game. The Blackshirts? That's the defense."
     }
   ],
   "image": "memorial-stadium.jpg",

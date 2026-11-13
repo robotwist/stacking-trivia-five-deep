@@ -17,11 +17,11 @@
         "George Foreman",
         "Sonny Liston"
       ],
-      "explanation": "Ali's cornerman Drew Bundini Brown came up with the line; Ali made it immortal."
+      "explanation": "Cornerman Drew \"Bundini\" Brown is credited with coining it in 1964, before the Sonny Liston upset. The full chant ended: \"Rumble, young man, rumble!\""
     },
     {
       "level": 2,
-      "question": "Young Muhammad Ali won Olympic gold as Cassius Clay at which 1960 Games?",
+      "question": "As 18-year-old Cassius Clay, Muhammad Ali won Olympic gold at which Games?",
       "answer": "1960 Rome",
       "acceptedAnswers": [
         "1960 Rome",
@@ -34,7 +34,8 @@
         "1952 Helsinki",
         "1956 Melbourne",
         "1964 Tokyo"
-      ]
+      ],
+      "explanation": "Terrified of flying, he reportedly bought a parachute at an army surplus store and wore it on the plane. In the light-heavyweight final he beat Poland's Zbigniew Pietrzykowski."
     },
     {
       "level": 3,
@@ -51,7 +52,8 @@
         "Lake Michigan",
         "The Mississippi River",
         "A Louisville dumpster"
-      ]
+      ],
+      "explanation": "Wilma Rudolph remembered he never took it off in Rome: \"He slept with it.\" His 1975 autobiography says he later flung it off a Louisville bridge in disgust."
     },
     {
       "level": 4,
@@ -69,11 +71,11 @@
         "Religious persecution",
         "Unfair judging"
       ],
-      "explanation": "The story comes from his 1975 autobiography. Friends such as photographer Howard Bingham said he simply lost the medal—but the anger at being refused service in his hometown was real."
+      "explanation": "The book says he was refused service at a whites-only Louisville restaurant, then fought a biker gang. Friends like Howard Bingham doubted the toss; Ali later admitted he'd lost it."
     },
     {
       "level": 5,
-      "question": "Recognizing the racial discrimination he protested, officials gave Ali a replacement medal in what year?",
+      "question": "Decades after the racial discrimination he said drove him to ditch it, Ali received a replacement Olympic gold in what year?",
       "answer": "1996",
       "acceptedAnswers": [
         "1996",
@@ -85,7 +87,8 @@
         "1974",
         "1984",
         "2004"
-      ]
+      ],
+      "explanation": "Two weeks after lighting the Atlanta cauldron with trembling hands, he got a new gold from IOC chief Samaranch at halftime of the USA-Yugoslavia final. Both teams mobbed him."
     }
   ],
   "image": "raised-boxing-gloves.jpg",

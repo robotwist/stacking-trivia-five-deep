@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What coffee shop do the friends hang out at?",
+      "question": "Gunther pines for Rachel from behind the counter of what coffee house?",
       "answer": "Central Perk",
       "acceptedAnswers": [
         "Central Perk",
@@ -17,11 +17,12 @@
         "Moondance Diner",
         "Monk's Café"
       ],
-      "hint": "Could this BE any more obvious?"
+      "hint": "Could this BE any more obvious?",
+      "explanation": "The set was modeled on a real LA hangout, Insomnia Cafe (also the show's working title), and the famous orange couch was found in a Warner Bros. basement."
     },
     {
       "level": 2,
-      "question": "At Central Perk, what is Ross's profession?",
+      "question": "At Central Perk, Ross corners everyone with dinosaur facts. What is his profession?",
       "answer": "Paleontologist",
       "acceptedAnswers": [
         "Paleontologist",
@@ -34,61 +35,65 @@
         "Anthropologist",
         "Geologist"
       ],
-      "hint": "He works with dinosaurs"
+      "hint": "He works with dinosaurs",
+      "explanation": "Ross has a Ph.D. and works at a museum before teaching at NYU. Naturally, he's the one writing the questions when the gang turns their friendship into a trivia game."
     },
     {
       "level": 3,
-      "question": "Ross the paleontologist finally got his daughter Emma to laugh by singing what 1992 rap hit?",
-      "answer": "Baby Got Back",
+      "question": "Quizmaster Ross the paleontologist runs a showdown in which Monica and Rachel bet, and lose, what?",
+      "answer": "Their apartment",
       "acceptedAnswers": [
-        "Baby Got Back",
-        "baby got back",
-        "baby's got back",
-        "baby got back song"
+        "Their apartment",
+        "their apartment",
+        "apartment",
+        "the apartment",
+        "monica's apartment"
       ],
       "choices": [
-        "Smelly Cat",
-        "Ice Ice Baby",
-        "Rapper's Delight"
+        "The rooster and the duck",
+        "The foosball table",
+        "Free dinners for a year"
       ],
-      "hint": "Sir Mix-a-Lot"
+      "hint": "The roof over their heads",
+      "explanation": "In \"The One with the Embryos,\" the guys know Monica has 11 towel categories and that Rachel's real favorite movie is Weekend at Bernie's. Their own stake? The birds."
     },
     {
       "level": 4,
-      "question": "Long before 'Baby Got Back' made Emma laugh, Phoebe got $7,000 from a soda company after finding what in her can?",
-      "answer": "A human thumb",
+      "question": "That apartment slips away when Rachel can't name Chandler's job and blurts out what made-up title?",
+      "answer": "Transponster",
       "acceptedAnswers": [
-        "A human thumb",
-        "a human thumb",
-        "human thumb",
-        "thumb",
-        "a thumb"
+        "Transponster",
+        "transponster",
+        "transpondster",
+        "a transponster"
       ],
       "choices": [
-        "A dead mouse",
-        "A glass eye",
-        "A wedding ring"
+        "Data processor",
+        "Statistician",
+        "Number cruncher"
       ],
-      "hint": "Definitely should not be in a drink"
+      "hint": "Not even a word, according to Monica",
+      "explanation": "\"That's not even a word!\" Monica wails as Ross stops the clock. The girls' best clues: it \"has something to do with numbers\" and \"he carries a briefcase.\""
     },
     {
       "level": 5,
-      "question": "That human thumb bought Chandler's promise to quit smoking. Years later, Joey's secret Japanese commercial was for what brand of 'Lipstick for Men'?",
-      "answer": "Ichiban",
+      "question": "After the transponster fiasco, the girls' Knicks-ticket bribe fails, so they keep their old home by offering to do what for a full minute?",
+      "answer": "Kiss each other",
       "acceptedAnswers": [
-        "Ichiban",
-        "ichiban",
-        "ichiban lipstick for men",
-        "ichiban lipstick",
-        "ichibon"
+        "Kiss each other",
+        "kiss each other",
+        "kiss",
+        "kissing",
+        "kiss for a minute",
+        "make out"
       ],
       "choices": [
-        "Shiseido",
-        "Kanebo",
-        "Kosé"
+        "Do \"the Routine\"",
+        "Play Phoebe Ball",
+        "Sing \"Smelly Cat\""
       ],
-      "explanation": "Chandler had to wear the lipstick himself to apologize for not watching Joey's audition tape.",
-      "hint": "Japanese for number one"
+      "explanation": "In \"The One with All the Haste,\" the deal closes off-screen. Next shot: Chandler and Joey walking in, dazed. \"Totally worth it!\" \"That was one good minute!\"",
+      "hint": "Chandler's verdict: totally worth it"
     }
   ],
   "category": "pop-culture"

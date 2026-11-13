@@ -4,86 +4,88 @@
   "questions": [
     {
       "level": 1,
-      "question": "Marie Curie was the first woman to win a Nobel Prize. In which scientific field did she win her first one?",
-      "answer": "Physics",
+      "question": "Who became the first woman to win a Nobel Prize, sharing the 1903 physics prize?",
+      "answer": "Marie Curie",
       "acceptedAnswers": [
-        "Physics",
-        "physics",
-        "Physical Sciences"
+        "Marie Curie",
+        "marie curie",
+        "curie",
+        "madame curie",
+        "maria sklodowska",
+        "marie sklodowska curie"
       ],
       "choices": [
-        "Chemistry",
-        "Medicine",
-        "Mathematics"
+        "Lise Meitner",
+        "Rosalind Franklin",
+        "Ada Lovelace"
       ],
-      "hint": "The science of matter, energy, and their interactions - not chemistry"
+      "explanation": "The original nomination named only Pierre Curie and Henri Becquerel. Pierre wrote that he wished to be considered together with Marie, and she shared the prize."
     },
     {
       "level": 2,
-      "question": "Years before that Physics Nobel, Curie discovered which element and named it for her homeland?",
-      "answer": "Polonium",
+      "question": "In 1898, Marie Curie named her first new element after which country—one that had been wiped off the map?",
+      "answer": "Poland",
       "acceptedAnswers": [
-        "Polonium",
-        "polonium",
-        "Po"
+        "Poland",
+        "poland",
+        "polska"
       ],
       "choices": [
-        "Francium",
-        "Germanium",
-        "Thorium"
+        "France",
+        "Russia",
+        "Austria"
       ],
-      "hint": "Named after Poland, where she was born, it's element 84 on the periodic table"
+      "explanation": "Polonium was a protest. Poland had been carved up by Russia, Prussia, and Austria, and wouldn't be independent again until 1918. Curie grew up in Russian-ruled Warsaw."
     },
     {
       "level": 3,
-      "question": "Studying polonium, Curie coined what term for the emission of rays from uranium?",
-      "answer": "radioactivity",
-      "acceptedAnswers": [
-        "radioactivity",
-        "radioactive",
-        "radiation",
-        "radio activity"
-      ],
-      "choices": [
-        "phosphorescence",
-        "fluorescence",
-        "ionization"
-      ],
-      "hint": "The property of certain elements to emit energy in the form of rays or particles"
-    },
-    {
-      "level": 4,
-      "question": "Applying radioactivity research in World War I, Curie built mobile X-ray units nicknamed what?",
-      "answer": "petites Curies",
-      "acceptedAnswers": [
-        "petites Curies",
-        "petites curies",
-        "little Curies",
-        "mobile X-ray units"
-      ],
-      "choices": [
-        "taxis de la Marne",
-        "les poilus",
-        "Big Berthas"
-      ],
-      "hint": "They were called 'little' versions of her name in French"
-    },
-    {
-      "level": 5,
-      "question": "Those petites Curies served the front—her 1911 Chemistry Nobel honored isolating what pure glowing element?",
+      "question": "Months after naming polonium for Poland, the Curies announced a second element that glowed in the dark. What was it?",
       "answer": "Radium",
       "acceptedAnswers": [
         "Radium",
         "radium",
-        "pure radium",
-        "radium metal"
+        "ra"
       ],
       "choices": [
         "Uranium",
         "Thorium",
         "Radon"
       ],
-      "hint": "She successfully isolated a pure sample of this glowing element"
+      "explanation": "Purifying a tenth of a gram took nearly four years and about a ton of pitchblende in a leaky shed. At night she and Pierre slipped back in just to watch the tubes glow."
+    },
+    {
+      "level": 4,
+      "question": "When radium won her a second Nobel in 1911, she was urged to skip the ceremony over a scandal involving which physicist?",
+      "answer": "Paul Langevin",
+      "acceptedAnswers": [
+        "Paul Langevin",
+        "paul langevin",
+        "langevin"
+      ],
+      "choices": [
+        "Albert Einstein",
+        "Henri Becquerel",
+        "Ernest Rutherford"
+      ],
+      "explanation": "Newspapers exposed her affair with the married Langevin, and a Nobel committee member asked her not to come. She replied that science and private life were unrelated, and went."
+    },
+    {
+      "level": 5,
+      "question": "Three years after the Langevin uproar, war broke out—and she drove mobile X-ray units to the front, nicknamed what?",
+      "answer": "Petites Curies",
+      "acceptedAnswers": [
+        "Petites Curies",
+        "petites curies",
+        "little curies",
+        "les petites curies",
+        "petite curies"
+      ],
+      "choices": [
+        "Radio Wagons",
+        "Marie Vans",
+        "Lumières"
+      ],
+      "explanation": "The Academy of Sciences had rejected her in 1911; France still needed her. She equipped about 20 vans and 200 field posts, learned to drive, and worked beside her 17-year-old daughter Irène."
     }
   ],
   "imageHint": "Laboratory glow and the price of pioneering research",
@@ -93,16 +95,16 @@
     "description": "The human cost of chasing unknown rays",
     "questions": [
       {
-        "question": "Marie Curie's laboratory notebooks are still radioactive today. How many years will they remain dangerous?",
+        "question": "Curie's notebooks are still too radioactive to handle unprotected. In what kind of boxes does France keep them?",
         "acceptedAnswers": [
-          "1500 years",
-          "1,500 years",
-          "fifteen hundred years",
-          "1500",
-          "about 1500 years"
+          "lead-lined boxes",
+          "lead lined boxes",
+          "lead boxes",
+          "lead",
+          "lead-lined"
         ],
         "bonus": 150,
-        "hint": "More than a millennium and a half - they're kept in lead-lined boxes in Paris"
+        "hint": "A heavy gray metal that blocks radiation"
       },
       {
         "question": "What ultimately caused Marie Curie's death, likely from years of radiation exposure?",

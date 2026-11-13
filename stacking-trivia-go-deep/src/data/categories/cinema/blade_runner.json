@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Who directed Blade Runner?",
+      "question": "Which director followed up Alien with Blade Runner (1982)?",
       "answer": "Ridley Scott",
       "acceptedAnswers": [
         "Ridley Scott",
@@ -16,11 +16,12 @@
         "James Cameron",
         "Denis Villeneuve",
         "Terry Gilliam"
-      ]
+      ],
+      "explanation": "The shoot got so tense that crew wore \"Yes Guv'nor, My Ass\" T-shirts after Scott praised British crews in an interview. His team answered with \"Xenophobia Sucks\" shirts."
     },
     {
       "level": 2,
-      "question": "Scott's Blade Runner is set in what year?",
+      "question": "Scott's Blade Runner opens in Los Angeles in what year?",
       "answer": "2019",
       "acceptedAnswers": [
         "2019",
@@ -32,11 +33,12 @@
         "1997",
         "2032",
         "2117"
-      ]
+      ],
+      "explanation": "The opening card reads \"Los Angeles, November, 2019,\" so we have officially outlived Blade Runner's future, minus the flying Spinners and off-world colonies."
     },
     {
       "level": 3,
-      "question": "In that 2019 LA, who is the replicant hunter protagonist?",
+      "question": "In that 2019 Los Angeles, which ex-blade runner, played by Harrison Ford, is pulled back in to hunt replicants?",
       "answer": "Rick Deckard",
       "acceptedAnswers": [
         "Rick Deckard",
@@ -48,27 +50,12 @@
         "Roy Batty",
         "Dave Holden",
         "Officer K"
-      ]
+      ],
+      "explanation": "He comes from Philip K. Dick's novel Do Androids Dream of Electric Sheep? Dick died months before the release but saw an early effects reel and was reportedly stunned."
     },
     {
       "level": 4,
-      "question": "Deckard hunts replicants built by which company, motto 'More human than human'?",
-      "answer": "Tyrell Corporation",
-      "acceptedAnswers": [
-        "Tyrell Corporation",
-        "tyrell corporation",
-        "tyrell",
-        "tyrell corp"
-      ],
-      "choices": [
-        "Wallace Corporation",
-        "Weyland-Yutani",
-        "Cyberdyne Systems"
-      ]
-    },
-    {
-      "level": 5,
-      "question": "To unmask Tyrell's replicants, blade runners use the Voight-Kampff test to measure what human trait?",
+      "question": "Deckard spots replicants with the Voight-Kampff test, which measures involuntary reactions tied to what human trait?",
       "answer": "Empathy",
       "acceptedAnswers": [
         "Empathy",
@@ -81,7 +68,26 @@
         "Memory",
         "Intelligence",
         "Honesty"
-      ]
+      ],
+      "explanation": "The film opens with one: asked about a tortoise baking on its back, then about his mother, replicant Leon snaps \"Let me tell you about my mother\" and shoots."
+    },
+    {
+      "level": 5,
+      "question": "That test assumes replicants lack empathy, yet Roy Batty saves Deckard's life, then says his memories will be lost \"like...\" what?",
+      "answer": "Tears in rain",
+      "acceptedAnswers": [
+        "Tears in rain",
+        "tears in rain",
+        "tears in the rain",
+        "like tears in rain",
+        "tears"
+      ],
+      "choices": [
+        "Attack ships on fire",
+        "C-beams in the dark",
+        "Dust in the wind"
+      ],
+      "explanation": "Rutger Hauer cut the scripted speech he called \"opera talk\" and wrote that line himself around 4 a.m. The machine built without feelings gets the film's most human moment."
     }
   ],
   "image": "neon-cityscape.jpg",

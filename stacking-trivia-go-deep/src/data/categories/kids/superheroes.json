@@ -5,7 +5,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What planet is Superman from?",
+      "question": "Baby Superman zoomed to Earth in a tiny rocket. What planet did he come from?",
       "answer": "Krypton",
       "acceptedAnswers": [
         "krypton",
@@ -17,74 +17,86 @@
         "Asgard",
         "Titan"
       ],
-      "hint": "A destroyed planet that sounds like a science gas"
+      "hint": "A destroyed planet that sounds like a science gas",
+      "explanation": "Superman first showed up in Action Comics #1 in 1938. In 2024, one copy sold for $6 million, the most anyone has ever paid for a comic book!"
     },
     {
       "level": 2,
-      "question": "After leaving Krypton, Superman was raised on what planet?",
-      "answer": "Earth",
+      "question": "Krypton circled a dim red star. On Earth, what bright thing in our sky charges up Superman's powers?",
+      "answer": "The Sun",
       "acceptedAnswers": [
-        "earth",
-        "planet earth",
-        "the earth"
+        "the sun",
+        "sun",
+        "our sun",
+        "yellow sun",
+        "sunlight",
+        "sunshine"
       ],
       "choices": [
-        "Mars",
-        "Venus",
-        "Saturn"
+        "The Moon",
+        "Lightning",
+        "Spinach"
       ],
-      "hint": "Our home planet"
+      "hint": "It's the big yellow star in our sky",
+      "explanation": "Superman is like a solar-powered battery! Fun twist: older comics said Earth's lighter gravity made him strong. The yellow-sun idea showed up in 1960."
     },
     {
       "level": 3,
-      "question": "On Earth, how did Peter Parker get his amazing powers?",
-      "answer": "Radioactive spider bite",
+      "question": "Charged up by the Sun, Superman hides behind a pair of glasses as what newspaper reporter?",
+      "answer": "Clark Kent",
       "acceptedAnswers": [
-        "radioactive spider bite",
-        "spider bite",
-        "radioactive spider",
-        "bit by spider"
+        "clark kent",
+        "clark",
+        "kent",
+        "clark joseph kent"
       ],
       "choices": [
-        "Gamma radiation blast",
-        "Super-soldier serum",
-        "Lightning strike"
+        "Bruce Wayne",
+        "Peter Parker",
+        "Tony Stark"
       ],
-      "hint": "A tiny creature plus dangerous radiation"
+      "hint": "His initials are C.K.",
+      "explanation": "Clark works at the Daily Planet newspaper in Metropolis, right next to Lois Lane. His whole disguise is a pair of glasses, and somehow it fools everybody!"
     },
     {
       "level": 4,
-      "question": "Spider-Man's real name is Peter Parker—what is Batman's?",
-      "answer": "Bruce Wayne",
+      "question": "Clark Kent's one big weakness is a glowing green rock from his home planet. What is it called?",
+      "answer": "Kryptonite",
       "acceptedAnswers": [
-        "bruce wayne",
-        "brucewayne",
-        "wayne",
-        "bruce"
+        "kryptonite",
+        "green kryptonite",
+        "kryptonite rock"
       ],
       "choices": [
-        "Clark Kent",
-        "Tony Stark",
-        "Steve Rogers"
+        "Moonstone",
+        "Emerald",
+        "Lava rock"
       ],
-      "hint": "A rich Gotham citizen named Bruce"
+      "hint": "Its name sounds like his home planet",
+      "explanation": "Kryptonite was invented for the Superman radio show in 1943. In 2007, scientists found a real rock in Serbia with almost the same recipe, but it's white and powdery, not glowing green!"
     },
     {
       "level": 5,
-      "question": "Bruce Wayne fights crime as Batman; who gets stronger when angry?",
-      "answer": "Hulk",
+      "question": "Kryptonite came along years after Superman's first comic, and so did flying! In 1938, what did he do to get over tall buildings?",
+      "answer": "Leaped",
       "acceptedAnswers": [
-        "hulk",
-        "the hulk",
-        "incredible hulk",
-        "bruce banner"
+        "leaped",
+        "leapt",
+        "leap",
+        "jumped",
+        "jump",
+        "leaped over them",
+        "jumped over them",
+        "he jumped",
+        "he leaped"
       ],
       "choices": [
-        "Thor",
-        "Iron Man",
-        "Aquaman"
+        "Climbed them",
+        "Swung on webs",
+        "Teleported"
       ],
-      "hint": "He turns green and smashes things"
+      "hint": "Think kangaroo, not airplane!",
+      "explanation": "The first comics said he could leap an eighth of a mile. In the 1940s, cartoon makers thought all that leaping looked silly on screen, so they had him fly, and the comics followed."
     }
   ]
 }

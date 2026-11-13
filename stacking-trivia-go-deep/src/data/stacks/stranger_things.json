@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of the town where Stranger Things takes place?",
+      "question": "On November 6, 1983, Will Byers vanishes on his bike ride home through what fictional Indiana town?",
       "answer": "Hawkins",
       "acceptedAnswers": [
         "Hawkins",
@@ -16,11 +16,12 @@
         "Derry",
         "Haddonfield"
       ],
-      "hint": "This Indiana town has some strange secrets"
+      "hint": "This Indiana town has some strange secrets",
+      "explanation": "The Duffer Brothers pitched the show as \"Montauk,\" set on Long Island. Winter shooting there was impractical, so Hawkins was built in Georgia, with downtown Jackson playing the town."
     },
     {
       "level": 2,
-      "question": "In Hawkins, what board game do the boys play in the first episode?",
+      "question": "Hours before Will vanishes, the Hawkins boys wrap up a ten-hour campaign of what tabletop game?",
       "answer": "Dungeons and Dragons",
       "acceptedAnswers": [
         "Dungeons and Dragons",
@@ -33,11 +34,12 @@
         "Trivial Pursuit",
         "Battleship"
       ],
-      "hint": "Will gets captured by the Demogorgon in this game"
+      "hint": "Will gets captured by the Demogorgon in this game",
+      "explanation": "Will needed a 13 to fireball the Demogorgon and rolled a seven. \"The Demogorgon. It got me,\" he tells Mike. That same night, a real monster does."
     },
     {
       "level": 3,
-      "question": "After their Dungeons and Dragons campaign, Eleven's favorite food is what?",
+      "question": "The Dungeons and Dragons party hides a runaway girl named Eleven. What frozen breakfast is her favorite food?",
       "answer": "Eggo waffles",
       "acceptedAnswers": [
         "Eggo waffles",
@@ -50,7 +52,8 @@
         "Reese's Pieces",
         "Twinkies"
       ],
-      "hint": "L'eggo my..."
+      "hint": "L'eggo my...",
+      "explanation": "Hopper later bribes her with a Triple-Decker Eggo Extravaganza: whipped cream, Hershey's Kisses, Reese's Pieces, jelly beans. Real Eggo sales jumped 14% after season 2."
     },
     {
       "level": 4,
@@ -66,7 +69,8 @@
         "The Phantom Zone",
         "The Nether"
       ],
-      "hint": "Everything is dark and decaying in this place"
+      "hint": "Everything is dark and decaying in this place",
+      "explanation": "Eleven names it in \"The Flea and the Acrobat,\" flipping the D&D board to its black side. Mr. Clarke's tightrope-walker analogy supplies the physics."
     },
     {
       "level": 5,
@@ -85,8 +89,8 @@
         "Murray Bauman",
         "Jim Hopper"
       ],
-      "hint": "Dr. Brenner's workplace",
-      "explanation": "Dr. Martin Brenner ran the experiments on Eleven at Hawkins National Laboratory—where the gate to the Upside Down was opened."
+      "hint": "Played by Matthew Modine",
+      "explanation": "Brenner ties the show to a real CIA program: Eleven's mother, Terry Ives, was a subject of MKUltra, the mind-control project the CIA actually ran from 1953 to 1973."
     }
   ],
   "category": "pop-culture"

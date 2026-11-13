@@ -19,7 +19,8 @@
         "A skeleton key in the basement",
         "A message in a bottle on the beach"
       ],
-      "hint": "It was hidden in his father's belongings"
+      "hint": "It was hidden in his father's belongings",
+      "explanation": "Steven Spielberg dreamed up the story and Chris Columbus wrote it. The stakes: developers are about to foreclose on the Goon Docks and build a country-club golf course."
     },
     {
       "level": 2,
@@ -36,29 +37,30 @@
         "Captain Kidd",
         "Long John Silver"
       ],
-      "hint": "He's missing an important facial feature"
+      "hint": "He's missing an important facial feature",
+      "explanation": "Donner kept Willy's 105-foot ship, the Inferno, hidden from the kids until the reveal. Martha Plimpton says her gasp was real; Sean Astin admits he peeked."
     },
     {
       "level": 3,
-      "question": "Before the hunt for One-Eyed Willy's treasure begins, what must Chunk do for the Truffle Shuffle?",
-      "answer": "Lift his shirt and shake his belly",
+      "question": "Before the hunt for One-Eyed Willy's treasure, Chunk must perform what belly-jiggling dance to get through the Walshes' gate?",
+      "answer": "The Truffle Shuffle",
       "acceptedAnswers": [
-        "Lift his shirt and shake his belly",
-        "lift his shirt and shake his belly",
-        "shake his belly",
+        "The Truffle Shuffle",
+        "the truffle shuffle",
         "truffle shuffle",
-        "belly dance"
+        "truffle-shuffle"
       ],
       "choices": [
-        "Confess all his crimes",
-        "Shout 'Goonies never say die'",
-        "Wear a pirate eye patch"
+        "The Belly Bounce",
+        "The Chunk Wiggle",
+        "The Goon Docks Jig"
       ],
-      "hint": "Come on, do the truffle shuffle!"
+      "hint": "Come on, do the truffle shuffle!",
+      "explanation": "Mouth demands it. Jeff Cohen later admitted he was recovering from chickenpox, so makeup covered the spots on his belly. He grew up to be an entertainment lawyer."
     },
     {
       "level": 4,
-      "question": "After Chunk lifted his shirt for the Truffle Shuffle, the Goonies befriend what deformed Fratelli brother?",
+      "question": "Chunk, of Truffle Shuffle fame, ends up best friends with which Fratelli brother, kept chained in the family's basement?",
       "answer": "Sloth",
       "acceptedAnswers": [
         "Sloth",
@@ -70,11 +72,12 @@
         "Jake",
         "Chester Copperpot"
       ],
-      "hint": "Hey you guys!"
+      "hint": "Hey you guys!",
+      "explanation": "Sloth was ex-Raiders lineman John Matuszak, a two-time Super Bowl champ. His prosthetic head, radio-controlled eye included, took about five hours to apply."
     },
     {
       "level": 5,
-      "question": "Chunk wins Sloth over with what candy bar?",
+      "question": "Sloth breaks free and becomes Chunk's friend for life after Chunk tosses him what candy bar?",
       "answer": "Baby Ruth",
       "acceptedAnswers": [
         "Baby Ruth",
@@ -87,7 +90,8 @@
         "Butterfinger",
         "Oh Henry!"
       ],
-      "hint": "It's named after a famous baseball player's daughter"
+      "hint": "Its maker claimed it was named for a president's daughter",
+      "explanation": "\"Ruth! Ruth! Baby Ruth!\" It ends with Chunk telling Sloth, \"You're gonna live with me now.\" The candy maker claimed the bar honored a president's daughter, not Babe Ruth."
     }
   ],
   "category": "pop-culture"

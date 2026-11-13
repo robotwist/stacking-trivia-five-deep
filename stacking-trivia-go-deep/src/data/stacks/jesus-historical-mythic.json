@@ -18,11 +18,11 @@
         "Poisoning",
         "Strangulation"
       ],
-      "explanation": "Crucifixion under Roman authority is among the most secure historical facts."
+      "explanation": "Tacitus (c. 116 CE) writes that \"Christus\" suffered \"the extreme penalty\" under Pontius Pilate. With Paul's letters and the Gospels, it is among the best-attested facts of his life."
     },
     {
       "level": 2,
-      "question": "Historians agree on crucifixion—but the name Yeshua literally means what in Hebrew?",
+      "question": "The man Rome sentenced to crucifixion was named Yeshua. What does that Hebrew name mean?",
       "answer": "God saves",
       "acceptedAnswers": [
         "God saves",
@@ -37,11 +37,11 @@
         "God is gracious",
         "Gift of God"
       ],
-      "explanation": "Yeshua shares roots with Joshua (Yehoshua)—'YHWH saves.'"
+      "explanation": "A short form of Yehoshua (Joshua), it ranked among the most common Jewish male names of the era. Matthew 1:21 plays on the meaning: \"he will save his people.\""
     },
     {
       "level": 3,
-      "question": "Yeshua, 'God saves,' was born under a star that one theory, going back to Kepler, ties to a conjunction of which two planets?",
+      "question": "Matthew says a star marked the birth of the boy whose name means \"God saves.\" A theory dating back to Kepler links it to which two planets?",
       "answer": "Jupiter and Saturn",
       "acceptedAnswers": [
         "Jupiter and Saturn",
@@ -54,7 +54,7 @@
         "Mercury and Venus",
         "Mars and Mercury"
       ],
-      "explanation": "A triple conjunction in Pisces in 7 BCE is one candidate; others include a comet, a nova, or a purely literary star."
+      "explanation": "After seeing a 1604 supernova near those planets, Kepler proposed a new star tied to their 7 BCE triple conjunction in Pisces. Rival ideas: a comet, a nova, or a purely literary star."
     },
     {
       "level": 4,
@@ -73,17 +73,16 @@
         "Temple scribes",
         "Caravan merchants"
       ],
-      "explanation": "Matthew says only \"magi from the east.\" Magi were Persian or Babylonian scholar-priests who read celestial signs for kings."
+      "explanation": "Matthew never counts them: Origen inferred three from the three gifts, and \"kings\" came later via Psalm 72. Their Persian title, through Greek magos, gave us \"magic.\""
     },
     {
       "level": 5,
-      "question": "Matthew tells the priest-astronomers' story in a gospel—a genre the Greek calls 'euangelion,' meaning what?",
+      "question": "Matthew tells the priest-astronomers' story in a gospel. The Greek word behind it, \"euangelion,\" literally means what?",
       "answer": "Good news",
       "acceptedAnswers": [
         "Good news",
         "good news",
         "glad tidings",
-        "gospel",
         "good tidings"
       ],
       "choices": [
@@ -91,7 +90,7 @@
         "Holy word",
         "Eternal life"
       ],
-      "explanation": "Euangelion was used for imperial victory announcements before Christians adopted it; \"gospel\" comes from the Old English \"good spell.\""
+      "explanation": "The word hailed emperors first: a c. 9 BCE inscription at Priene calls Augustus's birthday \"the beginning of the good news for the world.\" Some scholars read Mark 1:1 as a counterclaim."
     }
   ],
   "category": "actually"

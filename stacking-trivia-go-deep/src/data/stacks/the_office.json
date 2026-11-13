@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of the paper company where the show takes place?",
+      "question": "Michael Scott's \"World's Best Boss\" mug sits in his office at the Scranton branch of what paper company?",
       "answer": "Dunder Mifflin",
       "acceptedAnswers": [
         "Dunder Mifflin",
@@ -16,11 +16,12 @@
         "Prince Family Paper",
         "Michael Scott Paper Company"
       ],
-      "hint": "The People Person's Paper People"
+      "hint": "The People Person's Paper People",
+      "explanation": "In the pilot, Michael admits he bought the mug himself at Spencer Gifts. In 2011 the fake company started selling real paper through Staples' Quill.com."
     },
     {
       "level": 2,
-      "question": "At Dunder Mifflin, what is Michael Scott's favorite catchphrase when something sounds suggestive?",
+      "question": "At Dunder Mifflin, what comeback does Michael fire off whenever someone says something accidentally suggestive?",
       "answer": "That's what she said",
       "acceptedAnswers": [
         "That's what she said",
@@ -32,58 +33,63 @@
         "Well, well, well, how the turntables",
         "No, God, please no"
       ],
-      "hint": "Michael's go-to inappropriate joke"
+      "hint": "Michael's go-to inappropriate joke",
+      "explanation": "He fires it off for years, right up to the finale (\"Michael, I can't believe you came\"). So it means something when he swallows one mid-word."
     },
     {
       "level": 3,
-      "question": "What is the name of Dwight's beet farm?",
-      "answer": "Schrute Farms",
+      "question": "In \"Goodbye, Toby,\" Michael stops himself mid-\"That's what she said\" because he's smitten with which new HR rep?",
+      "answer": "Holly Flax",
       "acceptedAnswers": [
-        "Schrute Farms",
-        "schrute farms",
-        "schrute farm"
+        "Holly Flax",
+        "holly flax",
+        "holly",
+        "flax"
       ],
       "choices": [
-        "Schrute Bucks",
-        "Mose's Beet Farm",
-        "Fernwood Farms"
+        "Jan Levinson",
+        "Carol Stills",
+        "Donna Newton"
       ],
-      "hint": "Bears, beets, Battlestar Galactica"
+      "hint": "Toby's replacement in HR",
+      "explanation": "Amy Ryan's Holly arrives as Toby's replacement, swapping Michael's nemesis for his soulmate. They bond the way only they could: doing Yoda voices."
     },
     {
       "level": 4,
-      "question": "After Schrute Farms beets, what gift-stealing game does Michael turn the Christmas party's Secret Santa into?",
-      "answer": "Yankee Swap",
+      "question": "In \"Garage Sale,\" Michael walks Holly past the office's romantic landmarks, then proposes at her desk surrounded by what?",
+      "answer": "Candles",
       "acceptedAnswers": [
-        "Yankee Swap",
-        "yankee swap",
-        "white elephant",
-        "the yankee swap"
+        "Candles",
+        "candles",
+        "candle",
+        "lit candles",
+        "a ring of candles"
       ],
       "choices": [
-        "The Dundies",
-        "Pretzel Day",
-        "Casino Night"
+        "Rose petals",
+        "Balloons",
+        "Christmas lights"
       ],
-      "hint": "iPod, iPod, iPod!"
+      "hint": "They set off the sprinklers",
+      "explanation": "Coworkers holding candles each \"propose\" first. Then the candles trip the fire sprinklers mid-speech, and a soaked Holly still says yes."
     },
     {
       "level": 5,
-      "question": "During Yankee Swap, Jim's famous knowing looks go straight to what?",
-      "answer": "The camera",
+      "question": "Right after his candles-and-sprinklers proposal, Michael stuns everyone: he and Holly are moving to what state?",
+      "answer": "Colorado",
       "acceptedAnswers": [
-        "The camera",
-        "the camera",
-        "camera",
-        "the cameraman",
-        "cameraman"
+        "Colorado",
+        "colorado",
+        "boulder",
+        "boulder colorado"
       ],
       "choices": [
-        "The studio audience",
-        "The narrator",
-        "The receptionist"
+        "New Hampshire",
+        "Florida",
+        "New York"
       ],
-      "hint": "Jim's knowing glances go to this person"
+      "hint": "A Rocky Mountain state",
+      "explanation": "In \"Goodbye, Michael\" he slips out early and, at the airport, hands back his mic. His last, unheard words to the crew: \"That's what she said.\""
     }
   ],
   "category": "pop-culture"
