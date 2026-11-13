@@ -12,6 +12,11 @@
         "eighty-eight mph",
         "88"
       ],
+      "choices": [
+        "55 mph",
+        "100 mph",
+        "142 mph"
+      ],
       "hint": "Great Scott! This is the magic number"
     },
     {
@@ -26,6 +31,11 @@
         "one",
         "one .21 gigawatts"
       ],
+      "choices": [
+        "2.5 gigawatts",
+        "10 gigawatts",
+        "500 megawatts"
+      ],
       "hint": "Doc Brown's famous power requirement"
     },
     {
@@ -37,6 +47,11 @@
         "biff tannen",
         "biff",
         "tannen"
+      ],
+      "choices": [
+        "Mr. Strickland",
+        "Douglas Needles",
+        "Marvin Berry"
       ],
       "hint": "Make like a tree and get outta here!"
     },
@@ -50,6 +65,11 @@
         "johnny b goode",
         "chuck berry"
       ],
+      "choices": [
+        "The Power of Love",
+        "Mr. Sandman",
+        "Rock Around the Clock"
+      ],
       "hint": "Chuck Berry song that's a little before their time"
     },
     {
@@ -62,6 +82,11 @@
         "emmett lathrop brown",
         "dr. emmett brown",
         "dr. emmett lathrop brown"
+      ],
+      "choices": [
+        "Dr. Jules Verne Brown",
+        "Dr. Verne Clayton Brown",
+        "Dr. Erhardt von Braun"
       ],
       "hint": "His middle name is Lathrop"
     }

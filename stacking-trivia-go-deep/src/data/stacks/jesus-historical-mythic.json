@@ -13,6 +13,11 @@
         "cross",
         "crucified by romans"
       ],
+      "choices": [
+        "Beheading",
+        "Poisoning",
+        "Strangulation"
+      ],
       "explanation": "Crucifixion under Roman authority is among the most secure historical facts."
     },
     {
@@ -27,6 +32,11 @@
         "the lord saves",
         "salvation"
       ],
+      "choices": [
+        "God is with us",
+        "God is gracious",
+        "Gift of God"
+      ],
       "explanation": "Yeshua shares roots with Joshua (Yehoshua)—'YHWH saves.'"
     },
     {
@@ -38,6 +48,11 @@
         "jupiter and saturn",
         "jupiter saturn",
         "saturn and jupiter"
+      ],
+      "choices": [
+        "Venus and Mars",
+        "Mercury and Venus",
+        "Mars and Mercury"
       ],
       "explanation": "A triple conjunction in Pisces around 7–6 BCE fits Mesopotamian royal portents."
     },
@@ -53,6 +68,11 @@
         "babylonian priests",
         "wise men"
       ],
+      "choices": [
+        "Shepherds",
+        "Temple scribes",
+        "Caravan merchants"
+      ],
       "explanation": "Magi were scholar-priests who read celestial signs for kings."
     },
     {
@@ -65,6 +85,11 @@
         "glad tidings",
         "gospel",
         "good tidings"
+      ],
+      "choices": [
+        "Anointed one",
+        "Holy word",
+        "Eternal life"
       ],
       "explanation": "Euangelion was used for imperial victory proclamations before Christian usage."
     }

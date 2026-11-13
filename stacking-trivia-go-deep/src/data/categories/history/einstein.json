@@ -10,6 +10,11 @@
         "Albert Einstein",
         "albert einstein",
         "einstein"
+      ],
+      "choices": [
+        "Isaac Newton",
+        "Niels Bohr",
+        "Max Planck"
       ]
     },
     {
@@ -21,6 +26,11 @@
         "e=mc²",
         "e=mc2",
         "e equals mc squared"
+      ],
+      "choices": [
+        "F=ma",
+        "PV=nRT",
+        "a²+b²=c²"
       ]
     },
     {
@@ -31,6 +41,11 @@
         "Photoelectric effect",
         "photoelectric effect",
         "the photoelectric effect"
+      ],
+      "choices": [
+        "Brownian motion",
+        "Special relativity",
+        "Compton effect"
       ]
     },
     {
@@ -44,6 +59,11 @@
         "year 1921",
         "1922"
       ],
+      "choices": [
+        "1905",
+        "1915",
+        "1933"
+      ],
       "explanation": "It was the 1921 prize—but the committee held it over and handed it to him in 1922, so both years show up in the record books."
     },
     {
@@ -56,6 +76,11 @@
         "the institute for advanced study",
         "ias",
         "advanced study"
+      ],
+      "choices": [
+        "Princeton University",
+        "Bell Labs",
+        "Rockefeller Institute"
       ],
       "explanation": "Common mix-up: he was never a Princeton University professor. The Institute for Advanced Study sits nearby and was independent of the university."
     }

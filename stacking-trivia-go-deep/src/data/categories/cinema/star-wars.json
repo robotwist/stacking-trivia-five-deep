@@ -11,6 +11,11 @@
         "tatooine",
         "tatooine planet",
         "planet tatooine"
+      ],
+      "choices": [
+        "Naboo",
+        "Dagobah",
+        "Alderaan"
       ]
     },
     {
@@ -22,6 +27,11 @@
         "obi-wan kenobi",
         "obi wan kenobi",
         "ben kenobi"
+      ],
+      "choices": [
+        "Qui-Gon Jinn",
+        "Yoda",
+        "Owen Lars"
       ]
     },
     {
@@ -32,6 +42,11 @@
         "Lightsaber",
         "lightsaber",
         "light saber"
+      ],
+      "choices": [
+        "Blaster",
+        "Bowcaster",
+        "Vibroblade"
       ]
     },
     {
@@ -42,6 +57,11 @@
         "Millennium Falcon",
         "millennium falcon",
         "the millennium falcon"
+      ],
+      "choices": [
+        "Tantive IV",
+        "Slave I",
+        "Razor Crest"
       ]
     },
     {
@@ -52,6 +72,11 @@
         "May the Force be with you",
         "may the force be with you",
         "may the force be with you."
+      ],
+      "choices": [
+        "Use the Force, Luke",
+        "Never tell me the odds",
+        "I have a bad feeling about this"
       ]
     }
   ],

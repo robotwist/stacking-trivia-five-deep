@@ -21,6 +21,11 @@
         "almost the whole ear",
         "almost the entire ear"
       ],
+      "choices": [
+        "Just the earlobe",
+        "A small nick on the rim",
+        "About half of it"
+      ],
       "explanation": "For decades scholars believed it was just the lobe. In 2016 a sketch by his doctor showed he removed nearly the whole ear with a razor."
     },
     {
@@ -36,6 +41,11 @@
         "doctor rey",
         "rey"
       ],
+      "choices": [
+        "Paul Gachet",
+        "Théophile Peyron",
+        "Frédéric Salles"
+      ],
       "explanation": "Rey was a 23-year-old intern who saved Van Gogh's life. Van Gogh painted his portrait as thanks—Rey's mother reportedly used it to patch a chicken coop."
     },
     {
@@ -47,6 +57,11 @@
         "arles",
         "arles france",
         "arles provence"
+      ],
+      "choices": [
+        "Saint-Rémy-de-Provence",
+        "Avignon",
+        "Marseille"
       ],
       "explanation": "Van Gogh moved to Arles in 1888 dreaming of an artists' colony. Gauguin's visit ended with the ear incident two days before Christmas."
     },
@@ -62,6 +77,11 @@
         "red vineyard at arles",
         "the red vineyard at arles"
       ],
+      "choices": [
+        "Sunflowers",
+        "The Sower",
+        "Café Terrace at Night"
+      ],
       "explanation": "She bought it for about 400 francs at the Les XX exhibition in Brussels—the one sale every historian agrees on."
     },
     {
@@ -73,6 +93,11 @@
         "london",
         "london england",
         "london uk"
+      ],
+      "choices": [
+        "Paris",
+        "Brussels",
+        "Amsterdam"
       ],
       "explanation": "Theo wrote to the London dealers Sulley & Lori about a self-portrait they had bought. The work is lost, and some historians question the date—but it chips away at the 'only one sale' legend."
     }

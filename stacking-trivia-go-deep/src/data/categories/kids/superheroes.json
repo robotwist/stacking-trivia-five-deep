@@ -1,6 +1,7 @@
 {
   "title": "Superheroes: Powers and Origins",
   "description": "Origins, secret identities, and superpowers—hero lore in five steps.",
+  "choicesByDefault": true,
   "questions": [
     {
       "level": 1,
@@ -10,6 +11,11 @@
         "krypton",
         "planet krypton",
         "the planet krypton"
+      ],
+      "choices": [
+        "Mars",
+        "Asgard",
+        "Titan"
       ],
       "hint": "A destroyed planet that sounds like a science gas"
     },
@@ -21,6 +27,11 @@
         "earth",
         "planet earth",
         "the earth"
+      ],
+      "choices": [
+        "Mars",
+        "Venus",
+        "Saturn"
       ],
       "hint": "Our home planet"
     },
@@ -34,6 +45,11 @@
         "radioactive spider",
         "bit by spider"
       ],
+      "choices": [
+        "Gamma radiation blast",
+        "Super-soldier serum",
+        "Lightning strike"
+      ],
       "hint": "A tiny creature plus dangerous radiation"
     },
     {
@@ -46,6 +62,11 @@
         "wayne",
         "bruce"
       ],
+      "choices": [
+        "Clark Kent",
+        "Tony Stark",
+        "Steve Rogers"
+      ],
       "hint": "A rich Gotham citizen named Bruce"
     },
     {
@@ -57,6 +78,11 @@
         "the hulk",
         "incredible hulk",
         "bruce banner"
+      ],
+      "choices": [
+        "Thor",
+        "Iron Man",
+        "Aquaman"
       ],
       "hint": "He turns green and smashes things"
     }

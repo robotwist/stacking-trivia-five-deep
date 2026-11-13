@@ -14,6 +14,11 @@
         "pre fontaine",
         "steve pre"
       ],
+      "choices": [
+        "Frank Shorter",
+        "Jim Ryun",
+        "Marty Liquori"
+      ],
       "explanation": "Steve \"Pre\" Prefontaine turned Eugene's Hayward Field into a rock concert—front-running charisma that redefined track's fan culture."
     },
     {
@@ -27,6 +32,11 @@
         "oregon ducks",
         "uo"
       ],
+      "choices": [
+        "Washington",
+        "Stanford",
+        "Villanova"
+      ],
       "explanation": "He won seven NCAA titles for Oregon and lost only a handful of races at Hayward Field in his whole career—Bowerman's program became synonymous with Pre's swagger."
     },
     {
@@ -38,6 +48,11 @@
         "nike",
         "nike inc",
         "blue ribbon sports"
+      ],
+      "choices": [
+        "Adidas",
+        "Onitsuka Tiger",
+        "Brooks"
       ],
       "explanation": "Bowerman's waffle-iron sole experiments and Knight's Blue Ribbon Sports became Nike—Pre wore the prototypes that sold the dream."
     },
@@ -52,6 +67,11 @@
         "mg mgb",
         "mgb roadster"
       ],
+      "choices": [
+        "Triumph TR6",
+        "Jaguar E-Type",
+        "Lotus Elan"
+      ],
       "explanation": "He crashed his MGB roadster after a party in Eugene—24 years old, at the peak of his fight against amateurism's limits."
     },
     {
@@ -64,6 +84,11 @@
         "prefontaine classic",
         "pre classic",
         "pre fontaine classic"
+      ],
+      "choices": [
+        "Bowerman",
+        "Hayward",
+        "Kip Keino"
       ],
       "explanation": "The Prefontaine Classic (part of the Diamond League circuit) keeps his name on the same track where \"Go Pre\" once shook the stands."
     }

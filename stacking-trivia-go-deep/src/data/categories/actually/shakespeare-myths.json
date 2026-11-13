@@ -11,6 +11,11 @@
         "romeo and juliet",
         "romeoandjuliet",
         "juliet"
+      ],
+      "choices": [
+        "Othello",
+        "Troilus and Cressida",
+        "Antony and Cleopatra"
       ]
     },
     {
@@ -24,6 +29,11 @@
         "very few",
         "0%",
         "zero"
+      ],
+      "choices": [
+        "Nearly all",
+        "About half",
+        "About a third"
       ]
     },
     {
@@ -36,6 +46,11 @@
         "80",
         "more than 80",
         "about 80"
+      ],
+      "choices": [
+        "Just one",
+        "Exactly 6",
+        "Over 300"
       ]
     },
     {
@@ -46,6 +61,11 @@
         "John Fletcher",
         "john fletcher",
         "fletcher"
+      ],
+      "choices": [
+        "Christopher Marlowe",
+        "Ben Jonson",
+        "Francis Bacon"
       ]
     },
     {
@@ -57,6 +77,11 @@
         "grammar school",
         "primary school",
         "elementary school"
+      ],
+      "choices": [
+        "Oxford University",
+        "Cambridge University",
+        "Inns of Court"
       ]
     }
   ],

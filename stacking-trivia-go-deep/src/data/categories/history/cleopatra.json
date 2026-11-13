@@ -11,6 +11,11 @@
         "cleopatra",
         "cleopatra vii",
         "cleopatra 7"
+      ],
+      "choices": [
+        "Hatshepsut",
+        "Nefertiti",
+        "Ramesses II"
       ]
     },
     {
@@ -21,6 +26,11 @@
         "Julius Caesar",
         "julius caesar",
         "caesar"
+      ],
+      "choices": [
+        "Octavian",
+        "Marcus Brutus",
+        "Marcus Crassus"
       ]
     },
     {
@@ -31,6 +41,11 @@
         "Caesarion",
         "caesarion",
         "cesarion"
+      ],
+      "choices": [
+        "Alexander Helios",
+        "Ptolemy Philadelphus",
+        "Ptolemy XIV"
       ]
     },
     {
@@ -43,6 +58,11 @@
         "asp bite",
         "cobra bite",
         "serpent bite"
+      ],
+      "choices": [
+        "Falling on a sword",
+        "Drowning in the Nile",
+        "Leaping from a tower"
       ]
     },
     {
@@ -54,6 +74,11 @@
         "egyptian cobra",
         "cobra",
         "asp"
+      ],
+      "choices": [
+        "Black mamba",
+        "Puff adder",
+        "Reticulated python"
       ]
     }
   ],

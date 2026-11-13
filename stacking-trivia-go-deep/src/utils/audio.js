@@ -1,8 +1,26 @@
 // Audio utility for game sound effects
-export const playSound = (type) => {
+
+// One shared context: browsers cap how many can exist, so creating one per sound
+// eventually silences the game in a long session.
+let sharedContext = null
+
+const getAudioContext = () => {
+  if (sharedContext) return sharedContext
+  const AudioContextClass = typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext)
+  if (typeof AudioContextClass !== 'function') return null
   try {
-    // Create audio context for better browser compatibility
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    sharedContext = new AudioContextClass()
+  } catch {
+    sharedContext = null
+  }
+  return sharedContext
+}
+
+export const playSound = (type) => {
+  const audioContext = getAudioContext();
+  if (!audioContext) return;
+  if (audioContext.state === 'suspended') audioContext.resume().catch(() => {});
+  try {
     
     // Generate simple tones for different sounds
     const generateTone = (frequency, duration, type = 'sine') => {
@@ -51,24 +69,17 @@ export const playSound = (type) => {
       default:
         break;
     }
-  } catch (error) {
+  } catch {
     // Graceful fallback - no audio if not supported
-    console.log('Audio not supported:', error);
   }
 };
 
-// Preload audio context on user interaction
+// Browsers only allow audio after a user gesture; unlock the shared context on the first one
 export const initAudio = () => {
-  const initAudioContext = () => {
-    try {
-      new (window.AudioContext || window.webkitAudioContext)();
-      document.removeEventListener('click', initAudioContext);
-      document.removeEventListener('keydown', initAudioContext);
-    } catch (error) {
-      console.log('Audio context initialization failed:', error);
-    }
+  const unlock = () => {
+    const ctx = getAudioContext()
+    if (ctx?.state === 'suspended') ctx.resume().catch(() => {})
   };
-  
-  document.addEventListener('click', initAudioContext, { once: true });
-  document.addEventListener('keydown', initAudioContext, { once: true });
+  document.addEventListener('click', unlock, { once: true });
+  document.addEventListener('keydown', unlock, { once: true });
 };

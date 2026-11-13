@@ -49,6 +49,7 @@ import {
   pickDailyStack,
   pickSurpriseStack,
   dateKey,
+  getDailyNumber,
 } from './utils/playerRecords'
 import { calculateMaxScore } from './utils/scoreUtils'
 
@@ -115,6 +116,8 @@ function AuthenticatedGameApp() {
   const [testMode, setTestMode] = useState(false)
   const [roomCode, setRoomCode] = useState('')
   const [recordsVersion, setRecordsVersion] = useState(0)
+  /** From a friend's challenge link: { stackKey, score, code, name } */
+  const [challenge, setChallenge] = useState(null)
 
   const gameStacks = useMemo(() => loadPlayableStacks(), [])
 
@@ -170,10 +173,11 @@ function AuthenticatedGameApp() {
 
     // Deep link: /play?stack=<key>&category=<key>, or /play?daily=1 from the home-screen shortcut
     if (path === '/play' || path === '/play/') {
-      const { stack, category } = parsePlayParams()
+      const { stack, category, challenge: incoming } = parsePlayParams()
       const daily = new URLSearchParams(window.location.search).get('daily')
       const target = stack && gameStacks[stack] ? stack : daily ? dailyStackKey : null
       if (target) {
+        if (incoming) setChallenge({ stackKey: target, ...incoming })
         setSelectedCategory(category || stackCategory[target] || null)
         setSelectedStack(target)
         setGameStarted(true)
@@ -481,6 +485,8 @@ function AuthenticatedGameApp() {
         isNewBest={lastGameResult.isNewBest}
         previousBest={lastGameResult.previousBest}
         suggestions={lastGameResult.suggestions}
+        challenge={challenge?.stackKey === lastGameResult.stackKey ? challenge : null}
+        dailyNumber={lastGameResult.stackKey === dailyStackKey ? getDailyNumber() : null}
         onPlayStack={(key) => startStack(key)}
         onPlayAgain={() => startStack(lastGameResult.stackKey)}
         onReturnToMenu={handleReturnToMenu}
@@ -645,6 +651,7 @@ function AuthenticatedGameApp() {
             stackData={gameStacks[selectedStack]}
             onComplete={handleEnhancedStackComplete}
             resumeData={resumeData}
+            challenge={challenge?.stackKey === selectedStack ? challenge : null}
           />
         </div>
       </div>

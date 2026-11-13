@@ -1,12 +1,17 @@
-import { buildPlayUrl, getSiteOrigin } from './url'
+import { buildChallengeUrl, buildPlayUrl, getSiteOrigin } from './url'
+import { ladderFromCode } from './playerRecords'
 
 /**
- * Spoiler-free challenge: stack title, result ladder, score, and a link straight into the same stack.
+ * Spoiler-free challenge: stack title, result ladder, score, and a link that drops the friend
+ * into the same stack with the sender's score to beat.
  * @returns {Promise<'shared' | 'copied' | 'failed'>}
  */
-export const shareRun = async ({ stackTitle, stackKey, categoryKey, score, maxScore, ladder }) => {
-  const url = stackKey ? buildPlayUrl(stackKey, categoryKey) : getSiteOrigin()
-  const text = `Deeply Trivial — ${stackTitle}\n${ladder} ${score}/${maxScore}\nHow deep can you go?`
+export const shareRun = async ({ stackTitle, stackKey, categoryKey, score, maxScore, code, playerName, dailyNumber }) => {
+  const url = stackKey
+    ? buildChallengeUrl(stackKey, categoryKey, { score, code, name: playerName })
+    : getSiteOrigin()
+  const heading = dailyNumber ? `Deeply Trivial Daily #${dailyNumber}` : 'Deeply Trivial'
+  const text = `${heading} — ${stackTitle}\n${ladderFromCode(code)} ${score}/${maxScore}\nCan you go deeper?`
 
   if (navigator.share) {
     try {
@@ -118,7 +123,7 @@ const copyToClipboard = async (text) => {
   try {
     await navigator.clipboard.writeText(text);
     showCopyNotification();
-  } catch (err) {
+  } catch {
     // Fallback for older browsers
     const textArea = document.createElement('textarea');
     textArea.value = text;

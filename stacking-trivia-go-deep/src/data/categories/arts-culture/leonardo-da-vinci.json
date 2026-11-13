@@ -13,6 +13,11 @@
         "la gioconda",
         "monalisa"
       ],
+      "choices": [
+        "The Last Supper",
+        "Lady with an Ermine",
+        "Salvator Mundi"
+      ],
       "hint": "It's of a woman with an enigmatic smile, housed in the Louvre",
       "explanation": "The portrait in the Louvre—likely Lisa Gherardini—became the anchor for everything Leonardo tried to understand about light, flesh, and expression."
     },
@@ -25,6 +30,11 @@
         "Sfumato",
         "sfumato technique",
         "smoke technique"
+      ],
+      "choices": [
+        "chiaroscuro",
+        "cangiante",
+        "impasto"
       ],
       "hint": "Soft, hazy transitions with no hard outlines—like smoke dissolving into air",
       "explanation": "Sfumato let Leonardo dissolve edges around the Mona Lisa's eyes and mouth—the haze that makes her smile seem to shift when you look away."
@@ -40,6 +50,11 @@
         "mirror script",
         "reversed text"
       ],
+      "choices": [
+        "shorthand",
+        "Latin cipher",
+        "Greek script"
+      ],
       "hint": "You need a mirror to read it normally—written from right to left",
       "explanation": "Thousands of pages run backward in his hand—perhaps to deter snooping, perhaps because the left-handed scribe found it faster."
     },
@@ -53,6 +68,11 @@
         "mechanical bird",
         "ornithopter design",
         "flapping wing machine"
+      ],
+      "choices": [
+        "aerial screw",
+        "hot-air balloon",
+        "autogyro"
       ],
       "hint": "A machine with flapping wings like a bird, from Greek words for 'bird' and 'wing'",
       "explanation": "The ornithopter design—human-powered flapping wings—sat in the same codices as his sfumato notes and anatomy studies."
@@ -68,6 +88,11 @@
         "cadaver dissection",
         "body dissection",
         "autopsy"
+      ],
+      "choices": [
+        "embalming",
+        "grave robbing",
+        "bloodletting"
       ],
       "hint": "Opening cadavers to study what lies beneath the skin",
       "explanation": "Myth says he snuck corpses at night. Actually, he dissected around 30 bodies with permission at hospitals like Florence's Santa Maria Nuova—his drawings of the heart were centuries ahead of medicine."

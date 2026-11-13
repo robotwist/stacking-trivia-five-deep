@@ -11,6 +11,11 @@
         "dunder mifflin",
         "dunder-mifflin"
       ],
+      "choices": [
+        "Wernham Hogg",
+        "Prince Family Paper",
+        "Michael Scott Paper Company"
+      ],
       "hint": "The People Person's Paper People"
     },
     {
@@ -22,6 +27,11 @@
         "that's what she said",
         "thats what she said"
       ],
+      "choices": [
+        "I declare bankruptcy",
+        "Well, well, well, how the turntables",
+        "No, God, please no"
+      ],
       "hint": "Michael's go-to inappropriate joke"
     },
     {
@@ -32,6 +42,11 @@
         "Schrute Farms",
         "schrute farms",
         "schrute farm"
+      ],
+      "choices": [
+        "Schrute Bucks",
+        "Mose's Beet Farm",
+        "Fernwood Farms"
       ],
       "hint": "Bears, beets, Battlestar Galactica"
     },
@@ -45,6 +60,11 @@
         "white elephant",
         "secret santa"
       ],
+      "choices": [
+        "The Dundies",
+        "Pretzel Day",
+        "Casino Night"
+      ],
       "hint": "iPod, iPod, iPod!"
     },
     {
@@ -56,6 +76,11 @@
         "the cameraman",
         "cameraman",
         "documentary crew"
+      ],
+      "choices": [
+        "The studio audience",
+        "The narrator",
+        "The receptionist"
       ],
       "hint": "Jim's knowing glances go to this person"
     }

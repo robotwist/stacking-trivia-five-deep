@@ -11,6 +11,11 @@
         "physics",
         "Physical Sciences"
       ],
+      "choices": [
+        "Chemistry",
+        "Medicine",
+        "Mathematics"
+      ],
       "hint": "The science of matter, energy, and their interactions - not chemistry"
     },
     {
@@ -21,6 +26,11 @@
         "Polonium",
         "polonium",
         "Po"
+      ],
+      "choices": [
+        "Francium",
+        "Germanium",
+        "Thorium"
       ],
       "hint": "Named after Poland, where she was born, it's element 84 on the periodic table"
     },
@@ -34,6 +44,11 @@
         "radiation",
         "radio activity"
       ],
+      "choices": [
+        "phosphorescence",
+        "fluorescence",
+        "ionization"
+      ],
       "hint": "The property of certain elements to emit energy in the form of rays or particles"
     },
     {
@@ -45,6 +60,11 @@
         "petites curies",
         "little Curies",
         "mobile X-ray units"
+      ],
+      "choices": [
+        "taxis de la Marne",
+        "les poilus",
+        "Big Berthas"
       ],
       "hint": "They were called 'little' versions of her name in French"
     },
@@ -58,6 +78,11 @@
         "radium isolation",
         "discovering radium",
         "isolating radium"
+      ],
+      "choices": [
+        "radium cancer therapy",
+        "radium luminous paint",
+        "measuring radium's half-life"
       ],
       "hint": "She successfully isolated a pure sample of this glowing element"
     }

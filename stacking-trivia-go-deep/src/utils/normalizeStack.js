@@ -97,6 +97,7 @@ export const normalizeQuestion = (rawQuestion, index) => {
     acceptedAnswers,
   }
 
+  if (Array.isArray(rawQuestion.choices)) normalized.choices = rawQuestion.choices.map((c) => String(c).trim())
   if (rawQuestion.hint) normalized.hint = rawQuestion.hint
   if (rawQuestion.explanation) normalized.explanation = rawQuestion.explanation
   if (rawQuestion.id) normalized.id = rawQuestion.id
@@ -129,6 +130,7 @@ export const normalizeStack = (rawStack) => {
   if (rawStack.photoFirst) stack.photoFirst = rawStack.photoFirst
   if (rawStack.category) stack.category = rawStack.category
   if (rawStack.deeperMode) stack.deeperMode = rawStack.deeperMode
+  if (rawStack.choicesByDefault) stack.choicesByDefault = true
 
   return stack
 }

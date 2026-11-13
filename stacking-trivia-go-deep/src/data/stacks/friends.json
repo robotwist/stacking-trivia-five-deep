@@ -12,6 +12,11 @@
         "central perks",
         "centralperk"
       ],
+      "choices": [
+        "Café Nervosa",
+        "Moondance Diner",
+        "Monk's Café"
+      ],
       "hint": "Could this BE any more obvious?"
     },
     {
@@ -23,6 +28,11 @@
         "paleontologist",
         "paleontology",
         "dinosaur scientist"
+      ],
+      "choices": [
+        "Archaeologist",
+        "Anthropologist",
+        "Geologist"
       ],
       "hint": "He works with dinosaurs"
     },
@@ -37,6 +47,11 @@
         "sir mix-a-lot",
         "baby got back song"
       ],
+      "choices": [
+        "Smelly Cat",
+        "Ice Ice Baby",
+        "Rapper's Delight"
+      ],
       "hint": "Sir Mix-a-Lot"
     },
     {
@@ -50,6 +65,11 @@
         "thumb",
         "a thumb"
       ],
+      "choices": [
+        "A dead mouse",
+        "A glass eye",
+        "A wedding ring"
+      ],
       "hint": "Definitely should not be in a drink"
     },
     {
@@ -62,6 +82,11 @@
         "ichiban lipstick for men",
         "ichiban lipstick",
         "ichibon"
+      ],
+      "choices": [
+        "Shiseido",
+        "Kanebo",
+        "Kosé"
       ],
       "explanation": "Chandler had to wear the lipstick himself to apologize for not watching Joey's audition tape.",
       "hint": "Japanese for number one"

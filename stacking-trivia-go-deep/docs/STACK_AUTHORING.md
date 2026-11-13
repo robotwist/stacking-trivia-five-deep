@@ -74,6 +74,20 @@ Good: `Grand slam greatness, family, and life beyond the court—five tennis dep
 
 Players will screenshot a wrong answer. Before shipping a stack, verify every answer **and every explanation** against a primary or reputable source, and prefer the modern consensus over the popular version (e.g. Van Gogh cut off nearly his whole ear, not the lobe; Einstein worked at the Institute for Advanced Study, not Princeton University). When a fact is contested, say so in the `explanation` rather than asserting it.
 
+## Choices (the lifeline)
+
+Every main question needs `"choices"`: exactly **3 hand-written wrong answers**. Players who are stuck can tap "Show 4 choices" for half the level's points (🟨 in the share grid). Kids stacks set `"choicesByDefault": true` to show choices up front at full points.
+
+Good decoys are what make the lifeline fun:
+
+- **Definitely wrong**, never an alternate correct answer. The validator rejects any choice that would be graded correct.
+- **Same type and format** as the answer: years for a year, people of the same era for a person, songs by the same band for a song.
+- **Tempting**: real names from the same world, and popular myths in the "Actually" stacks ("Just the earlobe").
+- **Never another level's answer**; the validator rejects these because they spoil the story.
+- **Spread numbers out**: "4,000 francs" next to "400 francs" counts as a typo match and is rejected.
+
+Example: *Who bought The Red Vineyard?* → Anna Boch, with choices `["Theo van Gogh", "Paul Gauguin", "Dr. Paul Gachet"]`.
+
 ## How answers are matched
 
 `checkAnswerMatch` ignores case, accents, punctuation, and leading articles; forgives small typos (including swapped letters) on answers longer than six characters; and accepts the answer inside a short phrase ("it was the red vineyard"). It rejects single-letter guesses and long lists of guesses. Very short answers need an exact match, so list common short forms in `acceptedAnswers`.
@@ -86,7 +100,6 @@ Each stack card offers **Copy play link** — a `/play?stack=<key>&category=<key
 
 Example: `https://stacking-trivia-five-deep.netlify.app/play?stack=queso-wars&category=actually`
 
-## Playtest input modes
+## Friend challenges
 
-- Default: **type your answer** (with fuzzy matching).
-- Optional: **Show answer choices** toggle reveals MCQ hints (stored in `localStorage` as `deepstack_answer_input_mode`).
+"Challenge a friend" on the results screen shares a link like `/play?stack=queso-wars&vs=150&r=gggyr&n=Rob`. The friend lands in the same stack with "Rob scored 150 here. Beat it." and gets a head-to-head result when they finish. `r` is the result code (g typed, y used choices, r missed, w not reached). Today's stack is shared as "Deeply Trivial Daily #N".

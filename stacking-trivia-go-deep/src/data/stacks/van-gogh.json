@@ -11,6 +11,11 @@
         "vincent van gogh",
         "van gogh",
         "vincent"
+      ],
+      "choices": [
+        "Paul Gauguin",
+        "Claude Monet",
+        "Paul Cézanne"
       ]
     },
     {
@@ -23,6 +28,11 @@
         "1",
         "only one"
       ],
+      "choices": [
+        "Three",
+        "Twelve",
+        "None"
+      ],
       "explanation": "That's the legend—and only one sale is documented beyond doubt. Letters hint at a few more, but nearly 900 paintings went unsold."
     },
     {
@@ -33,6 +43,11 @@
         "The Red Vineyard",
         "the red vineyard",
         "red vineyard"
+      ],
+      "choices": [
+        "The Sower",
+        "Sunflowers",
+        "The Potato Eaters"
       ]
     },
     {
@@ -43,6 +58,11 @@
         "Anna Boch",
         "anna boch",
         "boch"
+      ],
+      "choices": [
+        "Theo van Gogh",
+        "Paul Gauguin",
+        "Dr. Paul Gachet"
       ]
     },
     {
@@ -54,6 +74,11 @@
         "400",
         "four hundred francs",
         "four hundred"
+      ],
+      "choices": [
+        "50 francs",
+        "1,000 francs",
+        "2,500 francs"
       ]
     }
   ]

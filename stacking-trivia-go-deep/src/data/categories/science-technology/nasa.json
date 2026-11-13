@@ -12,6 +12,11 @@
         "National Aeronautics & Space Administration",
         "aeronautics and space administration"
       ],
+      "choices": [
+        "North American Space Agency",
+        "National Aerospace Science Agency",
+        "National Air and Space Authority"
+      ],
       "hint": "It includes the words 'National', 'Aeronautics', 'Space', and 'Administration'"
     },
     {
@@ -23,6 +28,11 @@
         "Glenn",
         "john glenn",
         "John H. Glenn"
+      ],
+      "choices": [
+        "Alan Shepard",
+        "Gus Grissom",
+        "Scott Carpenter"
       ],
       "hint": "His first name is John, and he later became a U.S. Senator"
     },
@@ -37,6 +47,11 @@
         "Apollo programme",
         "apollo"
       ],
+      "choices": [
+        "Gemini",
+        "Mercury",
+        "Artemis"
+      ],
       "hint": "Named after a Greek god, this program achieved Kennedy's goal of lunar landing"
     },
     {
@@ -49,6 +64,11 @@
         "challenger",
         "the challenger"
       ],
+      "choices": [
+        "Columbia",
+        "Discovery",
+        "Atlantis"
+      ],
       "hint": "It carried teacher Christa McAuliffe and was named after a British naval research vessel"
     },
     {
@@ -60,6 +80,11 @@
         "perseverance",
         "Perseverance rover",
         "percy"
+      ],
+      "choices": [
+        "Curiosity",
+        "Opportunity",
+        "Spirit"
       ],
       "hint": "Named for the quality of continuing despite difficulties, nicknamed 'Percy'"
     }

@@ -12,6 +12,11 @@
         "aus open",
         "australia open"
       ],
+      "choices": [
+        "French Open",
+        "Wimbledon",
+        "United States Open"
+      ],
       "explanation": "She won the title in Melbourne without revealing she was expecting—one of the most talked-about victories in Open-era tennis."
     },
     {
@@ -23,6 +28,11 @@
         "venus williams",
         "venus",
         "venus williams sister"
+      ],
+      "choices": [
+        "Maria Sharapova",
+        "Angelique Kerber",
+        "Simona Halep"
       ],
       "explanation": "Serena defeated Venus 6–4, 6–4 in the final—their ninth Grand Slam final against each other, with the pregnancy still a secret to the public."
     },
@@ -39,6 +49,11 @@
         "about eight",
         "about 8"
       ],
+      "choices": [
+        "Two",
+        "Fourteen",
+        "Twenty"
+      ],
       "explanation": "She found out she was expecting about a week before the tournament—roughly eight weeks along when she hoisted the trophy over her sister in Melbourne."
     },
     {
@@ -50,6 +65,11 @@
         "snapchat",
         "snap chat",
         "snap"
+      ],
+      "choices": [
+        "Instagram",
+        "Twitter",
+        "Facebook"
       ],
       "explanation": "The mirror selfie on Snapchat—captioned with a baby emoji—announced the news to the world months after that secret Australian Open triumph."
     },
@@ -63,6 +83,11 @@
         "alexis olympia",
         "olympia ohanian",
         "alexis olympia ohanian"
+      ],
+      "choices": [
+        "Adira",
+        "Oracene",
+        "Isabella"
       ],
       "explanation": "Alexis Olympia Ohanian Jr.—\"Olympia\"—closed the arc from secret champion to public motherhood."
     }

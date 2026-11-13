@@ -13,6 +13,11 @@
         "alternating",
         "ac current"
       ],
+      "choices": [
+        "direct current",
+        "static electricity",
+        "galvanic current"
+      ],
       "hint": "It's abbreviated as AC and changes direction periodically"
     },
     {
@@ -24,6 +29,11 @@
         "Edison",
         "Thomas Alva Edison",
         "thomas edison"
+      ],
+      "choices": [
+        "George Westinghouse",
+        "Alexander Graham Bell",
+        "Guglielmo Marconi"
       ],
       "hint": "He invented the light bulb and preferred direct current (DC)"
     },
@@ -38,6 +48,11 @@
         "polyphase system",
         "rotating magnetic fields"
       ],
+      "choices": [
+        "Electromagnetic induction",
+        "Thermionic emission",
+        "Hall effect"
+      ],
       "hint": "It involves magnetic fields that spin around in a circle"
     },
     {
@@ -51,6 +66,11 @@
         "colorado springs",
         "springs colorado"
       ],
+      "choices": [
+        "Boulder",
+        "Denver",
+        "Leadville"
+      ],
       "hint": "A mountainous state's springs-named city where he created artificial lightning"
     },
     {
@@ -63,6 +83,11 @@
         "wardenclyffe",
         "Wardenclyffe Station",
         "wardencliffe"
+      ],
+      "choices": [
+        "Menlo Park",
+        "Montauk",
+        "Cold Spring Harbor"
       ],
       "hint": "Named after the benefactor James S. Warden, it was meant to transmit power wirelessly across the Atlantic"
     }

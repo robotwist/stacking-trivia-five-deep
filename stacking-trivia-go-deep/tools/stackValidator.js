@@ -3,6 +3,7 @@
  */
 
 import { normalizeStack, normalizeQuestion, normalizeAnswerText } from '../src/utils/normalizeStack.js'
+import { checkAnswerMatch, normalizeAnswer } from '../src/utils/textUtils.js'
 import { StackDepthAnalyzer } from './depthAnalyzer.js'
 
 const depthAnalyzer = new StackDepthAnalyzer()
@@ -16,6 +17,48 @@ const MAX_ANSWER_LENGTH = 50
 const MIN_ACCEPTED_ANSWERS = 3
 const REQUIRED_QUESTION_COUNT = 5
 const MIN_LEAK_TOKEN_LENGTH = 4
+const REQUIRED_CHOICES = 3
+
+/**
+ * Hand-written decoys for the "show choices" lifeline. They must be clearly wrong,
+ * distinct, and must not spoil another level of the same story.
+ */
+const validateChoices = (questions, label, errors) => {
+  const answersByLevel = questions.map((q) => normalizeAnswer(q.answer))
+
+  questions.forEach((q, index) => {
+    const tag = `${label} Q${index + 1}`
+    const choices = q.choices
+    if (!Array.isArray(choices) || choices.length !== REQUIRED_CHOICES) {
+      errors.push(`${tag}: needs exactly ${REQUIRED_CHOICES} wrong-answer choices, got ${Array.isArray(choices) ? choices.length : 0}`)
+      return
+    }
+
+    const seen = new Set([normalizeAnswer(q.answer)])
+    choices.forEach((choice) => {
+      const text = String(choice || '').trim()
+      if (!text) {
+        errors.push(`${tag}: empty choice`)
+        return
+      }
+      if (text.length > MAX_ANSWER_LENGTH) {
+        errors.push(`${tag}: choice "${text}" is too long (max ${MAX_ANSWER_LENGTH})`)
+      }
+      const normalized = normalizeAnswer(text)
+      if (seen.has(normalized)) {
+        errors.push(`${tag}: duplicate choice "${text}"`)
+      }
+      seen.add(normalized)
+      if (checkAnswerMatch(text, q.acceptedAnswers || [q.answer])) {
+        errors.push(`${tag}: choice "${text}" would be graded correct`)
+      }
+      const spoiled = answersByLevel.findIndex((a, i) => i !== index && a === normalized)
+      if (spoiled !== -1) {
+        errors.push(`${tag}: choice "${text}" is the answer to Q${spoiled + 1}`)
+      }
+    })
+  })
+}
 
 /**
  * Promo copy shown before play — must not contain answers.
@@ -157,6 +200,7 @@ export function validateStack(stack) {
     requireFive: true,
     checkNarrative: true,
   })
+  validateChoices(stack.questions, 'Main', errors)
 
   const deeperQs = stack.deeperMode?.questions
   if (Array.isArray(deeperQs) && deeperQs.length > 0) {

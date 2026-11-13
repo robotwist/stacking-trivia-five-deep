@@ -11,6 +11,11 @@
         "frida kahlo",
         "kahlo",
         "frida"
+      ],
+      "choices": [
+        "Diego Rivera",
+        "María Izquierdo",
+        "Remedios Varo"
       ]
     },
     {
@@ -23,6 +28,11 @@
         "6",
         "six years old",
         "age six"
+      ],
+      "choices": [
+        "Two",
+        "Ten",
+        "Fourteen"
       ]
     },
     {
@@ -35,6 +45,11 @@
         "bus crash",
         "trolley accident",
         "streetcar accident"
+      ],
+      "choices": [
+        "Bicycle accident",
+        "Fall from a horse",
+        "House fire"
       ]
     },
     {
@@ -47,6 +62,11 @@
         "handrail",
         "metal handrail",
         "iron rod"
+      ],
+      "choices": [
+        "Broken axle",
+        "Steel girder",
+        "Copper pipe"
       ]
     },
     {
@@ -60,6 +80,11 @@
         "more than 30",
         "thirty",
         "30+"
+      ],
+      "choices": [
+        "About 5",
+        "About 12",
+        "Over 75"
       ]
     }
   ],

@@ -12,6 +12,11 @@
         "greendale",
         "greendale cc"
       ],
+      "choices": [
+        "City College",
+        "Riverside Community College",
+        "Colorado Community College"
+      ],
       "hint": "Go Human Beings!"
     },
     {
@@ -22,6 +27,11 @@
         "Spanish",
         "spanish",
         "español"
+      ],
+      "choices": [
+        "Anthropology",
+        "Biology",
+        "Psychology"
       ],
       "hint": "Señor Chang teaches this class"
     },
@@ -35,6 +45,11 @@
         "being meta",
         "meta-humor"
       ],
+      "choices": [
+        "Laugh tracks",
+        "Cold opens",
+        "Voiceovers"
+      ],
       "hint": "Cool. Cool cool cool."
     },
     {
@@ -46,6 +61,11 @@
         "paintball",
         "paintball assassin",
         "paintball game"
+      ],
+      "choices": [
+        "Pillow fort war",
+        "Hot lava",
+        "Dungeons & Dragons"
       ],
       "hint": "Modern Warfare and A Fistful of Paintballs"
     },
@@ -59,6 +79,11 @@
         "the human being",
         "human beings",
         "the greendale human being"
+      ],
+      "choices": [
+        "Everyman",
+        "Mannequin",
+        "Blank Slate"
       ],
       "hint": "Designed to offend no one by being nobody",
       "explanation": "Dean Pelton picked a mascot so inoffensive it has no race, gender, or face—just a white bodysuit."

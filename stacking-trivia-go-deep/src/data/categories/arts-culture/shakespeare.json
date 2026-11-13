@@ -11,6 +11,11 @@
         "william shakespeare",
         "shakespeare",
         "the bard"
+      ],
+      "choices": [
+        "Christopher Marlowe",
+        "Ben Jonson",
+        "Thomas Kyd"
       ]
     },
     {
@@ -22,6 +27,11 @@
         "stratford-upon-avon",
         "stratford upon avon",
         "stratford"
+      ],
+      "choices": [
+        "Canterbury",
+        "Warwick",
+        "Coventry"
       ]
     },
     {
@@ -32,6 +42,11 @@
         "To be or not to be",
         "to be or not to be",
         "to be, or not to be"
+      ],
+      "choices": [
+        "Alas, poor Yorick",
+        "Now is the winter of our discontent",
+        "All the world's a stage"
       ]
     },
     {
@@ -44,6 +59,11 @@
         "globe theatre",
         "the globe",
         "globe"
+      ],
+      "choices": [
+        "The Rose Theatre",
+        "The Swan Theatre",
+        "The Fortune Theatre"
       ]
     },
     {
@@ -55,6 +75,11 @@
         "one hundred fifty-four",
         "one hundred fifty four",
         "154 sonnets"
+      ],
+      "choices": [
+        "37",
+        "100",
+        "246"
       ]
     }
   ],

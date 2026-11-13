@@ -1,6 +1,7 @@
 {
   "title": "Space: Beyond Our World",
   "description": "Stars, planets, and humankind’s small steps beyond Earth.",
+  "choicesByDefault": true,
   "questions": [
     {
       "level": 1,
@@ -11,6 +12,11 @@
         "sun",
         "our sun",
         "sol"
+      ],
+      "choices": [
+        "The North Star",
+        "Sirius",
+        "Proxima Centauri"
       ],
       "hint": "It lights up our day"
     },
@@ -23,6 +29,11 @@
         "the solar system",
         "our solar system"
       ],
+      "choices": [
+        "Milky Way",
+        "Asteroid belt",
+        "Big Dipper"
+      ],
       "hint": "Earth and the planets orbit the Sun"
     },
     {
@@ -33,6 +44,11 @@
         "mars",
         "the red planet",
         "planet mars"
+      ],
+      "choices": [
+        "Jupiter",
+        "Venus",
+        "Mercury"
       ],
       "hint": "Named after the Roman god of war"
     },
@@ -45,6 +61,11 @@
         "phobos moon",
         "moon phobos"
       ],
+      "choices": [
+        "Deimos",
+        "Europa",
+        "Titan"
+      ],
       "hint": "Greek for fear"
     },
     {
@@ -56,6 +77,11 @@
         "nineteen sixty-nine",
         "sixty-nine",
         "1969 ad"
+      ],
+      "choices": [
+        "1957",
+        "1972",
+        "1986"
       ],
       "hint": "Apollo 11 mission"
     }

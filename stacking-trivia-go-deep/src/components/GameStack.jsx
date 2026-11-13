@@ -3,8 +3,8 @@ import QuickHostControls from './QuickHostControls';
 import PhotoIdentification from './PhotoIdentification';
 import { checkAnswerMatch } from '../utils/textUtils';
 import { getLevelLabel } from '../utils/normalizeStack';
-import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore } from '../utils/scoreUtils';
-import { generateMultipleChoiceOptions } from '../utils/mcq';
+import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore, applyChoicesPenalty } from '../utils/scoreUtils';
+import { shuffleArray } from '../utils/arrayUtils';
 import { useAuth } from '../contexts/AuthContext';
 import ProgressStorage from '../utils/progressStorage';
 import { playSound } from '../utils/audio.js';
@@ -26,7 +26,8 @@ const GameStack = memo(function GameStack({
   teamName = "",
   onPause = () => {},
   onResume = () => {},
-  resumeData = null
+  resumeData = null,
+  challenge = null
 }) {
   const [depth, setDepth] = useState(0);
   const [score, setScore] = useState(0);
@@ -43,14 +44,8 @@ const GameStack = memo(function GameStack({
   const [isPaused, setIsPaused] = useState(false);
   const [scoreAnimation, setScoreAnimation] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [showMcqHint, setShowMcqHint] = useState(() => {
-    try {
-      return localStorage.getItem('deepstack_answer_input_mode') === 'mcq-hint'
-    } catch {
-      return false
-    }
-  });
+  /** The lifeline: four choices for half the level's points (free on kids stacks) */
+  const [choicesRequested, setChoicesRequested] = useState(false);
   const submittingRef = useRef(false);
   const continueButtonRef = useRef(null);
   const inputRef = useRef(null);
@@ -104,20 +99,15 @@ const GameStack = memo(function GameStack({
     else inputRef.current?.focus({ preventScroll: true });
   }, [reveal, depth, deepModeDepth]);
 
-  const toggleMcqHint = useCallback(() => {
-    setShowMcqHint((prev) => {
-      const next = !prev
-      try {
-        localStorage.setItem('deepstack_answer_input_mode', next ? 'mcq-hint' : 'type')
-      } catch { /* ignore */ }
-      return next
-    })
-  }, [])
+  const freeChoices = !!stackData.choicesByDefault;
+  const choicesAvailable = !isDeepMode && Array.isArray(current?.choices) && current.choices.length > 0;
+  const showChoices = choicesAvailable && (freeChoices || choicesRequested);
+  const choicesCostPoints = showChoices && !freeChoices;
 
-  const mcqOptions = useMemo(() => {
-    if (!showMcqHint || isDeepMode || !stackData?.questions?.length || !current) return []
-    return generateMultipleChoiceOptions(stackData, depth, 4)
-  }, [showMcqHint, stackData, current, isDeepMode, depth])
+  const choiceOptions = useMemo(() => {
+    if (!choicesAvailable) return []
+    return shuffleArray([getCanonicalAnswer(current), ...current.choices])
+  }, [choicesAvailable, current])
 
   const animateScore = useCallback(() => {
     setScoreAnimation(true);
@@ -150,7 +140,7 @@ const GameStack = memo(function GameStack({
 
   const resetForNextQuestion = () => {
     setInput('');
-    setSelectedOption(null);
+    setChoicesRequested(false);
     setShowHint(false);
     setReveal(null);
     submittingRef.current = false;
@@ -169,18 +159,21 @@ const GameStack = memo(function GameStack({
     playSound(soundType);
   }, []);
 
-  const checkAnswer = () => {
+  const checkAnswer = (pickedChoice = null) => {
     if (!current || isPaused || reveal || isCompleted || submittingRef.current) return;
     submittingRef.current = true;
 
-    const userAnswer = (selectedOption && String(selectedOption)) || input.trim();
-    const isCorrect = checkAnswerMatch(userAnswer, getAcceptedAnswers(current));
+    const userAnswer = pickedChoice !== null ? String(pickedChoice) : input.trim();
+    const isCorrect = pickedChoice !== null
+      ? pickedChoice === getCanonicalAnswer(current)
+      : checkAnswerMatch(userAnswer, getAcceptedAnswers(current));
     const currentDepth = isDeepMode ? deepModeDepth : depth;
 
     let points = 0;
     if (isCorrect) {
       const multiplier = showHostControls ? getCrowdMultiplier(crowdEnergy) : 1;
-      points = Math.round(calculateQuestionScore(currentDepth, isDeepMode) * multiplier);
+      const base = calculateQuestionScore(currentDepth, isDeepMode);
+      points = Math.round((choicesCostPoints ? applyChoicesPenalty(base) : base) * multiplier);
     }
 
     playSound(isCorrect ? 'correct' : 'incorrect');
@@ -195,6 +188,7 @@ const GameStack = memo(function GameStack({
         answer: getCanonicalAnswer(current),
         userAnswer,
         correct: isCorrect,
+        usedChoices: choicesCostPoints,
         pointsAwarded: points,
       }
     ];
@@ -220,6 +214,7 @@ const GameStack = memo(function GameStack({
     setReveal({
       correct: isCorrect,
       points,
+      usedChoices: choicesCostPoints,
       answer: getCanonicalAnswer(current),
       explanation: current.explanation || null,
       userAnswer,
@@ -269,7 +264,7 @@ const GameStack = memo(function GameStack({
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && !isPaused && (input.trim() || selectedOption)) {
+    if (e.key === 'Enter' && !isPaused && input.trim()) {
       e.preventDefault();
       checkAnswer();
     }
@@ -412,13 +407,16 @@ const GameStack = memo(function GameStack({
         <ol className="flex justify-center gap-1.5" aria-label="Stack progress">
           {Array.from({ length: totalLevels }).map((_, i) => {
             const answered = userAnswers.find((a) => a.questionIndex === i && !!a.deeper === isDeepMode);
-            const state = answered ? (answered.correct ? 'correct' : 'missed') : i === levelIndex ? 'current' : 'ahead';
+            const state = answered
+              ? (!answered.correct ? 'missed' : answered.usedChoices ? 'correct with choices' : 'correct')
+              : i === levelIndex ? 'current' : 'ahead';
             return (
               <li
                 key={i}
                 aria-label={`Level ${i + 1}: ${state}`}
                 className={`h-2.5 w-10 sm:w-14 rounded-full transition-colors duration-500 ${
                   state === 'correct' ? 'bg-green-600'
+                    : state === 'correct with choices' ? 'bg-yellow-400'
                     : state === 'missed' ? 'bg-red-500'
                       : state === 'current' ? 'bg-amber-500 animate-pulse'
                         : 'bg-amber-200 dark:bg-amber-800/60'
@@ -429,7 +427,13 @@ const GameStack = memo(function GameStack({
         </ol>
         {!isDeepMode && (
           <p className="mt-2 text-xs text-amber-600 dark:text-amber-400">
-            Worth {calculateQuestionScore(depth, false)} pts · one miss ends the dive
+            Worth {choicesCostPoints ? applyChoicesPenalty(calculateQuestionScore(depth, false)) : calculateQuestionScore(depth, false)} pts
+            {choicesCostPoints ? ' with choices' : ''} · one miss ends the dive
+          </p>
+        )}
+        {challenge && depth === 0 && !reveal && !isDeepMode && (
+          <p className="mt-3 inline-block px-3 py-1 rounded-full text-sm bg-amber-200/70 dark:bg-amber-900/60 text-amber-900 dark:text-amber-100">
+            {challenge.name ? `${challenge.name} scored` : 'A friend scored'} {challenge.score} here. Beat it.
           </p>
         )}
       </div>
@@ -477,6 +481,9 @@ const GameStack = memo(function GameStack({
           <p className="text-lg font-semibold">
             {reveal.correct ? `Correct! +${reveal.points} points` : 'Not quite—the dive ends here.'}
           </p>
+          {reveal.correct && reveal.usedChoices && (
+            <p className="text-sm opacity-80">Half points for using the choices. Type it next time for the full amount.</p>
+          )}
           <p className="mt-2 text-2xl font-bold" style={{ fontFamily: 'Baskervville, serif' }}>
             {reveal.answer}
           </p>
@@ -499,46 +506,22 @@ const GameStack = memo(function GameStack({
         </div>
       ) : (
         <div className="text-center mb-6">
-          {!isDeepMode && (
-            <div className="mb-4">
-              <button
-                type="button"
-                onClick={toggleMcqHint}
-                disabled={inputLocked}
-                className={`px-4 py-2 rounded-sm border-2 text-sm transition-colors ${
-                  showMcqHint
-                    ? 'bg-amber-300 dark:bg-amber-700 border-amber-500 text-amber-900 dark:text-amber-50'
-                    : 'bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-800 dark:text-amber-200 hover:bg-amber-100'
-                }`}
-              >
-                {showMcqHint ? 'Hide answer choices' : 'Show answer choices'}
-              </button>
-            </div>
-          )}
-          {mcqOptions.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto mb-6">
-              {mcqOptions.map((opt, idx) => (
+          {showChoices ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto" role="group" aria-label="Answer choices">
+              {choiceOptions.map((opt) => (
                 <button
-                  key={idx}
-                  onClick={() => {
-                    if (!inputLocked) {
-                      setSelectedOption(String(opt))
-                      setInput('')
-                    }
-                  }}
+                  key={opt}
+                  type="button"
+                  onClick={() => checkAnswer(opt)}
                   disabled={inputLocked}
-                  aria-pressed={selectedOption === String(opt)}
-                  className={`px-4 py-3 rounded-sm border-2 transition-colors ${
-                    selectedOption === String(opt)
-                      ? 'bg-amber-300 dark:bg-amber-700 border-amber-500 dark:border-amber-500 text-amber-900 dark:text-amber-50'
-                      : 'bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-800/60'
-                  }`}
+                  className="px-4 py-4 rounded-sm border-2 text-lg transition-colors bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-900 dark:text-amber-100 hover:bg-amber-200 dark:hover:bg-amber-700/60 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 >
                   {opt}
                 </button>
               ))}
             </div>
-          )}
+          ) : (
+          <>
           <label htmlFor="trivia-answer-input" className="sr-only">
             Your answer to the trivia question
           </label>
@@ -547,10 +530,7 @@ const GameStack = memo(function GameStack({
             id="trivia-answer-input"
             type="text"
             value={input}
-            onChange={(e) => {
-              setInput(e.target.value)
-              if (selectedOption) setSelectedOption(null)
-            }}
+            onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             disabled={inputLocked}
             placeholder="Your answer..."
@@ -573,13 +553,25 @@ const GameStack = memo(function GameStack({
           <div className="mt-4">
             <button
               aria-label="Submit answer"
-              onClick={checkAnswer}
-              disabled={inputLocked || !(input.trim() || selectedOption)}
+              onClick={() => checkAnswer()}
+              disabled={inputLocked || !input.trim()}
               className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 disabled:from-amber-400 disabled:to-amber-500 text-white px-8 py-3 rounded-sm text-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed"
             >
               Submit Answer
             </button>
           </div>
+          {choicesAvailable && (
+            <button
+              type="button"
+              onClick={() => setChoicesRequested(true)}
+              disabled={inputLocked}
+              className="mt-4 px-4 py-2 rounded-sm border-2 border-dashed text-sm border-amber-400 dark:border-amber-600 text-amber-800 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-800/40"
+            >
+              Stuck? Show 4 choices · half points
+            </button>
+          )}
+          </>
+          )}
         </div>
       )}
     </div>

@@ -13,6 +13,11 @@
         "maclaren's",
         "maclarens"
       ],
+      "choices": [
+        "Puzzles",
+        "The Lusty Leopard",
+        "Gray's Papaya"
+      ],
       "hint": "It's right below Ted's apartment"
     },
     {
@@ -25,6 +30,11 @@
         "legen... wait for it... dary",
         "legend... wait for it... ary"
       ],
+      "choices": [
+        "Suit up",
+        "Challenge accepted",
+        "True story"
+      ],
       "hint": "Wait for it..."
     },
     {
@@ -35,6 +45,11 @@
         "Robin Sparkles",
         "robin sparkles",
         "sparkles"
+      ],
+      "choices": [
+        "Jessica Glitter",
+        "Robin Scherbatsky",
+        "Lily Aldrin"
       ],
       "hint": "She went to the mall... today"
     },
@@ -47,6 +62,11 @@
         "yellow",
         "yellow umbrella"
       ],
+      "choices": [
+        "Blue",
+        "Red",
+        "Green"
+      ],
       "hint": "The title sequence shows it every episode"
     },
     {
@@ -58,6 +78,11 @@
         "provide legal exculpation and sign everything",
         "please",
         "p.l.e.a.s.e"
+      ],
+      "choices": [
+        "Prepare Lawsuits, Evade Audits, Shred Evidence",
+        "Process Leases, Expedite Accounts, Settle Escrow",
+        "Protect Legacy Executives And Silence Employees"
       ],
       "hint": "It's literally what P.L.E.A.S.E stands for"
     }

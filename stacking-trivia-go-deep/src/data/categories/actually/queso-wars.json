@@ -15,6 +15,11 @@
         "tex-mex queso",
         "melted cheese dip"
       ],
+      "choices": [
+        "Guacamole",
+        "Seven-layer dip",
+        "Bean dip"
+      ],
       "explanation": "Arkansas champions \"cheese dip\"; Texas claims chile con queso as its own Tex-Mex birthright—the rivalry is cultural, not just culinary."
     },
     {
@@ -26,6 +31,11 @@
         "arkansas",
         "ar",
         "state of arkansas"
+      ],
+      "choices": [
+        "Oklahoma",
+        "Louisiana",
+        "New Mexico"
       ],
       "explanation": "Senator Tom Cotton picked the Twitter fight; Texas's Cruz and Cornyn accepted. On Dec. 7, 2016, Republican senators voted blind—and Arkansas won. Cotton missed it: his wife was in labor."
     },
@@ -39,6 +49,11 @@
         "nlr",
         "north littlerock"
       ],
+      "choices": [
+        "Fayetteville",
+        "Fort Smith",
+        "Texarkana"
+      ],
       "explanation": "Blackie Donnally and his wife came up from Texas and opened Mexico Chiquito in North Little Rock's Prothro Junction (some accounts start it briefly in Hot Springs). The irony: Arkansas's dip has Texan roots."
     },
     {
@@ -51,6 +66,11 @@
         "rotel tomatoes",
         "rotel dip"
       ],
+      "choices": [
+        "Pace",
+        "Old El Paso",
+        "Hunt's"
+      ],
       "explanation": "Carl Roettele created Rotel in Elsa, Texas, in 1943—the brand became inseparable from tailgates and living-room crock pots on the Texas side of the feud."
     },
     {
@@ -62,6 +82,11 @@
         "nineteen forty-three",
         "nineteen forty three",
         "in 1943"
+      ],
+      "choices": [
+        "1919",
+        "1958",
+        "1971"
       ],
       "explanation": "That year locks the Texas side of the story: a border-state canning innovation later married to Velveeta in countless home recipes."
     }

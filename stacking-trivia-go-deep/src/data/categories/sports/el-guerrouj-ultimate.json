@@ -12,6 +12,11 @@
         "el guerrouj",
         "guerrouj",
         "hicham"
+      ],
+      "choices": [
+        "Noureddine Morceli",
+        "Saïd Aouita",
+        "Noah Ngeny"
       ]
     },
     {
@@ -27,6 +32,11 @@
         "nearly four laps",
         "3 and 3/4"
       ],
+      "choices": [
+        "Two and a half",
+        "Five",
+        "Six"
+      ],
       "explanation": "On a 400m track, 1500m is three full laps plus 300 meters—one reason the start line sits on the back straight."
     },
     {
@@ -39,6 +49,11 @@
         "3 minutes 26",
         "3 minutes 26 seconds",
         "326"
+      ],
+      "choices": [
+        "3:43.13",
+        "3:32.10",
+        "3:37.90"
       ],
       "explanation": "Set in Rome on July 14, 1998—and still the world record more than a quarter-century later."
     },
@@ -53,6 +68,11 @@
         "1500m and 5k",
         "1500 and 5k"
       ],
+      "choices": [
+        "800m and 1500m",
+        "5000m and 10,000m",
+        "10,000m and marathon"
+      ],
       "explanation": "He fell in the 1996 final and lost to Noah Ngeny in 2000. In Athens he became the first man since Paavo Nurmi in 1924 to win both events at one Games."
     },
     {
@@ -64,6 +84,11 @@
         "bernard lagat",
         "lagat",
         "bernard"
+      ],
+      "choices": [
+        "Noah Ngeny",
+        "Eliud Kipchoge",
+        "Asbel Kiprop"
       ]
     }
   ]

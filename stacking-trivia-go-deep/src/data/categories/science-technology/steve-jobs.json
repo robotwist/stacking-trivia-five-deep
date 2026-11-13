@@ -12,6 +12,11 @@
         "nineteen seventy six",
         "year 1976"
       ],
+      "choices": [
+        "1968",
+        "1981",
+        "1984"
+      ],
       "hint": "The same year as America's bicentennial celebration"
     },
     {
@@ -24,6 +29,11 @@
         "Apple Two",
         "apple ii",
         "apple 2"
+      ],
+      "choices": [
+        "Macintosh",
+        "Lisa",
+        "Altair 8800"
       ],
       "hint": "The Roman numeral for two, this computer had color graphics and was hugely successful"
     },
@@ -38,6 +48,11 @@
         "next computer",
         "next"
       ],
+      "choices": [
+        "Atari",
+        "General Magic",
+        "Be Inc."
+      ],
       "hint": "It was literally what came 'after' Apple for Jobs, spelled with unusual capitalization"
     },
     {
@@ -50,6 +65,11 @@
         "i phone",
         "Apple iPhone"
       ],
+      "choices": [
+        "iPod",
+        "iPad",
+        "Newton"
+      ],
       "hint": "A phone that starts with 'i' and put the internet in everyone's pocket"
     },
     {
@@ -61,6 +81,11 @@
         "pixar",
         "Pixar Animation Studios",
         "Pixar Studios"
+      ],
+      "choices": [
+        "DreamWorks",
+        "Lucasfilm",
+        "Industrial Light & Magic"
       ],
       "hint": "Named after a computer graphics term, they revolutionized animated movies"
     }

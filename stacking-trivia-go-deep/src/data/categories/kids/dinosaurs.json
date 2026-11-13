@@ -1,6 +1,7 @@
 {
   "title": "Dinosaurs: Rulers of the Ancient World",
   "description": "A king of lizards, a rock from space, and a twist hiding in your backyard—dino facts for curious minds.",
+  "choicesByDefault": true,
   "questions": [
     {
       "level": 1,
@@ -11,6 +12,11 @@
         "king tyrant lizard",
         "tyrant king lizard",
         "tyrant lizard"
+      ],
+      "choices": [
+        "Terrible lizard",
+        "Thunder lizard",
+        "Swift thief"
       ],
       "hint": "Tyrant + lizard + king",
       "explanation": "'Tyrannos' is Greek for tyrant, 'sauros' means lizard, and 'rex' is Latin for king."
@@ -24,6 +30,11 @@
         "late cretaceous",
         "cretaceous period",
         "the cretaceous"
+      ],
+      "choices": [
+        "Jurassic",
+        "Triassic",
+        "Permian"
       ],
       "hint": "It starts with 'Cre-' and comes after the Jurassic",
       "explanation": "T. rex lived near the very end of the Cretaceous—closer in time to us than to Stegosaurus!"
@@ -40,6 +51,11 @@
         "space rock",
         "asteroid impact"
       ],
+      "choices": [
+        "Moon",
+        "Satellite",
+        "Black hole"
+      ],
       "hint": "A giant rock from space",
       "explanation": "A space rock about 6 miles wide hit so hard it changed the climate of the whole planet."
     },
@@ -54,6 +70,11 @@
         "yucatán peninsula",
         "chicxulub"
       ],
+      "choices": [
+        "Baja California",
+        "Florida",
+        "Alaska"
+      ],
       "hint": "Home of Cancún",
       "explanation": "The Chicxulub crater is more than 100 miles across and lies partly under the sea off the Yucatán."
     },
@@ -67,6 +88,11 @@
         "avian dinosaurs",
         "chickens",
         "the birds"
+      ],
+      "choices": [
+        "Crocodiles",
+        "Lizards",
+        "Turtles"
       ],
       "hint": "Look up at the sky—or at a chicken!",
       "explanation": "Birds are living dinosaurs. The pigeon on your sidewalk is a distant cousin of T. rex."

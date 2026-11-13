@@ -7,6 +7,9 @@ import {
   pickDailyStack,
   pickSurpriseStack,
   buildResultLadder,
+  buildResultCode,
+  ladderFromCode,
+  getDailyNumber,
   dateKey,
 } from '../playerRecords'
 
@@ -65,5 +68,16 @@ describe('playerRecords', () => {
     const answers = [{ correct: true }, { correct: true }, { correct: false }]
     expect(buildResultLadder(answers, 5)).toBe('🟩🟩🟥⬜⬜')
     expect(buildResultLadder([...answers.slice(0, 2), { correct: true, deeper: true }], 2)).toBe('🟩🟩')
+  })
+
+  it('marks levels solved with the choices lifeline in yellow', () => {
+    const answers = [{ correct: true }, { correct: true, usedChoices: true }, { correct: false }]
+    expect(buildResultCode(answers, 5)).toBe('gyrww')
+    expect(ladderFromCode('gyrww')).toBe('🟩🟨🟥⬜⬜')
+  })
+
+  it('numbers daily stacks from Jan 1, 2026', () => {
+    expect(getDailyNumber(day(2026, 1, 1))).toBe(1)
+    expect(getDailyNumber(day(2026, 11, 12))).toBe(316)
   })
 })

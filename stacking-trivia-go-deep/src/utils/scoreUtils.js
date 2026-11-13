@@ -17,6 +17,13 @@ export const calculateQuestionScore = (depth, isDeepMode = false) => {
 }
 
 /**
+ * Using the four-choices lifeline halves a level's points (10 → 5, 160 → 80).
+ * @param {number} points
+ * @returns {number}
+ */
+export const applyChoicesPenalty = (points) => Math.ceil(points / 2)
+
+/**
  * Calculate total possible score for a stack
  * @param {number} questionCount - Number of questions
  * @param {boolean} hasDeepMode - Whether stack has deeper mode

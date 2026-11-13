@@ -11,6 +11,11 @@
         "miles davis",
         "davis",
         "miles"
+      ],
+      "choices": [
+        "Dizzy Gillespie",
+        "Chet Baker",
+        "Louis Armstrong"
       ]
     },
     {
@@ -21,6 +26,11 @@
         "1959",
         "nineteen fifty-nine",
         "fifty-nine"
+      ],
+      "choices": [
+        "1955",
+        "1963",
+        "1968"
       ]
     },
     {
@@ -32,6 +42,11 @@
         "john coltrane",
         "coltrane",
         "trane"
+      ],
+      "choices": [
+        "Sonny Rollins",
+        "Charlie Parker",
+        "Wayne Shorter"
       ]
     },
     {
@@ -44,6 +59,11 @@
         "modal improvisation",
         "modes",
         "modal"
+      ],
+      "choices": [
+        "Bebop",
+        "Hard bop",
+        "Free jazz"
       ]
     },
     {
@@ -58,6 +78,11 @@
         "1 take",
         "one",
         "1"
+      ],
+      "choices": [
+        "Three takes",
+        "Eight takes",
+        "Twenty takes"
       ]
     }
   ],

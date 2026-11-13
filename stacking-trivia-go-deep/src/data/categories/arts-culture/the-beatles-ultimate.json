@@ -12,6 +12,11 @@
         "liverpool england",
         "liverpool uk"
       ],
+      "choices": [
+        "Hamburg",
+        "Manchester",
+        "London"
+      ],
       "hint": "A port city in northwest England"
     },
     {
@@ -22,6 +27,11 @@
         "Please Please Me",
         "please please me",
         "please please me single"
+      ],
+      "choices": [
+        "Love Me Do",
+        "She Loves You",
+        "Twist and Shout"
       ],
       "explanation": "It topped most UK charts in early 1963 and launched Beatlemania—though the official chart had it at No. 2, so 'From Me to You' counts as their first official No. 1."
     },
@@ -36,6 +46,11 @@
         "one day",
         "a single day"
       ],
+      "choices": [
+        "Three",
+        "Seven",
+        "Ten"
+      ],
       "explanation": "Their first album was famously recorded in one marathon session"
     },
     {
@@ -48,6 +63,11 @@
         "epstein",
         "brian"
       ],
+      "choices": [
+        "George Martin",
+        "Dick James",
+        "Andrew Loog Oldham"
+      ],
       "explanation": "Epstein discovered them at the Cavern Club"
     },
     {
@@ -58,6 +78,11 @@
         "Abbey Road",
         "abbey road",
         "abbey road album"
+      ],
+      "choices": [
+        "Let It Be",
+        "The White Album",
+        "Revolver"
       ],
       "explanation": "Let It Be was released later but Abbey Road was their last sessions together"
     }

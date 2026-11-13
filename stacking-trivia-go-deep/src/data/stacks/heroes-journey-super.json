@@ -13,6 +13,11 @@
         "a thousand faces",
         "thousand faces"
       ],
+      "choices": [
+        "The Golden Bough",
+        "The Masks of God",
+        "Man and His Symbols"
+      ],
       "explanation": "Campbell compared myths from every continent and argued that their heroes follow one shared path: departure, initiation, return."
     },
     {
@@ -24,6 +29,11 @@
         "monomyth",
         "the monomyth",
         "mono myth"
+      ],
+      "choices": [
+        "Archetype",
+        "Ur-myth",
+        "Mythologem"
       ],
       "explanation": "One story, endlessly retold—Campbell said the hero 'ventures forth from the world of common day into a region of supernatural wonder.'"
     },
@@ -38,6 +48,11 @@
         "finnegans",
         "the wake"
       ],
+      "choices": [
+        "Ulysses",
+        "Dubliners",
+        "A Portrait of the Artist as a Young Man"
+      ],
       "explanation": "Campbell was a Joyce scholar—he co-wrote 'A Skeleton Key to Finnegans Wake' in 1944, five years before his own book."
     },
     {
@@ -48,6 +63,11 @@
         "George Lucas",
         "george lucas",
         "lucas"
+      ],
+      "choices": [
+        "Steven Spielberg",
+        "Francis Ford Coppola",
+        "Stanley Kubrick"
       ],
       "explanation": "Lucas read Campbell while drafting Star Wars and later called him 'my Yoda.' Luke Skywalker's arc follows the monomyth beat for beat."
     },
@@ -60,6 +80,11 @@
         "skywalker ranch",
         "skywalker",
         "the ranch"
+      ],
+      "choices": [
+        "Esalen Institute",
+        "American Zoetrope",
+        "Hearst Castle"
       ],
       "explanation": "Moyers taped five of the six episodes at the ranch over Campbell's last two summers. The series aired in 1988, the year after he died."
     }

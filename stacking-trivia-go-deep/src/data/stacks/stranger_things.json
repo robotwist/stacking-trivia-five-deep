@@ -11,6 +11,11 @@
         "hawkins",
         "hawkins indiana"
       ],
+      "choices": [
+        "Montauk",
+        "Derry",
+        "Haddonfield"
+      ],
       "hint": "This Indiana town has some strange secrets"
     },
     {
@@ -22,6 +27,11 @@
         "dungeons and dragons",
         "d&d",
         "dnd"
+      ],
+      "choices": [
+        "Monopoly",
+        "Trivial Pursuit",
+        "Battleship"
       ],
       "hint": "Will gets captured by the Demogorgon in this game"
     },
@@ -35,6 +45,11 @@
         "eggos",
         "waffles"
       ],
+      "choices": [
+        "Pop-Tarts",
+        "Reese's Pieces",
+        "Twinkies"
+      ],
       "hint": "L'eggo my..."
     },
     {
@@ -45,6 +60,11 @@
         "The Upside Down",
         "the upside down",
         "upside down"
+      ],
+      "choices": [
+        "The Void",
+        "The Phantom Zone",
+        "The Nether"
       ],
       "hint": "Everything is dark and decaying in this place"
     },
@@ -57,6 +77,11 @@
         "hawkins national laboratory",
         "hawkins lab",
         "the lab"
+      ],
+      "choices": [
+        "Los Alamos National Laboratory",
+        "Starcourt Research Center",
+        "Area 51"
       ],
       "hint": "Dr. Brenner's workplace"
     }

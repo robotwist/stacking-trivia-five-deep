@@ -21,7 +21,8 @@ vi.mock('../../utils/textUtils', () => ({
 vi.mock('../../utils/scoreUtils', () => ({
   calculateQuestionScore: vi.fn(),
   getCrowdMultiplier: vi.fn(() => 1),
-  calculateMaxScore: vi.fn(() => 310)
+  calculateMaxScore: vi.fn(() => 310),
+  applyChoicesPenalty: vi.fn((points) => Math.ceil(points / 2))
 }))
 
 import { checkAnswerMatch } from '../../utils/textUtils'
@@ -227,6 +228,63 @@ describe('GameStack Scoring System', () => {
 
     const [finalScore, , answered, accuracy] = mockOnComplete.mock.calls[0]
     expect([finalScore, answered, accuracy]).toEqual([10, 2, 50])
+  })
+
+  it('the choices lifeline shows the answer plus three decoys and halves the points', async () => {
+    const user = userEvent.setup()
+    const stack = {
+      title: 'Choices Stack',
+      questions: [
+        { question: 'Who bought it?', answer: 'Anna Boch', acceptedAnswers: ['anna boch'], choices: ['Theo van Gogh', 'Paul Gauguin', 'Dr. Paul Gachet'] },
+        { question: 'Q2', answer: 'Two', acceptedAnswers: ['two'], choices: ['One', 'Three', 'Four'] },
+      ],
+    }
+    render(<GameStack stackData={stack} onComplete={mockOnComplete} />)
+
+    expect(screen.queryByRole('button', { name: 'Paul Gauguin' })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /show 4 choices/i }))
+
+    for (const name of ['Anna Boch', 'Theo van Gogh', 'Paul Gauguin', 'Dr. Paul Gachet']) {
+      expect(screen.getByRole('button', { name })).toBeInTheDocument()
+    }
+    await user.click(screen.getByRole('button', { name: 'Anna Boch' }))
+
+    expect(screen.getByText(/correct! \+5 points/i)).toBeInTheDocument()
+    expect(screen.getByLabelText('Level 1: correct with choices')).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: /go deeper/i }))
+    expect(screen.queryByRole('button', { name: 'Three' })).not.toBeInTheDocument()
+  })
+
+  it('picking a decoy ends the dive', async () => {
+    const user = userEvent.setup()
+    const stack = {
+      title: 'Choices Stack',
+      questions: [
+        { question: 'Who bought it?', answer: 'Anna Boch', acceptedAnswers: ['anna boch'], choices: ['Theo van Gogh', 'Paul Gauguin', 'Dr. Paul Gachet'] },
+      ],
+    }
+    render(<GameStack stackData={stack} onComplete={mockOnComplete} />)
+
+    await user.click(screen.getByRole('button', { name: /show 4 choices/i }))
+    await user.click(screen.getByRole('button', { name: 'Paul Gauguin' }))
+    expect(screen.getByText(/the dive ends here/i)).toBeInTheDocument()
+  })
+
+  it('kids stacks show the choices up front at full points', async () => {
+    const user = userEvent.setup()
+    const stack = {
+      title: 'Kids Stack',
+      choicesByDefault: true,
+      questions: [
+        { question: 'Fastest land animal?', answer: 'Cheetah', acceptedAnswers: ['cheetah'], choices: ['Lion', 'Horse', 'Gazelle'] },
+      ],
+    }
+    render(<GameStack stackData={stack} onComplete={mockOnComplete} />)
+
+    expect(screen.queryByRole('textbox')).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Cheetah' }))
+    expect(screen.getByText(/correct! \+10 points/i)).toBeInTheDocument()
   })
 
   it('skips the deeper-mode offer when the bonus round has no questions', async () => {

@@ -1,6 +1,7 @@
 {
   "title": "Animals: Wild Wonders",
   "description": "Speed, size, and survival—remarkable creatures in five facts.",
+  "choicesByDefault": true,
   "questions": [
     {
       "level": 1,
@@ -10,6 +11,11 @@
         "cheetah",
         "the cheetah",
         "cheetahs"
+      ],
+      "choices": [
+        "Lion",
+        "Pronghorn",
+        "Gazelle"
       ],
       "hint": "Spotted cat that can sprint 70 mph"
     },
@@ -23,6 +29,11 @@
         "three seconds",
         "3 seconds"
       ],
+      "choices": [
+        "Seven",
+        "Ten",
+        "Twenty"
+      ],
       "hint": "Less than five seconds"
     },
     {
@@ -33,6 +44,11 @@
         "blue whale",
         "blue whales",
         "balaenoptera musculus"
+      ],
+      "choices": [
+        "African elephant",
+        "Whale shark",
+        "Sperm whale"
       ],
       "hint": "An ocean giant bigger than any dinosaur"
     },
@@ -45,6 +61,11 @@
         "krill shrimp",
         "euphausiids"
       ],
+      "choices": [
+        "Sardines",
+        "Jellyfish",
+        "Barnacles"
+      ],
       "hint": "Swarms of small ocean crustaceans"
     },
     {
@@ -55,6 +76,11 @@
         "penguin",
         "penguins",
         "emperor penguin"
+      ],
+      "choices": [
+        "Ostrich",
+        "Magpie",
+        "Toucan"
       ],
       "hint": "Lives in Antarctica and loves fish"
     }

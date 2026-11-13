@@ -11,6 +11,11 @@
         "muhammad ali",
         "ali",
         "cassius clay"
+      ],
+      "choices": [
+        "Joe Frazier",
+        "George Foreman",
+        "Sonny Liston"
       ]
     },
     {
@@ -23,6 +28,11 @@
         "rome 1960",
         "1960",
         "rome"
+      ],
+      "choices": [
+        "1952 Helsinki",
+        "1956 Melbourne",
+        "1964 Tokyo"
       ]
     },
     {
@@ -34,6 +44,11 @@
         "threw it in a river",
         "threw it away",
         "threw it in the ohio river"
+      ],
+      "choices": [
+        "Sold it to a pawnshop",
+        "Gave it to his mother",
+        "Buried it in his backyard"
       ]
     },
     {
@@ -46,6 +61,11 @@
         "racism",
         "segregation",
         "discrimination"
+      ],
+      "choices": [
+        "The Vietnam draft",
+        "Religious persecution",
+        "Unfair judging"
       ]
     },
     {
@@ -57,6 +77,11 @@
         "nineteen ninety-six",
         "nineteen ninety six",
         "atlanta 1996"
+      ],
+      "choices": [
+        "1974",
+        "1984",
+        "2004"
       ]
     }
   ],

@@ -11,6 +11,11 @@
         "ridley scott",
         "scott",
         "ridley"
+      ],
+      "choices": [
+        "James Cameron",
+        "Denis Villeneuve",
+        "Terry Gilliam"
       ]
     },
     {
@@ -22,6 +27,11 @@
         "twenty nineteen",
         "november 2019",
         "year 2019"
+      ],
+      "choices": [
+        "1997",
+        "2032",
+        "2117"
       ]
     },
     {
@@ -33,6 +43,11 @@
         "rick deckard",
         "deckard",
         "deckard rick"
+      ],
+      "choices": [
+        "Roy Batty",
+        "Dave Holden",
+        "Officer K"
       ]
     },
     {
@@ -44,6 +59,11 @@
         "tyrell corporation",
         "tyrell",
         "tyrell corp"
+      ],
+      "choices": [
+        "Wallace Corporation",
+        "Weyland-Yutani",
+        "Cyberdyne Systems"
       ]
     },
     {
@@ -56,6 +76,11 @@
         "empathic response",
         "emotional response",
         "lack of empathy"
+      ],
+      "choices": [
+        "Memory",
+        "Intelligence",
+        "Honesty"
       ]
     }
   ],

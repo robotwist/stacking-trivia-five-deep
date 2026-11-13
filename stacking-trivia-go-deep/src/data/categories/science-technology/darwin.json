@@ -14,6 +14,11 @@
         "origin species",
         "on the origin of species"
       ],
+      "choices": [
+        "The Descent of Man",
+        "Principles of Geology",
+        "Zoonomia"
+      ],
       "hint": "It's about the 'origin' of all living things and their different types"
     },
     {
@@ -26,6 +31,11 @@
         "The Beagle",
         "hms beagle",
         "H.M.S. Beagle"
+      ],
+      "choices": [
+        "HMS Endeavour",
+        "HMS Bounty",
+        "HMS Challenger"
       ],
       "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world"
     },
@@ -41,6 +51,11 @@
         "galapagos islands",
         "galápagos islands"
       ],
+      "choices": [
+        "Society Islands",
+        "Falkland Islands",
+        "Hawaiian Islands"
+      ],
       "hint": "These volcanic islands are off the coast of Ecuador, famous for unique species"
     },
     {
@@ -54,6 +69,11 @@
         "selection natural",
         "evolutionary selection"
       ],
+      "choices": [
+        "genetic drift",
+        "acquired characteristics",
+        "artificial selection"
+      ],
       "hint": "Nature 'selects' the best traits, or only the 'fittest' survive"
     },
     {
@@ -66,6 +86,11 @@
         "religious studies",
         "theology studies",
         "christian theology"
+      ],
+      "choices": [
+        "medicine",
+        "law",
+        "botany"
       ],
       "hint": "He originally studied to become a clergyman and understand God's word"
     }

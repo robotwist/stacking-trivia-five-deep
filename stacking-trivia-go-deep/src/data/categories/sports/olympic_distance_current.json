@@ -11,6 +11,11 @@
         "emmanuel korir",
         "korir",
         "emmanuel kiprono korir"
+      ],
+      "choices": [
+        "David Rudisha",
+        "Donavan Brazier",
+        "Peter Bol"
       ]
     },
     {
@@ -23,6 +28,11 @@
         "rotich",
         "ferguson cheruiyot rotich"
       ],
+      "choices": [
+        "Timothy Cheruiyot",
+        "Wycliffe Kinyamal",
+        "Emmanuel Wanyonyi"
+      ],
       "explanation": "Poland's Patryk Dobek took bronze behind the two Kenyans."
     },
     {
@@ -34,6 +44,11 @@
         "athing mu",
         "mu",
         "athing"
+      ],
+      "choices": [
+        "Raevyn Rogers",
+        "Faith Kipyegon",
+        "Ajeé Wilson"
       ]
     },
     {
@@ -45,6 +60,11 @@
         "keely hodgkinson",
         "hodgkinson",
         "keely"
+      ],
+      "choices": [
+        "Raevyn Rogers",
+        "Jemma Reekie",
+        "Laura Muir"
       ]
     },
     {
@@ -58,6 +78,11 @@
         "uk",
         "united kingdom",
         "england"
+      ],
+      "choices": [
+        "Ireland",
+        "Australia",
+        "New Zealand"
       ]
     }
   ],

@@ -7,15 +7,34 @@ export const getSiteOrigin = () => {
   return import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL
 }
 
-export const parsePlayParams = () => {
+export type Challenge = { score: number; code?: string; name?: string }
+
+const MAX_NAME_LENGTH = 24
+
+export const parsePlayParams = (): { stack?: string; category?: string; challenge?: Challenge } => {
   try {
     const url = new URL(window.location.href)
     const stack = url.searchParams.get('stack') || undefined
     const category = url.searchParams.get('category') || undefined
-    return { stack, category }
+    const vs = Number(url.searchParams.get('vs'))
+    const code = (url.searchParams.get('r') || '').replace(/[^gyrw]/g, '').slice(0, 10) || undefined
+    const name = (url.searchParams.get('n') || '').trim().slice(0, MAX_NAME_LENGTH) || undefined
+    const challenge = Number.isFinite(vs) && vs >= 0 && url.searchParams.has('vs')
+      ? { score: Math.round(vs), code, name }
+      : undefined
+    return { stack, category, challenge }
   } catch {
     return {}
   }
+}
+
+/** A /play link that also carries the sender's result, so the friend sees what to beat. */
+export const buildChallengeUrl = (stackKey: string, categoryKey: string | undefined, challenge: Challenge) => {
+  const url = new URL(buildPlayUrl(stackKey, categoryKey))
+  url.searchParams.set('vs', String(challenge.score))
+  if (challenge.code) url.searchParams.set('r', challenge.code)
+  if (challenge.name) url.searchParams.set('n', challenge.name.slice(0, MAX_NAME_LENGTH))
+  return url.toString()
 }
 
 /** Shareable /play URL for bar hosts and post-game invites */

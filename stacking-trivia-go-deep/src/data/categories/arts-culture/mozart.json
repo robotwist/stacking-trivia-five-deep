@@ -12,6 +12,11 @@
         "age 5",
         "5 years old"
       ],
+      "choices": [
+        "3",
+        "9",
+        "12"
+      ],
       "hint": "Before he could even write properly, he was creating music"
     },
     {
@@ -24,6 +29,11 @@
         "salzburg austria",
         "austria"
       ],
+      "choices": [
+        "Vienna",
+        "Munich",
+        "Prague"
+      ],
       "hint": "Known for its salt trade and baroque architecture, now famous for Mozart tours"
     },
     {
@@ -34,6 +44,11 @@
         "Don Giovanni",
         "don giovanni",
         "Don Juan"
+      ],
+      "choices": [
+        "The Magic Flute",
+        "Così fan tutte",
+        "The Marriage of Figaro"
       ],
       "hint": "Italian for 'Sir John' - about a legendary seducer who meets a supernatural end"
     },
@@ -48,6 +63,11 @@
         "the jupiter",
         "jupiter"
       ],
+      "choices": [
+        "Saturn",
+        "Mercury",
+        "Mars"
+      ],
       "hint": "Named after the king of Roman gods - his most majestic symphony"
     },
     {
@@ -59,6 +79,11 @@
         "requiem",
         "Requiem Mass",
         "Requiem in D minor"
+      ],
+      "choices": [
+        "Coronation Mass",
+        "Great Mass in C minor",
+        "Ave verum corpus"
       ],
       "hint": "A mass for the dead, left unfinished when the composer himself died"
     }

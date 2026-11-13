@@ -13,6 +13,11 @@
         "dwarf",
         "dvergar"
       ],
+      "choices": [
+        "Elves",
+        "Giants",
+        "Trolls"
+      ],
       "explanation": "In the Norse original, 'Gandálfr' means something like 'wand-elf'—and he's listed among the dwarves, not the wizards."
     },
     {
@@ -26,6 +31,11 @@
         "the edda",
         "edda"
       ],
+      "choices": [
+        "Heimskringla",
+        "Völsunga saga",
+        "Landnámabók"
+      ],
       "explanation": "The 'Dvergatal' (tally of dwarves) in the Poetic Edda supplied Dwalin, Balin, Kili, Fili, Bombur, Thorin—nearly the whole company in The Hobbit."
     },
     {
@@ -37,6 +47,11 @@
         "oakenshield",
         "oaken shield",
         "oaken-shield"
+      ],
+      "choices": [
+        "Ironfoot",
+        "Stonehelm",
+        "Firebeard"
       ],
       "explanation": "In the poem Eikinskjaldi is a separate dwarf. Tolkien invented the story of Thorin using an oak branch as a shield."
     },
@@ -50,6 +65,11 @@
         "gandalfr",
         "gandálfr"
       ],
+      "choices": [
+        "Durin",
+        "Dwalin",
+        "Thráin"
+      ],
       "explanation": "Christopher Tolkien found the note: 'Gandalf was originally chief Dwarf (= Thorin).' Faithful to the Edda, the name started out on a dwarf."
     },
     {
@@ -61,6 +81,11 @@
         "bladorthin",
         "blad orthin",
         "bladorthen"
+      ],
+      "choices": [
+        "Radagast",
+        "Mithrandir",
+        "Medwed"
       ],
       "hint": "It starts with 'Blad-'",
       "explanation": "Bladorthin survives as a dead king mentioned once in The Hobbit—the only trace of the wizard's first name."

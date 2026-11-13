@@ -12,6 +12,11 @@
         "platon",
         "plato of athens"
       ],
+      "choices": [
+        "Xenophon",
+        "Pythagoras",
+        "Heraclitus"
+      ],
       "explanation": "After Socrates was executed in 399 BC, Plato turned his teacher's conversations into the dialogues that still anchor Western philosophy."
     },
     {
@@ -25,6 +30,11 @@
         "plato's academy",
         "akademia"
       ],
+      "choices": [
+        "Lyceum",
+        "Stoa",
+        "Agora"
+      ],
       "explanation": "The grove was named for the hero Akademos—and every 'academy' since borrows the name."
     },
     {
@@ -36,6 +46,11 @@
         "aristotle",
         "aristoteles",
         "aristotle of stagira"
+      ],
+      "choices": [
+        "Epicurus",
+        "Diogenes",
+        "Zeno of Citium"
       ],
       "explanation": "Aristotle arrived around age 17 and stayed until Plato died in 347 BC—then went on to disagree with his teacher about almost everything."
     },
@@ -50,6 +65,11 @@
         "alexander iii",
         "alexander of macedon"
       ],
+      "choices": [
+        "Pyrrhus of Epirus",
+        "Demetrius Poliorcetes",
+        "Cyrus the Great"
+      ],
       "explanation": "From about 343 BC, Aristotle taught the young Alexander—who would carry Greek culture from Egypt to India."
     },
     {
@@ -62,6 +82,11 @@
         "boukephalas",
         "bucephalas",
         "bukephalos"
+      ],
+      "choices": [
+        "Incitatus",
+        "Marengo",
+        "Pegasus"
       ],
       "hint": "The name means 'ox-head'",
       "explanation": "Alexander noticed the horse was afraid of its own shadow and turned it toward the sun. He later named a city in its honor."

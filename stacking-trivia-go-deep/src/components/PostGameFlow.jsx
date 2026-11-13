@@ -2,7 +2,24 @@ import { useState } from 'react';
 import { submitFeedback } from '../services/feedbackService';
 import FeedbackModal from './FeedbackModal';
 import { shareRun } from '../utils/share.js';
-import { buildResultLadder } from '../utils/playerRecords';
+import { buildResultCode, ladderFromCode } from '../utils/playerRecords';
+
+const PLAYER_NAME_KEY = 'deepstack_player_name';
+
+const readPlayerName = () => {
+  try {
+    return localStorage.getItem(PLAYER_NAME_KEY) || '';
+  } catch {
+    return '';
+  }
+};
+
+const getHeadToHead = (score, challenge) => {
+  const rival = challenge.name || 'Your friend';
+  if (score > challenge.score) return `You beat ${rival}!`;
+  if (score === challenge.score) return `Dead heat with ${rival}.`;
+  return `${rival} wins this one.`;
+};
 
 const getHeadline = (levelsCleared, totalLevels) => {
   if (levelsCleared >= totalLevels) return 'Perfect dive!';
@@ -20,6 +37,8 @@ const PostGameFlow = ({
   isNewBest = false,
   previousBest = null,
   suggestions = [],
+  challenge = null,
+  dailyNumber = null,
   onPlayStack,
   onPlayAgain,
   onReturnToMenu,
@@ -27,14 +46,24 @@ const PostGameFlow = ({
   const [revealRest, setRevealRest] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
   const [toast, setToast] = useState('');
+  const [playerName, setPlayerName] = useState(readPlayerName);
 
   const questions = stack?.questions || [];
   const totalLevels = questions.length || 5;
   const mainAnswers = answers.filter((a) => !a.deeper);
   const deeperAnswers = answers.filter((a) => a.deeper);
   const levelsCleared = mainAnswers.filter((a) => a.correct).length;
-  const ladder = buildResultLadder(answers, totalLevels);
+  const resultCode = buildResultCode(answers, totalLevels);
+  const ladder = ladderFromCode(resultCode);
   const hasUnseenLevels = mainAnswers.length < totalLevels;
+
+  const handleNameChange = (e) => {
+    const name = e.target.value.slice(0, 24);
+    setPlayerName(name);
+    try {
+      localStorage.setItem(PLAYER_NAME_KEY, name);
+    } catch { /* best-effort */ }
+  };
 
   const flash = (message) => {
     setToast(message);
@@ -48,9 +77,11 @@ const PostGameFlow = ({
       categoryKey,
       score,
       maxScore,
-      ladder,
+      code: resultCode,
+      playerName: playerName.trim() || undefined,
+      dailyNumber,
     });
-    if (result === 'copied') flash('Result copied—paste it to challenge a friend');
+    if (result === 'copied') flash('Challenge link copied—paste it to a friend');
   };
 
   return (
@@ -76,13 +107,42 @@ const PostGameFlow = ({
             )}
           </div>
 
+          {challenge && (
+            <div className="px-5 pt-5 text-center">
+              <p className="text-xl font-bold text-amber-800 dark:text-amber-200">{getHeadToHead(score, challenge)}</p>
+              <div className="mt-2 flex justify-center gap-6 text-sm text-gray-700 dark:text-gray-200">
+                <span>You: <strong>{score}</strong> <span className="tracking-widest">{ladder}</span></span>
+                <span>
+                  {challenge.name || 'Friend'}: <strong>{challenge.score}</strong>{' '}
+                  {challenge.code && <span className="tracking-widest">{ladderFromCode(challenge.code)}</span>}
+                </span>
+              </div>
+            </div>
+          )}
+
+          <div className="px-5 pt-5">
+            <label htmlFor="challenge-name" className="block text-sm text-gray-600 dark:text-gray-300 mb-1">
+              Sign your challenge (optional)
+            </label>
+            <input
+              id="challenge-name"
+              type="text"
+              value={playerName}
+              onChange={handleNameChange}
+              placeholder="Your name"
+              maxLength={24}
+              autoComplete="nickname"
+              className="w-full px-3 py-2 rounded-lg border-2 border-amber-200 dark:border-amber-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+            />
+          </div>
+
           <div className="p-5 flex flex-col sm:flex-row gap-3">
             <button
               type="button"
               onClick={handleShare}
               className="flex-1 px-5 py-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-semibold"
             >
-              Challenge a friend
+              {challenge ? 'Send it back' : 'Challenge a friend'}
             </button>
             <button
               type="button"
@@ -103,18 +163,19 @@ const PostGameFlow = ({
               const answer = mainAnswers[i];
               const seen = !!answer;
               const visible = seen || revealRest;
-              const status = !seen ? 'unseen' : answer.correct ? 'correct' : 'missed';
+              const status = !seen ? 'unseen' : !answer.correct ? 'missed' : answer.usedChoices ? 'assisted' : 'correct';
               return (
                 <li key={i} className="flex gap-3">
                   <span
                     className={`mt-0.5 shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
                       status === 'correct' ? 'bg-green-600 text-white'
+                        : status === 'assisted' ? 'bg-yellow-400 text-gray-900'
                         : status === 'missed' ? 'bg-red-500 text-white'
                           : 'bg-amber-100 dark:bg-gray-700 text-amber-700 dark:text-amber-300'
                     }`}
-                    aria-label={`Level ${i + 1} ${status}`}
+                    aria-label={`Level ${i + 1} ${status === 'assisted' ? 'correct with choices' : status}`}
                   >
-                    {status === 'correct' ? '✓' : status === 'missed' ? '✗' : i + 1}
+                    {status === 'correct' || status === 'assisted' ? '✓' : status === 'missed' ? '✗' : i + 1}
                   </span>
                   <div className="min-w-0">
                     {visible ? (

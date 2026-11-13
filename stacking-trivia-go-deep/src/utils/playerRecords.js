@@ -117,16 +117,36 @@ export const pickSurpriseStack = (stackKeys, { exclude = [], random = Math.rando
   return pool[Math.floor(random() * pool.length)]
 }
 
+const LADDER_EMOJI = { g: '🟩', y: '🟨', r: '🟥', w: '⬜' }
+
 /**
- * Spoiler-free result grid for sharing, e.g. "🟩🟩🟩🟥⬜".
- * @param {{ correct: boolean, deeper?: boolean }[]} answers
+ * Compact per-level result: g = typed it, y = needed choices, r = missed, w = never reached.
+ * Small enough to ride along in a challenge link.
+ * @param {{ correct: boolean, usedChoices?: boolean, deeper?: boolean }[]} answers
  * @param {number} totalLevels
  */
-export const buildResultLadder = (answers, totalLevels) => {
+export const buildResultCode = (answers, totalLevels) => {
   const main = answers.filter((a) => !a.deeper)
   return Array.from({ length: totalLevels }, (_, i) => {
     const answer = main[i]
-    if (!answer) return '⬜'
-    return answer.correct ? '🟩' : '🟥'
+    if (!answer) return 'w'
+    if (!answer.correct) return 'r'
+    return answer.usedChoices ? 'y' : 'g'
   }).join('')
+}
+
+/** Spoiler-free result grid for sharing, e.g. "🟩🟩🟨🟥⬜". */
+export const ladderFromCode = (code = '') =>
+  [...code].map((c) => LADDER_EMOJI[c] || '').join('')
+
+export const buildResultLadder = (answers, totalLevels) =>
+  ladderFromCode(buildResultCode(answers, totalLevels))
+
+const DAILY_EPOCH = new Date(2026, 0, 1)
+
+/** "Daily #N" numbering for share text, counted from Jan 1, 2026. */
+export const getDailyNumber = (date = new Date()) => {
+  const start = Date.UTC(DAILY_EPOCH.getFullYear(), DAILY_EPOCH.getMonth(), DAILY_EPOCH.getDate())
+  const today = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+  return Math.floor((today - start) / 86400000) + 1
 }

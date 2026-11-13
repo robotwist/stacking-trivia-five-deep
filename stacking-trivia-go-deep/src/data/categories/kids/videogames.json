@@ -1,6 +1,7 @@
 {
   "title": "Video Games: Pixel Adventures",
   "description": "Arcades to blocky worlds—gaming history in five fun facts.",
+  "choicesByDefault": true,
   "questions": [
     {
       "level": 1,
@@ -10,6 +11,11 @@
         "luigi",
         "luigi mario",
         "brother luigi"
+      ],
+      "choices": [
+        "Wario",
+        "Toad",
+        "Yoshi"
       ],
       "hint": "He wears green"
     },
@@ -22,6 +28,11 @@
         "dk",
         "donkeykong"
       ],
+      "choices": [
+        "Pac-Man",
+        "Space Invaders",
+        "Super Mario Bros."
+      ],
       "hint": "He was originally called Jumpman"
     },
     {
@@ -32,6 +43,11 @@
         "nintendo",
         "nintendo co",
         "nintendo company"
+      ],
+      "choices": [
+        "Sega",
+        "Sony",
+        "Capcom"
       ],
       "hint": "Also makes Zelda and Pokémon"
     },
@@ -44,6 +60,11 @@
         "ds",
         "nintendo dual screen"
       ],
+      "choices": [
+        "Game Boy Advance",
+        "PlayStation Portable",
+        "Game Boy Color"
+      ],
       "hint": "DS stands for Dual Screen"
     },
     {
@@ -54,6 +75,11 @@
         "minecraft",
         "mine craft",
         "mc"
+      ],
+      "choices": [
+        "Roblox",
+        "Fortnite",
+        "Terraria"
       ],
       "hint": "You mine blocks and craft tools"
     }

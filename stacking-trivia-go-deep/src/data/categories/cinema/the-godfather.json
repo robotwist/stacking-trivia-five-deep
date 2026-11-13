@@ -11,6 +11,11 @@
         "francis ford coppola",
         "coppola",
         "francis coppola"
+      ],
+      "choices": [
+        "Martin Scorsese",
+        "Sergio Leone",
+        "Brian De Palma"
       ]
     },
     {
@@ -22,6 +27,11 @@
         "an offer he can't refuse",
         "an offer he cant refuse",
         "offer he can't refuse"
+      ],
+      "choices": [
+        "Sleep with the fishes",
+        "Kiss the ring",
+        "Pay his respects"
       ]
     },
     {
@@ -34,6 +44,11 @@
         "horse head",
         "a horses head",
         "horse's head"
+      ],
+      "choices": [
+        "A dead fish",
+        "A severed hand",
+        "A Black Hand letter"
       ]
     },
     {
@@ -45,6 +60,11 @@
         "khartoum",
         "horse khartoum",
         "racehorse khartoum"
+      ],
+      "choices": [
+        "Seabiscuit",
+        "Secretariat",
+        "Man o' War"
       ]
     },
     {
@@ -57,6 +77,11 @@
         "600000",
         "six hundred thousand",
         "600"
+      ],
+      "choices": [
+        "1 million dollars",
+        "2 million dollars",
+        "5 million dollars"
       ]
     }
   ],

@@ -13,6 +13,11 @@
         "integral calculus",
         "differential and integral calculus"
       ],
+      "choices": [
+        "Topology",
+        "Number theory",
+        "Statistics"
+      ],
       "explanation": "When shown a 1935 'Ripley's Believe It or Not' claiming he failed math, Einstein laughed: 'Before I was fifteen I had mastered differential and integral calculus.'"
     },
     {
@@ -28,6 +33,11 @@
         "roll dice",
         "play dice with the universe"
       ],
+      "choices": [
+        "Make mistakes",
+        "Keep secrets",
+        "Bend the rules"
+      ],
       "explanation": "'I, at any rate, am convinced that He does not throw dice.' It was a jab at quantum randomness—not a statement of religious faith."
     },
     {
@@ -38,6 +48,11 @@
         "Max Born",
         "max born",
         "born"
+      ],
+      "choices": [
+        "Niels Bohr",
+        "Max Planck",
+        "Erwin Schrödinger"
       ],
       "explanation": "Born helped build the very quantum theory Einstein was doubting. The two argued about it in letters for decades."
     },
@@ -50,6 +65,11 @@
         "photoelectric effect",
         "the photoelectric effect",
         "photoelectric"
+      ],
+      "choices": [
+        "General relativity",
+        "Brownian motion",
+        "Compton effect"
       ],
       "explanation": "Relativity was still too controversial for the committee. The 1921 prize cited 'his discovery of the law of the photoelectric effect.'"
     },
@@ -64,6 +84,11 @@
         "franklin delano roosevelt",
         "roosevelt",
         "fdr"
+      ],
+      "choices": [
+        "Harry S. Truman",
+        "Herbert Hoover",
+        "Dwight D. Eisenhower"
       ],
       "explanation": "Leo Szilard drafted the letter; Einstein signed it. He never worked on the Manhattan Project and later called signing it 'the one great mistake in my life.'"
     }

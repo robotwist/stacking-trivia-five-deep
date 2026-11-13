@@ -11,6 +11,11 @@
         "cornhuskers",
         "huskers",
         "nebraska cornhuskers"
+      ],
+      "choices": [
+        "Hawkeyes",
+        "Sooners",
+        "Jayhawks"
       ]
     },
     {
@@ -22,6 +27,11 @@
         "memorial stadium",
         "memorial",
         "the memorial stadium"
+      ],
+      "choices": [
+        "Haymarket Park",
+        "Kinnick Stadium",
+        "Arrowhead Stadium"
       ]
     },
     {
@@ -35,6 +45,11 @@
         "sold out games",
         "sold-out games"
       ],
+      "choices": [
+        "Home wins",
+        "Shutouts",
+        "Bowl games"
+      ],
       "explanation": "The streak began Nov. 3, 1962, passed 400 games in 2024, and is more than twice as long as any other in college sports."
     },
     {
@@ -46,6 +61,11 @@
         "tom osborne",
         "osborne",
         "coach osborne"
+      ],
+      "choices": [
+        "Bob Devaney",
+        "Frank Solich",
+        "Barry Switzer"
       ]
     },
     {
@@ -57,6 +77,11 @@
         "pipeline",
         "the pipeline",
         "nebraska pipeline"
+      ],
+      "choices": [
+        "Blackshirts",
+        "Hogs",
+        "Steel Curtain"
       ]
     }
   ],
