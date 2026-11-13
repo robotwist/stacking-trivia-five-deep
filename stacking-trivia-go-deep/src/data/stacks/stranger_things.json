@@ -1,10 +1,10 @@
 {
   "title": "Stranger Things: Welcome to the Upside Down",
-  "description": "A tabletop game spirals into frozen breakfast, another dimension, and a secret lab.",
+  "description": "A tabletop game spirals into frozen breakfast, another dimension, and a girl with a number for a name.",
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of the town where Stranger Things takes place?",
+      "question": "On November 6, 1983, Will Byers vanishes on his bike ride home through what fictional Indiana town?",
       "answer": "Hawkins",
       "acceptedAnswers": [
         "Hawkins",
@@ -16,11 +16,12 @@
         "Derry",
         "Haddonfield"
       ],
-      "hint": "This Indiana town has some strange secrets"
+      "hint": "This Indiana town has some strange secrets",
+      "explanation": "The Duffer Brothers pitched the show as \"Montauk,\" set on Long Island. Winter shooting there was impractical, so Hawkins was built in Georgia, with downtown Jackson playing the town."
     },
     {
       "level": 2,
-      "question": "In Hawkins, what board game do the boys play in the first episode?",
+      "question": "Hours before Will vanishes, the Hawkins boys wrap up a ten-hour campaign of what tabletop game?",
       "answer": "Dungeons and Dragons",
       "acceptedAnswers": [
         "Dungeons and Dragons",
@@ -33,11 +34,12 @@
         "Trivial Pursuit",
         "Battleship"
       ],
-      "hint": "Will gets captured by the Demogorgon in this game"
+      "hint": "Will gets captured by the Demogorgon in this game",
+      "explanation": "Will needed a 13 to fireball the Demogorgon and rolled a seven. \"The Demogorgon. It got me,\" he tells Mike. That same night, a real monster does."
     },
     {
       "level": 3,
-      "question": "After their Dungeons and Dragons campaign, Eleven's favorite food is what?",
+      "question": "The Dungeons and Dragons party hides a runaway girl named Eleven. What frozen breakfast is her favorite food?",
       "answer": "Eggo waffles",
       "acceptedAnswers": [
         "Eggo waffles",
@@ -50,7 +52,8 @@
         "Reese's Pieces",
         "Twinkies"
       ],
-      "hint": "L'eggo my..."
+      "hint": "L'eggo my...",
+      "explanation": "Hopper later bribes her with a Triple-Decker Eggo Extravaganza: whipped cream, Hershey's Kisses, Reese's Pieces, jelly beans. Real Eggo sales jumped 14% after season 2."
     },
     {
       "level": 4,
@@ -66,25 +69,31 @@
         "The Phantom Zone",
         "The Nether"
       ],
-      "hint": "Everything is dark and decaying in this place"
+      "hint": "Everything is dark and decaying in this place",
+      "explanation": "Eleven names it in \"The Flea and the Acrobat,\" flipping the D&D board to its black side. Mr. Clarke's tightrope-walker analogy supplies the physics."
     },
     {
       "level": 5,
-      "question": "The Upside Down leads back to what Hawkins government laboratory?",
-      "answer": "Hawkins National Laboratory",
+      "question": "Eleven opened the Upside Down as Dr. Brenner's test subject, but her mother, Terry Ives, gave her a real name first. What is it?",
+      "answer": "Jane",
       "acceptedAnswers": [
-        "Hawkins National Laboratory",
-        "hawkins national laboratory",
-        "hawkins lab",
-        "the lab"
+        "Jane",
+        "jane",
+        "jane ives",
+        "jane hopper"
       ],
       "choices": [
-        "Los Alamos National Laboratory",
-        "Starcourt Research Center",
-        "Area 51"
+        "Kali",
+        "Holly",
+        "Erica"
       ],
-      "hint": "Dr. Brenner's workplace"
+      "explanation": "Terry was a subject of MKUltra, the CIA's real 1953–1973 mind-control program, and Brenner took her baby. Hopper's forged adoption papers finally make her Jane Hopper.",
+      "hint": "Four letters, as plain as a name gets"
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "Judge a show by its cover",
+    "text": "That glowing red title is a modified ITC Benguiat. The Duffers sent the designers a stack of vintage Stephen King paperbacks and asked for the feeling of cracking one open."
+  }
 }

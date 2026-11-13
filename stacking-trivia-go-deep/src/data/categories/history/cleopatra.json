@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Who was the last active pharaoh of Ptolemaic Egypt?",
+      "question": "Which queen, the last active ruler of Ptolemaic Egypt, was reportedly the first of her Greek dynasty to learn Egyptian?",
       "answer": "Cleopatra VII",
       "acceptedAnswers": [
         "Cleopatra VII",
@@ -16,7 +16,8 @@
         "Hatshepsut",
         "Nefertiti",
         "Ramesses II"
-      ]
+      ],
+      "explanation": "The Ptolemies descended from one of Alexander the Great's Macedonian generals. Mind-bender: she lived closer in time to the Moon landing than to the building of the Great Pyramid."
     },
     {
       "level": 2,
@@ -31,7 +32,8 @@
         "Octavian",
         "Marcus Brutus",
         "Marcus Crassus"
-      ]
+      ],
+      "explanation": "Plutarch says she reached him in 48 BC tied up in a bed-sack carried by her ally Apollodorus. The rolled-up carpet came later, courtesy of translators and Hollywood."
     },
     {
       "level": 3,
@@ -46,11 +48,12 @@
         "Alexander Helios",
         "Ptolemy Philadelphus",
         "Ptolemy XIV"
-      ]
+      ],
+      "explanation": "Plutarch says Alexandrians gave him that nickname: \"little Caesar.\" After her death, Octavian had him killed, reportedly advised that too many Caesars was not a good thing."
     },
     {
       "level": 4,
-      "question": "After Caesarion, legend claims Cleopatra ended her reign how?",
+      "question": "Having sent Caesarion away for safety, how does legend say Cleopatra died in 30 BC?",
       "answer": "Snake bite",
       "acceptedAnswers": [
         "Snake bite",
@@ -63,11 +66,12 @@
         "Falling on a sword",
         "Drowning in the Nile",
         "Leaping from a tower"
-      ]
+      ],
+      "explanation": "Even Plutarch, our main source, admitted \"the truth of the matter no one knows\"; another rumor had poison hidden in a hollow comb. Octavian still paraded her image with the serpent."
     },
     {
       "level": 5,
-      "question": "What type of snake was supposedly used in Cleopatra's death?",
+      "question": "Cleopatra's legendary snake bite most likely came from which species—the same serpent that rears on pharaohs' crowns?",
       "answer": "Egyptian cobra",
       "acceptedAnswers": [
         "Egyptian cobra",
@@ -79,7 +83,8 @@
         "Black mamba",
         "Puff adder",
         "Reticulated python"
-      ]
+      ],
+      "explanation": "Ancient writers said \"asp\"; historians who buy the story favor the cobra, whose venom kills quietly. Fitting: the rearing cobra, the uraeus, was Egypt's royal emblem. Others doubt any snake."
     }
   ],
   "image": "egyptian-royal-crown.jpg",

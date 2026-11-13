@@ -1,29 +1,30 @@
 {
   "title": "The Goonies: Never Say Die",
-  "description": "An attic map, a pirate legend, and a candy-bar friendship—five adventure beats.",
+  "description": "An attic map, a pirate legend, and a monster that never made the movie—five Goonies deep cuts.",
   "questions": [
     {
       "level": 1,
       "question": "In the Walsh family attic, crammed with their dad's museum pieces, what does Mikey find that starts the hunt?",
-      "answer": "A treasure map in the attic",
+      "answer": "A treasure map",
       "acceptedAnswers": [
-        "A treasure map in the attic",
-        "a treasure map in the attic",
+        "A treasure map",
         "treasure map",
         "map",
         "the map",
-        "treasure map in the attic"
+        "a map",
+        "pirate map"
       ],
       "choices": [
         "A pirate's diary in a trunk",
         "A skeleton key in the basement",
         "A message in a bottle on the beach"
       ],
-      "hint": "It was hidden in his father's belongings"
+      "hint": "It was hidden in his father's belongings",
+      "explanation": "Steven Spielberg dreamed up the story and Chris Columbus wrote it. The stakes: developers are about to foreclose on the Goon Docks and build a country-club golf course."
     },
     {
       "level": 2,
-      "question": "That treasure map leads the Goonies to the booty of what one-eyed pirate?",
+      "question": "That treasure map leads the Goonies to the booty of what legendary pirate?",
       "answer": "One-Eyed Willy",
       "acceptedAnswers": [
         "One-Eyed Willy",
@@ -36,29 +37,30 @@
         "Captain Kidd",
         "Long John Silver"
       ],
-      "hint": "He's missing an important facial feature"
+      "hint": "He's missing an important facial feature",
+      "explanation": "Donner kept Willy's 105-foot ship, the Inferno, hidden from the kids until the reveal. Martha Plimpton says her gasp was real; Sean Astin admits he peeked."
     },
     {
       "level": 3,
-      "question": "Before the hunt for One-Eyed Willy's treasure begins, what must Chunk do for the Truffle Shuffle?",
-      "answer": "Lift his shirt and shake his belly",
+      "question": "Before the hunt for One-Eyed Willy's treasure, Chunk must perform what belly-jiggling dance to get through the Walshes' gate?",
+      "answer": "The Truffle Shuffle",
       "acceptedAnswers": [
-        "Lift his shirt and shake his belly",
-        "lift his shirt and shake his belly",
-        "shake his belly",
+        "The Truffle Shuffle",
+        "the truffle shuffle",
         "truffle shuffle",
-        "belly dance"
+        "truffle-shuffle"
       ],
       "choices": [
-        "Confess all his crimes",
-        "Shout 'Goonies never say die'",
-        "Wear a pirate eye patch"
+        "The Belly Bounce",
+        "The Chunk Wiggle",
+        "The Goon Docks Jig"
       ],
-      "hint": "Come on, do the truffle shuffle!"
+      "hint": "Come on, do the truffle shuffle!",
+      "explanation": "Mouth demands it. Jeff Cohen later admitted he was recovering from chickenpox, so makeup covered the spots on his belly. He grew up to be an entertainment lawyer."
     },
     {
       "level": 4,
-      "question": "After Chunk lifted his shirt for the Truffle Shuffle, the Goonies befriend what deformed Fratelli brother?",
+      "question": "Chunk, of Truffle Shuffle fame, ends up best friends with which Fratelli brother, kept chained in the family's basement?",
       "answer": "Sloth",
       "acceptedAnswers": [
         "Sloth",
@@ -70,25 +72,33 @@
         "Jake",
         "Chester Copperpot"
       ],
-      "hint": "Hey you guys!"
+      "hint": "Hey you guys!",
+      "explanation": "Chunk wins him over with a Baby Ruth (\"Ruth! Ruth! Baby Ruth!\"). Sloth was ex-Raiders lineman John Matuszak; his prosthetic head, radio-controlled eye included, took about five hours to apply."
     },
     {
       "level": 5,
-      "question": "Chunk wins Sloth over with what candy bar?",
-      "answer": "Baby Ruth",
+      "question": "Back on the beach after Sloth's big rescue, Data tells reporters something \"was really scary,\" a creature cut from the movie. What was it?",
+      "answer": "The octopus",
       "acceptedAnswers": [
-        "Baby Ruth",
-        "baby ruth",
-        "babyruth",
-        "ruth"
+        "The octopus",
+        "the octopus",
+        "octopus",
+        "giant octopus",
+        "an octopus",
+        "the giant octopus"
       ],
       "choices": [
-        "Snickers",
-        "Butterfinger",
-        "Oh Henry!"
+        "The bats",
+        "The bone organ",
+        "Chester Copperpot's skeleton"
       ],
-      "hint": "It's named after a famous baseball player's daughter"
+      "explanation": "\"I ad-libbed the line,\" Ke Huy Quan said. \"But in the film there was no octopus and they kept that line.\" The cut scene resurfaced on TV airings and the 2001 DVD.",
+      "hint": "Eight arms, zero minutes of screen time"
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "Eight Arms to Hold You",
+    "text": "In the cut scene, Data scares off the octopus by jamming his Walkman in its mouth, blasting \"Eight Arms to Hold You\" by the Goon Squad. The title borrows the working title of the Beatles' Help!"
+  }
 }

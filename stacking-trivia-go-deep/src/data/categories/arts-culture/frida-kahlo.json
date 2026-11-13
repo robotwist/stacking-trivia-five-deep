@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Which Mexican artist painted 'The Two Fridas'?",
+      "question": "Which Mexican painter showed herself twice, hearts exposed and joined by a single artery, in a famous 1939 canvas?",
       "answer": "Frida Kahlo",
       "acceptedAnswers": [
         "Frida Kahlo",
@@ -16,7 +16,8 @@
         "Diego Rivera",
         "María Izquierdo",
         "Remedios Varo"
-      ]
+      ],
+      "explanation": "That's 'The Two Fridas,' painted the year she and Diego Rivera divorced. She said the Tehuana Frida is the one he loved; the European one, he didn't. They remarried in 1940."
     },
     {
       "level": 2,
@@ -33,11 +34,12 @@
         "Two",
         "Ten",
         "Fourteen"
-      ]
+      ],
+      "explanation": "It left her right leg thin, and kids yelled \"Frida, pata de palo!\" (peg leg). She hid it under extra socks, later long skirts. Some biographers suspect spina bifida instead."
     },
     {
       "level": 3,
-      "question": "What accident at age 18 changed Kahlo's life forever?",
+      "question": "Polio was only the start—at 18, what kind of crash changed Kahlo's life forever?",
       "answer": "Bus accident",
       "acceptedAnswers": [
         "Bus accident",
@@ -50,7 +52,8 @@
         "Bicycle accident",
         "Fall from a horse",
         "House fire"
-      ]
+      ],
+      "explanation": "On Sept. 17, 1925, a streetcar smashed her bus. Her boyfriend recalled a passenger's gold powder spilling over her bleeding body, and onlookers crying \"La bailarina!\""
     },
     {
       "level": 4,
@@ -67,25 +70,28 @@
         "Broken axle",
         "Steel girder",
         "Copper pipe"
-      ]
+      ],
+      "explanation": "\"The handrail pierced me the way a sword pierces a bull,\" she said. Bedridden for months, she began painting, with a special easel and a mirror fixed above her bed."
     },
     {
       "level": 5,
-      "question": "After the handrail injury, roughly how many surgeries did Frida endure?",
-      "answer": "Over 30",
+      "question": "Years of surgeries after the handrail injury, how did Kahlo arrive at her only solo show in Mexico, in April 1953?",
+      "answer": "By ambulance",
       "acceptedAnswers": [
-        "Over 30",
-        "over 30",
-        "30",
-        "more than 30",
-        "thirty",
-        "30+"
+        "By ambulance",
+        "by ambulance",
+        "ambulance",
+        "in an ambulance",
+        "an ambulance",
+        "on a stretcher",
+        "stretcher"
       ],
       "choices": [
-        "About 5",
-        "About 12",
-        "Over 75"
-      ]
+        "In a wheelchair",
+        "On crutches",
+        "She didn't attend"
+      ],
+      "explanation": "Doctors told her to stay home. Instead she greeted guests from her own four-poster bed, moved into the gallery. Months later her right leg was amputated: \"Feet, what do I need you for when I have wings to fly?\""
     }
   ],
   "image": "self-portrait-thorn-necklace.jpg",

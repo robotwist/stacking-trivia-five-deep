@@ -13,6 +13,7 @@ import {
 } from '../../utils/hostNight'
 import { HOST_CHANNEL, toPublicNight } from './hostChannel'
 import { celebratePerfectScore } from '../../utils/celebrations'
+import { track } from '../../utils/analytics'
 
 const RAN_STACKS_KEY = 'deepstack_host_ran_stacks'
 
@@ -76,7 +77,15 @@ export default function HostNight({ gameStacks, categoriesConfig, availableStack
   }, [])
 
   useEffect(() => {
-    if (night.phase === 'final') celebratePerfectScore()
+    if (night.phase !== 'final') return
+    celebratePerfectScore()
+    track('host night finished', {
+      teams: night.teams.length,
+      rounds_planned: night.rounds.length,
+      rounds_played: new Set(night.log.map((e) => e.roundIndex)).size,
+    })
+    // Fire once when the night ends
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [night.phase])
 
   const eligibleTeams = night.settings.diveRule ? night.teams.filter((t) => night.inDive.includes(t.id)) : night.teams
@@ -141,6 +150,14 @@ export default function HostNight({ gameStacks, categoriesConfig, availableStack
 
   const start = () => {
     rememberRanStacks(night.rounds)
+    track('host night started', {
+      teams: night.teams.length,
+      rounds: night.rounds.length,
+      dive_rule: night.settings.diveRule,
+      show_choices: night.settings.showChoices,
+      tv_screen: screenConnected,
+      has_venue: !!night.venue,
+    })
     dispatch({ type: 'START' })
   }
 

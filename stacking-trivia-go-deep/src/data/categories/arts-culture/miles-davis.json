@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Which jazz trumpeter recorded the album 'Kind of Blue'?",
+      "question": "Which trumpeter handed his band only sketches—no rehearsals—for the sessions that became 'Kind of Blue'?",
       "answer": "Miles Davis",
       "acceptedAnswers": [
         "Miles Davis",
@@ -16,7 +16,8 @@
         "Dizzy Gillespie",
         "Chet Baker",
         "Louis Armstrong"
-      ]
+      ],
+      "explanation": "\"I wanted a lot of spontaneity in the playing,\" he wrote in his autobiography. It paid off: the album was certified 5× platinum in the U.S. in 2019, 60 years on."
     },
     {
       "level": 2,
@@ -31,7 +32,8 @@
         "1955",
         "1963",
         "1968"
-      ]
+      ],
+      "explanation": "Two sessions, March 2 and April 22, in Columbia's 30th Street Studio, a converted church in Manhattan. Side one came from day one; side two, seven weeks later."
     },
     {
       "level": 3,
@@ -48,11 +50,11 @@
         "Charlie Parker",
         "Wayne Shorter"
       ],
-      "explanation": "Coltrane played tenor; Cannonball Adderley played alto on the same sessions."
+      "explanation": "Cannonball Adderley played alto beside him. Two weeks after the final session, Trane cut 'Giant Steps'—a blizzard of chord changes, the polar opposite of what Miles wanted here."
     },
     {
       "level": 4,
-      "question": "Coltrane joined Miles in what jazz approach on 'Kind of Blue'?",
+      "question": "Coltrane joined Miles in what new approach—improvising over scales instead of chord changes—on 'Kind of Blue'?",
       "answer": "Modal jazz",
       "acceptedAnswers": [
         "Modal jazz",
@@ -65,11 +67,12 @@
         "Bebop",
         "Hard bop",
         "Free jazz"
-      ]
+      ],
+      "explanation": "On 'So What,' the band rides one Dorian scale for 16 bars, slides up a half step for the 8-bar bridge, then comes home. Pianist Bill Evans helped shape the sound—and wrote the liner notes."
     },
     {
       "level": 5,
-      "question": "Those modal jazz tracks were mostly captured in how many takes?",
+      "question": "Bill Evans's liner notes claimed those modal jazz pieces were each captured in how many complete takes?",
       "answer": "One take",
       "acceptedAnswers": [
         "One take",
@@ -84,7 +87,8 @@
         "Three takes",
         "Eight takes",
         "Twenty takes"
-      ]
+      ],
+      "explanation": "Nearly true: 'Flamenco Sketches' took two. The real twist? A tape machine ran slow on day one, so side one played about a quarter-tone sharp for 33 years, until engineers caught it in 1992."
     }
   ],
   "image": "kind-of-blue-album.jpg",

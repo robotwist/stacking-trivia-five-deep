@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Who directed 'The Godfather'?",
+      "question": "Which director spent The Godfather's shoot convinced Paramount was about to fire him?",
       "answer": "Francis Ford Coppola",
       "acceptedAnswers": [
         "Francis Ford Coppola",
@@ -16,11 +16,12 @@
         "Martin Scorsese",
         "Sergio Leone",
         "Brian De Palma"
-      ]
+      ],
+      "explanation": "He says he nearly got fired three or four times. What saved him? Winning the Patton screenplay Oscar mid-shoot. Scorsese asked, \"How are they going to fire you now?\""
     },
     {
       "level": 2,
-      "question": "Coppola's film gives us a line: 'I'm gonna make him...' (complete it)",
+      "question": "Coppola's Don Vito tells his godson Johnny Fontane, \"I'm gonna make him...\" what?",
       "answer": "An offer he can't refuse",
       "acceptedAnswers": [
         "An offer he can't refuse",
@@ -32,11 +33,12 @@
         "Sleep with the fishes",
         "Kiss the ring",
         "Pay his respects"
-      ]
+      ],
+      "explanation": "Michael later explains how it works: Luca Brasi held a gun to a bandleader's head, and the Don promised \"either his brains or his signature would be on the contract.\""
     },
     {
       "level": 3,
-      "question": "When an offer he can't refuse fails, what does Jack Woltz find in his bed?",
+      "question": "When Hollywood mogul Jack Woltz refuses the Don's offer, what does he wake up to find in his bed?",
       "answer": "A horse's head",
       "acceptedAnswers": [
         "A horse's head",
@@ -49,11 +51,12 @@
         "A dead fish",
         "A severed hand",
         "A Black Hand letter"
-      ]
+      ],
+      "explanation": "Tom Hagen left Woltz's dinner early, explaining that Mr. Corleone \"insists on hearing bad news immediately.\" The Don's reply arrived by morning."
     },
     {
       "level": 4,
-      "question": "That horse's head came from Woltz's prized racehorse—what was it named?",
+      "question": "That horse's head came from Woltz's prized stallion. What was its name?",
       "answer": "Khartoum",
       "acceptedAnswers": [
         "Khartoum",
@@ -65,11 +68,12 @@
         "Seabiscuit",
         "Secretariat",
         "Man o' War"
-      ]
+      ],
+      "explanation": "Woltz proudly shows him off to Hagen and says he won't race him: \"I'm gonna put him out to stud.\" The horse shares its name with Sudan's capital."
     },
     {
       "level": 5,
-      "question": "Woltz brags about how much he paid for Khartoum—how much?",
+      "question": "Woltz boasts that Khartoum is how much money \"on four hooves\"?",
       "answer": "600 thousand dollars",
       "acceptedAnswers": [
         "600 thousand dollars",
@@ -82,7 +86,8 @@
         "1 million dollars",
         "2 million dollars",
         "5 million dollars"
-      ]
+      ],
+      "explanation": "\"I'll bet Russian czars never paid that kind of dough for a single horse,\" Woltz brags. His pride showed the Don exactly where to hit him."
     }
   ],
   "image": "puppet-strings-hand.jpg",
@@ -125,5 +130,9 @@
         "bonus": 800
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The cat was never in the script",
+    "text": "Coppola spotted a stray on set and dropped it in Brando's lap without a word. It purred so loudly that the Don's lines had to be re-recorded, and you can still hear it on the soundtrack."
   }
 }

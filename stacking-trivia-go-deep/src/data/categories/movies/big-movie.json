@@ -1,65 +1,101 @@
 {
-  "title": "Big: Tom Hanks' Magical Coming-of-Age Classic",
+  "title": "Big: Your Wish Is Granted",
+  "description": "A carnival wish, a giant piano, and one very strange party—five steps into Tom Hanks' Big.",
   "image": "toy-store-piano-scene.jpg",
   "imageHint": "Large piano keyboard on the floor of a toy store with someone dancing on the keys",
-  "description": "When 12-year-old Josh Baskin makes a wish to be 'big' at a carnival machine, he gets more than he bargained for in this heartwarming tale of childhood wonder.",
   "category": "movies",
   "questions": [
     {
       "level": 1,
-      "question": "Who plays the adult Josh Baskin after he makes his wish?",
-      "answer": "Tom Hanks",
-      "acceptableAnswers": ["Tom Hanks", "tom hanks"],
-      "explanation": "Tom Hanks delivers an Oscar-nominated performance as the adult Josh, perfectly capturing the innocence and wonder of a child in a man's body."
+      "question": "Too short for a carnival ride, kid Josh Baskin feeds a quarter to what fortune-teller machine and wishes to be big?",
+      "answer": "Zoltar",
+      "acceptedAnswers": [
+        "Zoltar",
+        "zoltar",
+        "zoltar speaks",
+        "the zoltar machine"
+      ],
+      "choices": [
+        "Esmeralda",
+        "Madame Zelda",
+        "Grandma"
+      ],
+      "explanation": "The prop was modeled on a real late-'60s arcade machine called Zoltan. Zoltar Speaks got so famous that a company trademarked the name in 2007 and started selling real ones."
     },
     {
       "level": 2,
-      "question": "What is the name of the carnival fortune-telling machine that grants Josh's wish?",
-      "answer": "Zoltar",
-      "acceptableAnswers": ["Zoltar", "zoltar", "Zoltar Speaks"],
-      "explanation": "The Zoltar fortune-telling machine is the mystical device that transforms young Josh into an adult after he wishes to be 'big.'"
+      "question": "Wish granted by Zoltar, grown-up Josh meets his boss at FAO Schwarz. They stomp out \"Chopsticks\" on the giant floor piano, plus what other duet?",
+      "answer": "Heart and Soul",
+      "acceptedAnswers": [
+        "Heart and Soul",
+        "heart and soul",
+        "heart & soul"
+      ],
+      "choices": [
+        "Für Elise",
+        "The Entertainer",
+        "Twinkle, Twinkle, Little Star"
+      ],
+      "explanation": "Hanks and Robert Loggia practiced on cardboard keyboards at home, and the studio hired doubles just in case. They didn't need them. Penny Marshall added \"Chopsticks.\""
     },
     {
       "level": 3,
-      "question": "What song do Josh and his boss play together on the giant piano at FAO Schwarz?",
-      "answer": "Heart and Soul",
-      "acceptableAnswers": ["Heart and Soul", "heart and soul", "Chopsticks"],
-      "explanation": "Josh and Mr. MacMillan play 'Heart and Soul' on the famous floor piano at FAO Schwarz in one of cinema's most memorable scenes."
+      "question": "The Heart and Soul duet wins Josh a promotion and an invite to a fancy party, where he eats what tiny appetizer row by row, typewriter-style?",
+      "answer": "Baby corn",
+      "acceptedAnswers": [
+        "Baby corn",
+        "baby corn",
+        "baby corns",
+        "mini corn",
+        "baby ear of corn"
+      ],
+      "choices": [
+        "Caviar",
+        "Celery with cream cheese",
+        "Pigs in a blanket"
+      ],
+      "explanation": "Penny Marshall: \"I picked up a piece of corn and just signaled, and he went, 'Yeah, got it.'\" The caviar he spits out was in the script; the corn was pure improv."
     },
     {
       "level": 4,
-      "question": "What toy company does Josh work for as an adult?",
-      "answer": "MacMillan Toy Company",
-      "acceptableAnswers": ["MacMillan Toy Company", "macmillan toy company", "MacMillan", "macmillan"],
-      "explanation": "Josh lands a job at MacMillan Toy Company, where his childlike perspective on toys makes him incredibly valuable to the business."
+      "question": "Baby corn aside, Josh's real gift is toys. When a rival pitches a robot that turns into a building, Josh asks what's fun about that. What's his own big idea?",
+      "answer": "An electronic comic book",
+      "acceptedAnswers": [
+        "An electronic comic book",
+        "electronic comic book",
+        "interactive comic book",
+        "electronic comic",
+        "a computer comic book"
+      ],
+      "choices": [
+        "A talking doll",
+        "A transforming dinosaur",
+        "A board game"
+      ],
+      "explanation": "It's a choose-your-own-adventure story on a handheld screen, basically the text adventure Josh plays at home. Fans later built a real version of that game."
     },
     {
       "level": 5,
-      "question": "What is the name of Josh's love interest at the toy company?",
-      "answer": "Susan Lawrence",
-      "acceptableAnswers": ["Susan Lawrence", "susan lawrence", "Susan", "susan"],
-      "explanation": "Susan Lawrence, played by Elizabeth Perkins, is the marketing executive who falls for Josh's unique charm and childlike wonder."
+      "question": "Long before his comic book pitch, Josh noticed something impossible about Zoltar the night he made his wish. What was it?",
+      "answer": "It was unplugged",
+      "acceptedAnswers": [
+        "It was unplugged",
+        "unplugged",
+        "it wasnt plugged in",
+        "it wasn't plugged in",
+        "not plugged in",
+        "the machine was unplugged"
+      ],
+      "choices": [
+        "It had no coin slot",
+        "Its eyes glowed red",
+        "It knew his name"
+      ],
+      "explanation": "The card says \"Your wish is granted.\" Then Josh looks down and sees the plug lying on the ground. Nobody in the movie ever explains it, and nobody needs to."
     }
   ],
-  "connections": [
-    {
-      "targetStack": "tom-hanks-classics",
-      "sharedThemes": ["Tom Hanks", "1980s", "heartwarming"],
-      "connectionStrength": 3,
-      "trigger": "Tom Hanks' breakout dramatic role that earned him an Oscar nomination"
-    },
-    {
-      "targetStack": "childhood-magic",
-      "sharedThemes": ["growing up", "wishes", "childhood"],
-      "connectionStrength": 2,
-      "trigger": "Magical transformation stories and coming-of-age themes"
-    }
-  ],
-  "qualityScore": 91,
-  "familyRequest": {
-    "originalTopic": "Big the movie",
-    "priority": 1,
-    "generatedAt": "2024-08-10T23:01:00.000Z",
-    "notes": "Tom Hanks classic family film about childhood wishes"
+  "easterEgg": {
+    "title": "The other Josh",
+    "text": "Robert De Niro was actually cast as grown-up Josh until the deal fell apart. Elizabeth Perkins on his version: \"a little more of a horror movie. Robert De Niro wandering around the streets of New York.\""
   }
 }

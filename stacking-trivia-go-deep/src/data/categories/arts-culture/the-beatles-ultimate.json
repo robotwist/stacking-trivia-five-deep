@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Which city were The Beatles formed in?",
+      "question": "John Lennon first met Paul McCartney at a 1957 church fête in Woolton, a suburb of which city?",
       "answer": "Liverpool",
       "acceptedAnswers": [
         "Liverpool",
@@ -17,7 +17,8 @@
         "Manchester",
         "London"
       ],
-      "hint": "A port city in northwest England"
+      "hint": "A port city in northwest England",
+      "explanation": "On July 6, 1957, 15-year-old Paul borrowed John's guitar, retuned it, and tore through Eddie Cochran's 'Twenty Flight Rock,' knowing every word. John was impressed."
     },
     {
       "level": 2,
@@ -33,11 +34,11 @@
         "She Loves You",
         "Twist and Shout"
       ],
-      "explanation": "It topped most UK charts in early 1963 and launched Beatlemania—though the official chart had it at No. 2, so 'From Me to You' counts as their first official No. 1."
+      "explanation": "Lennon wrote it as a slow Roy Orbison–style ballad. George Martin sped it up, then told them, \"Gentlemen, you've just made your first number one\"—though one chart said No. 2."
     },
     {
       "level": 3,
-      "question": "'Please Please Me' was the title track of their debut album—recorded in how many days?",
+      "question": "Their debut LP borrowed the 'Please Please Me' title—in how many days did they record its ten new songs?",
       "answer": "One",
       "acceptedAnswers": [
         "One",
@@ -51,11 +52,11 @@
         "Seven",
         "Ten"
       ],
-      "explanation": "Their first album was famously recorded in one marathon session"
+      "explanation": "On Feb. 11, 1963, they cut 10 songs in under 13 hours for about £400. Last came 'Twist and Shout,' nailed on the first take by a cold-ridden Lennon; after, swallowing felt \"like sandpaper.\""
     },
     {
       "level": 4,
-      "question": "Who managed the Beatles and was called the Fifth Beatle?",
+      "question": "Before that one-day album, who first saw them at Liverpool's Cavern Club in 1961 and became their manager?",
       "answer": "Brian Epstein",
       "acceptedAnswers": [
         "Brian Epstein",
@@ -68,11 +69,11 @@
         "Dick James",
         "Andrew Loog Oldham"
       ],
-      "explanation": "Epstein discovered them at the Cavern Club"
+      "explanation": "He ran the NEMS record shop around the corner, put them in suits, and taught them their deep stage bow. Paul's verdict: \"If anyone was the fifth Beatle, it was Brian.\""
     },
     {
       "level": 5,
-      "question": "After Epstein's death, what was the Beatles' final album recorded together?",
+      "question": "Two years after Epstein's 1967 death, which album became the last one all four Beatles recorded together?",
       "answer": "Abbey Road",
       "acceptedAnswers": [
         "Abbey Road",
@@ -84,7 +85,7 @@
         "The White Album",
         "Revolver"
       ],
-      "explanation": "Let It Be was released later but Abbey Road was their last sessions together"
+      "explanation": "Recorded after the Let It Be sessions but released first. Its working title was 'Everest,' after engineer Geoff Emerick's cigarettes—until they skipped the Himalayas and shot the cover outside."
     }
   ],
   "image": "abbey-road-crossing.jpg",

@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "In what year did Steve Jobs co-found Apple Computer Company with Steve Wozniak?",
+      "question": "Steve Jobs and Steve Wozniak founded Apple on April Fools' Day of what year?",
       "answer": "1976",
       "acceptedAnswers": [
         "1976",
@@ -17,11 +17,12 @@
         "1981",
         "1984"
       ],
-      "hint": "The same year as America's bicentennial celebration"
+      "hint": "The same year as America's bicentennial celebration",
+      "explanation": "A third co-founder, Ronald Wayne, sold his 10% stake back less than two weeks later for $800, a slice later worth billions. No joke."
     },
     {
       "level": 2,
-      "question": "That 1976 garage startup's first mass-produced hit computer was called what?",
+      "question": "The 1976 startup's first mass-produced hit computer, launched in 1977, was called what?",
       "answer": "Apple II",
       "acceptedAnswers": [
         "Apple II",
@@ -35,7 +36,8 @@
         "Lisa",
         "Altair 8800"
       ],
-      "hint": "The Roman numeral for two, this computer had color graphics and was hugely successful"
+      "hint": "The Roman numeral for two, this computer had color graphics and was hugely successful",
+      "explanation": "Mostly Wozniak's design, it shipped with color graphics, and the pioneering VisiCalc spreadsheet made it a business tool. Its profits funded the Mac era and the 1985 fight that pushed Jobs out."
     },
     {
       "level": 3,
@@ -53,11 +55,12 @@
         "General Magic",
         "Be Inc."
       ],
-      "hint": "It was literally what came 'after' Apple for Jobs, spelled with unusual capitalization"
+      "hint": "It was literally what came 'after' Apple for Jobs, spelled with unusual capitalization",
+      "explanation": "Tim Berners-Lee built the first web server and browser on a NeXT at CERN. Apple paid $429 million for NeXT in 1996, and Jobs came along with the deal."
     },
     {
       "level": 4,
-      "question": "NeXT's return to Apple brought what 2007 product that changed smartphones forever?",
+      "question": "NeXT's operating system became the foundation of the software inside what device Jobs unveiled in January 2007?",
       "answer": "iPhone",
       "acceptedAnswers": [
         "iPhone",
@@ -70,11 +73,12 @@
         "iPad",
         "Newton"
       ],
-      "hint": "A phone that starts with 'i' and put the internet in everyone's pocket"
+      "hint": "A phone that starts with 'i' and put the internet in everyone's pocket",
+      "explanation": "Jobs teased \"an iPod, a phone, and an internet communicator\" before revealing one device. Prototypes crashed so often that engineers scripted a \"golden path\" for the demo."
     },
     {
       "level": 5,
-      "question": "Before the iPhone era, Jobs ran what animation studio that created Toy Story and sold to Disney?",
+      "question": "Even after the iPhone, most of Jobs's fortune came not from Apple but from what animation studio he bought in 1986?",
       "answer": "Pixar",
       "acceptedAnswers": [
         "Pixar",
@@ -87,7 +91,8 @@
         "Lucasfilm",
         "Industrial Light & Magic"
       ],
-      "hint": "Named after a computer graphics term, they revolutionized animated movies"
+      "hint": "The studio behind Toy Story",
+      "explanation": "Disney bought it for $7.4 billion in stock in 2006, making Jobs its largest individual shareholder. Not bad for a Lucasfilm graphics unit he got for about $10 million."
     }
   ],
   "imageHint": "🍎 Think different - from garage startup to tech empire 📱",

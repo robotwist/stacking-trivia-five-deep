@@ -1,85 +1,104 @@
 {
-  "title": "Star Wars: A New Hope Deep Dive",
-  "description": "From a desert farm to a famous farewell—Luke's first adventure in five beats.",
+  "title": "Star Wars: The Death Star Rescue",
+  "description": "A short stormtrooper, two secret numbers, and a garbage masher—A New Hope's deepest in-jokes in five steps.",
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of Luke Skywalker's home planet?",
-      "answer": "Tatooine",
+      "question": "Disguised as stormtroopers—one of them \"a little short\"—Luke and Han storm the Death Star to rescue which princess?",
+      "answer": "Leia",
       "acceptedAnswers": [
-        "Tatooine",
-        "tatooine",
-        "tatooine planet",
-        "planet tatooine"
+        "Leia",
+        "leia",
+        "princess leia",
+        "leia organa",
+        "princess leia organa"
       ],
       "choices": [
-        "Naboo",
-        "Dagobah",
-        "Alderaan"
-      ]
+        "Padmé",
+        "Mon Mothma",
+        "Jyn Erso"
+      ],
+      "explanation": "Her first words to her rescuer: \"Aren't you a little short for a stormtrooper?\" Carrie Fisher was 19 during filming, and later became one of Hollywood's go-to script doctors."
     },
     {
       "level": 2,
-      "question": "On Tatooine, who becomes Luke's mentor in using the Force?",
-      "answer": "Obi-Wan Kenobi",
+      "question": "On the way to Leia, Luke bluffs that Chewbacca is a \"prisoner transfer from cell block\" what number—a nod to Lucas's first feature film?",
+      "answer": "1138",
       "acceptedAnswers": [
-        "Obi-Wan Kenobi",
-        "obi-wan kenobi",
-        "obi wan kenobi",
-        "ben kenobi"
+        "1138",
+        "eleven thirty-eight",
+        "eleven thirty eight",
+        "cell block 1138",
+        "thx 1138"
       ],
       "choices": [
-        "Qui-Gon Jinn",
-        "Yoda",
-        "Owen Lars"
-      ]
+        "421",
+        "327",
+        "94"
+      ],
+      "explanation": "THX 1138 (1971) flopped, so almost nobody caught it in 1977. Lucas has hidden 1138 in the saga ever since—on monitors, battle droids, even Boushh's helmet in Return of the Jedi.",
+      "hint": "His first film was called THX ____"
     },
     {
       "level": 3,
-      "question": "Obi-Wan gives Luke what iconic Jedi weapon?",
-      "answer": "Lightsaber",
+      "question": "After the cell block 1138 bluff, Han learns Leia is held in cell what number—a tribute to an experimental short that inspired Lucas?",
+      "answer": "2187",
       "acceptedAnswers": [
-        "Lightsaber",
-        "lightsaber",
-        "light saber"
+        "2187",
+        "twenty-one eighty-seven",
+        "twenty one eighty seven",
+        "cell 2187",
+        "21-87"
       ],
       "choices": [
-        "Blaster",
-        "Bowcaster",
-        "Vibroblade"
-      ]
+        "AA-23",
+        "3263827",
+        "1977"
+      ],
+      "explanation": "Arthur Lipsett's 1963 collage film 21-87 obsessed young Lucas; some trace the idea of \"the Force\" to a line in it. Leia's cell sits in Detention Block AA-23."
     },
     {
       "level": 4,
-      "question": "Lightsaber in hand, Luke escapes Tatooine aboard what famous smuggler's ship?",
-      "answer": "Millennium Falcon",
+      "question": "Blasting out of cell 2187, everyone dives down a garbage chute into a trash compactor—home to what one-eyed, tentacled creature?",
+      "answer": "Dianoga",
       "acceptedAnswers": [
-        "Millennium Falcon",
-        "millennium falcon",
-        "the millennium falcon"
+        "Dianoga",
+        "dianoga",
+        "a dianoga",
+        "the dianoga"
       ],
       "choices": [
-        "Tantive IV",
-        "Slave I",
-        "Razor Crest"
-      ]
+        "Sarlacc",
+        "Rancor",
+        "Mynock"
+      ],
+      "explanation": "\"I purposely made myself red-faced for a strangulated look,\" Hamill admitted, and burst a blood vessel in his eye. Lucas told him the red lighting made it pointless.",
+      "hint": "The film never says its name; it just grabs Luke and drags him under"
     },
     {
       "level": 5,
-      "question": "Before the Death Star battle, the Millennium Falcon's captain Han Solo wishes Luke luck with what famous phrase?",
-      "answer": "May the Force be with you",
+      "question": "Free of the dianoga's grip, Han mutters a line that became a running gag across the saga. What is it?",
+      "answer": "I've got a bad feeling about this",
       "acceptedAnswers": [
-        "May the Force be with you",
-        "may the force be with you",
-        "may the force be with you."
+        "I've got a bad feeling about this",
+        "i've got a bad feeling about this",
+        "i have a bad feeling about this",
+        "ive got a bad feeling about this",
+        "bad feeling about this",
+        "i have a very bad feeling about this"
       ],
       "choices": [
-        "Use the Force, Luke",
         "Never tell me the odds",
-        "I have a bad feeling about this"
-      ]
+        "Laugh it up, fuzzball",
+        "This is where the fun begins"
+      ],
+      "explanation": "Luke says it first, on the Falcon (\"I have a very bad feeling about this\"). It has turned up in nearly every Star Wars film since. Then the walls start moving."
     }
   ],
   "image": "death-star-plans.jpg",
-  "imageHint": "Technical blueprints of the Empire's ultimate weapon with a critical weakness"
+  "imageHint": "Technical blueprints of the Empire's ultimate weapon with a critical weakness",
+  "easterEgg": {
+    "title": "Leia's cell came back",
+    "text": "Thirty-eight years later, The Force Awakens gave Finn the stormtrooper number FN-2187—the same as Leia's cell. The numbers were never random."
+  }
 }

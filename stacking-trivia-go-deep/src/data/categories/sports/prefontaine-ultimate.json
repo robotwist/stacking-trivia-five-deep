@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Which 1970s American distance runner had Hayward Field crowds chanting \"Go Pre\"?",
+      "question": "Which 1970s American distance runner packed Hayward Field and, at his peak, held every U.S. record from 2,000 to 10,000 meters?",
       "answer": "Steve Prefontaine",
       "acceptedAnswers": [
         "Steve Prefontaine",
@@ -76,21 +76,20 @@
     },
     {
       "level": 5,
-      "question": "After his MGB crash, Eugene honors Pre with an annual meet, usually held at Hayward Field—the what Classic?",
-      "answer": "Prefontaine",
+      "question": "Runners still leave bibs and medals at the Skyline Boulevard spot where his MGB crashed—a memorial known as what?",
+      "answer": "Pre's Rock",
       "acceptedAnswers": [
-        "Prefontaine",
-        "prefontaine",
-        "prefontaine classic",
-        "pre classic",
-        "pre fontaine classic"
+        "Pre's Rock",
+        "pre's rock",
+        "pres rock",
+        "pre rock"
       ],
       "choices": [
-        "Bowerman",
-        "Hayward",
-        "Kip Keino"
+        "Hayward Rock",
+        "Bowerman's Stone",
+        "Runner's Cross"
       ],
-      "explanation": "The Prefontaine Classic (part of the Diamond League circuit) keeps his name on the same track where \"Go Pre\" once shook the stands."
+      "explanation": "Pre's Rock in Eugene is covered with shoes, bibs, and medals from runners around the world—and every year the Prefontaine Classic brings the sport's best to Hayward Field."
     }
   ],
   "imageHint": "A historic track under lights—legend still in the air"

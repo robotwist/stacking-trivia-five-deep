@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of the bar where the gang always hangs out?",
+      "question": "Ted and the gang spend nine seasons in the same booth at what bar below his apartment?",
       "answer": "MacLaren's Pub",
       "acceptedAnswers": [
         "MacLaren's Pub",
@@ -18,11 +18,12 @@
         "The Lusty Leopard",
         "Gray's Papaya"
       ],
-      "hint": "It's right below Ted's apartment"
+      "hint": "It's right below Ted's apartment",
+      "explanation": "It's named after Carl MacLaren, an assistant to creator Carter Bays (the bartender is Carl too). The look came from McGee's, a real pub on West 55th Street."
     },
     {
       "level": 2,
-      "question": "At MacLaren's Pub, what does Barney say whenever something is awesome?",
+      "question": "At MacLaren's, Barney famously interrupts his favorite word with \"wait for it.\" What is the word?",
       "answer": "Legendary",
       "acceptedAnswers": [
         "Legendary",
@@ -35,57 +36,70 @@
         "Challenge accepted",
         "True story"
       ],
-      "hint": "Wait for it..."
+      "hint": "Wait for it...",
+      "explanation": "The word even got its own pun of an episode title: \"Legendaddy\" (Season 6), when Barney finally meets his father, Jerry, played by John Lithgow."
     },
     {
       "level": 3,
-      "question": "Legendary nights aside, what is Robin's Canadian pop star alter ego from her teens?",
-      "answer": "Robin Sparkles",
+      "question": "Barney's most legendary schemes, like \"The Lorenzo Von Matterhorn\" and \"Mrs. Stinsfire,\" are written down in what book?",
+      "answer": "The Playbook",
       "acceptedAnswers": [
-        "Robin Sparkles",
-        "robin sparkles",
-        "sparkles"
+        "The Playbook",
+        "the playbook",
+        "playbook",
+        "the play book",
+        "barney's playbook"
       ],
       "choices": [
-        "Jessica Glitter",
-        "Robin Scherbatsky",
-        "Lily Aldrin"
+        "The Bro Code",
+        "Bro on the Go",
+        "Barney's Blog"
       ],
-      "hint": "She went to the mall... today"
+      "hint": "Barney's leather-bound book of cons",
+      "explanation": "It debuted in \"The Playbook\" (Season 5), where Barney backs up the Lorenzo con with fake websites. A real tie-in book, credited to Barney Stinson, followed in 2010."
     },
     {
       "level": 4,
-      "question": "Robin Sparkles sang at the mall—what color umbrella belongs to the Mother?",
-      "answer": "Yellow",
+      "question": "Barney \"burns\" his Playbook in Season 8, but its secret final page holds his longest con: a 16-step play to win back his future bride. What is the play called?",
+      "answer": "The Robin",
       "acceptedAnswers": [
-        "Yellow",
-        "yellow",
-        "yellow umbrella"
+        "The Robin",
+        "the robin",
+        "robin",
+        "the robin play",
+        "robin play"
       ],
       "choices": [
-        "Blue",
-        "Red",
-        "Green"
+        "The Ted Mosby",
+        "The Scuba Diver",
+        "The SNASA"
       ],
-      "hint": "The title sequence shows it every episode"
+      "hint": "Step 16: Hope she says yes",
+      "explanation": "Even his fake romance with Patrice and the Playbook bonfire were steps. She finds the page on the WWN rooftop; Step 16 is on the back: \"Hope she says yes.\""
     },
     {
       "level": 5,
-      "question": "That yellow umbrella hints at the Mother—what is Barney's mysterious job acronym P.L.E.A.S.E.?",
+      "question": "After \"The Robin,\" one Barney mystery remains: whenever asked about his job, he just says \"Please.\" What does P.L.E.A.S.E. stand for?",
       "answer": "Provide Legal Exculpation And Sign Everything",
       "acceptedAnswers": [
         "Provide Legal Exculpation And Sign Everything",
         "provide legal exculpation and sign everything",
-        "please",
-        "p.l.e.a.s.e"
+        "provide legal exculpation & sign everything",
+        "legal exculpation and sign everything",
+        "provide legal exculpation"
       ],
       "choices": [
         "Prepare Lawsuits, Evade Audits, Shred Evidence",
         "Process Leases, Expedite Accounts, Settle Escrow",
         "Protect Legacy Executives And Silence Employees"
       ],
-      "hint": "It's literally what P.L.E.A.S.E stands for"
+      "hint": "He's the company fall guy, and the acronym is his whole job description",
+      "explanation": "Revealed in \"Unpause\" (Season 9): Barney is the fall guy who signs off on shady deals while secretly helping the feds take down Greg, the boss who stole his girlfriend."
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "The umbrella knew first",
+    "text": "The yellow umbrella Ted grabs after a season 3 St. Patrick's Day party was the Mother's; she was at the same club. He unknowingly leaves it at her apartment in season 5, and her initials, T.M., made him think it was his."
+  }
 }

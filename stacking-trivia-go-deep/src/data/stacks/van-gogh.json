@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Who painted 'The Starry Night'?",
+      "question": "Which Dutch painter created 'The Starry Night' in 1889 while living at an asylum in Saint-Rémy?",
       "answer": "Vincent van Gogh",
       "acceptedAnswers": [
         "Vincent van Gogh",
@@ -16,7 +16,8 @@
         "Paul Gauguin",
         "Claude Monet",
         "Paul Cézanne"
-      ]
+      ],
+      "explanation": "He painted it by day from the view out his barred window, inventing the village below. He later told Émile Bernard it was a failure: \"reaching for stars that are too big.\""
     },
     {
       "level": 2,
@@ -33,7 +34,7 @@
         "Twelve",
         "None"
       ],
-      "explanation": "That's the legend—and only one sale is documented beyond doubt. Letters hint at a few more, but nearly 900 paintings went unsold."
+      "explanation": "That's the legend, and only one sale is documented beyond doubt. Letters hint at a few more, but nearly all of his roughly 860 oil paintings went unsold while he lived."
     },
     {
       "level": 3,
@@ -48,11 +49,12 @@
         "The Sower",
         "Sunflowers",
         "The Potato Eaters"
-      ]
+      ],
+      "explanation": "He painted it from memory in November 1888, after a Sunday walk with Gauguin. He told Theo they'd seen \"a red vineyard, all red like red wine.\""
     },
     {
       "level": 4,
-      "question": "Who bought 'The Red Vineyard' from van Gogh?",
+      "question": "Who bought 'The Red Vineyard' at an 1890 Brussels show—a fellow painter whose brother Van Gogh had once painted?",
       "answer": "Anna Boch",
       "acceptedAnswers": [
         "Anna Boch",
@@ -63,7 +65,8 @@
         "Theo van Gogh",
         "Paul Gauguin",
         "Dr. Paul Gachet"
-      ]
+      ],
+      "explanation": "The only woman in Belgium's avant-garde group Les XX, she was refreshingly unsentimental, writing to her brother: \"It will look good in a corner of the living room.\""
     },
     {
       "level": 5,
@@ -79,7 +82,8 @@
         "50 francs",
         "1,000 francs",
         "2,500 francs"
-      ]
+      ],
+      "explanation": "About 400 francs (some accounts say 350). Five months later Vincent was dead. Boch later sold it for many times that, and it now hangs in Moscow's Pushkin Museum."
     }
   ]
 }

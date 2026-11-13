@@ -92,5 +92,9 @@
     }
   ],
   "imageHint": "A scholar's desk, a pile of exam papers, and an old Norse manuscript",
-  "category": "actually"
+  "category": "actually",
+  "easterEgg": {
+    "title": "The god behind the wizard",
+    "text": "Tolkien told his publisher in 1946 that he pictured Gandalf as \"the Odinic wanderer\": the grey-bearded Norse god who roams the world with a staff, a cloak, and a wide hat."
+  }
 }

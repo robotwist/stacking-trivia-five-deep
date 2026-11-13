@@ -16,7 +16,8 @@
         "Othello",
         "Troilus and Cressida",
         "Antony and Cleopatra"
-      ]
+      ],
+      "explanation": "Brooke's poem unfolds over about nine months; Shakespeare crushed it into less than a week. He also made Juliet younger: not yet 14, versus Brooke's 16."
     },
     {
       "level": 2,
@@ -31,11 +32,12 @@
         "Nearly all",
         "About half",
         "About a third"
-      ]
+      ],
+      "explanation": "Scholars usually count just three with no known main source: 'A Midsummer Night's Dream,' 'Love's Labour's Lost,' and 'The Tempest.' The rest borrow from Holinshed, Plutarch, and Italian tales."
     },
     {
       "level": 3,
-      "question": "With almost none of his plots original, how many spellings of Shakespeare's name exist?",
+      "question": "Almost none of his plots were his own, but his name came in plenty of versions—roughly how many recorded spellings exist?",
       "answer": "Over 80",
       "acceptedAnswers": [
         "Over 80",
@@ -48,11 +50,12 @@
         "Just one",
         "Exactly 6",
         "Over 300"
-      ]
+      ],
+      "explanation": "Spelling wasn't standardized; records show \"Shaxberd\" and \"Shappere.\" None of his six surviving signatures spells it \"Shakespeare\"—doubters love that, but it was normal then."
     },
     {
       "level": 4,
-      "question": "Over 80 name spellings later—who co-wrote Henry VIII and The Two Noble Kinsmen with Shakespeare?",
+      "question": "Myth: he always wrote alone. Who co-wrote Henry VIII and The Two Noble Kinsmen with him, then took over as house playwright for his company?",
       "answer": "John Fletcher",
       "acceptedAnswers": [
         "John Fletcher",
@@ -63,11 +66,12 @@
         "Christopher Marlowe",
         "Ben Jonson",
         "Francis Bacon"
-      ]
+      ],
+      "explanation": "Together they also wrote 'Cardenio,' a lost play drawn from Don Quixote. Fletcher even wrote a 'Taming of the Shrew' sequel in which Petruchio gets tamed."
     },
     {
       "level": 5,
-      "question": "John Fletcher may have helped—but what's the highest education Shakespeare likely received?",
+      "question": "Doubters say only a university man could have written the plays. What's the highest education Fletcher's famous partner likely received?",
       "answer": "Grammar school",
       "acceptedAnswers": [
         "Grammar school",
@@ -79,7 +83,8 @@
         "Oxford University",
         "Cambridge University",
         "Inns of Court"
-      ]
+      ],
+      "explanation": "No records survive, but Stratford's school drilled boys in Latin, including Ovid, often called his favorite poet. Ben Jonson still teased that he had \"small Latin and less Greek.\""
     }
   ],
   "image": "question-mark-quill.jpg",

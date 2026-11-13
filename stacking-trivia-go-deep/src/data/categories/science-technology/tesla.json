@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What type of electrical current did Tesla champion that became the standard for power transmission?",
+      "question": "What kind of electricity, which reverses direction many times a second, did Tesla champion as the standard for power grids?",
       "answer": "alternating current",
       "acceptedAnswers": [
         "alternating current",
@@ -18,11 +18,12 @@
         "static electricity",
         "galvanic current"
       ],
-      "hint": "It's abbreviated as AC and changes direction periodically"
+      "hint": "It's abbreviated as AC and changes direction periodically",
+      "explanation": "In July 1888 George Westinghouse licensed Tesla's AC motor patents for cash, stock and a royalty per horsepower—then bet his company on them against a famous foe."
     },
     {
       "level": 2,
-      "question": "Tesla's alternating current drew a fierce rival—which inventor led the War of Currents?",
+      "question": "Tesla's alternating current drew a fierce rival—which inventor championed direct current in the War of Currents?",
       "answer": "Thomas Edison",
       "acceptedAnswers": [
         "Thomas Edison",
@@ -35,7 +36,8 @@
         "Alexander Graham Bell",
         "Guglielmo Marconi"
       ],
-      "hint": "He invented the light bulb and preferred direct current (DC)"
+      "hint": "He invented the light bulb and preferred direct current (DC)",
+      "explanation": "Tesla had briefly worked for Edison's company in 1884. In the war, Edison's camp aided Harold Brown, who electrocuted animals in public demonstrations to brand AC as deadly."
     },
     {
       "level": 3,
@@ -53,11 +55,12 @@
         "Thermionic emission",
         "Hall effect"
       ],
-      "hint": "It involves magnetic fields that spin around in a circle"
+      "hint": "It involves magnetic fields that spin around in a circle",
+      "explanation": "By Tesla's own account, it hit him in 1882 in a Budapest park as he recited Goethe's Faust at sunset—and he sketched the motor in the sand with a stick."
     },
     {
       "level": 4,
-      "question": "After the rotating magnetic field made AC motors practical, Tesla chased wireless power at a high-altitude lab in what Colorado city?",
+      "question": "After the rotating magnetic field made AC motors practical, Tesla chased wireless power at a high-altitude lab in what Rocky Mountain city?",
       "answer": "Colorado Springs",
       "acceptedAnswers": [
         "Colorado Springs",
@@ -70,7 +73,8 @@
         "Denver",
         "Leadville"
       ],
-      "hint": "A mountainous state's springs-named city where he created artificial lightning"
+      "hint": "A mountainous state's springs-named city where he created artificial lightning",
+      "explanation": "There in 1899 he made man-made lightning and heard rhythmic signals he later insisted came from Mars. Historians suspect Marconi's experiments or natural radio noise."
     },
     {
       "level": 5,
@@ -88,7 +92,8 @@
         "Montauk",
         "Cold Spring Harbor"
       ],
-      "hint": "Named after the benefactor James S. Warden, it was meant to transmit power wirelessly across the Atlantic"
+      "hint": "Named after the benefactor James S. Warden, it was meant to transmit power wirelessly across the Atlantic",
+      "explanation": "J.P. Morgan put in $150,000, but the money ran out and the tower was scrapped in 1917 to pay debts. In 2012, The Oatmeal's Matthew Inman crowdfunded $1.37M to save the site."
     }
   ],
   "imageHint": "Lightning, coils, and the age of electricity",

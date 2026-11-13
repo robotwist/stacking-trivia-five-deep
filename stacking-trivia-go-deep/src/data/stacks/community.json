@@ -4,24 +4,26 @@
   "questions": [
     {
       "level": 1,
-      "question": "What is the name of the community college where the show takes place?",
-      "answer": "Greendale Community College",
+      "question": "After the bar finds out his college degree is fake, lawyer Jeff Winger enrolls at what community college?",
+      "answer": "Greendale",
       "acceptedAnswers": [
-        "Greendale Community College",
-        "greendale community college",
+        "Greendale",
         "greendale",
-        "greendale cc"
+        "greendale community college",
+        "greendale cc",
+        "greendale college"
       ],
       "choices": [
         "City College",
         "Riverside Community College",
         "Colorado Community College"
       ],
-      "hint": "Go Human Beings!"
+      "hint": "Go Human Beings!",
+      "explanation": "Creator Dan Harmon based it on Glendale Community College, where he enrolled in his 30s to take a class with his girlfriend and fell in with a study group."
     },
     {
       "level": 2,
-      "question": "At Greendale Community College, Jeff pretends to be a tutor in what subject to get closer to Britta?",
+      "question": "At Greendale, Jeff poses as a tutor and invents a study group for which class, just to get closer to Britta?",
       "answer": "Spanish",
       "acceptedAnswers": [
         "Spanish",
@@ -33,28 +35,30 @@
         "Biology",
         "Psychology"
       ],
-      "hint": "Señor Chang teaches this class"
+      "hint": "Señor Chang teaches this class",
+      "explanation": "Jeff wanted a study group of two, but Britta invited a classmate and soon the whole table filled up. Their teacher: Ken Jeong's unhinged Señor Chang."
     },
     {
       "level": 3,
-      "question": "In that Spanish study group, Abed's habit of commenting on the show itself is called being what?",
-      "answer": "Meta",
+      "question": "In that Spanish study group, which film-obsessed member narrates their lives as if they were a TV show?",
+      "answer": "Abed Nadir",
       "acceptedAnswers": [
-        "Meta",
-        "meta",
-        "being meta",
-        "meta-humor"
+        "Abed Nadir",
+        "abed nadir",
+        "abed",
+        "nadir"
       ],
       "choices": [
-        "Laugh tracks",
-        "Cold opens",
-        "Voiceovers"
+        "Troy Barnes",
+        "Pierce Hawthorne",
+        "Annie Edison"
       ],
-      "hint": "Cool. Cool cool cool."
+      "hint": "Cool. Cool cool cool.",
+      "explanation": "Harmon based him on a real friend, Abed Gheith, who auditioned for the part and lost to Danny Pudi. Harmon later said he related to Abed more than to Jeff."
     },
     {
       "level": 4,
-      "question": "Abed's meta humor peaks during what annual Greendale battle simulation?",
+      "question": "Abed gets his action-movie dream when what campus-wide game, with priority registration as the prize, turns Greendale into a war zone?",
       "answer": "Paintball",
       "acceptedAnswers": [
         "Paintball",
@@ -67,27 +71,32 @@
         "Hot lava",
         "Dungeons & Dragons"
       ],
-      "hint": "Modern Warfare and A Fistful of Paintballs"
+      "hint": "Modern Warfare and A Fistful of Paintballs",
+      "explanation": "\"Modern Warfare\" (Season 1) was directed by Justin Lin of the Fast & Furious films. It was such a hit that the game returned for the two-part Season 2 finale."
     },
     {
       "level": 5,
-      "question": "Paintball wars aside, Greendale's mascot is a faceless, generic figure called the what?",
-      "answer": "Human Being",
+      "question": "Between paintball wars, Abed insists a short-lived NBC superhero show will run for what, a line fans turned into Community's own battle cry?",
+      "answer": "Six seasons and a movie",
       "acceptedAnswers": [
-        "Human Being",
-        "human being",
-        "the human being",
-        "human beings",
-        "the greendale human being"
+        "Six seasons and a movie",
+        "six seasons and a movie",
+        "6 seasons and a movie",
+        "six seasons & a movie",
+        "six seasons"
       ],
       "choices": [
-        "Everyman",
-        "Mannequin",
-        "Blank Slate"
+        "Streets ahead",
+        "Cool cool cool",
+        "Troy and Abed in the morning"
       ],
-      "hint": "Designed to offend no one by being nobody",
-      "explanation": "Dean Pelton picked a mascot so inoffensive it has no race, gender, or face—just a white bodysuit."
+      "hint": "A prophecy about The Cape that fans adopted",
+      "explanation": "The show was NBC's The Cape, cancelled after one season. Community got its six seasons (the last on Yahoo Screen). Peacock ordered the movie in 2022; as of late 2026 it still hasn't filmed."
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "Beetlejuice. Beetlejuice. Beetlejuice.",
+    "text": "The name is said once in season 1 and once in season 2. When Annie says it a third time in season 3's Halloween episode, Beetlejuice walks past behind her. Harmon: \"The Easter egg that took three years to hide.\""
+  }
 }

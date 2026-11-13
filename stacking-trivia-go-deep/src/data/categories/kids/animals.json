@@ -17,7 +17,8 @@
         "Pronghorn",
         "Gazelle"
       ],
-      "hint": "Spotted cat that can sprint 70 mph"
+      "hint": "Spotted cat that can sprint 70 mph",
+      "explanation": "Cheetahs can't roar like lions. Instead they purr and chirp like birds, and a cheetah's chirp can be heard a mile away!"
     },
     {
       "level": 2,
@@ -34,11 +35,12 @@
         "Ten",
         "Twenty"
       ],
-      "hint": "Less than five seconds"
+      "hint": "Less than five seconds",
+      "explanation": "That's as quick as a sports car! At full speed, each cheetah stride stretches about 23 feet, and it takes four of those strides every second."
     },
     {
       "level": 3,
-      "question": "Three seconds to 60 mph—that cheetah sprint is dwarfed by what largest animal on Earth?",
+      "question": "Cheetahs hit 60 mph in about three seconds and hold the speed record. Which animal holds the size record as the biggest that has ever lived?",
       "answer": "Blue whale",
       "acceptedAnswers": [
         "blue whale",
@@ -50,11 +52,12 @@
         "Whale shark",
         "Sperm whale"
       ],
-      "hint": "An ocean giant bigger than any dinosaur"
+      "hint": "An ocean giant bigger than any dinosaur",
+      "explanation": "Blue whales can grow more than 100 feet long, bigger than any dinosaur! A blue whale's tongue alone can weigh as much as an elephant."
     },
     {
       "level": 4,
-      "question": "Blue whales eat tiny shrimplike creatures called what?",
+      "question": "The giant blue whale eats some of the tiniest food in the sea. What are these shrimplike creatures called?",
       "answer": "Krill",
       "acceptedAnswers": [
         "krill",
@@ -66,11 +69,12 @@
         "Jellyfish",
         "Barnacles"
       ],
-      "hint": "Swarms of small ocean crustaceans"
+      "hint": "Swarms of small ocean crustaceans",
+      "explanation": "A blue whale can gulp about 16 tons of krill in a single day. All that krill turns its poop bright orange-pink!"
     },
     {
       "level": 5,
-      "question": "Krill are hunted by whales—and which black-and-white bird?",
+      "question": "Some black-and-white Antarctic birds eat so much krill that their poop turns pink! Which birds are they?",
       "answer": "Penguin",
       "acceptedAnswers": [
         "penguin",
@@ -78,11 +82,12 @@
         "emperor penguin"
       ],
       "choices": [
-        "Ostrich",
-        "Magpie",
-        "Toucan"
+        "Puffins",
+        "Seagulls",
+        "Ostriches"
       ],
-      "hint": "Lives in Antarctica and loves fish"
+      "hint": "They waddle and can't fly",
+      "explanation": "Adélie penguin colonies leave pink poop stains so big that scientists can spot them from space! The color even tells them whether the penguins ate krill or fish."
     }
   ]
 }

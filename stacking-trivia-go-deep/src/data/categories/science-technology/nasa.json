@@ -1,95 +1,100 @@
 {
-  "title": "NASA: Space Race Milestones",
-  "description": "Rockets, astronauts, and the push beyond our planet—five space-program depths.",
+  "title": "NASA: Houston, We've Had a Problem",
+  "description": "One explosion, one lifeboat, and a cardboard-and-plastic fix—NASA's most famous rescue in five steps.",
   "questions": [
     {
       "level": 1,
-      "question": "What does NASA stand for?",
-      "answer": "National Aeronautics and Space Administration",
+      "question": "In April 1970, which NASA mission radioed home, \"Houston, we've had a problem\"?",
+      "answer": "Apollo 13",
       "acceptedAnswers": [
-        "National Aeronautics and Space Administration",
-        "national aeronautics and space administration",
-        "National Aeronautics & Space Administration",
-        "aeronautics and space administration"
+        "Apollo 13",
+        "apollo 13",
+        "apollo thirteen",
+        "13",
+        "thirteen"
       ],
       "choices": [
-        "North American Space Agency",
-        "National Aerospace Science Agency",
-        "National Air and Space Authority"
+        "Apollo 8",
+        "Gemini 8",
+        "Skylab 2"
       ],
-      "hint": "It includes the words 'National', 'Aeronautics', 'Space', and 'Administration'"
+      "explanation": "Jack Swigert said it first—\"Okay, Houston, we've had a problem here\"—and Jim Lovell repeated it. The crew was 200,000 miles out, headed for the Moon."
     },
     {
       "level": 2,
-      "question": "NASA—the National Aeronautics and Space Administration—sent who as the first American to orbit Earth in 1962?",
-      "answer": "John Glenn",
+      "question": "Apollo 13's trouble started 56 hours in, when what blew up inside the service module?",
+      "answer": "Oxygen tank",
       "acceptedAnswers": [
-        "John Glenn",
-        "Glenn",
-        "john glenn",
-        "John H. Glenn"
+        "Oxygen tank",
+        "oxygen tank",
+        "an oxygen tank",
+        "o2 tank",
+        "oxygen tank 2",
+        "oxygen tank no 2",
+        "oxygen"
       ],
       "choices": [
-        "Alan Shepard",
-        "Gus Grissom",
-        "Scott Carpenter"
+        "A fuel cell",
+        "The main engine",
+        "A hydrogen tank"
       ],
-      "hint": "His first name is John, and he later became a U.S. Senator"
+      "explanation": "A routine stir of oxygen tank No. 2 sparked damaged wiring. The blast drained the fuel cells, and the command module was soon dying."
     },
     {
       "level": 3,
-      "question": "After Glenn's 1962 orbit, what NASA program successfully landed humans on the Moon?",
-      "answer": "Apollo",
+      "question": "With the oxygen tank gone and the command module powering down, the crew retreated into what lunar module?",
+      "answer": "Aquarius",
       "acceptedAnswers": [
-        "Apollo",
-        "Apollo Program",
-        "apollo program",
-        "Apollo programme",
-        "apollo"
+        "Aquarius",
+        "aquarius",
+        "the lunar module",
+        "lunar module",
+        "lm",
+        "lem"
       ],
       "choices": [
-        "Gemini",
-        "Mercury",
-        "Artemis"
+        "Odyssey",
+        "Eagle",
+        "Intrepid"
       ],
-      "hint": "Named after a Greek god, this program achieved Kennedy's goal of lunar landing"
+      "explanation": "Built for two people for two days, Aquarius carried three for four. They shut down Odyssey to save its batteries for re-entry, and the cabin dropped to near freezing."
     },
     {
       "level": 4,
-      "question": "NASA's Apollo glory gave way to tragedy—which space shuttle broke apart 73 seconds after launch in 1986?",
-      "answer": "Challenger",
+      "question": "Inside Aquarius, carbon dioxide kept rising. To fit square filters into round sockets, the crew taped up a fix using what?",
+      "answer": "Duct tape",
       "acceptedAnswers": [
-        "Challenger",
-        "Space Shuttle Challenger",
-        "challenger",
-        "the challenger"
+        "Duct tape",
+        "duct tape",
+        "gray tape",
+        "grey tape",
+        "gaffer tape"
       ],
       "choices": [
-        "Columbia",
-        "Discovery",
-        "Atlantis"
+        "Electrical tape",
+        "Velcro straps",
+        "Kapton film"
       ],
-      "hint": "It carried teacher Christa McAuliffe and was named after a British naval research vessel"
+      "explanation": "Engineers in Houston built the \"mailbox\" from only what was on board—duct tape, plastic bags, cardboard, a sock—then read the steps up to the crew."
     },
     {
       "level": 5,
-      "question": "After Challenger, NASA kept pushing outward—what Mars rover landed in 2021 searching for ancient life?",
-      "answer": "Perseverance",
+      "question": "After the duct-tape fix got them home, Lovell's famous line was misquoted in the 1995 film—spoken by which actor?",
+      "answer": "Tom Hanks",
       "acceptedAnswers": [
-        "Perseverance",
-        "perseverance",
-        "Perseverance rover",
-        "percy"
+        "Tom Hanks",
+        "tom hanks",
+        "hanks"
       ],
       "choices": [
-        "Curiosity",
-        "Opportunity",
-        "Spirit"
+        "Kevin Bacon",
+        "Bill Paxton",
+        "Ed Harris"
       ],
-      "hint": "Named for the quality of continuing despite difficulties, nicknamed 'Percy'"
+      "explanation": "\"Houston, we have a problem,\" Hanks says as Lovell. The real past tense, \"we've had a problem,\" lost out to the movie's version, which is the one everyone quotes."
     }
   ],
-  "imageHint": "🚀 One giant leap for mankind and beyond 🌙",
+  "imageHint": "A crippled spacecraft, three astronauts, and a long way home",
   "category": "Science & Technology",
   "deeperMode": {
     "title": "Mission Control Secrets",

@@ -14,34 +14,32 @@
         "hicham"
       ],
       "choices": [
-        "Noureddine Morceli",
         "Saïd Aouita",
+        "Steve Cram",
         "Noah Ngeny"
-      ]
+      ],
+      "explanation": "Nobody has touched his mark since—Jakob Ingebrigtsen got within 0.73 seconds in 2024. He still owns the mile record too. Yet his Olympic story starts flat on the track."
     },
     {
       "level": 2,
-      "question": "El Guerrouj's specialty—the 1500m—is roughly how many laps on a standard track?",
-      "answer": "Three and three-quarters",
+      "question": "Hicham El Guerrouj crashed to the track in the 1996 Olympic 1500m final after clipping the heel of which rival, the eventual gold medalist?",
+      "answer": "Noureddine Morceli",
       "acceptedAnswers": [
-        "Three and three-quarters",
-        "three and three quarters",
-        "3.75 laps",
-        "3.75",
-        "almost four laps",
-        "nearly four laps",
-        "3 and 3/4"
+        "Noureddine Morceli",
+        "noureddine morceli",
+        "morceli",
+        "nourredine morceli"
       ],
       "choices": [
-        "Two and a half",
-        "Five",
-        "Six"
+        "Fermín Cacho",
+        "Saïd Aouita",
+        "Vénuste Niyongabo"
       ],
-      "explanation": "On a 400m track, 1500m is three full laps plus 300 meters—one reason the start line sits on the back straight."
+      "explanation": "The Algerian stumbled but stayed up; El Guerrouj finished last, in tears. Minutes later King Hassan II phoned him: \"For us, you are the winner.\" He kept a photo of the fall on his wall."
     },
     {
       "level": 3,
-      "question": "Three and three-quarters laps of all-out effort—what was El Guerrouj's 1500m world record time?",
+      "question": "Two years after that tumble, El Guerrouj took Morceli's 1500m world record in Rome—with what time?",
       "answer": "3:26.00",
       "acceptedAnswers": [
         "3:26.00",
@@ -55,7 +53,7 @@
         "3:32.10",
         "3:37.90"
       ],
-      "explanation": "Set in Rome on July 14, 1998—and still the world record more than a quarter-century later."
+      "explanation": "He sliced 1.37 seconds off Morceli's mark in a largely empty Stadio Olimpico, averaging under 55 seconds a lap. Nearly three decades on, it's still the world record."
     },
     {
       "level": 4,
@@ -73,7 +71,7 @@
         "5000m and 10,000m",
         "10,000m and marathon"
       ],
-      "explanation": "He fell in the 1996 final and lost to Noah Ngeny in 2000. In Athens he became the first man since Paavo Nurmi in 1924 to win both events at one Games."
+      "explanation": "After the 1996 fall and a 2000 silver behind Noah Ngeny, Athens was redemption: he became the first man since Paavo Nurmi in 1924 to win both at one Games."
     },
     {
       "level": 5,
@@ -89,7 +87,8 @@
         "Noah Ngeny",
         "Eliud Kipchoge",
         "Asbel Kiprop"
-      ]
+      ],
+      "explanation": "3:34.18 to 3:34.30, the closest Olympic 1500m final since 1976. The twist: Lagat later became a U.S. citizen and won the same 1500/5000 double at the 2007 World Championships."
     }
   ]
 }

@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Who won the men's 800m gold at the Tokyo 2020 Olympics?",
+      "question": "Which Kenyan with 44-second 400m speed won men's 800m gold at the Tokyo 2020 Olympics?",
       "answer": "Emmanuel Korir",
       "acceptedAnswers": [
         "Emmanuel Korir",
@@ -16,7 +16,8 @@
         "David Rudisha",
         "Donavan Brazier",
         "Peter Bol"
-      ]
+      ],
+      "explanation": "He jogged the first lap in 54 seconds, then powered past Australia's Peter Bol off the final bend for Kenya's fourth straight Olympic 800m title—with a teammate right on his heels."
     },
     {
       "level": 2,
@@ -33,7 +34,7 @@
         "Wycliffe Kinyamal",
         "Emmanuel Wanyonyi"
       ],
-      "explanation": "Poland's Patryk Dobek took bronze behind the two Kenyans."
+      "explanation": "The event's first same-nation 1-2 since 1992. Bronze went to Poland's Patryk Dobek, a 400m hurdler who had only started racing the 800m that year."
     },
     {
       "level": 3,
@@ -49,7 +50,8 @@
         "Raevyn Rogers",
         "Faith Kipyegon",
         "Ajeé Wilson"
-      ]
+      ],
+      "explanation": "Mu, 19, led wire to wire in an American-record 1:55.21—the first U.S. women's 800m gold since Madeline Manning in 1968. The teenager chasing her set a national record too."
     },
     {
       "level": 4,
@@ -65,25 +67,25 @@
         "Raevyn Rogers",
         "Jemma Reekie",
         "Laura Muir"
-      ]
+      ],
+      "explanation": "Also 19, she kicked from fourth to second in 1:55.88, wiping out a British record that had stood since 1995—set by a runner who later made Olympic history of her own."
     },
     {
       "level": 5,
-      "question": "Which country did Keely Hodgkinson represent?",
-      "answer": "Great Britain",
+      "question": "Keely Hodgkinson's Tokyo run erased the British 800m record set in 1995 by which future double Olympic champion?",
+      "answer": "Kelly Holmes",
       "acceptedAnswers": [
-        "Great Britain",
-        "great britain",
-        "britain",
-        "uk",
-        "united kingdom",
-        "england"
+        "Kelly Holmes",
+        "kelly holmes",
+        "dame kelly holmes",
+        "holmes"
       ],
       "choices": [
-        "Ireland",
-        "Australia",
-        "New Zealand"
-      ]
+        "Paula Radcliffe",
+        "Jessica Ennis-Hill",
+        "Christine Ohuruogu"
+      ],
+      "explanation": "Holmes's 1:56.21 had stood 26 years. The twist: with Mu out after falling at the 2024 U.S. trials, Hodgkinson won Paris gold—Britain's first in the event since Holmes in 2004."
     }
   ],
   "image": "olympic-torch.jpg",

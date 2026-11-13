@@ -1,6 +1,6 @@
 {
   "title": "Space: Beyond Our World",
-  "description": "Stars, planets, and humankind’s small steps beyond Earth.",
+  "description": "From our nearest star to the first footprints on another world—five steps into space.",
   "choicesByDefault": true,
   "questions": [
     {
@@ -18,59 +18,31 @@
         "Sirius",
         "Proxima Centauri"
       ],
-      "hint": "It lights up our day"
+      "hint": "It lights up our day",
+      "explanation": "Sunlight takes about 8 minutes to reach us. And the Sun is so huge that about 1.3 million Earths could fit inside it!"
     },
     {
       "level": 2,
-      "question": "The Sun is a star at the center of what system?",
-      "answer": "Solar system",
+      "question": "The Sun lights up our days. What lights up our nights, even though it makes no light of its own?",
+      "answer": "The Moon",
       "acceptedAnswers": [
-        "solar system",
-        "the solar system",
-        "our solar system"
+        "the moon",
+        "moon",
+        "our moon",
+        "earth's moon",
+        "luna"
       ],
       "choices": [
-        "Milky Way",
-        "Asteroid belt",
-        "Big Dipper"
+        "The stars",
+        "The Northern Lights",
+        "Fireflies"
       ],
-      "hint": "Earth and the planets orbit the Sun"
+      "hint": "It looks like a different shape on different nights",
+      "explanation": "Moonlight is really sunlight bouncing off Moon dust. And the Moon drifts about 1.5 inches farther from Earth every year, as fast as your fingernails grow!"
     },
     {
       "level": 3,
-      "question": "Which planet in our solar system is known as the Red Planet?",
-      "answer": "Mars",
-      "acceptedAnswers": [
-        "mars",
-        "the red planet",
-        "planet mars"
-      ],
-      "choices": [
-        "Jupiter",
-        "Venus",
-        "Mercury"
-      ],
-      "hint": "Named after the Roman god of war"
-    },
-    {
-      "level": 4,
-      "question": "Mars has two small moons—what is the larger one called?",
-      "answer": "Phobos",
-      "acceptedAnswers": [
-        "phobos",
-        "phobos moon",
-        "moon phobos"
-      ],
-      "choices": [
-        "Deimos",
-        "Europa",
-        "Titan"
-      ],
-      "hint": "Greek for fear"
-    },
-    {
-      "level": 5,
-      "question": "Beyond Mars and its moon Phobos, humans first walked on Earth's Moon in what year?",
+      "question": "People first walked on the Moon in what year?",
       "answer": "1969",
       "acceptedAnswers": [
         "1969",
@@ -83,7 +55,45 @@
         "1972",
         "1986"
       ],
-      "hint": "Apollo 11 mission"
+      "hint": "Apollo 11 mission",
+      "explanation": "On July 20, 1969, Apollo 11 landed, and about 600 million people watched on TV. That was around one out of every five people on Earth back then!"
+    },
+    {
+      "level": 4,
+      "question": "Who was the first person to step onto the Moon in 1969?",
+      "answer": "Neil Armstrong",
+      "acceptedAnswers": [
+        "neil armstrong",
+        "armstrong",
+        "neil alden armstrong"
+      ],
+      "choices": [
+        "Buzz Aldrin",
+        "Yuri Gagarin",
+        "Michael Collins"
+      ],
+      "hint": "He was the commander of Apollo 11",
+      "explanation": "Buzz Aldrin followed him 19 minutes later. Armstrong said, \"That's one small step for man, one giant leap for mankind.\" He said he meant \"a man.\" Listen closely!"
+    },
+    {
+      "level": 5,
+      "question": "Neil Armstrong's bootprints are still on the Moon, more than 50 years later! Why haven't they been wiped away?",
+      "answer": "No wind",
+      "acceptedAnswers": [
+        "no wind",
+        "no air",
+        "no atmosphere",
+        "no weather",
+        "no wind or rain",
+        "there is no wind"
+      ],
+      "choices": [
+        "It's too cold",
+        "Moon dust is sticky like glue",
+        "Astronauts guard them"
+      ],
+      "hint": "Think about what blows sand around at the beach",
+      "explanation": "With almost no air, the Moon has no wind or rain. Scientists think the prints could last millions of years, until tiny specks of space dust slowly sand them away."
     }
   ]
 }

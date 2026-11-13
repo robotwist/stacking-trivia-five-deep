@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Who developed the theory of relativity?",
+      "question": "Which physicist published special relativity in 1905 while employed at the Swiss patent office in Bern?",
       "answer": "Albert Einstein",
       "acceptedAnswers": [
         "Albert Einstein",
@@ -15,11 +15,12 @@
         "Isaac Newton",
         "Niels Bohr",
         "Max Planck"
-      ]
+      ],
+      "explanation": "His official title: \"technical expert, third class.\" In 1905, his \"miracle year,\" he published four landmark papers in about seven months—at 26, with no university job."
     },
     {
       "level": 2,
-      "question": "What is Einstein's most famous equation?",
+      "question": "A short 1905 follow-up paper gave Einstein his most famous equation—what is it?",
       "answer": "E=mc²",
       "acceptedAnswers": [
         "E=mc²",
@@ -31,11 +32,12 @@
         "F=ma",
         "PV=nRT",
         "a²+b²=c²"
-      ]
+      ],
+      "explanation": "The paper ran three pages: \"Does the Inertia of a Body Depend Upon Its Energy Content?\" He didn't even write E=mc²; he used L for energy and V for the speed of light."
     },
     {
       "level": 3,
-      "question": "Fame from E=mc² aside, Einstein's Nobel Prize honored what effect?",
+      "question": "Fame from E=mc² aside, Einstein's Nobel Prize honored his explanation of how light knocks electrons out of metal—called what?",
       "answer": "Photoelectric effect",
       "acceptedAnswers": [
         "Photoelectric effect",
@@ -46,7 +48,8 @@
         "Brownian motion",
         "Special relativity",
         "Compton effect"
-      ]
+      ],
+      "explanation": "The Nobel committee pointedly sidestepped relativity, still seen as unproven. Einstein's reply: his 1923 Nobel lecture in Gothenburg was about relativity anyway."
     },
     {
       "level": 4,
@@ -64,11 +67,11 @@
         "1915",
         "1933"
       ],
-      "explanation": "It was the 1921 prize—but the committee held it over and handed it to him in 1922, so both years show up in the record books."
+      "explanation": "The 1921 prize was held over and announced in Nov. 1922, while he sailed to Japan. The money was already spoken for: his divorce deal had promised it to his ex-wife, Mileva."
     },
     {
       "level": 5,
-      "question": "After his 1921 Nobel, Einstein fled Germany and spent his last 22 years at what research institute in Princeton?",
+      "question": "After his 1921 Nobel, Einstein fled Germany and spent his last 22 years at what independent research center in Princeton?",
       "answer": "Institute for Advanced Study",
       "acceptedAnswers": [
         "Institute for Advanced Study",
@@ -82,7 +85,7 @@
         "Bell Labs",
         "Rockefeller Institute"
       ],
-      "explanation": "Common mix-up: he was never a Princeton University professor. The Institute for Advanced Study sits nearby and was independent of the university."
+      "explanation": "Common mix-up: he was never a Princeton University professor; the institute was independent. When he died in Princeton in 1955, the pathologist removed his brain without permission."
     }
   ],
   "image": "einstein-wild-hair.jpg",

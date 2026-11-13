@@ -17,7 +17,8 @@
         "9",
         "12"
       ],
-      "hint": "Before he could even write properly, he was creating music"
+      "hint": "Before he could even write properly, he was creating music",
+      "explanation": "His father, Leopold, wrote the tiny pieces into sister Nannerl's music book, noting they were \"Wolfgangerl's compositions in the first three months after his fifth birthday.\""
     },
     {
       "level": 2,
@@ -34,7 +35,7 @@
         "Prague"
       ],
       "hint": "Known for its salt trade and baroque architecture, now famous for Mozart tours",
-      "explanation": "In 1756 Salzburg was an independent prince-archbishopric of the Holy Roman Empire; it only became part of Austria in 1816."
+      "explanation": "In 1756 Salzburg was an independent prince-archbishopric, not yet Austria. In 1781 Mozart quit the archbishop's service—sent off, he told his father, with \"a kick in the behind.\""
     },
     {
       "level": 3,
@@ -50,7 +51,8 @@
         "Così fan tutte",
         "The Marriage of Figaro"
       ],
-      "hint": "Italian for 'Sir John' - about a legendary seducer who meets a supernatural end"
+      "hint": "Italian for 'Sir John' - about a legendary seducer who meets a supernatural end",
+      "explanation": "It premiered in Prague in 1787. In the 'Catalogue Aria,' servant Leporello tallies the Don's conquests: 640 in Italy, 231 in Germany… \"but in Spain, already 1,003.\""
     },
     {
       "level": 4,
@@ -68,11 +70,12 @@
         "Mercury",
         "Mars"
       ],
-      "hint": "Named after the king of Roman gods - his most majestic symphony"
+      "hint": "Named after the king of Roman gods - his most majestic symphony",
+      "explanation": "Mozart never knew the name; it's usually credited to impresario Johann Peter Salomon. He finished it on Aug. 10, 1788, capping three symphonies in roughly two months."
     },
     {
       "level": 5,
-      "question": "Mozart died mid-composition of what mass for the dead after the Jupiter Symphony?",
+      "question": "Three years after the Jupiter, Mozart died in December 1791 leaving which anonymously commissioned mass for the dead unfinished?",
       "answer": "Requiem",
       "acceptedAnswers": [
         "Requiem",
@@ -85,7 +88,8 @@
         "Great Mass in C minor",
         "Ave verum corpus"
       ],
-      "hint": "A mass for the dead, left unfinished when the composer himself died"
+      "hint": "A mass for the dead, left unfinished when the composer himself died",
+      "explanation": "Forget 'Amadeus': Salieri had nothing to do with it. Mozart's pen stopped eight bars into the Lacrimosa; his widow had pupil Süssmayr finish it so she could collect the fee."
     }
   ],
   "imageHint": "🎼 From child prodigy to immortal symphonies 🎹",
