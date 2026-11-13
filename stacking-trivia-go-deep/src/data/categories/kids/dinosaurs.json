@@ -1,65 +1,75 @@
 {
   "title": "Dinosaurs: Rulers of the Ancient World",
-  "description": "Teeth, giants, and the day the rulers fell—dino facts for curious minds.",
+  "description": "A king of lizards, a rock from space, and a twist hiding in your backyard—dino facts for curious minds.",
   "questions": [
     {
       "level": 1,
-      "question": "What does 'Tyrannosaurus Rex' mean?",
+      "question": "What does 'Tyrannosaurus rex' mean?",
       "answer": "Tyrant lizard king",
       "acceptedAnswers": [
         "tyrant lizard king",
         "king tyrant lizard",
-        "tyrant king lizard"
+        "tyrant king lizard",
+        "tyrant lizard"
       ],
-      "hint": "Tyrant + lizard + king"
+      "hint": "Tyrant + lizard + king",
+      "explanation": "'Tyrannos' is Greek for tyrant, 'sauros' means lizard, and 'rex' is Latin for king."
     },
     {
       "level": 2,
-      "question": "The tyrant lizard king's bite relied on teeth how long?",
-      "answer": "8 inches",
+      "question": "The tyrant lizard king lived in which time period, the last age of the dinosaurs?",
+      "answer": "Cretaceous",
       "acceptedAnswers": [
-        "8 inches",
-        "eight inches",
-        "8",
-        "eight",
-        "20 centimeters"
+        "cretaceous",
+        "late cretaceous",
+        "cretaceous period",
+        "the cretaceous"
       ],
-      "hint": "About as long as a banana"
+      "hint": "It starts with 'Cre-' and comes after the Jurassic",
+      "explanation": "T. rex lived near the very end of the Cretaceous—closer in time to us than to Stegosaurus!"
     },
     {
       "level": 3,
-      "question": "Teeth eight inches long—aside from T-Rex, which dinosaur had over 500 teeth?",
-      "answer": "Nigersaurus",
-      "acceptedAnswers": [
-        "nigersaurus",
-        "niger saurus",
-        "niger lizard"
-      ],
-      "hint": "A living lawn mower of tiny teeth"
-    },
-    {
-      "level": 4,
-      "question": "Nigersaurus lived until what ended the dinosaurs 66 million years ago?",
+      "question": "The Cretaceous ended 66 million years ago when what crashed into Earth?",
       "answer": "Asteroid",
       "acceptedAnswers": [
         "asteroid",
+        "an asteroid",
         "meteor",
+        "meteorite",
         "space rock",
         "asteroid impact"
       ],
-      "hint": "Something from space crashed into Earth"
+      "hint": "A giant rock from space",
+      "explanation": "A space rock about 6 miles wide hit so hard it changed the climate of the whole planet."
+    },
+    {
+      "level": 4,
+      "question": "That asteroid left a giant buried crater near which Mexican peninsula?",
+      "answer": "Yucatán",
+      "acceptedAnswers": [
+        "yucatán",
+        "yucatan",
+        "yucatan peninsula",
+        "yucatán peninsula",
+        "chicxulub"
+      ],
+      "hint": "Home of Cancún",
+      "explanation": "The Chicxulub crater is more than 100 miles across and lies partly under the sea off the Yucatán."
     },
     {
       "level": 5,
-      "question": "After the asteroid, which long-necked dinosaur was longer than a school bus?",
-      "answer": "Diplodocus",
+      "question": "After the Yucatán impact, one group of dinosaurs survived and still lives today—what are they?",
+      "answer": "Birds",
       "acceptedAnswers": [
-        "diplodocus",
-        "brontosaurus",
-        "apatosaurus",
-        "diplo docus"
+        "birds",
+        "bird",
+        "avian dinosaurs",
+        "chickens",
+        "the birds"
       ],
-      "hint": "A giant plant-eater with a very long neck"
+      "hint": "Look up at the sky—or at a chicken!",
+      "explanation": "Birds are living dinosaurs. The pigeon on your sidewalk is a distant cousin of T. rex."
     }
   ]
 }

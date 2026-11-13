@@ -3,26 +3,35 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  # Vite 7 requires Node 20.19+
+  NODE_VERSION = "22"
   VITE_API_BASE_URL = "https://quizzical-cherry-production.up.railway.app"
-  # Force rebuild with correct backend URL
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
+# Hashed build output never changes, so it can be cached forever
 [[headers]]
-  for = "/static/*"
+  for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# The service worker and app shell must always be revalidated or updates never reach players
 [[headers]]
-  for = "/*.js"
+  for = "/sw.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "no-cache"
+    Service-Worker-Allowed = "/"
 
 [[headers]]
-  for = "/*.css"
+  for = "/index.html"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "no-cache"
+    Content-Type = "application/manifest+json"

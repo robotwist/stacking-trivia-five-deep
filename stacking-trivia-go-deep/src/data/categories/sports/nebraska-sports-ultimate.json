@@ -26,15 +26,16 @@
     },
     {
       "level": 3,
-      "question": "Memorial Stadium is famous for what attendance streak from 1962 to 2022?",
+      "question": "Since 1962, Memorial Stadium has held an NCAA-record streak of consecutive what?",
       "answer": "Sellouts",
       "acceptedAnswers": [
         "Sellouts",
         "sellouts",
         "sellout streak",
-        "consecutive sellouts",
-        "375 sellouts"
-      ]
+        "sold out games",
+        "sold-out games"
+      ],
+      "explanation": "The streak began Nov. 3, 1962, passed 400 games in 2024, and is more than twice as long as any other in college sports."
     },
     {
       "level": 4,

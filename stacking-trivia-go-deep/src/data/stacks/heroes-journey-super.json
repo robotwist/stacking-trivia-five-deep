@@ -1,81 +1,73 @@
 {
   "title": "The Hero's Journey: Campbell's Universal Pattern",
-  "description": "The story pattern hidden in myths, movies, and our own lives.",
+  "description": "A scholar's book, a word stolen from a novel, and a galaxy far, far away—five steps into the story behind stories.",
   "questions": [
     {
       "level": 1,
-      "question": "Campbell claimed roughly what percentage of world mythologies follow the Hero's Journey?",
-      "answer": "Over 90%",
+      "question": "What 1949 book by Joseph Campbell introduced the Hero's Journey?",
+      "answer": "The Hero with a Thousand Faces",
       "acceptedAnswers": [
-        "Over 90%",
-        "over 90%",
-        "90%",
-        "ninety percent",
-        "more than 90%",
-        "90 percent"
+        "The Hero with a Thousand Faces",
+        "the hero with a thousand faces",
+        "hero with a thousand faces",
+        "a thousand faces",
+        "thousand faces"
       ],
-      "explanation": "Campbell found recognizable monomyth elements in over 90% of mythologies he studied."
+      "explanation": "Campbell compared myths from every continent and argued that their heroes follow one shared path: departure, initiation, return."
     },
     {
       "level": 2,
-      "question": "In over 90% of myths Campbell studied, what does he call the hero's reluctance after the call?",
-      "answer": "Refusal of the Call",
+      "question": "In The Hero with a Thousand Faces, what one-word term does Campbell use for that universal pattern?",
+      "answer": "Monomyth",
       "acceptedAnswers": [
-        "Refusal of the Call",
-        "refusal of the call",
-        "the refusal",
-        "refusal of the adventure",
-        "threshold fear"
+        "Monomyth",
+        "monomyth",
+        "the monomyth",
+        "mono myth"
       ],
-      "explanation": "The Refusal mirrors real human resistance to change."
+      "explanation": "One story, endlessly retold—Campbell said the hero 'ventures forth from the world of common day into a region of supernatural wonder.'"
     },
     {
       "level": 3,
-      "question": "After the Refusal of the Call, Campbell's Supernatural Aid figure represents what Jungian archetype?",
-      "answer": "The Self",
+      "question": "Campbell borrowed the word 'monomyth' from which James Joyce novel?",
+      "answer": "Finnegans Wake",
       "acceptedAnswers": [
-        "The Self",
-        "the self",
-        "self archetype",
-        "wise old man",
-        "wise old woman",
-        "inner wisdom",
-        "self"
+        "Finnegans Wake",
+        "finnegans wake",
+        "finnegan's wake",
+        "finnegans",
+        "the wake"
       ],
-      "explanation": "Supernatural aids project the Self—the psyche's guiding wisdom."
+      "explanation": "Campbell was a Joyce scholar—he co-wrote 'A Skeleton Key to Finnegans Wake' in 1944, five years before his own book."
     },
     {
       "level": 4,
-      "question": "Campbell's Self archetype surfaces in kings—Arthur's name derives from a word meaning what animal?",
-      "answer": "Bear",
+      "question": "From a Finnegans Wake scholar to a movie muse: which filmmaker credited Campbell's book with shaping Star Wars?",
+      "answer": "George Lucas",
       "acceptedAnswers": [
-        "Bear",
-        "bear",
-        "bear-man",
-        "artos",
-        "ursine",
-        "bear king"
+        "George Lucas",
+        "george lucas",
+        "lucas"
       ],
-      "explanation": "Celtic 'Artos' links Arthur to Ursa Major and cyclical kingship."
+      "explanation": "Lucas read Campbell while drafting Star Wars and later called him 'my Yoda.' Luke Skywalker's arc follows the monomyth beat for beat."
     },
     {
       "level": 5,
-      "question": "That bear-king pattern leads to crisis—what Greek word for turning point did Campbell cite?",
-      "answer": "Krisis",
+      "question": "George Lucas hosted Campbell's famous 'Power of Myth' interviews with Bill Moyers at what California property?",
+      "answer": "Skywalker Ranch",
       "acceptedAnswers": [
-        "Krisis",
-        "krisis",
-        "crisis",
-        "krisis decision",
-        "turning point"
+        "Skywalker Ranch",
+        "skywalker ranch",
+        "skywalker",
+        "the ranch"
       ],
-      "explanation": "Greek 'krisis' means the moment of decision when identity must reorganize."
+      "explanation": "Moyers taped five of the six episodes at the ranch over Campbell's last two summers. The series aired in 1988, the year after he died."
     }
   ],
   "category": "actually",
   "deeperMode": {
     "title": "Deeper: Myth and Mind",
-    "description": "Bonus lore for monomyth obsessives",
+    "description": "Bonus lore for myth obsessives",
     "questions": []
   }
 }

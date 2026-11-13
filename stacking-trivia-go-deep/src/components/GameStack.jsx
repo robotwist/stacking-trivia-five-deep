@@ -9,40 +9,39 @@ import { useAuth } from '../contexts/AuthContext';
 import ProgressStorage from '../utils/progressStorage';
 import { playSound } from '../utils/audio.js';
 
-const GameStack = memo(function GameStack({ 
-  stackData, 
+const getAcceptedAnswers = (question) =>
+  question.acceptedAnswers || question.a || [question.answer];
+
+const getCanonicalAnswer = (question) =>
+  question.answer ||
+  (question.acceptedAnswers && question.acceptedAnswers[0]) ||
+  (question.a && question.a[0]) ||
+  'Unknown';
+
+const GameStack = memo(function GameStack({
+  stackData,
+  stackKey,
   onComplete,
   showHostControls = false,
   teamName = "",
   onPause = () => {},
   onResume = () => {},
-  resumeData = null // PRIORITY 2: Resume from saved progress
+  resumeData = null
 }) {
   const [depth, setDepth] = useState(0);
   const [score, setScore] = useState(0);
   const [input, setInput] = useState('');
-  const [feedback, setFeedback] = useState('');
   const [showHint, setShowHint] = useState(false);
   const [isDeepMode, setIsDeepMode] = useState(false);
   const [deepModeDepth, setDeepModeDepth] = useState(0);
   const [showDeeperModeOffer, setShowDeeperModeOffer] = useState(false);
-  // Track user's answers for progress persistence
   const [userAnswers, setUserAnswers] = useState([]);
+  /** Shown after each submission until the player taps Continue: { correct, points, answer, explanation } */
+  const [reveal, setReveal] = useState(null);
 
-  // Reduce delays in test environment for deterministic tests
-  const isTestEnv = typeof process !== 'undefined' && process.env.NODE_ENV === 'test';
-  const ANSWER_DELAY_MS = isTestEnv ? 0 : 2000;
-  const FAIL_DELAY_MS = isTestEnv ? 0 : 3000;
-  
-  // Track game statistics for post-game flow
-  const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [totalAttempts, setTotalAttempts] = useState(0);
-  
-  // Phase 8 enhancements - simplified
   const [crowdEnergy, setCrowdEnergy] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
   const [scoreAnimation, setScoreAnimation] = useState(false);
-  const [questionLocked, setQuestionLocked] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const [showMcqHint, setShowMcqHint] = useState(() => {
@@ -52,28 +51,18 @@ const GameStack = memo(function GameStack({
       return false
     }
   });
-  const questionLockedRef = useRef(false);
-  const completedRef = useRef(false);
-  const setLocked = (locked) => {
-    questionLockedRef.current = locked;
-    setQuestionLocked(locked);
-  };
-  const setCompleted = (completed) => {
-    completedRef.current = completed;
-    setIsCompleted(completed);
-  };
-  
-  // Photo-first system state
-  const [photoPhase, setPhotoPhase] = useState('pending'); // 'pending', 'completed', 'skipped'
-  // Photo-first scoring bonus is applied directly to score; we don't persist separate fields
-  
+  const submittingRef = useRef(false);
+  const continueButtonRef = useRef(null);
+  const inputRef = useRef(null);
+
+  const [photoPhase, setPhotoPhase] = useState('pending');
+
   const { isAuthenticated, markStackCompleted } = useAuth();
-  
+
   const [darkMode, setDarkMode] = useState(() => {
     return document.documentElement.classList.contains('dark')
   });
-  
-  // Listen for dark mode changes
+
   useEffect(() => {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
@@ -82,43 +71,38 @@ const GameStack = memo(function GameStack({
         }
       })
     })
-    
+
     observer.observe(document.documentElement, { attributes: true })
     return () => observer.disconnect()
   }, [])
 
-  // PRIORITY 2: Initialize from resume data if provided
+  const progressKey = stackKey || stackData.title;
+  const deeperQuestions = useMemo(() => stackData.deeperMode?.questions || [], [stackData.deeperMode]);
+  const hasDeeperMode = deeperQuestions.length > 0;
+
   useEffect(() => {
     if (resumeData) {
       setDepth(resumeData.currentIndex);
       setScore(resumeData.score);
-      setCorrectAnswers(resumeData.userAnswers.filter(a => a.correct).length);
-      setTotalAttempts(resumeData.userAnswers.length);
       setUserAnswers(resumeData.userAnswers || []);
-      
-      // Track start of resumed game
-      ProgressStorage.trackAction('stack_started', {
-        stackName: stackData.name,
-        resumed: true,
-        startIndex: resumeData.currentIndex
-      });
-    } else {
-      // Track start of new game
-      ProgressStorage.trackAction('stack_started', {
-        stackName: stackData.name,
-        resumed: false,
-        startIndex: 0
-      });
     }
-  }, [resumeData, stackData.name])
-  
-  // Get current question - memoized for performance
+    ProgressStorage.trackAction('stack_started', {
+      stackName: progressKey,
+      resumed: !!resumeData,
+      startIndex: resumeData?.currentIndex || 0
+    });
+  }, [resumeData, progressKey])
+
   const current = useMemo(() => {
-    if (isDeepMode && stackData.deeperMode) {
-      return stackData.deeperMode.questions[deepModeDepth];
-    }
+    if (isDeepMode) return deeperQuestions[deepModeDepth];
     return stackData.questions[depth];
-  }, [isDeepMode, stackData, deepModeDepth, depth]);
+  }, [isDeepMode, deeperQuestions, deepModeDepth, stackData.questions, depth]);
+
+  // Keep focus where the player's thumb/keyboard needs it next
+  useEffect(() => {
+    if (reveal) continueButtonRef.current?.focus();
+    else inputRef.current?.focus({ preventScroll: true });
+  }, [reveal, depth, deepModeDepth]);
 
   const toggleMcqHint = useCallback(() => {
     setShowMcqHint((prev) => {
@@ -130,26 +114,30 @@ const GameStack = memo(function GameStack({
     })
   }, [])
 
-  // Generate multiple choice options when hint mode is enabled
   const mcqOptions = useMemo(() => {
-    if (!showMcqHint || !stackData?.questions?.length || !current) return []
-    const index = isDeepMode ? deepModeDepth : depth
-    return generateMultipleChoiceOptions(stackData, index, 4)
-  }, [showMcqHint, stackData, current, isDeepMode, deepModeDepth, depth])
+    if (!showMcqHint || isDeepMode || !stackData?.questions?.length || !current) return []
+    return generateMultipleChoiceOptions(stackData, depth, 4)
+  }, [showMcqHint, stackData, current, isDeepMode, depth])
 
-  // Calculate maximum possible score
-  // Base max score for standard mode; actual run max will be computed at completion time
-  const baseMaxPossibleScore = useMemo(() => {
-    return calculateMaxScore(stackData.questions?.length || 5, false);
-  }, [stackData.questions?.length]);
-
-  // Memoized score animation trigger
   const animateScore = useCallback(() => {
     setScoreAnimation(true);
     setTimeout(() => setScoreAnimation(false), 1000);
   }, []);
 
-  // Phase 8: Host control functions - memoized
+  const finish = useCallback((finalScore, answers, { deeper = false } = {}) => {
+    setIsCompleted(true);
+    ProgressStorage.clearProgress();
+    if (isAuthenticated) {
+      markStackCompleted(deeper ? `${stackData.title} - Deeper Mode` : stackData.title, finalScore);
+    }
+    if (onComplete) {
+      const correctCount = answers.filter((a) => a.correct).length;
+      const accuracy = answers.length > 0 ? Math.round((correctCount / answers.length) * 100) : 0;
+      const runMax = calculateMaxScore(stackData.questions.length, deeper);
+      onComplete(finalScore, runMax, answers.length, accuracy, answers);
+    }
+  }, [isAuthenticated, markStackCompleted, onComplete, stackData.title, stackData.questions.length]);
+
   const handlePause = useCallback(() => {
     setIsPaused(true);
     onPause();
@@ -160,270 +148,151 @@ const GameStack = memo(function GameStack({
     onResume();
   }, [onResume]);
 
-  const handleSkipQuestion = useCallback(() => {
-    if (depth + 1 >= stackData.questions.length) {
-      const questionsAnswered = depth + 1;
-      const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
-      if (onComplete) {
-        const runMax = calculateMaxScore(stackData.questions.length, isDeepMode && !!stackData.deeperMode);
-        onComplete(score, runMax, questionsAnswered, accuracy);
-      }
-    } else {
-      setDepth(depth + 1);
-      setInput('');
-      setFeedback('');
-      setShowHint(false);
-    }
-  }, [depth, stackData.questions.length, onComplete, score, isDeepMode, correctAnswers, totalAttempts]);
-
-  const handlePlaySound = useCallback((soundType) => {
-    // Placeholder for actual sound implementation
-    console.log(`Playing sound: ${soundType}`);
-    // Future: integrate with Web Audio API or Howler.js
-  }, []);
-
-  // Use refs to capture latest values for callbacks
-  const stateRef = useRef();
-  stateRef.current = {
-    depth,
-    score, 
-    input,
-    selectedOption,
-    isDeepMode,
-    deepModeDepth,
-    showDeeperModeOffer,
-    isPaused,
-    questionLocked: questionLockedRef.current,
-    isCompleted: completedRef.current,
-    current,
-    stackData,
-    showHostControls,
-    crowdEnergy,
-    onComplete,
-    animateScore
+  const resetForNextQuestion = () => {
+    setInput('');
+    setSelectedOption(null);
+    setShowHint(false);
+    setReveal(null);
+    submittingRef.current = false;
   };
 
-  const checkAnswer = useCallback(() => {
-    const state = stateRef.current;
-    if (!state.current || state.isPaused || state.questionLocked || state.isCompleted) return;
-    // Lock immediately to prevent double submissions
-    setLocked(true);
-    
-    const userAnswer = (state.selectedOption && String(state.selectedOption)) || state.input.trim();
-    const isCorrect = checkAnswerMatch(userAnswer, state.current.acceptedAnswers || state.current.a || [state.current.answer]);
-    
-    // Play sound effect based on result
-    if (isCorrect) {
-      playSound('correct');
+  const handleSkipQuestion = useCallback(() => {
+    if (depth + 1 >= stackData.questions.length) {
+      finish(score, userAnswers);
     } else {
-      playSound('incorrect');
+      setDepth(depth + 1);
+      resetForNextQuestion();
     }
-    
-    // Track attempts and correct answers for statistics
-    setTotalAttempts(prev => prev + 1);
-    if (isCorrect) {
-      setCorrectAnswers(prev => prev + 1);
-    }
-    
-    if (isCorrect) {
-      // Calculate score with crowd multiplier if in bar mode
-      const currentDepth = state.isDeepMode ? state.deepModeDepth : state.depth;
-      const baseScore = calculateQuestionScore(currentDepth, state.isDeepMode);
-      const multiplier = state.showHostControls ? getCrowdMultiplier(state.crowdEnergy) : 1;
-      const questionScore = Math.round(baseScore * multiplier);
-      
-      console.log(`Score calculation: ${state.score} + ${questionScore} = ${state.score + questionScore}`);
-      
-      // Use functional update to ensure we get the latest score
-      setScore(prevScore => prevScore + questionScore);
-      setFeedback(`Correct! +${questionScore} points`);
-      state.animateScore();
+  }, [depth, stackData.questions.length, finish, score, userAnswers]);
 
-      // Record answer event
-      setUserAnswers(prev => ([
-        ...prev,
-        {
-          questionIndex: currentDepth,
-          questionText: state.current.question || state.current.q,
-          acceptedAnswers: state.current.acceptedAnswers || state.current.a || [state.current.answer],
-          userAnswer,
-          correct: true,
-          pointsAwarded: questionScore,
-        }
-      ]));
-      
-      // Progress logic
-      if (state.isDeepMode) {
-        if (state.deepModeDepth + 1 >= (state.stackData.deeperMode?.questions.length || 0)) {
-          setTimeout(() => {
-            const finalScore = state.score + questionScore;
-            const questionsAnswered = state.deepModeDepth + 1;
-            const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
-            console.log('Deep mode complete, final score:', finalScore);
-            setCompleted(true);
-            
-            // Mark stack as completed for authenticated users
-            if (isAuthenticated) {
-              markStackCompleted(`${state.stackData.title} - Deeper Mode`, finalScore);
-            }
-            
-            if (state.onComplete) {
-              const call = state.onComplete;
-              const runMax = calculateMaxScore(state.stackData.questions.length, !!state.stackData.deeperMode);
-              if (call.length <= 2) call(finalScore, runMax);
-              else call(finalScore, runMax, questionsAnswered, accuracy);
-            }
-          }, ANSWER_DELAY_MS);
-        } else {
-          setTimeout(() => {
-            setDeepModeDepth(state.deepModeDepth + 1);
-            setInput('');
-            setSelectedOption(null);
-            setFeedback('');
-            setShowHint(false);
-            setLocked(false);
-          }, ANSWER_DELAY_MS);
-        }
-      } else {
-        if (state.depth + 1 >= state.stackData.questions.length) {
-          // Offer deeper mode if available
-          if (state.stackData.deeperMode && !state.showDeeperModeOffer) {
-            setTimeout(() => {
-              setShowDeeperModeOffer(true);
-              setFeedback('');
-              setLocked(false);
-            }, ANSWER_DELAY_MS);
-          } else {
-            setTimeout(() => {
-              const finalScore = state.score + questionScore;
-              const questionsAnswered = state.depth + 1;
-              const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
-              console.log('Stack complete, final score:', finalScore);
-              setCompleted(true);
-              
-              // Mark stack as completed for authenticated users
-              if (isAuthenticated) {
-                markStackCompleted(state.stackData.title, finalScore);
-              }
-              
-              if (state.onComplete) {
-                const call = state.onComplete;
-                const runMax = calculateMaxScore(state.stackData.questions.length, false);
-                if (call.length <= 2) call(finalScore, runMax);
-                else call(finalScore, runMax, questionsAnswered, accuracy);
-              }
-            }, ANSWER_DELAY_MS);
-          }
-        } else {
-          setTimeout(() => {
-            const newDepth = state.depth + 1;
-            setDepth(newDepth);
-            setInput('');
-            setSelectedOption(null);
-            setFeedback('');
-            setShowHint(false);
-            
-            // PRIORITY 2: Auto-save progress after each question
-            const nextAnswers = [
-              ...userAnswers,
-              {
-                questionIndex: currentDepth,
-                questionText: state.current.question || state.current.q,
-                acceptedAnswers: state.current.acceptedAnswers || state.current.a || [state.current.answer],
-                userAnswer,
-                correct: true,
-                pointsAwarded: questionScore,
-              }
-            ];
-            ProgressStorage.saveProgress(
-              state.stackData.name,
-              newDepth,
-              state.score + questionScore,
-              calculateMaxScore(state.stackData.questions.length, false),
-              nextAnswers
-            );
-            setLocked(false);
-          }, ANSWER_DELAY_MS);
-        }
+  const handlePlaySound = useCallback((soundType) => {
+    playSound(soundType);
+  }, []);
+
+  const checkAnswer = () => {
+    if (!current || isPaused || reveal || isCompleted || submittingRef.current) return;
+    submittingRef.current = true;
+
+    const userAnswer = (selectedOption && String(selectedOption)) || input.trim();
+    const isCorrect = checkAnswerMatch(userAnswer, getAcceptedAnswers(current));
+    const currentDepth = isDeepMode ? deepModeDepth : depth;
+
+    let points = 0;
+    if (isCorrect) {
+      const multiplier = showHostControls ? getCrowdMultiplier(crowdEnergy) : 1;
+      points = Math.round(calculateQuestionScore(currentDepth, isDeepMode) * multiplier);
+    }
+
+    playSound(isCorrect ? 'correct' : 'incorrect');
+
+    const nextAnswers = [
+      ...userAnswers,
+      {
+        questionIndex: currentDepth,
+        deeper: isDeepMode,
+        questionText: current.question || current.q,
+        acceptedAnswers: getAcceptedAnswers(current),
+        answer: getCanonicalAnswer(current),
+        userAnswer,
+        correct: isCorrect,
+        pointsAwarded: points,
+      }
+    ];
+    setUserAnswers(nextAnswers);
+
+    if (isCorrect) {
+      setScore((prev) => prev + points);
+      animateScore();
+      if (!isDeepMode && depth + 1 < stackData.questions.length) {
+        ProgressStorage.saveProgress(
+          progressKey,
+          depth + 1,
+          score + points,
+          calculateMaxScore(stackData.questions.length, false),
+          nextAnswers
+        );
       }
     } else {
-      const correctAnswer = (state.current.acceptedAnswers && state.current.acceptedAnswers[0]) || 
-                           (state.current.a && state.current.a[0]) || 
-                           state.current.answer || 'Unknown';
-      setFeedback(`Not quite. The answer was: ${correctAnswer}`);
-      // Record incorrect answer and persist immediate state
-      const currentDepth = state.isDeepMode ? state.deepModeDepth : state.depth;
-      const nextAnswers = [
-        ...userAnswers,
-        {
-          questionIndex: currentDepth,
-          questionText: state.current.question || state.current.q,
-          acceptedAnswers: state.current.acceptedAnswers || state.current.a || [state.current.answer],
-          userAnswer,
-          correct: false,
-          pointsAwarded: 0,
-        }
-      ];
-      setUserAnswers(nextAnswers);
-      // Save where we failed so resume can offer continuation
-      ProgressStorage.saveProgress(
-        state.stackData.name,
-        currentDepth,
-        state.score,
-        calculateMaxScore(state.stackData.questions.length, false),
-        nextAnswers
-      );
-      setTimeout(() => {
-        const questionsAnswered = state.depth + 1;
-        const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
-         console.log('Wrong answer, final score:', state.score);
-        setCompleted(true);
-        if (state.onComplete) {
-          const call = state.onComplete;
-           const runMax = calculateMaxScore(state.stackData.questions.length, false);
-           if (call.length <= 2) call(state.score, runMax);
-           else call(state.score, runMax, questionsAnswered, accuracy);
-        }
-      }, FAIL_DELAY_MS);
+      // A miss ends the run, so there is nothing to resume
+      ProgressStorage.clearProgress();
     }
-  }, []); // Empty dependency array - we'll access current values via ref
 
-  // Use onKeyDown instead of onKeyPress (onKeyPress is deprecated)
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === 'Enter' && !feedback.includes('The answer was:') && !isPaused && (input.trim() || selectedOption)) {
+    setReveal({
+      correct: isCorrect,
+      points,
+      answer: getCanonicalAnswer(current),
+      explanation: current.explanation || null,
+      userAnswer,
+    });
+  };
+
+  const handleContinue = () => {
+    if (!reveal) return;
+
+    if (!reveal.correct) {
+      finish(score, userAnswers, { deeper: isDeepMode });
+      return;
+    }
+
+    if (isDeepMode) {
+      if (deepModeDepth + 1 >= deeperQuestions.length) {
+        finish(score, userAnswers, { deeper: true });
+      } else {
+        setDeepModeDepth(deepModeDepth + 1);
+        resetForNextQuestion();
+      }
+      return;
+    }
+
+    if (depth + 1 >= stackData.questions.length) {
+      if (hasDeeperMode) {
+        setReveal(null);
+        setShowDeeperModeOffer(true);
+      } else {
+        finish(score, userAnswers);
+      }
+      return;
+    }
+
+    setDepth(depth + 1);
+    resetForNextQuestion();
+  };
+
+  const getContinueLabel = () => {
+    if (!reveal) return '';
+    if (!reveal.correct) return 'See the full story';
+    const isLastMain = !isDeepMode && depth + 1 >= stackData.questions.length;
+    const isLastDeeper = isDeepMode && deepModeDepth + 1 >= deeperQuestions.length;
+    if (isLastMain && hasDeeperMode) return 'Continue';
+    if (isLastMain || isLastDeeper) return 'See your results';
+    return 'Go deeper ↓';
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !isPaused && (input.trim() || selectedOption)) {
       e.preventDefault();
       checkAnswer();
     }
-  }, [feedback, isPaused, input, selectedOption, checkAnswer]);
+  };
 
   const toggleHint = useCallback(() => {
-    setShowHint(!showHint);
-  }, [showHint]);
+    setShowHint((prev) => !prev);
+  }, []);
 
-  const enterDeeperMode = useCallback(() => {
+  const enterDeeperMode = () => {
     setIsDeepMode(true);
     setDeepModeDepth(0);
     setShowDeeperModeOffer(false);
-    setInput('');
-    setFeedback('DEEPER MODE ACTIVATED! The questions get obsessive now...');
-    setTimeout(() => setFeedback(''), 2000);
-  }, []);
+    resetForNextQuestion();
+  };
 
-  const declineDeeperMode = useCallback(() => {
-    const questionsAnswered = depth + 1;
-    const accuracy = totalAttempts > 0 ? Math.round((correctAnswers / totalAttempts) * 100) : 0;
+  const declineDeeperMode = () => {
     setShowDeeperModeOffer(false);
-    setCompleted(true);
-    if (onComplete) {
-      const runMax = calculateMaxScore(stackData.questions.length, false);
-      onComplete(score, runMax, questionsAnswered, accuracy);
-    }
-  }, [onComplete, score, depth, correctAnswers, totalAttempts, stackData.questions.length]);
+    finish(score, userAnswers);
+  };
 
-  // Photo-first system handlers
   const handlePhotoIdentification = useCallback((result) => {
     setPhotoPhase('completed');
-    // Add photo bonus to score
     setScore(prev => prev + result.bonusPoints);
   }, []);
 
@@ -431,13 +300,11 @@ const GameStack = memo(function GameStack({
     setPhotoPhase('skipped');
   }, []);
 
-  // Check if stack uses photo-first system
   const isPhotoFirst = stackData.photoFirst && stackData.questions[0]?.photo;
 
-  // Show photo identification challenge first (for photo-first stacks)
   if (isPhotoFirst && photoPhase === 'pending') {
     return (
-      <PhotoIdentification 
+      <PhotoIdentification
         photoData={stackData.questions[0]}
         onCorrectIdentification={handlePhotoIdentification}
         onSkip={handlePhotoSkip}
@@ -446,15 +313,15 @@ const GameStack = memo(function GameStack({
     );
   }
 
-  // Show Deeper Mode offer screen
-  if (showDeeperModeOffer && stackData.deeperMode) {
+  if (showDeeperModeOffer && hasDeeperMode) {
     return (
-      <div className={`p-8 max-w-3xl mx-auto rounded-sm border-2 border-amber-400 text-center sepia ${
-        darkMode 
-          ? 'bg-gradient-to-br from-amber-900/90 via-yellow-900/90 to-amber-800/90 text-amber-50' 
+      <div className={`p-8 max-w-3xl mx-auto rounded-sm border-2 border-amber-400 text-center ${
+        darkMode
+          ? 'bg-gradient-to-br from-amber-900/90 via-yellow-900/90 to-amber-800/90 text-amber-50'
           : 'bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-50 text-amber-900'
       }`}>
         <div className="text-7xl mb-6" style={{ fontFamily: 'Baskervville, serif' }}>— ❦ —</div>
+        <p className="text-sm uppercase tracking-widest text-amber-600 mb-2">Perfect stack — bonus unlocked</p>
         <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-700 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>
           {stackData.deeperMode.title}
         </h1>
@@ -466,22 +333,22 @@ const GameStack = memo(function GameStack({
         }`}>
           <div className="text-2xl font-bold mb-2 text-amber-700 dark:text-amber-200" style={{ fontFamily: 'Baskervville, serif' }}>Current Score: {score}</div>
           <div className={`text-sm ${darkMode ? 'text-amber-300' : 'text-amber-600'}`} style={{ fontFamily: 'Baskervville, serif' }}>
-            Risk it all for bonus points
+            {deeperQuestions.length} bonus question{deeperQuestions.length === 1 ? '' : 's'} — your points are safe, a miss just ends the bonus round
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={enterDeeperMode}
-            className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 text-white px-8 py-4 rounded-sm border-2 border-amber-500 hover:border-amber-400 text-lg font-semibold transition-all duration-300 transform hover:scale-105 sepia hover:sepia-0"
+            className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 text-white px-8 py-4 rounded-sm border-2 border-amber-500 hover:border-amber-400 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
             style={{ fontFamily: 'Baskervville, serif' }}
           >
             ENTER DEEPER MODE
           </button>
           <button
             onClick={declineDeeperMode}
-            className={`px-8 py-4 rounded-sm border-2 border-amber-400 hover:border-amber-300 text-lg font-semibold transition-all duration-300 sepia hover:sepia-0 ${
-              darkMode 
-                ? 'bg-amber-800/20 hover:bg-amber-700/30 text-amber-200' 
+            className={`px-8 py-4 rounded-sm border-2 border-amber-400 hover:border-amber-300 text-lg font-semibold transition-all duration-300 ${
+              darkMode
+                ? 'bg-amber-800/20 hover:bg-amber-700/30 text-amber-200'
                 : 'bg-amber-50 hover:bg-amber-100 text-amber-800'
             }`}
             style={{ fontFamily: 'Baskervville, serif' }}
@@ -501,14 +368,17 @@ const GameStack = memo(function GameStack({
     );
   }
 
+  const totalLevels = isDeepMode ? deeperQuestions.length : stackData.questions.length;
+  const levelIndex = isDeepMode ? deepModeDepth : depth;
+  const inputLocked = isPaused || !!reveal || isCompleted;
+
   return (
-    <div className={`p-6 max-w-4xl mx-auto rounded-sm sepia transition-colors duration-300 ${
-      darkMode 
-        ? 'bg-gradient-to-br from-amber-900/70 via-yellow-900/70 to-amber-800/70 text-amber-50' 
+    <div className={`p-5 sm:p-6 max-w-4xl mx-auto rounded-sm transition-colors duration-300 ${
+      darkMode
+        ? 'bg-gradient-to-br from-amber-900/70 via-yellow-900/70 to-amber-800/70 text-amber-50'
         : 'bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-50 text-amber-900'
     }`} style={{ fontFamily: 'Baskerville, serif' }}>
-      
-      {/* Host Controls */}
+
       {showHostControls && (
         <QuickHostControls
           isPaused={isPaused}
@@ -523,35 +393,59 @@ const GameStack = memo(function GameStack({
       )}
 
       {/* Header */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-amber-800 dark:text-amber-200">
           {isDeepMode ? stackData.deeperMode?.title : stackData.title}
         </h2>
-        <div className="flex items-center justify-center gap-4 mb-4">
+        <div className="flex items-center justify-center gap-4 mb-4 flex-wrap">
           <span className={`text-lg font-semibold ${scoreAnimation ? 'animate-bounce text-green-600' : ''}`}>
             Score: {score}
           </span>
           <span className="text-sm text-amber-600 dark:text-amber-400">
-            {isDeepMode 
-              ? `Deeper ${deepModeDepth + 1}/${stackData.deeperMode?.questions.length || 5}` 
+            {isDeepMode
+              ? `Deeper ${deepModeDepth + 1}/${deeperQuestions.length}`
               : `Level ${current?.level || depth + 1} of ${stackData.questions.length} — ${getLevelLabel(current?.level || depth + 1)}`}
           </span>
         </div>
+
+        {/* Depth ladder: each rung is a level, worth double the last */}
+        <ol className="flex justify-center gap-1.5" aria-label="Stack progress">
+          {Array.from({ length: totalLevels }).map((_, i) => {
+            const answered = userAnswers.find((a) => a.questionIndex === i && !!a.deeper === isDeepMode);
+            const state = answered ? (answered.correct ? 'correct' : 'missed') : i === levelIndex ? 'current' : 'ahead';
+            return (
+              <li
+                key={i}
+                aria-label={`Level ${i + 1}: ${state}`}
+                className={`h-2.5 w-10 sm:w-14 rounded-full transition-colors duration-500 ${
+                  state === 'correct' ? 'bg-green-600'
+                    : state === 'missed' ? 'bg-red-500'
+                      : state === 'current' ? 'bg-amber-500 animate-pulse'
+                        : 'bg-amber-200 dark:bg-amber-800/60'
+                }`}
+              />
+            );
+          })}
+        </ol>
+        {!isDeepMode && (
+          <p className="mt-2 text-xs text-amber-600 dark:text-amber-400">
+            Worth {calculateQuestionScore(depth, false)} pts · one miss ends the dive
+          </p>
+        )}
       </div>
 
       {/* Question */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h3 className="text-xl sm:text-2xl mb-6 leading-relaxed font-medium text-gray-900 dark:text-gray-100">
           {current.question || current.q}
         </h3>
-        
-        {/* Hint */}
-        {current.hint && (
+
+        {current.hint && !reveal && (
           <div className="mb-6">
             <button
               onClick={toggleHint}
               className={`px-4 py-2 rounded-sm border-2 transition-all duration-200 ${
-                showHint 
+                showHint
                   ? (darkMode ? 'bg-amber-700 border-amber-600' : 'bg-amber-200 border-amber-300')
                   : (darkMode ? 'bg-amber-800/50 border-amber-700' : 'bg-amber-100/50 border-amber-300')
               }`}
@@ -569,114 +463,125 @@ const GameStack = memo(function GameStack({
         )}
       </div>
 
-      {/* Input / Multiple Choice */}
-      <div className="text-center mb-8">
-        <div className="mb-4">
-          <button
-            type="button"
-            onClick={toggleMcqHint}
-            disabled={isPaused || questionLocked || isCompleted}
-            className={`px-4 py-2 rounded-sm border-2 text-sm transition-colors ${
-              showMcqHint
-                ? 'bg-amber-300 dark:bg-amber-700 border-amber-500 text-amber-900 dark:text-amber-50'
-                : 'bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-800 dark:text-amber-200 hover:bg-amber-100'
-            }`}
-          >
-            {showMcqHint ? 'Hide answer choices' : 'Show answer choices'}
-          </button>
-        </div>
-        {mcqOptions && mcqOptions.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto mb-6">
-            {mcqOptions.map((opt, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  if (!isPaused && !questionLocked && !isCompleted) {
-                    setSelectedOption(String(opt))
-                    setInput('')
-                  }
-                }}
-                disabled={isPaused || questionLocked || isCompleted}
-                aria-pressed={selectedOption === String(opt)}
-                className={`px-4 py-3 rounded-sm border-2 transition-colors ${
-                  selectedOption === String(opt)
-                    ? 'bg-amber-300 dark:bg-amber-700 border-amber-500 dark:border-amber-500 text-amber-900 dark:text-amber-50'
-                    : 'bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-800/60'
-                }`}
-              >
-                {opt}
-              </button>
-            ))}
-          </div>
-        ) : null}
-        <label htmlFor="trivia-answer-input" className="sr-only">
-          Your answer to the trivia question
-        </label>
-        <input
-          id="trivia-answer-input"
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          disabled={isPaused || feedback.includes('The answer was:') || questionLocked || isCompleted}
-          placeholder="Your answer..."
-          aria-describedby="answer-instructions"
-          className={`w-full max-w-md px-4 py-3 text-lg rounded-sm border-2 text-center transition-all duration-200 ${
-            darkMode 
-              ? 'bg-amber-800/50 border-amber-600 text-amber-100 placeholder-amber-400' 
-              : 'bg-amber-50 border-amber-300 text-amber-900 placeholder-amber-600'
-          } focus:outline-none focus:border-amber-500`}
-          style={{ fontFamily: 'Baskerville, serif' }}
-        />
-        <div id="answer-instructions" className="sr-only">
-          Type your answer and press Enter or click the button below
-        </div>
-        <div className="mt-4">
-          <button
-            aria-label="Submit answer"
-            onClick={checkAnswer}
-            disabled={isPaused || feedback.includes('The answer was:') || !(input.trim() || selectedOption) || questionLocked || isCompleted}
-            className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 disabled:from-amber-400 disabled:to-amber-500 text-white px-8 py-3 rounded-sm text-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:scale-100 sepia hover:sepia-0 disabled:cursor-not-allowed"
-          >
-            Submit Answer
-          </button>
-        </div>
-      </div>
-
-      {/* Feedback */}
-      {feedback && (
-        <div 
-          className={`text-center p-4 rounded-sm border-2 mb-6 ${
-            feedback.includes('Correct') 
-              ? (darkMode ? 'bg-green-800/30 border-green-600 text-green-200' : 'bg-green-100 border-green-300 text-green-800')
-              : (darkMode ? 'bg-red-800/30 border-red-600 text-red-200' : 'bg-red-100 border-red-300 text-red-800')
+      {reveal ? (
+        <div
+          className={`text-center p-5 sm:p-6 rounded-sm border-2 mb-6 ${
+            reveal.correct
+              ? (darkMode ? 'bg-green-900/30 border-green-600 text-green-100' : 'bg-green-50 border-green-400 text-green-900')
+              : (darkMode ? 'bg-red-900/30 border-red-600 text-red-100' : 'bg-red-50 border-red-300 text-red-900')
           }`}
           role="status"
           aria-live="polite"
           aria-atomic="true"
         >
-          <p className="text-lg font-semibold">{feedback}</p>
-          {feedback.includes('Correct') && current.explanation && (
-            <p className={`mt-3 text-base font-normal italic ${
-              darkMode ? 'text-amber-200' : 'text-amber-800'
-            }`}>
-              {current.explanation}
+          <p className="text-lg font-semibold">
+            {reveal.correct ? `Correct! +${reveal.points} points` : 'Not quite—the dive ends here.'}
+          </p>
+          <p className="mt-2 text-2xl font-bold" style={{ fontFamily: 'Baskervville, serif' }}>
+            {reveal.answer}
+          </p>
+          {!reveal.correct && reveal.userAnswer && (
+            <p className="mt-1 text-sm opacity-80">You said: “{reveal.userAnswer}”</p>
+          )}
+          {reveal.explanation && (
+            <p className={`mt-4 text-base leading-relaxed italic ${darkMode ? 'text-amber-100' : 'text-amber-900'}`}>
+              {reveal.explanation}
             </p>
           )}
+          <button
+            ref={continueButtonRef}
+            type="button"
+            onClick={handleContinue}
+            className="mt-5 bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-sm text-lg font-semibold transition-all duration-300"
+          >
+            {getContinueLabel()}
+          </button>
+        </div>
+      ) : (
+        <div className="text-center mb-6">
+          {!isDeepMode && (
+            <div className="mb-4">
+              <button
+                type="button"
+                onClick={toggleMcqHint}
+                disabled={inputLocked}
+                className={`px-4 py-2 rounded-sm border-2 text-sm transition-colors ${
+                  showMcqHint
+                    ? 'bg-amber-300 dark:bg-amber-700 border-amber-500 text-amber-900 dark:text-amber-50'
+                    : 'bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-800 dark:text-amber-200 hover:bg-amber-100'
+                }`}
+              >
+                {showMcqHint ? 'Hide answer choices' : 'Show answer choices'}
+              </button>
+            </div>
+          )}
+          {mcqOptions.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto mb-6">
+              {mcqOptions.map((opt, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    if (!inputLocked) {
+                      setSelectedOption(String(opt))
+                      setInput('')
+                    }
+                  }}
+                  disabled={inputLocked}
+                  aria-pressed={selectedOption === String(opt)}
+                  className={`px-4 py-3 rounded-sm border-2 transition-colors ${
+                    selectedOption === String(opt)
+                      ? 'bg-amber-300 dark:bg-amber-700 border-amber-500 dark:border-amber-500 text-amber-900 dark:text-amber-50'
+                      : 'bg-amber-50 dark:bg-amber-800/40 border-amber-300 dark:border-amber-600 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-800/60'
+                  }`}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          )}
+          <label htmlFor="trivia-answer-input" className="sr-only">
+            Your answer to the trivia question
+          </label>
+          <input
+            ref={inputRef}
+            id="trivia-answer-input"
+            type="text"
+            value={input}
+            onChange={(e) => {
+              setInput(e.target.value)
+              if (selectedOption) setSelectedOption(null)
+            }}
+            onKeyDown={handleKeyDown}
+            disabled={inputLocked}
+            placeholder="Your answer..."
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            enterKeyHint="go"
+            aria-describedby="answer-instructions"
+            className={`w-full max-w-md px-4 py-3 text-lg rounded-sm border-2 text-center transition-all duration-200 ${
+              darkMode
+                ? 'bg-amber-800/50 border-amber-600 text-amber-100 placeholder-amber-400'
+                : 'bg-amber-50 border-amber-300 text-amber-900 placeholder-amber-600'
+            } focus:outline-none focus:border-amber-500`}
+            style={{ fontFamily: 'Baskerville, serif', fontSize: '18px' }}
+          />
+          <div id="answer-instructions" className="sr-only">
+            Type your answer and press Enter or tap Submit. Small typos are forgiven.
+          </div>
+          <div className="mt-4">
+            <button
+              aria-label="Submit answer"
+              onClick={checkAnswer}
+              disabled={inputLocked || !(input.trim() || selectedOption)}
+              className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-800 disabled:from-amber-400 disabled:to-amber-500 text-white px-8 py-3 rounded-sm text-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed"
+            >
+              Submit Answer
+            </button>
+          </div>
         </div>
       )}
-
-      {/* Progress Bar */}
-      <div className={`w-full h-2 rounded-sm mb-4 ${darkMode ? 'bg-amber-800/50' : 'bg-amber-200'}`}>
-        <div 
-          className="bg-gradient-to-r from-amber-500 to-yellow-500 h-full rounded-sm transition-all duration-500"
-          style={{ 
-            width: isDeepMode 
-              ? `${((deepModeDepth + 1) / (stackData.deeperMode?.questions.length || 5)) * 100}%`
-              : `${((depth + 1) / stackData.questions.length) * 100}%` 
-          }}
-        ></div>
-      </div>
     </div>
   );
 });

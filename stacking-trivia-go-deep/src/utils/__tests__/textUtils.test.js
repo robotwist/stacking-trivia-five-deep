@@ -43,6 +43,35 @@ describe('checkAnswerMatch', () => {
     expect(checkAnswerMatch('on', ['one', '1'])).toBe(false)
     expect(checkAnswerMatch('one', ['one', '1'])).toBe(true)
   })
+
+  it('rejects single letters that happen to appear in a short answer', () => {
+    expect(checkAnswerMatch('a', ['arles'])).toBe(false)
+    expect(checkAnswerMatch('r', ['rotel', 'rotel tomatoes'])).toBe(false)
+  })
+
+  it('ignores accents in either direction', () => {
+    expect(checkAnswerMatch('Yucatan', ['yucatán'])).toBe(true)
+    expect(checkAnswerMatch('Félix Rey', ['felix rey'])).toBe(true)
+  })
+
+  it('accepts the answer inside a short natural phrase', () => {
+    expect(checkAnswerMatch('only one painting', ['one'])).toBe(true)
+    expect(checkAnswerMatch('it was the red vineyard', ['red vineyard'])).toBe(true)
+  })
+
+  it('forgives swapped adjacent letters', () => {
+    expect(checkAnswerMatch('aristotel', ['aristotle'])).toBe(true)
+    expect(checkAnswerMatch('bucephlaus', ['bucephalus'])).toBe(true)
+  })
+
+  it('still rejects a different name of similar length', () => {
+    expect(checkAnswerMatch('socrates', ['aristotle'])).toBe(false)
+    expect(checkAnswerMatch('herodotus', ['aristotle'])).toBe(false)
+  })
+
+  it('rejects shotgun lists of guesses', () => {
+    expect(checkAnswerMatch('monet manet degas renoir cezanne arles', ['arles'])).toBe(false)
+  })
 })
 
 describe('calculateSimilarity', () => {

@@ -34,6 +34,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [wantsSignIn, setWantsSignIn] = useState(false);
 
   console.log('📊 AuthProvider: Initial state set - loading:', true, 'user:', null);
 
@@ -68,8 +69,9 @@ export const AuthProvider = ({ children }) => {
       
       console.log('🔍 AuthContext: token exists?', !!token, 'userData exists?', !!userData);
       
-      const guestSession = sessionStorage.getItem(GUEST_SESSION_KEY);
-      if (guestSession === '1') {
+      if (!token || !userData) {
+        // No account on this device: play immediately as a guest
+        localStorage.setItem(GUEST_SESSION_KEY, '1');
         setUser(createGuestUser());
         return;
       }
@@ -107,10 +109,11 @@ export const AuthProvider = ({ children }) => {
               setUser(JSON.parse(userData));
             }
           } else {
-            // Token is invalid, clear storage
+            // Token is invalid, clear storage and fall back to guest play
             console.log('❌ AuthContext: Token invalid, clearing auth');
             localStorage.removeItem('trivia_token');
             localStorage.removeItem('trivia_user');
+            setUser(createGuestUser());
           }
         } catch (networkError) {
           // Network error or timeout - keep user logged in locally
@@ -125,6 +128,7 @@ export const AuthProvider = ({ children }) => {
             // Clear corrupted data
             localStorage.removeItem('trivia_token');
             localStorage.removeItem('trivia_user');
+            setUser(createGuestUser());
           }
         }
       } else {
@@ -152,6 +156,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('trivia_token', response.token);
         localStorage.setItem('trivia_user', JSON.stringify(response.user));
         setUser(response.user);
+        setWantsSignIn(false);
         
         console.log('✅ AuthContext: Signup successful via backend');
         return response;
@@ -179,6 +184,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('trivia_token', demoToken);
         localStorage.setItem('trivia_user', JSON.stringify(demoUser));
         setUser(demoUser);
+        setWantsSignIn(false);
         
         console.log('✅ AuthContext: Demo account created successfully');
         return { user: demoUser, token: demoToken };
@@ -206,6 +212,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('trivia_token', response.token);
         localStorage.setItem('trivia_user', JSON.stringify(response.user));
         setUser(response.user);
+        setWantsSignIn(false);
         
         console.log('✅ AuthContext: Login successful via backend');
         return response;
@@ -233,6 +240,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('trivia_token', demoToken);
         localStorage.setItem('trivia_user', JSON.stringify(demoUser));
         setUser(demoUser);
+        setWantsSignIn(false);
         
         console.log('✅ AuthContext: Demo login successful');
         return { user: demoUser, token: demoToken };
@@ -247,19 +255,23 @@ export const AuthProvider = ({ children }) => {
   };
 
   const enterGuestMode = useCallback(() => {
-    sessionStorage.setItem(GUEST_SESSION_KEY, '1');
+    localStorage.setItem(GUEST_SESSION_KEY, '1');
     localStorage.removeItem('trivia_token');
     localStorage.removeItem('trivia_user');
     setUser(createGuestUser());
+    setWantsSignIn(false);
     setError(null);
     setLoading(false);
   }, []);
 
+  const requestSignIn = useCallback(() => setWantsSignIn(true), []);
+  const cancelSignIn = useCallback(() => setWantsSignIn(false), []);
+
   const logout = () => {
-    sessionStorage.removeItem(GUEST_SESSION_KEY);
     localStorage.removeItem('trivia_token');
     localStorage.removeItem('trivia_user');
-    setUser(null);
+    setUser(createGuestUser());
+    setWantsSignIn(false);
     setError(null);
   };
 
@@ -332,12 +344,14 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
     enterGuestMode,
+    requestSignIn,
+    cancelSignIn,
     updateUserStats,
     getCompletedStacks,
     markStackCompleted,
     isGuest,
     isAuthenticated: !!user && !isGuest,
-    canPlay: !!user,
+    canPlay: !!user && !wantsSignIn,
   };
 
   return (

@@ -15,18 +15,19 @@
     },
     {
       "level": 2,
-      "question": "How many paintings did van Gogh sell during his lifetime?",
+      "question": "Famously, how many paintings is van Gogh said to have sold during his lifetime?",
       "answer": "One",
       "acceptedAnswers": [
         "One",
         "one",
         "1",
         "only one"
-      ]
+      ],
+      "explanation": "That's the legend—and only one sale is documented beyond doubt. Letters hint at a few more, but nearly 900 paintings went unsold."
     },
     {
       "level": 3,
-      "question": "What was the title of the only painting van Gogh sold while alive?",
+      "question": "What is the title of that one documented painting van Gogh sold while alive?",
       "answer": "The Red Vineyard",
       "acceptedAnswers": [
         "The Red Vineyard",

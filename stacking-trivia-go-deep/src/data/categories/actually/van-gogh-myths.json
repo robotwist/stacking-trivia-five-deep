@@ -4,73 +4,77 @@
   "questions": [
     {
       "level": 1,
-      "question": "Actually, Van Gogh didn't cut off his entire ear. What did he really cut?",
-      "answer": "Part of his earlobe",
+      "question": "Myth: Van Gogh only nicked his earlobe. Actually, how much of his left ear did he cut off?",
+      "answer": "Almost all of it",
       "acceptedAnswers": [
-        "Part of his earlobe",
-        "part of his earlobe",
-        "earlobe",
-        "part of the earlobe",
-        "just the earlobe",
-        "his earlobe",
-        "the earlobe",
-        "part of his ear lobe",
-        "ear lobe",
-        "just his earlobe",
-        "only his earlobe",
-        "portion of his earlobe",
-        "bit of his earlobe",
-        "piece of his earlobe",
-        "bottom of his ear",
-        "lower part of his ear",
-        "tip of his ear"
-      ]
+        "Almost all of it",
+        "almost all",
+        "almost all of it",
+        "nearly all",
+        "nearly all of it",
+        "the whole ear",
+        "whole ear",
+        "entire ear",
+        "the entire ear",
+        "all of it",
+        "most of it",
+        "almost the whole ear",
+        "almost the entire ear"
+      ],
+      "explanation": "For decades scholars believed it was just the lobe. In 2016 a sketch by his doctor showed he removed nearly the whole ear with a razor."
     },
     {
       "level": 2,
-      "question": "That earlobe myth aside—how many exhibitions did Van Gogh participate in during his lifetime?",
-      "answer": "Four",
+      "question": "That 'almost all' evidence came from a 1930 sketch by which young doctor who treated him in 1888?",
+      "answer": "Félix Rey",
       "acceptedAnswers": [
-        "Four",
-        "four",
-        "4",
-        "four exhibitions"
-      ]
+        "Félix Rey",
+        "felix rey",
+        "félix rey",
+        "dr rey",
+        "dr. rey",
+        "doctor rey",
+        "rey"
+      ],
+      "explanation": "Rey was a 23-year-old intern who saved Van Gogh's life. Van Gogh painted his portrait as thanks—Rey's mother reportedly used it to patch a chicken coop."
     },
     {
       "level": 3,
-      "question": "After four lifetime exhibitions, where did Van Gogh actually paint 'Starry Night'?",
-      "answer": "From his asylum window",
+      "question": "Dr. Félix Rey treated Van Gogh at the hospital in which southern French town?",
+      "answer": "Arles",
       "acceptedAnswers": [
-        "From his asylum window",
-        "from his asylum window",
-        "asylum window",
-        "from his window",
-        "inside the asylum"
-      ]
+        "Arles",
+        "arles",
+        "arles france",
+        "arles provence"
+      ],
+      "explanation": "Van Gogh moved to Arles in 1888 dreaming of an artists' colony. Gauguin's visit ended with the ear incident two days before Christmas."
     },
     {
       "level": 4,
-      "question": "From his asylum window, he painted—but earlier Van Gogh earned good money as what profession?",
-      "answer": "Art dealer",
+      "question": "Myth: Van Gogh never sold a painting. Actually, in 1890 Anna Boch bought which canvas he painted near Arles?",
+      "answer": "The Red Vineyard",
       "acceptedAnswers": [
-        "Art dealer",
-        "art dealer",
-        "dealer",
-        "art dealership"
-      ]
+        "The Red Vineyard",
+        "the red vineyard",
+        "red vineyard",
+        "the red vineyards",
+        "red vineyard at arles",
+        "the red vineyard at arles"
+      ],
+      "explanation": "She bought it for about 400 francs at the Les XX exhibition in Brussels—the one sale every historian agrees on."
     },
     {
       "level": 5,
-      "question": "That art dealer past aside—recent theories say Van Gogh likely died from what, not suicide?",
-      "answer": "Accidental shooting",
+      "question": "Myth: The Red Vineyard was his only sale. Actually, Theo's 1888 letter records a Van Gogh self-portrait sold to dealers in what city?",
+      "answer": "London",
       "acceptedAnswers": [
-        "Accidental shooting",
-        "accidental shooting",
-        "accident",
-        "accidental gunshot",
-        "was shot accidentally"
-      ]
+        "London",
+        "london",
+        "london england",
+        "london uk"
+      ],
+      "explanation": "Theo wrote to the London dealers Sulley & Lori about a self-portrait they had bought. The work is lost, and some historians question the date—but it chips away at the 'only one sale' legend."
     }
   ],
   "image": "detective-magnifying-glass.jpg",

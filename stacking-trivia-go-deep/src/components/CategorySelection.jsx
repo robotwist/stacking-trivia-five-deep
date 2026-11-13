@@ -5,19 +5,19 @@
 import { CATEGORY_IMAGES, ARCHIVAL_PALETTE } from '../data/categoryImages'
 import { stackUnlockManager } from '../utils/stackUnlocks'
 
-export default function CategorySelection({ 
-  categoriesConfig, 
-  darkMode,
-  onCategorySelect
+export default function CategorySelection({
+  categoriesConfig,
+  onCategorySelect,
+  stackRecords = {}
 }) {
   return (
     <>
       <header className="text-center mb-12">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white drop-shadow-2xl tracking-wide">
-          Select Your Knowledge Realm
-        </h1>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-white drop-shadow-2xl tracking-wide">
+          Pick a topic
+        </h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-          Journey through history's greatest moments, captured in time
+          Every stack is one story told in five steps
         </p>
       </header>
       
@@ -36,7 +36,9 @@ export default function CategorySelection({
           
           const isAvailable = stackUnlockManager.isStackAvailable(key);
           const unlockRequirements = !isAvailable ? stackUnlockManager.getUnlockRequirements(key) : null;
-          const completion = stackUnlockManager.getStackCompletion(key);
+          const stackCount = category.stacks.length;
+          const playedCount = category.stacks.filter((s) => stackRecords[s]).length;
+          const perfectCount = category.stacks.filter((s) => stackRecords[s]?.perfect).length;
           
           return (
             <article
@@ -65,9 +67,9 @@ export default function CategorySelection({
               )}
               
               {/* Completion Badge */}
-              {completion && (
+              {perfectCount > 0 && (
                 <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-green-900/80 border border-green-500/50 text-green-300 text-xs uppercase tracking-wider font-medium rounded">
-                  ✓ {completion.percentage}%
+                  ✓ {perfectCount} perfect
                 </div>
               )}
               
@@ -97,9 +99,6 @@ export default function CategorySelection({
                   }`}>
                     {key.includes('-super') ? 'Super Archive' : 'Archive'}
                   </span>
-                  <span className="text-gray-400 text-xs font-mono">
-                    EST. {Math.floor(Math.random() * 50) + 1920}
-                  </span>
                 </div>
                 
                 {/* Category Content */}
@@ -128,7 +127,7 @@ export default function CategorySelection({
                         isAvailable ? 'bg-yellow-500 animate-pulse' : 'bg-gray-600'
                       }`}></div>
                       <span className="text-gray-400 font-mono">
-                        {category.stacks.length} Documents
+                        {playedCount > 0 ? `${playedCount} of ${stackCount} played` : `${stackCount} ${stackCount === 1 ? 'story' : 'stories'}`}
                       </span>
                     </div>
                     <span className={`font-medium transition-colors duration-300 ${
@@ -136,7 +135,7 @@ export default function CategorySelection({
                         ? 'text-yellow-400 group-hover:text-yellow-300' 
                         : 'text-gray-600'
                     }`}>
-                      {isAvailable ? 'Explore Archive →' : 'Locked'}
+                      {isAvailable ? 'Explore →' : 'Locked'}
                     </span>
                   </div>
                 </div>
@@ -152,7 +151,7 @@ export default function CategorySelection({
                   }`}
                   aria-label={
                     isAvailable 
-                      ? `${imageData.alt}. Explore ${category.title} category with ${category.stacks.length} available document stacks. ${imageData.description}`
+                      ? `${category.title}: ${stackCount} ${stackCount === 1 ? 'story' : 'stories'}. ${category.description}`
                       : `Locked archive: ${category.title}. ${unlockRequirements?.requires}`
                   }
                   title={isAvailable ? imageData.description : `Locked: ${unlockRequirements?.requires}`}
@@ -164,12 +163,6 @@ export default function CategorySelection({
         })}
       </div>
       
-      {/* Archival Footer */}
-      <footer className="mt-16 text-center">
-        <p className="text-gray-500 text-sm font-mono">
-          Historical Archives • Curated Knowledge Collection • Est. 2025
-        </p>
-      </footer>
     </>
   )
 }

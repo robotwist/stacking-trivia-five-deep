@@ -1,72 +1,71 @@
 {
-  "title": "Character Name Origins: Encoded Destinies",
-  "description": "Hidden meanings tucked inside famous character names.",
+  "title": "Character Name Origins: Where Gandalf Came From",
+  "description": "A wizard's name, an Old Norse list, and a draft where everyone wore someone else's name—five steps into Tolkien's borrowings.",
   "questions": [
     {
       "level": 1,
-      "question": "Old Danish 'Hamlet' means a small what?",
-      "answer": "Village",
+      "question": "Tolkien took the wizard Gandalf's name from an Old Norse list of what kind of creatures?",
+      "answer": "Dwarves",
       "acceptedAnswers": [
-        "Village",
-        "village",
-        "small village",
-        "homestead",
-        "hamlet"
+        "Dwarves",
+        "dwarves",
+        "dwarfs",
+        "dwarf",
+        "dvergar"
       ],
-      "explanation": "Hamlet suggests someone caught between worlds—like the prince."
+      "explanation": "In the Norse original, 'Gandálfr' means something like 'wand-elf'—and he's listed among the dwarves, not the wizards."
     },
     {
       "level": 2,
-      "question": "Hamlet means village—Tolkien's Sindarin name Mithrandir for Gandalf means what?",
-      "answer": "Grey Pilgrim",
+      "question": "That list of dwarves sits inside Völuspá, the opening poem of which Old Norse collection?",
+      "answer": "Poetic Edda",
       "acceptedAnswers": [
-        "Grey Pilgrim",
-        "grey pilgrim",
-        "gray pilgrim",
-        "grey wanderer",
-        "mithrandir"
+        "Poetic Edda",
+        "poetic edda",
+        "elder edda",
+        "the edda",
+        "edda"
       ],
-      "explanation": "A wanderer between light and darkness."
+      "explanation": "The 'Dvergatal' (tally of dwarves) in the Poetic Edda supplied Dwalin, Balin, Kili, Fili, Bombur, Thorin—nearly the whole company in The Hobbit."
     },
     {
       "level": 3,
-      "question": "Grey Pilgrim aside—Rowling's 'Severus' suggests what quality in Snape?",
-      "answer": "Stern",
+      "question": "The same Poetic Edda list gave Thorin his surname, translated from 'Eikinskjaldi'—what is it?",
+      "answer": "Oakenshield",
       "acceptedAnswers": [
-        "Stern",
-        "stern",
-        "severe",
-        "harsh",
-        "strict"
+        "Oakenshield",
+        "oakenshield",
+        "oaken shield",
+        "oaken-shield"
       ],
-      "explanation": "Severus evokes severity—his harsh exterior hides protection."
+      "explanation": "In the poem Eikinskjaldi is a separate dwarf. Tolkien invented the story of Thorin using an oak branch as a shield."
     },
     {
       "level": 4,
-      "question": "That stern Severus—his surname echoes what sharp sound a whip makes?",
-      "answer": "Crack",
+      "question": "In Tolkien's early drafts, the dwarf leader we know as Thorin Oakenshield was named what?",
+      "answer": "Gandalf",
       "acceptedAnswers": [
-        "Crack",
-        "crack",
-        "snap",
-        "to snap",
-        "cut",
-        "rebuke"
+        "Gandalf",
+        "gandalf",
+        "gandalfr",
+        "gandálfr"
       ],
-      "explanation": "Snape/snape wordplay hints at cutting remarks—a whip's crack."
+      "explanation": "Christopher Tolkien found the note: 'Gandalf was originally chief Dwarf (= Thorin).' Faithful to the Edda, the name started out on a dwarf."
     },
     {
       "level": 5,
-      "question": "That whip-crack surname aside—Luke Skywalker's original name before Lucas changed it was what?",
-      "answer": "Starkiller",
+      "question": "With the name Gandalf going to a dwarf in those drafts, what was the wizard originally called?",
+      "answer": "Bladorthin",
       "acceptedAnswers": [
-        "Starkiller",
-        "starkiller",
-        "star killer",
-        "luke starkiller"
+        "Bladorthin",
+        "bladorthin",
+        "blad orthin",
+        "bladorthen"
       ],
-      "explanation": "Early drafts used Starkiller before softening to Skywalker."
+      "hint": "It starts with 'Blad-'",
+      "explanation": "Bladorthin survives as a dead king mentioned once in The Hobbit—the only trace of the wizard's first name."
     }
   ],
+  "imageHint": "A scholar's desk, a pile of exam papers, and an old Norse manuscript",
   "category": "actually"
 }

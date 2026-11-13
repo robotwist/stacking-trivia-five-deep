@@ -51,15 +51,17 @@
     },
     {
       "level": 5,
-      "question": "After Paintball, the Dean's pun-making condition is nicknamed what?",
-      "answer": "Dean-a-mania",
+      "question": "Paintball wars aside, Greendale's mascot is a faceless, generic figure called the what?",
+      "answer": "Human Being",
       "acceptedAnswers": [
-        "Dean-a-mania",
-        "dean-a-mania",
-        "deanamania",
-        "dean mania"
+        "Human Being",
+        "human being",
+        "the human being",
+        "human beings",
+        "the greendale human being"
       ],
-      "hint": "I hope this doesn't awaken anything in me..."
+      "hint": "Designed to offend no one by being nobody",
+      "explanation": "Dean Pelton picked a mascot so inoffensive it has no race, gender, or face—just a white bodysuit."
     }
   ],
   "category": "pop-culture"

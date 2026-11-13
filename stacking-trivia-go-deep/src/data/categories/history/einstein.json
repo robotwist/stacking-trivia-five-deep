@@ -41,18 +41,23 @@
         "1921",
         "nineteen twenty-one",
         "nineteen twenty one",
-        "year 1921"
-      ]
+        "year 1921",
+        "1922"
+      ],
+      "explanation": "It was the 1921 prize—but the committee held it over and handed it to him in 1922, so both years show up in the record books."
     },
     {
       "level": 5,
-      "question": "After his 1921 Nobel, Einstein eventually taught at what university when he died?",
-      "answer": "Princeton University",
+      "question": "After his 1921 Nobel, Einstein fled Germany and spent his last 22 years at what research institute in Princeton?",
+      "answer": "Institute for Advanced Study",
       "acceptedAnswers": [
-        "Princeton University",
-        "princeton university",
-        "princeton"
-      ]
+        "Institute for Advanced Study",
+        "institute for advanced study",
+        "the institute for advanced study",
+        "ias",
+        "advanced study"
+      ],
+      "explanation": "Common mix-up: he was never a Princeton University professor. The Institute for Advanced Study sits nearby and was independent of the university."
     }
   ],
   "image": "einstein-wild-hair.jpg",

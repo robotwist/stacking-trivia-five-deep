@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Actually, Shakespeare didn't write 'Romeo and Romeo.' What's the correct title?",
+      "question": "Myth: Shakespeare dreamed up his love stories. Which of his tragedies retells Arthur Brooke's 1562 poem about two doomed Italian lovers?",
       "answer": "Romeo and Juliet",
       "acceptedAnswers": [
         "Romeo and Juliet",
@@ -15,7 +15,7 @@
     },
     {
       "level": 2,
-      "question": "Romeo and Juliet wasn't original—what percentage of Shakespeare's plots were his own?",
+      "question": "Romeo and Juliet wasn't original—roughly how many of Shakespeare's plots were wholly his own invention?",
       "answer": "Almost none",
       "acceptedAnswers": [
         "Almost none",

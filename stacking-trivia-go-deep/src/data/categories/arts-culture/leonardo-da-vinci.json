@@ -59,17 +59,18 @@
     },
     {
       "level": 5,
-      "question": "Leonardo's ornithopter sketches share notebook space with studies from his illegal practice of what?",
+      "question": "Leonardo's ornithopter sketches share notebook space with anatomy drawn from what hands-on practice on human bodies?",
       "answer": "dissection",
       "acceptedAnswers": [
         "dissection",
         "dissecting bodies",
         "human dissection",
         "cadaver dissection",
-        "body dissection"
+        "body dissection",
+        "autopsy"
       ],
-      "hint": "Cutting open dead bodies to study internal structure—forbidden by the church",
-      "explanation": "He dissected cadavers to map muscle and bone beneath the Mona Lisa's soft skin—work the church banned, but Leonardo pursued anyway."
+      "hint": "Opening cadavers to study what lies beneath the skin",
+      "explanation": "Myth says he snuck corpses at night. Actually, he dissected around 30 bodies with permission at hospitals like Florence's Santa Maria Nuova—his drawings of the heart were centuries ahead of medicine."
     }
   ],
   "imageHint": "Sketches and inventions of a mind centuries ahead of its time",
@@ -94,7 +95,6 @@
         "acceptedAnswers": [
           "aerial perspective",
           "atmospheric perspective",
-          "sfumato",
           "aerial perspective technique"
         ],
         "bonus": 200,

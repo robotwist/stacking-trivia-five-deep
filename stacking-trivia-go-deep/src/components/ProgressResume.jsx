@@ -5,15 +5,15 @@
 
 import React, { useState } from 'react';
 import ProgressStorage from '../utils/progressStorage.js';
-import { stackMetadata } from '../utils/stackMetadata.js';
 
-export const ProgressResume = ({ onResumeStack, onStartFresh }) => {
+export const ProgressResume = ({ gameStacks = {}, onResumeStack, onStartFresh }) => {
   const [savedProgress, setSavedProgress] = useState(() => ProgressStorage.getCurrentProgress());
 
-  if (!savedProgress) return null;
+  const stack = savedProgress ? gameStacks[savedProgress.stackName] : null;
+  if (!savedProgress || !stack) return null;
 
-  const metadata = stackMetadata[savedProgress.stackName];
-  const progressPercent = Math.round((savedProgress.currentIndex / (metadata?.totalQuestions || 20)) * 100);
+  const metadata = { totalQuestions: stack.questions.length };
+  const progressPercent = Math.round((savedProgress.currentIndex / metadata.totalQuestions) * 100);
   const timeAgo = getTimeAgo(savedProgress.timestamp);
 
   const handleResume = () => {
@@ -61,7 +61,7 @@ export const ProgressResume = ({ onResumeStack, onStartFresh }) => {
           
           <div className="space-y-2 mb-4">
             <p className="text-gray-700">
-              <span className="font-medium">{(savedProgress.stackName || '').replace(/[_-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
+              <span className="font-medium">{stack.title}</span>
             </p>
             
             <div className="flex items-center space-x-4 text-sm text-gray-600">

@@ -1,6 +1,6 @@
 {
-  "title": "Ancient Greece",
-  "description": "Philosophy, sacred hills, and the historian who chronicled war—classical Greece in five steps.",
+  "title": "Ancient Greece: Teachers of Conquerors",
+  "description": "From a condemned teacher to a conquering king—five links in a chain of mentors.",
   "questions": [
     {
       "level": 1,
@@ -11,51 +11,60 @@
         "plato",
         "platon",
         "plato of athens"
-      ]
+      ],
+      "explanation": "After Socrates was executed in 399 BC, Plato turned his teacher's conversations into the dialogues that still anchor Western philosophy."
     },
     {
       "level": 2,
-      "question": "Plato founded a school in Athens called what?",
+      "question": "Plato founded a school in a sacred grove outside Athens called what?",
       "answer": "Academy",
       "acceptedAnswers": [
         "Academy",
         "academy",
         "the academy",
-        "plato's academy"
-      ]
+        "plato's academy",
+        "akademia"
+      ],
+      "explanation": "The grove was named for the hero Akademos—and every 'academy' since borrows the name."
     },
     {
       "level": 3,
-      "question": "The Academy overlooked Athens from near what sacred hill?",
-      "answer": "Acropolis",
+      "question": "Which future philosopher studied at Plato's Academy for about twenty years?",
+      "answer": "Aristotle",
       "acceptedAnswers": [
-        "Acropolis",
-        "acropolis",
-        "the acropolis",
-        "acropolis hill"
-      ]
+        "Aristotle",
+        "aristotle",
+        "aristoteles",
+        "aristotle of stagira"
+      ],
+      "explanation": "Aristotle arrived around age 17 and stayed until Plato died in 347 BC—then went on to disagree with his teacher about almost everything."
     },
     {
       "level": 4,
-      "question": "What temple dedicated to Athena crowns the Acropolis?",
-      "answer": "Parthenon",
+      "question": "King Philip II of Macedon hired Aristotle to tutor which teenage prince?",
+      "answer": "Alexander the Great",
       "acceptedAnswers": [
-        "Parthenon",
-        "parthenon",
-        "the parthenon",
-        "parthenon temple"
-      ]
+        "Alexander the Great",
+        "alexander the great",
+        "alexander",
+        "alexander iii",
+        "alexander of macedon"
+      ],
+      "explanation": "From about 343 BC, Aristotle taught the young Alexander—who would carry Greek culture from Egypt to India."
     },
     {
       "level": 5,
-      "question": "The Parthenon frieze celebrates Athens' victory over Persia—a war chronicled by what historian?",
-      "answer": "Herodotus",
+      "question": "As a boy, Alexander the Great tamed a horse no one else could ride—what was its name?",
+      "answer": "Bucephalus",
       "acceptedAnswers": [
-        "Herodotus",
-        "herodotus",
-        "herodotos",
-        "father of history"
-      ]
+        "Bucephalus",
+        "bucephalus",
+        "boukephalas",
+        "bucephalas",
+        "bukephalos"
+      ],
+      "hint": "The name means 'ox-head'",
+      "explanation": "Alexander noticed the horse was afraid of its own shadow and turned it toward the sun. He later named a city in its honor."
     }
   ],
   "image": "parthenon-temple.jpg",

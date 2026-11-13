@@ -4,20 +4,16 @@ import CategorySelection from './components/CategorySelection'
 import GameErrorBoundary from './components/GameErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
 import UnlockNotification from './components/UnlockNotification'
-import FeedbackModal from './components/FeedbackModal'
 import PhotoFirstTest from './components/PhotoFirstTest'
 import MoreModesDrawer from './components/MoreModesDrawer'
-import OnboardingFlow from './components/OnboardingFlow'
 import UniversalOnboarding from './components/UniversalOnboarding'
 import RecommendationDisplay from './components/RecommendationDisplay'
-import QuickStats from './components/QuickStats'
-import DailyChallenge from './components/DailyChallenge'
 import PostGameFlow from './components/PostGameFlow'
 import ProgressResume from './components/ProgressResume'
+import InstallAppButton from './components/InstallAppButton'
 import { AchievementUnlock } from './components/AchievementDisplay'
 import { persistUserAchievements } from './services/userService'
 import AchievementSystem from './components/AchievementSystem'
-import SmartRecommendations from './components/SmartRecommendations'
 import ProgressStorage from './utils/progressStorage'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 import UserProfile from './components/UserProfile'
@@ -37,48 +33,35 @@ const SinglePlayerMode = lazy(() => import('./components/SinglePlayerMode'))
 const MultiStackMode = lazy(() => import('./components/MultiStackMode'))
 const BarTriviaNight = lazy(() => import('./components/BarTriviaNight'))
 const MultiDeviceHost = lazy(() => import('./components/MultiDeviceHost'))
-  const HostUpsell = lazy(() => import('./components/HostUpsell'))
+const HostUpsell = lazy(() => import('./components/HostUpsell'))
 const MobilePlayerJoin = lazy(() => import('./components/MobilePlayerJoin'))
 
-// Import utilities
-import { shuffleArray } from './utils/arrayUtils'
 import { useDarkMode, useGameHistory } from './hooks/gameHooks'
 import { stackUnlockManager } from './utils/stackUnlocks'
 import { parsePlayParams } from './utils/url'
 import StackPlayLink from './components/StackPlayLink'
 import { playSound, initAudio } from './utils/audio.js'
 import { celebratePerfectScore, celebrateFirstCompletion } from './utils/celebrations.js'
-import { shareScore } from './utils/share.js'
+import {
+  recordRun,
+  getAllStackRecords,
+  getPlayerSummary,
+  pickDailyStack,
+  pickSurpriseStack,
+  dateKey,
+} from './utils/playerRecords'
+import { calculateMaxScore } from './utils/scoreUtils'
 
 import categoriesConfig from './data/categories.json'
 import { loadPlayableStacks } from './data/loadPlayableStacks.js'
 import './App.css'
 
+const MAX_STACK_SCORE = calculateMaxScore(5, false)
+
 function App() {
-  console.log('🚀 App: Component rendering...');
-  
-  const { user, loading, enterGuestMode, canPlay } = useAuth();
+  const { user, loading, canPlay, cancelSignIn, isGuest } = useAuth();
 
-  // Deep link /play?stack=… — enter guest session so Netlify works without login
-  useEffect(() => {
-    if (loading || user) return;
-    const path = window.location.pathname;
-    const { stack } = parsePlayParams();
-    if (stack && (path === '/play' || path === '/play/')) {
-      enterGuestMode();
-    }
-  }, [loading, user, enterGuestMode]);
-
-  console.log('🔐 App: Auth state check:', { 
-    user: user?.email || user?.uid || 'no user', 
-    loading,
-    userExists: !!user,
-    isGuest: user?.isGuest,
-  });
-
-  // If still loading auth state, show loading spinner
-  if (loading) {
-    console.log('⏳ App: Showing loading spinner');
+  if (loading && !user) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <LoadingSpinner />
@@ -86,9 +69,7 @@ function App() {
     );
   }
 
-  // Sign-in screen (guests with canPlay skip this via enterGuestMode)
   if (!canPlay) {
-    console.log('🚪 App: Showing auth form');
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
         <div className="max-w-md w-full">
@@ -96,61 +77,78 @@ function App() {
             <h1 className="text-4xl font-bold text-amber-800 dark:text-amber-200 mb-2" style={{ fontFamily: 'Baskervville, serif' }}>
               Deeply Trivial
             </h1>
-            <p className="text-amber-700 dark:text-amber-300 text-lg mb-4">
-              A Game that is Deep (But Only Trivially So)
+            <p className="text-amber-700 dark:text-amber-300 text-base mb-4">
+              Sign in to keep your scores in the cloud and climb the leaderboard. Every stack stays free as a guest.
             </p>
-            <p className="text-amber-700 dark:text-amber-300 text-sm mb-4">
-              Play free as a guest, or sign in to save progress and rank globally.
-            </p>
-            <div className="mt-4 p-4 bg-amber-100 dark:bg-amber-900/30 rounded-lg border border-amber-300">
-              <ul className="text-base text-amber-700 dark:text-amber-300 text-left space-y-2">
-                <li>• Guest: all stacks, progress on this device</li>
-                <li>• Account: leaderboards, streaks, cloud saves</li>
-              </ul>
-            </div>
           </div>
           <AuthForm />
+          {isGuest && (
+            <button
+              type="button"
+              onClick={cancelSignIn}
+              className="mt-4 w-full text-center text-amber-800 dark:text-amber-200 underline underline-offset-2"
+            >
+              ← Back to the game
+            </button>
+          )}
         </div>
       </div>
     );
   }
 
-  console.log('✅ App: Player session active, loading main game...');
   return <AuthenticatedGameApp />;
 }
 
 function AuthenticatedGameApp() {
-  console.log('🎮 AuthenticatedGameApp: Component rendering...');
-  
-  const { user, isGuest, logout } = useAuth();
-  
-  console.log('👤 AuthenticatedGameApp: User data:', { 
-    user: user?.email || user?.uid || 'no user identifier',
-    gamesPlayed: user?.games_played,
-    userExists: !!user
-  });
-  
+  const { user, isGuest, requestSignIn } = useAuth();
+
   const [selectedStack, setSelectedStack] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [gameStarted, setGameStarted] = useState(false)
+  const [runId, setRunId] = useState(0)
   const [gameMode, setGameMode] = useState('solo') // solo, single-player, host, opening-round, individual-stacks, performance-finale, projector-scoreboard, gilliam-projector, category-transition, bar-trivia, multi-device-host, mobile-join
   const [teams, setTeams] = useState([])
   const [performanceScores, setPerformanceScores] = useState({})
-  const [currentRound, _setCurrentRound] = useState('Game')
+  const [currentRound] = useState('Game')
   const [gamePhase, setGamePhase] = useState('playing') // playing, round-complete, final-results
   const [unlockNotification, setUnlockNotification] = useState(null)
-  const [testMode, setTestMode] = useState(false) // For testing photo-first system
-  
-  // URL routing for multi-device functionality
+  const [testMode, setTestMode] = useState(false)
   const [roomCode, setRoomCode] = useState('')
+  const [recordsVersion, setRecordsVersion] = useState(0)
 
   const gameStacks = useMemo(() => loadPlayableStacks(), [])
-  
+
+  const stackCategory = useMemo(() => {
+    const map = {}
+    Object.entries(categoriesConfig.categories).forEach(([categoryKey, { stacks }]) => {
+      stacks.forEach((key) => { if (!map[key]) map[key] = categoryKey })
+    })
+    return map
+  }, [])
+
+  const availableStackKeys = useMemo(
+    () => Object.keys(gameStacks).filter((key) => stackUnlockManager.isStackAvailable(stackCategory[key] || key)),
+    // recordsVersion: unlocks can change after a run
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [gameStacks, stackCategory, recordsVersion]
+  )
+
+  const stackRecords = useMemo(
+    () => getAllStackRecords(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [recordsVersion]
+  )
+  const playerSummary = useMemo(
+    () => getPlayerSummary(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [recordsVersion]
+  )
+  const dailyStackKey = useMemo(() => pickDailyStack(availableStackKeys), [availableStackKeys])
+
   // Check URL for special routes on component mount
   useEffect(() => {
     const path = window.location.pathname
-    
-    // Handle /join/:roomCode URLs
+
     if (path.startsWith('/join/')) {
       const code = path.split('/join/')[1]
       if (code && code.length === 6) {
@@ -159,95 +157,77 @@ function AuthenticatedGameApp() {
         return
       }
     }
-    
-    // Handle /join route (no code provided)
+
     if (path === '/join') {
       setGameMode('mobile-join')
       return
     }
-    
-    // Handle /host route for multi-device hosting
+
     if (path === '/host') {
       setGameMode('multi-device-host')
       return
     }
 
-    // Deep link: /play?stack=<key>&category=<key>
+    // Deep link: /play?stack=<key>&category=<key>, or /play?daily=1 from the home-screen shortcut
     if (path === '/play' || path === '/play/') {
       const { stack, category } = parsePlayParams()
-      if (stack && gameStacks[stack]) {
-        if (category) setSelectedCategory(category)
-        setSelectedStack(stack)
+      const daily = new URLSearchParams(window.location.search).get('daily')
+      const target = stack && gameStacks[stack] ? stack : daily ? dailyStackKey : null
+      if (target) {
+        setSelectedCategory(category || stackCategory[target] || null)
+        setSelectedStack(target)
         setGameStarted(true)
-        return
       }
+      window.history.replaceState(null, '', '/')
     }
-  }, [gameStacks])
-  
-  // New onboarding and post-game states
+    // Run once on mount; later state changes should not re-trigger deep links
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const [showOnboarding, setShowOnboarding] = useState(false)
   const [showRecommendation, setShowRecommendation] = useState(false)
   const [onboardingResult, setOnboardingResult] = useState(null)
   const [showPostGame, setShowPostGame] = useState(false)
   const [lastGameResult, setLastGameResult] = useState(null)
 
-  // Priority 2 Features: Progress Persistence & Achievement System
   const [achievementToShow, setAchievementToShow] = useState(null)
   const [resumeData, setResumeData] = useState(null)
 
-  // Check if user needs onboarding (first time user or wants to try new onboarding)
   useEffect(() => {
-    console.log('🎯 AuthenticatedGameApp: Onboarding effect triggered:', { 
-      user: !!user, 
-      gamesPlayed: user?.games_played 
-    });
-    
-    // Show onboarding for new users or if user wants to try the new onboarding
     if (user?.isGuest) return;
-
     const hasCompletedOnboarding = localStorage.getItem('deepstack_onboarding_completed');
-    if (!hasCompletedOnboarding) {
-      console.log('👋 AuthenticatedGameApp: Showing onboarding for new user');
-      setShowOnboarding(true);
-    }
+    if (!hasCompletedOnboarding) setShowOnboarding(true);
   }, [user]);
 
-  // Initialize audio on first user interaction
   useEffect(() => {
     initAudio();
   }, []);
 
-  // Mock user stats - in real app this would come from the user object
-  const userStats = {
-    totalScore: user?.total_score || 2847,
-    stacksCompleted: user?.games_played || 12,
-    currentStreak: user?.current_streak || 7,
-    accuracy: Math.round((user?.correct_answers / Math.max(user?.total_questions, 1)) * 100) || 87,
-    level: Math.floor((user?.total_score || 2847) / 1000) + 1,
-    globalRank: user?.global_rank || 156,
-    questionsAnswered: user?.total_questions || 423
-  };
-  
-  // Use custom hooks
   const [darkMode, toggleDarkMode] = useDarkMode()
   const [gameHistory, addToGameHistory] = useGameHistory()
-  
-  // Gilliam transition state
+
   const [transitionState, setTransitionState] = useState({
     fromCategory: null,
     toCategory: null,
     isTransitioning: false
   })
   const [projectorState, setProjectorState] = useState({
-    gameState: 'setup', // setup, question, scoreboard, performance
+    gameState: 'setup',
     currentQuestion: null,
     questionNumber: 1
   })
   const [showMore, setShowMore] = useState(false)
 
-  const handleStackSelect = (stackKey) => {
+  const startStack = (stackKey, categoryKey = stackCategory[stackKey] || null) => {
+    if (!stackKey || !gameStacks[stackKey]) return
+    setSelectedCategory(categoryKey)
     setSelectedStack(stackKey)
+    setResumeData(null)
+    setShowPostGame(false)
+    setLastGameResult(null)
+    setRunId((n) => n + 1)
     setGameStarted(true)
+    window.scrollTo(0, 0)
   }
 
   const handleCategorySelect = (categoryKey) => {
@@ -268,46 +248,6 @@ function AuthenticatedGameApp() {
     setGameStarted(false)
   }
 
-  // Stack completion with unlock system
-  const handleStackComplete = async (score, totalPossible) => {
-    if (selectedStack) {
-      // Save to backend if user is authenticated
-      try {
-        await gamePersistence.saveGameScore(score, selectedStack);
-      } catch (error) {
-        console.log('Backend save failed, using local storage:', error);
-      }
-      
-      // Check for new unlocks
-      const newUnlocks = stackUnlockManager.completeStack(selectedStack, score, totalPossible);
-      
-      // Show unlock notification if there are new unlocks
-      if (newUnlocks.length > 0) {
-        const unlock = stackUnlockManager.formatUnlockNotification(newUnlocks[0]);
-        setUnlockNotification(unlock);
-      }
-      
-      // Add to game history
-      addToGameHistory({
-        stackKey: selectedStack,
-        score,
-        totalPossible,
-        percentage: Math.round((score / totalPossible) * 100),
-        completedAt: new Date().toISOString()
-      });
-    }
-    
-    // Return to stacks
-    handleBackToStacks();
-  }
-
-  const handleCloseUnlockNotification = () => {
-    setUnlockNotification(null);
-  }
-
-  // Host Mode handlers
-  // Host mode entry handled inline in header button
-
   const exitHostMode = () => {
     setGameMode('solo')
     setTeams([])
@@ -320,11 +260,7 @@ function AuthenticatedGameApp() {
 
   const handleOpeningRoundComplete = () => {
     setGameMode('individual-stacks')
-    // Could update team order based on opening round results
   }
-
-  // Performance Finale handlers
-  // Performance finale is accessible from More drawer via setGameMode
 
   const handlePerformanceComplete = (scores) => {
     setPerformanceScores(scores)
@@ -332,12 +268,10 @@ function AuthenticatedGameApp() {
     setGameMode('projector-scoreboard')
   }
 
-  // Onboarding handlers
   const handleOnboardingComplete = (result) => {
     setOnboardingResult(result);
     setShowOnboarding(false);
     setShowRecommendation(true);
-    // Mark onboarding as completed
     localStorage.setItem('deepstack_onboarding_completed', 'true');
   }
 
@@ -348,117 +282,115 @@ function AuthenticatedGameApp() {
     setOnboardingResult(null);
   }
 
-  const handleDailyChallenge = (challenge) => {
-    setSelectedCategory(challenge.category);
-    setSelectedStack(challenge.stack);
-    setGameStarted(true);
+  const buildSuggestions = (justPlayed) => {
+    const records = getAllStackRecords()
+    const sameCategory = (categoriesConfig.categories[stackCategory[justPlayed]]?.stacks || [])
+      .filter((k) => k !== justPlayed && availableStackKeys.includes(k))
+    const ordered = [
+      ...sameCategory.filter((k) => !records[k]),
+      ...availableStackKeys.filter((k) => k !== justPlayed && !records[k] && !sameCategory.includes(k)),
+      ...sameCategory.filter((k) => records[k]),
+    ]
+    const picks = []
+    for (const key of ordered) {
+      if (picks.length >= 3) break
+      if (!picks.includes(key)) picks.push(key)
+    }
+    return picks.map((key) => ({
+      key,
+      title: gameStacks[key].title,
+      description: gameStacks[key].description,
+    }))
   }
 
-  const handleOnboardingStackSelect = (stackKey) => {
-    setSelectedStack(stackKey);
-    setGameStarted(true);
-    setShowOnboarding(false);
+  const handleStackComplete = async (score, totalPossible) => {
+    if (!selectedStack) return
+    try {
+      await gamePersistence.saveGameScore(score, selectedStack);
+    } catch (error) {
+      console.log('Backend save failed, using local storage:', error);
+    }
+
+    const newUnlocks = stackUnlockManager.completeStack(selectedStack, score, totalPossible);
+    if (newUnlocks.length > 0) {
+      setUnlockNotification(stackUnlockManager.formatUnlockNotification(newUnlocks[0]));
+    }
+
+    addToGameHistory('stack_completed', gameStacks[selectedStack]?.title, {
+      stackKey: selectedStack,
+      score,
+      totalPossible,
+    });
   }
 
-  // Enhanced stack completion with post-game flow
-  const handleEnhancedStackComplete = (score, totalPossible, questionsAnswered, accuracy) => {
-    // PRIORITY 2: Clear any saved progress (stack completed)
+  const handleEnhancedStackComplete = (score, totalPossible, questionsAnswered, accuracy, answers = []) => {
+    const stackKey = selectedStack
+    const stack = gameStacks[stackKey]
+    const totalLevels = stack?.questions.length || 5
+    const levelsCleared = answers.filter((a) => !a.deeper && a.correct).length
+
     ProgressStorage.clearProgress();
-    
-    // PRIORITY 2: Track completion for ML recommendations
     ProgressStorage.trackAction('stack_completed', {
-      stackName: selectedStack,
+      stackName: stackKey,
       score,
       totalPossible,
       questionsAnswered,
       accuracy,
-      timeTaken: Date.now() - (gamePersistence.getStartTime() || Date.now())
     });
-    
-    // NEW: Play completion sound and celebrate
-    if (accuracy === 100) {
+
+    const isFirstPlay = !getAllStackRecords()[stackKey]
+    const { isNewBest, previousBest } = recordRun(stackKey, { score, levelsCleared, totalLevels })
+    setRecordsVersion((v) => v + 1)
+
+    if (levelsCleared >= totalLevels) {
       celebratePerfectScore();
-    } else if (accuracy >= 80) {
+    } else if (isFirstPlay && levelsCleared > 0) {
+      celebrateFirstCompletion();
+    } else if (levelsCleared >= 3) {
       playSound('achievement');
     }
-    
-    // Check if this is user's first completion
-    const completedStacks = JSON.parse(localStorage.getItem('completedStacks') || '[]');
-    if (!completedStacks.includes(selectedStack)) {
-      celebrateFirstCompletion();
-      completedStacks.push(selectedStack);
-      localStorage.setItem('completedStacks', JSON.stringify(completedStacks));
-    }
-    
-    // PRIORITY 2: Check for achievement unlocks
-    const gameStats = {
-      perfectScores: accuracy === 100 ? 1 : 0,
+
+    const newAchievements = AchievementSystem.checkAchievements({
+      perfectScores: levelsCleared >= totalLevels ? 1 : 0,
       highScores: accuracy >= 90 ? 1 : 0,
       consistentHighAccuracy: accuracy >= 80 ? 1 : 0,
-      fastestCompletion: (Date.now() - (gamePersistence.getStartTime() || Date.now())) / 1000,
-      longestStreak: questionsAnswered, // Simplified for now
+      longestStreak: levelsCleared,
       resumeCompletions: resumeData ? 1 : 0
-    };
-    
-    const newAchievements = AchievementSystem.checkAchievements(gameStats, user);
+    }, user);
     if (newAchievements.length > 0) {
-      // Show first achievement, queue others
       setAchievementToShow(newAchievements[0]);
-      // Persist to backend for authenticated users
-      try {
-        const payload = {}
-        newAchievements.forEach(a => {
-          payload[a.id] = {
-            title: a.title,
-            description: a.description,
-            icon: a.icon,
-            unlockedAt: Date.now()
-          }
-        })
-        persistUserAchievements(payload).catch(() => {})
-      } catch (e) {
-        // Non-blocking
-        console.error('Failed to persist achievements', e)
-      }
+      const payload = {}
+      newAchievements.forEach(a => {
+        payload[a.id] = { title: a.title, description: a.description, icon: a.icon, unlockedAt: Date.now() }
+      })
+      persistUserAchievements(payload).catch(() => {})
     }
-    
-    // Store game result for post-game screen
+
     setLastGameResult({
+      stackKey,
       score,
-      totalPossible,
-      questionsAnswered,
-      accuracy,
-      completedStack: selectedStack,
-      newAchievements
+      maxScore: totalPossible,
+      answers,
+      isNewBest,
+      previousBest,
+      suggestions: buildSuggestions(stackKey),
     });
-    
-    // Show post-game flow
     setShowPostGame(true);
-    setGameStarted(false);
-    
-    // Clear resume data if it was used
     setResumeData(null);
-    
-    // Original stack completion logic
+
     handleStackComplete(score, totalPossible);
+    handleBackToStacks();
+    window.scrollTo(0, 0)
   }
 
-  // Post-game handlers
-  const handleSelectNextStack = (stackKey) => {
-    setSelectedStack(stackKey);
-    setGameStarted(true);
-    setShowPostGame(false);
-    setLastGameResult(null);
-  }
-
-  // PRIORITY 2: Progress Resume Handlers
   const handleResumeStack = (progressData) => {
+    if (!gameStacks[progressData.stackName]) return
     setResumeData(progressData);
+    setSelectedCategory(stackCategory[progressData.stackName] || null)
     setSelectedStack(progressData.stackName);
+    setRunId((n) => n + 1)
     setGameStarted(true);
     setShowPostGame(false);
-    
-    // Track resume action for ML
     ProgressStorage.trackAction('stack_resumed', {
       stackName: progressData.stackName,
       resumeIndex: progressData.currentIndex,
@@ -467,17 +399,13 @@ function AuthenticatedGameApp() {
   }
 
   const handleStartFresh = () => {
-    // Clear any saved progress and restart selection
     ProgressStorage.clearProgress();
     setResumeData(null);
     setSelectedStack(null);
     setGameStarted(false);
   }
 
-  // PRIORITY 2: Achievement System Handlers  
-  const handleCloseAchievement = () => {
-    setAchievementToShow(null);
-  }
+  const handleCloseAchievement = () => setAchievementToShow(null)
 
   const handleReturnToMenu = () => {
     setSelectedStack(null);
@@ -487,46 +415,21 @@ function AuthenticatedGameApp() {
     setLastGameResult(null);
   }
 
-  // Projector Scoreboard handlers
-  // removed direct projector button in header; kept function for More drawer use via handler
-  // Projector mode is accessible from More drawer via setGameMode
-
-  // Gilliam Projector handlers
   const enterGilliamProjector = (gameState = 'setup') => {
-    setProjectorState({
-      gameState,
-      currentQuestion: null,
-      questionNumber: 1
-    })
+    setProjectorState({ gameState, currentQuestion: null, questionNumber: 1 })
     setGameMode('gilliam-projector')
   }
 
   const triggerCategoryTransition = (fromCategory, toCategory) => {
-    setTransitionState({
-      fromCategory,
-      toCategory, 
-      isTransitioning: true
-    })
+    setTransitionState({ fromCategory, toCategory, isTransitioning: true })
     setGameMode('category-transition')
   }
 
   const handleTransitionComplete = () => {
-    setTransitionState({
-      fromCategory: null,
-      toCategory: null,
-      isTransitioning: false
-    })
-    // Return to previous mode or default
+    setTransitionState({ fromCategory: null, toCategory: null, isTransitioning: false })
     setGameMode('gilliam-projector')
   }
 
-  // Projector state updater (kept if needed)
-  // const updateProjectorState = (newState) => setProjectorState(prev => ({ ...prev, ...newState }))
-
-  // Analytics hook (enable when needed)
-  // const trackGameAction = (action, stackTitle = null) => addToGameHistory(action, stackTitle)
-
-  // Higher-order component for lazy-loaded routes with error boundary and loading
   const LazyRoute = ({ children }) => (
     <GameErrorBoundary>
       <Suspense fallback={<LoadingSpinner size="lg" message="Loading game mode..." darkMode={darkMode} />}>
@@ -535,32 +438,24 @@ function AuthenticatedGameApp() {
     </GameErrorBoundary>
   )
 
-  // Show onboarding for new users
   if (showOnboarding) {
     return (
-      <UniversalOnboarding 
+      <UniversalOnboarding
         onComplete={handleOnboardingComplete}
         onSkip={() => setShowOnboarding(false)}
       />
     );
   }
 
-  // Show recommendation after onboarding
   if (showRecommendation && onboardingResult) {
     return (
       <RecommendationDisplay
         recommendation={onboardingResult.recommendation}
         onStartGame={(rec) => {
-          if (rec.stack && gameStacks[rec.stack]) {
-            setSelectedStack(rec.stack);
-            setGameMode(rec.mode);
-            setGameStarted(true);
-            setShowRecommendation(false);
-          } else {
-            setSelectedCategory(rec.category);
-            setGameMode(rec.mode);
-            setShowRecommendation(false);
-          }
+          setShowRecommendation(false);
+          setGameMode(rec.mode);
+          if (rec.stack && gameStacks[rec.stack]) startStack(rec.stack);
+          else setSelectedCategory(rec.category);
         }}
         onBrowseAll={() => {
           setShowRecommendation(false);
@@ -574,33 +469,33 @@ function AuthenticatedGameApp() {
     );
   }
 
-  // Show post-game flow after stack completion
   if (showPostGame && lastGameResult) {
     return (
-      <PostGameFlow 
+      <PostGameFlow
+        stackKey={lastGameResult.stackKey}
+        stack={gameStacks[lastGameResult.stackKey]}
+        categoryKey={stackCategory[lastGameResult.stackKey]}
         score={lastGameResult.score}
-        questionsAnswered={lastGameResult.questionsAnswered}
-        accuracy={lastGameResult.accuracy}
-        completedStack={lastGameResult.completedStack}
-        categoryKey={selectedCategory}
-        onSelectNextStack={handleSelectNextStack}
+        maxScore={lastGameResult.maxScore}
+        answers={lastGameResult.answers}
+        isNewBest={lastGameResult.isNewBest}
+        previousBest={lastGameResult.previousBest}
+        suggestions={lastGameResult.suggestions}
+        onPlayStack={(key) => startStack(key)}
+        onPlayAgain={() => startStack(lastGameResult.stackKey)}
         onReturnToMenu={handleReturnToMenu}
-        userStats={userStats}
       />
     );
   }
 
-  // Route to Host Mode
   if (gameMode === 'host') {
     return (
       <LazyRoute>
-        {/* Host upsell gate could be shown here in free tier */}
         <HostMode onStartGame={handleStartGame} onExitHost={exitHostMode} onEnterGilliamProjector={enterGilliamProjector} onTriggerTransition={triggerCategoryTransition} />
       </LazyRoute>
     )
   }
 
-  // Route: Host Upsell Pro
   if (gameMode === 'host-upsell') {
     return (
       <LazyRoute>
@@ -609,7 +504,6 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Route to Opening Image Round
   if (gameMode === 'opening-round') {
     return (
       <LazyRoute>
@@ -618,11 +512,10 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Route to Performance Finale
   if (gameMode === 'performance-finale') {
     return (
       <LazyRoute>
-        <PerformanceFinale 
+        <PerformanceFinale
           teams={teams}
           gameHistory={gameHistory}
           onComplete={handlePerformanceComplete}
@@ -632,11 +525,10 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Route to Projector Scoreboard
   if (gameMode === 'projector-scoreboard') {
     return (
       <LazyRoute>
-        <ProjectorScoreboard 
+        <ProjectorScoreboard
           teams={teams}
           currentRound={currentRound}
           gamePhase={gamePhase}
@@ -648,7 +540,6 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Route to Gilliam Projector Mode
   if (gameMode === 'gilliam-projector') {
     return (
       <LazyRoute>
@@ -664,7 +555,6 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Route to Category Transition
   if (gameMode === 'category-transition') {
     return (
       <LazyRoute>
@@ -678,7 +568,6 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Route to Single Player Mode
   if (gameMode === 'single-player') {
     return (
       <LazyRoute>
@@ -692,7 +581,6 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Route to Multi-Stack Mode
   if (gameMode === 'multi-stack') {
     return (
       <LazyRoute>
@@ -705,39 +593,25 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Multi-Device Host Mode
   if (gameMode === 'multi-device-host') {
     return (
       <LazyRoute>
         <MultiDeviceHost
           gameStacks={gameStacks}
-          onStartGame={(gameData) => {
-            console.log('Starting multi-device game:', gameData)
-            // Here you would transition to the actual game mode
-            // For now, redirect back to solo mode
-            setGameMode('solo')
-          }}
+          onStartGame={() => setGameMode('solo')}
         />
       </LazyRoute>
     )
   }
 
-  // Mobile Player Join Mode
   if (gameMode === 'mobile-join') {
     return (
       <LazyRoute>
-        <MobilePlayerJoin
-          roomCode={roomCode}
-          onJoinSuccess={(playerData) => {
-            console.log('Player joined:', playerData)
-            // Player successfully joined, stay in this mode for game play
-          }}
-        />
+        <MobilePlayerJoin roomCode={roomCode} onJoinSuccess={() => {}} />
       </LazyRoute>
     )
   }
 
-  // Phase 8: Route to Bar Trivia Night
   if (gameMode === 'bar-trivia') {
     return (
       <LazyRoute>
@@ -750,25 +624,25 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Route to Individual Stacks (multi-team mode)
   if (gameMode === 'individual-stacks') {
-    // For now, redirect back to categories - this would be enhanced later
     setGameMode('solo')
     setSelectedCategory(null)
   }
 
   if (gameStarted && selectedStack && gameStacks[selectedStack]) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900 transition-colors duration-300" style={{ fontFamily: 'Baskerville, serif' }}>
-        <div className="container mx-auto px-4 py-8">
-          <button 
-            onClick={handleBackToStacks}
-            className="mb-6 px-4 py-2 bg-amber-200/60 hover:bg-amber-300/60 rounded-sm text-amber-900 transition-all duration-200"
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-800 text-amber-900 dark:text-amber-50 transition-colors duration-300" style={{ fontFamily: 'Baskerville, serif' }}>
+        <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8">
+          <button
+            onClick={selectedCategory ? handleBackToStacks : handleReturnToMenu}
+            className="mb-4 sm:mb-6 px-4 py-2 bg-amber-200/60 hover:bg-amber-300/60 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-sm text-amber-900 dark:text-amber-100 transition-all duration-200"
           >
-            ← Back to Stacks
+            ← {selectedCategory ? 'Back to stacks' : 'Home'}
           </button>
-          <GameStack 
-            stackData={gameStacks[selectedStack]} 
+          <GameStack
+            key={`${selectedStack}-${runId}`}
+            stackKey={selectedStack}
+            stackData={gameStacks[selectedStack]}
             onComplete={handleEnhancedStackComplete}
             resumeData={resumeData}
           />
@@ -782,68 +656,65 @@ function AuthenticatedGameApp() {
     return (
       <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-amber-50 via-yellow-100 to-amber-100 text-amber-900" style={{ fontFamily: 'Baskerville, serif' }}>
         <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
-            <button 
-              onClick={handleBackToCategories}
-              className="px-4 py-2 rounded-sm transition-all duration-200 order-2 sm:order-1 bg-amber-200/60 hover:bg-amber-300/60 text-amber-900"
-            >
-              ← Back to Categories
-            </button>
+          <div className="mb-8">
             <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-sm transition-all duration-200 order-1 sm:order-2 bg-amber-200/60 hover:bg-amber-300/60 text-amber-800"
+              onClick={handleBackToCategories}
+              className="px-4 py-2 rounded-sm transition-all duration-200 bg-amber-200/60 hover:bg-amber-300/60 text-amber-900"
             >
-              Victorian Mode
+              ← All topics
             </button>
           </div>
-          
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">{category.title}</h1>
+
+          <div className="text-center mb-10">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-3">{category.title}</h1>
+            <p className="text-amber-700 max-w-2xl mx-auto">{category.description}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {shuffleArray(category.stacks).map((stackKey) => {
+            {category.stacks.map((stackKey) => {
               const stack = gameStacks[stackKey]
               if (!stack) return null
-              
+              const record = stackRecords[stackKey]
+
               return (
-                <button
+                <article
                   key={stackKey}
-                  onClick={() => handleStackSelect(stackKey)}
-                  className="group p-4 sm:p-6 rounded-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-amber-100/80 hover:bg-amber-200/70 border border-amber-300"
+                  className="relative group p-4 sm:p-6 rounded-sm transition-all duration-300 shadow-lg hover:shadow-xl bg-amber-100/80 hover:bg-amber-200/70 border border-amber-300 flex flex-col"
                 >
-                  {/* Visual hint area */}
                   {stack.imageHint && (
                     <div className="mb-4 p-4 rounded-sm bg-amber-200/40">
-                      <p className="text-xs text-center italic text-amber-700">
-                        {stack.imageHint}
-                      </p>
+                      <p className="text-xs text-center italic text-amber-700">{stack.imageHint}</p>
                     </div>
                   )}
-                  
                   <div className={`w-full h-2 rounded-sm mb-4 bg-gradient-to-r ${category.color}`}></div>
-                  <h2 className="text-xl font-bold mb-2 group-hover:text-amber-800 transition-colors">
-                    {stack.title}
+                  <h2 className="text-xl font-bold mb-2">
+                    <button
+                      type="button"
+                      onClick={() => startStack(stackKey, selectedCategory)}
+                      className="text-left group-hover:text-amber-800 transition-colors after:absolute after:inset-0 focus:outline-none focus-visible:underline"
+                    >
+                      {stack.title}
+                    </button>
                   </h2>
-                  <p className="text-sm text-amber-700 mb-4">
-                    {stack.description || "Dive deep into this fascinating topic"}
+                  <p className="text-sm text-amber-700 mb-4 flex-grow">
+                    {stack.description || 'Dive deep into this fascinating topic'}
                   </p>
                   <div className="flex items-center justify-between text-xs gap-2">
-                    <span className="text-amber-600">
-                      5 Questions Deep
-                    </span>
+                    <span className="text-amber-600">5 levels deep</span>
                     <span className="text-amber-800 font-semibold">
-                      160 pts max
+                      {record
+                        ? record.perfect ? `✓ Perfect · best ${record.best}` : `Best ${record.best} / ${MAX_STACK_SCORE}`
+                        : `${MAX_STACK_SCORE} pts max`}
                     </span>
                   </div>
-                  <div className="mt-3 pt-3 border-t border-amber-300/60">
+                  <div className="relative z-10 mt-3 pt-3 border-t border-amber-300/60">
                     <StackPlayLink
                       stackKey={stackKey}
                       categoryKey={selectedCategory}
                       className="text-xs font-semibold text-amber-800 hover:text-amber-950"
                     />
                   </div>
-                </button>
+                </article>
               )
             })}
           </div>
@@ -852,7 +723,6 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Test mode for photo-first system
   if (testMode) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
@@ -872,223 +742,157 @@ function AuthenticatedGameApp() {
     )
   }
 
-  // Main category selection screen
+  const dailyStack = dailyStackKey ? gameStacks[dailyStackKey] : null
+  const dailyRecord = dailyStackKey ? stackRecords[dailyStackKey] : null
+  const playedDailyToday = dailyRecord?.lastPlayed === dateKey()
+
+  // Main home screen
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white transition-colors duration-300">
-      <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <header className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
-          <nav className="flex flex-wrap gap-2 sm:gap-3 order-2 sm:order-1 justify-center sm:justify-start" aria-label="Primary actions">
+      <div className="container mx-auto px-4 py-6 sm:py-8 sm:px-6 lg:px-8">
+        <header className="flex flex-wrap justify-between items-center gap-3 mb-8">
+          <span className="text-lg font-bold text-amber-400" style={{ fontFamily: 'Baskervville, serif' }}>Deeply Trivial</span>
+          <nav className="flex flex-wrap items-center gap-2" aria-label="Account and app">
+            <InstallAppButton />
+            {isGuest ? (
+              <button
+                type="button"
+                onClick={requestSignIn}
+                className="px-4 py-2 rounded-md font-semibold text-sm border border-gray-600 hover:border-gray-400 text-gray-200"
+              >
+                Sign in
+              </button>
+            ) : (
+              <UserProfile />
+            )}
             <button
-              onClick={() => {
-                setSelectedCategory(null)
-                setSelectedStack(null)
-                // Play Now: choose a recommended stack (first of first category)
-                const firstCategoryKey = Object.keys(categoriesConfig.categories)[0]
-                const firstStackKey = categoriesConfig.categories[firstCategoryKey].stacks[0]
-                setSelectedCategory(firstCategoryKey)
-                setSelectedStack(firstStackKey)
-                setGameStarted(true)
-              }}
-              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-amber-600 hover:bg-amber-500 text-white border-amber-500 focus:outline-none focus:ring-3 focus:ring-amber-500"
+              type="button"
+              onClick={toggleDarkMode}
+              aria-label={darkMode ? 'Use light question cards' : 'Use dark question cards'}
+              className="px-3 py-2 rounded-md text-sm border border-gray-700 hover:border-gray-500 text-gray-300"
             >
-              Play Now
-            </button>
-            <button
-              onClick={() => setGameMode('single-player')}
-              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-amber-700 hover:bg-amber-600 text-white border-amber-600 focus:outline-none focus:ring-3 focus:ring-amber-500"
-            >
-              Browse Topics
-            </button>
-            <button onClick={() => setGameMode('host')} className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-yellow-700 hover:bg-yellow-600 text-white border-yellow-600 focus:outline-none focus:ring-3 focus:ring-yellow-500">Host a Game</button>
-            <button
-              onClick={() => setShowMore(true)}
-              className="px-4 py-2 rounded-md font-semibold transition-all duration-200 text-sm sm:text-base shadow-sm border bg-gray-800 hover:bg-gray-700 text-white border-gray-700 focus:outline-none focus:ring-3 focus:ring-gray-600"
-            >
-              More
+              {darkMode ? '☾' : '☀'}
             </button>
           </nav>
-          <button
-            onClick={toggleDarkMode}
-            className="p-2 sm:p-3 rounded-md transition-all duration-200 order-1 sm:order-2 shadow-sm border font-semibold focus:outline-none focus:ring-3 focus:ring-yellow-500 bg-yellow-600 hover:bg-yellow-500 text-gray-900 border-yellow-500"
-          >
-            Archival Mode
-          </button>
-          
-          {/* User Profile */}
-          <div className="order-3">
-            <UserProfile />
-          </div>
         </header>
-        
-        <main>
-          <div className="text-center mb-8 sm:mb-12 px-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">
-              Deeply Trivial
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-medium text-gray-300">
-              Trivia That Dares to Matter
-            </p>
-            <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-6">
-              Choose your realm of knowledge and go five questions deep - creating nets of learning that connect the trivial to the profound.
-            </p>
 
-            {isGuest && (
-              <div className="max-w-xl mx-auto mb-6 px-4 py-3 rounded-lg border border-amber-500/40 bg-amber-900/20 text-amber-100 text-sm">
-                Playing as guest — progress stays on this device.{' '}
+        <main>
+          <section className="text-center mb-10 px-2">
+            <h1 className="text-4xl sm:text-6xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">
+              Five questions. One story.
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+              Each answer unlocks the next question. Points double every level—10, 20, 40, 80, 160—and one miss ends the dive. How deep can you go?
+            </p>
+          </section>
+
+          <div className="max-w-3xl mx-auto mb-8">
+            <ProgressResume gameStacks={gameStacks} onResumeStack={handleResumeStack} onStartFresh={handleStartFresh} />
+          </div>
+
+          {dailyStack && (
+            <section
+              aria-labelledby="daily-stack-title"
+              className="max-w-3xl mx-auto mb-6 rounded-xl border-2 border-amber-500/60 bg-gradient-to-br from-amber-900/40 via-gray-900 to-gray-900 p-6 sm:p-8 shadow-2xl"
+            >
+              <p className="text-xs uppercase tracking-[0.25em] text-amber-400 mb-2">Today's stack</p>
+              <h2 id="daily-stack-title" className="text-2xl sm:text-3xl font-bold mb-2">{dailyStack.title}</h2>
+              <p className="text-gray-300 mb-1">{dailyStack.description}</p>
+              {dailyStack.imageHint && <p className="text-sm italic text-gray-500 mb-5">{dailyStack.imageHint}</p>}
+              <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
                 <button
                   type="button"
-                  onClick={logout}
-                  className="underline hover:text-white font-medium"
+                  onClick={() => startStack(dailyStackKey)}
+                  className="px-8 py-4 rounded-lg bg-amber-500 hover:bg-amber-400 text-gray-900 text-lg font-bold shadow-lg focus:outline-none focus:ring-4 focus:ring-amber-300"
                 >
-                  Sign in
-                </button>{' '}
-                to save scores and rank globally.
+                  {playedDailyToday ? 'Play again' : 'Start the dive'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => startStack(pickSurpriseStack(availableStackKeys, { exclude: [dailyStackKey] }))}
+                  className="px-6 py-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 text-gray-100 font-semibold"
+                >
+                  Surprise me
+                </button>
+                {dailyRecord && (
+                  <span className="text-sm text-amber-300 sm:ml-auto">
+                    Your best: {dailyRecord.best} / {MAX_STACK_SCORE}
+                  </span>
+                )}
               </div>
-            )}
-            
-            {/* Daily Challenge */}
-            <DailyChallenge onStartChallenge={handleDailyChallenge} />
-            
-            {/* Quick Stats Display */}
-            <QuickStats />
-            
-            {/* Single Player Mode Button */}
-            <div className="mb-6 space-y-4">
-              {/* Quick Start with Nebraska Stack */}
-              <button
-                onClick={() => {
-                  setSelectedCategory('sports')
-                  setSelectedStack('nebraska-sports-ultimate')
-                  setGameStarted(true)
-                }}
-                className="px-10 py-5 text-xl bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-red-500 mr-4 mb-4 border-2 border-red-400"
-              >
-                Quick Start - Nebraska Sports
-              </button>
+            </section>
+          )}
 
-              <button
-                onClick={() => setGameMode('single-player')}
-                className="px-8 py-4 text-xl bg-gradient-to-r from-amber-700 to-yellow-700 hover:from-amber-600 hover:to-yellow-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-amber-500 mr-4 mb-4"
-              >
-                Browse All Topics
-              </button>
+          {playerSummary.stacksPlayed > 0 && (
+            <section aria-label="Your progress" className="max-w-3xl mx-auto mb-10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+              {[
+                ['Stacks played', `${playerSummary.stacksPlayed} / ${Object.keys(gameStacks).length}`],
+                ['Perfect dives', playerSummary.perfectStacks],
+                ['Best-score total', playerSummary.totalBest.toLocaleString()],
+                ['Day streak', playerSummary.dayStreak ? `🔥 ${playerSummary.dayStreak}` : '—'],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-lg bg-gray-800/60 border border-gray-700 py-3">
+                  <div className="text-xl font-bold text-amber-300">{value}</div>
+                  <div className="text-xs text-gray-400">{label}</div>
+                </div>
+              ))}
+            </section>
+          )}
 
-              {/* Multi-Stack Challenge Button */}
-              <button
-                onClick={() => setGameMode('multi-stack')}
-                className="px-8 py-4 text-xl bg-gradient-to-r from-blue-700 to-purple-700 hover:from-blue-600 hover:to-purple-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-blue-500 mr-4 mb-4"
-              >
-                Multi-Stack Challenge
-              </button>
-              
-              {/* Phase 8: Bar Trivia Night Button */}
-              <button
-                onClick={() => setGameMode('bar-trivia')}
-                className="px-8 py-4 text-xl bg-gradient-to-r from-yellow-700 to-amber-700 hover:from-yellow-600 hover:to-amber-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-yellow-500 mr-4 mb-4"
-              >
-                Bar Trivia Night
-              </button>
-              
-              {/* Multi-Device Host Button */}
-              <button
-                onClick={() => setGameMode('multi-device-host')}
-                className="px-8 py-4 text-xl bg-gradient-to-r from-green-700 to-teal-700 hover:from-green-600 hover:to-teal-600 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-3 focus:ring-green-500 mr-4 mb-4"
-              >
-                📱 Multi-Device Trivia
-              </button>
-            </div>
-          </div>
-
-          {/* Use the new CategorySelection component */}
-          <CategorySelection 
+          <CategorySelection
             categoriesConfig={categoriesConfig}
-            darkMode={true} // Always use archival mode
+            stackRecords={stackRecords}
             onCategorySelect={handleCategorySelect}
           />
 
-          {/* PRIORITY 2: Progress Resume Component */}
-          <div className="max-w-4xl mx-auto mt-8 px-4">
-            <ProgressResume 
-              onResumeStack={handleResumeStack}
-              onStartFresh={handleStartFresh}
-            />
-          </div>
-
-          {/* Featured Stack Recommendations */}
-          <div className="max-w-4xl mx-auto mt-12 mb-8 px-4">
-            <h2 className="text-2xl font-bold text-center mb-6 text-gray-200">Featured Deep Dives</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-gradient-to-br from-red-900/30 to-red-800/30 border border-red-700/50 rounded-lg p-4 cursor-pointer hover:scale-105 transition-transform"
-                   onClick={() => {
-                     setSelectedCategory('sports')
-                     setSelectedStack('nebraska-sports-ultimate')
-                     setGameStarted(true)
-                   }}>
-                <h3 className="font-bold text-red-400 mb-2">Nebraska Sports Ultimate</h3>
-                <p className="text-sm text-gray-300 mb-3">35 questions diving deep into Cornhusker sports history</p>
-                <div className="text-xs text-red-300">Sports • Expert Level</div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 border border-purple-700/50 rounded-lg p-4 cursor-pointer hover:scale-105 transition-transform"
-                   onClick={() => {
-                     setSelectedCategory('arts-culture')
-                     setSelectedStack('the_beatles')
-                     setGameStarted(true)
-                   }}>
-                <h3 className="font-bold text-purple-400 mb-2">The Beatles Ultimate</h3>
-                <p className="text-sm text-gray-300 mb-3">35 questions from Liverpool to legend</p>
-                <div className="text-xs text-purple-300">Music • Expert Level</div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-green-900/30 to-green-800/30 border border-green-700/50 rounded-lg p-4 cursor-pointer hover:scale-105 transition-transform"
-                   onClick={() => {
-                     setSelectedCategory('sports')
-                     setSelectedStack('prefontaine-ultimate')
-                     setGameStarted(true)
-                   }}>
-                <h3 className="font-bold text-green-400 mb-2">Prefontaine Ultimate</h3>
-                <p className="text-sm text-gray-300 mb-3">35 questions on the rebel runner who changed everything</p>
-                <div className="text-xs text-green-300">Sports • Expert Level</div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 border border-blue-700/50 rounded-lg p-4 cursor-pointer hover:scale-105 transition-transform"
-                   onClick={() => {
-                     setSelectedCategory('sports')
-                     setSelectedStack('el-guerrouj-ultimate')
-                     setGameStarted(true)
-                   }}>
-                <h3 className="font-bold text-blue-400 mb-2">El Guerrouj Ultimate</h3>
-                <p className="text-sm text-gray-300 mb-3">35 questions on the greatest miler in history</p>
-                <div className="text-xs text-blue-300">Sports • Expert Level</div>
-              </div>
+          <section aria-labelledby="group-play-title" className="max-w-5xl mx-auto mt-14">
+            <h2 id="group-play-title" className="text-2xl font-bold text-center mb-2 text-gray-100">Play with a group</h2>
+            <p className="text-center text-gray-400 mb-6">Bar nights, classrooms, and family game night—one screen or everyone's phones.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {[
+                ['Host a game', 'Teams, rounds, and a projector-ready scoreboard', () => setGameMode('host')],
+                ['Bar Trivia Night', 'Run a full night with crowd energy and multipliers', () => setGameMode('bar-trivia')],
+                ['Phones as buzzers', 'Players join from their own phones with a room code', () => setGameMode('multi-device-host')],
+                ['Multi-Stack Challenge', 'Several stories back to back', () => setGameMode('multi-stack')],
+              ].map(([title, blurb, onClick]) => (
+                <button
+                  key={title}
+                  type="button"
+                  onClick={onClick}
+                  className="text-left p-4 rounded-lg bg-gray-800/70 border border-gray-700 hover:border-amber-500 transition-colors"
+                >
+                  <span className="block font-bold text-amber-300">{title}</span>
+                  <span className="block text-sm text-gray-400 mt-1">{blurb}</span>
+                </button>
+              ))}
             </div>
-          </div>
+            <div className="text-center mt-4">
+              <button type="button" onClick={() => setShowMore(true)} className="text-sm text-gray-400 underline underline-offset-2 hover:text-gray-200">
+                More modes and host tools
+              </button>
+            </div>
+          </section>
 
-          <div className="text-center mt-16 text-gray-500">
-            <p className="text-sm font-mono">
-              Each stack: 5 questions deep • Scoring: 10 → 20 → 40 → 80 → 160 points
-            </p>
-          </div>
+          <footer className="text-center mt-14 text-gray-500 text-sm">
+            <p>{Object.keys(gameStacks).length} stories · typos forgiven · works offline once installed</p>
+          </footer>
         </main>
-        
-        {/* Unlock Notification */}
+
         {unlockNotification && (
-          <UnlockNotification 
-            unlock={unlockNotification} 
-            onClose={handleCloseUnlockNotification} 
+          <UnlockNotification
+            unlock={unlockNotification}
+            onClose={() => setUnlockNotification(null)}
           />
         )}
 
-        {/* PRIORITY 2: Achievement Unlock Modal */}
         {achievementToShow && (
-          <AchievementUnlock 
+          <AchievementUnlock
             achievement={achievementToShow}
             onClose={handleCloseAchievement}
           />
         )}
       </div>
 
-      {/* More Modes Drawer */}
       {showMore && (
         <MoreModesDrawer
           isOpen={showMore}
@@ -1103,16 +907,12 @@ function AuthenticatedGameApp() {
   )
 }
 
-const AppWithAuth = () => {
-  console.log('🏗️ AppWithAuth: Wrapper component rendering...');
-  
-  return (
-    <AuthErrorBoundary>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </AuthErrorBoundary>
-  );
-};
+const AppWithAuth = () => (
+  <AuthErrorBoundary>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </AuthErrorBoundary>
+);
 
 export default AppWithAuth

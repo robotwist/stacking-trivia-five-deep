@@ -68,7 +68,15 @@ Good: `Grand slam greatness, family, and life beyond the court—five tennis dep
 1. Create JSON under `src/data/stacks/` or `src/data/categories/<category>/`.
 2. Add `{ key, module }` to [`src/data/playableStacks.manifest.js`](../src/data/playableStacks.manifest.js).
 3. Add the `key` to [`src/data/categories.json`](../src/data/categories.json) under the category’s `stacks` array.
-4. Run `npm run validate:stacks`.
+4. Run `npm run validate:stacks`. It fails if a category lists a key that isn't in the manifest, or a playable stack isn't in any category.
+
+## Fact-checking
+
+Players will screenshot a wrong answer. Before shipping a stack, verify every answer **and every explanation** against a primary or reputable source, and prefer the modern consensus over the popular version (e.g. Van Gogh cut off nearly his whole ear, not the lobe; Einstein worked at the Institute for Advanced Study, not Princeton University). When a fact is contested, say so in the `explanation` rather than asserting it.
+
+## How answers are matched
+
+`checkAnswerMatch` ignores case, accents, punctuation, and leading articles; forgives small typos (including swapped letters) on answers longer than six characters; and accepts the answer inside a short phrase ("it was the red vineyard"). It rejects single-letter guesses and long lists of guesses. Very short answers need an exact match, so list common short forms in `acceptedAnswers`.
 
 No imports in `App.jsx` — stacks load via [`loadPlayableStacks.js`](../src/data/loadPlayableStacks.js).
 

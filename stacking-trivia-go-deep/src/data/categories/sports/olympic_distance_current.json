@@ -15,18 +15,19 @@
     },
     {
       "level": 2,
-      "question": "Korir's event spans how many meters in total?",
-      "answer": "800",
+      "question": "Korir led a Kenyan one-two in that final—which teammate took silver?",
+      "answer": "Ferguson Rotich",
       "acceptedAnswers": [
-        "800",
-        "800 meters",
-        "800m",
-        "eight hundred"
-      ]
+        "Ferguson Rotich",
+        "ferguson rotich",
+        "rotich",
+        "ferguson cheruiyot rotich"
+      ],
+      "explanation": "Poland's Patryk Dobek took bronze behind the two Kenyans."
     },
     {
       "level": 3,
-      "question": "Who won the women's 800m gold at the same Tokyo Games?",
+      "question": "While Korir and Rotich went one-two for the men, who won the women's 800m gold at the same Tokyo Games?",
       "answer": "Athing Mu",
       "acceptedAnswers": [
         "Athing Mu",

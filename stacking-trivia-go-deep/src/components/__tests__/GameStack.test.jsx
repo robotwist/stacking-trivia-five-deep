@@ -90,7 +90,7 @@ describe('GameStack Scoring System', () => {
     checkAnswerMatch.mockReturnValue(true)
     
     const input = screen.getByRole('textbox')
-    const submitButton = screen.getByText(/submit/i) || screen.getByRole('button')
+    const submitButton = screen.getByRole('button', { name: /submit answer/i })
     
     await user.type(input, 'answer1')
     await user.click(submitButton)
@@ -114,7 +114,7 @@ describe('GameStack Scoring System', () => {
     checkAnswerMatch.mockReturnValue(true)
     
     const input = screen.getByRole('textbox')
-    const submitButton = screen.getByText(/submit/i) || screen.getByRole('button')
+    const submitButton = screen.getByRole('button', { name: /submit answer/i })
 
     // Answer first question (10 points)
     await user.clear(input)
@@ -123,16 +123,38 @@ describe('GameStack Scoring System', () => {
 
     await waitFor(() => {
       expect(screen.getByText(/score.*10/i)).toBeInTheDocument()
-    }, { timeout: 3000 })
+    })
+
+    await user.click(screen.getByRole('button', { name: /go deeper/i }))
 
     // Answer second question (20 points)
-    await user.clear(input)
-    await user.type(input, 'answer2')
-    await user.click(submitButton)
+    await user.type(screen.getByRole('textbox'), 'answer2')
+    await user.click(screen.getByRole('button', { name: /submit answer/i }))
 
     await waitFor(() => {
       expect(screen.getByText(/score.*30/i)).toBeInTheDocument()
-    }, { timeout: 3000 })
+    })
+  })
+
+  it('reveals the answer and explanation, then waits for the player', async () => {
+    const user = userEvent.setup()
+    const stack = {
+      title: 'Reveal Stack',
+      questions: [
+        { question: 'Q1', answer: 'Anna Boch', acceptedAnswers: ['anna boch'], explanation: 'She paid 400 francs.' },
+        { question: 'Q2', answer: 'Two', acceptedAnswers: ['two'] },
+      ],
+    }
+    render(<GameStack stackData={stack} onComplete={mockOnComplete} />)
+
+    checkAnswerMatch.mockReturnValue(true)
+    await user.type(screen.getByRole('textbox'), 'anna boch')
+    await user.click(screen.getByRole('button', { name: /submit answer/i }))
+
+    expect(screen.getByText('Anna Boch')).toBeInTheDocument()
+    expect(screen.getByText('She paid 400 francs.')).toBeInTheDocument()
+    expect(screen.getByText('Q1')).toBeInTheDocument()
+    expect(mockOnComplete).not.toHaveBeenCalled()
   })
 
   it('should not award points for incorrect answers', async () => {
@@ -148,7 +170,7 @@ describe('GameStack Scoring System', () => {
     checkAnswerMatch.mockReturnValue(false)
     
     const input = screen.getByRole('textbox')
-    const submitButton = screen.getByText(/submit/i) || screen.getByRole('button')
+    const submitButton = screen.getByRole('button', { name: /submit answer/i })
     
     await user.type(input, 'wrong answer')
     await user.click(submitButton)
@@ -177,14 +199,52 @@ describe('GameStack Scoring System', () => {
     checkAnswerMatch.mockReturnValue(true)
     
     const input = screen.getByRole('textbox')
-    const submitButton = screen.getByText(/submit/i) || screen.getByRole('button')
+    const submitButton = screen.getByRole('button', { name: /submit answer/i })
     
     await user.type(input, 'answer1')
     await user.click(submitButton)
+    await user.click(screen.getByRole('button', { name: /see your results/i }))
 
-    await waitFor(() => {
-      expect(mockOnComplete).toHaveBeenCalledWith(10, 310)
-    }, { timeout: 3000 })
+    expect(mockOnComplete).toHaveBeenCalledTimes(1)
+    const [finalScore, maxScore, answered, accuracy, answers] = mockOnComplete.mock.calls[0]
+    expect([finalScore, maxScore, answered, accuracy]).toEqual([10, 310, 1, 100])
+    expect(answers[0]).toMatchObject({ correct: true, pointsAwarded: 10 })
+  })
+
+  it('reports real accuracy when a miss ends the run', async () => {
+    const user = userEvent.setup()
+    render(<GameStack stackData={mockStackData} onComplete={mockOnComplete} />)
+
+    checkAnswerMatch.mockReturnValue(true)
+    await user.type(screen.getByRole('textbox'), 'answer1')
+    await user.click(screen.getByRole('button', { name: /submit answer/i }))
+    await user.click(screen.getByRole('button', { name: /go deeper/i }))
+
+    checkAnswerMatch.mockReturnValue(false)
+    await user.type(screen.getByRole('textbox'), 'nope')
+    await user.click(screen.getByRole('button', { name: /submit answer/i }))
+    await user.click(screen.getByRole('button', { name: /see the full story/i }))
+
+    const [finalScore, , answered, accuracy] = mockOnComplete.mock.calls[0]
+    expect([finalScore, answered, accuracy]).toEqual([10, 2, 50])
+  })
+
+  it('skips the deeper-mode offer when the bonus round has no questions', async () => {
+    const user = userEvent.setup()
+    const stack = {
+      title: 'Empty Bonus',
+      questions: [{ q: 'Only question', a: ['yes'] }],
+      deeperMode: { title: 'Bonus', description: 'Nothing here', questions: [] },
+    }
+    render(<GameStack stackData={stack} onComplete={mockOnComplete} />)
+
+    checkAnswerMatch.mockReturnValue(true)
+    await user.type(screen.getByRole('textbox'), 'yes')
+    await user.click(screen.getByRole('button', { name: /submit answer/i }))
+    await user.click(screen.getByRole('button', { name: /see your results/i }))
+
+    expect(screen.queryByText(/enter deeper mode/i)).not.toBeInTheDocument()
+    expect(mockOnComplete).toHaveBeenCalledTimes(1)
   })
 
   it('should handle deeper mode scoring correctly', async () => {

@@ -1,5 +1,30 @@
 import { buildPlayUrl, getSiteOrigin } from './url'
 
+/**
+ * Spoiler-free challenge: stack title, result ladder, score, and a link straight into the same stack.
+ * @returns {Promise<'shared' | 'copied' | 'failed'>}
+ */
+export const shareRun = async ({ stackTitle, stackKey, categoryKey, score, maxScore, ladder }) => {
+  const url = stackKey ? buildPlayUrl(stackKey, categoryKey) : getSiteOrigin()
+  const text = `Deeply Trivial — ${stackTitle}\n${ladder} ${score}/${maxScore}\nHow deep can you go?`
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: `Deeply Trivial: ${stackTitle}`, text, url })
+      return 'shared'
+    } catch (err) {
+      if (err?.name === 'AbortError') return 'failed'
+    }
+  }
+
+  try {
+    await navigator.clipboard.writeText(`${text}\n${url}`)
+    return 'copied'
+  } catch {
+    return 'failed'
+  }
+}
+
 // Enhanced sharing utilities
 export const shareScore = (score, totalPossible, stackName, accuracy, stackKey, categoryKey) => {
   const emoji = getScoreEmoji(score, totalPossible);

@@ -6,8 +6,9 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { PLAYABLE_STACK_PATHS } from './playableStacksManifest.js'
+import { PLAYABLE_STACK_PATHS, PLAYABLE_STACK_REGISTRY } from './playableStacksManifest.js'
 import { validateRawStack } from './stackValidator.js'
+import { findCategoryManifestMismatches } from './categoryCoverage.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
@@ -42,5 +43,18 @@ for (const relPath of PLAYABLE_STACK_PATHS) {
   }
 }
 
+const categories = JSON.parse(fs.readFileSync(path.join(root, 'src/data/categories.json'), 'utf8'))
+const { unknownKeys, uncategorizedKeys } = findCategoryManifestMismatches(categories, PLAYABLE_STACK_REGISTRY)
+
+console.log('\n🗂️  Checking categories.json against the manifest...')
+unknownKeys.forEach(({ category, key }) => {
+  console.log(`❌ Category "${category}" lists "${key}", which is not in playableStacks.manifest.js`)
+})
+uncategorizedKeys.forEach((key) => {
+  console.log(`❌ Stack "${key}" is playable but not listed in any category`)
+})
+const catalogFailed = unknownKeys.length + uncategorizedKeys.length
+if (catalogFailed === 0) console.log('✅ Every category entry is playable and every stack is reachable')
+
 console.log(`\n📊 ${passed} passed, ${failed} failed (${PLAYABLE_STACK_PATHS.length} total)`)
-process.exit(failed > 0 ? 1 : 0)
+process.exit(failed > 0 || catalogFailed > 0 ? 1 : 0)

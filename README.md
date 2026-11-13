@@ -10,11 +10,14 @@ The shipped UI title is **Deeply Trivial**; the product name in docs is **DeepSt
 
 ## Core loop (implemented)
 
-1. Choose a category and stack (45+ playable stacks in JSON).
-2. Answer five linked questions — each level should build on the previous answer.
-3. Type your answer (fuzzy matching for typos); optional “Show answer choices” for MCQ hints.
-4. Optional **Deeper Mode** after a perfect run (where the stack defines bonus questions).
-5. Host, projector, and bar modes exist for group play.
+1. Open the app and play immediately as a guest — **Today's stack** (same for everyone each day) or **Surprise me**, or browse 45 stacks by category.
+2. Answer five linked questions — each level builds on the previous answer. After every answer, a reveal card shows the answer and the story behind it.
+3. Type your answer (typos forgiven); optional “Show answer choices” for MCQ hints.
+4. The results screen recaps the whole story, shows a spoiler-free result ladder (🟩🟩🟩🟥⬜) to challenge friends, and suggests the next stack.
+5. Optional **Deeper Mode** after a perfect run (where the stack defines bonus questions).
+6. Host, projector, and bar modes exist for group play.
+
+**Install:** it's a PWA — "Install app" on Android/desktop Chrome, or Share → Add to Home Screen on iPhone. Every stack works offline after the first visit. Best scores and the day streak are stored on the device.
 
 **Not required for every stack:** photo-first opening (`photoFirst` on select stacks only).
 

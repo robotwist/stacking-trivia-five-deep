@@ -4,56 +4,68 @@
   "questions": [
     {
       "level": 1,
-      "question": "Actually, Einstein didn't fail math as a child. What did he master by age 12?",
+      "question": "Myth: Einstein failed math. Actually, what branch of math had he mastered before age 15?",
       "answer": "Calculus",
       "acceptedAnswers": [
         "Calculus",
         "calculus",
-        "differential calculus"
-      ]
+        "differential calculus",
+        "integral calculus",
+        "differential and integral calculus"
+      ],
+      "explanation": "When shown a 1935 'Ripley's Believe It or Not' claiming he failed math, Einstein laughed: 'Before I was fifteen I had mastered differential and integral calculus.'"
     },
     {
       "level": 2,
-      "question": "Calculus by twelve—what did Einstein actually say instead of the shortened 'God does not play dice'?",
-      "answer": "God does not play dice with the universe",
+      "question": "Calculus came easy, but his famous dice quote gets garbled. In a 1926 letter he wrote that 'the Old One' does not do what?",
+      "answer": "Throw dice",
       "acceptedAnswers": [
-        "God does not play dice with the universe",
-        "god does not play dice with the universe",
-        "god doesn't play dice with the universe"
-      ]
+        "Throw dice",
+        "throw dice",
+        "throws dice",
+        "play dice",
+        "plays dice",
+        "roll dice",
+        "play dice with the universe"
+      ],
+      "explanation": "'I, at any rate, am convinced that He does not throw dice.' It was a jab at quantum randomness—not a statement of religious faith."
     },
     {
       "level": 3,
-      "question": "That 'dice with the universe' quote aside—Einstein's Nobel honored what discovery, not relativity?",
+      "question": "Einstein's 'does not throw dice' letter went to which physicist friend?",
+      "answer": "Max Born",
+      "acceptedAnswers": [
+        "Max Born",
+        "max born",
+        "born"
+      ],
+      "explanation": "Born helped build the very quantum theory Einstein was doubting. The two argued about it in letters for decades."
+    },
+    {
+      "level": 4,
+      "question": "Myth: relativity won Einstein his Nobel. Actually, Max Born's friend was honored for explaining what effect?",
       "answer": "Photoelectric effect",
       "acceptedAnswers": [
         "Photoelectric effect",
         "photoelectric effect",
-        "the photoelectric effect"
-      ]
-    },
-    {
-      "level": 4,
-      "question": "The photoelectric effect won his Nobel—during WWII Einstein supported what controversial project?",
-      "answer": "The atomic bomb development",
-      "acceptedAnswers": [
-        "The atomic bomb development",
-        "atomic bomb development",
-        "the atomic bomb",
-        "manhattan project",
-        "building the atomic bomb",
-        "the atomic bomb development"
-      ]
+        "the photoelectric effect",
+        "photoelectric"
+      ],
+      "explanation": "Relativity was still too controversial for the committee. The 1921 prize cited 'his discovery of the law of the photoelectric effect.'"
     },
     {
       "level": 5,
-      "question": "After backing atomic bomb development, who was Einstein's first wife and early collaborator?",
-      "answer": "Mileva Marić",
+      "question": "Myth: Einstein built the atomic bomb. Actually, years after his photoelectric effect Nobel, he signed a 1939 warning letter to which U.S. president?",
+      "answer": "Franklin D. Roosevelt",
       "acceptedAnswers": [
-        "Mileva Marić",
-        "mileva maric",
-        "mileva marić"
-      ]
+        "Franklin D. Roosevelt",
+        "franklin d. roosevelt",
+        "franklin roosevelt",
+        "franklin delano roosevelt",
+        "roosevelt",
+        "fdr"
+      ],
+      "explanation": "Leo Szilard drafted the letter; Einstein signed it. He never worked on the Manhattan Project and later called signing it 'the one great mistake in my life.'"
     }
   ],
   "image": "myth-buster-stamp.jpg",

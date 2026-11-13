@@ -71,14 +71,14 @@
     "description": "Hidden moments that shaped exploration",
     "questions": [
       {
-        "question": "What phrase did flight controllers use to describe the successful problem-solving during Apollo 13's crisis?",
+        "question": "'Failure is not an option' was written for the 1995 film Apollo 13—which flight director's character says it?",
         "acceptedAnswers": [
-          "failure is not an option",
-          "failure is not an option",
-          "failure not an option"
+          "gene kranz",
+          "kranz",
+          "eugene kranz"
         ],
         "bonus": 150,
-        "hint": "A famous movie quote that became NASA's unofficial motto during crises"
+        "hint": "Played by Ed Harris, wearing a white vest"
       },
       {
         "question": "NASA's Deep Space Network uses giant radio dishes to communicate with spacecraft. What is the diameter of the largest dishes?",

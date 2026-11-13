@@ -25,6 +25,9 @@ const WORD_TO_NUMBER = Object.fromEntries(
 export const normalizeAnswer = (text) => {
   if (!text) return ''
   let normalized = String(text).toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[-–—/]/g, ' ')
     .replace(/[^\w\s]/g, '')
     .replace(/\s+/g, ' ')
     .trim()
@@ -81,14 +84,26 @@ export const checkAnswerMatch = (userAnswer, acceptedAnswers) => {
       if (similarity >= threshold) return true
     }
 
-    // Short answers: allow substring only when very short
-    if (normalizedAccepted.length <= 8) {
-      return normalizedUser.includes(normalizedAccepted) ||
-        normalizedAccepted.includes(normalizedUser)
-    }
-
-    return false
+    return containsWholePhrase(normalizedUser, normalizedAccepted) ||
+      isSubstantialFragment(normalizedUser, normalizedAccepted)
   })
+}
+
+const MAX_EXTRA_WORDS = 3
+
+const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+/** "the red vineyard painting" contains "red vineyard"; shotgun lists of guesses do not count. */
+const containsWholePhrase = (user, accepted) => {
+  const extraWords = user.split(' ').length - accepted.split(' ').length
+  if (extraWords < 0 || extraWords > MAX_EXTRA_WORDS) return false
+  return new RegExp(`\\b${escapeRegex(accepted)}\\b`).test(user)
+}
+
+/** "boch" for "anna boch" is fine; "a" for "arles" is not. */
+const isSubstantialFragment = (user, accepted) => {
+  if (user.length < 4 || user.length < Math.ceil(accepted.length * 0.6)) return false
+  return new RegExp(`\\b${escapeRegex(user)}\\b`).test(accepted)
 }
 
 /**
@@ -107,34 +122,26 @@ export const calculateSimilarity = (str1, str2) => {
 }
 
 /**
+ * Edit distance where swapping two adjacent letters ("aristotel") costs one edit, not two.
  * @param {string} str1
  * @param {string} str2
  * @returns {number}
  */
 const levenshteinDistance = (str1, str2) => {
-  const matrix = []
+  const rows = str2.length + 1
+  const cols = str1.length + 1
+  const d = Array.from({ length: rows }, (_, i) => [i, ...new Array(cols - 1).fill(0)])
+  for (let j = 0; j < cols; j++) d[0][j] = j
 
-  for (let i = 0; i <= str2.length; i++) {
-    matrix[i] = [i]
-  }
-
-  for (let j = 0; j <= str1.length; j++) {
-    matrix[0][j] = j
-  }
-
-  for (let i = 1; i <= str2.length; i++) {
-    for (let j = 1; j <= str1.length; j++) {
-      if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
-        matrix[i][j] = matrix[i - 1][j - 1]
-      } else {
-        matrix[i][j] = Math.min(
-          matrix[i - 1][j - 1] + 1,
-          matrix[i][j - 1] + 1,
-          matrix[i - 1][j] + 1
-        )
+  for (let i = 1; i < rows; i++) {
+    for (let j = 1; j < cols; j++) {
+      const cost = str2[i - 1] === str1[j - 1] ? 0 : 1
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost)
+      if (i > 1 && j > 1 && str2[i - 1] === str1[j - 2] && str2[i - 2] === str1[j - 1]) {
+        d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1)
       }
     }
   }
 
-  return matrix[str2.length][str1.length]
+  return d[rows - 1][cols - 1]
 }

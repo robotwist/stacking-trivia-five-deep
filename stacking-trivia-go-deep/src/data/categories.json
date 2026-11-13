@@ -12,8 +12,7 @@
         "miles-davis",
         "shakespeare",
         "leonardo-da-vinci",
-        "mozart",
-        "famous-redheads-women"
+        "mozart"
       ]
     },
     "olympic-distance-legends": {
@@ -22,13 +21,9 @@
       "image": "olympic-distance-legends",
       "color": "from-red-600 to-orange-600",
       "stacks": [
-        "david-rudisha-800m-mastery",
-        "seb-coe-middle-distance-maestro", 
-        "el-guerrouj-king-of-mile",
-        "billy-mills-impossible-10k",
-        "prefontaine-rebels-fire",
-        "olympic_distance_current",
-        "olympic_distance_1980s"
+        "prefontaine-ultimate",
+        "el-guerrouj-ultimate",
+        "olympic_distance_current"
       ]
     },
     "sports": {
@@ -39,7 +34,8 @@
       "stacks": [
         "muhammad-ali",
         "michael-jordan",
-        "serena-williams"
+        "serena-williams",
+        "nebraska-sports-ultimate"
       ]
     },
     "science-technology": {
@@ -105,8 +101,8 @@
       ]
     },
     "heroes-journey-super": {
-      "title": "The Hero's Journey: Campbell's Monomyth",
-      "description": "Explore the universal narrative pattern that shapes all stories and human transformation",
+      "title": "The Hero's Journey",
+      "description": "The scholar, the novel, and the filmmaker behind the story pattern hidden in every myth",
       "image": "history",
       "color": "from-purple-800 to-blue-800",
       "stacks": [
@@ -145,8 +141,8 @@
       ]
     },
     "character-name-origins": {
-      "title": "Character Name Origins: Encoded Destinies",
-      "description": "Discover how authors embed meaning, psychology, and destiny into character names",
+      "title": "Character Name Origins: Where Gandalf Came From",
+      "description": "How Tolkien borrowed Middle-earth's names from a thousand-year-old Norse poem",
       "image": "arts-culture",
       "color": "from-green-800 to-teal-800",
       "stacks": [

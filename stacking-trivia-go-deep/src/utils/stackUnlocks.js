@@ -63,15 +63,7 @@ export class StackUnlockManager {
         requirement: { minScore: 80 }
       },
       'heroes-journey-super': {
-        unlocks: ['character-name-origins', 'comparative-mythology'],
-        requirement: { minScore: 120 }
-      },
-      'jesus-historical-mythic': {
-        unlocks: ['gnostic-texts', 'comparative-christ-figures'],
-        requirement: { minScore: 100 }
-      },
-      'philip-k-dick-super': {
-        unlocks: ['cyberpunk-origins', 'simulation-theory'],
+        unlocks: ['character-name-origins'],
         requirement: { minScore: 120 }
       }
     };
@@ -96,12 +88,7 @@ export class StackUnlockManager {
     // Super stacks and unlockable stacks need to be unlocked
     const restrictedStacks = [
       'philip-k-dick-super',
-      'character-name-origins', 
-      'comparative-mythology',
-      'gnostic-texts',
-      'comparative-christ-figures',
-      'cyberpunk-origins',
-      'simulation-theory'
+      'character-name-origins'
     ];
 
     if (!restrictedStacks.includes(stackKey)) {
@@ -124,31 +111,6 @@ export class StackUnlockManager {
       'character-name-origins': {
         requires: 'Complete Hero\'s Journey with 120+ points',
         prerequisiteStack: 'heroes-journey-super',
-        minScore: 120
-      },
-      'comparative-mythology': {
-        requires: 'Complete Hero\'s Journey with 120+ points',
-        prerequisiteStack: 'heroes-journey-super', 
-        minScore: 120
-      },
-      'gnostic-texts': {
-        requires: 'Complete Jesus stack with 100+ points',
-        prerequisiteStack: 'jesus-historical-mythic',
-        minScore: 100
-      },
-      'comparative-christ-figures': {
-        requires: 'Complete Jesus stack with 100+ points',
-        prerequisiteStack: 'jesus-historical-mythic',
-        minScore: 100
-      },
-      'cyberpunk-origins': {
-        requires: 'Complete Philip K. Dick with 120+ points',
-        prerequisiteStack: 'philip-k-dick-super',
-        minScore: 120
-      },
-      'simulation-theory': {
-        requires: 'Complete Philip K. Dick with 120+ points', 
-        prerequisiteStack: 'philip-k-dick-super',
         minScore: 120
       }
     };
@@ -176,12 +138,7 @@ export class StackUnlockManager {
   formatUnlockNotification(unlockedStackKey) {
     const stackTitles = {
       'philip-k-dick-super': 'Philip K. Dick: Reality\'s Interrogator',
-      'character-name-origins': 'Character Name Origins: Encoded Destinies',
-      'comparative-mythology': 'Comparative Mythology: Universal Patterns',
-      'gnostic-texts': 'Gnostic Texts: Hidden Christianities',
-      'comparative-christ-figures': 'Comparative Christ Figures: Global Saviors',
-      'cyberpunk-origins': 'Cyberpunk Origins: Digital Dystopia Genesis',
-      'simulation-theory': 'Simulation Theory: Are We Living in Code?'
+      'character-name-origins': 'Character Name Origins: Where Gandalf Came From'
     };
 
     return {

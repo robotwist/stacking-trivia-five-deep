@@ -188,7 +188,7 @@ const AuthForm = () => {
           }}
           className="w-full bg-gray-100 hover:bg-gray-200 disabled:opacity-60 text-gray-800 py-2 px-4 rounded-lg font-semibold transition-colors duration-200"
         >
-          Play as Guest
+          Keep playing as guest
         </button>
 
         {/* Mode Switch */}

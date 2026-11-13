@@ -28,7 +28,7 @@
     },
     {
       "level": 3,
-      "question": "As a paleontologist, Ross's daughter Emma first laughed when he sang what song?",
+      "question": "Ross the paleontologist finally got baby Emma to laugh by singing what song?",
       "answer": "Baby Got Back",
       "acceptedAnswers": [
         "Baby Got Back",
@@ -41,7 +41,7 @@
     },
     {
       "level": 4,
-      "question": "After 'Baby Got Back' made Emma laugh, Phoebe once found what in a soda can—and sued?",
+      "question": "Long before 'Baby Got Back' made Emma laugh, Phoebe got $7,000 from a soda company after finding what in her can?",
       "answer": "A human thumb",
       "acceptedAnswers": [
         "A human thumb",
@@ -54,15 +54,16 @@
     },
     {
       "level": 5,
-      "question": "After the human-thumb lawsuit, Joey pitched what men's fragrance?",
+      "question": "That human thumb bought Chandler's promise to quit smoking. Years later, Joey's secret Japanese commercial was for what brand of 'Lipstick for Men'?",
       "answer": "Ichiban",
       "acceptedAnswers": [
         "Ichiban",
         "ichiban",
         "ichiban lipstick for men",
-        "lipstick for men",
-        "ichiban lipstick"
+        "ichiban lipstick",
+        "ichibon"
       ],
+      "explanation": "Chandler had to wear the lipstick himself to apologize for not watching Joey's audition tape.",
       "hint": "Japanese for number one"
     }
   ],
