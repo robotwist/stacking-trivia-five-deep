@@ -33,6 +33,16 @@
   <body>
     <div id="root"></div>
     <noscript>Deeply Trivial needs JavaScript to play.</noscript>
+
+    <!-- Netlify Forms detects these at deploy time; the app submits to them with fetch -->
+    <form name="host-pass" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="email" /><input name="organization" /><input name="hostType" />
+      <input name="nightsPerMonth" /><textarea name="notes"></textarea><input name="bot-field" />
+    </form>
+    <form name="stack-feedback" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="stackTitle" /><input name="rating" /><input name="category" />
+      <textarea name="message"></textarea><input name="difficultyTag" /><input name="bot-field" />
+    </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

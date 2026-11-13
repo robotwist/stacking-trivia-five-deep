@@ -34,6 +34,8 @@ const MultiStackMode = lazy(() => import('./components/MultiStackMode'))
 const BarTriviaNight = lazy(() => import('./components/BarTriviaNight'))
 const MultiDeviceHost = lazy(() => import('./components/MultiDeviceHost'))
 const HostUpsell = lazy(() => import('./components/HostUpsell'))
+const HostNight = lazy(() => import('./components/host/HostNight'))
+const HostScreen = lazy(() => import('./components/host/HostScreen'))
 const MobilePlayerJoin = lazy(() => import('./components/MobilePlayerJoin'))
 
 import { useDarkMode, useGameHistory } from './hooks/gameHooks'
@@ -58,6 +60,16 @@ import { loadPlayableStacks } from './data/loadPlayableStacks.js'
 import './App.css'
 
 const MAX_STACK_SCORE = calculateMaxScore(5, false)
+
+// Defined at module level: a component declared inside the app would get a new identity on
+// every render and remount whatever it wraps (wiping a live Host Night).
+const LazyRoute = ({ children }) => (
+  <GameErrorBoundary>
+    <Suspense fallback={<LoadingSpinner size="lg" message="Loading game mode..." darkMode />}>
+      {children}
+    </Suspense>
+  </GameErrorBoundary>
+)
 
 function App() {
   const { user, loading, canPlay, cancelSignIn, isGuest } = useAuth();
@@ -167,7 +179,12 @@ function AuthenticatedGameApp() {
     }
 
     if (path === '/host') {
-      setGameMode('multi-device-host')
+      setGameMode('host-night')
+      return
+    }
+
+    if (path === '/screen') {
+      setGameMode('host-screen')
       return
     }
 
@@ -434,14 +451,6 @@ function AuthenticatedGameApp() {
     setGameMode('gilliam-projector')
   }
 
-  const LazyRoute = ({ children }) => (
-    <GameErrorBoundary>
-      <Suspense fallback={<LoadingSpinner size="lg" message="Loading game mode..." darkMode={darkMode} />}>
-        {children}
-      </Suspense>
-    </GameErrorBoundary>
-  )
-
   if (showOnboarding) {
     return (
       <UniversalOnboarding
@@ -494,6 +503,31 @@ function AuthenticatedGameApp() {
     );
   }
 
+  if (gameMode === 'host-night' || gameMode === 'bar-trivia') {
+    return (
+      <LazyRoute>
+        <HostNight
+          gameStacks={gameStacks}
+          categoriesConfig={categoriesConfig}
+          availableStackKeys={Object.keys(gameStacks)}
+          onHostPass={() => setGameMode('host-upsell')}
+          onExit={() => {
+            if (window.location.pathname !== '/') window.history.replaceState(null, '', '/')
+            setGameMode('solo')
+          }}
+        />
+      </LazyRoute>
+    )
+  }
+
+  if (gameMode === 'host-screen') {
+    return (
+      <LazyRoute>
+        <HostScreen gameStacks={gameStacks} />
+      </LazyRoute>
+    )
+  }
+
   if (gameMode === 'host') {
     return (
       <LazyRoute>
@@ -505,7 +539,7 @@ function AuthenticatedGameApp() {
   if (gameMode === 'host-upsell') {
     return (
       <LazyRoute>
-        <HostUpsell />
+        <HostUpsell onBack={() => setGameMode('host-night')} />
       </LazyRoute>
     )
   }
@@ -854,13 +888,22 @@ function AuthenticatedGameApp() {
 
           <section aria-labelledby="group-play-title" className="max-w-5xl mx-auto mt-14">
             <h2 id="group-play-title" className="text-2xl font-bold text-center mb-2 text-gray-100">Play with a group</h2>
-            <p className="text-center text-gray-400 mb-6">Bar nights, classrooms, and family game night—one screen or everyone's phones.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <p className="text-center text-gray-400 mb-6">Bar nights, classrooms, and family game night on one big screen.</p>
+            <button
+              type="button"
+              onClick={() => setGameMode('host-night')}
+              className="w-full mb-3 text-left p-5 sm:p-6 rounded-xl bg-gradient-to-r from-amber-900/50 to-gray-900 border-2 border-amber-500/60 hover:border-amber-400 transition-colors"
+            >
+              <span className="block text-xs uppercase tracking-[0.25em] text-amber-400 mb-1">For hosts · free during beta</span>
+              <span className="block text-2xl font-bold text-amber-100">Host a trivia night</span>
+              <span className="block text-gray-300 mt-1">
+                Put the questions on the TV, score teams with a tap, and let the dive rule create late swings. Venue branding, printable answer key, and it survives a refresh.
+              </span>
+            </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                ['Host a game', 'Teams, rounds, and a projector-ready scoreboard', () => setGameMode('host')],
-                ['Bar Trivia Night', 'Run a full night with crowd energy and multipliers', () => setGameMode('bar-trivia')],
-                ['Phones as buzzers', 'Players join from their own phones with a room code', () => setGameMode('multi-device-host')],
-                ['Multi-Stack Challenge', 'Several stories back to back', () => setGameMode('multi-stack')],
+                ['Multi-Stack Challenge', 'Several stories back to back on one device', () => setGameMode('multi-stack')],
+                ['Classic host mode', 'The original teams-and-rounds setup with projector extras', () => setGameMode('host')],
               ].map(([title, blurb, onClick]) => (
                 <button
                   key={title}

@@ -12,15 +12,15 @@ const MoreModesDrawer = ({ isOpen, onClose, onSelectMode, onEnterGilliamProjecto
         </div>
 
         <div className="space-y-3">
+          <button className="w-full text-left p-3 bg-amber-700 rounded hover:bg-amber-600" onClick={() => { onSelectMode('host-night'); onClose(); }}>Host a trivia night</button>
           <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onSelectMode('multi-stack'); onClose(); }}>Multi-Stack Challenge</button>
-          <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onSelectMode('bar-trivia'); onClose(); }}>Bar Trivia Night</button>
           <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onSelectMode('projector-scoreboard'); onClose(); }}>Classic Projector</button>
           <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onEnterGilliamProjector('setup'); onClose(); }}>Gilliam Projector</button>
-          <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onSelectMode('multi-device-host'); onClose(); }}>Multi-Device Trivia</button>
+          <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onSelectMode('multi-device-host'); onClose(); }}>Phones as buzzers (preview, not live yet)</button>
           <button className="w-full text-left p-3 bg-gray-800 rounded hover:bg-gray-700" onClick={() => { onSetTestPhoto(true); onClose(); }}>Test Photo-First</button>
           <button className="w-full text-left p-3 bg-blue-700 rounded hover:bg-blue-600 text-white" onClick={() => { onResetOnboarding(); onClose(); }}>Try New Onboarding</button>
           <hr className="my-3 border-gray-700" />
-          <button className="w-full text-left p-3 bg-yellow-700 rounded hover:bg-yellow-600 text-white" onClick={() => { onSelectMode('host-upsell'); onClose(); }}>Become a Host (Pro)</button>
+          <button className="w-full text-left p-3 bg-yellow-700 rounded hover:bg-yellow-600 text-white" onClick={() => { onSelectMode('host-upsell'); onClose(); }}>Host Pass: become a founding host</button>
         </div>
 
         <div className="mt-6 text-xs text-gray-400">

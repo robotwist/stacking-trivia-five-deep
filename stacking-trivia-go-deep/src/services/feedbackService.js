@@ -1,27 +1,7 @@
-// Feedback submission service
+// Feedback and error reports go to the "stack-feedback" Netlify Form, so guests can report too
+import { submitWithRetry } from './netlifyForms'
 
 export const submitFeedback = async ({ stackTitle, rating, category, message, difficultyTag }) => {
-  try {
-    const token = localStorage.getItem('trivia_token')
-    const res = await fetch('/api/feedback', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        ...(token ? { Authorization: `Bearer ${token}` } : {})
-      },
-      body: JSON.stringify({ stackTitle, rating, category, message, difficultyTag })
-    })
-    if (!res.ok) throw new Error('Feedback submit failed')
-    return { ok: true }
-  } catch (e) {
-    // Fallback: store locally for later sync
-    try {
-      const pending = JSON.parse(localStorage.getItem('pending_feedback') || '[]')
-      pending.push({ stackTitle, rating, category, message, difficultyTag, createdAt: Date.now() })
-      localStorage.setItem('pending_feedback', JSON.stringify(pending))
-    } catch {}
-    return { ok: false, error: e.message }
-  }
+  const ok = await submitWithRetry('stack-feedback', { stackTitle, rating, category, message, difficultyTag })
+  return ok ? { ok: true } : { ok: false, error: 'Saved on this device; will send when online' }
 }
-
-
