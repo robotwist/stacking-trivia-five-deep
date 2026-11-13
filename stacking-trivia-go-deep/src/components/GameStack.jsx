@@ -8,6 +8,7 @@ import { shuffleArray } from '../utils/arrayUtils';
 import { useAuth } from '../contexts/AuthContext';
 import ProgressStorage from '../utils/progressStorage';
 import { playSound } from '../utils/audio.js';
+import { track } from '../utils/analytics';
 
 const getAcceptedAnswers = (question) =>
   question.acceptedAnswers || question.a || [question.answer];
@@ -27,7 +28,8 @@ const GameStack = memo(function GameStack({
   onPause = () => {},
   onResume = () => {},
   resumeData = null,
-  challenge = null
+  challenge = null,
+  source = 'other'
 }) {
   const [depth, setDepth] = useState(0);
   const [score, setScore] = useState(0);
@@ -86,6 +88,9 @@ const GameStack = memo(function GameStack({
       resumed: !!resumeData,
       startIndex: resumeData?.currentIndex || 0
     });
+    track('stack started', { stack: progressKey, source, resumed: !!resumeData, challenged: !!challenge });
+    // Once per run: GameStack is remounted (new key) for every new run
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resumeData, progressKey])
 
   const current = useMemo(() => {
@@ -181,6 +186,14 @@ const GameStack = memo(function GameStack({
     }
 
     playSound(isCorrect ? 'correct' : 'incorrect');
+    track('level answered', {
+      stack: progressKey,
+      level: currentDepth + 1,
+      deeper: isDeepMode,
+      correct: isCorrect,
+      used_choices: choicesCostPoints,
+      answered_by: pickedChoice !== null ? 'choice' : 'typing',
+    });
 
     const nextAnswers = [
       ...userAnswers,

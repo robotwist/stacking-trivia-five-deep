@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 import { createHash } from 'crypto'
-import { readFile, writeFile } from 'fs/promises'
+import { mkdir, readFile, writeFile } from 'fs/promises'
 
 const SHELL_EXTRAS = [
   '/manifest.json',
@@ -42,9 +42,62 @@ function precacheServiceWorker() {
   }
 }
 
+const escapeAttr = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
+
+const setMeta = (html, attr, name, value) =>
+  html.replace(new RegExp(`(<meta ${attr}="${name}" content=")[^"]*(")`), `$1${escapeAttr(value)}$2`)
+
+/**
+ * Link previews need absolute URLs and per-stack tags in static HTML (crawlers don't run JS).
+ * Writes dist/s/<key>/index.html for every stack; the SPA then routes /s/<key> to that stack.
+ */
+function stackSharePages() {
+  let outDir = 'dist'
+  // Netlify sets DEPLOY_PRIME_URL for previews and URL for production
+  const origin = (process.env.DEPLOY_PRIME_URL || process.env.URL || process.env.VITE_SITE_URL || 'https://stacking-trivia-five-deep.netlify.app').replace(/\/$/, '')
+  const absolute = (html, url) => html
+    .replace(/content="\/og\//g, `content="${origin}/og/`)
+    .replace('<meta property="og:url" content="/"', `<meta property="og:url" content="${url}"`)
+
+  return {
+    name: 'deepstack-share-pages',
+    apply: 'build',
+    configResolved(config) {
+      outDir = path.resolve(config.root, config.build.outDir)
+    },
+    transformIndexHtml(html) {
+      return absolute(html, `${origin}/`)
+    },
+    async closeBundle() {
+      const { PLAYABLE_STACK_REGISTRY } = await import('./tools/playableStacksManifest.js')
+      const base = await readFile(path.join(outDir, 'index.html'), 'utf8')
+      for (const { key, module } of PLAYABLE_STACK_REGISTRY) {
+        const stack = JSON.parse(await readFile(path.resolve('src/data', module.replace(/^\.\//, '')), 'utf8'))
+        const title = `${stack.title} — Deeply Trivial`
+        const description = `${stack.description} Five questions. One story. Can you go deeper?`
+        const image = `${origin}/og/${key}.jpg`
+        let html = base
+          .replace(/<title>[^<]*<\/title>/, `<title>${escapeAttr(title)}</title>`)
+          .replace('<meta property="og:url" content="' + origin + '/"', `<meta property="og:url" content="${origin}/s/${key}"`)
+        html = setMeta(html, 'name', 'description', description)
+        html = setMeta(html, 'property', 'og:title', title)
+        html = setMeta(html, 'property', 'og:description', description)
+        html = setMeta(html, 'property', 'og:image', image)
+        html = setMeta(html, 'name', 'twitter:title', title)
+        html = setMeta(html, 'name', 'twitter:description', description)
+        html = setMeta(html, 'name', 'twitter:image', image)
+        // Both forms, so /s/<key> (no trailing slash) resolves to the static page on any host
+        await mkdir(path.join(outDir, 's', key), { recursive: true })
+        await writeFile(path.join(outDir, 's', key, 'index.html'), html)
+        await writeFile(path.join(outDir, 's', `${key}.html`), html)
+      }
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), precacheServiceWorker()],
+  plugins: [react(), precacheServiceWorker(), stackSharePages()],
   base: '/',
   build: {
     outDir: 'dist',

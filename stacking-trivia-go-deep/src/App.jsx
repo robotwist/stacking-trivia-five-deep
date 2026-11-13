@@ -54,6 +54,7 @@ import {
   getDailyNumber,
 } from './utils/playerRecords'
 import { calculateMaxScore } from './utils/scoreUtils'
+import { track } from './utils/analytics'
 
 import categoriesConfig from './data/categories.json'
 import { loadPlayableStacks } from './data/loadPlayableStacks.js'
@@ -130,6 +131,7 @@ function AuthenticatedGameApp() {
   const [recordsVersion, setRecordsVersion] = useState(0)
   /** From a friend's challenge link: { stackKey, score, code, name } */
   const [challenge, setChallenge] = useState(null)
+  const [runSource, setRunSource] = useState('other')
 
   const gameStacks = useMemo(() => loadPlayableStacks(), [])
 
@@ -188,19 +190,26 @@ function AuthenticatedGameApp() {
       return
     }
 
-    // Deep link: /play?stack=<key>&category=<key>, or /play?daily=1 from the home-screen shortcut
-    if (path === '/play' || path === '/play/') {
+    // Deep links: /s/<key> (shared links, with a per-stack preview card), the older
+    // /play?stack=<key>, and /play?daily=1 from the home-screen shortcut
+    const sharedStack = path.match(/^\/s\/([a-z0-9_-]+)\/?$/i)?.[1]
+    if (sharedStack || path === '/play' || path === '/play/') {
       const { stack, category, challenge: incoming } = parsePlayParams()
       const daily = new URLSearchParams(window.location.search).get('daily')
-      const target = stack && gameStacks[stack] ? stack : daily ? dailyStackKey : null
+      const requested = sharedStack || stack
+      const target = requested && gameStacks[requested] ? requested : daily ? dailyStackKey : null
       if (target) {
         if (incoming) setChallenge({ stackKey: target, ...incoming })
         setSelectedCategory(category || stackCategory[target] || null)
         setSelectedStack(target)
+        setRunSource(incoming ? 'challenge' : daily ? 'daily-shortcut' : 'link')
         setGameStarted(true)
       }
+      track('app opened', { entry: incoming ? 'challenge' : daily ? 'daily-shortcut' : target ? 'link' : 'bad-link' })
       window.history.replaceState(null, '', '/')
+      return
     }
+    track('app opened', { entry: 'home' })
     // Run once on mount; later state changes should not re-trigger deep links
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -239,8 +248,10 @@ function AuthenticatedGameApp() {
   })
   const [showMore, setShowMore] = useState(false)
 
-  const startStack = (stackKey, categoryKey = stackCategory[stackKey] || null) => {
+  /** @param {string} source where the player started it from, for analytics (daily, surprise, category, …) */
+  const startStack = (stackKey, source = 'other', categoryKey = stackCategory[stackKey] || null) => {
     if (!stackKey || !gameStacks[stackKey]) return
+    setRunSource(source)
     setSelectedCategory(categoryKey)
     setSelectedStack(stackKey)
     setResumeData(null)
@@ -361,6 +372,20 @@ function AuthenticatedGameApp() {
 
     const isFirstPlay = !getAllStackRecords()[stackKey]
     const { isNewBest, previousBest } = recordRun(stackKey, { score, levelsCleared, totalLevels })
+    track('stack finished', {
+      stack: stackKey,
+      category: stackCategory[stackKey],
+      source: runSource,
+      score,
+      levels_cleared: levelsCleared,
+      perfect: levelsCleared >= totalLevels,
+      choices_used: answers.filter((a) => a.usedChoices).length,
+      deeper_answered: answers.filter((a) => a.deeper).length,
+      first_play: isFirstPlay,
+      is_daily: stackKey === dailyStackKey,
+      challenged: challenge?.stackKey === stackKey,
+      beat_challenge: challenge?.stackKey === stackKey ? score > challenge.score : null,
+    })
     setRecordsVersion((v) => v + 1)
 
     if (levelsCleared >= totalLevels) {
@@ -406,6 +431,7 @@ function AuthenticatedGameApp() {
 
   const handleResumeStack = (progressData) => {
     if (!gameStacks[progressData.stackName]) return
+    setRunSource('resume')
     setResumeData(progressData);
     setSelectedCategory(stackCategory[progressData.stackName] || null)
     setSelectedStack(progressData.stackName);
@@ -467,7 +493,7 @@ function AuthenticatedGameApp() {
         onStartGame={(rec) => {
           setShowRecommendation(false);
           setGameMode(rec.mode);
-          if (rec.stack && gameStacks[rec.stack]) startStack(rec.stack);
+          if (rec.stack && gameStacks[rec.stack]) startStack(rec.stack, 'onboarding');
           else setSelectedCategory(rec.category);
         }}
         onBrowseAll={() => {
@@ -496,8 +522,8 @@ function AuthenticatedGameApp() {
         suggestions={lastGameResult.suggestions}
         challenge={challenge?.stackKey === lastGameResult.stackKey ? challenge : null}
         dailyNumber={lastGameResult.stackKey === dailyStackKey ? getDailyNumber() : null}
-        onPlayStack={(key) => startStack(key)}
-        onPlayAgain={() => startStack(lastGameResult.stackKey)}
+        onPlayStack={(key) => startStack(key, 'suggestion')}
+        onPlayAgain={() => startStack(lastGameResult.stackKey, 'replay')}
         onReturnToMenu={handleReturnToMenu}
       />
     );
@@ -686,6 +712,7 @@ function AuthenticatedGameApp() {
             onComplete={handleEnhancedStackComplete}
             resumeData={resumeData}
             challenge={challenge?.stackKey === selectedStack ? challenge : null}
+            source={runSource}
           />
         </div>
       </div>
@@ -731,7 +758,7 @@ function AuthenticatedGameApp() {
                   <h2 className="text-xl font-bold mb-2">
                     <button
                       type="button"
-                      onClick={() => startStack(stackKey, selectedCategory)}
+                      onClick={() => startStack(stackKey, 'category', selectedCategory)}
                       className="text-left group-hover:text-amber-800 transition-colors after:absolute after:inset-0 focus:outline-none focus-visible:underline"
                     >
                       {stack.title}
@@ -843,14 +870,14 @@ function AuthenticatedGameApp() {
               <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
                 <button
                   type="button"
-                  onClick={() => startStack(dailyStackKey)}
+                  onClick={() => startStack(dailyStackKey, 'daily')}
                   className="px-8 py-4 rounded-lg bg-amber-500 hover:bg-amber-400 text-gray-900 text-lg font-bold shadow-lg focus:outline-none focus:ring-4 focus:ring-amber-300"
                 >
                   {playedDailyToday ? 'Play again' : 'Start the dive'}
                 </button>
                 <button
                   type="button"
-                  onClick={() => startStack(pickSurpriseStack(availableStackKeys, { exclude: [dailyStackKey] }))}
+                  onClick={() => startStack(pickSurpriseStack(availableStackKeys, { exclude: [dailyStackKey] }), 'surprise')}
                   className="px-6 py-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 text-gray-100 font-semibold"
                 >
                   Surprise me

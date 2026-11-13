@@ -37,12 +37,14 @@ export const buildChallengeUrl = (stackKey: string, categoryKey: string | undefi
   return url.toString()
 }
 
-/** Shareable /play URL for bar hosts and post-game invites */
+/**
+ * Shareable link to one stack. /s/<key> is a static page with that stack's preview card,
+ * so the link looks good in iMessage, WhatsApp, and social feeds.
+ */
 export const buildPlayUrl = (stackKey: string, categoryKey?: string) => {
   const origin = getSiteOrigin()
-  const params = new URLSearchParams({ stack: stackKey })
-  if (categoryKey) params.set('category', categoryKey)
-  return `${origin}/play?${params.toString()}`
+  const query = categoryKey ? `?${new URLSearchParams({ category: categoryKey }).toString()}` : ''
+  return `${origin}/s/${encodeURIComponent(stackKey)}${query}`
 }
 
 export const copyPlayLink = async (

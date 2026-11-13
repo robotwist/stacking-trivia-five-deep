@@ -52,7 +52,8 @@ self.addEventListener('fetch', (event) => {
 async function handleNavigation(request) {
   try {
     const response = await fetch(request)
-    if (response.ok) {
+    // Only the real root page becomes the offline shell (/s/<key> pages carry per-stack titles)
+    if (response.ok && new URL(request.url).pathname === APP_SHELL_URL) {
       const cache = await caches.open(SHELL_CACHE)
       cache.put(APP_SHELL_URL, response.clone())
     }

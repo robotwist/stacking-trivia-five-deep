@@ -3,6 +3,7 @@ import { submitFeedback } from '../services/feedbackService';
 import FeedbackModal from './FeedbackModal';
 import { shareRun } from '../utils/share.js';
 import { buildResultCode, ladderFromCode } from '../utils/playerRecords';
+import { track } from '../utils/analytics';
 
 const PLAYER_NAME_KEY = 'deepstack_player_name';
 
@@ -81,6 +82,7 @@ const PostGameFlow = ({
       playerName: playerName.trim() || undefined,
       dailyNumber,
     });
+    track('result shared', { stack: stackKey, outcome: result, score, is_daily: !!dailyNumber, reply: !!challenge });
     if (result === 'copied') flash('Challenge link copied—paste it to a friend');
   };
 
@@ -200,7 +202,10 @@ const PostGameFlow = ({
           {hasUnseenLevels && !revealRest && (
             <button
               type="button"
-              onClick={() => setRevealRest(true)}
+              onClick={() => {
+                setRevealRest(true);
+                track('story revealed', { stack: stackKey, levels_unseen: totalLevels - mainAnswers.length });
+              }}
               className="mt-4 text-sm font-semibold text-amber-700 dark:text-amber-300 underline underline-offset-2"
             >
               Reveal the rest of the story (spoilers)
@@ -255,6 +260,7 @@ const PostGameFlow = ({
           stackTitle={stack?.title || stackKey}
           onSubmitFeedback={async ({ stackTitle, rating, category, feedback, difficultyTag }) => {
             const res = await submitFeedback({ stackTitle, rating, category, message: feedback, difficultyTag });
+            track('feedback sent', { stack: stackKey, rating, category });
             flash(res.ok ? 'Thanks! Feedback saved.' : 'Saved on this device; will sync later.');
           }}
         />
