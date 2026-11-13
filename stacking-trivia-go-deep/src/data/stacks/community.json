@@ -91,8 +91,12 @@
         "Troy and Abed in the morning"
       ],
       "hint": "A prophecy about The Cape that fans adopted",
-      "explanation": "The show was NBC's The Cape, cancelled after one season. Community did get its six seasons (the last on Yahoo Screen); Peacock ordered the movie in 2022, and fans are still waiting."
+      "explanation": "The show was NBC's The Cape, cancelled after one season. Community got its six seasons (the last on Yahoo Screen). Peacock ordered the movie in 2022; as of late 2026 it still hasn't filmed."
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "Beetlejuice. Beetlejuice. Beetlejuice.",
+    "text": "The name is said once in season 1 and once in season 2. When Annie says it a third time in season 3's Halloween episode, Beetlejuice walks past behind her. Harmon: \"The Easter egg that took three years to hide.\""
+  }
 }

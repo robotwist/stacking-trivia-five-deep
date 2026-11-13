@@ -1,6 +1,6 @@
 {
   "title": "Stranger Things: Welcome to the Upside Down",
-  "description": "A tabletop game spirals into frozen breakfast, another dimension, and a secret lab.",
+  "description": "A tabletop game spirals into frozen breakfast, another dimension, and a girl with a number for a name.",
   "questions": [
     {
       "level": 1,
@@ -74,24 +74,26 @@
     },
     {
       "level": 5,
-      "question": "The Upside Down was first breached inside a government lab run by which scientist Eleven calls 'Papa'?",
-      "answer": "Dr. Brenner",
+      "question": "Eleven opened the Upside Down as Dr. Brenner's test subject, but her mother, Terry Ives, gave her a real name first. What is it?",
+      "answer": "Jane",
       "acceptedAnswers": [
-        "Dr. Brenner",
-        "dr brenner",
-        "brenner",
-        "martin brenner",
-        "dr martin brenner",
-        "doctor brenner"
+        "Jane",
+        "jane",
+        "jane ives",
+        "jane hopper"
       ],
       "choices": [
-        "Dr. Sam Owens",
-        "Murray Bauman",
-        "Jim Hopper"
+        "Kali",
+        "Holly",
+        "Erica"
       ],
-      "hint": "Played by Matthew Modine",
-      "explanation": "Brenner ties the show to a real CIA program: Eleven's mother, Terry Ives, was a subject of MKUltra, the mind-control project the CIA actually ran from 1953 to 1973."
+      "explanation": "Terry was a subject of MKUltra, the CIA's real 1953–1973 mind-control program, and Brenner took her baby. Hopper's forged adoption papers finally make her Jane Hopper.",
+      "hint": "Four letters, as plain as a name gets"
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "Judge a show by its cover",
+    "text": "That glowing red title is a modified ITC Benguiat. The Duffers sent the designers a stack of vintage Stephen King paperbacks and asked for the feeling of cracking one open."
+  }
 }

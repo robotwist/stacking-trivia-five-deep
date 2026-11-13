@@ -94,5 +94,9 @@
       "explanation": "About five weeks in, Zemeckis felt the comedy wasn't landing and recast in January 1985. Fox then shot Family Ties by day and Hill Valley by night, often until 2 a.m."
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "Twin Pines, Lone Pine",
+    "text": "Escaping a shotgun-toting Old Man Peabody in 1955, Marty flattens one of his two prized pine trees. Back in 1985, the mall where it all began has a new sign: Lone Pine Mall."
+  }
 }

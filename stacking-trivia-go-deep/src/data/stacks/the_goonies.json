@@ -1,6 +1,6 @@
 {
   "title": "The Goonies: Never Say Die",
-  "description": "An attic map, a pirate legend, and a candy-bar friendship—five adventure beats.",
+  "description": "An attic map, a pirate legend, and a monster that never made the movie—five Goonies deep cuts.",
   "questions": [
     {
       "level": 1,
@@ -73,26 +73,32 @@
         "Chester Copperpot"
       ],
       "hint": "Hey you guys!",
-      "explanation": "Sloth was ex-Raiders lineman John Matuszak, a two-time Super Bowl champ. His prosthetic head, radio-controlled eye included, took about five hours to apply."
+      "explanation": "Chunk wins him over with a Baby Ruth (\"Ruth! Ruth! Baby Ruth!\"). Sloth was ex-Raiders lineman John Matuszak; his prosthetic head, radio-controlled eye included, took about five hours to apply."
     },
     {
       "level": 5,
-      "question": "Sloth breaks free and becomes Chunk's friend for life after Chunk tosses him what candy bar?",
-      "answer": "Baby Ruth",
+      "question": "Back on the beach after Sloth's big rescue, Data tells reporters something \"was really scary,\" a creature cut from the movie. What was it?",
+      "answer": "The octopus",
       "acceptedAnswers": [
-        "Baby Ruth",
-        "baby ruth",
-        "babyruth",
-        "ruth"
+        "The octopus",
+        "the octopus",
+        "octopus",
+        "giant octopus",
+        "an octopus",
+        "the giant octopus"
       ],
       "choices": [
-        "Snickers",
-        "Butterfinger",
-        "Oh Henry!"
+        "The bats",
+        "The bone organ",
+        "Chester Copperpot's skeleton"
       ],
-      "hint": "Its maker claimed it was named for a president's daughter",
-      "explanation": "\"Ruth! Ruth! Baby Ruth!\" It ends with Chunk telling Sloth, \"You're gonna live with me now.\" The candy maker claimed the bar honored a president's daughter, not Babe Ruth."
+      "explanation": "\"I ad-libbed the line,\" Ke Huy Quan said. \"But in the film there was no octopus and they kept that line.\" The cut scene resurfaced on TV airings and the 2001 DVD.",
+      "hint": "Eight arms, zero minutes of screen time"
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "Eight Arms to Hold You",
+    "text": "In the cut scene, Data scares off the octopus by jamming his Walkman in its mouth, blasting \"Eight Arms to Hold You\" by the Goon Squad. The title borrows the working title of the Beatles' Help!"
+  }
 }

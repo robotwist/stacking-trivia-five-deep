@@ -93,9 +93,13 @@
         "Process Leases, Expedite Accounts, Settle Escrow",
         "Protect Legacy Executives And Silence Employees"
       ],
-      "hint": "It's literally what P.L.E.A.S.E stands for",
+      "hint": "He's the company fall guy, and the acronym is his whole job description",
       "explanation": "Revealed in \"Unpause\" (Season 9): Barney is the fall guy who signs off on shady deals while secretly helping the feds take down Greg, the boss who stole his girlfriend."
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "The umbrella knew first",
+    "text": "The yellow umbrella Ted grabs after a season 3 St. Patrick's Day party was the Mother's; she was at the same club. He unknowingly leaves it at her apartment in season 5, and her initials, T.M., made him think it was his."
+  }
 }

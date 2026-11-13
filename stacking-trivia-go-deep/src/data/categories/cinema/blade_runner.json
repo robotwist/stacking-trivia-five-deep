@@ -1,6 +1,6 @@
 {
-  "title": "Blade Runner",
-  "description": "Neo-noir futures, synthetic life, and what makes us human—five cinematic depths.",
+  "title": "Blade Runner: More Human Than Human",
+  "description": "Neon rain, folded-paper messages, and a question nobody agrees on—five steps into what makes us human.",
   "questions": [
     {
       "level": 1,
@@ -55,32 +55,13 @@
     },
     {
       "level": 4,
-      "question": "Deckard spots replicants with the Voight-Kampff test, which measures involuntary reactions tied to what human trait?",
-      "answer": "Empathy",
-      "acceptedAnswers": [
-        "Empathy",
-        "empathy",
-        "empathic response",
-        "emotional response",
-        "lack of empathy"
-      ],
-      "choices": [
-        "Memory",
-        "Intelligence",
-        "Honesty"
-      ],
-      "explanation": "The film opens with one: asked about a tortoise baking on its back, then about his mother, replicant Leon snaps \"Let me tell you about my mother\" and shoots."
-    },
-    {
-      "level": 5,
-      "question": "That test assumes replicants lack empathy, yet Roy Batty saves Deckard's life, then says his memories will be lost \"like...\" what?",
+      "question": "Replicants supposedly fail the Voight-Kampff empathy test, yet Roy Batty saves Deckard, then says his memories will be lost \"like...\" what?",
       "answer": "Tears in rain",
       "acceptedAnswers": [
         "Tears in rain",
         "tears in rain",
         "tears in the rain",
-        "like tears in rain",
-        "tears"
+        "like tears in rain"
       ],
       "choices": [
         "Attack ships on fire",
@@ -88,8 +69,31 @@
         "Dust in the wind"
       ],
       "explanation": "Rutger Hauer cut the scripted speech he called \"opera talk\" and wrote that line himself around 4 a.m. The machine built without feelings gets the film's most human moment."
+    },
+    {
+      "level": 5,
+      "question": "After Roy's tears in rain speech, Gaff leaves an origami figure outside Deckard's door, matching a daydream restored in the Director's Cut. What is it?",
+      "answer": "Unicorn",
+      "acceptedAnswers": [
+        "Unicorn",
+        "unicorn",
+        "a unicorn",
+        "origami unicorn",
+        "the unicorn"
+      ],
+      "choices": [
+        "Chicken",
+        "Matchstick man",
+        "Owl"
+      ],
+      "explanation": "Gaff folded a chicken and a matchstick man earlier. If he knows Deckard's private dream, it was implanted. Ford reportedly yelled, \"I thought we said I wasn't a replicant!\"",
+      "hint": "One horn"
     }
   ],
   "image": "neon-cityscape.jpg",
-  "imageHint": "Rain-slick streets and neon in a dystopian cityscape"
+  "imageHint": "Rain-slick streets and neon in a dystopian cityscape",
+  "easterEgg": {
+    "title": "The Blade Runner curse",
+    "text": "Atari, Pan Am, and the Bell System all glowed on the film's skyline. Within a decade, Atari crashed, Pan Am folded, and Bell was broken up. Blade Runner 2049 put Atari and Pan Am back up anyway."
+  }
 }
