@@ -109,9 +109,13 @@ const GameStack = memo(function GameStack({
     return shuffleArray([getCanonicalAnswer(current), ...current.choices])
   }, [choicesAvailable, current])
 
+  const scoreAnimationTimer = useRef(null);
+  useEffect(() => () => clearTimeout(scoreAnimationTimer.current), []);
+
   const animateScore = useCallback(() => {
     setScoreAnimation(true);
-    setTimeout(() => setScoreAnimation(false), 1000);
+    clearTimeout(scoreAnimationTimer.current);
+    scoreAnimationTimer.current = setTimeout(() => setScoreAnimation(false), 1000);
   }, []);
 
   const finish = useCallback((finalScore, answers, { deeper = false } = {}) => {
