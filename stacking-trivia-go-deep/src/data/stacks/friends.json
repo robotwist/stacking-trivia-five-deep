@@ -96,5 +96,9 @@
       "hint": "Chandler's verdict: totally worth it"
     }
   ],
-  "category": "pop-culture"
+  "category": "pop-culture",
+  "easterEgg": {
+    "title": "The answer they needed",
+    "text": "Chandler's actual job: statistical analysis and data reconfiguration. Monica only learns it after he quits. His reply: \"I quit and you learn what I do?\""
+  }
 }
