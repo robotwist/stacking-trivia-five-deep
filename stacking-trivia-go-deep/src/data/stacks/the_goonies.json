@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What does Mikey find in the museum attic that starts the Goonies' treasure hunt?",
+      "question": "In the Walsh family attic, crammed with their dad's museum pieces, what does Mikey find that starts the hunt?",
       "answer": "A treasure map in the attic",
       "acceptedAnswers": [
         "A treasure map in the attic",
@@ -29,8 +29,7 @@
         "One-Eyed Willy",
         "one-eyed willy",
         "one eyed willy",
-        "willy",
-        "1"
+        "willy"
       ],
       "choices": [
         "Blackbeard",
@@ -41,7 +40,7 @@
     },
     {
       "level": 3,
-      "question": "Hunting One-Eyed Willy's treasure, what must Chunk do for the Truffle Shuffle?",
+      "question": "Before the hunt for One-Eyed Willy's treasure begins, what must Chunk do for the Truffle Shuffle?",
       "answer": "Lift his shirt and shake his belly",
       "acceptedAnswers": [
         "Lift his shirt and shake his belly",

@@ -60,7 +60,7 @@
     },
     {
       "level": 4,
-      "question": "Those Galápagos finches helped Darwin formulate what survival mechanism?",
+      "question": "Back in London, ornithologist John Gould showed those Galápagos birds were separate species—evidence that led Darwin toward what mechanism?",
       "answer": "natural selection",
       "acceptedAnswers": [
         "natural selection",
@@ -74,7 +74,8 @@
         "acquired characteristics",
         "artificial selection"
       ],
-      "hint": "Nature 'selects' the best traits, or only the 'fittest' survive"
+      "hint": "Nature 'selects' the best traits, or only the 'fittest' survive",
+      "explanation": "Myth: the finches gave Darwin his eureka on the islands. Actually, he didn't even label them by island; Gould's 1837 analysis (and the islands' mockingbirds) mattered more, and natural selection took shape in 1838."
     },
     {
       "level": 5,

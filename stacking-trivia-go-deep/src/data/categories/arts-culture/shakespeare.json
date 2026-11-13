@@ -68,7 +68,7 @@
     },
     {
       "level": 5,
-      "question": "At the Globe Theatre, Shakespeare's company performed plays—and he published how many sonnets?",
+      "question": "At the Globe Theatre, Shakespeare's company performed his plays—and how many sonnets did Shakespeare write?",
       "answer": "154",
       "acceptedAnswers": [
         "154",
@@ -80,7 +80,8 @@
         "37",
         "100",
         "246"
-      ]
+      ],
+      "explanation": "All 154 appeared in a 1609 edition published by Thomas Thorpe, possibly without Shakespeare's blessing."
     }
   ],
   "image": "first-folio-1623.jpg",

@@ -27,9 +27,7 @@
         "1.21 gigawatts",
         "one point twenty-one gigawatts",
         "1.21 jigawatts",
-        "1",
-        "one",
-        "one .21 gigawatts"
+        "1.21"
       ],
       "choices": [
         "2.5 gigawatts",
@@ -57,7 +55,7 @@
     },
     {
       "level": 4,
-      "question": "After confronting Biff Tannen, Marty performs what song at the Enchantment Under the Sea dance?",
+      "question": "After confronting Biff Tannen, what song does Marty sing lead on at the Enchantment Under the Sea dance?",
       "answer": "Johnny B. Goode",
       "acceptedAnswers": [
         "Johnny B. Goode",

@@ -22,7 +22,7 @@
     },
     {
       "level": 2,
-      "question": "Historians agree on crucifixion—but the name Yeshua literally means what in Aramaic?",
+      "question": "Historians agree on crucifixion—but the name Yeshua literally means what in Hebrew?",
       "answer": "God saves",
       "acceptedAnswers": [
         "God saves",
@@ -41,7 +41,7 @@
     },
     {
       "level": 3,
-      "question": "'God saves' echoed a sign in the heavens—what two planets' conjunction do many scholars cite?",
+      "question": "Yeshua, 'God saves,' was born under a star that one theory, going back to Kepler, ties to a conjunction of which two planets?",
       "answer": "Jupiter and Saturn",
       "acceptedAnswers": [
         "Jupiter and Saturn",
@@ -54,11 +54,11 @@
         "Mercury and Venus",
         "Mars and Mercury"
       ],
-      "explanation": "A triple conjunction in Pisces around 7–6 BCE fits Mesopotamian royal portents."
+      "explanation": "A triple conjunction in Pisces in 7 BCE is one candidate; others include a comet, a nova, or a purely literary star."
     },
     {
       "level": 4,
-      "question": "That Jupiter and Saturn sign drew what Babylonian seeker profession to the child?",
+      "question": "That Jupiter and Saturn sign is said to have drawn the Magi from the East—what were magi most likely by profession?",
       "answer": "Priest-astronomers",
       "acceptedAnswers": [
         "Priest-astronomers",
@@ -73,11 +73,11 @@
         "Temple scribes",
         "Caravan merchants"
       ],
-      "explanation": "Magi were scholar-priests who read celestial signs for kings."
+      "explanation": "Matthew says only \"magi from the east.\" Magi were Persian or Babylonian scholar-priests who read celestial signs for kings."
     },
     {
       "level": 5,
-      "question": "Those priest-astronomers heralded euangelion—Greek for what?",
+      "question": "Matthew tells the priest-astronomers' story in a gospel—a genre the Greek calls 'euangelion,' meaning what?",
       "answer": "Good news",
       "acceptedAnswers": [
         "Good news",
@@ -91,7 +91,7 @@
         "Holy word",
         "Eternal life"
       ],
-      "explanation": "Euangelion was used for imperial victory proclamations before Christian usage."
+      "explanation": "Euangelion was used for imperial victory announcements before Christians adopted it; \"gospel\" comes from the Old English \"good spell.\""
     }
   ],
   "category": "actually"

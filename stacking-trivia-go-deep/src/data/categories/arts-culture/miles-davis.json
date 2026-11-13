@@ -35,7 +35,7 @@
     },
     {
       "level": 3,
-      "question": "On the 1959 'Kind of Blue' sessions, which saxophonist played alongside Miles?",
+      "question": "On the 1959 'Kind of Blue' sessions, which tenor saxophonist played alongside Miles?",
       "answer": "John Coltrane",
       "acceptedAnswers": [
         "John Coltrane",
@@ -47,7 +47,8 @@
         "Sonny Rollins",
         "Charlie Parker",
         "Wayne Shorter"
-      ]
+      ],
+      "explanation": "Coltrane played tenor; Cannonball Adderley played alto on the same sessions."
     },
     {
       "level": 4,

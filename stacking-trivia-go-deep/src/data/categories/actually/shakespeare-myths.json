@@ -25,10 +25,7 @@
       "acceptedAnswers": [
         "Almost none",
         "almost none",
-        "none",
-        "very few",
-        "0%",
-        "zero"
+        "very few"
       ],
       "choices": [
         "Nearly all",
@@ -55,7 +52,7 @@
     },
     {
       "level": 4,
-      "question": "Over 80 name spellings later—who likely co-wrote Shakespeare's later plays?",
+      "question": "Over 80 name spellings later—who co-wrote Henry VIII and The Two Noble Kinsmen with Shakespeare?",
       "answer": "John Fletcher",
       "acceptedAnswers": [
         "John Fletcher",
@@ -75,8 +72,8 @@
       "acceptedAnswers": [
         "Grammar school",
         "grammar school",
-        "primary school",
-        "elementary school"
+        "king's new school",
+        "the grammar school"
       ],
       "choices": [
         "Oxford University",

@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Who said 'Float like a butterfly, sting like a bee'?",
+      "question": "Which boxer promised to 'float like a butterfly, sting like a bee'?",
       "answer": "Muhammad Ali",
       "acceptedAnswers": [
         "Muhammad Ali",
@@ -16,7 +16,8 @@
         "Joe Frazier",
         "George Foreman",
         "Sonny Liston"
-      ]
+      ],
+      "explanation": "Ali's cornerman Drew Bundini Brown came up with the line; Ali made it immortal."
     },
     {
       "level": 2,
@@ -53,7 +54,7 @@
     },
     {
       "level": 4,
-      "question": "After throwing his medal in the Ohio River, Ali cited what injustice?",
+      "question": "Ali later wrote that he threw his medal in the Ohio River—what injustice did he say drove him to it?",
       "answer": "Racial discrimination",
       "acceptedAnswers": [
         "Racial discrimination",
@@ -66,7 +67,8 @@
         "The Vietnam draft",
         "Religious persecution",
         "Unfair judging"
-      ]
+      ],
+      "explanation": "The story comes from his 1975 autobiography. Friends such as photographer Howard Bingham said he simply lost the medal—but the anger at being refused service in his hometown was real."
     },
     {
       "level": 5,

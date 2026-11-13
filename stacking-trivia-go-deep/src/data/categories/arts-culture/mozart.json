@@ -26,15 +26,15 @@
       "acceptedAnswers": [
         "Salzburg",
         "salzburg",
-        "salzburg austria",
-        "austria"
+        "salzburg austria"
       ],
       "choices": [
         "Vienna",
         "Munich",
         "Prague"
       ],
-      "hint": "Known for its salt trade and baroque architecture, now famous for Mozart tours"
+      "hint": "Known for its salt trade and baroque architecture, now famous for Mozart tours",
+      "explanation": "In 1756 Salzburg was an independent prince-archbishopric of the Holy Roman Empire; it only became part of Austria in 1816."
     },
     {
       "level": 3,

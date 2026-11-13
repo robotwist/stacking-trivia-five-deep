@@ -52,13 +52,13 @@
     },
     {
       "level": 4,
-      "question": "After Schrute Farms beets, back at Dunder Mifflin, what yearly gift-swapping tradition involves Secret Santa?",
+      "question": "After Schrute Farms beets, what gift-stealing game does Michael turn the Christmas party's Secret Santa into?",
       "answer": "Yankee Swap",
       "acceptedAnswers": [
         "Yankee Swap",
         "yankee swap",
         "white elephant",
-        "secret santa"
+        "the yankee swap"
       ],
       "choices": [
         "The Dundies",
@@ -69,13 +69,14 @@
     },
     {
       "level": 5,
-      "question": "During Yankee Swap, Jim sometimes breaks the fourth wall to talk to who on the documentary crew?",
-      "answer": "The cameraman",
+      "question": "During Yankee Swap, Jim's famous knowing looks go straight to what?",
+      "answer": "The camera",
       "acceptedAnswers": [
-        "The cameraman",
+        "The camera",
+        "the camera",
+        "camera",
         "the cameraman",
-        "cameraman",
-        "documentary crew"
+        "cameraman"
       ],
       "choices": [
         "The studio audience",
