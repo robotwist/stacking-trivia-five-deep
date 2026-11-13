@@ -1,6 +1,9 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  # Each production deploy costs credits, so skip builds when nothing players see has changed
+  # (docs, tests, tooling). Exit 0 = skip, exit 1 = build.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- src public index.html package.json package-lock.json vite.config.js tailwind.config.js postcss.config.js ':(exclude)src/**/__tests__/**'"
 
 [build.environment]
   # Vite 7 requires Node 20.19+
