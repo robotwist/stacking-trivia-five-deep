@@ -5,12 +5,13 @@
     {
       "level": 1,
       "question": "What is the name of the community college where the show takes place?",
-      "answer": "Greendale Community College",
+      "answer": "Greendale",
       "acceptedAnswers": [
-        "Greendale Community College",
-        "greendale community college",
+        "Greendale",
         "greendale",
-        "greendale cc"
+        "greendale community college",
+        "greendale cc",
+        "greendale college"
       ],
       "choices": [
         "City College",

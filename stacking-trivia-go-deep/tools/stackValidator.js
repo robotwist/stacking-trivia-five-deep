@@ -5,6 +5,7 @@
 import { normalizeStack, normalizeQuestion, normalizeAnswerText } from '../src/utils/normalizeStack.js'
 import { checkAnswerMatch, normalizeAnswer } from '../src/utils/textUtils.js'
 import { StackDepthAnalyzer } from './depthAnalyzer.js'
+import { findAnswerLeaks } from './answerLeaks.js'
 
 const depthAnalyzer = new StackDepthAnalyzer()
 
@@ -201,6 +202,9 @@ export function validateStack(stack) {
     checkNarrative: true,
   })
   validateChoices(stack.questions, 'Main', errors)
+  findAnswerLeaks(stack).forEach(({ level, detail }) => {
+    errors.push(`Main Q${level}: gives away its answer: ${detail}`)
+  })
 
   const deeperQs = stack.deeperMode?.questions
   if (Array.isArray(deeperQs) && deeperQs.length > 0) {

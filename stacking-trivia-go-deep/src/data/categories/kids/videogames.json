@@ -53,17 +53,19 @@
     },
     {
       "level": 4,
-      "question": "Nintendo's handheld with two screens was called what?",
-      "answer": "Nintendo DS",
+      "question": "Nintendo's handheld with two screens had what two-letter name?",
+      "answer": "DS",
       "acceptedAnswers": [
-        "nintendo ds",
+        "DS",
         "ds",
-        "nintendo dual screen"
+        "nintendo ds",
+        "dual screen",
+        "the ds"
       ],
       "choices": [
-        "Game Boy Advance",
-        "PlayStation Portable",
-        "Game Boy Color"
+        "Game Boy",
+        "Wii",
+        "Switch"
       ],
       "hint": "DS stands for Dual Screen"
     },

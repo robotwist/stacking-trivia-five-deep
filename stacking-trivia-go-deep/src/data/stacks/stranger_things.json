@@ -70,20 +70,23 @@
     },
     {
       "level": 5,
-      "question": "The Upside Down leads back to what Hawkins government laboratory?",
-      "answer": "Hawkins National Laboratory",
+      "question": "The Upside Down was first breached inside a government lab run by which scientist Eleven calls 'Papa'?",
+      "answer": "Dr. Brenner",
       "acceptedAnswers": [
-        "Hawkins National Laboratory",
-        "hawkins national laboratory",
-        "hawkins lab",
-        "the lab"
+        "Dr. Brenner",
+        "dr brenner",
+        "brenner",
+        "martin brenner",
+        "dr martin brenner",
+        "doctor brenner"
       ],
       "choices": [
-        "Los Alamos National Laboratory",
-        "Starcourt Research Center",
-        "Area 51"
+        "Dr. Sam Owens",
+        "Murray Bauman",
+        "Jim Hopper"
       ],
-      "hint": "Dr. Brenner's workplace"
+      "hint": "Dr. Brenner's workplace",
+      "explanation": "Dr. Martin Brenner ran the experiments on Eleven at Hawkins National Laboratory—where the gate to the Upside Down was opened."
     }
   ],
   "category": "pop-culture"

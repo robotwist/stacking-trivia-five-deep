@@ -70,19 +70,18 @@
     },
     {
       "level": 5,
-      "question": "Those petites Curies served the front—her Chemistry Nobel honored what achievement with radium?",
-      "answer": "isolation of radium",
+      "question": "Those petites Curies served the front—her 1911 Chemistry Nobel honored isolating what pure glowing element?",
+      "answer": "Radium",
       "acceptedAnswers": [
-        "isolation of radium",
+        "Radium",
+        "radium",
         "pure radium",
-        "radium isolation",
-        "discovering radium",
-        "isolating radium"
+        "radium metal"
       ],
       "choices": [
-        "radium cancer therapy",
-        "radium luminous paint",
-        "measuring radium's half-life"
+        "Uranium",
+        "Thorium",
+        "Radon"
       ],
       "hint": "She successfully isolated a pure sample of this glowing element"
     }
@@ -90,7 +89,7 @@
   "imageHint": "Laboratory glow and the price of pioneering research",
   "category": "Science & Technology",
   "deeperMode": {
-    "title": "Radium's Deadly Glow",
+    "title": "The Deadly Glow",
     "description": "The human cost of chasing unknown rays",
     "questions": [
       {

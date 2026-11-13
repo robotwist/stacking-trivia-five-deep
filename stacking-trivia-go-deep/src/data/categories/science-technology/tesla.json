@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What type of electrical current did Tesla champion that became the standard for power transmission?",
+      "question": "What kind of electricity, which reverses direction many times a second, did Tesla champion as the standard for power grids?",
       "answer": "alternating current",
       "acceptedAnswers": [
         "alternating current",
@@ -57,7 +57,7 @@
     },
     {
       "level": 4,
-      "question": "After the rotating magnetic field made AC motors practical, Tesla chased wireless power at a high-altitude lab in what Colorado city?",
+      "question": "After the rotating magnetic field made AC motors practical, Tesla chased wireless power at a high-altitude lab in what Rocky Mountain city?",
       "answer": "Colorado Springs",
       "acceptedAnswers": [
         "Colorado Springs",

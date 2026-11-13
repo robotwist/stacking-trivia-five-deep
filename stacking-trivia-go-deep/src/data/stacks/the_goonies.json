@@ -5,14 +5,14 @@
     {
       "level": 1,
       "question": "In the Walsh family attic, crammed with their dad's museum pieces, what does Mikey find that starts the hunt?",
-      "answer": "A treasure map in the attic",
+      "answer": "A treasure map",
       "acceptedAnswers": [
-        "A treasure map in the attic",
-        "a treasure map in the attic",
+        "A treasure map",
         "treasure map",
         "map",
         "the map",
-        "treasure map in the attic"
+        "a map",
+        "pirate map"
       ],
       "choices": [
         "A pirate's diary in a trunk",
@@ -23,7 +23,7 @@
     },
     {
       "level": 2,
-      "question": "That treasure map leads the Goonies to the booty of what one-eyed pirate?",
+      "question": "That treasure map leads the Goonies to the booty of what legendary pirate?",
       "answer": "One-Eyed Willy",
       "acceptedAnswers": [
         "One-Eyed Willy",

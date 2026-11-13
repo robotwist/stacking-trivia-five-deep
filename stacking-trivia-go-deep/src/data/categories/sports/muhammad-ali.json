@@ -38,18 +38,19 @@
     },
     {
       "level": 3,
-      "question": "After his 1960 Rome gold, Ali reportedly threw his Olympic medal where?",
-      "answer": "Threw it in a river",
+      "question": "After his 1960 Rome gold, where did Ali say he tossed his Olympic medal?",
+      "answer": "The Ohio River",
       "acceptedAnswers": [
-        "Threw it in a river",
-        "threw it in a river",
-        "threw it away",
-        "threw it in the ohio river"
+        "The Ohio River",
+        "ohio river",
+        "the ohio",
+        "ohio",
+        "in the ohio river"
       ],
       "choices": [
-        "Sold it to a pawnshop",
-        "Gave it to his mother",
-        "Buried it in his backyard"
+        "Lake Michigan",
+        "The Mississippi River",
+        "A Louisville dumpster"
       ]
     },
     {
