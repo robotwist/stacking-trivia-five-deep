@@ -1,6 +1,6 @@
 {
-  "title": "Vincent van Gogh",
-  "description": "The Dutch master—fame, struggle, and a single sale that echoes through art history.",
+  "title": "Starry Night: One Sale",
+  "description": "A barred window, a vineyard painted from memory, and the only buyer we can name—five steps into a Dutch master's lifetime market.",
   "questions": [
     {
       "level": 1,
@@ -85,5 +85,9 @@
       ],
       "explanation": "About 400 francs (some accounts say 350). Five months later Vincent was dead. Boch later sold it for many times that, and it now hangs in Moscow's Pushkin Museum."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "Vincent thought it wasn't much",
+    "text": "Anna Boch paid 400 francs—about two months of the living money Theo sent him, or more than two years' rent on the Yellow House. Vincent still wrote his mother that the price \"isn't much.\""
+  }
 }

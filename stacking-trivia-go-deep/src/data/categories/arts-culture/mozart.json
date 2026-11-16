@@ -1,28 +1,31 @@
 {
-  "title": "Mozart: Classical Genius",
-  "description": "Prodigy to unfinished masterpiece—from child wonder to a mass left incomplete.",
+  "title": "Mozart: From Nannerl's Notebook",
+  "description": "A sister's music book, a seducer's catalogue, a planetary nickname, and eight unfinished bars—a prodigy's deepest cuts.",
   "questions": [
     {
       "level": 1,
-      "question": "At what remarkably young age did Mozart compose his first piece of music?",
-      "answer": "5",
+      "question": "Leopold Mozart wrote his son's first keyboard pieces into sister Nannerl's music book, noting they came \"in the first three months after\" what birthday?",
+      "answer": "His fifth",
       "acceptedAnswers": [
+        "His fifth",
+        "fifth",
         "5",
         "five",
-        "age 5",
-        "5 years old"
+        "his 5th",
+        "the fifth",
+        "age five",
+        "five years old"
       ],
       "choices": [
-        "3",
-        "9",
-        "12"
+        "His third",
+        "His seventh",
+        "His ninth"
       ],
-      "hint": "Before he could even write properly, he was creating music",
-      "explanation": "His father, Leopold, wrote the tiny pieces into sister Nannerl's music book, noting they were \"Wolfgangerl's compositions in the first three months after his fifth birthday.\""
+      "explanation": "The Andante in C (K. 1a) and Allegro in C (K. 1b) are Mozart's earliest known works, from 1761. He was too young to write them out himself, so Leopold's handwriting fills Nannerl's notebook."
     },
     {
       "level": 2,
-      "question": "Mozart was only five when he began composing—where was he born in 1756?",
+      "question": "Those first pieces in Nannerl's book after his fifth birthday were written in which city, then an independent prince-archbishopric?",
       "answer": "Salzburg",
       "acceptedAnswers": [
         "Salzburg",
@@ -52,7 +55,7 @@
         "The Marriage of Figaro"
       ],
       "hint": "Italian for 'Sir John' - about a legendary seducer who meets a supernatural end",
-      "explanation": "It premiered in Prague in 1787. In the 'Catalogue Aria,' servant Leporello tallies the Don's conquests: 640 in Italy, 231 in Germany… \"but in Spain, already 1,003.\""
+      "explanation": "It premiered in Prague in 1787. In the Catalogue Aria, servant Leporello tallies the Don's conquests: in Spain alone, \"mille tre\"—1,003. He lingers on the number until Donna Elvira is properly stunned."
     },
     {
       "level": 4,
@@ -89,7 +92,7 @@
         "Ave verum corpus"
       ],
       "hint": "A mass for the dead, left unfinished when the composer himself died",
-      "explanation": "Forget 'Amadeus': Salieri had nothing to do with it. Mozart's pen stopped eight bars into the Lacrimosa; his widow had pupil Süssmayr finish it so she could collect the fee."
+      "explanation": "Forget Amadeus: Salieri had nothing to do with it. Mozart's pen stopped eight bars into the Lacrymosa. His pupil Franz Xaver Süssmayr finished the mass so Count Walsegg, who'd commissioned it anonymously, could claim it."
     }
   ],
   "imageHint": "🎼 From child prodigy to immortal symphonies 🎹",
@@ -123,5 +126,9 @@
         "hint": "A count who wanted to pass off the work as his own composition for his wife's memorial"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The anonymous count",
+    "text": "Count Franz von Walsegg commissioned the Requiem for his late wife and planned to pass it off as his own. Süssmayr even forged Mozart's handwriting on the clean copy, clumsily dating it \"1792.\""
   }
 }

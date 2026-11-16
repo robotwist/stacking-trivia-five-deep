@@ -68,7 +68,7 @@
         "The Swan Theatre",
         "The Fortune Theatre"
       ],
-      "explanation": "They built it from the timbers of their old playhouse, dismantled over Christmas 1598. In 1613 a stage cannon torched the thatch; one man's burning breeches were doused with ale."
+      "explanation": "They dismantled their old playhouse, the Theatre, over Christmas 1598 and carted the timbers across the Thames. The Globe opened in 1599. In 1613 a stage cannon set the thatch roof alight during Henry VIII; nobody died."
     },
     {
       "level": 5,
@@ -89,5 +89,9 @@
     }
   ],
   "image": "first-folio-1623.jpg",
-  "imageHint": "A historic 1623 folio that preserved many of his plays for posterity"
+  "imageHint": "A historic 1623 folio that preserved many of his plays for posterity",
+  "easterEgg": {
+    "title": "Ay, there's the point",
+    "text": "The 1603 \"bad quarto\" of Hamlet gives the speech as \"To be, or not to be, ay there's the point\"—likely a pirated, half-remembered bootleg. The version we know arrives in the 1604 \"good quarto.\""
+  }
 }

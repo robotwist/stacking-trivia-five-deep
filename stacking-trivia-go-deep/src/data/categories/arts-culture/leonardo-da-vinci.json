@@ -56,7 +56,7 @@
         "Greek script"
       ],
       "hint": "You need a mirror to read it normally—written from right to left",
-      "explanation": "Thousands of pages run backward in his hand—perhaps to deter snooping, perhaps because the left-handed scribe found it faster."
+      "explanation": "Thousands of pages run backward in his hand. The romance is that he hid ideas from thieves; the likelier reason is that he was left-handed, and writing right-to-left kept the ink from smudging. Just use a mirror."
     },
     {
       "level": 4,
@@ -126,5 +126,9 @@
         "hint": "A technique that shows depth by making distant objects appear less distinct and bluer"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "Permission, not grave-robbing",
+    "text": "As a successful artist he was allowed to dissect at Santa Maria Nuova in Florence, then in Milan and Rome. By 1515 he had cut more than 30 bodies of both sexes and ages—over 240 drawings toward a treatise that went mostly unpublished."
   }
 }

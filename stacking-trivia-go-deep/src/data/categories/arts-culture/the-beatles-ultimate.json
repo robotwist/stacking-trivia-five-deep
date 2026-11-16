@@ -1,6 +1,6 @@
 {
-  "title": "The Beatles: Fab Four",
-  "description": "Five levels through the band that changed pop music—and the world.",
+  "title": "The Beatles: From Woolton to Abbey Road",
+  "description": "A church fête, a one-day album, a manager in a suit, and a zebra crossing—five steps into the Fab Four.",
   "questions": [
     {
       "level": 1,
@@ -85,10 +85,14 @@
         "The White Album",
         "Revolver"
       ],
-      "explanation": "Recorded after the Let It Be sessions but released first. Its working title was 'Everest,' after engineer Geoff Emerick's cigarettes—until they skipped the Himalayas and shot the cover outside."
+      "explanation": "Recorded after the Let It Be sessions but released first. Its working title was Everest, after engineer Geoff Emerick's cigarettes; Paul even floated flying to the Himalayas for the cover. They stepped outside instead."
     }
   ],
   "image": "abbey-road-crossing.jpg",
   "imageHint": "An iconic zebra-crossing album cover from the late 1960s",
-  "category": "music"
+  "category": "music",
+  "easterEgg": {
+    "title": "Barefoot on Abbey Road",
+    "text": "On 8 August 1969, Iain Macmillan took six shots of the zebra crossing. In the one they used, Paul is barefoot and out of step—fuel for the \"Paul is dead\" conspiracy. Paul: he'd simply kicked off his sandals on a hot day."
+  }
 }

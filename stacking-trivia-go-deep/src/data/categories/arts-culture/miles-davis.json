@@ -1,6 +1,6 @@
 {
-  "title": "Miles Davis: Kind of Revolution",
-  "description": "Cool jazz and restless innovation—one legendary recording era.",
+  "title": "Miles Davis: Kind of Blue",
+  "description": "Sketches instead of charts, scales instead of chords, and a tape machine that lied—five steps into jazz's most famous album.",
   "questions": [
     {
       "level": 1,
@@ -88,9 +88,13 @@
         "Eight takes",
         "Twenty takes"
       ],
-      "explanation": "Nearly true: 'Flamenco Sketches' took two. The real twist? A tape machine ran slow on day one, so side one played about a quarter-tone sharp for 33 years, until engineers caught it in 1992."
+      "explanation": "Nearly true: 'Flamenco Sketches' took two complete takes, and the album used the second. The real twist? On day one a three-track machine ran slow, so for decades those tracks played slightly sharp until Sony fixed the pitch in 1992."
     }
   ],
   "image": "kind-of-blue-album.jpg",
-  "imageHint": "An iconic album cover from a pivotal jazz session"
+  "imageHint": "An iconic album cover from a pivotal jazz session",
+  "easterEgg": {
+    "title": "Japanese parchment",
+    "text": "Bill Evans's liner notes compare the session to a Japanese art form: paint on thin parchment where one wrong stroke ruins the line. Miles arrived with sketches hours before; deliberation was the enemy."
+  }
 }
