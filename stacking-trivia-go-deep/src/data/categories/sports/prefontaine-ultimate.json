@@ -54,7 +54,7 @@
         "Onitsuka Tiger",
         "Brooks"
       ],
-      "explanation": "Bowerman's waffle-iron sole experiments and Knight's Blue Ribbon Sports became Nike—Pre wore the prototypes that sold the dream."
+      "explanation": "Bowerman's waffle-iron sole experiments and Knight's Blue Ribbon Sports became Nike. In 1973 Pre got a $5,000 stipend—Nike's first star endorsement—and started mailing free shoes to friends like Bill Rodgers and Kip Keino."
     },
     {
       "level": 4,
@@ -92,5 +92,9 @@
       "explanation": "Pre's Rock in Eugene is covered with shoes, bibs, and medals from runners around the world—and every year the Prefontaine Classic brings the sport's best to Hayward Field."
     }
   ],
-  "imageHint": "A historic track under lights—legend still in the air"
+  "imageHint": "A historic track under lights—legend still in the air",
+  "easterEgg": {
+    "title": "Sacrifice the gift",
+    "text": "Biographer Tom Jordan says Pre closed talks to young athletes with: \"To give anything less than your best is to sacrifice the gift.\" Nike's Hollister recalled hearing him say it at West Albany High. No tape of it exists."
+  }
 }

@@ -85,9 +85,13 @@
         "Jessica Ennis-Hill",
         "Christine Ohuruogu"
       ],
-      "explanation": "Holmes's 1:56.21 had stood 26 years. The twist: with Mu out after falling at the 2024 U.S. trials, Hodgkinson won Paris gold—Britain's first in the event since Holmes in 2004."
+      "explanation": "Holmes's 1:56.21 had stood 26 years. With Mu out after falling at the 2024 U.S. trials, Hodgkinson finally took Olympic gold in Paris—Great Britain's first track title since Mo Farah in 2016."
     }
   ],
   "image": "olympic-torch.jpg",
-  "imageHint": "The flame and track that define Olympic distance running"
+  "imageHint": "The flame and track that define Olympic distance running",
+  "easterEgg": {
+    "title": "Same age, same final",
+    "text": "Mu and Hodgkinson were both 19 in Tokyo. Three years later Mu tripped in the U.S. trials pack about 200 meters in; her appeal was denied. Hodgkinson led from 300 meters in Paris and never looked back."
+  }
 }

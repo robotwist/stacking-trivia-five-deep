@@ -71,7 +71,7 @@
         "Religious persecution",
         "Unfair judging"
       ],
-      "explanation": "The book says he was refused service at a whites-only Louisville restaurant, then fought a biker gang. Friends like Howard Bingham doubted the toss; Ali later admitted he'd lost it."
+      "explanation": "The book says he was refused service at a whites-only Louisville restaurant, then fought a biker gang. Friends later said he simply lost the medal. Ali himself once shrugged: \"I don't know where I put that thing.\""
     },
     {
       "level": 5,
@@ -92,5 +92,9 @@
     }
   ],
   "image": "raised-boxing-gloves.jpg",
-  "imageHint": "Boxing gloves raised high in victory, symbolizing triumph and championship"
+  "imageHint": "Boxing gloves raised high in victory, symbolizing triumph and championship",
+  "easterEgg": {
+    "title": "The parachute flight",
+    "text": "Terrified of flying after a rough trip to the Olympic trials, Cassius Clay bought an army-surplus parachute and wore it the whole way to Rome. Joe Martin Jr. remembered him praying in the aisle with it on his back."
+  }
 }

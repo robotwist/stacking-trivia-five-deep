@@ -34,7 +34,7 @@
         "Phoenix Suns",
         "Portland Trail Blazers"
       ],
-      "explanation": "A Finals rematch: Chicago had beaten Utah in six in 1997 too, the series of the \"Flu Game.\" This time Utah's home crowd was one stop from a Game 7."
+      "explanation": "A Finals rematch: Chicago had beaten Utah in six in 1997 too, the series of the so-called Flu Game. Jordan later said it was food poisoning from a late-night pizza delivery in Park City."
     },
     {
       "level": 3,
@@ -84,7 +84,7 @@
         "Pointed to the rafters",
         "Shrugged his shoulders"
       ],
-      "explanation": "Fernando Medina's photo of that pose became the image of the dynasty. The twist: it wasn't his last shot, just his last as a Bull. He came back with the Wizards in 2001."
+      "explanation": "Fernando Medina's photo of that pose became Sports Illustrated's No. 1 sports photo of all time. The twist: it wasn't his last NBA shot—just his last as a Bull. He returned with the Wizards in 2001."
     }
   ],
   "image": "jumpman-silhouette.jpg",
@@ -128,5 +128,9 @@
         "bonus": 800
       }
     ]
+  },
+  "easterEgg": {
+    "title": "It wasn't the flu",
+    "text": "Trainer Tim Grover: Jordan ordered pizza alone the night before Game 5 in Utah, then spent the night violently ill. He still scored 38. \"Flu Game\" stuck because that's what the world was told."
   }
 }

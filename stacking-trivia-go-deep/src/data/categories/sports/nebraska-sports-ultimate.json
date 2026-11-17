@@ -34,7 +34,7 @@
         "Kinnick Stadium",
         "Pinnacle Bank Arena"
       ],
-      "explanation": "Dedicated in 1923 to Nebraskans who served in the nation's wars. In 2023 a volleyball match drew 92,003 there, a record crowd for a women's sporting event."
+      "explanation": "Dedicated in 1923 to Nebraskans who served in the nation's wars. In 2023 a volleyball match drew 92,003 there—the largest crowd ever for a women's sporting event in the U.S."
     },
     {
       "level": 3,
@@ -90,5 +90,9 @@
     }
   ],
   "image": "memorial-stadium.jpg",
-  "imageHint": "A sea of red on game day in Lincoln"
+  "imageHint": "A sea of red on game day in Lincoln",
+  "easterEgg": {
+    "title": "Not the victory but the action",
+    "text": "Carved into the stadium's southwest corner, by philosophy professor Hartley Burr Alexander: \"Not the victory but the action; Not the goal but the game; In the deed the glory.\""
+  }
 }

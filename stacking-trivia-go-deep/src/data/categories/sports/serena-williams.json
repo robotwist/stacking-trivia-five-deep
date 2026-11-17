@@ -71,7 +71,7 @@
         "Twitter",
         "Facebook"
       ],
-      "explanation": "The mirror selfie, captioned \"20 weeks,\" let the world do the math: she had won the Australian Open while pregnant."
+      "explanation": "The mirror selfie, captioned \"20 weeks,\" was meant for her private weekly diary. She deleted it fast, but the math was already done: she had won Melbourne while pregnant. She told TED it was \"the one time it slipped.\""
     },
     {
       "level": 5,
@@ -89,7 +89,7 @@
         "Oracene",
         "Isabella"
       ],
-      "explanation": "Her full name is Alexis Olympia Ohanian Jr., but she goes by Olympia—closing the arc from secret champion to public motherhood."
+      "explanation": "Her full name is Alexis Olympia Ohanian Jr., but she goes by Olympia. Serena later noted the initials AO—same as the Aussie Open she won while pregnant with her."
     }
   ],
   "imageHint": "A trophy lift with a story still unspoken",
@@ -98,5 +98,9 @@
     "title": "Queen of the Court",
     "description": "Career records and battles beyond this Melbourne chapter",
     "questions": []
+  },
+  "easterEgg": {
+    "title": "AO for Aussie Open",
+    "text": "Serena tweeted the fun fact herself: her daughter's initials are AO, \"as in the Aussie Open she won with me.\" Alexis Ohanian said after Melbourne they both felt it had to be a girl—\"only a woman could be strong enough.\""
   }
 }

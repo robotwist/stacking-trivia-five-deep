@@ -35,7 +35,7 @@
         "Saïd Aouita",
         "Vénuste Niyongabo"
       ],
-      "explanation": "The Algerian stumbled but stayed up; El Guerrouj finished last, in tears. Minutes later King Hassan II phoned him: \"For us, you are the winner.\" He kept a photo of the fall on his wall."
+      "explanation": "The Algerian stumbled but stayed up; El Guerrouj finished last, in tears. Someone handed him a phone in the tunnel: King Hassan II. \"Do not cry,\" the king said. \"You are a champion in the eyes of the Moroccan people.\""
     },
     {
       "level": 3,
@@ -90,5 +90,9 @@
       ],
       "explanation": "3:34.18 to 3:34.30, the closest Olympic 1500m final since 1976. The twist: Lagat later became a U.S. citizen and won the same 1500/5000 double at the 2007 World Championships."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "A gift of God",
+    "text": "After finally winning Athens by 0.12 seconds, El Guerrouj kissed the track, then climbed into the stands and scooped up his three-month-old daughter, Hiba—Arabic for \"gift of God.\""
+  }
 }
