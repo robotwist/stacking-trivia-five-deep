@@ -4,7 +4,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "Which director followed up Alien with Blade Runner (1982)?",
+      "question": "His Alien crew later wore \"Yes Guv'nor, My Ass\" T-shirts after a praise-British-crews interview. Which director followed Alien with Blade Runner (1982)?",
       "answer": "Ridley Scott",
       "acceptedAnswers": [
         "Ridley Scott",
@@ -21,7 +21,7 @@
     },
     {
       "level": 2,
-      "question": "Scott's Blade Runner opens in Los Angeles in what year?",
+      "question": "Scott's neon-noir opens with the card \"Los Angeles, November, ___\"—what year did Blade Runner pick for its rainy future?",
       "answer": "2019",
       "acceptedAnswers": [
         "2019",

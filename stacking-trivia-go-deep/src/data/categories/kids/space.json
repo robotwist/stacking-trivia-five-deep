@@ -1,11 +1,11 @@
 {
-  "title": "Space: Beyond Our World",
-  "description": "From our nearest star to the first footprints on another world—five steps into space.",
+  "title": "Space: Eight Minutes to Daylight",
+  "description": "A star that holds a million Earths, bootprints that never fade, and one small step—five steps into space.",
   "choicesByDefault": true,
   "questions": [
     {
       "level": 1,
-      "question": "What is the closest star to Earth?",
+      "question": "It lights your day, holds about 1.3 million Earths, and its light takes eight minutes to reach you. What is the closest star to Earth?",
       "answer": "The Sun",
       "acceptedAnswers": [
         "the sun",
@@ -19,7 +19,7 @@
         "Proxima Centauri"
       ],
       "hint": "It lights up our day",
-      "explanation": "Sunlight takes about 8 minutes to reach us. And the Sun is so huge that about 1.3 million Earths could fit inside it!"
+      "explanation": "Proxima Centauri is the next-closest star—about 4 light-years away. The Sun is right in our neighborhood, and without it, Earth would be a frozen rock."
     },
     {
       "level": 2,
@@ -38,11 +38,11 @@
         "Fireflies"
       ],
       "hint": "It looks like a different shape on different nights",
-      "explanation": "Moonlight is really sunlight bouncing off Moon dust. And the Moon drifts about 1.5 inches farther from Earth every year, as fast as your fingernails grow!"
+      "explanation": "Moonlight is really sunlight bouncing off Moon dust. And the Moon drifts about 1.5 inches farther from Earth every year—about as fast as your fingernails grow!"
     },
     {
       "level": 3,
-      "question": "People first walked on the Moon in what year?",
+      "question": "People first walked on the Moon in what year—when about 600 million people watched on TV?",
       "answer": "1969",
       "acceptedAnswers": [
         "1969",
@@ -56,11 +56,11 @@
         "1986"
       ],
       "hint": "Apollo 11 mission",
-      "explanation": "On July 20, 1969, Apollo 11 landed, and about 600 million people watched on TV. That was around one out of every five people on Earth back then!"
+      "explanation": "On July 20, 1969, Apollo 11 landed. Around one out of every five people on Earth watched—more than any TV event before it."
     },
     {
       "level": 4,
-      "question": "Who was the first person to step onto the Moon in 1969?",
+      "question": "Who was the first person to step onto the Moon in 1969—and say the words about a small step and a giant leap?",
       "answer": "Neil Armstrong",
       "acceptedAnswers": [
         "neil armstrong",
@@ -73,11 +73,11 @@
         "Michael Collins"
       ],
       "hint": "He was the commander of Apollo 11",
-      "explanation": "Buzz Aldrin followed him 19 minutes later. Armstrong said, \"That's one small step for man, one giant leap for mankind.\" He said he meant \"a man.\" Listen closely!"
+      "explanation": "Buzz Aldrin followed him 19 minutes later. Armstrong said he meant \"a man,\" not \"man\"—listen closely to the recording and fans still argue about the missing \"a.\""
     },
     {
       "level": 5,
-      "question": "Neil Armstrong's bootprints are still on the Moon, more than 50 years later! Why haven't they been wiped away?",
+      "question": "Neil Armstrong's bootprints are still on the Moon, more than 50 years later! Why haven't rain and weather wiped them away?",
       "answer": "No wind",
       "acceptedAnswers": [
         "no wind",

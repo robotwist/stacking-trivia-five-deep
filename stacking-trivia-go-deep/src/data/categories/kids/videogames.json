@@ -1,11 +1,11 @@
 {
-  "title": "Video Games: Pixel Adventures",
-  "description": "Arcades to blocky worlds—gaming history in five fun facts.",
+  "title": "Video Games: From Jumpman to Blocks",
+  "description": "A green brother, a carpenter who became a plumber, a company older than airplanes, and the best-selling game ever—five pixel steps.",
   "choicesByDefault": true,
   "questions": [
     {
       "level": 1,
-      "question": "What is Mario's brother's name?",
+      "question": "He wears green, and his name sounds like the Japanese word for \"similar.\" Who is Mario's brother?",
       "answer": "Luigi",
       "acceptedAnswers": [
         "luigi",
@@ -18,11 +18,11 @@
         "Yoshi"
       ],
       "hint": "He wears green",
-      "explanation": "Luigi started in 1983's Mario Bros. as a green copy of Mario, so two friends could play together. His name sounds like \"ruiji,\" Japanese for \"similar,\" a lucky accident!"
+      "explanation": "Luigi started in 1983's Mario Bros. as a green copy of Mario so two friends could play together. \"Ruiji\" means similar in Japanese—a lucky naming accident!"
     },
     {
       "level": 2,
-      "question": "Luigi's brother Mario first appeared in what arcade game?",
+      "question": "Luigi's brother Mario first appeared—as a carpenter named Jumpman—in what arcade game?",
       "answer": "Donkey Kong",
       "acceptedAnswers": [
         "donkey kong",
@@ -35,11 +35,11 @@
         "Super Mario Bros."
       ],
       "hint": "He was originally called Jumpman",
-      "explanation": "Back in 1981 he was called Jumpman, and he was a carpenter, not a plumber! Nintendo later named him after Mario Segale, the landlord of its warehouse in America."
+      "explanation": "Back in 1981 he was Jumpman the carpenter, not a plumber! Nintendo later named him after Mario Segale, the landlord of its warehouse in America."
     },
     {
       "level": 3,
-      "question": "Donkey Kong was made by which Japanese company?",
+      "question": "Donkey Kong was made by which Japanese company—that started in 1889 making flower playing cards?",
       "answer": "Nintendo",
       "acceptedAnswers": [
         "nintendo",
@@ -52,11 +52,11 @@
         "Capcom"
       ],
       "hint": "Also makes Zelda and Pokémon",
-      "explanation": "Nintendo started way back in 1889 in Kyoto, Japan, making playing cards called hanafuda. That's before airplanes were even invented!"
+      "explanation": "Nintendo started in Kyoto making hanafuda cards—before airplanes were even invented. Video games came almost a century later. The company is older than the zipper!"
     },
     {
       "level": 4,
-      "question": "Nintendo's handheld with two screens had what two-letter name?",
+      "question": "Nintendo's handheld with two screens had what two-letter name—short for Dual Screen?",
       "answer": "DS",
       "acceptedAnswers": [
         "DS",
@@ -71,7 +71,7 @@
         "Switch"
       ],
       "hint": "DS stands for Dual Screen",
-      "explanation": "Nintendo sold about 154 million DS systems! It was Nintendo's best-selling console ever, until its newer system, the Switch, finally passed it in 2025."
+      "explanation": "Nintendo sold about 154 million DS systems. It was Nintendo's best-selling console ever—until the Switch finally passed it in 2025."
     },
     {
       "level": 5,
@@ -88,7 +88,7 @@
         "Terraria"
       ],
       "hint": "You mine blocks and craft tools",
-      "explanation": "Minecraft has sold more than 350 million copies, more than any other video game ever. It started out in 2009, made by a small studio in Sweden called Mojang."
+      "explanation": "Minecraft has sold more than 350 million copies—more than any other video game ever. It started in 2009 at a small studio in Sweden called Mojang."
     }
   ],
   "easterEgg": {

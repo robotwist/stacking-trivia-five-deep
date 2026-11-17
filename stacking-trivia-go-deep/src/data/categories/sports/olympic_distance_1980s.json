@@ -1,6 +1,6 @@
 {
-  "title": "1980s Olympic Distance: Coe vs Ovett",
-  "description": "A British rivalry, a Moscow swap, and a Korean 10K—five steps into 1980s Olympic distance running.",
+  "title": "1980s Olympic Distance: They Swapped Events",
+  "description": "Two Brits, a Moscow swap, a barefoot tangle in L.A., and a Moroccan 10K—five steps into 1980s Olympic distance.",
   "image": "running-track-lanes.jpg",
   "imageHint": "The classic oval track with distinctive lane markings where athletic legends were made",
   "questions": [
@@ -18,11 +18,11 @@
         "Steve Cram",
         "Steve Scott"
       ],
-      "explanation": "Coe was the world-record favorite and took silver. Six days later he got revenge in the 1500m, with Ovett settling for bronze."
+      "explanation": "Coe was the world-record favorite and took silver. British fans got the first half of a lifelong argument: who was better, and who stole whose race?"
     },
     {
       "level": 2,
-      "question": "Six days after Ovett beat him at 800m, Coe redeemed himself by winning which event in Moscow?",
+      "question": "Six days after Ovett beat him at 800m, Coe redeemed himself by winning which event in Moscow—Ovett's specialty?",
       "answer": "1500m",
       "acceptedAnswers": [
         "1500m",
@@ -37,11 +37,11 @@
         "800m",
         "Steeplechase"
       ],
-      "explanation": "Jürgen Straub of East Germany took silver; Ovett bronze. Coe remains the only man to win Olympic 1500m gold twice."
+      "explanation": "They swapped events: Ovett took Coe's 800, Coe took Ovett's 1500. Jürgen Straub of East Germany took silver; Ovett settled for bronze. Coe remains the only man to win Olympic 1500m gold twice."
     },
     {
       "level": 3,
-      "question": "After his Moscow 1500m gold, Coe defended that title at which 1984 Games, outsprinting favorite Steve Cram?",
+      "question": "After his Moscow 1500m gold, Coe defended that title at which 1984 Games, outsprinting favorite Steve Cram on the final turn?",
       "answer": "Los Angeles",
       "acceptedAnswers": [
         "Los Angeles",
@@ -56,11 +56,11 @@
         "Barcelona",
         "Montreal"
       ],
-      "explanation": "He pulled away on the final turn and won by about six meters. He also took 800m silver again—this time behind Brazil's Joaquim Cruz."
+      "explanation": "He pulled away on the final bend and won by about six meters. He also took 800m silver again—this time behind Brazil's Joaquim Cruz. Two Games, two 1500 golds."
     },
     {
       "level": 4,
-      "question": "At those same Los Angeles Games, which Romanian won the women's 3000m after Mary Decker and Zola Budd tangled?",
+      "question": "At those same Los Angeles Games, Mary Decker and barefoot Zola Budd tangled in the women's 3000m—and which Romanian stayed clear for gold?",
       "answer": "Maricica Puică",
       "acceptedAnswers": [
         "Maricica Puică",
@@ -74,11 +74,11 @@
         "Zola Budd",
         "Tatyana Kazankina"
       ],
-      "explanation": "Decker clipped Budd and fell. Puică stayed clear for gold. Budd, running barefoot for Britain, finished seventh; Decker did not finish."
+      "explanation": "Decker clipped Budd and fell hard. Budd, running barefoot for Britain, finished seventh; Decker did not finish. Puică never broke stride—the race everyone remembers for the fall, not the winner."
     },
     {
       "level": 5,
-      "question": "Four years after Los Angeles, which Moroccan set an Olympic record to win the men's 10,000m in Seoul?",
+      "question": "Four years after Puică's Los Angeles gold, which Moroccan—not the favorite Aouita—set an Olympic record to win the men's 10,000m in Seoul?",
       "answer": "Brahim Boutayeb",
       "acceptedAnswers": [
         "Brahim Boutayeb",
@@ -91,11 +91,11 @@
         "Khalid Skah",
         "Miruts Yifter"
       ],
-      "explanation": "His 27:21.44 held off Italy's Salvatore Antibo. Aouita, Morocco's other star that Games, took 800m bronze instead."
+      "explanation": "His 27:21.44 held off Italy's Salvatore Antibo. Aouita, Morocco's other star that Games, took 800m bronze instead. Another decade, another distance surprise."
     }
   ],
   "easterEgg": {
     "title": "They swapped events",
-    "text": "In Moscow, each Brit won the other's specialty: Ovett took Coe's 800m, Coe took Ovett's 1500m. British fans got two golds and a lifelong argument about who was better."
+    "text": "In Moscow, each Brit won the other's specialty: Ovett took Coe's 800m, Coe took Ovett's 1500m. Two golds for Britain, one lifelong pub argument, and Coe later became an IOC powerbroker who helped bring the Olympics to London."
   }
 }

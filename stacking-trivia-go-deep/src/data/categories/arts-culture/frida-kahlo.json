@@ -1,6 +1,6 @@
 {
-  "title": "Frida Kahlo: Pain into Art",
-  "description": "Pain, resilience, and color—the life of a revolutionary Mexican artist.",
+  "title": "Frida Kahlo: Pain into Paint",
+  "description": "A double self-portrait, a childhood limp, a streetcar crash, and a gallery bed—five steps into a Mexican painter's life.",
   "questions": [
     {
       "level": 1,
@@ -21,21 +21,20 @@
     },
     {
       "level": 2,
-      "question": "At what age did Frida Kahlo contract polio?",
-      "answer": "Six",
+      "question": "Kids yelled \"Frida, pata de palo!\" (peg leg) after what childhood illness thinned her right leg?",
+      "answer": "Polio",
       "acceptedAnswers": [
-        "Six",
-        "six",
-        "6",
-        "six years old",
-        "age six"
+        "Polio",
+        "polio",
+        "poliomyelitis",
+        "infantile paralysis"
       ],
       "choices": [
-        "Two",
-        "Ten",
-        "Fourteen"
+        "Smallpox",
+        "Tuberculosis",
+        "Scarlet fever"
       ],
-      "explanation": "It left her right leg thin, and kids yelled \"Frida, pata de palo!\" (peg leg). She hid it under extra socks, later long skirts. Some biographers suspect spina bifida instead."
+      "explanation": "She caught it around age six. She hid the thin leg under extra socks, later long Tehuana skirts. Some biographers suspect spina bifida instead—or as well."
     },
     {
       "level": 3,
@@ -71,7 +70,7 @@
         "Steel girder",
         "Copper pipe"
       ],
-      "explanation": "\"The handrail pierced me the way a sword pierces a bull,\" she said. Bedridden for months, she began painting, with a special easel and a mirror fixed above her bed."
+      "explanation": "\"The handrail pierced me the way a sword pierces a bull,\" she said. Bedridden for months, she began painting—with a special easel and a mirror fixed above her bed."
     },
     {
       "level": 5,
@@ -98,6 +97,6 @@
   "imageHint": "A 1940 self-portrait with thorn necklace and hummingbird",
   "easterEgg": {
     "title": "Powdered gold",
-    "text": "Her boyfriend Alejandro Gómez Arias recalled that a passenger's packet of powdered gold burst in the crash and covered Frida's bleeding body. \"She looked like a wounded Indian,\" he said."
+    "text": "Her boyfriend Alejandro Gómez Arias recalled that a passenger's packet of powdered gold burst in the crash and covered Frida's bleeding body. \"She looked like a wounded Indian,\" he said—the image that haunted him for life."
   }
 }

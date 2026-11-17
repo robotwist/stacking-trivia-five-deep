@@ -1,13 +1,13 @@
 {
-  "title": "OKC Thunder: From Seattle South",
-  "description": "A relocation, a Brodie, a mountain of future assets, and a new face of the franchise—five steps into Thunder basketball.",
+  "title": "OKC Thunder: Seattle's Ghost, Presti's Picks",
+  "description": "A bitter relocation, a UCLA guard taken fourth, a mountain of future assets, and a new MVP face—five steps into Thunder basketball.",
   "image": "okc-thunder-paycom-center.jpg",
   "imageHint": "The electric blue and orange of Paycom Center with passionate fans creating one of the NBA's loudest atmospheres",
   "category": "sports",
   "questions": [
     {
       "level": 1,
-      "question": "In what year did the Seattle SuperSonics relocate and become the Oklahoma City Thunder?",
+      "question": "After Clay Bennett won a bitter arena fight in Seattle, the SuperSonics relocated south and became the Thunder. In what year did the move happen?",
       "answer": "2008",
       "acceptedAnswers": [
         "2008",
@@ -19,11 +19,11 @@
         "2010",
         "2012"
       ],
-      "explanation": "Clay Bennett moved the club after a bitter arena fight in Seattle. Sam Presti, already GM, kept building through the shift."
+      "explanation": "Seattle kept the SuperSonics name and colors in limbo; Oklahoma City got a franchise and a roar. Sam Presti, already GM, kept drafting through the chaos."
     },
     {
       "level": 2,
-      "question": "In that same 2008 draft, still under the Sonics name, Presti took which UCLA guard fourth overall?",
+      "question": "That same 2008 draft night—still under the Sonics name—Presti took which UCLA guard fourth overall, later nicknamed \"The Brodie\"?",
       "answer": "Russell Westbrook",
       "acceptedAnswers": [
         "Russell Westbrook",
@@ -37,11 +37,11 @@
         "James Harden",
         "Serge Ibaka"
       ],
-      "explanation": "Durant was already there from 2007. Presti also grabbed Serge Ibaka at 24 that night. Westbrook became \"The Brodie.\""
+      "explanation": "Durant was already there from the last Sonics draft in 2007. Presti also grabbed Serge Ibaka at 24 that night. Westbrook became the heartbeat—and the triple-double machine."
     },
     {
       "level": 3,
-      "question": "Westbrook later averaged a triple-double for a full season—the first to do so since which legend?",
+      "question": "Westbrook later averaged a triple-double for a full season—the first to do so since which legend's lonely 1961–62 mark?",
       "answer": "Oscar Robertson",
       "acceptedAnswers": [
         "Oscar Robertson",
@@ -54,11 +54,11 @@
         "Jason Kidd",
         "LeBron James"
       ],
-      "explanation": "Robertson's 1961–62 season stood alone for 54 years until Westbrook matched it in 2016–17—and then did it again."
+      "explanation": "Robertson's season stood alone for 54 years until Westbrook matched it in 2016–17—then did it again. \"Why not?\" became a slogan and a dare."
     },
     {
       "level": 4,
-      "question": "After Westbrook left, which scoring guard became the new face of the Thunder?",
+      "question": "After Westbrook matched Oscar Robertson then left OKC, which scoring guard—snagged in the 2019 Paul George trade—became the new face of the Thunder?",
       "answer": "Shai Gilgeous-Alexander",
       "acceptedAnswers": [
         "Shai Gilgeous-Alexander",
@@ -72,11 +72,11 @@
         "Josh Giddey",
         "Luguentz Dort"
       ],
-      "explanation": "Acquired in the 2019 Paul George trade package. He became an MVP candidate while Presti restocked the cupboard."
+      "explanation": "Quiet footwork, endless midrange, MVP chatter. While SGA climbed, Presti was busy doing what Presti does: collecting future firsts like trading cards."
     },
     {
       "level": 5,
-      "question": "Around SGA, Presti is famous for stockpiling dozens of what future asset through trades?",
+      "question": "Around Shai Gilgeous-Alexander, Presti turned departing stars into a mountain of what future NBA asset—then flipped those into even more?",
       "answer": "Draft capital",
       "acceptedAnswers": [
         "Draft capital",
@@ -92,11 +92,11 @@
         "Two-way contracts",
         "G League affiliates"
       ],
-      "explanation": "The Thunder turned stars into future firsts, then flipped those into more firsts. By the mid-2020s they held an absurd pile of upcoming selections."
+      "explanation": "Stars out, firsts in, firsts into more firsts. By the mid-2020s the Thunder held an absurd pile of upcoming selections—the long game Seattle never got to finish."
     }
   ],
   "easterEgg": {
-    "title": "Still Paycom",
-    "text": "The arena downtown was Chesapeake Energy Arena until naming rights flipped to Paycom. The roar when the roof feels like it's shaking? Locals just call it loud."
+    "title": "Last Sonics draft",
+    "text": "Kevin Durant was the last SuperSonics draft pick—No. 2 in 2007—before the move. He won MVP in Oklahoma City, reached the 2012 Finals, then left. The franchise's ghost and its future have been arguing ever since."
   }
 }
