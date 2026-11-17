@@ -93,5 +93,9 @@
       "explanation": "The word hailed emperors first: a c. 9 BCE inscription at Priene calls Augustus's birthday \"the beginning of the good news for the world.\" Some scholars read Mark 1:1 as a counterclaim."
     }
   ],
-  "category": "actually"
+  "category": "actually",
+  "easterEgg": {
+    "title": "Euangelion before the Gospels",
+    "text": "A stone inscription from Priene, around 9 BCE, already calls Augustus's birthday \"the beginning of the good news (euangelion) for the world.\" The Gospels borrowed an emperor's word."
+  }
 }

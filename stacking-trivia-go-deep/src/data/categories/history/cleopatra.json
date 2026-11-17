@@ -88,5 +88,9 @@
     }
   ],
   "image": "egyptian-royal-crown.jpg",
-  "imageHint": "The golden uraeus crown worn by ancient Egyptian rulers, symbol of pharaonic power"
+  "imageHint": "The golden uraeus crown worn by ancient Egyptian rulers, symbol of pharaonic power",
+  "easterEgg": {
+    "title": "Octavian's parade prop",
+    "text": "Plutarch says even Caesar (Octavian) seemed to believe the asp story: in his triumph an image of Cleopatra was carried with the snake clinging to her. The body, he notes, showed no clear poison marks."
+  }
 }

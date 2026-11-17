@@ -92,5 +92,9 @@
     }
   ],
   "imageHint": "A steaming bowl at a tailgate—no state names on the menu",
-  "category": "Actually"
+  "category": "Actually",
+  "easterEgg": {
+    "title": "The Senate taste test",
+    "text": "On Dec. 7, 2016, reporters and staffers blind-tasted Texas chile con queso against Arkansas cheese dip in a Capitol hearing room. Arkansas's Tom Cotton declared victory. Texas still disagrees."
+  }
 }

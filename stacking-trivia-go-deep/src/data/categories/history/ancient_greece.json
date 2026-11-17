@@ -93,5 +93,9 @@
     }
   ],
   "image": "parthenon-temple.jpg",
-  "imageHint": "Marble columns and the legacy of Athens"
+  "imageHint": "Marble columns and the legacy of Athens",
+  "easterEgg": {
+    "title": "Afraid of its shadow",
+    "text": "Plutarch says young Alexander noticed Bucephalus spooked at his own shadow, so he turned the horse's head toward the sun. He later named a city in modern Pakistan for the horse: Bucephala."
+  }
 }

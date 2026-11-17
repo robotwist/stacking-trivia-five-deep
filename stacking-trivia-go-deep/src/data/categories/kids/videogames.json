@@ -90,5 +90,9 @@
       "hint": "You mine blocks and craft tools",
       "explanation": "Minecraft has sold more than 350 million copies, more than any other video game ever. It started out in 2009, made by a small studio in Sweden called Mojang."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "Before Mario, cards",
+    "text": "Nintendo started in 1889 in Kyoto making hanafuda—flower playing cards. Video games came almost a century later. The company is older than the zipper."
+  }
 }

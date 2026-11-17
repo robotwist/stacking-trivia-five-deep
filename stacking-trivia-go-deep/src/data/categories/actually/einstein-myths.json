@@ -94,5 +94,9 @@
     }
   ],
   "image": "myth-buster-stamp.jpg",
-  "imageHint": "A rubber stamp marked 'MYTH BUSTED' - perfect for correcting common misconceptions"
+  "imageHint": "A rubber stamp marked 'MYTH BUSTED' - perfect for correcting common misconceptions",
+  "easterEgg": {
+    "title": "He laughed at Ripley",
+    "text": "When shown a 1935 Ripley's Believe It or Not claiming he failed math, Einstein laughed: \"I never failed in mathematics. Before I was fifteen I had mastered differential and integral calculus.\""
+  }
 }

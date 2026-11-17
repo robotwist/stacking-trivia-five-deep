@@ -18,7 +18,7 @@
         "1984"
       ],
       "hint": "The same year as America's bicentennial celebration",
-      "explanation": "A third co-founder, Ronald Wayne, sold his 10% stake back less than two weeks later for $800, a slice later worth billions. No joke."
+      "explanation": "A third co-founder, Ronald Wayne, sold his 10% stake back less than two weeks later for $800—worried the partnership's debts could ruin him. That slice would later be worth tens of billions."
     },
     {
       "level": 2,
@@ -126,5 +126,9 @@
         "hint": "A practice of mental focus and awareness that values simplicity and presence"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The first web server",
+    "text": "Tim Berners-Lee built the World Wide Web's first server and browser on a NeXT cube at CERN. When Apple bought NeXT, that same OS lineage became the heart of macOS and iOS."
   }
 }

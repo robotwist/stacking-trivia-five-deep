@@ -85,7 +85,7 @@
         "Marie Vans",
         "Lumières"
       ],
-      "explanation": "The Academy of Sciences had rejected her in 1911; France still needed her. She equipped about 20 vans and 200 field posts, learned to drive, and worked beside her 17-year-old daughter Irène."
+      "explanation": "The Academy of Sciences had rejected her in 1911; France still needed her. She equipped about 20 vans—soldiers nicknamed them Petites Curies—and trained her 17-year-old daughter Irène as a radiologist at the front."
     }
   ],
   "imageHint": "Laboratory glow and the price of pioneering research",
@@ -119,5 +119,9 @@
         "hint": "A blood disorder where the bone marrow stops producing enough blood cells"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "A million soldiers",
+    "text": "By war's end Curie had also set up roughly 200 fixed radiology posts. Estimates credit the X-ray effort with helping diagnose wounds for about a million Allied soldiers."
   }
 }

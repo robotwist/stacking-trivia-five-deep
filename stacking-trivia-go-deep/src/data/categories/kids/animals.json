@@ -89,5 +89,9 @@
       "hint": "They waddle and can't fly",
       "explanation": "Adélie penguin colonies leave pink poop stains so big that scientists can spot them from space! The color even tells them whether the penguins ate krill or fish."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "Pink from space",
+    "text": "Adélie penguin colonies leave so much pink, krill-colored poop that scientists can spot the stains in satellite photos and count the birds without hiking there."
+  }
 }

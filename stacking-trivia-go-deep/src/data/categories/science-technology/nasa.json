@@ -122,5 +122,9 @@
         "hint": "About the length of a football field, these dishes can hear a whisper from billions of miles away"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The mailbox recipe",
+    "text": "Flight controller Glynn Lunney's team built the CO₂ \"mailbox\" from a list of only what was on board: plastic bags, cardboard, a spacesuit hose, and gray duct tape. The crew's instructions were read up, step by step, from Houston."
   }
 }

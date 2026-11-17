@@ -97,5 +97,9 @@
       "hint": "Look up at the sky—or at a chicken!",
       "explanation": "Birds are living dinosaurs. The pigeon on your sidewalk is a distant cousin of T. rex."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "Closer to us than Stegosaurus",
+    "text": "T. rex lived at the very end of the dinosaur age. Stegosaurus had already been extinct for about 80 million years. So T. rex is closer in time to you than to Stegosaurus."
+  }
 }

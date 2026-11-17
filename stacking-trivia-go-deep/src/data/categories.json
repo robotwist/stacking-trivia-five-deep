@@ -23,7 +23,8 @@
       "stacks": [
         "prefontaine-ultimate",
         "el-guerrouj-ultimate",
-        "olympic_distance_current"
+        "olympic_distance_current",
+        "olympic_distance_1980s"
       ]
     },
     "sports": {
@@ -35,7 +36,9 @@
         "muhammad-ali",
         "michael-jordan",
         "serena-williams",
-        "nebraska-sports-ultimate"
+        "nebraska-sports-ultimate",
+        "jalen-brunson",
+        "okc-thunder"
       ]
     },
     "science-technology": {

@@ -89,5 +89,9 @@
     }
   ],
   "image": "einstein-wild-hair.jpg",
-  "imageHint": "Wild hair and equations that bent spacetime"
+  "imageHint": "Wild hair and equations that bent spacetime",
+  "easterEgg": {
+    "title": "Technical expert, third class",
+    "text": "In his miracle year of 1905 he was still a Swiss patent clerk reviewing other people's inventions by day. Special relativity, the photoelectric effect, Brownian motion, and E=mc² all came out of that desk job."
+  }
 }

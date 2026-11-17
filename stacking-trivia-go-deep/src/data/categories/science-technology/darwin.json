@@ -131,5 +131,9 @@
         "hint": "Modern doctors think it was stress-related, causing stomach problems and exhaustion"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The last word",
+    "text": "The first edition of On the Origin of Species never uses the word \"evolution.\" Its closing sentence ends on \"evolved\"—the only form of the word in the book."
   }
 }

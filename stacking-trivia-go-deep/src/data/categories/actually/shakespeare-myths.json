@@ -88,5 +88,9 @@
     }
   ],
   "image": "question-mark-quill.jpg",
-  "imageHint": "A quill pen forming a question mark - questioning the very authorship of the Bard"
+  "imageHint": "A quill pen forming a question mark - questioning the very authorship of the Bard",
+  "easterEgg": {
+    "title": "The lost Cardenio",
+    "text": "Shakespeare and Fletcher's Cardenio, drawn from Don Quixote, was performed at court in 1613 and then vanished. Only a later adaptation, Double Falsehood, may preserve scraps of it."
+  }
 }

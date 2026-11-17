@@ -1,65 +1,100 @@
 {
-  "title": "Jalen Brunson: The Clutch Conductor",
+  "title": "Jalen Brunson: Villanova to Madison Square",
+  "description": "Two titles, a dad who played the point, and a late-draft steal who became New York's captain—five steps into Brunson.",
   "image": "jalen-brunson-knicks-clutch.jpg",
-  "imageHint": "The steady point guard in Knicks blue and orange, orchestrating plays with calm precision in pressure moments",
-  "description": "From Villanova champion to Dallas role player to New York's franchise cornerstone, Jalen Brunson has proven that basketball IQ and clutch performance matter more than athletic measurables.",
+  "imageHint": "The steady point guard in blue and orange, orchestrating plays with calm precision in pressure moments",
   "category": "sports",
   "questions": [
     {
       "level": 1,
-      "question": "Which NBA team did Jalen Brunson sign with in 2022 as a free agent, leaving the Dallas Mavericks?",
-      "answer": "New York Knicks",
-      "acceptableAnswers": ["New York Knicks", "Knicks", "knicks", "new york knicks"],
-      "explanation": "Brunson signed a 4-year, $104 million contract with the New York Knicks in 2022, immediately becoming their starting point guard and team leader."
+      "question": "Jalen Brunson won how many NCAA titles as Villanova's point guard?",
+      "answer": "Two",
+      "acceptedAnswers": [
+        "Two",
+        "two",
+        "2"
+      ],
+      "choices": [
+        "Four",
+        "Three",
+        "None"
+      ],
+      "explanation": "Titles in 2016 and 2018. As a junior he was consensus National Player of the Year and Final Four all-tournament."
     },
     {
       "level": 2,
-      "question": "How many NCAA Championships did Jalen Brunson win at Villanova University?",
-      "answer": "Two",
-      "acceptableAnswers": ["Two", "2", "two"],
-      "explanation": "Brunson won NCAA Championships with Villanova in 2016 and 2018, earning Most Outstanding Player honors in the 2018 tournament for his clutch performances."
+      "question": "After those two titles, Dallas selected Brunson where in the 2018 NBA Draft?",
+      "answer": "33rd overall",
+      "acceptedAnswers": [
+        "33rd overall",
+        "33rd",
+        "33",
+        "thirty-third",
+        "pick 33",
+        "the 33rd pick"
+      ],
+      "choices": [
+        "15th overall",
+        "41st overall",
+        "Undrafted"
+      ],
+      "explanation": "A second-rounder at pick 33. Four years later he walked into free agency as one of the league's most wanted guards."
     },
     {
       "level": 3,
-      "question": "What position did Jalen Brunson's father, Rick Brunson, play during his NBA career?",
-      "answer": "Point guard",
-      "acceptableAnswers": ["Point guard", "point guard", "PG", "guard"],
-      "explanation": "Rick Brunson was an NBA point guard who played for nine teams during his career, including the Knicks. His basketball knowledge greatly influenced Jalen's development."
+      "question": "Leaving Dallas as a free agent in 2022, Brunson signed with which Eastern Conference franchise?",
+      "answer": "New York Knicks",
+      "acceptedAnswers": [
+        "New York Knicks",
+        "new york knicks",
+        "knicks",
+        "the knicks",
+        "ny knicks"
+      ],
+      "choices": [
+        "Brooklyn Nets",
+        "Boston Celtics",
+        "Miami Heat"
+      ],
+      "explanation": "A four-year deal that remade the Knicks overnight. Villanova teammates Josh Hart and Donte DiVincenzo later joined him in New York."
     },
     {
       "level": 4,
-      "question": "In the 2022 playoffs with Dallas, Brunson had a breakout performance against which Western Conference team, averaging over 21 points per game?",
-      "answer": "Utah Jazz",
-      "acceptableAnswers": ["Utah Jazz", "Jazz", "utah jazz", "the Jazz"],
-      "explanation": "Brunson averaged 21.6 points per game against Utah in the 2022 first round, showcasing the clutch gene that would make him a coveted free agent that summer."
+      "question": "Brunson's father, who also ran the point in the NBA—including a stop in New York—is named what?",
+      "answer": "Rick Brunson",
+      "acceptedAnswers": [
+        "Rick Brunson",
+        "rick brunson",
+        "rick"
+      ],
+      "choices": [
+        "Mike Brunson",
+        "Pat Riley",
+        "Jay Wright"
+      ],
+      "explanation": "Rick played nine seasons for eight teams and later coached. Jalen grew up in gyms from Cherry Hill to Lincolnshire, Illinois."
     },
     {
       "level": 5,
-      "question": "What specific advanced basketball metric improved dramatically for Brunson after joining the Knicks, reflecting his increased usage and efficiency?",
-      "answer": "Usage rate",
-      "acceptableAnswers": ["Usage rate", "usage", "USG%", "usage percentage"],
-      "explanation": "Brunson's usage rate jumped from 22% in Dallas to over 28% with the Knicks, reflecting his evolution from role player to primary offensive initiator while maintaining high efficiency."
+      "question": "With Rick's old New York club now his team, what number jersey did Villanova retire for Jalen in 2023?",
+      "answer": "1",
+      "acceptedAnswers": [
+        "1",
+        "one",
+        "number 1",
+        "#1",
+        "no. 1"
+      ],
+      "choices": [
+        "11",
+        "0",
+        "23"
+      ],
+      "explanation": "Retired Feb. 8, 2023—the day before the Knicks traded for Josh Hart. Brunson was later named the 36th captain in Knicks history."
     }
   ],
-  "connections": [
-    {
-      "targetStack": "okc-thunder",
-      "sharedThemes": ["sports", "NBA", "point guard"],
-      "connectionStrength": 3,
-      "trigger": "Both connected to NBA point guard excellence and small-market to big-market team dynamics"
-    },
-    {
-      "targetStack": "minecraft",
-      "sharedThemes": ["strategy", "building"],
-      "connectionStrength": 1,
-      "trigger": "Both involve strategic thinking and building something brick by brick"
-    }
-  ],
-  "qualityScore": 86,
-  "familyRequest": {
-    "originalTopic": "Jalen Brunson",
-    "priority": 1,
-    "generatedAt": "2024-08-10T21:15:00.000Z",
-    "notes": "NBA point guard known for clutch performances"
+  "easterEgg": {
+    "title": "56 in a state final",
+    "text": "At Stevenson High in Illinois, Brunson dropped 56 points in an IHSA finals game—a state-final scoring record—against a team featuring future No. 1 pick Jahlil Okafor."
   }
 }

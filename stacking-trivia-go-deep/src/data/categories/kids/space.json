@@ -95,5 +95,9 @@
       "hint": "Think about what blows sand around at the beach",
       "explanation": "With almost no air, the Moon has no wind or rain. Scientists think the prints could last millions of years, until tiny specks of space dust slowly sand them away."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "Still there",
+    "text": "Armstrong's and Aldrin's bootprints, the flag, and even the discarded backpacks are still on the Moon. With almost no air, there is no wind or rain to erase them for millions of years."
+  }
 }

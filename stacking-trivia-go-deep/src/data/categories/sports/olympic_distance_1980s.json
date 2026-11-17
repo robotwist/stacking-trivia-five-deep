@@ -1,33 +1,101 @@
 {
-  "title": "1980s Olympic Distance Running",
+  "title": "1980s Olympic Distance: Coe vs Ovett",
+  "description": "A British rivalry, a Moscow swap, and a Korean 10K—five steps into 1980s Olympic distance running.",
   "image": "running-track-lanes.jpg",
   "imageHint": "The classic oval track with distinctive lane markings where athletic legends were made",
-  "description": "Test your knowledge of legendary Olympic distance runners from the 1980s, covering 800m to 10,000m.",
   "questions": [
     {
       "level": 1,
-      "question": "Who won the men's 800m gold medal at the 1980 Moscow Olympics?",
-      "answer": "Steve Ovett"
+      "question": "At the boycotted 1980 Moscow Games, which Brit won the men's 800m—the race Seb Coe later called the worst of his life?",
+      "answer": "Steve Ovett",
+      "acceptedAnswers": [
+        "Steve Ovett",
+        "steve ovett",
+        "ovett"
+      ],
+      "choices": [
+        "Sebastian Coe",
+        "Steve Cram",
+        "Steve Scott"
+      ],
+      "explanation": "Coe was the world-record favorite and took silver. Six days later he got revenge in the 1500m, with Ovett settling for bronze."
     },
     {
       "level": 2,
-      "question": "Which British runner famously won both the 1500m and 5000m at the 1984 Olympics?",
-      "answer": "Sebastian Coe"
+      "question": "Six days after Ovett beat him at 800m, Coe redeemed himself by winning which event in Moscow?",
+      "answer": "1500m",
+      "acceptedAnswers": [
+        "1500m",
+        "1500 meters",
+        "1500 metres",
+        "the 1500",
+        "1,500m",
+        "the 1500m"
+      ],
+      "choices": [
+        "5000m",
+        "800m",
+        "Steeplechase"
+      ],
+      "explanation": "Jürgen Straub of East Germany took silver; Ovett bronze. Coe remains the only man to win Olympic 1500m gold twice."
     },
     {
       "level": 3,
-      "question": "Who won the men's 10,000m gold medal at the 1988 Seoul Olympics?",
-      "answer": "Brahim Boutayeb"
+      "question": "After his Moscow 1500m gold, Coe defended that title at which 1984 Games, outsprinting favorite Steve Cram?",
+      "answer": "Los Angeles",
+      "acceptedAnswers": [
+        "Los Angeles",
+        "los angeles",
+        "LA",
+        "la",
+        "los angeles 1984",
+        "1984 los angeles"
+      ],
+      "choices": [
+        "Seoul",
+        "Barcelona",
+        "Montreal"
+      ],
+      "explanation": "He pulled away on the final turn and won by about six meters. He also took 800m silver again—this time behind Brazil's Joaquim Cruz."
     },
     {
       "level": 4,
-      "question": "Which female athlete won the 3000m at the 1984 Olympics?",
-      "answer": "Maricica Puic\u0103"
+      "question": "At those same Los Angeles Games, which Romanian won the women's 3000m after Mary Decker and Zola Budd tangled?",
+      "answer": "Maricica Puică",
+      "acceptedAnswers": [
+        "Maricica Puică",
+        "maricica puica",
+        "maricica puică",
+        "puica",
+        "puică"
+      ],
+      "choices": [
+        "Mary Decker",
+        "Zola Budd",
+        "Tatyana Kazankina"
+      ],
+      "explanation": "Decker clipped Budd and fell. Puică stayed clear for gold. Budd, running barefoot for Britain, finished seventh; Decker did not finish."
     },
     {
       "level": 5,
-      "question": "Who was known for his rivalry with Steve Ovett in the 1980s?",
-      "answer": "Sebastian Coe"
+      "question": "Four years after Los Angeles, which Moroccan set an Olympic record to win the men's 10,000m in Seoul?",
+      "answer": "Brahim Boutayeb",
+      "acceptedAnswers": [
+        "Brahim Boutayeb",
+        "brahim boutayeb",
+        "boutayeb",
+        "moulay brahim boutayeb"
+      ],
+      "choices": [
+        "Saïd Aouita",
+        "Khalid Skah",
+        "Miruts Yifter"
+      ],
+      "explanation": "His 27:21.44 held off Italy's Salvatore Antibo. Aouita, Morocco's other star that Games, took 800m bronze instead."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "They swapped events",
+    "text": "In Moscow, each Brit won the other's specialty: Ovett took Coe's 800m, Coe took Ovett's 1500m. British fans got two golds and a lifelong argument about who was better."
+  }
 }

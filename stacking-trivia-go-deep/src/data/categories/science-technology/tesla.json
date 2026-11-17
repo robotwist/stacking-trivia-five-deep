@@ -93,7 +93,7 @@
         "Cold Spring Harbor"
       ],
       "hint": "Named after the benefactor James S. Warden, it was meant to transmit power wirelessly across the Atlantic",
-      "explanation": "J.P. Morgan put in $150,000, but the money ran out and the tower was scrapped in 1917 to pay debts. In 2012, The Oatmeal's Matthew Inman crowdfunded $1.37M to save the site."
+      "explanation": "J.P. Morgan put in $150,000, but the money ran out and the unfinished tower was dynamited for scrap in 1917 to pay Tesla's Waldorf-Astoria debts. Wartime rumors claimed the government blew it up to stop German spies; Tesla couldn't publicly correct them without admitting he was broke."
     }
   ],
   "imageHint": "Lightning, coils, and the age of electricity",
@@ -125,5 +125,9 @@
         "hint": "He envisioned a global network where people could communicate instantly anywhere"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The brick that survived",
+    "text": "The 187-foot tower is gone, but Stanford White's original red-brick laboratory still stands in Shoreham, Long Island—the only Tesla lab left in the world. It is now the Tesla Science Center at Wardenclyffe."
   }
 }

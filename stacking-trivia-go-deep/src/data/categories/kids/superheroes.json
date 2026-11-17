@@ -73,7 +73,7 @@
         "Lava rock"
       ],
       "hint": "Its name sounds like his home planet",
-      "explanation": "Kryptonite was invented for the Superman radio show in 1943. In 2007, scientists found a real rock in Serbia with almost the same recipe, but it's white and powdery, not glowing green!"
+      "explanation": "Kryptonite was invented for the Superman radio show in 1943—partly so the star voice actor could take a day off while Superman was knocked out. The comics didn't go green with it until 1951."
     },
     {
       "level": 5,
@@ -98,5 +98,9 @@
       "hint": "Think kangaroo, not airplane!",
       "explanation": "The first comics said he could leap an eighth of a mile. In the 1940s, cartoon makers thought all that leaping looked silly on screen, so they had him fly, and the comics followed."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "Before he could fly",
+    "text": "In Action Comics #1 (1938), Superman could leap an eighth of a mile, not fly. Animators in the 1940s found constant jumping looked silly, so they just made him soar."
+  }
 }

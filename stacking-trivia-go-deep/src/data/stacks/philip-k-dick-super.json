@@ -73,7 +73,7 @@
         "Gold",
         "Blue"
       ],
-      "explanation": "Fans call it \"2-3-74.\" After dental surgery, a pharmacy courier's fish necklace \"triggered\" him. Dick said the beam later warned him his baby son had a hernia, and doctors confirmed it."
+      "explanation": "Fans call it \"2-3-74.\" After dental surgery, a pharmacy courier's fish necklace triggered what he later described as anamnesis—sudden remembering. In the weeks that followed came the pink beam."
     },
     {
       "level": 5,
@@ -94,5 +94,9 @@
       "explanation": "He spent his last years on an 8,000-page journal, the Exegesis. In VALIS he splits himself in two: narrator Phil and \"Horselover Fat,\" Greek \"Philip\" plus German \"dick.\""
     }
   ],
-  "category": "actually"
+  "category": "actually",
+  "easterEgg": {
+    "title": "Strawberry Fields Forever",
+    "text": "In the Exegesis, Dick notes the pink light looked like strawberry ice cream while he was listening to the Beatles' \"Strawberry Fields Forever.\" He took that as the divine showing up in the most ordinary things."
+  }
 }
