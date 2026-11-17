@@ -1,91 +1,92 @@
 {
-  "title": "Albert Einstein: Relativity's Genius",
-  "description": "Relativity, awards, and the mind that reimagined the cosmos.",
+  "title": "Miracle Year at the Patent Office",
+  "description": "A third-class clerk, four papers in one year, a Nobel that ducked relativity—five steps into 1905's aftershocks.",
   "questions": [
     {
       "level": 1,
-      "question": "Which physicist published special relativity in 1905 while employed at the Swiss patent office in Bern?",
+      "question": "In 1905, a \"technical expert, third class\" at the Swiss patent office in Bern published four papers that remade physics. Who was he?",
       "answer": "Albert Einstein",
       "acceptedAnswers": [
         "Albert Einstein",
         "albert einstein",
-        "einstein"
+        "einstein",
+        "a. einstein"
       ],
       "choices": [
-        "Isaac Newton",
         "Niels Bohr",
-        "Max Planck"
+        "Max Planck",
+        "Werner Heisenberg"
       ],
-      "explanation": "His official title: \"technical expert, third class.\" In 1905, his \"miracle year,\" he published four landmark papers in about seven months—at 26, with no university job."
+      "explanation": "By day he reviewed other people's inventions. By night—his \"miracle year\"—he produced special relativity, Brownian motion, the photoelectric effect, and the seed of E=mc²."
     },
     {
       "level": 2,
-      "question": "A short 1905 follow-up paper gave Einstein his most famous equation—what is it?",
+      "question": "One short 1905 follow-up from Einstein asked whether a body's inertia depends on its energy—and gave the world what equation?",
       "answer": "E=mc²",
       "acceptedAnswers": [
         "E=mc²",
-        "e=mc²",
         "e=mc2",
-        "e equals mc squared"
+        "e = mc^2",
+        "e=mc²",
+        "emc2"
       ],
       "choices": [
         "F=ma",
-        "PV=nRT",
-        "a²+b²=c²"
+        "E=hf",
+        "PV=nRT"
       ],
-      "explanation": "The paper ran three pages: \"Does the Inertia of a Body Depend Upon Its Energy Content?\" He didn't even write E=mc²; he used L for energy and V for the speed of light."
+      "explanation": "The paper ran three pages. He didn't even write the famous formula in its modern form; the world did that for him."
     },
     {
       "level": 3,
-      "question": "Fame from E=mc² aside, Einstein's Nobel Prize honored his explanation of how light knocks electrons out of metal—called what?",
+      "question": "Fame from E=mc² aside, his Nobel skipped relativity as \"unproven\" and honored his explanation of light knocking electrons out of metal. What is that phenomenon called?",
       "answer": "Photoelectric effect",
       "acceptedAnswers": [
         "Photoelectric effect",
         "photoelectric effect",
-        "the photoelectric effect"
+        "the photoelectric effect",
+        "photo-electric effect"
       ],
       "choices": [
-        "Brownian motion",
         "Special relativity",
-        "Compton effect"
+        "General relativity",
+        "Brownian motion"
       ],
-      "explanation": "The Nobel committee pointedly sidestepped relativity, still seen as unproven. Einstein's reply: his 1923 Nobel lecture in Gothenburg was about relativity anyway."
+      "explanation": "The committee was still nervous about relativity. Einstein later joked that his prize certificate hung in the bathroom."
     },
     {
       "level": 4,
-      "question": "That photoelectric effect work earned Einstein the Nobel in what year?",
+      "question": "That photoelectric effect work earned Einstein the Nobel Prize for which year?",
       "answer": "1921",
       "acceptedAnswers": [
         "1921",
         "nineteen twenty-one",
-        "nineteen twenty one",
-        "year 1921",
-        "1922"
+        "the year 1921"
       ],
       "choices": [
         "1905",
         "1915",
         "1933"
       ],
-      "explanation": "The 1921 prize was held over and announced in Nov. 1922, while he sailed to Japan. The money was already spoken for: his divorce deal had promised it to his ex-wife, Mileva."
+      "explanation": "The 1921 prize was held over and announced in November 1922, while he sailed to Japan. The money was already pledged to his ex-wife as part of the divorce."
     },
     {
       "level": 5,
-      "question": "After his 1921 Nobel, Einstein fled Germany and spent his last 22 years at what independent research center in Princeton?",
+      "question": "After the 1921 Nobel, Einstein fled Nazi Germany and spent his last 22 years at what independent research center in Princeton—not the university?",
       "answer": "Institute for Advanced Study",
       "acceptedAnswers": [
         "Institute for Advanced Study",
         "institute for advanced study",
-        "the institute for advanced study",
         "ias",
-        "advanced study"
+        "the institute for advanced study",
+        "advanced study institute"
       ],
       "choices": [
         "Princeton University",
-        "Bell Labs",
-        "Rockefeller Institute"
+        "CERN",
+        "Los Alamos"
       ],
-      "explanation": "Common mix-up: he was never a Princeton University professor; the institute was independent. When he died in Princeton in 1955, the pathologist removed his brain without permission."
+      "explanation": "Common mix-up: he was never a Princeton University professor. When offered a salary, he asked them to cut it—he thought it was too high."
     }
   ],
   "image": "einstein-wild-hair.jpg",

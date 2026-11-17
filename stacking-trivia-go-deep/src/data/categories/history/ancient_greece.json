@@ -1,58 +1,56 @@
 {
-  "title": "Ancient Greece: Teachers of Conquerors",
-  "description": "From a condemned teacher to a conquering king—five links in a chain of mentors.",
+  "title": "Ancient Greece: From Hemlock to Bucephalus",
+  "description": "A teacher's death, a grove of learning, a prince, and a horse afraid of its shadow—five steps into the tutors of conquerors.",
   "questions": [
     {
       "level": 1,
-      "question": "Who was the most famous student of Socrates?",
+      "question": "After Socrates drank hemlock in 399 BC, which student turned their conversations into the dialogues that still teach philosophy?",
       "answer": "Plato",
       "acceptedAnswers": [
         "Plato",
         "plato",
-        "platon",
-        "plato of athens"
+        "platon"
       ],
       "choices": [
         "Xenophon",
-        "Pythagoras",
-        "Heraclitus"
+        "Alcibiades",
+        "Aristophanes"
       ],
-      "explanation": "After Socrates was executed in 399 BC, Plato turned his teacher's conversations into the dialogues that still anchor Western philosophy."
+      "explanation": "Socrates wrote nothing down. Almost everything we \"hear\" him say is Plato ventriloquizing his teacher—and sometimes arguing with him."
     },
     {
       "level": 2,
-      "question": "Plato founded a school in a sacred grove outside Athens called what?",
+      "question": "He founded a school in a sacred grove outside Athens named for the hero Akademos. What was the school called?",
       "answer": "Academy",
       "acceptedAnswers": [
         "Academy",
         "academy",
         "the academy",
         "plato's academy",
-        "akademia"
+        "akademeia"
       ],
       "choices": [
         "Lyceum",
         "Stoa",
-        "Agora"
+        "Garden"
       ],
-      "explanation": "The grove was named for the hero Akademos—and every 'academy' since borrows the name."
+      "explanation": "Every \"academy\" since borrows the name. Aristotle's later school, the Lyceum, and Epicurus's Garden were the rivals."
     },
     {
       "level": 3,
-      "question": "Which future philosopher studied at Plato's Academy for about twenty years?",
+      "question": "Which future philosopher studied at Plato's Academy for about twenty years—then spent a career disagreeing with him?",
       "answer": "Aristotle",
       "acceptedAnswers": [
         "Aristotle",
         "aristotle",
-        "aristoteles",
-        "aristotle of stagira"
+        "aristoteles"
       ],
       "choices": [
-        "Epicurus",
+        "Plotinus",
         "Diogenes",
-        "Zeno of Citium"
+        "Epicurus"
       ],
-      "explanation": "Aristotle arrived around age 17 and stayed until Plato died in 347 BC—then went on to disagree with his teacher about almost everything."
+      "explanation": "He arrived around age 17 and stayed until Plato died in 347 BC. \"Plato is dear to me,\" a later paraphrase goes, \"but truth is dearer still.\""
     },
     {
       "level": 4,
@@ -66,30 +64,28 @@
         "alexander of macedon"
       ],
       "choices": [
-        "Pyrrhus of Epirus",
-        "Demetrius Poliorcetes",
-        "Cyrus the Great"
+        "Philip II",
+        "Ptolemy",
+        "Hephaestion"
       ],
-      "explanation": "From about 343 BC, Aristotle taught the young Alexander—who would carry Greek culture from Egypt to India."
+      "explanation": "From about 343 BC, Aristotle taught the boy who would carry Greek culture from Egypt to the edge of India—and name cities after himself along the way."
     },
     {
       "level": 5,
-      "question": "As a boy, Alexander the Great tamed a horse no one else could ride—what was its name?",
+      "question": "As a boy, Alexander tamed a horse no one else could ride by turning its head toward the sun—away from its own shadow. What was its name?",
       "answer": "Bucephalus",
       "acceptedAnswers": [
         "Bucephalus",
         "bucephalus",
         "boukephalas",
-        "bucephalas",
-        "bukephalos"
+        "bukephalas"
       ],
       "choices": [
         "Incitatus",
-        "Marengo",
-        "Pegasus"
+        "Pegasus",
+        "Marengo"
       ],
-      "hint": "The name means 'ox-head'",
-      "explanation": "Alexander noticed the horse was afraid of its own shadow and turned it toward the sun. He later named a city in its honor."
+      "explanation": "He later named a city in modern Pakistan for the horse: Bucephala. When Bucephalus died, Alexander mourned him like a friend."
     }
   ],
   "image": "parthenon-temple.jpg",

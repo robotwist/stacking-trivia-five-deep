@@ -1,6 +1,6 @@
 {
-  "title": "Tesla: Electrical Genius",
-  "description": "Electrical wizardry, fierce rivalry, and wireless dreams—five inventor depths.",
+  "title": "Tesla: War of Currents",
+  "description": "A park-bench vision from Faust, a war over how electricity should flow, man-made lightning, and a tower sold for scrap—five steps into a misunderstood inventor.",
   "questions": [
     {
       "level": 1,
@@ -41,7 +41,7 @@
     },
     {
       "level": 3,
-      "question": "Edison's DC rival Tesla discovered what principle that made practical AC motors possible?",
+      "question": "Edison's DC rival Tesla said the insight for practical AC motors hit him in a Budapest park while he recited Goethe's Faust. What principle did he see?",
       "answer": "Rotating magnetic field",
       "acceptedAnswers": [
         "rotating magnetic field",
@@ -74,7 +74,7 @@
         "Leadville"
       ],
       "hint": "A mountainous state's springs-named city where he created artificial lightning",
-      "explanation": "There in 1899 he made man-made lightning and heard rhythmic signals he later insisted came from Mars. Historians suspect Marconi's experiments or natural radio noise."
+      "explanation": "There in 1899 he made man-made lightning and logged rhythmic signals he later blamed on Mars. Most engineers think he heard natural radio noise."
     },
     {
       "level": 5,
@@ -93,7 +93,7 @@
         "Cold Spring Harbor"
       ],
       "hint": "Named after the benefactor James S. Warden, it was meant to transmit power wirelessly across the Atlantic",
-      "explanation": "J.P. Morgan put in $150,000, but the money ran out and the unfinished tower was dynamited for scrap in 1917 to pay Tesla's Waldorf-Astoria debts. Wartime rumors claimed the government blew it up to stop German spies; Tesla couldn't publicly correct them without admitting he was broke."
+      "explanation": "J.P. Morgan put in $150,000, but the money ran out. In 1917 the unfinished tower was dynamited for scrap to pay his Waldorf debts—not, as rumors claimed, to stop German spies."
     }
   ],
   "imageHint": "Lightning, coils, and the age of electricity",

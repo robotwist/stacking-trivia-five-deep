@@ -5,7 +5,7 @@
   "questions": [
     {
       "level": 1,
-      "question": "What is the fastest land animal?",
+      "question": "What big cat is the fastest land animal—and can't roar, but purrs and chirps instead?",
       "answer": "Cheetah",
       "acceptedAnswers": [
         "cheetah",
@@ -74,7 +74,7 @@
     },
     {
       "level": 5,
-      "question": "Some black-and-white Antarctic birds eat so much krill that their poop turns pink! Which birds are they?",
+      "question": "Some black-and-white Antarctic birds eat so much krill their poop turns pink—and satellites can see the stains. Which birds?",
       "answer": "Penguin",
       "acceptedAnswers": [
         "penguin",

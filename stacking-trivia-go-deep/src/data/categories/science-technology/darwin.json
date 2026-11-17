@@ -1,10 +1,10 @@
 {
-  "title": "Darwin: Evolution Revolution",
-  "description": "One voyage, one book—five steps from a Royal Navy ship to the theory that changed biology.",
+  "title": "Darwin: Five Weeks That Changed Biology",
+  "description": "A captain nervous about noses, five weeks among strange birds, and a book that ends on one careful word—five steps into a revolution.",
   "questions": [
     {
       "level": 1,
-      "question": "What is the title of Darwin's groundbreaking 1859 book that introduced the theory of evolution?",
+      "question": "Darwin's 1859 bombshell never uses the word \"evolution\" in its first edition—yet ends on \"evolved.\" What is the book's title?",
       "answer": "On the Origin of Species",
       "acceptedAnswers": [
         "On the Origin of Species",
@@ -39,7 +39,7 @@
         "HMS Challenger"
       ],
       "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world",
-      "explanation": "Captain Robert FitzRoy, a believer in reading faces, nearly rejected Darwin over the shape of his nose, Darwin later wrote. The voyage ran almost five years; he was seasick throughout."
+      "explanation": "Captain Robert FitzRoy, a believer in reading faces, nearly rejected Darwin over the shape of his nose. The voyage lasted almost five years; Darwin was seasick for much of it."
     },
     {
       "level": 3,

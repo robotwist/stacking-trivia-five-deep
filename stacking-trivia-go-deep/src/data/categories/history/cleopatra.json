@@ -1,55 +1,58 @@
 {
-  "title": "Cleopatra: Last Pharaoh's Final Act",
-  "description": "Politics, romance, and myth around history’s most famous queen.",
+  "title": "Last Pharaoh's Final Act",
+  "description": "A smuggled entrance, a little heir, and a death no one can prove—five steps into Egypt's last active ruler.",
   "questions": [
     {
       "level": 1,
-      "question": "Which queen, the last active ruler of Ptolemaic Egypt, was reportedly the first of her Greek dynasty to learn Egyptian?",
+      "question": "Smuggled past palace guards in 48 BC—Plutarch says in a bed-sack—which Ptolemaic queen was the first of her Greek line to speak Egyptian?",
       "answer": "Cleopatra VII",
       "acceptedAnswers": [
         "Cleopatra VII",
-        "cleopatra",
         "cleopatra vii",
-        "cleopatra 7"
+        "cleopatra",
+        "cleopatra 7",
+        "cleopatra the seventh"
       ],
       "choices": [
-        "Hatshepsut",
-        "Nefertiti",
-        "Ramesses II"
+        "Berenice IV",
+        "Arsinoe IV",
+        "Hatshepsut"
       ],
-      "explanation": "The Ptolemies descended from one of Alexander the Great's Macedonian generals. Mind-bender: she lived closer in time to the Moon landing than to the building of the Great Pyramid."
+      "explanation": "The Ptolemies descended from one of Alexander's generals and had ruled Egypt in Greek for centuries. She lived closer in time to the iPhone than to the Great Pyramid's builders."
     },
     {
       "level": 2,
-      "question": "Which Roman leader did Cleopatra have a relationship with before Mark Antony?",
+      "question": "That bed-sack delivery reached which Roman general—her first great alliance, years before Mark Antony?",
       "answer": "Julius Caesar",
       "acceptedAnswers": [
         "Julius Caesar",
         "julius caesar",
-        "caesar"
+        "caesar",
+        "gaius julius caesar"
       ],
       "choices": [
-        "Octavian",
-        "Marcus Brutus",
-        "Marcus Crassus"
+        "Mark Antony",
+        "Pompey",
+        "Octavian"
       ],
-      "explanation": "Plutarch says she reached him in 48 BC tied up in a bed-sack carried by her ally Apollodorus. The rolled-up carpet came later, courtesy of translators and Hollywood."
+      "explanation": "He was 52; she was about 21. Their alliance put her back on the throne and gave Rome a stake in Egypt's grain."
     },
     {
       "level": 3,
-      "question": "What was the name of Cleopatra and Caesar's son?",
+      "question": "She and that Roman general had a son, Ptolemy XV. History remembers him by what name?",
       "answer": "Caesarion",
       "acceptedAnswers": [
         "Caesarion",
         "caesarion",
-        "cesarion"
+        "ptolemy xv caesarion",
+        "ptolemy caesar"
       ],
       "choices": [
+        "Ptolemy XIII",
         "Alexander Helios",
-        "Ptolemy Philadelphus",
-        "Ptolemy XIV"
+        "Ptolemy Philadelphus"
       ],
-      "explanation": "Plutarch says Alexandrians gave him that nickname: \"little Caesar.\" After her death, Octavian had him killed, reportedly advised that too many Caesars was not a good thing."
+      "explanation": "Alexandrians coined the nickname that stuck: \"little Caesar.\" After her death, Octavian had the teenager killed. \"Two Caesars,\" the saying went, \"is one too many.\""
     },
     {
       "level": 4,
@@ -59,15 +62,17 @@
         "Snake bite",
         "snake bite",
         "asp bite",
-        "cobra bite",
-        "serpent bite"
+        "an asp",
+        "asp",
+        "snakebite",
+        "bitten by a snake"
       ],
       "choices": [
-        "Falling on a sword",
-        "Drowning in the Nile",
-        "Leaping from a tower"
+        "Poisoned wine",
+        "Stabbed by guards",
+        "Starvation"
       ],
-      "explanation": "Even Plutarch, our main source, admitted \"the truth of the matter no one knows\"; another rumor had poison hidden in a hollow comb. Octavian still paraded her image with the serpent."
+      "explanation": "Even Plutarch admitted \"the truth of the matter no one knows.\" Another rumor had poison hidden in a hollow comb."
     },
     {
       "level": 5,
@@ -77,14 +82,15 @@
         "Egyptian cobra",
         "egyptian cobra",
         "cobra",
-        "asp"
+        "naja haje",
+        "the egyptian cobra"
       ],
       "choices": [
+        "Horned viper",
         "Black mamba",
-        "Puff adder",
-        "Reticulated python"
+        "Python"
       ],
-      "explanation": "Ancient writers said \"asp\"; historians who buy the story favor the cobra, whose venom kills quietly. Fitting: the rearing cobra, the uraeus, was Egypt's royal emblem. Others doubt any snake."
+      "explanation": "Ancient writers said \"asp.\" Historians who buy the story favor the cobra: its venom brings sleepiness without violent spasms—the dignified death Plutarch says she wanted."
     }
   ],
   "image": "egyptian-royal-crown.jpg",
