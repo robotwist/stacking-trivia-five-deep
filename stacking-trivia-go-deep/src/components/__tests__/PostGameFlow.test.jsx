@@ -25,4 +25,19 @@ describe('PostGameFlow easter egg', () => {
     expect(screen.queryByText('Finn is FN-2187.')).not.toBeInTheDocument()
     expect(screen.getByText(/hides an easter egg/i)).toBeInTheDocument()
   })
+
+  it('keeps a skipped level empty instead of shifting the later answers', () => {
+    const indexed = [
+      { questionIndex: 0, correct: true },
+      { questionIndex: 2, correct: false, userAnswer: 'nope' },
+    ]
+    render(<PostGameFlow stackKey="star-wars" stack={stack} score={10} maxScore={310} answers={indexed} />)
+
+    expect(screen.getByLabelText('Level 1 correct')).toBeInTheDocument()
+    expect(screen.getByLabelText('Level 2 unseen')).toBeInTheDocument()
+    expect(screen.getByLabelText('Level 3 missed')).toBeInTheDocument()
+    expect(screen.getByText('Level 2 — still a mystery')).toBeInTheDocument()
+    expect(screen.getByText('Q3')).toBeInTheDocument()
+    expect(screen.getByText('You said “nope”')).toBeInTheDocument()
+  })
 })

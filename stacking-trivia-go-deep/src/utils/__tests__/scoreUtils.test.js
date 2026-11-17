@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { 
   calculateQuestionScore, 
+  pointsForDeeperQuestion,
   calculateMaxScore, 
   getCrowdMultiplier,
   formatScore 
@@ -30,18 +31,35 @@ describe('Score Utilities', () => {
     })
   })
 
+  describe('pointsForDeeperQuestion', () => {
+    it('uses the authored bonus when the question has one', () => {
+      expect(pointsForDeeperQuestion({ bonus: 150 }, 0)).toBe(150)
+      expect(pointsForDeeperQuestion({ bonus: 200 }, 1)).toBe(200)
+    })
+
+    it('falls back to the depth formula when bonus is missing', () => {
+      expect(pointsForDeeperQuestion({}, 0)).toBe(60)
+      expect(pointsForDeeperQuestion({ bonus: 0 }, 1)).toBe(70)
+    })
+  })
+
   describe('calculateMaxScore', () => {
     it('should calculate correct max score for standard 5 questions', () => {
       expect(calculateMaxScore(5, false)).toBe(310) // 10+20+40+80+160
     })
 
-    it('should calculate correct max score with deeper mode', () => {
-      expect(calculateMaxScore(5, true)).toBe(560) // 310 + (50*5)
+    it('adds the flat deeper-mode formula once per bonus question, not once per main level', () => {
+      expect(calculateMaxScore(5, 2)).toBe(440) // 310 + 60 + 70
+      expect(calculateMaxScore(5, [{}, {}])).toBe(440)
+    })
+
+    it('adds authored bonuses instead of the flat formula', () => {
+      expect(calculateMaxScore(5, [{ bonus: 150 }, { bonus: 200 }])).toBe(660)
     })
 
     it('should handle different question counts', () => {
       expect(calculateMaxScore(3, false)).toBe(310) // Still uses base max
-      expect(calculateMaxScore(3, true)).toBe(460) // 310 + (50*3)
+      expect(calculateMaxScore(3, 2)).toBe(440) // ceiling stays 310, plus two bonus questions
     })
 
     it('should use default values when not provided', () => {

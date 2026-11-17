@@ -3,7 +3,7 @@ import QuickHostControls from './QuickHostControls';
 import PhotoIdentification from './PhotoIdentification';
 import { checkAnswerMatch } from '../utils/textUtils';
 import { getLevelLabel } from '../utils/normalizeStack';
-import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore, applyChoicesPenalty } from '../utils/scoreUtils';
+import { calculateQuestionScore, pointsForDeeperQuestion, getCrowdMultiplier, calculateMaxScore, applyChoicesPenalty } from '../utils/scoreUtils';
 import { shuffleArray } from '../utils/arrayUtils';
 import { useAuth } from '../contexts/AuthContext';
 import ProgressStorage from '../utils/progressStorage';
@@ -132,10 +132,10 @@ const GameStack = memo(function GameStack({
     if (onComplete) {
       const correctCount = answers.filter((a) => a.correct).length;
       const accuracy = answers.length > 0 ? Math.round((correctCount / answers.length) * 100) : 0;
-      const runMax = calculateMaxScore(stackData.questions.length, deeper);
+      const runMax = calculateMaxScore(stackData.questions.length, deeper ? deeperQuestions : []);
       onComplete(finalScore, runMax, answers.length, accuracy, answers);
     }
-  }, [isAuthenticated, markStackCompleted, onComplete, stackData.title, stackData.questions.length]);
+  }, [isAuthenticated, markStackCompleted, onComplete, stackData.title, stackData.questions.length, deeperQuestions]);
 
   const handlePause = useCallback(() => {
     setIsPaused(true);
@@ -181,7 +181,9 @@ const GameStack = memo(function GameStack({
     let points = 0;
     if (isCorrect) {
       const multiplier = showHostControls ? getCrowdMultiplier(crowdEnergy) : 1;
-      const base = calculateQuestionScore(currentDepth, isDeepMode);
+      const base = isDeepMode
+        ? pointsForDeeperQuestion(current, currentDepth)
+        : calculateQuestionScore(currentDepth, false);
       points = Math.round((choicesCostPoints ? applyChoicesPenalty(base) : base) * multiplier);
     }
 

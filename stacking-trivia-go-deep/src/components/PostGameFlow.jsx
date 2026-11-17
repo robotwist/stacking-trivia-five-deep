@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { submitFeedback } from '../services/feedbackService';
 import FeedbackModal from './FeedbackModal';
 import { shareRun } from '../utils/share.js';
-import { buildResultCode, ladderFromCode } from '../utils/playerRecords';
+import { answerForLevel, buildResultCode, ladderFromCode } from '../utils/playerRecords';
 import { track } from '../utils/analytics';
 
 const PLAYER_NAME_KEY = 'deepstack_player_name';
@@ -56,7 +56,7 @@ const PostGameFlow = ({
   const levelsCleared = mainAnswers.filter((a) => a.correct).length;
   const resultCode = buildResultCode(answers, totalLevels);
   const ladder = ladderFromCode(resultCode);
-  const hasUnseenLevels = mainAnswers.length < totalLevels;
+  const hasUnseenLevels = questions.some((_, i) => !answerForLevel(answers, i));
 
   const handleNameChange = (e) => {
     const name = e.target.value.slice(0, 24);
@@ -184,7 +184,7 @@ const PostGameFlow = ({
           </h2>
           <ol className="space-y-4">
             {questions.map((q, i) => {
-              const answer = mainAnswers[i];
+              const answer = answerForLevel(answers, i);
               const seen = !!answer;
               const visible = seen || revealRest;
               const status = !seen ? 'unseen' : !answer.correct ? 'missed' : answer.usedChoices ? 'assisted' : 'correct';

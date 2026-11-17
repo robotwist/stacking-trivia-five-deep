@@ -233,6 +233,14 @@ function AuthenticatedGameApp() {
     initAudio();
   }, []);
 
+  // Opening-round completion lands on this retired mode. Reset after commit so
+  // the render itself does not call setState.
+  useEffect(() => {
+    if (gameMode !== 'individual-stacks') return
+    setGameMode('solo')
+    setSelectedCategory(null)
+  }, [gameMode]);
+
   const [darkMode, toggleDarkMode] = useDarkMode()
   const [gameHistory, addToGameHistory] = useGameHistory()
 
@@ -692,8 +700,7 @@ function AuthenticatedGameApp() {
   }
 
   if (gameMode === 'individual-stacks') {
-    setGameMode('solo')
-    setSelectedCategory(null)
+    return null
   }
 
   if (gameStarted && selectedStack && gameStacks[selectedStack]) {

@@ -125,10 +125,23 @@ const LADDER_EMOJI = { g: '🟩', y: '🟨', r: '🟥', w: '⬜' }
  * @param {{ correct: boolean, usedChoices?: boolean, deeper?: boolean }[]} answers
  * @param {number} totalLevels
  */
+/**
+ * Main-ladder answer for a level. When answers carry questionIndex, a skipped
+ * level stays empty instead of shifting every later level. Older runs with no
+ * index stay in answer order.
+ * @param {{ deeper?: boolean, questionIndex?: number }[]} answers
+ * @param {number} index
+ */
+export const answerForLevel = (answers, index) => {
+  const main = (answers || []).filter((a) => !a.deeper)
+  const indexed = main.some((a) => Number.isInteger(a.questionIndex))
+  if (!indexed) return main[index]
+  return main.find((a) => a.questionIndex === index)
+}
+
 export const buildResultCode = (answers, totalLevels) => {
-  const main = answers.filter((a) => !a.deeper)
   return Array.from({ length: totalLevels }, (_, i) => {
-    const answer = main[i]
+    const answer = answerForLevel(answers, i)
     if (!answer) return 'w'
     if (!answer.correct) return 'r'
     return answer.usedChoices ? 'y' : 'g'

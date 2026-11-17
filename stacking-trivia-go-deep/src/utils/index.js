@@ -9,7 +9,7 @@ export { shuffleArray, getRandomElement, chunkArray } from './arrayUtils'
 export { normalizeAnswer, checkAnswerMatch, calculateSimilarity } from './textUtils'
 
 // Score utilities
-export { calculateQuestionScore, calculateMaxScore, getCrowdMultiplier, formatScore } from './scoreUtils'
+export { calculateQuestionScore, pointsForDeeperQuestion, calculateMaxScore, getCrowdMultiplier, formatScore } from './scoreUtils'
 
 // Storage utilities
 export { setStorageItem, getStorageItem, removeStorageItem, clearStorage } from './storageUtils'

@@ -76,6 +76,15 @@ describe('playerRecords', () => {
     expect(ladderFromCode('gyrww')).toBe('🟩🟨🟥⬜⬜')
   })
 
+  it('keeps later levels on their question when an earlier answer is missing', () => {
+    const answers = [
+      { questionIndex: 0, correct: true },
+      { questionIndex: 2, correct: false },
+      { questionIndex: 0, correct: false, deeper: true },
+    ]
+    expect(buildResultCode(answers, 5)).toBe('gwrww')
+  })
+
   it('numbers daily stacks from Jan 1, 2026', () => {
     expect(getDailyNumber(day(2026, 1, 1))).toBe(1)
     expect(getDailyNumber(day(2026, 11, 12))).toBe(316)
