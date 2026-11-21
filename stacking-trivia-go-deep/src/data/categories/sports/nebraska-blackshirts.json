@@ -1,6 +1,6 @@
 {
   "title": "Nebraska: Blackshirts",
-  "description": "Black practice jerseys, a Wyoming import's defense, and the unit that made Saturdays mean—five steps into Husker D lore.",
+  "description": "Black practice jerseys, a Wyoming import's defense, and the unit that made Saturdays mean. Go Deep into Husker D lore.",
   "image": "memorial-stadium.jpg",
   "imageHint": "Black practice jerseys that became a statewide identity",
   "category": "sports",
@@ -33,15 +33,15 @@
         "robert devaney"
       ],
       "choices": [
-        "Tom Osborne",
         "Frank Solich",
-        "Bo Pelini"
+        "Bo Pelini",
+        "Mike Riley"
       ],
       "explanation": "Devaney brought the black-jersey hierarchy with him. Walk-ons still tell the story: you don't buy a Blackshirt—you earn it."
     },
     {
       "level": 3,
-      "question": "Under Devaney's successor, which defensive coordinator ran the Blackshirts from 1982 through the Osborne title years?",
+      "question": "Under Devaney's longtime successor, which defensive coordinator ran the Blackshirts from 1982 through the mid-90s title years?",
       "answer": "Charlie McBride",
       "acceptedAnswers": [
         "Charlie McBride",
@@ -78,7 +78,7 @@
         "21",
         "28"
       ],
-      "explanation": "About 14.5 including the Fiesta Bowl (Wikipedia's 12-game book); regular-season charts sat near 13.6. Either way: a 50-point offense married to a stingy Blackshirt front."
+      "explanation": "About 14.5 including the Fiesta Bowl (12-game book); regular-season charts sat near 13.6. A 50-point offense married to a stingy front—mismatch factory."
     },
     {
       "level": 5,
@@ -91,14 +91,14 @@
       ],
       "choices": [
         "Ndamukong Suh",
-        "Trev Alberts",
-        "Jason Peter"
+        "Jason Peter",
+        "Jared Tomich"
       ],
-      "explanation": "Wistrom was a two-time All-American who played through the 1994–97 title window, then won a Super Bowl with St. Louis. Suh came a generation later; Alberts owned the early '90s Butkus lore."
+      "explanation": "Wistrom was a two-time All-American across the mid-90s title window, then won a Super Bowl with St. Louis. Suh's Outland/Nagurski year came a generation later, in 2009."
     }
   ],
   "deeperMode": {
-    "title": "Deeper: More Blackshirt Blood",
+    "title": "Go Deeper: More Blackshirt Blood",
     "description": "Names the Tunnel Walk crowd still chants",
     "questions": [
       {
@@ -127,6 +127,6 @@
   },
   "easterEgg": {
     "title": "You earn it",
-    "text": "In the Devaney–Osborne years, black jerseys weren't merchandise. Defensive starters got them for practice; everyone else watched. The nickname outlived the laundry rule."
+    "text": "In the Devaney years and after, black jerseys weren't merchandise. Defensive starters got them for practice; everyone else watched. The nickname outlived the laundry rule."
   }
 }

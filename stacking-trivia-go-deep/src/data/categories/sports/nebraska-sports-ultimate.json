@@ -1,6 +1,6 @@
 {
   "title": "Nebraska: Sea of Red",
-  "description": "From Bugeaters to a stadium that becomes a city—then the mountain-west hire who made Saturdays holy.",
+  "description": "From Bugeaters to a stadium that becomes a city—then the mountain-west hire who made Saturdays holy. Go Deep.",
   "image": "memorial-stadium.jpg",
   "imageHint": "A sea of red on game day in Lincoln",
   "category": "sports",
@@ -72,28 +72,29 @@
         "Montana",
         "BYU"
       ],
-      "explanation": "Devaney arrived for the 1962 season and went 9-2. Within a decade he'd turn a sleepy program into a national power—and hand the keys to his assistant, Tom Osborne."
+      "explanation": "Devaney arrived for the 1962 season and went 9-2. Within a decade he'd turned a sleepy program into a national power—and built the Blackshirt culture that still defines Saturdays."
     },
     {
       "level": 5,
-      "question": "Devaney, hired from Wyoming, won his first national championship for Nebraska in which season?",
-      "answer": "1970",
+      "question": "Devaney, hired from Wyoming, sealed his first national title by beating which team in the Orange Bowl on Jan. 1, 1971?",
+      "answer": "LSU",
       "acceptedAnswers": [
-        "1970",
-        "nineteen seventy",
-        "'70",
-        "the 1970 season"
+        "LSU",
+        "lsu",
+        "louisiana state",
+        "louisiana state university",
+        "the tigers"
       ],
       "choices": [
-        "1965",
-        "1971",
-        "1983"
+        "Texas",
+        "Oklahoma",
+        "Alabama"
       ],
-      "explanation": "They finished it off by beating LSU in the Orange Bowl on Jan. 1, 1971. He won again in 1971, then stepped aside so Osborne could begin the longest assistant-to-throne handoff in college football lore."
+      "explanation": "Final: Nebraska 17, LSU 12. That capped the 1970 season. He won again in 1971, then stepped aside so his longtime assistant could take the headset."
     }
   ],
   "deeperMode": {
-    "title": "Deeper: Tunnel and Stone",
+    "title": "Go Deeper: Tunnel and Stone",
     "description": "For anyone who has shivered through a November Tunnel Walk",
     "questions": [
       {
