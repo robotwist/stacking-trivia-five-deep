@@ -10,6 +10,10 @@ Our best stacks today, to copy from: **Queso Wars**, **Serena Williams**, **1984
 
 For sports fans, prefer **one famous night** over a résumé. Jordan’s Last Shot and Nebraska’s 1984 Orange Bowl are the bar: who scored, who threw, who tipped, who left hurt, what the final was. College / hometown topics that locals clear by level 4 should become a **triple stack** (three linked five-level stories), not one easy five.
 
+### Cinema / TV: one-scene chains
+
+Same idea on screen: **one sequence**, not a filmography. Star Wars Death Star rescue and The Godfather horse’s head are the bar—prop, line, number, behind-the-scenes receipt. Open on the scene; put résumé facts (who directed) in Go Deeper if at all.
+
 ## The rubric (score each 0–2; 12+ of 16 ships)
 
 | | 0 — weak | 1 — fine | 2 — great |

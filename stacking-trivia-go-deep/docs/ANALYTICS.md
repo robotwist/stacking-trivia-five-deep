@@ -25,7 +25,7 @@ Each player is a random anonymous id stored on their device. We never send names
 | `story revealed` | "Reveal the rest of the story" | `stack`, `levels_unseen` |
 | `feedback sent` | Error report or rating | `stack`, `rating`, `category` |
 | `install prompted` | Install button | `outcome`, `platform` |
-| `host night started` / `finished` | Host Night | `teams`, `rounds`, `dive_rule`, `show_choices`, `tv_screen` |
+| `host night started` / `finished` | Host Night | `teams`, `rounds`, `dive_rule` (Go Deep rule in the UI), `show_choices`, `tv_screen` |
 | `host pass signup` | Founding host form | `host_type`, `nights_per_month` (never the email) |
 
 ## The five insights to build first
