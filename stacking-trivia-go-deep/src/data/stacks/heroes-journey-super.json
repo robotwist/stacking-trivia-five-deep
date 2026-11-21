@@ -93,7 +93,33 @@
   "deeperMode": {
     "title": "Deeper: Myth and Mind",
     "description": "Bonus lore for myth obsessives",
-    "questions": []
+    "questions": [
+      {
+        "question": "In Campbell's stages, what does he call the moment the hero first turns down the adventure?",
+        "acceptedAnswers": [
+          "Refusal of the Call",
+          "refusal of the call",
+          "the refusal of the call",
+          "refusal",
+          "refusing the call"
+        ],
+        "bonus": 150,
+        "hint": "Right after the Call to Adventure—Luke saying he has to stay on the farm"
+      },
+      {
+        "question": "After that refusal, Campbell names the helper who gives a talisman or advice. What is that stage called?",
+        "acceptedAnswers": [
+          "Supernatural Aid",
+          "supernatural aid",
+          "meeting with the mentor",
+          "the mentor",
+          "mentor",
+          "supernatural aid stage"
+        ],
+        "bonus": 200,
+        "hint": "Obi-Wan with a lightsaber; a fairy godmother with a wand—Campbell's original term"
+      }
+    ]
   },
   "easterEgg": {
     "title": "After the trilogy",

@@ -97,7 +97,32 @@
   "deeperMode": {
     "title": "Queen of the Court",
     "description": "Career records and battles beyond this Melbourne chapter",
-    "questions": []
+    "questions": [
+      {
+        "question": "Beyond that secret Melbourne title, Serena holds the Open Era women's record for Grand Slam singles crowns. How many did she win?",
+        "acceptedAnswers": [
+          "23",
+          "twenty-three",
+          "twenty three",
+          "23 titles",
+          "twenty-three titles"
+        ],
+        "bonus": 150,
+        "hint": "One more than Steffi Graf's 22"
+      },
+      {
+        "question": "Those 23 majors sit beside Olympic singles gold from 2012—in which city did Serena complete her Career Golden Slam?",
+        "acceptedAnswers": [
+          "London",
+          "london",
+          "London England",
+          "Wimbledon",
+          "wimbledon"
+        ],
+        "bonus": 200,
+        "hint": "Same grounds as the grass-court major, during the Summer Games"
+      }
+    ]
   },
   "easterEgg": {
     "title": "AO for Aussie Open",
