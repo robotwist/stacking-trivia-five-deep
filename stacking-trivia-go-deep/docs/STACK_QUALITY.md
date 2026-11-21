@@ -2,7 +2,13 @@
 
 A stack is great when a fan finishes it and wants to tell someone. That happens when it does four things: it **hooks** them, **pays off** every answer, **rewards fans** with deep cuts, and **lands a turn** by level 5. Accuracy and fairness are the floor, not the goal.
 
-Our best stacks today, to copy from: **Queso Wars**, **Serena Williams**, **Actually: Van Gogh Myths Busted**, **Ancient Greece**, **Where Gandalf Came From**.
+**Voice:** Say **Go Deep**, not “dive” / “deep dive.” “Dive deep into a subject” is a business cliché. Go Deep is the product language (and a football throw).
+
+Our best stacks today, to copy from: **Queso Wars**, **Serena Williams**, **1984 Orange Bowl**, **Michael Jordan: The Last Shot**, **Where Gandalf Came From**.
+
+### Sports: legendary-possession chains
+
+For sports fans, prefer **one famous night** over a résumé. Jordan’s Last Shot and Nebraska’s 1984 Orange Bowl are the bar: who scored, who threw, who tipped, who left hurt, what the final was. College / hometown topics that locals clear by level 4 should become a **triple stack** (three linked five-level stories), not one easy five.
 
 ## The rubric (score each 0–2; 12+ of 16 ships)
 
@@ -39,7 +45,7 @@ Every level should feel like going one layer further into the fandom.
 - **In-joke decoys.** Make the wrong choices real numbers, names, and lines from the same world (TK-421, Docking Bay 327, Docking Bay 94). Even a wrong guess should make a fan smile.
 - **Deep cuts with receipts.** Behind-the-scenes facts in the creator's own words beat summaries ("I purposely made myself red-faced for a strangulated look"). Always find the primary quote; fandom myths get corrected loudly.
 - **Callbacks across levels.** Let a later level pay off an earlier one (the cell-block bluff sets up the cell number).
-- **The easter egg.** An optional `easterEgg` (`title`, `text`) is revealed only on a perfect dive: the nod that rewards going all the way down (Finn's stormtrooper number is FN-2187, Leia's cell). Players who miss see that one exists, which pulls them back.
+- **The easter egg.** An optional `easterEgg` (`title`, `text`) is revealed only on a perfect Go Deep: the nod that rewards going all the way down (Finn's stormtrooper number is FN-2187, Leia's cell). Players who miss see that one exists, which pulls them back.
 
 ### Fan-craft checklist before shipping
 
@@ -67,7 +73,7 @@ Weak: *"Released in 1963, it launched Beatlemania."* (true, but generic)
 ## Fan delight by genre
 
 - **TV and movies:** catchphrases, episode names, behind-the-scenes facts (a real horse head from a dog-food plant), actors' improvised lines, props.
-- **Sports:** the exact stat fans argue about, the rival, the near miss, what happened right after the famous moment.
+- **Sports:** one legendary possession or quarter—who scored, who assisted, who tipped, the scoreboard beat fans still argue. Stats support the story; they are not the story.
 - **History and science:** the human detail (Curie's notebooks are still radioactive), the myth vs. the record, the unexpected connection.
 - **Music and art:** the session story, the one-take legend, what the artist said about it.
 - **Kids:** wow-numbers and gross-cool facts ("a pigeon is a distant cousin of T. rex"), friendly words, nothing scary.

@@ -160,7 +160,7 @@ function App() {
                     {stack.title}
                   </h3>
                   <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
-                    {stack.description || "Dive deep into this fascinating topic"}
+                    {stack.description || "Go Deep into this story"}
                   </p>
                   <div className="flex items-center justify-between text-xs">
                     <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>

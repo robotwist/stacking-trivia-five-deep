@@ -1,29 +1,30 @@
 {
-  "title": "OKC Thunder: Seattle's Ghost, Presti's Picks",
-  "description": "A bitter relocation, a UCLA guard taken fourth, a mountain of future assets, and a new MVP face—five steps into Thunder basketball.",
+  "title": "OKC Thunder: Finals Game 1, 2012",
+  "description": "A 13-point hole, 36 in the fourth-quarter takeover, and a near triple-double—Go Deep into the night OKC took Game 1 of the 2012 Finals.",
   "image": "okc-thunder-paycom-center.jpg",
-  "imageHint": "The electric blue and orange of Paycom Center with passionate fans creating one of the NBA's loudest atmospheres",
+  "imageHint": "Chesapeake Energy Arena, June 2012, blue and orange roaring",
   "category": "sports",
   "questions": [
     {
       "level": 1,
-      "question": "After Clay Bennett won a bitter arena fight in Seattle, the SuperSonics relocated south and became the Thunder. In what year did the move happen?",
-      "answer": "2008",
+      "question": "In Game 1 of the 2012 NBA Finals, which Thunder star scored 36 points—including 17 in the fourth—to beat Miami?",
+      "answer": "Kevin Durant",
       "acceptedAnswers": [
-        "2008",
-        "two thousand eight",
-        "'08"
+        "Kevin Durant",
+        "kevin durant",
+        "durant",
+        "kd"
       ],
       "choices": [
-        "2006",
-        "2010",
-        "2012"
+        "James Harden",
+        "Serge Ibaka",
+        "Derek Fisher"
       ],
-      "explanation": "Seattle kept the SuperSonics name and colors in limbo; Oklahoma City got a franchise and a roar. Sam Presti, already GM, kept drafting through the chaos."
+      "explanation": "Twelve-of-twenty from the field at home. Once OKC took the lead late in the third, it never trailed again."
     },
     {
       "level": 2,
-      "question": "That same 2008 draft night—still under the Sonics name—Presti took which UCLA guard fourth overall, later nicknamed \"The Brodie\"?",
+      "question": "Durant's running mate that night nearly had a triple-double with 27 points, 11 assists, and 8 boards—who?",
       "answer": "Russell Westbrook",
       "acceptedAnswers": [
         "Russell Westbrook",
@@ -33,70 +34,96 @@
         "the brodie"
       ],
       "choices": [
-        "Kevin Durant",
         "James Harden",
-        "Serge Ibaka"
+        "Derek Fisher",
+        "Thabo Sefolosha"
       ],
-      "explanation": "Durant was already there from the last Sonics draft in 2007. Presti also grabbed Serge Ibaka at 24 that night. Westbrook became the heartbeat—and the triple-double machine."
+      "explanation": "Westbrook's second-half aggression flipped the game. Three of Durant's late buckets came directly off his dimes."
     },
     {
       "level": 3,
-      "question": "Westbrook later averaged a triple-double for a full season—the first to do so since which legend's lonely 1961–62 mark?",
-      "answer": "Oscar Robertson",
+      "question": "Westbrook's layup-and-one with 16.4 seconds left in the third gave OKC the lead for good against which LeBron–Wade–Bosh franchise?",
+      "answer": "Miami Heat",
       "acceptedAnswers": [
-        "Oscar Robertson",
-        "oscar robertson",
-        "the big o",
-        "oscar"
+        "Miami Heat",
+        "miami heat",
+        "heat",
+        "the heat",
+        "miami"
       ],
       "choices": [
-        "Magic Johnson",
-        "Jason Kidd",
-        "LeBron James"
+        "San Antonio Spurs",
+        "Dallas Mavericks",
+        "Boston Celtics"
       ],
-      "explanation": "Robertson's season stood alone for 54 years until Westbrook matched it in 2016–17—then did it again. \"Why not?\" became a slogan and a dare."
+      "explanation": "LeBron finished with 30. It wasn't enough. Final: Thunder 105, Heat 94—OKC's first Finals win as a franchise."
     },
     {
       "level": 4,
-      "question": "After Westbrook matched Oscar Robertson then left OKC, which scoring guard—snagged in the 2019 Paul George trade—became the new face of the Thunder?",
-      "answer": "Shai Gilgeous-Alexander",
+      "question": "After that 105–94 Game 1, Miami won the series. How many games did the Heat win in the Finals?",
+      "answer": "4",
       "acceptedAnswers": [
-        "Shai Gilgeous-Alexander",
-        "shai gilgeous-alexander",
-        "shai",
-        "sga",
-        "gilgeous-alexander"
+        "4",
+        "four",
+        "4 games",
+        "four games"
       ],
       "choices": [
-        "Chet Holmgren",
-        "Josh Giddey",
-        "Luguentz Dort"
+        "3",
+        "5",
+        "6"
       ],
-      "explanation": "Quiet footwork, endless midrange, MVP chatter. While SGA climbed, Presti was busy doing what Presti does: collecting future firsts like trading cards."
+      "explanation": "Heat took Games 2 through 5 for a 4–1 series. Game 1 remains the what-if night—the loudest Chesapeake ever got in June."
     },
     {
       "level": 5,
-      "question": "Around Shai Gilgeous-Alexander, Presti turned departing stars into a mountain of what future NBA asset—then flipped those into even more?",
-      "answer": "Draft capital",
+      "question": "In that Game 1 win, which Thunder big came off the bench for 10 rebounds and helped own the glass 43–35?",
+      "answer": "Nick Collison",
       "acceptedAnswers": [
-        "Draft capital",
-        "draft capital",
-        "first-round picks",
-        "draft picks",
-        "picks",
-        "future firsts",
-        "first-round selections"
+        "Nick Collison",
+        "nick collison",
+        "collison"
       ],
       "choices": [
-        "Cash considerations",
-        "Two-way contracts",
-        "G League affiliates"
+        "Kendrick Perkins",
+        "Serge Ibaka",
+        "Nazr Mohammed"
       ],
-      "explanation": "Stars out, firsts in, firsts into more firsts. By the mid-2020s the Thunder held an absurd pile of upcoming selections—the long game Seattle never got to finish."
+      "explanation": "Collison's offensive boards fueled the fourth-quarter run. Perkins started; the glue guy cleaned up. Locals still cheer the name."
     }
   ],
+  "deeperMode": {
+    "title": "Go Deeper: Seattle's Ghost",
+    "description": "How the franchise got to that Finals floor",
+    "questions": [
+      {
+        "question": "In what year did the Seattle SuperSonics relocate and become the Oklahoma City Thunder?",
+        "acceptedAnswers": [
+          "2008",
+          "two thousand eight",
+          "'08"
+        ],
+        "bonus": 150,
+        "hint": "Clay Bennett, bitter arena fight, Sam Presti already GM"
+      },
+      {
+        "question": "Durant was the last SuperSonics draft pick—selected which overall in 2007?",
+        "acceptedAnswers": [
+          "2nd overall",
+          "second overall",
+          "2",
+          "two",
+          "number 2",
+          "the second pick",
+          "2nd"
+        ],
+        "bonus": 200,
+        "hint": "One spot after Greg Oden"
+      }
+    ]
+  },
   "easterEgg": {
-    "title": "Last Sonics draft",
-    "text": "Kevin Durant was the last SuperSonics draft pick—No. 2 in 2007—before the move. He won MVP in Oklahoma City, reached the 2012 Finals, then left. The franchise's ghost and its future have been arguing ever since."
+    "title": "One lead change",
+    "text": "Box-score trivia from that Game 1: there was only one lead change the entire night. Once Westbrook put OKC ahead late in the third, the lead never flipped back."
   }
 }

@@ -14,7 +14,7 @@ const answers = (correctCount, total = 5) =>
   Array.from({ length: Math.min(total, correctCount + 1) }, (_, i) => ({ correct: i < correctCount }))
 
 describe('PostGameFlow easter egg', () => {
-  it('reveals the easter egg only after a perfect dive', () => {
+  it('reveals the easter egg only after a perfect Go Deep', () => {
     render(<PostGameFlow stackKey="star-wars" stack={stack} score={310} maxScore={310} answers={answers(5)} />)
     expect(screen.getByText("Leia's cell came back")).toBeInTheDocument()
     expect(screen.getByText('Finn is FN-2187.')).toBeInTheDocument()

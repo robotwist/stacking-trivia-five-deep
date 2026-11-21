@@ -773,7 +773,7 @@ function AuthenticatedGameApp() {
                     </button>
                   </h2>
                   <p className="text-sm text-amber-700 mb-4 flex-grow">
-                    {stack.description || 'Dive deep into this fascinating topic'}
+                    {stack.description || 'Go Deep into this story'}
                   </p>
                   <div className="flex items-center justify-between text-xs gap-2">
                     <span className="text-amber-600">5 levels deep</span>
@@ -858,7 +858,7 @@ function AuthenticatedGameApp() {
               Five questions. One story.
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-              Each answer unlocks the next question. Points double every level—10, 20, 40, 80, 160—and one miss ends the dive. How deep can you go?
+              Each answer unlocks the next question. Points double every level—10, 20, 40, 80, 160—and one miss ends the Go Deep. How deep can you go?
             </p>
           </section>
 
@@ -881,7 +881,7 @@ function AuthenticatedGameApp() {
                   onClick={() => startStack(dailyStackKey, 'daily')}
                   className="px-8 py-4 rounded-lg bg-amber-500 hover:bg-amber-400 text-gray-900 text-lg font-bold shadow-lg focus:outline-none focus:ring-4 focus:ring-amber-300"
                 >
-                  {playedDailyToday ? 'Play again' : 'Start the dive'}
+                  {playedDailyToday ? 'Play again' : 'Go Deep'}
                 </button>
                 <button
                   type="button"
@@ -903,7 +903,7 @@ function AuthenticatedGameApp() {
             <section aria-label="Your progress" className="max-w-3xl mx-auto mb-10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
               {[
                 ['Stacks played', `${playerSummary.stacksPlayed} / ${Object.keys(gameStacks).length}`],
-                ['Perfect dives', playerSummary.perfectStacks],
+                ['Perfect Go Deeps', playerSummary.perfectStacks],
                 ['Best-score total', playerSummary.totalBest.toLocaleString()],
                 ['Day streak', playerSummary.dayStreak ? `🔥 ${playerSummary.dayStreak}` : '—'],
               ].map(([label, value]) => (
@@ -932,7 +932,7 @@ function AuthenticatedGameApp() {
               <span className="block text-xs uppercase tracking-[0.25em] text-amber-400 mb-1">For hosts · free during beta</span>
               <span className="block text-2xl font-bold text-amber-100">Host a trivia night</span>
               <span className="block text-gray-300 mt-1">
-                Put the questions on the TV, score teams with a tap, and let the dive rule create late swings. Venue branding, printable answer key, and it survives a refresh.
+                Put the questions on the TV, score teams with a tap, and let the Go Deep rule create late swings. Venue branding, printable answer key, and it survives a refresh.
               </span>
             </button>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

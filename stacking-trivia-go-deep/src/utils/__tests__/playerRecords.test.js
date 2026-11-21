@@ -18,7 +18,7 @@ const day = (y, m, d) => new Date(y, m - 1, d, 12)
 describe('playerRecords', () => {
   beforeEach(() => localStorage.clear())
 
-  it('keeps the best score and flags a perfect dive', () => {
+  it('keeps the best score and flags a perfect Go Deep', () => {
     expect(recordRun('queso-wars', { score: 70, levelsCleared: 3, totalLevels: 5 }).isNewBest).toBe(true)
     const second = recordRun('queso-wars', { score: 30, levelsCleared: 2, totalLevels: 5 })
     expect(second).toEqual({ isNewBest: false, previousBest: 70 })

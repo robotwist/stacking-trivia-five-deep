@@ -23,7 +23,7 @@ const getHeadToHead = (score, challenge) => {
 };
 
 const getHeadline = (levelsCleared, totalLevels) => {
-  if (levelsCleared >= totalLevels) return 'Perfect dive!';
+  if (levelsCleared >= totalLevels) return 'Perfect Go Deep!';
   if (levelsCleared === 0) return 'The story got away this time';
   return `You reached Level ${levelsCleared + 1} of ${totalLevels}`;
 };
@@ -242,7 +242,7 @@ const PostGameFlow = ({
 
         {suggestions.length > 0 && (
           <section>
-            <h2 className="text-lg font-bold text-amber-900 dark:text-amber-100 mb-3">Dive into another story</h2>
+            <h2 className="text-lg font-bold text-amber-900 dark:text-amber-100 mb-3">Go Deep into another story</h2>
             <div className="grid gap-3">
               {suggestions.map((s) => (
                 <button

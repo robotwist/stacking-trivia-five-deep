@@ -264,7 +264,7 @@ describe('GameStack Scoring System', () => {
     expect(screen.queryByRole('button', { name: 'Three' })).not.toBeInTheDocument()
   })
 
-  it('picking a decoy ends the dive', async () => {
+  it('picking a decoy ends the Go Deep', async () => {
     const user = userEvent.setup()
     const stack = {
       title: 'Choices Stack',
@@ -276,7 +276,7 @@ describe('GameStack Scoring System', () => {
 
     await user.click(screen.getByRole('button', { name: /show 4 choices/i }))
     await user.click(screen.getByRole('button', { name: 'Paul Gauguin' }))
-    expect(screen.getByText(/the dive ends here/i)).toBeInTheDocument()
+    expect(screen.getByText(/the go deep ends here/i)).toBeInTheDocument()
   })
 
   it('kids stacks show the choices up front at full points', async () => {

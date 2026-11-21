@@ -292,7 +292,7 @@ export default function HostNight({ gameStacks, categoriesConfig, availableStack
                 <Toggle
                   checked={night.settings.diveRule}
                   onChange={(value) => dispatch({ type: 'SET_SETTING', key: 'diveRule', value })}
-                  label="Dive rule"
+                  label="Go Deep rule"
                   description="Miss a level and your team sits out the rest of that story. Big late swings, the way DeepStack is meant to play."
                 />
                 <Toggle

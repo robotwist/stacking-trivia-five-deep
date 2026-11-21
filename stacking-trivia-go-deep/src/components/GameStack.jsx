@@ -447,7 +447,7 @@ const GameStack = memo(function GameStack({
         {!isDeepMode && (
           <p className="mt-2 text-xs text-amber-600 dark:text-amber-400">
             Worth {choicesCostPoints ? applyChoicesPenalty(calculateQuestionScore(depth, false)) : calculateQuestionScore(depth, false)} pts
-            {choicesCostPoints ? ' with choices' : ''} · one miss ends the dive
+            {choicesCostPoints ? ' with choices' : ''} · one miss ends the Go Deep
           </p>
         )}
         {challenge && depth === 0 && !reveal && !isDeepMode && (
@@ -498,7 +498,7 @@ const GameStack = memo(function GameStack({
           aria-atomic="true"
         >
           <p className="text-lg font-semibold">
-            {reveal.correct ? `Correct! +${reveal.points} points` : 'Not quite—the dive ends here.'}
+            {reveal.correct ? `Correct! +${reveal.points} points` : 'Not quite—the Go Deep ends here.'}
           </p>
           {reveal.correct && reveal.usedChoices && (
             <p className="text-sm opacity-80">Half points for using the choices. Type it next time for the full amount.</p>

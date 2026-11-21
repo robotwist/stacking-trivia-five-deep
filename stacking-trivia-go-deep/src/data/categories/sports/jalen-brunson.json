@@ -1,100 +1,128 @@
 {
-  "title": "Jalen Brunson: Second-Round Steal to MSG",
-  "description": "Two nets cut down, a draft-night steal, a dad who ran the point, and a Garden captain—five steps into Brunson.",
+  "title": "Jalen Brunson: Game 6 in Philly",
+  "description": "Forty-one points, a Villanova dime, and a go-ahead three—Go Deep into a road clincher that sent the Garden into summer early.",
   "image": "jalen-brunson-knicks-clutch.jpg",
-  "imageHint": "The steady point guard in blue and orange, orchestrating plays with calm precision in pressure moments",
+  "imageHint": "A point guard in blue and orange willing a road clincher",
   "category": "sports",
   "questions": [
     {
       "level": 1,
-      "question": "Before he was Madison Square Garden's clutch king, Brunson helped Villanova win how many national championships?",
-      "answer": "Two",
+      "question": "In Game 6 of the 2024 first round, which Knicks guard scored 41 points with 12 assists on the road to close the series?",
+      "answer": "Jalen Brunson",
       "acceptedAnswers": [
-        "Two",
-        "two",
-        "2"
+        "Jalen Brunson",
+        "jalen brunson",
+        "brunson",
+        "jalen"
       ],
       "choices": [
-        "Four",
-        "Three",
-        "None"
+        "Donte DiVincenzo",
+        "OG Anunoby",
+        "Julius Randle"
       ],
-      "explanation": "Titles in 2016 and 2018. As a junior he was consensus National Player of the Year and Final Four all-tournament—then somehow slipped to the second round."
+      "explanation": "Fourteen of those points came in the fourth. It was his fourth straight playoff game with 39-plus—company only a handful of legends have kept."
     },
     {
       "level": 2,
-      "question": "After those two titles, Dallas took that Villanova star where in the 2018 NBA Draft—a pick that looks absurd in hindsight?",
-      "answer": "33rd overall",
+      "question": "Brunson's biggest dime that night found which Villanova teammate for a go-ahead three with 24.4 seconds left?",
+      "answer": "Josh Hart",
       "acceptedAnswers": [
-        "33rd overall",
-        "33rd",
-        "33",
-        "thirty-third",
-        "pick 33",
-        "the 33rd pick"
+        "Josh Hart",
+        "josh hart",
+        "hart"
       ],
       "choices": [
-        "15th overall",
-        "41st overall",
-        "Undrafted"
+        "Donte DiVincenzo",
+        "Mikal Bridges",
+        "Miles McBride"
       ],
-      "explanation": "Second-round pick 33. Four years later he walked into free agency as one of the league's most wanted guards—and New York pounced."
+      "explanation": "Hart was waiting up top. The three made it 114–111. Free throws finished Philly; the Garden heard it from 90 miles away."
     },
     {
       "level": 3,
-      "question": "That 33rd-overall steal left Dallas in 2022 and remade which Eastern Conference franchise overnight?",
-      "answer": "New York Knicks",
+      "question": "Hart's go-ahead three sealed a first-round win over which Joel Embiid–led franchise?",
+      "answer": "Philadelphia 76ers",
       "acceptedAnswers": [
-        "New York Knicks",
-        "new york knicks",
-        "knicks",
-        "the knicks",
-        "ny knicks"
+        "Philadelphia 76ers",
+        "philadelphia 76ers",
+        "76ers",
+        "sixers",
+        "philly",
+        "philadelphia"
       ],
       "choices": [
-        "Brooklyn Nets",
-        "Boston Celtics",
-        "Miami Heat"
+        "Miami Heat",
+        "Indiana Pacers",
+        "Boston Celtics"
       ],
-      "explanation": "A four-year deal that flipped the franchise. Villanova teammates Josh Hart and Donte DiVincenzo later joined him in orange and blue."
+      "explanation": "Series: 4–2. Embiid had 39 and 13 in the finale and still walked off. Next up for New York: Indiana in the conference semis."
     },
     {
       "level": 4,
-      "question": "The Knicks' new star grew up in gyms watching his dad run the point in the NBA—including a stop in New York. What is dad's name?",
-      "answer": "Rick Brunson",
+      "question": "Earlier against those 76ers, Brunson's 47-point Game 4 broke which Knick's 1984 playoff scoring record?",
+      "answer": "Bernard King",
       "acceptedAnswers": [
-        "Rick Brunson",
-        "rick brunson",
-        "rick"
+        "Bernard King",
+        "bernard king",
+        "king",
+        "bernie king"
       ],
       "choices": [
-        "Mike Brunson",
-        "Pat Riley",
-        "Jay Wright"
+        "Patrick Ewing",
+        "Carmelo Anthony",
+        "Walt Frazier"
       ],
-      "explanation": "Rick played nine seasons for eight teams and later coached. Jalen's game—pace, angles, no panic—is pure gym-rat inheritance from Cherry Hill to Lincolnshire."
+      "explanation": "King's mark had stood forty years. Brunson also added 10 assists that night—and shrugged afterward: he'd think about the record when he retired."
     },
     {
       "level": 5,
-      "question": "With Rick's old New York club now his team, Villanova retired what number for Jalen on Feb. 8, 2023—the day before the Knicks traded for Josh Hart?",
-      "answer": "1",
+      "question": "Bernard King's old Knicks playoff high that Brunson passed was how many points?",
+      "answer": "46",
       "acceptedAnswers": [
-        "1",
-        "one",
-        "number 1",
-        "#1",
-        "no. 1"
+        "46",
+        "forty-six",
+        "forty six",
+        "46 points"
       ],
       "choices": [
-        "11",
-        "0",
-        "23"
+        "42",
+        "50",
+        "55"
       ],
-      "explanation": "Retired in the Wells Fargo Center. Brunson was later named the 36th captain in Knicks history—the kid from the second round, running the Garden."
+      "explanation": "Brunson 47, King 46. One point. The kind of number Garden lifers can recite without looking it up."
     }
   ],
+  "deeperMode": {
+    "title": "Go Deeper: Before the Garden",
+    "description": "The second-round steal and the dad who ran the point",
+    "questions": [
+      {
+        "question": "Before the Knicks, Dallas drafted Brunson where in 2018—a pick that looks absurd now?",
+        "acceptedAnswers": [
+          "33rd overall",
+          "33rd",
+          "33",
+          "thirty-third",
+          "pick 33",
+          "the 33rd pick"
+        ],
+        "bonus": 150,
+        "hint": "Second round, after two Villanova titles"
+      },
+      {
+        "question": "Brunson's father—who ran the point in the NBA, including a stop in New York—is named what?",
+        "acceptedAnswers": [
+          "Rick Brunson",
+          "rick brunson",
+          "rick"
+        ],
+        "bonus": 200,
+        "hint": "Nine seasons, eight teams, later a coach"
+      }
+    ]
+  },
   "easterEgg": {
     "title": "56 in a state final",
-    "text": "At Stevenson High in Illinois, Brunson dropped 56 points in an IHSA finals game—a state-final scoring record—against a team featuring future No. 1 pick Jahlil Okafor. The Garden saw that version coming; the draft board didn't."
+    "text": "At Stevenson High in Illinois, Brunson dropped 56 in an IHSA finals game—a state-final scoring record—against a team featuring future No. 1 pick Jahlil Okafor. The Garden version was always in there."
   }
 }

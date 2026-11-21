@@ -53,7 +53,7 @@ const deeperQuestionList = (deeperQuestions) => {
 
 /**
  * Highest score a run can post.
- * The main dive always ceilings at the full five-level ladder (310), including
+ * The main Go Deep always ceilings at the full five-level ladder (310), including
  * stacks with fewer questions. Pass the bonus questions actually in the round
  * so the ceiling matches what those questions award — not one bonus per main level.
  * @param {number} questionCount - Main questions in the stack (does not shrink the 310 ceiling)

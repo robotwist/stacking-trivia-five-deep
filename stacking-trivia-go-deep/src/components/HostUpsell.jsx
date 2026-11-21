@@ -3,7 +3,7 @@ import { submitWithRetry } from '../services/netlifyForms'
 import { track } from '../utils/analytics'
 
 const FREE_NOW = [
-  'Host Night: questions on the TV, tap-to-score teams, the dive rule',
+  'Host Night: questions on the TV, tap-to-score teams, the Go Deep rule',
   'A separate TV screen, with the answer key on your laptop only',
   'Your venue name on screen, printable answer key',
   'Survives a refresh or a dead laptop battery mid-night',
