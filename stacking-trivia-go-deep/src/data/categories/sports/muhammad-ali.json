@@ -1,10 +1,13 @@
 {
-  "title": "Muhammad Ali: Float Like Greatness",
-  "description": "From Olympic gold to global icon—five chapters of the Greatest.",
+  "title": "Muhammad Ali: Rumble in the Jungle",
+  "description": "Loose ropes, a spent champion, and a straight right before dawn—Go Deep into the night Ali took Kinshasa.",
+  "image": "raised-boxing-gloves.jpg",
+  "imageHint": "Boxing gloves raised high under African lights",
+  "category": "Sports",
   "questions": [
     {
       "level": 1,
-      "question": "Which boxer promised to \"float like a butterfly, sting like a bee\"—a line his cornerman Bundini Brown helped make famous?",
+      "question": "In Kinshasa on Oct. 30, 1974, which challenger knocked out heavyweight champ George Foreman to reclaim the title?",
       "answer": "Muhammad Ali",
       "acceptedAnswers": [
         "Muhammad Ali",
@@ -14,87 +17,121 @@
       ],
       "choices": [
         "Joe Frazier",
-        "George Foreman",
-        "Sonny Liston"
+        "Ken Norton",
+        "Larry Holmes"
       ],
-      "explanation": "Cornerman Drew \"Bundini\" Brown is credited with coining it in 1964, before the Sonny Liston upset. The full chant ended: \"Rumble, young man, rumble!\""
+      "explanation": "Ali was 32 and a heavy underdog. Nearly 60,000 in Stade du 20 Mai chanted him home before dawn."
     },
     {
       "level": 2,
-      "question": "As 18-year-old Cassius Clay, Muhammad Ali won Olympic gold at which Games?",
-      "answer": "1960 Rome",
+      "question": "Muhammad Ali's strategy that night—leaning on the ropes and letting Foreman punch himself out—is known as what?",
+      "answer": "Rope-a-dope",
       "acceptedAnswers": [
-        "1960 Rome",
-        "1960 rome",
-        "rome 1960",
-        "1960",
-        "rome"
+        "Rope-a-dope",
+        "rope-a-dope",
+        "rope a dope",
+        "the rope-a-dope",
+        "ropeadope"
       ],
       "choices": [
-        "1952 Helsinki",
-        "1956 Melbourne",
-        "1964 Tokyo"
+        "Peek-a-boo",
+        "Philippine whirlwind",
+        "Bolo punch"
       ],
-      "explanation": "Terrified of flying, he reportedly bought a parachute at an army surplus store and wore it on the plane. In the light-heavyweight final he beat Poland's Zbigniew Pietrzykowski."
+      "explanation": "Angelo Dundee yelled for him to get off the ropes. Ali waved him off: \"I know what I'm doing.\" In the clinches he taunted: \"Is that all you got, George?\""
     },
     {
       "level": 3,
-      "question": "After his 1960 Rome gold, where did Ali say he tossed his Olympic medal?",
-      "answer": "The Ohio River",
+      "question": "After rounds of rope-a-dope, in which round did Ali spring off the ropes and put Foreman down for the count?",
+      "answer": "Eighth",
       "acceptedAnswers": [
-        "The Ohio River",
-        "ohio river",
-        "the ohio",
-        "ohio",
-        "in the ohio river"
+        "Eighth",
+        "eighth",
+        "8",
+        "8th",
+        "round 8",
+        "the eighth",
+        "round eight"
       ],
       "choices": [
-        "Lake Michigan",
-        "The Mississippi River",
-        "A Louisville dumpster"
+        "Third",
+        "Tenth",
+        "Twelfth"
       ],
-      "explanation": "Wilma Rudolph remembered he never took it off in Rome: \"He slept with it.\" His 1975 autobiography says he later flung it off a Louisville bridge in disgust."
+      "explanation": "A left hook lifted Foreman's chin; a straight right finished it. Counted out at 2:58 of the round. Foreman's first loss in 40 fights."
     },
     {
       "level": 4,
-      "question": "Ali later wrote that he threw his medal in the Ohio River—what injustice did he say drove him to it?",
-      "answer": "Racial discrimination",
+      "question": "After that eighth-round knockout, the Kinshasa crowd's chant—\"Ali, bomaye\"—means \"Ali,\" what?",
+      "answer": "Kill him",
       "acceptedAnswers": [
-        "Racial discrimination",
-        "racial discrimination",
-        "racism",
-        "segregation",
-        "discrimination"
+        "Kill him",
+        "kill him",
+        "kill",
+        "ali kill him"
       ],
       "choices": [
-        "The Vietnam draft",
-        "Religious persecution",
-        "Unfair judging"
+        "Bless him",
+        "Dance for us",
+        "Come home"
       ],
-      "explanation": "The book says he was refused service at a whites-only Louisville restaurant, then fought a biker gang. Friends later said he simply lost the medal. Ali himself once shrugged: \"I don't know where I put that thing.\""
+      "explanation": "Lingala for \"kill him\"—a war cry that became affection. The fight had been delayed after Foreman cut his eye in training; when it finally happened, the city was already chanting."
     },
     {
       "level": 5,
-      "question": "Decades after the racial discrimination he said drove him to ditch it, Ali received a replacement Olympic gold in what year?",
-      "answer": "1996",
+      "question": "That \"kill him\" chant night restored a title Ali had lost years earlier for refusing induction into what?",
+      "answer": "The military",
       "acceptedAnswers": [
-        "1996",
-        "nineteen ninety-six",
-        "nineteen ninety six",
-        "atlanta 1996"
+        "The military",
+        "the military",
+        "military",
+        "the army",
+        "army",
+        "the draft",
+        "draft",
+        "us army",
+        "armed forces"
       ],
       "choices": [
-        "1974",
-        "1984",
-        "2004"
+        "Congress",
+        "The Olympic team",
+        "Islam"
       ],
-      "explanation": "Two weeks after lighting the Atlanta cauldron with trembling hands, he got a new gold from IOC chief Samaranch at halftime of the USA-Yugoslavia final. Both teams mobbed him."
+      "explanation": "Stripped in 1967 for refusing the Vietnam draft—\"I ain't got no quarrel with them Viet Cong.\" Kinshasa was the reclaiming, more than seven years later."
     }
   ],
-  "image": "raised-boxing-gloves.jpg",
-  "imageHint": "Boxing gloves raised high in victory, symbolizing triumph and championship",
+  "deeperMode": {
+    "title": "Go Deeper: Before Kinshasa",
+    "description": "Olympic gold, a river story, and a parachute on a plane",
+    "questions": [
+      {
+        "question": "As 18-year-old Cassius Clay, Ali won Olympic light-heavyweight gold at which Games?",
+        "acceptedAnswers": [
+          "1960 Rome",
+          "1960 rome",
+          "rome 1960",
+          "1960",
+          "rome"
+        ],
+        "bonus": 150,
+        "hint": "He wore an army-surplus parachute on the flight over"
+      },
+      {
+        "question": "Which cornerman is credited with coining \"float like a butterfly, sting like a bee\"?",
+        "acceptedAnswers": [
+          "Bundini Brown",
+          "bundini brown",
+          "bundini",
+          "drew bundini brown",
+          "drew brown"
+        ],
+        "bonus": 200,
+        "hint": "The chant ended: \"Rumble, young man, rumble!\""
+      }
+    ]
+  },
   "easterEgg": {
     "title": "The parachute flight",
-    "text": "Terrified of flying after a rough trip to the Olympic trials, Cassius Clay bought an army-surplus parachute and wore it the whole way to Rome. Joe Martin Jr. remembered him praying in the aisle with it on his back."
+    "text": "Terrified of flying after a rough trip to the Olympic trials, young Cassius Clay bought an army-surplus parachute and wore it the whole way to Rome. Joe Martin Jr. remembered him praying in the aisle with it on his back."
   }
 }
