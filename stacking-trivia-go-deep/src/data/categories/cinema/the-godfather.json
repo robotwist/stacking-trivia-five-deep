@@ -1,59 +1,29 @@
 {
-  "title": "The Godfather: Offers & Refusals",
-  "description": "Power, family, and cinema’s most unforgettable offers—five Godfather depths.",
+  "title": "The Godfather: Morning at Woltz's",
+  "description": "A refused favor, a prized stallion, and a morning scream—Go Deep into Hollywood's worst wake-up call.",
   "questions": [
     {
       "level": 1,
-      "question": "Who directed 'The Godfather'?",
-      "answer": "Francis Ford Coppola",
-      "acceptedAnswers": [
-        "Francis Ford Coppola",
-        "francis ford coppola",
-        "coppola",
-        "francis coppola"
-      ],
-      "choices": [
-        "Martin Scorsese",
-        "Sergio Leone",
-        "Brian De Palma"
-      ]
-    },
-    {
-      "level": 2,
-      "question": "Coppola's film gives us a line: 'I'm gonna make him...' (complete it)",
-      "answer": "An offer he can't refuse",
-      "acceptedAnswers": [
-        "An offer he can't refuse",
-        "an offer he can't refuse",
-        "an offer he cant refuse",
-        "offer he can't refuse"
-      ],
-      "choices": [
-        "Sleep with the fishes",
-        "Kiss the ring",
-        "Pay his respects"
-      ]
-    },
-    {
-      "level": 3,
-      "question": "When an offer he can't refuse fails, what does Jack Woltz find in his bed?",
+      "question": "When Hollywood mogul Jack Woltz refuses to cast Johnny Fontane, what does he wake up to find in his bed?",
       "answer": "A horse's head",
       "acceptedAnswers": [
         "A horse's head",
         "a horse's head",
         "horse head",
         "a horses head",
-        "horse's head"
+        "horse's head",
+        "the horse's head"
       ],
       "choices": [
         "A dead fish",
         "A severed hand",
         "A Black Hand letter"
-      ]
+      ],
+      "explanation": "Tom Hagen left dinner early—Mr. Corleone \"insists on hearing bad news immediately.\" The Don's reply arrived by morning, under the sheets."
     },
     {
-      "level": 4,
-      "question": "That horse's head came from Woltz's prized racehorse—what was it named?",
+      "level": 2,
+      "question": "That horse's head came from Woltz's prized stallion. What was its name?",
       "answer": "Khartoum",
       "acceptedAnswers": [
         "Khartoum",
@@ -65,65 +35,100 @@
         "Seabiscuit",
         "Secretariat",
         "Man o' War"
-      ]
+      ],
+      "explanation": "Woltz shows him off to Hagen and says he won't race him: \"I'm gonna put him out to stud.\" Same name as Sudan's capital."
     },
     {
-      "level": 5,
-      "question": "Woltz brags about how much he paid for Khartoum—how much?",
+      "level": 3,
+      "question": "Woltz boasts that Khartoum is how much money \"on four hooves\"?",
       "answer": "600 thousand dollars",
       "acceptedAnswers": [
         "600 thousand dollars",
         "600 thousand",
         "600000",
         "six hundred thousand",
-        "600"
+        "600",
+        "$600,000",
+        "600,000"
       ],
       "choices": [
         "1 million dollars",
         "2 million dollars",
         "5 million dollars"
-      ]
+      ],
+      "explanation": "\"I'll bet Russian czars never paid that kind of dough for a single horse,\" he brags. His pride showed the Don exactly where to hit him."
+    },
+    {
+      "level": 4,
+      "question": "The threat behind that 600-thousand-dollar lesson is the Don's line to Johnny Fontane: \"I'm gonna make him...\" what?",
+      "answer": "An offer he can't refuse",
+      "acceptedAnswers": [
+        "An offer he can't refuse",
+        "an offer he can't refuse",
+        "an offer he cant refuse",
+        "offer he can't refuse"
+      ],
+      "choices": [
+        "Sleep with the fishes",
+        "Kiss the ring",
+        "Pay his respects"
+      ],
+      "explanation": "Michael later explains: Luca Brasi held a gun to a bandleader's head while the Don promised \"either his brains or his signature would be on the contract.\""
+    },
+    {
+      "level": 5,
+      "question": "After that offer he can't refuse lands in the bed, where did Coppola get the real head used on camera?",
+      "answer": "Dog food factory",
+      "acceptedAnswers": [
+        "Dog food factory",
+        "dog food factory",
+        "a dog food factory",
+        "pet food factory",
+        "a pet food factory",
+        "dog-food plant",
+        "dog food plant"
+      ],
+      "choices": [
+        "Wax museum",
+        "Taxidermy shop",
+        "Slaughterhouse prop house"
+      ],
+      "explanation": "One real head, packed in ice. Actor John Marley (Woltz) was not told it was real. His scream did the rest."
     }
   ],
   "image": "puppet-strings-hand.jpg",
   "imageHint": "A dark hand controlling puppet strings, suggesting the power and manipulation themes",
   "deeperMode": {
-    "title": "DEEPER MODE UNLOCKED: Behind the Camera",
-    "description": "Filmmaking secrets for those who conquered the stack",
+    "title": "Go Deeper: Behind the Camera",
+    "description": "A director who thought he was getting fired, and an unscripted prop in Brando's lap",
     "questions": [
       {
-        "level": 6,
-        "question": "How many real horse heads did the filmmakers use for the scene?",
-        "answer": "One",
+        "question": "Which director spent The Godfather's shoot convinced Paramount was about to fire him?",
         "acceptedAnswers": [
-          "one",
-          "1",
-          "just one"
+          "Francis Ford Coppola",
+          "francis ford coppola",
+          "coppola",
+          "francis coppola"
         ],
-        "bonus": 200
+        "bonus": 150,
+        "hint": "Winning the Patton screenplay Oscar mid-shoot made firing him awkward"
       },
       {
-        "level": 7,
-        "question": "Where did Coppola get the real horse head used in the film?",
-        "answer": "A dog food factory",
+        "question": "What animal did Coppola drop into Brando's lap without a word—never in the script, still purring on the soundtrack?",
         "acceptedAnswers": [
-          "dog food factory",
-          "pet food factory",
-          "a pet food plant"
+          "A cat",
+          "cat",
+          "a stray cat",
+          "the cat",
+          "kitten"
         ],
-        "bonus": 400
-      },
-      {
-        "level": 8,
-        "question": "What did actor John Marley NOT know about the horse head scene?",
-        "answer": "It was real",
-        "acceptedAnswers": [
-          "it was real",
-          "the head was real",
-          "they used a real head"
-        ],
-        "bonus": 800
+        "bonus": 200,
+        "hint": "It purred so loudly Brando's lines needed ADR"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The cat was never in the script",
+    "text": "Coppola spotted a stray on set and dropped it in Brando's lap without a word. It purred so loudly that the Don's lines had to be re-recorded, and you can still hear it on the soundtrack."
   }
 }

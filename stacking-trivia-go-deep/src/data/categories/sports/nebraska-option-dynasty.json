@@ -1,0 +1,127 @@
+{
+  "title": "Nebraska: 1984 Orange Bowl",
+  "description": "A fumblerooski, a backup I-back's late score, and a tipped two-point pass—Go Deep into the night that still haunts Lincoln.",
+  "image": "memorial-stadium.jpg",
+  "imageHint": "January night in Miami, 31–30 forever",
+  "category": "sports",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Trailing Miami late in the 1984 Orange Bowl, which backup I-back—in for the injured Heisman winner—scored from 24 yards to make it 31–30?",
+      "answer": "Jeff Smith",
+      "acceptedAnswers": [
+        "Jeff Smith",
+        "jeff smith",
+        "smith",
+        "jeffrey smith"
+      ],
+      "choices": [
+        "Roger Craig",
+        "Calvin Jones",
+        "Ahman Green"
+      ],
+      "explanation": "The Heisman winner had left with a badly bruised ankle. Smith already had a 1-yard TD earlier in the fourth; the 24-yarder on fourth-and-eight with 48 seconds left set up the call Lincoln still argues about."
+    },
+    {
+      "level": 2,
+      "question": "After Jeff Smith's TD made it 31–30, Nebraska skipped the tying kick and went for what?",
+      "answer": "Two-point conversion",
+      "acceptedAnswers": [
+        "Two-point conversion",
+        "two-point conversion",
+        "two points",
+        "2-point conversion",
+        "2 point conversion",
+        "go for two",
+        "two-point play"
+      ],
+      "choices": [
+        "Field goal",
+        "Onside kick",
+        "Punt"
+      ],
+      "explanation": "A kick ties it and almost certainly locks a shared national title. Tom Osborne went for the win instead—the only time his name needs to appear in this stack. The pass never connected."
+    },
+    {
+      "level": 3,
+      "question": "Whose two-point conversion pass—intended for Jeff Smith—did Miami's Kenny Calhoun tip away to seal 31–30?",
+      "answer": "Turner Gill",
+      "acceptedAnswers": [
+        "Turner Gill",
+        "turner gill",
+        "gill"
+      ],
+      "choices": [
+        "Bernie Kosar",
+        "Tommie Frazier",
+        "Scott Frost"
+      ],
+      "explanation": "Gill rolled and fired; Calhoun got a hand on it. Final: Miami 31, Nebraska 30. Bernie Kosar had thrown for 300 yards earlier. Lincoln still finishes the sentence for you."
+    },
+    {
+      "level": 4,
+      "question": "Earlier that same Orange Bowl, before Gill's tipped pass, which Outland Trophy guard scored on the \"Fumblerooski\"?",
+      "answer": "Dean Steinkuhler",
+      "acceptedAnswers": [
+        "Dean Steinkuhler",
+        "dean steinkuhler",
+        "steinkuhler",
+        "dean"
+      ],
+      "choices": [
+        "Dave Rimington",
+        "Zach Wiegert",
+        "Aaron Taylor"
+      ],
+      "explanation": "Third-and-five at the Miami 19: Gill \"fumbles\" the snap to the turf, Steinkuhler scoops left and runs 19 yards. It worked. The two-point try later that night still didn't."
+    },
+    {
+      "level": 5,
+      "question": "Steinkuhler's fumblerooski came after which Heisman Trophy I-back—Nebraska's engine—left the Orange Bowl with a bruised ankle?",
+      "answer": "Mike Rozier",
+      "acceptedAnswers": [
+        "Mike Rozier",
+        "mike rozier",
+        "rozier"
+      ],
+      "choices": [
+        "Johnny Rodgers",
+        "Ahman Green",
+        "Lawrence Phillips"
+      ],
+      "explanation": "Rozier was the 1983 Heisman winner. When he went out in the third quarter, Smith became the night's unlikely closer—and the two-point debate's permanent supporting character."
+    }
+  ],
+  "deeperMode": {
+    "title": "Go Deeper: After the Heartbreak",
+    "description": "How the dynasty answered Miami years later",
+    "questions": [
+      {
+        "question": "Which Nebraska quarterback ran the option through the 1994–95 title seasons and the Fiesta Bowl wrecking of Florida?",
+        "acceptedAnswers": [
+          "Tommie Frazier",
+          "tommie frazier",
+          "frazier",
+          "tommy frazier"
+        ],
+        "bonus": 150,
+        "hint": "His 75-yard option TD in the '96 Fiesta Bowl is the signature clip"
+      },
+      {
+        "question": "In that 1996 Fiesta Bowl (1995 season), Nebraska beat Florida by what final score?",
+        "acceptedAnswers": [
+          "62-24",
+          "62–24",
+          "62 to 24",
+          "sixty-two twenty-four"
+        ],
+        "bonus": 200,
+        "hint": "Steve Spurrier's Fun 'n' Gun met option football at full speed"
+      }
+    ]
+  },
+  "easterEgg": {
+    "title": "Kenny Calhoun's fingertips",
+    "text": "Calhoun tipped Gill's pass bound for Jeff Smith. Miami's first national title. Nebraska's open wound. Fans can still diagram the play in the air with two fingers."
+  }
+}

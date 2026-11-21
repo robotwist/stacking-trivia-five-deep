@@ -1,10 +1,10 @@
 {
-  "title": "The Hero's Journey: Campbell's Universal Pattern",
-  "description": "A scholar's book, a word stolen from a novel, and a galaxy far, far away—five steps into the story behind stories.",
+  "title": "Hero's Journey: Campbell's Pattern",
+  "description": "A scholar's book, a word stolen from a novel, and a galaxy far, far away—Go Deep into the story behind stories.",
   "questions": [
     {
       "level": 1,
-      "question": "What 1949 book by Joseph Campbell introduced the Hero's Journey?",
+      "question": "In 1949 Joseph Campbell argued that heroes from every culture follow one shared path—departure, initiation, return. What book introduced that Hero's Journey?",
       "answer": "The Hero with a Thousand Faces",
       "acceptedAnswers": [
         "The Hero with a Thousand Faces",
@@ -69,7 +69,7 @@
         "Francis Ford Coppola",
         "Stanley Kubrick"
       ],
-      "explanation": "Lucas later credited the book with helping him shape the saga and called Campbell \"my Yoda.\" Some film historians think the influence was emphasized after the fact."
+      "explanation": "Lucas has said Campbell's book helped him shape the saga and later called Campbell \"my Yoda.\" They did not actually meet until after Return of the Jedi—Lucas heard Campbell lecture in 1984."
     },
     {
       "level": 5,
@@ -93,6 +93,36 @@
   "deeperMode": {
     "title": "Deeper: Myth and Mind",
     "description": "Bonus lore for myth obsessives",
-    "questions": []
+    "questions": [
+      {
+        "question": "In Campbell's stages, what does he call the moment the hero first turns down the adventure?",
+        "acceptedAnswers": [
+          "Refusal of the Call",
+          "refusal of the call",
+          "the refusal of the call",
+          "refusal",
+          "refusing the call"
+        ],
+        "bonus": 150,
+        "hint": "Right after the Call to Adventure—Luke saying he has to stay on the farm"
+      },
+      {
+        "question": "After that refusal, Campbell names the helper who gives a talisman or advice. What is that stage called?",
+        "acceptedAnswers": [
+          "Supernatural Aid",
+          "supernatural aid",
+          "meeting with the mentor",
+          "the mentor",
+          "mentor",
+          "supernatural aid stage"
+        ],
+        "bonus": 200,
+        "hint": "Obi-Wan with a lightsaber; a fairy godmother with a wand—Campbell's original term"
+      }
+    ]
+  },
+  "easterEgg": {
+    "title": "After the trilogy",
+    "text": "Campbell watched the Star Wars trilogy at Skywalker Ranch and called it \"real art.\" The Power of Myth interviews with Bill Moyers were taped there over Campbell's last two summers."
   }
 }

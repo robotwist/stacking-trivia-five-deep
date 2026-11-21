@@ -3,11 +3,12 @@ import QuickHostControls from './QuickHostControls';
 import PhotoIdentification from './PhotoIdentification';
 import { checkAnswerMatch } from '../utils/textUtils';
 import { getLevelLabel } from '../utils/normalizeStack';
-import { calculateQuestionScore, getCrowdMultiplier, calculateMaxScore, applyChoicesPenalty } from '../utils/scoreUtils';
+import { calculateQuestionScore, pointsForDeeperQuestion, getCrowdMultiplier, calculateMaxScore, applyChoicesPenalty } from '../utils/scoreUtils';
 import { shuffleArray } from '../utils/arrayUtils';
 import { useAuth } from '../contexts/AuthContext';
 import ProgressStorage from '../utils/progressStorage';
 import { playSound } from '../utils/audio.js';
+import { track } from '../utils/analytics';
 
 const getAcceptedAnswers = (question) =>
   question.acceptedAnswers || question.a || [question.answer];
@@ -27,7 +28,8 @@ const GameStack = memo(function GameStack({
   onPause = () => {},
   onResume = () => {},
   resumeData = null,
-  challenge = null
+  challenge = null,
+  source = 'other'
 }) {
   const [depth, setDepth] = useState(0);
   const [score, setScore] = useState(0);
@@ -86,6 +88,9 @@ const GameStack = memo(function GameStack({
       resumed: !!resumeData,
       startIndex: resumeData?.currentIndex || 0
     });
+    track('stack started', { stack: progressKey, source, resumed: !!resumeData, challenged: !!challenge });
+    // Once per run: GameStack is remounted (new key) for every new run
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resumeData, progressKey])
 
   const current = useMemo(() => {
@@ -109,9 +114,13 @@ const GameStack = memo(function GameStack({
     return shuffleArray([getCanonicalAnswer(current), ...current.choices])
   }, [choicesAvailable, current])
 
+  const scoreAnimationTimer = useRef(null);
+  useEffect(() => () => clearTimeout(scoreAnimationTimer.current), []);
+
   const animateScore = useCallback(() => {
     setScoreAnimation(true);
-    setTimeout(() => setScoreAnimation(false), 1000);
+    clearTimeout(scoreAnimationTimer.current);
+    scoreAnimationTimer.current = setTimeout(() => setScoreAnimation(false), 1000);
   }, []);
 
   const finish = useCallback((finalScore, answers, { deeper = false } = {}) => {
@@ -123,10 +132,10 @@ const GameStack = memo(function GameStack({
     if (onComplete) {
       const correctCount = answers.filter((a) => a.correct).length;
       const accuracy = answers.length > 0 ? Math.round((correctCount / answers.length) * 100) : 0;
-      const runMax = calculateMaxScore(stackData.questions.length, deeper);
+      const runMax = calculateMaxScore(stackData.questions.length, deeper ? deeperQuestions : []);
       onComplete(finalScore, runMax, answers.length, accuracy, answers);
     }
-  }, [isAuthenticated, markStackCompleted, onComplete, stackData.title, stackData.questions.length]);
+  }, [isAuthenticated, markStackCompleted, onComplete, stackData.title, stackData.questions.length, deeperQuestions]);
 
   const handlePause = useCallback(() => {
     setIsPaused(true);
@@ -172,11 +181,21 @@ const GameStack = memo(function GameStack({
     let points = 0;
     if (isCorrect) {
       const multiplier = showHostControls ? getCrowdMultiplier(crowdEnergy) : 1;
-      const base = calculateQuestionScore(currentDepth, isDeepMode);
+      const base = isDeepMode
+        ? pointsForDeeperQuestion(current, currentDepth)
+        : calculateQuestionScore(currentDepth, false);
       points = Math.round((choicesCostPoints ? applyChoicesPenalty(base) : base) * multiplier);
     }
 
     playSound(isCorrect ? 'correct' : 'incorrect');
+    track('level answered', {
+      stack: progressKey,
+      level: currentDepth + 1,
+      deeper: isDeepMode,
+      correct: isCorrect,
+      used_choices: choicesCostPoints,
+      answered_by: pickedChoice !== null ? 'choice' : 'typing',
+    });
 
     const nextAnswers = [
       ...userAnswers,
@@ -428,7 +447,7 @@ const GameStack = memo(function GameStack({
         {!isDeepMode && (
           <p className="mt-2 text-xs text-amber-600 dark:text-amber-400">
             Worth {choicesCostPoints ? applyChoicesPenalty(calculateQuestionScore(depth, false)) : calculateQuestionScore(depth, false)} pts
-            {choicesCostPoints ? ' with choices' : ''} · one miss ends the dive
+            {choicesCostPoints ? ' with choices' : ''} · one miss ends the Go Deep
           </p>
         )}
         {challenge && depth === 0 && !reveal && !isDeepMode && (
@@ -479,7 +498,7 @@ const GameStack = memo(function GameStack({
           aria-atomic="true"
         >
           <p className="text-lg font-semibold">
-            {reveal.correct ? `Correct! +${reveal.points} points` : 'Not quite—the dive ends here.'}
+            {reveal.correct ? `Correct! +${reveal.points} points` : 'Not quite—the Go Deep ends here.'}
           </p>
           {reveal.correct && reveal.usedChoices && (
             <p className="text-sm opacity-80">Half points for using the choices. Type it next time for the full amount.</p>

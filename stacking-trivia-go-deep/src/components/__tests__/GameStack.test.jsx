@@ -18,15 +18,23 @@ vi.mock('../../utils/textUtils', () => ({
   checkAnswerMatch: vi.fn()
 }))
 
-vi.mock('../../utils/scoreUtils', () => ({
-  calculateQuestionScore: vi.fn(),
-  getCrowdMultiplier: vi.fn(() => 1),
-  calculateMaxScore: vi.fn(() => 310),
-  applyChoicesPenalty: vi.fn((points) => Math.ceil(points / 2))
-}))
+vi.mock('../../utils/scoreUtils', () => {
+  const calculateQuestionScore = vi.fn()
+  return {
+    calculateQuestionScore,
+    pointsForDeeperQuestion: (question, index) => {
+      const bonus = Number(question?.bonus)
+      if (Number.isFinite(bonus) && bonus > 0) return bonus
+      return calculateQuestionScore(index, true)
+    },
+    getCrowdMultiplier: vi.fn(() => 1),
+    calculateMaxScore: vi.fn(() => 310),
+    applyChoicesPenalty: vi.fn((points) => Math.ceil(points / 2))
+  }
+})
 
 import { checkAnswerMatch } from '../../utils/textUtils'
-import { calculateQuestionScore } from '../../utils/scoreUtils'
+import { calculateQuestionScore, calculateMaxScore } from '../../utils/scoreUtils'
 
 describe('GameStack Scoring System', () => {
   const mockStackData = {
@@ -256,7 +264,7 @@ describe('GameStack Scoring System', () => {
     expect(screen.queryByRole('button', { name: 'Three' })).not.toBeInTheDocument()
   })
 
-  it('picking a decoy ends the dive', async () => {
+  it('picking a decoy ends the Go Deep', async () => {
     const user = userEvent.setup()
     const stack = {
       title: 'Choices Stack',
@@ -268,7 +276,7 @@ describe('GameStack Scoring System', () => {
 
     await user.click(screen.getByRole('button', { name: /show 4 choices/i }))
     await user.click(screen.getByRole('button', { name: 'Paul Gauguin' }))
-    expect(screen.getByText(/the dive ends here/i)).toBeInTheDocument()
+    expect(screen.getByText(/the go deep ends here/i)).toBeInTheDocument()
   })
 
   it('kids stacks show the choices up front at full points', async () => {
@@ -325,5 +333,37 @@ describe('GameStack Scoring System', () => {
     // For now, we verify that the utility function handles deep mode correctly
     expect(calculateQuestionScore(0, true)).toBe(60) // 10 + 50 bonus
     expect(calculateQuestionScore(1, true)).toBe(70) // 20 + 50 bonus
+  })
+
+  it('awards the authored deeper-mode bonus and ceilings the run at those questions', async () => {
+    const user = userEvent.setup()
+    const bonusQuestion = { question: 'Bonus?', answer: 'Pearls', acceptedAnswers: ['pearls'], bonus: 150 }
+    const stack = {
+      title: 'Bonus Stack',
+      questions: [{ question: 'Main?', answer: 'Yes', acceptedAnswers: ['yes'] }],
+      deeperMode: {
+        title: 'Deeper',
+        description: 'One more',
+        questions: [bonusQuestion],
+      },
+    }
+    render(<GameStack stackData={stack} onComplete={mockOnComplete} />)
+
+    checkAnswerMatch.mockReturnValue(true)
+    await user.type(screen.getByRole('textbox'), 'yes')
+    await user.click(screen.getByRole('button', { name: /submit answer/i }))
+    await user.click(screen.getByRole('button', { name: /continue/i }))
+    await user.click(screen.getByRole('button', { name: /enter deeper mode/i }))
+    await user.type(screen.getByRole('textbox'), 'pearls')
+    await user.click(screen.getByRole('button', { name: /submit answer/i }))
+
+    expect(screen.getByText(/correct! \+150 points/i)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: /see your results/i }))
+    expect(calculateMaxScore).toHaveBeenCalledWith(1, [bonusQuestion])
+    expect(mockOnComplete.mock.calls[0][4]).toEqual([
+      expect.objectContaining({ questionIndex: 0, deeper: false, pointsAwarded: 10 }),
+      expect.objectContaining({ questionIndex: 0, deeper: true, pointsAwarded: 150 }),
+    ])
   })
 })

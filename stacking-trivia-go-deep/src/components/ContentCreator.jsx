@@ -35,7 +35,7 @@ const STACK_TEMPLATES = {
     }))
   },
   deep: {
-    name: 'Deep Dive (10 Questions)',
+    name: 'Go Deep (10 Questions)',
     questions: Array(10).fill(null).map((_, i) => ({
       level: i + 1,
       question_text: '',
@@ -247,7 +247,7 @@ function ContentCreator({ onClose, userRole }) {
         <textarea
           value={stackData.description}
           onChange={(e) => setStackData(prev => ({ ...prev, description: e.target.value }))}
-          placeholder="A deep dive into Vincent van Gogh's most famous paintings..."
+          placeholder="Go Deep into Vincent van Gogh's most famous paintings..."
           className={errors.description ? 'error' : ''}
           rows="3"
         />

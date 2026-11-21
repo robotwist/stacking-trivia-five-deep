@@ -1,10 +1,10 @@
 {
-  "title": "Serena Williams: Seven Matches, One Secret",
-  "description": "She lifted a trophy while hiding life-changing news—five steps from a secret title to motherhood.",
+  "title": "Serena: Seven Matches, One Secret",
+  "description": "She lifted a trophy while hiding life-changing news—Go Deep from a secret title to motherhood.",
   "questions": [
     {
       "level": 1,
-      "question": "In January 2017, Serena Williams won which Grand Slam while newly pregnant?",
+      "question": "In January 2017 she lifted a Grand Slam trophy while newly pregnant—and told almost no one. Which major did Serena win?",
       "answer": "Australian Open",
       "acceptedAnswers": [
         "Australian Open",
@@ -71,7 +71,7 @@
         "Twitter",
         "Facebook"
       ],
-      "explanation": "The mirror selfie, captioned \"20 weeks,\" let the world do the math: she had won the Australian Open while pregnant."
+      "explanation": "The mirror selfie, captioned \"20 weeks,\" was meant for her private weekly diary. She deleted it fast, but the math was already done: she had won Melbourne while pregnant. She told TED it was \"the one time it slipped.\""
     },
     {
       "level": 5,
@@ -89,7 +89,7 @@
         "Oracene",
         "Isabella"
       ],
-      "explanation": "Her full name is Alexis Olympia Ohanian Jr., but she goes by Olympia—closing the arc from secret champion to public motherhood."
+      "explanation": "Her full name is Alexis Olympia Ohanian Jr., but she goes by Olympia. Serena later noted the initials AO—same as the Aussie Open she won while pregnant with her."
     }
   ],
   "imageHint": "A trophy lift with a story still unspoken",
@@ -97,6 +97,35 @@
   "deeperMode": {
     "title": "Queen of the Court",
     "description": "Career records and battles beyond this Melbourne chapter",
-    "questions": []
+    "questions": [
+      {
+        "question": "Beyond that secret Melbourne title, Serena holds the Open Era women's record for Grand Slam singles crowns. How many did she win?",
+        "acceptedAnswers": [
+          "23",
+          "twenty-three",
+          "twenty three",
+          "23 titles",
+          "twenty-three titles"
+        ],
+        "bonus": 150,
+        "hint": "One more than Steffi Graf's 22"
+      },
+      {
+        "question": "Those 23 majors sit beside Olympic singles gold from 2012—in which city did Serena complete her Career Golden Slam?",
+        "acceptedAnswers": [
+          "London",
+          "london",
+          "London England",
+          "Wimbledon",
+          "wimbledon"
+        ],
+        "bonus": 200,
+        "hint": "Same grounds as the grass-court major, during the Summer Games"
+      }
+    ]
+  },
+  "easterEgg": {
+    "title": "AO for Aussie Open",
+    "text": "Serena tweeted the fun fact herself: her daughter's initials are AO, \"as in the Aussie Open she won with me.\" Alexis Ohanian said after Melbourne they both felt it had to be a girl—\"only a woman could be strong enough.\""
   }
 }

@@ -2,7 +2,7 @@
   "title": "Nebraska Sports",
   "image": "memorial-stadium.jpg",
   "imageHint": "The iconic football stadium in Lincoln that becomes Nebraska's 3rd largest city on game days",
-  "description": "A deep dive into the sports culture, history, and legends of Nebraska.",
+  "description": "Go Deep into Nebraska sports culture, history, and legends.",
   "questions": [
     {
       "level": 1,
@@ -28,7 +28,12 @@
       "level": 5,
       "question": "What is the capacity of Memorial Stadium, often referred to as Nebraska's 'Sea of Red'?",
       "answer": "85,458",
-      "acceptableAnswers": ["85,458", "85458", "85,000", "85000"]
+      "acceptableAnswers": [
+        "85,458",
+        "85458",
+        "85,000",
+        "85000"
+      ]
     }
   ]
 }

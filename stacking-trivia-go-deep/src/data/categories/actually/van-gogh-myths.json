@@ -1,6 +1,6 @@
 {
   "title": "Actually: Van Gogh Myths Busted",
-  "description": "Popular stories about a tortured master—which hold up under scrutiny?",
+  "description": "Earlobe lore, a young doctor's sketch, and a second sale that vanished—Go Deep into myths that fall apart.",
   "questions": [
     {
       "level": 1,
@@ -67,26 +67,27 @@
     },
     {
       "level": 4,
-      "question": "Myth: Van Gogh never sold a painting. Actually, in 1890 Anna Boch bought which canvas he painted near Arles?",
-      "answer": "The Red Vineyard",
+      "question": "After Dr. Félix Rey saved him in Arles, Van Gogh painted the doctor's portrait as thanks. What did Rey's mother later use the painting as?",
+      "answer": "A chicken-coop patch",
       "acceptedAnswers": [
-        "The Red Vineyard",
-        "the red vineyard",
-        "red vineyard",
-        "the red vineyards",
-        "red vineyard at arles",
-        "the red vineyard at arles"
+        "A chicken-coop patch",
+        "chicken coop patch",
+        "a chicken coop patch",
+        "to patch a chicken coop",
+        "chicken coop",
+        "to patch the chicken coop",
+        "a patch for a chicken coop"
       ],
       "choices": [
-        "Sunflowers",
-        "The Sower",
-        "Café Terrace at Night"
+        "A tea tray",
+        "Kindling",
+        "Wallpaper"
       ],
-      "explanation": "She bought it for about 400 francs at the Les XX exhibition in Brussels—the one sale every historian agrees on."
+      "explanation": "Rey found the portrait strange and gave it to his mother, who used it to patch a hole in a chicken coop. It survived and hangs today in Moscow's Pushkin Museum."
     },
     {
       "level": 5,
-      "question": "Myth: The Red Vineyard was his only sale. Actually, Theo's 1888 letter records a Van Gogh self-portrait sold to dealers in what city?",
+      "question": "Myth: that chicken-coop portrait was his only brush with a buyer. Actually, Theo's 1888 letter records a Van Gogh self-portrait sold to dealers in what city?",
       "answer": "London",
       "acceptedAnswers": [
         "London",
@@ -103,5 +104,9 @@
     }
   ],
   "image": "detective-magnifying-glass.jpg",
-  "imageHint": "A magnifying glass revealing hidden truths, perfect for the fact-checker of the group"
+  "imageHint": "A magnifying glass revealing hidden truths, perfect for the fact-checker of the group",
+  "easterEgg": {
+    "title": "The lost London sale",
+    "text": "Theo's October 1888 letter to \"Sulley et Lori\" records a paid Van Gogh self-portrait shipped to London. No painting matching it has ever turned up—it may still sit, unrecognized, in an attic."
+  }
 }

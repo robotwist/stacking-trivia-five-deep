@@ -1,65 +1,128 @@
 {
-  "title": "Jalen Brunson: The Clutch Conductor",
+  "title": "Knicks: Game 6 in Philly",
+  "description": "Forty-one points, a Villanova dime, and a go-ahead three—Go Deep into a road clincher that sent the Garden into summer early.",
   "image": "jalen-brunson-knicks-clutch.jpg",
-  "imageHint": "The steady point guard in Knicks blue and orange, orchestrating plays with calm precision in pressure moments",
-  "description": "From Villanova champion to Dallas role player to New York's franchise cornerstone, Jalen Brunson has proven that basketball IQ and clutch performance matter more than athletic measurables.",
+  "imageHint": "A point guard in blue and orange willing a road clincher",
   "category": "sports",
   "questions": [
     {
       "level": 1,
-      "question": "Which NBA team did Jalen Brunson sign with in 2022 as a free agent, leaving the Dallas Mavericks?",
-      "answer": "New York Knicks",
-      "acceptableAnswers": ["New York Knicks", "Knicks", "knicks", "new york knicks"],
-      "explanation": "Brunson signed a 4-year, $104 million contract with the New York Knicks in 2022, immediately becoming their starting point guard and team leader."
+      "question": "In Game 6 of the 2024 first round, which Knicks guard scored 41 points with 12 assists on the road to close the series?",
+      "answer": "Jalen Brunson",
+      "acceptedAnswers": [
+        "Jalen Brunson",
+        "jalen brunson",
+        "brunson",
+        "jalen"
+      ],
+      "choices": [
+        "Donte DiVincenzo",
+        "OG Anunoby",
+        "Julius Randle"
+      ],
+      "explanation": "Fourteen of those points came in the fourth. It was his fourth straight playoff game with 39-plus—company only a handful of legends have kept."
     },
     {
       "level": 2,
-      "question": "How many NCAA Championships did Jalen Brunson win at Villanova University?",
-      "answer": "Two",
-      "acceptableAnswers": ["Two", "2", "two"],
-      "explanation": "Brunson won NCAA Championships with Villanova in 2016 and 2018, earning Most Outstanding Player honors in the 2018 tournament for his clutch performances."
+      "question": "Brunson's biggest dime that night found which Villanova teammate for a go-ahead three with 24.4 seconds left?",
+      "answer": "Josh Hart",
+      "acceptedAnswers": [
+        "Josh Hart",
+        "josh hart",
+        "hart"
+      ],
+      "choices": [
+        "Donte DiVincenzo",
+        "Mikal Bridges",
+        "Miles McBride"
+      ],
+      "explanation": "Hart was waiting up top. The three made it 114–111. Free throws finished Philly; the Garden heard it from 90 miles away."
     },
     {
       "level": 3,
-      "question": "What position did Jalen Brunson's father, Rick Brunson, play during his NBA career?",
-      "answer": "Point guard",
-      "acceptableAnswers": ["Point guard", "point guard", "PG", "guard"],
-      "explanation": "Rick Brunson was an NBA point guard who played for nine teams during his career, including the Knicks. His basketball knowledge greatly influenced Jalen's development."
+      "question": "Hart's go-ahead three sealed a first-round win over which Joel Embiid–led franchise?",
+      "answer": "Philadelphia 76ers",
+      "acceptedAnswers": [
+        "Philadelphia 76ers",
+        "philadelphia 76ers",
+        "76ers",
+        "sixers",
+        "philly",
+        "philadelphia"
+      ],
+      "choices": [
+        "Miami Heat",
+        "Indiana Pacers",
+        "Boston Celtics"
+      ],
+      "explanation": "Series: 4–2. Embiid had 39 and 13 in the finale and still walked off. Next up for New York: Indiana in the conference semis."
     },
     {
       "level": 4,
-      "question": "In the 2022 playoffs with Dallas, Brunson had a breakout performance against which Western Conference team, averaging over 21 points per game?",
-      "answer": "Utah Jazz",
-      "acceptableAnswers": ["Utah Jazz", "Jazz", "utah jazz", "the Jazz"],
-      "explanation": "Brunson averaged 21.6 points per game against Utah in the 2022 first round, showcasing the clutch gene that would make him a coveted free agent that summer."
+      "question": "Earlier against those 76ers, Brunson's 47-point Game 4 broke which Knick's 1984 playoff scoring record?",
+      "answer": "Bernard King",
+      "acceptedAnswers": [
+        "Bernard King",
+        "bernard king",
+        "king",
+        "bernie king"
+      ],
+      "choices": [
+        "Patrick Ewing",
+        "Carmelo Anthony",
+        "Walt Frazier"
+      ],
+      "explanation": "King's mark had stood forty years. Brunson also added 10 assists that night—and shrugged afterward: he'd think about the record when he retired."
     },
     {
       "level": 5,
-      "question": "What specific advanced basketball metric improved dramatically for Brunson after joining the Knicks, reflecting his increased usage and efficiency?",
-      "answer": "Usage rate",
-      "acceptableAnswers": ["Usage rate", "usage", "USG%", "usage percentage"],
-      "explanation": "Brunson's usage rate jumped from 22% in Dallas to over 28% with the Knicks, reflecting his evolution from role player to primary offensive initiator while maintaining high efficiency."
+      "question": "Bernard King's old Knicks playoff high that Brunson passed was how many points?",
+      "answer": "46",
+      "acceptedAnswers": [
+        "46",
+        "forty-six",
+        "forty six",
+        "46 points"
+      ],
+      "choices": [
+        "42",
+        "50",
+        "55"
+      ],
+      "explanation": "Brunson 47, King 46. One point. The kind of number Garden lifers can recite without looking it up."
     }
   ],
-  "connections": [
-    {
-      "targetStack": "okc-thunder",
-      "sharedThemes": ["sports", "NBA", "point guard"],
-      "connectionStrength": 3,
-      "trigger": "Both connected to NBA point guard excellence and small-market to big-market team dynamics"
-    },
-    {
-      "targetStack": "minecraft",
-      "sharedThemes": ["strategy", "building"],
-      "connectionStrength": 1,
-      "trigger": "Both involve strategic thinking and building something brick by brick"
-    }
-  ],
-  "qualityScore": 86,
-  "familyRequest": {
-    "originalTopic": "Jalen Brunson",
-    "priority": 1,
-    "generatedAt": "2024-08-10T21:15:00.000Z",
-    "notes": "NBA point guard known for clutch performances"
+  "deeperMode": {
+    "title": "Go Deeper: Before the Garden",
+    "description": "The second-round steal and the dad who ran the point",
+    "questions": [
+      {
+        "question": "Before the Knicks, Dallas drafted Brunson where in 2018—a pick that looks absurd now?",
+        "acceptedAnswers": [
+          "33rd overall",
+          "33rd",
+          "33",
+          "thirty-third",
+          "pick 33",
+          "the 33rd pick"
+        ],
+        "bonus": 150,
+        "hint": "Second round, after two Villanova titles"
+      },
+      {
+        "question": "Brunson's father—who ran the point in the NBA, including a stop in New York—is named what?",
+        "acceptedAnswers": [
+          "Rick Brunson",
+          "rick brunson",
+          "rick"
+        ],
+        "bonus": 200,
+        "hint": "Nine seasons, eight teams, later a coach"
+      }
+    ]
+  },
+  "easterEgg": {
+    "title": "56 in a state final",
+    "text": "At Stevenson High in Illinois, Brunson dropped 56 in an IHSA finals game—a state-final scoring record—against a team featuring future No. 1 pick Jahlil Okafor. The Garden version was always in there."
   }
 }

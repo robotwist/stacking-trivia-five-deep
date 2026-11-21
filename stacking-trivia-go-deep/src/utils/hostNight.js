@@ -2,7 +2,7 @@
  * Host Night: a host runs trivia for a room from one laptop (optionally with a TV screen).
  * Teams answer on paper or out loud; the host marks who got each level right.
  *
- * Each round is one five-level stack. With the dive rule on, a team that misses a level
+ * Each round is one five-level stack. With the Go Deep rule on, a team that misses a level
  * sits out the rest of that round, so late levels (80, 160 pts) decide the night.
  */
 import { calculateQuestionScore } from './scoreUtils'

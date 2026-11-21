@@ -107,7 +107,7 @@ const QuickStats = () => {
       {stats.stacksCompleted === 0 && (
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-300">
-            🎯 Ready to start your trivia journey? Pick a topic and dive deep!
+            🎯 Ready to start your trivia journey? Pick a topic and Go Deep!
           </p>
         </div>
       )}

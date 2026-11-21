@@ -18,7 +18,7 @@ const day = (y, m, d) => new Date(y, m - 1, d, 12)
 describe('playerRecords', () => {
   beforeEach(() => localStorage.clear())
 
-  it('keeps the best score and flags a perfect dive', () => {
+  it('keeps the best score and flags a perfect Go Deep', () => {
     expect(recordRun('queso-wars', { score: 70, levelsCleared: 3, totalLevels: 5 }).isNewBest).toBe(true)
     const second = recordRun('queso-wars', { score: 30, levelsCleared: 2, totalLevels: 5 })
     expect(second).toEqual({ isNewBest: false, previousBest: 70 })
@@ -74,6 +74,15 @@ describe('playerRecords', () => {
     const answers = [{ correct: true }, { correct: true, usedChoices: true }, { correct: false }]
     expect(buildResultCode(answers, 5)).toBe('gyrww')
     expect(ladderFromCode('gyrww')).toBe('🟩🟨🟥⬜⬜')
+  })
+
+  it('keeps later levels on their question when an earlier answer is missing', () => {
+    const answers = [
+      { questionIndex: 0, correct: true },
+      { questionIndex: 2, correct: false },
+      { questionIndex: 0, correct: false, deeper: true },
+    ]
+    expect(buildResultCode(answers, 5)).toBe('gwrww')
   })
 
   it('numbers daily stacks from Jan 1, 2026', () => {

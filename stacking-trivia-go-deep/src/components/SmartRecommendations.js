@@ -317,7 +317,7 @@ export class SmartRecommendations {
     if (timePreference === 'short' && metadata.estimatedTime.includes('6-8')) {
       reasons.push(`Perfect for a quick session`);
     } else if (timePreference === 'long' && metadata.estimatedTime.includes('12-15')) {
-      reasons.push(`Great for a deep dive session`);
+      reasons.push(`Great for a Go Deep session`);
     }
 
     return reasons.length > 0 ? reasons[0] : 'Recommended based on your playing patterns';

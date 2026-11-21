@@ -1,10 +1,10 @@
 {
-  "title": "Miles Davis: Kind of Revolution",
-  "description": "Cool jazz and restless innovation—one legendary recording era.",
+  "title": "Kind of Blue: Sketches Only",
+  "description": "Sketches instead of charts, scales instead of chords, and a tape machine that lied—Go Deep into jazz's most famous album.",
   "questions": [
     {
       "level": 1,
-      "question": "Which jazz trumpeter recorded the album 'Kind of Blue'?",
+      "question": "Which trumpeter handed his band only sketches—no rehearsals—for the sessions that became 'Kind of Blue'?",
       "answer": "Miles Davis",
       "acceptedAnswers": [
         "Miles Davis",
@@ -16,11 +16,12 @@
         "Dizzy Gillespie",
         "Chet Baker",
         "Louis Armstrong"
-      ]
+      ],
+      "explanation": "\"I wanted a lot of spontaneity in the playing,\" he wrote in his autobiography. It paid off: the album was certified 5× platinum in the U.S. in 2019, 60 years on."
     },
     {
       "level": 2,
-      "question": "In what year was Miles Davis's 'Kind of Blue' recorded?",
+      "question": "Miles cut those Kind of Blue sketches in Columbia's 30th Street Studio—a converted church in Manhattan—across two dates in what year?",
       "answer": "1959",
       "acceptedAnswers": [
         "1959",
@@ -31,11 +32,12 @@
         "1955",
         "1963",
         "1968"
-      ]
+      ],
+      "explanation": "March 2 and April 22. Side one came from day one; side two, seven weeks later. The room's church acoustics are part of why the record still sounds like a cathedral."
     },
     {
       "level": 3,
-      "question": "On the 1959 'Kind of Blue' sessions, which tenor saxophonist played alongside Miles?",
+      "question": "On those 1959 Kind of Blue sessions, which tenor saxophonist played alongside Miles—weeks before cutting 'Giant Steps'?",
       "answer": "John Coltrane",
       "acceptedAnswers": [
         "John Coltrane",
@@ -48,11 +50,11 @@
         "Charlie Parker",
         "Wayne Shorter"
       ],
-      "explanation": "Coltrane played tenor; Cannonball Adderley played alto on the same sessions."
+      "explanation": "Cannonball Adderley played alto beside him. Two weeks after the final session, Trane cut 'Giant Steps'—a blizzard of chord changes, the polar opposite of what Miles wanted here."
     },
     {
       "level": 4,
-      "question": "Coltrane joined Miles in what jazz approach on 'Kind of Blue'?",
+      "question": "Coltrane joined Miles in what new approach—improvising over scales instead of chord changes—on 'Kind of Blue'?",
       "answer": "Modal jazz",
       "acceptedAnswers": [
         "Modal jazz",
@@ -65,11 +67,12 @@
         "Bebop",
         "Hard bop",
         "Free jazz"
-      ]
+      ],
+      "explanation": "On 'So What,' the band rides one Dorian scale for 16 bars, slides up a half step for the 8-bar bridge, then comes home. Pianist Bill Evans helped shape the sound—and wrote the liner notes."
     },
     {
       "level": 5,
-      "question": "Those modal jazz tracks were mostly captured in how many takes?",
+      "question": "Bill Evans's liner notes claimed those modal jazz pieces were each captured in how many complete takes?",
       "answer": "One take",
       "acceptedAnswers": [
         "One take",
@@ -84,9 +87,14 @@
         "Three takes",
         "Eight takes",
         "Twenty takes"
-      ]
+      ],
+      "explanation": "Nearly true: 'Flamenco Sketches' took two complete takes, and the album used the second. The real twist? On day one a three-track machine ran slow, so for decades those tracks played slightly sharp until Sony fixed the pitch in 1992."
     }
   ],
   "image": "kind-of-blue-album.jpg",
-  "imageHint": "An iconic album cover from a pivotal jazz session"
+  "imageHint": "An iconic album cover from a pivotal jazz session",
+  "easterEgg": {
+    "title": "Japanese parchment",
+    "text": "Bill Evans's liner notes compare the session to a Japanese art form: paint on thin parchment where one wrong stroke ruins the line. Miles arrived with sketches hours before; deliberation was the enemy."
+  }
 }

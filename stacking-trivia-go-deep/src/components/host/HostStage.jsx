@@ -178,7 +178,7 @@ export default function HostStage({ night, gameStacks, showAnswerKey = false }) 
       </main>
 
       <footer className="flex flex-wrap items-center justify-center gap-3 text-lg">
-        <span className="text-gray-400">{night.settings.diveRule ? 'Still diving:' : 'Playing:'}</span>
+        <span className="text-gray-400">{night.settings.diveRule ? 'Still going deep:' : 'Playing:'}</span>
         {diving.map((id) => (
           <span key={id} className="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/60 text-amber-100">{teamName(id)}</span>
         ))}

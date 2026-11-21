@@ -5,6 +5,7 @@
 import { normalizeStack, normalizeQuestion, normalizeAnswerText } from '../src/utils/normalizeStack.js'
 import { checkAnswerMatch, normalizeAnswer } from '../src/utils/textUtils.js'
 import { StackDepthAnalyzer } from './depthAnalyzer.js'
+import { findAnswerLeaks } from './answerLeaks.js'
 
 const depthAnalyzer = new StackDepthAnalyzer()
 
@@ -18,6 +19,8 @@ const MIN_ACCEPTED_ANSWERS = 3
 const REQUIRED_QUESTION_COUNT = 5
 const MIN_LEAK_TOKEN_LENGTH = 4
 const REQUIRED_CHOICES = 3
+const MIN_EXPLANATION_LENGTH = 60
+const MAX_EXPLANATION_LENGTH = 260
 
 /**
  * Hand-written decoys for the "show choices" lifeline. They must be clearly wrong,
@@ -72,6 +75,18 @@ const getPromoText = (stack) => {
     stack.deeperMode?.title,
   ]
   return parts.filter(Boolean).join(' ').toLowerCase()
+}
+
+/** Title shows on the card and in-game header—must not name the level-1 answer. */
+const checkTitleSpoilsLevelOne = (stack, errors) => {
+  const titleText = (stack.title || '').toLowerCase()
+  if (!titleText) return
+  const q1 = stack.questions?.[0]
+  if (!q1) return
+  ;[q1.answer, ...(q1.acceptedAnswers || [])].forEach((a) => {
+    if (!a) return
+    checkPromoLeakage(titleText, a, 1, 'stack title', errors)
+  })
 }
 
 /**
@@ -190,6 +205,8 @@ export function validateStack(stack) {
     return { valid: false, errors, warnings }
   }
 
+  checkTitleSpoilsLevelOne(stack, errors)
+
   const promoText = getPromoText(stack)
 
   validateQuestions(stack.questions, {
@@ -201,6 +218,23 @@ export function validateStack(stack) {
     checkNarrative: true,
   })
   validateChoices(stack.questions, 'Main', errors)
+  stack.questions.forEach((q, index) => {
+    const length = (q.explanation || '').trim().length
+    if (length < MIN_EXPLANATION_LENGTH) {
+      errors.push(`Main Q${index + 1}: needs an explanation of at least ${MIN_EXPLANATION_LENGTH} characters (the reveal card is the payoff), got ${length}`)
+    } else if (length > MAX_EXPLANATION_LENGTH) {
+      warnings.push(`Main Q${index + 1}: explanation is ${length} characters; aim for ${MAX_EXPLANATION_LENGTH} or fewer so it reads aloud quickly`)
+    }
+  })
+  if (stack.easterEgg) {
+    const { title, text } = stack.easterEgg
+    if (!title || !text) errors.push('easterEgg needs both a title and text')
+    else if (text.length > 280) warnings.push(`easterEgg text is ${text.length} characters; keep it under 280 so it reads in one breath`)
+  }
+
+  findAnswerLeaks(stack).forEach(({ level, detail }) => {
+    errors.push(`Main Q${level}: gives away its answer: ${detail}`)
+  })
 
   const deeperQs = stack.deeperMode?.questions
   if (Array.isArray(deeperQs) && deeperQs.length > 0) {

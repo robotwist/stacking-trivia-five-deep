@@ -44,7 +44,7 @@ describe('hostNightReducer', () => {
     expect(state.level).toBe(2)
   })
 
-  it('with the dive rule, a miss sits a team out for the rest of the round', () => {
+  it('with the Go Deep rule, a miss sits a team out for the rest of the round', () => {
     let state = setupNight()
     state = scoreLevel(state, ['a', 'b'])
     expect(state.inDive).toEqual(['a', 'b'])
@@ -62,7 +62,7 @@ describe('hostNightReducer', () => {
     expect(getRoundPoints(state, 0)).toEqual({ a: 10, b: 0, c: 0 })
   })
 
-  it('without the dive rule, every team answers every level', () => {
+  it('without the Go Deep rule, every team answers every level', () => {
     let state = setupNight({ diveRule: false })
     state = scoreLevel(state, [])
     state = scoreLevel(state, ['c'])
