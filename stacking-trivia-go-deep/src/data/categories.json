@@ -27,6 +27,17 @@
         "olympic_distance_1980s"
       ]
     },
+    "nebraska-huskers": {
+      "title": "Nebraska Cornhuskers",
+      "description": "College football for people who already know the easy stuff—three stacks deep into Husker lore",
+      "image": "sports",
+      "color": "from-red-700 to-amber-600",
+      "stacks": [
+        "nebraska-sports-ultimate",
+        "nebraska-blackshirts",
+        "nebraska-option-dynasty"
+      ]
+    },
     "sports": {
       "title": "Sports Legends",
       "description": "Dive deep into moments that defined greatness",
@@ -36,7 +47,6 @@
         "muhammad-ali",
         "michael-jordan",
         "serena-williams",
-        "nebraska-sports-ultimate",
         "jalen-brunson",
         "okc-thunder"
       ]

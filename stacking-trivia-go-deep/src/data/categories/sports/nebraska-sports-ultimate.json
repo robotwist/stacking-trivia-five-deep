@@ -1,6 +1,9 @@
 {
-  "title": "Nebraska Sports: From Bugeaters to Sellouts",
-  "description": "A sportswriter's nickname swap, a stadium that becomes a city on Saturdays, and an NCAA record that still stands—five steps into Husker lore.",
+  "title": "Nebraska: Sea of Red",
+  "description": "From Bugeaters to a stadium that becomes a city—then the mountain-west hire who made Saturdays holy.",
+  "image": "memorial-stadium.jpg",
+  "imageHint": "A sea of red on game day in Lincoln",
+  "category": "sports",
   "questions": [
     {
       "level": 1,
@@ -38,61 +41,87 @@
     },
     {
       "level": 3,
-      "question": "Since 1962, Memorial Stadium has held an NCAA-record streak of consecutive what?",
-      "answer": "Sellouts",
+      "question": "Memorial Stadium's NCAA-record consecutive sellout streak began on Nov. 3 against Missouri—in what year?",
+      "answer": "1962",
       "acceptedAnswers": [
-        "Sellouts",
-        "sellouts",
-        "sellout streak",
-        "sold out games",
-        "sold-out games"
+        "1962",
+        "nineteen sixty-two",
+        "'62",
+        "62"
       ],
       "choices": [
-        "Home wins",
-        "Shutouts",
-        "Bowl games"
+        "1954",
+        "1966",
+        "1983"
       ],
-      "explanation": "It began Nov. 3, 1962, with 36,501 fans for Missouri. No. 400 came in 2024—an overtime loss to Illinois—and the streak is still more than double any other school's."
+      "explanation": "Attendance that day: 36,501. Sellout No. 400 landed in 2024—an overtime loss to Illinois—and the streak is still more than double any other school's."
     },
     {
       "level": 4,
-      "question": "During Memorial Stadium's consecutive sellouts, who coached Nebraska to three national titles in the 1990s?",
-      "answer": "Tom Osborne",
+      "question": "That 1962 sellout era was just starting when Nebraska hired Bob Devaney away from which mountain-west program?",
+      "answer": "Wyoming",
       "acceptedAnswers": [
-        "Tom Osborne",
-        "tom osborne",
-        "osborne",
-        "coach osborne"
+        "Wyoming",
+        "wyoming",
+        "university of wyoming",
+        "the wyoming cowboys",
+        "cowboys"
       ],
       "choices": [
-        "Bob Devaney",
-        "Frank Solich",
-        "Barry Switzer"
+        "Colorado State",
+        "Montana",
+        "BYU"
       ],
-      "explanation": "Titles in '94, '95 and '97 (shared with Michigan). Fans still debate the 1984 Orange Bowl: down 31-30 to Miami, he went for two instead of a likely title-winning tie—and missed."
+      "explanation": "Devaney arrived for the 1962 season and went 9-2. Within a decade he'd turn a sleepy program into a national power—and hand the keys to his assistant, Tom Osborne."
     },
     {
       "level": 5,
-      "question": "Osborne's dominant 1990s offensive line earned what nickname?",
-      "answer": "Pipeline",
+      "question": "Devaney, hired from Wyoming, won his first national championship for Nebraska in which season?",
+      "answer": "1970",
       "acceptedAnswers": [
-        "Pipeline",
-        "pipeline",
-        "the pipeline",
-        "nebraska pipeline"
+        "1970",
+        "nineteen seventy",
+        "'70",
+        "the 1970 season"
       ],
       "choices": [
-        "Blackshirts",
-        "Hogs",
-        "Steel Curtain"
+        "1965",
+        "1971",
+        "1983"
       ],
-      "explanation": "Line coach Milt Tenopir lost four starters after 1994, and the 1995 Pipeline still paved the way for 399.8 rushing yards a game. The Blackshirts? That's the defense."
+      "explanation": "They finished it off by beating LSU in the Orange Bowl on Jan. 1, 1971. He won again in 1971, then stepped aside so Osborne could begin the longest assistant-to-throne handoff in college football lore."
     }
   ],
-  "image": "memorial-stadium.jpg",
-  "imageHint": "A sea of red on game day in Lincoln",
+  "deeperMode": {
+    "title": "Deeper: Tunnel and Stone",
+    "description": "For anyone who has shivered through a November Tunnel Walk",
+    "questions": [
+      {
+        "question": "Nebraska players take the field to which Alan Parsons Project instrumental—the heartbeat of the Tunnel Walk?",
+        "acceptedAnswers": [
+          "Sirius",
+          "sirius",
+          "sirius by the alan parsons project",
+          "alan parsons project sirius"
+        ],
+        "bonus": 150,
+        "hint": "Same track the Bulls made famous in Chicago"
+      },
+      {
+        "question": "Carved into Memorial Stadium's southwest corner: \"Not the victory but the action; Not the goal but the game; In the deed the glory.\" Which Nebraska philosophy professor wrote those lines?",
+        "acceptedAnswers": [
+          "Hartley Burr Alexander",
+          "hartley burr alexander",
+          "hartley alexander",
+          "alexander"
+        ],
+        "bonus": 200,
+        "hint": "He also helped design inscriptions for the Nebraska State Capitol"
+      }
+    ]
+  },
   "easterEgg": {
     "title": "Not the victory but the action",
-    "text": "Carved into the stadium's southwest corner, by philosophy professor Hartley Burr Alexander: \"Not the victory but the action; Not the goal but the game; In the deed the glory.\""
+    "text": "Hartley Burr Alexander's lines are carved into the stadium stone. Locals can quote them after a loss. Visitors learn them the hard way."
   }
 }

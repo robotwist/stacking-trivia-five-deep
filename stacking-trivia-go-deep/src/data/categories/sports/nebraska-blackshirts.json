@@ -1,0 +1,132 @@
+{
+  "title": "Nebraska: Blackshirts",
+  "description": "Black practice jerseys, a Wyoming import's defense, and the unit that made Saturdays mean—five steps into Husker D lore.",
+  "image": "memorial-stadium.jpg",
+  "imageHint": "Black practice jerseys that became a statewide identity",
+  "category": "sports",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Nebraska's defense is known statewide by what nickname—taken from the color of their practice jerseys?",
+      "answer": "Blackshirts",
+      "acceptedAnswers": [
+        "Blackshirts",
+        "blackshirts",
+        "black shirts",
+        "the blackshirts"
+      ],
+      "choices": [
+        "Redshirts",
+        "Pipeline",
+        "Herbie's Heroes"
+      ],
+      "explanation": "Only defensive players who earned a starting job got the black jersey in practice. Offense wore white. The name stuck harder than any slogan the marketing department ever wrote."
+    },
+    {
+      "level": 2,
+      "question": "The Blackshirts tradition of those practice jerseys became sacred under which head coach—the mountain-west hire who rebuilt the program?",
+      "answer": "Bob Devaney",
+      "acceptedAnswers": [
+        "Bob Devaney",
+        "bob devaney",
+        "devaney",
+        "robert devaney"
+      ],
+      "choices": [
+        "Tom Osborne",
+        "Frank Solich",
+        "Bo Pelini"
+      ],
+      "explanation": "Devaney brought the black-jersey hierarchy with him. Walk-ons still tell the story: you don't buy a Blackshirt—you earn it."
+    },
+    {
+      "level": 3,
+      "question": "Under Devaney's successor, which defensive coordinator ran the Blackshirts from 1982 through the Osborne title years?",
+      "answer": "Charlie McBride",
+      "acceptedAnswers": [
+        "Charlie McBride",
+        "charlie mcbride",
+        "mcbride",
+        "charles mcbride"
+      ],
+      "choices": [
+        "Bo Pelini",
+        "George Darlington",
+        "Craig Bohl"
+      ],
+      "explanation": "McBride's units were mean, multiple, and deeply local. When fans say \"Blackshirt football,\" they're usually remembering his rooms as much as any single All-American."
+    },
+    {
+      "level": 4,
+      "question": "McBride's 1995 Blackshirts helped a national-title team that scored 50-plus a game—about how many points per game did that defense allow (nearest whole number)?",
+      "answer": "14",
+      "acceptedAnswers": [
+        "14",
+        "fourteen",
+        "14.5",
+        "14.2",
+        "13.6",
+        "about 14",
+        "under 15",
+        "14 points",
+        "fourteen points",
+        "fifteen",
+        "15"
+      ],
+      "choices": [
+        "7",
+        "21",
+        "28"
+      ],
+      "explanation": "About 14.5 including the Fiesta Bowl (Wikipedia's 12-game book); regular-season charts sat near 13.6. Either way: a 50-point offense married to a stingy Blackshirt front."
+    },
+    {
+      "level": 5,
+      "question": "While that mid-90s Blackshirt front held opponents near 14 a game, which disruptive defensive end—later a Rams Super Bowl champion—became a face of the unit?",
+      "answer": "Grant Wistrom",
+      "acceptedAnswers": [
+        "Grant Wistrom",
+        "grant wistrom",
+        "wistrom"
+      ],
+      "choices": [
+        "Ndamukong Suh",
+        "Trev Alberts",
+        "Jason Peter"
+      ],
+      "explanation": "Wistrom was a two-time All-American who played through the 1994–97 title window, then won a Super Bowl with St. Louis. Suh came a generation later; Alberts owned the early '90s Butkus lore."
+    }
+  ],
+  "deeperMode": {
+    "title": "Deeper: More Blackshirt Blood",
+    "description": "Names the Tunnel Walk crowd still chants",
+    "questions": [
+      {
+        "question": "Which Nebraska linebacker won the 1993 Butkus Award before the mid-90s title run?",
+        "acceptedAnswers": [
+          "Trev Alberts",
+          "trev alberts",
+          "alberts",
+          "trevor alberts"
+        ],
+        "bonus": 150,
+        "hint": "Later an ESPN analyst and athletic director"
+      },
+      {
+        "question": "In 2009, which defensive tackle—nicknamed \"Baby Giraffe\" in Lincoln—won the Outland and Bronko Nagurski awards as a Blackshirt?",
+        "acceptedAnswers": [
+          "Ndamukong Suh",
+          "ndamukong suh",
+          "suh",
+          "ndamukong"
+        ],
+        "bonus": 200,
+        "hint": "Went No. 2 overall to Detroit the next spring"
+      }
+    ]
+  },
+  "easterEgg": {
+    "title": "You earn it",
+    "text": "In the Devaney–Osborne years, black jerseys weren't merchandise. Defensive starters got them for practice; everyone else watched. The nickname outlived the laundry rule."
+  }
+}

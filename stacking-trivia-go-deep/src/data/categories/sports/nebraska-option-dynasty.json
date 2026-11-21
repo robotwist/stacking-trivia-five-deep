@@ -1,0 +1,131 @@
+{
+  "title": "Nebraska: Option Dynasty",
+  "description": "Go-for-two heartbreak, a fumblerooski trick play, and a split national title—five steps into the 1990s Husker empire.",
+  "image": "memorial-stadium.jpg",
+  "imageHint": "Option pitches and a sea of red in the 1990s",
+  "category": "sports",
+  "questions": [
+    {
+      "level": 1,
+      "question": "Which Nebraska coach won national titles in 1994, 1995, and 1997 after decades as Devaney's offensive assistant?",
+      "answer": "Tom Osborne",
+      "acceptedAnswers": [
+        "Tom Osborne",
+        "tom osborne",
+        "osborne",
+        "coach osborne",
+        "dr tom osborne"
+      ],
+      "choices": [
+        "Bob Devaney",
+        "Frank Solich",
+        "Barry Switzer"
+      ],
+      "explanation": "Twenty-five seasons as head coach, 255 wins, and a farewell lap into Congress. The argument in Lincoln isn't whether he belongs on the mountain—it's which title year was most Nebraska."
+    },
+    {
+      "level": 2,
+      "question": "In the 1984 Orange Bowl, Osborne's undefeated Huskers trailed Miami late—and he famously went for what instead of a near-certain tying kick?",
+      "answer": "Two-point conversion",
+      "acceptedAnswers": [
+        "Two-point conversion",
+        "two-point conversion",
+        "two points",
+        "2-point conversion",
+        "2 point conversion",
+        "go for two",
+        "two-point play"
+      ],
+      "choices": [
+        "Field goal",
+        "Onside kick",
+        "Punt"
+      ],
+      "explanation": "Turner Gill's pass failed. Miami won 31–30. Osborne later said he'd make the same call again—championships shouldn't be shared on a kick he didn't need to respect."
+    },
+    {
+      "level": 3,
+      "question": "Before that failed two-point conversion haunted the state, which Husker offensive lineman scored on the \"Fumblerooski\" in the same Orange Bowl?",
+      "answer": "Dean Steinkuhler",
+      "acceptedAnswers": [
+        "Dean Steinkuhler",
+        "dean steinkuhler",
+        "steinkuhler",
+        "dean"
+      ],
+      "choices": [
+        "Dave Rimington",
+        "Zach Wiegert",
+        "Aaron Taylor"
+      ],
+      "explanation": "Center snaps, QB \"fumbles\" the ball to the ground, guard Steinkuhler scoops and runs. It worked for a touchdown. The two-point try later that night still haunts the state."
+    },
+    {
+      "level": 4,
+      "question": "By the mid-90s title years after Steinkuhler's era, Osborne's dominant offensive line earned what nickname?",
+      "answer": "Pipeline",
+      "acceptedAnswers": [
+        "Pipeline",
+        "pipeline",
+        "the pipeline",
+        "nebraska pipeline"
+      ],
+      "choices": [
+        "Blackshirts",
+        "Hogs",
+        "The Wall"
+      ],
+      "explanation": "Line coach Milt Tenopir lost four starters after 1994, and the 1995 Pipeline still paved 399.8 rushing yards a game. Option football dies without those five."
+    },
+    {
+      "level": 5,
+      "question": "After the Pipeline years, Osborne's 1997 national title was split—Nebraska took the coaches' poll after beating which team in the Orange Bowl?",
+      "answer": "Tennessee",
+      "acceptedAnswers": [
+        "Tennessee",
+        "tennessee",
+        "volunteers",
+        "tennessee volunteers",
+        "the volunteers"
+      ],
+      "choices": [
+        "Michigan",
+        "Florida",
+        "Miami"
+      ],
+      "explanation": "Peyton Manning's Vols fell 42–17. Michigan got the AP vote after the Rose Bowl. Nebraska fans still call 1997 a three-peat with footnotes—and they can recite every footnote."
+    }
+  ],
+  "deeperMode": {
+    "title": "Deeper: Option Bloodwork",
+    "description": "For anyone who still argues 1995 vs 1997 in a bar",
+    "questions": [
+      {
+        "question": "Which Nebraska quarterback ran the option through the 1994–95 title seasons and the Fiesta Bowl demolition of Florida?",
+        "acceptedAnswers": [
+          "Tommie Frazier",
+          "tommie frazier",
+          "frazier",
+          "tommy frazier"
+        ],
+        "bonus": 150,
+        "hint": "His 75-yard option TD in the '96 Fiesta Bowl is the dynasty's signature clip"
+      },
+      {
+        "question": "In that 1996 Fiesta Bowl (1995 season), Nebraska beat Florida by what final score—still a title-game wrecking?",
+        "acceptedAnswers": [
+          "62-24",
+          "62–24",
+          "62 to 24",
+          "sixty-two twenty-four"
+        ],
+        "bonus": 200,
+        "hint": "Steve Spurrier's Fun 'n' Gun met the Pipeline at altitude of humiliation"
+      }
+    ]
+  },
+  "easterEgg": {
+    "title": "He'd go for two again",
+    "text": "Osborne never apologized for 1984. In interviews years later he still preferred losing by a yard on two to backing into a title with a kick. That stubbornness is the dynasty's origin story."
+  }
+}

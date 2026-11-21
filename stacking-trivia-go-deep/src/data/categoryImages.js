@@ -35,6 +35,15 @@ export const CATEGORY_IMAGES = {
     alt: "Muhammad Ali training, black and white archival photograph",
     description: "Historic boxing gymnasium, 1960s"
   },
+  'nebraska-huskers': {
+    backgroundImage: `linear-gradient(135deg, 
+      rgba(90, 0, 0, 0.95) 0%, 
+      rgba(140, 20, 20, 0.9) 40%, 
+      rgba(180, 80, 20, 0.75) 100%
+    ), url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' opacity='0.08'%3E%3Cpath d='M0 20h40M20 0v40'/%3E%3C/g%3E%3C/svg%3E")`,
+    alt: "Memorial Stadium sea of red, archival game-day photograph",
+    description: "Lincoln on a Saturday in scarlet"
+  },
   'science-technology': {
     // Laboratory equipment and scientific instruments
     backgroundImage: `linear-gradient(135deg, 

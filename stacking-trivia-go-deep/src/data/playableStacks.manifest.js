@@ -15,6 +15,8 @@ export const PLAYABLE_STACK_REGISTRY = [
   { key: 'olympic_distance_current', module: './categories/sports/olympic_distance_current.json' },
   { key: 'olympic_distance_1980s', module: './categories/sports/olympic_distance_1980s.json' },
   { key: 'nebraska-sports-ultimate', module: './categories/sports/nebraska-sports-ultimate.json' },
+  { key: 'nebraska-blackshirts', module: './categories/sports/nebraska-blackshirts.json' },
+  { key: 'nebraska-option-dynasty', module: './categories/sports/nebraska-option-dynasty.json' },
   { key: 'el-guerrouj-ultimate', module: './categories/sports/el-guerrouj-ultimate.json' },
   { key: 'prefontaine-ultimate', module: './categories/sports/prefontaine-ultimate.json' },
   { key: 'muhammad-ali', module: './categories/sports/muhammad-ali.json' },
