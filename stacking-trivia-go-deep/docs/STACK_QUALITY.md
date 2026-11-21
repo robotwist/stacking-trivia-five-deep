@@ -4,15 +4,47 @@ A stack is great when a fan finishes it and wants to tell someone. That happens 
 
 **Voice:** Say **Go Deep**, not “dive” / “deep dive.” “Dive deep into a subject” is a business cliché. Go Deep is the product language (and a football throw).
 
-Our best stacks today, to copy from: **Queso Wars**, **Serena Williams**, **1984 Orange Bowl**, **Michael Jordan: The Last Shot**, **Where Gandalf Came From**.
+Our best stacks today, to copy from: **Queso Wars: Texas vs Arkansas**, **Serena: Seven Matches, One Secret**, **Nebraska: 1984 Orange Bowl**, **1998 Finals: The Last Shot**, **Name Origins: Where Gandalf Came From**, **Star Wars: The Death Star Rescue**.
+
+### Title grammar (every playable stack)
+
+One shape everywhere:
+
+**`{Shelf}: {Beat}`**
+
+| Part | What it is | Examples |
+|---|---|---|
+| **Shelf** | What fans browse by—franchise, team, series, brand, album, *or* the famous night when naming the star would spoil level 1 | `Star Wars`, `Nebraska`, `Queso Wars`, `1998 Finals`, `Munich 5000`, `Actually` |
+| **Beat** | Short evocative turn (about 2–6 words)—the scene, possession, or twist | `The Death Star Rescue`, `The Last Shot`, `Fourth by a Stride`, `Morning at Woltz's` |
+
+Rules:
+
+- Always use a colon. No bare event titles (`Rumble in the Jungle` → `Kinshasa 1974: Rumble in the Jungle`).
+- **Never put the level-1 answer in the title** (the title sits on the card and in the in-game header).
+- Prefer the **night / world** on the left, not a résumé name, when level 1 asks “who?”
+- Description cadence: three concrete images, then the voice—*“A, B, and C—Go Deep into X.”*
+
+### Leak logic (what the validator actually checks)
+
+These are **separate** rules. Nicknames are not the title model.
+
+| Check | Where | What it catches |
+|---|---|---|
+| **Own-question** | Question text | A meaningful word of *this* level’s answer appears in the question |
+| **Nickname** | Question text only | A short word in the question is a prefix of a long answer word (`Pre` → `Prefontaine`). Prevents “who is Pre?” style freebies |
+| **Already-said** | Earlier levels | This level’s answer was already printed as an answer or in an earlier question |
+| **Promo** | Description, imageHint, deeperMode blurb | Any answer (incl. acceptedAnswers ≥4 chars) appears before play |
+| **Title vs Q1** | Stack title | Level-1 answer or acceptedAnswers (≥4 chars) appear in the title |
+
+Accepted nicknames on an answer (`pre`, `ali`, `mj`) are fine for grading. They must not appear in the **question**, **title**, or **promo** when they’re long enough to trip the checks (≥4 chars for promo/title; nickname prefix rule for questions).
 
 ### Sports: legendary-possession chains
 
-For sports fans, prefer **one famous night** over a résumé. Jordan’s Last Shot and Nebraska’s 1984 Orange Bowl are the bar: who scored, who threw, who tipped, who left hurt, what the final was. College / hometown topics that locals clear by level 4 should become a **triple stack** (three linked five-level stories), not one easy five.
+For sports fans, prefer **one famous night** over a résumé. `1998 Finals: The Last Shot` and `Nebraska: 1984 Orange Bowl` are the bar: who scored, who threw, who tipped, who left hurt, what the final was. College / hometown topics that locals clear by level 4 should become a **triple stack** (three linked five-level stories), not one easy five.
 
 ### Cinema / TV: one-scene chains
 
-Same idea on screen: **one sequence**, not a filmography. Star Wars Death Star rescue and The Godfather horse’s head are the bar—prop, line, number, behind-the-scenes receipt. Open on the scene; put résumé facts (who directed) in Go Deeper if at all.
+Same idea on screen: **one sequence**, not a filmography. `Star Wars: The Death Star Rescue` and `The Godfather: Morning at Woltz's` are the bar—prop, line, number, behind-the-scenes receipt. Open on the scene; put résumé facts (who directed) in Go Deeper if at all.
 
 ## The rubric (score each 0–2; 12+ of 16 ships)
 
@@ -84,4 +116,4 @@ Weak: *"Released in 1963, it launched Beatlemania."* (true, but generic)
 
 ## Checks the validator enforces
 
-`npm run validate:stacks` fails a stack that is missing explanations, choices, or a fair chain, or that gives away an answer. It can't judge humor, fan delight, or the turn. Those take a human (or careful editor) reading the stack aloud and asking: *would a fan grin?*
+`npm run validate:stacks` fails a stack that is missing explanations, choices, or a fair chain, or that gives away an answer (including a title that spoils level 1). It can't judge humor, fan delight, the turn, or whether a title's **Shelf: Beat** feels on-brand. Those take a human reading the stack aloud and asking: *would a fan grin?*
