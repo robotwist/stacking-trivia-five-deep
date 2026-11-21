@@ -77,6 +77,18 @@ const getPromoText = (stack) => {
   return parts.filter(Boolean).join(' ').toLowerCase()
 }
 
+/** Title shows on the card and in-game header—must not name the level-1 answer. */
+const checkTitleSpoilsLevelOne = (stack, errors) => {
+  const titleText = (stack.title || '').toLowerCase()
+  if (!titleText) return
+  const q1 = stack.questions?.[0]
+  if (!q1) return
+  ;[q1.answer, ...(q1.acceptedAnswers || [])].forEach((a) => {
+    if (!a) return
+    checkPromoLeakage(titleText, a, 1, 'stack title', errors)
+  })
+}
+
 /**
  * @param {string} promoText
  * @param {string} answer
@@ -192,6 +204,8 @@ export function validateStack(stack) {
     errors.push('Missing questions array')
     return { valid: false, errors, warnings }
   }
+
+  checkTitleSpoilsLevelOne(stack, errors)
 
   const promoText = getPromoText(stack)
 

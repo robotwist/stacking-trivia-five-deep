@@ -24,7 +24,7 @@ Same idea on screen: **one sequence**, not a filmography. Star Wars Death Star r
 | **Fan delight** | Wikipedia-summary facts | One deep cut | Levels 3–5 reward real fans: quotes, behind-the-scenes, inside jokes, the detail only devotees know |
 | **Humor and voice** | Dry, textbook phrasing | Clear and friendly | A wink in at least two places: playful wording, a delicious irony, a perfect quote |
 | **The turn** (level 5) | Just the hardest fact | A satisfying ending | A twist that reframes the story (Cotton missed his own cheese-dip victory; Gandalf was first a dwarf) |
-| **Fairness** | Ambiguous, two right answers, or the answer is in the question | Fair, one right answer | Fair, typeable, and the decoys are tempting misconceptions |
+| **Fairness** | Ambiguous, two right answers, answer in the question, **or the stack title names the level-1 answer** | Fair, one right answer | Fair, typeable, and the decoys are tempting misconceptions |
 | **Accuracy** | Unverified or popular myth stated as fact | Correct | Correct, and contested points are flagged in the explanation |
 
 ## Fan craft: what makes people wait for this trivia
