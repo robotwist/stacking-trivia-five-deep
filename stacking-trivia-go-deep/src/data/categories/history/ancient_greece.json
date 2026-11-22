@@ -1,60 +1,12 @@
 {
-  "title": "Ancient Greece: From Hemlock to Bucephalus",
-  "description": "A teacher's death, a grove of learning, and a horse afraid of its shadow—Go Deep into the tutors of conquerors.",
+  "title": "Bucephalus: Afraid of Its Shadow",
+  "description": "A horse no one could ride, a boy who faces it into the sun, and a city named in mourning—Go Deep into one taming that made a conqueror.",
+  "image": "parthenon-temple.jpg",
+  "imageHint": "Dust, sun, and a horse that feared its own dark twin",
   "questions": [
     {
       "level": 1,
-      "question": "After Socrates drank hemlock in 399 BC, which student turned their conversations into the dialogues that still teach philosophy?",
-      "answer": "Plato",
-      "acceptedAnswers": [
-        "Plato",
-        "plato",
-        "platon"
-      ],
-      "choices": [
-        "Xenophon",
-        "Alcibiades",
-        "Aristophanes"
-      ],
-      "explanation": "Socrates wrote nothing down. Almost everything we \"hear\" him say is Plato ventriloquizing his teacher—and sometimes arguing with him."
-    },
-    {
-      "level": 2,
-      "question": "Plato founded a school in a sacred grove outside Athens named for the hero Akademos. What was the school called?",
-      "answer": "Academy",
-      "acceptedAnswers": [
-        "Academy",
-        "academy",
-        "the academy",
-        "plato's academy",
-        "akademeia"
-      ],
-      "choices": [
-        "Lyceum",
-        "Stoa",
-        "Garden"
-      ],
-      "explanation": "Every \"academy\" since borrows the name. Aristotle's later school, the Lyceum, and Epicurus's Garden were the rivals."
-    },
-    {
-      "level": 3,
-      "question": "Which future philosopher studied at Plato's Academy for about twenty years—then spent a career disagreeing with him?",
-      "answer": "Aristotle",
-      "acceptedAnswers": [
-        "Aristotle",
-        "aristotle",
-        "aristoteles"
-      ],
-      "choices": [
-        "Plotinus",
-        "Diogenes",
-        "Epicurus"
-      ],
-      "explanation": "He arrived around age 17 and stayed until Plato died in 347 BC. \"Plato is dear to me,\" a later paraphrase goes, \"but truth is dearer still.\""
-    },
-    {
-      "level": 4,
-      "question": "King Philip II of Macedon hired Aristotle to tutor which teenage prince?",
+      "question": "According to Plutarch, which Macedonian prince tamed a warhorse by turning its head toward the sun—away from its own shadow?",
       "answer": "Alexander the Great",
       "acceptedAnswers": [
         "Alexander the Great",
@@ -68,11 +20,11 @@
         "Ptolemy",
         "Hephaestion"
       ],
-      "explanation": "From about 343 BC, Aristotle taught the boy who would carry Greek culture from Egypt to the edge of India—and name cities after himself along the way."
+      "explanation": "The adults had given up. The boy saw what spooked the animal, bet he could ride it, and won a horse—and a legend."
     },
     {
-      "level": 5,
-      "question": "As a boy, Alexander tamed a horse no one else could ride by turning its head toward the sun—away from its own shadow. What was its name?",
+      "level": 2,
+      "question": "What was the name of the horse Alexander tamed that day?",
       "answer": "Bucephalus",
       "acceptedAnswers": [
         "Bucephalus",
@@ -85,11 +37,62 @@
         "Pegasus",
         "Marengo"
       ],
-      "explanation": "He later named a city in modern Pakistan for the horse: Bucephala. When Bucephalus died, Alexander mourned him like a friend."
+      "explanation": "The name is usually glossed as \"ox-head,\" likely from a brand. He carried Alexander from Europe into Asia."
+    },
+    {
+      "level": 3,
+      "question": "Bucephalus spooked at what, which Alexander removed by facing him into the sun?",
+      "answer": "His shadow",
+      "acceptedAnswers": [
+        "His shadow",
+        "his shadow",
+        "shadow",
+        "its shadow",
+        "the shadow",
+        "his own shadow"
+      ],
+      "choices": [
+        "Thunder",
+        "Spears",
+        "Crowds"
+      ],
+      "explanation": "Turn the head toward the sun and the dark twin falls behind. A simple trick. An empire's worth of confidence."
+    },
+    {
+      "level": 4,
+      "question": "After that shadow trick, King Philip bought Bucephalus for about how many talents—then told Alexander to find a kingdom big enough for him?",
+      "answer": "13",
+      "acceptedAnswers": [
+        "13",
+        "thirteen",
+        "13 talents",
+        "thirteen talents"
+      ],
+      "choices": [
+        "3",
+        "30",
+        "100"
+      ],
+      "explanation": "Plutarch puts the price near thirteen talents. Philip's line: look for a kingdom equal to your ambition—Macedonia is too small."
+    },
+    {
+      "level": 5,
+      "question": "When Bucephalus later died on campaign, Alexander named which city for him—on the far side of his empire?",
+      "answer": "Bucephala",
+      "acceptedAnswers": [
+        "Bucephala",
+        "bucephala",
+        "alexandria bucephala",
+        "bukephala"
+      ],
+      "choices": [
+        "Alexandria",
+        "Babylon",
+        "Persepolis"
+      ],
+      "explanation": "Near the Hydaspes in modern Pakistan, tradition says. He mourned the horse like a friend—and stamped the name into the map."
     }
   ],
-  "image": "parthenon-temple.jpg",
-  "imageHint": "Marble columns and the legacy of Athens",
   "easterEgg": {
     "title": "Afraid of its shadow",
     "text": "Plutarch says young Alexander noticed Bucephalus spooked at his own shadow, so he turned the horse's head toward the sun. He later named a city in modern Pakistan for the horse: Bucephala."

@@ -1,6 +1,7 @@
 {
-  "title": "Stranger Things: Welcome to the Upside Down",
-  "description": "A ten-hour campaign, frozen breakfast, and a world flipped to its black side—Go Deep into a small Indiana town.",
+  "title": "Stranger Things: The Night Will Vanished",
+  "description": "A bad D&D roll, a bike that never makes it home, and a world flipped to its black side—Go Deep into November 6, 1983.",
+  "category": "pop-culture",
   "questions": [
     {
       "level": 1,
@@ -17,47 +18,47 @@
         "Haddonfield"
       ],
       "hint": "This Indiana town has some strange secrets",
-      "explanation": "The Duffer Brothers pitched the show as \"Montauk,\" set on Long Island. Winter shooting there was impractical, so Hawkins was built in Georgia, with downtown Jackson playing the town."
+      "explanation": "The Duffers pitched the show as \"Montauk.\" Winter shooting on Long Island was impractical, so Hawkins was built in Georgia."
     },
     {
       "level": 2,
-      "question": "Hours before Will vanishes, the Hawkins boys wrap up a ten-hour campaign of what tabletop game?",
-      "answer": "Dungeons and Dragons",
+      "question": "Hours before Will vanishes from Hawkins, the boys' ten-hour campaign ends when Will rolls a seven against which D&D monster?",
+      "answer": "Demogorgon",
       "acceptedAnswers": [
-        "Dungeons and Dragons",
-        "dungeons and dragons",
-        "d&d",
-        "dnd"
+        "Demogorgon",
+        "demogorgon",
+        "the demogorgon"
       ],
       "choices": [
-        "Monopoly",
-        "Trivial Pursuit",
-        "Battleship"
+        "Mind Flayer",
+        "Vecna",
+        "Beholder"
       ],
-      "hint": "Will gets captured by the Demogorgon in this game",
-      "explanation": "Will needed a 13 to fireball the Demogorgon and rolled a seven. \"The Demogorgon. It got me,\" he tells Mike. That same night, a real monster does."
+      "hint": "He needed a 13 to fireball it",
+      "explanation": "\"The Demogorgon. It got me,\" Will tells Mike. That same night, something with too many teeth answers the roll for real."
     },
     {
       "level": 3,
-      "question": "The Dungeons and Dragons party hides a runaway girl named Eleven. What frozen breakfast is her favorite food?",
-      "answer": "Eggo waffles",
+      "question": "After the Demogorgon takes Will, Joyce Byers strings up Christmas lights to talk across worlds. What does Will's first coded message say he is?",
+      "answer": "Right here",
       "acceptedAnswers": [
-        "Eggo waffles",
-        "eggo waffles",
-        "eggos",
-        "waffles"
+        "Right here",
+        "right here",
+        "I'm right here",
+        "i am right here",
+        "here"
       ],
       "choices": [
-        "Pop-Tarts",
-        "Reese's Pieces",
-        "Twinkies"
+        "Run",
+        "Help",
+        "Safe"
       ],
-      "hint": "L'eggo my...",
-      "explanation": "Hopper later bribes her with a Triple-Decker Eggo Extravaganza: whipped cream, Hershey's Kisses, Reese's Pieces, jelly beans. Real Eggo sales jumped 14% after season 2."
+      "hint": "Two words, painted in light",
+      "explanation": "A phone melts. Lights blink. Joyce paints the alphabet on the wall. When the bulbs finally speak, the comfort is also a horror: he never left."
     },
     {
       "level": 4,
-      "question": "Eggo-fueled Eleven opens a portal to what parallel dimension mirroring Hawkins?",
+      "question": "Will is \"right here\" in what parallel dimension Eleven opens—named when she flips the D&D board to its black side?",
       "answer": "The Upside Down",
       "acceptedAnswers": [
         "The Upside Down",
@@ -69,12 +70,12 @@
         "The Phantom Zone",
         "The Nether"
       ],
-      "hint": "Everything is dark and decaying in this place",
-      "explanation": "Eleven names it in \"The Flea and the Acrobat,\" flipping the D&D board to its black side. Mr. Clarke's tightrope-walker analogy supplies the physics."
+      "hint": "Everything is dark and decaying",
+      "explanation": "Eleven names it in \"The Flea and the Acrobat.\" Mr. Clarke's tightrope-walker analogy supplies the physics; the board supplies the poetry."
     },
     {
       "level": 5,
-      "question": "Eleven opened the Upside Down as Dr. Brenner's test subject, but her mother, Terry Ives, gave her a real name first. What is it?",
+      "question": "Eleven opened that Upside Down as Dr. Brenner's test subject, but her mother, Terry Ives, gave her a real name first. What is it?",
       "answer": "Jane",
       "acceptedAnswers": [
         "Jane",
@@ -87,11 +88,38 @@
         "Holly",
         "Erica"
       ],
-      "explanation": "Terry was a subject of MKUltra, the CIA's real 1953–1973 mind-control program, and Brenner took her baby. Hopper's forged adoption papers finally make her Jane Hopper.",
-      "hint": "Four letters, as plain as a name gets"
+      "hint": "Four letters, as plain as a name gets",
+      "explanation": "Terry was tied to MKUltra lore in the show's mythos; Brenner took the baby. Hopper's forged papers finally make her Jane Hopper."
     }
   ],
-  "category": "pop-culture",
+  "deeperMode": {
+    "title": "Go Deeper: Breakfast and Ink",
+    "description": "Breakfast bribes and paperback covers",
+    "questions": [
+      {
+        "question": "What frozen breakfast is Eleven's favorite food?",
+        "acceptedAnswers": [
+          "Eggo waffles",
+          "eggo waffles",
+          "eggos",
+          "waffles"
+        ],
+        "bonus": 150,
+        "hint": "L'eggo my..."
+      },
+      {
+        "question": "What typeface family does the glowing red title evoke—borrowed from vintage Stephen King paperbacks?",
+        "acceptedAnswers": [
+          "ITC Benguiat",
+          "benguiat",
+          "itc benguiat",
+          "benguiat gothic"
+        ],
+        "bonus": 200,
+        "hint": "Judge a show by its cover"
+      }
+    ]
+  },
   "easterEgg": {
     "title": "Judge a show by its cover",
     "text": "That glowing red title is a modified ITC Benguiat. The Duffers sent the designers a stack of vintage Stephen King paperbacks and asked for the feeling of cracking one open."

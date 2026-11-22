@@ -1,30 +1,32 @@
 {
-  "title": "Nebraska: Sea of Red",
-  "description": "From Bugeaters to a stadium that becomes a city—then the mountain-west hire who made Saturdays holy. Go Deep.",
+  "title": "Memorial Stadium: 92,003",
+  "description": "A court on the football field, a state in red, and a Guinness-scale roar—Go Deep into the night Lincoln outdrew itself.",
   "image": "memorial-stadium.jpg",
-  "imageHint": "A sea of red on game day in Lincoln",
+  "imageHint": "A sea of red under the lights for a non-football final",
   "category": "sports",
   "questions": [
     {
       "level": 1,
-      "question": "Nebraska's football team once played as the Bugeaters—what nickname do they go by today?",
-      "answer": "Cornhuskers",
+      "question": "On Aug. 30, 2023, which Nebraska team played before 92,003 fans—the largest women's sports crowd in U.S. history?",
+      "answer": "Volleyball",
       "acceptedAnswers": [
-        "Cornhuskers",
-        "cornhuskers",
-        "huskers",
-        "nebraska cornhuskers"
+        "Volleyball",
+        "volleyball",
+        "nebraska volleyball",
+        "husker volleyball",
+        "women's volleyball",
+        "the volleyball team"
       ],
       "choices": [
-        "Hawkeyes",
-        "Sooners",
-        "Jayhawks"
+        "Soccer",
+        "Softball",
+        "Basketball"
       ],
-      "explanation": "Lincoln sportswriter Cy Sherman tired of \"Bugeaters\" and borrowed a name sometimes pinned on Iowa. The 1900 team was first to wear it; the state adopted it in 1945."
+      "explanation": "They put a court on the football field. The Tunnel Walk still hit. For one night the Sea of Red belonged to a different kind of spike."
     },
     {
       "level": 2,
-      "question": "On Cornhuskers game days, which Lincoln venue becomes, by crowd size, Nebraska's \"third-largest city\"?",
+      "question": "That volleyball crowd of 92,003 packed which Lincoln venue—the same bowl that claims to become Nebraska's \"third-largest city\" on football Saturdays?",
       "answer": "Memorial Stadium",
       "acceptedAnswers": [
         "Memorial Stadium",
@@ -34,14 +36,52 @@
       ],
       "choices": [
         "Haymarket Park",
-        "Kinnick Stadium",
-        "Pinnacle Bank Arena"
+        "Pinnacle Bank Arena",
+        "Bob Devaney Center"
       ],
-      "explanation": "Dedicated in 1923 to Nebraskans who served in the nation's wars. In 2023 a volleyball match drew 92,003 there—the largest crowd ever for a women's sporting event in the U.S."
+      "explanation": "Dedicated in 1923 to Nebraskans who served. Football sellouts made it famous; volleyball made it historic in a new way."
     },
     {
       "level": 3,
-      "question": "Memorial Stadium's NCAA-record consecutive sellout streak began on Nov. 3 against Missouri—in what year?",
+      "question": "Inside Memorial Stadium that night, Nebraska volleyball beat which in-state rival?",
+      "answer": "Omaha",
+      "acceptedAnswers": [
+        "Omaha",
+        "omaha",
+        "nebraska omaha",
+        "nebraska-omaha",
+        "university of nebraska omaha",
+        "uno",
+        "mavericks",
+        "omaha mavericks"
+      ],
+      "choices": [
+        "Creighton",
+        "Kansas",
+        "Wisconsin"
+      ],
+      "explanation": "Final: 3–0. Omaha was the perfect foil—close enough to fill carpools, big enough to feel like a statement."
+    },
+    {
+      "level": 4,
+      "question": "After sweeping Omaha before 92,003, which longtime Nebraska volleyball coach—already a national-title fixture—paced the sideline?",
+      "answer": "John Cook",
+      "acceptedAnswers": [
+        "John Cook",
+        "john cook",
+        "cook",
+        "coach cook"
+      ],
+      "choices": [
+        "Dani Busboom Kelly",
+        "Terry Pettit",
+        "Jim Sterkel"
+      ],
+      "explanation": "Cook built a dynasty at the Devaney Center first. Putting his team on the football field was a flex felt statewide—and the crowd answered."
+    },
+    {
+      "level": 5,
+      "question": "Cook's volleyball night borrowed a football bowl that has sold out every home game since Nov. 3 of what year?",
       "answer": "1962",
       "acceptedAnswers": [
         "1962",
@@ -54,43 +94,7 @@
         "1966",
         "1983"
       ],
-      "explanation": "Attendance that day: 36,501. Sellout No. 400 landed in 2024—an overtime loss to Illinois—and the streak is still more than double any other school's."
-    },
-    {
-      "level": 4,
-      "question": "That 1962 sellout era was just starting when Nebraska hired Bob Devaney away from which mountain-west program?",
-      "answer": "Wyoming",
-      "acceptedAnswers": [
-        "Wyoming",
-        "wyoming",
-        "university of wyoming",
-        "the wyoming cowboys",
-        "cowboys"
-      ],
-      "choices": [
-        "Colorado State",
-        "Montana",
-        "BYU"
-      ],
-      "explanation": "Devaney arrived for the 1962 season and went 9-2. Within a decade he'd turned a sleepy program into a national power—and built the Blackshirt culture that still defines Saturdays."
-    },
-    {
-      "level": 5,
-      "question": "Devaney, hired from Wyoming, sealed his first national title by beating which team in the Orange Bowl on Jan. 1, 1971?",
-      "answer": "LSU",
-      "acceptedAnswers": [
-        "LSU",
-        "lsu",
-        "louisiana state",
-        "louisiana state university",
-        "the tigers"
-      ],
-      "choices": [
-        "Texas",
-        "Oklahoma",
-        "Alabama"
-      ],
-      "explanation": "Final: Nebraska 17, LSU 12. That capped the 1970 season. He won again in 1971, then stepped aside so his longtime assistant could take the headset."
+      "explanation": "Missouri was the opponent for sellout No. 1. By 2024 the football streak had passed 400. One court, one August night, and the Sea of Red proved it could break records for more than football."
     }
   ],
   "deeperMode": {
@@ -98,7 +102,7 @@
     "description": "For anyone who has shivered through a November Tunnel Walk",
     "questions": [
       {
-        "question": "Nebraska players take the field to which Alan Parsons Project instrumental—the heartbeat of the Tunnel Walk?",
+        "question": "Nebraska teams take the field to which Alan Parsons Project instrumental—the heartbeat of the Tunnel Walk?",
         "acceptedAnswers": [
           "Sirius",
           "sirius",
@@ -109,7 +113,7 @@
         "hint": "Same track the Bulls made famous in Chicago"
       },
       {
-        "question": "Carved into Memorial Stadium's southwest corner: \"Not the victory but the action; Not the goal but the game; In the deed the glory.\" Which Nebraska philosophy professor wrote those lines?",
+        "question": "Carved into Memorial Stadium: \"Not the victory but the action; Not the goal but the game; In the deed the glory.\" Which Nebraska philosophy professor wrote those lines?",
         "acceptedAnswers": [
           "Hartley Burr Alexander",
           "hartley burr alexander",

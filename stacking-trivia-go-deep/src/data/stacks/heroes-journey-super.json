@@ -1,10 +1,61 @@
 {
-  "title": "Hero's Journey: Campbell's Pattern",
-  "description": "A scholar's book, a word stolen from a novel, and a galaxy far, far away—Go Deep into the story behind stories.",
+  "title": "Power of Myth: At the Ranch",
+  "description": "A TV interviewer, a myth scholar's last summers, and a filmmaker's California hideout—Go Deep into the week heroes got explained on camera.",
+  "category": "actually",
   "questions": [
     {
       "level": 1,
-      "question": "In 1949 Joseph Campbell argued that heroes from every culture follow one shared path—departure, initiation, return. What book introduced that Hero's Journey?",
+      "question": "In the late 1980s, which journalist sat down with Joseph Campbell for the PBS series The Power of Myth?",
+      "answer": "Bill Moyers",
+      "acceptedAnswers": [
+        "Bill Moyers",
+        "bill moyers",
+        "moyers",
+        "william moyers"
+      ],
+      "choices": [
+        "Walter Cronkite",
+        "Charlie Rose",
+        "Oprah Winfrey"
+      ],
+      "explanation": "Six episodes of patient questions about gods, dreams, and why the same hero keeps showing up. It aired in 1988, the year after Campbell died."
+    },
+    {
+      "level": 2,
+      "question": "Moyers taped most of those Power of Myth talks at which California property?",
+      "answer": "Skywalker Ranch",
+      "acceptedAnswers": [
+        "Skywalker Ranch",
+        "skywalker ranch",
+        "skywalker",
+        "the ranch"
+      ],
+      "choices": [
+        "Esalen Institute",
+        "American Zoetrope",
+        "Hearst Castle"
+      ],
+      "explanation": "Five of the six episodes were filmed there over Campbell's last two summers. Mythology, meet the shop that built lightsabers."
+    },
+    {
+      "level": 3,
+      "question": "Skywalker Ranch belonged to which filmmaker—who later called Campbell \"my Yoda\"?",
+      "answer": "George Lucas",
+      "acceptedAnswers": [
+        "George Lucas",
+        "george lucas",
+        "lucas"
+      ],
+      "choices": [
+        "Steven Spielberg",
+        "Francis Ford Coppola",
+        "Stanley Kubrick"
+      ],
+      "explanation": "They did not actually meet until after Return of the Jedi; Lucas heard Campbell lecture in 1984. The friendship came after the trilogy, not before."
+    },
+    {
+      "level": 4,
+      "question": "Lucas said which 1949 Campbell book helped shape Star Wars—the one that maps departure, initiation, and return?",
       "answer": "The Hero with a Thousand Faces",
       "acceptedAnswers": [
         "The Hero with a Thousand Faces",
@@ -18,11 +69,11 @@
         "The Masks of God",
         "Man and His Symbols"
       ],
-      "explanation": "Campbell compared myths from every continent and argued that their heroes follow one shared path: departure, initiation, return."
+      "explanation": "Campbell compared myths across continents and argued their heroes walk one shared path. Lucas used it as a builder's blueprint."
     },
     {
-      "level": 2,
-      "question": "In The Hero with a Thousand Faces, what one-word term does Campbell use for that universal pattern?",
+      "level": 5,
+      "question": "In The Hero with a Thousand Faces, Campbell's one-word name for the universal pattern was borrowed from James Joyce's Finnegans Wake. What word?",
       "answer": "Monomyth",
       "acceptedAnswers": [
         "Monomyth",
@@ -35,63 +86,11 @@
         "Ur-myth",
         "Mythologem"
       ],
-      "explanation": "One story, endlessly retold—Campbell said the hero 'ventures forth from the world of common day into a region of supernatural wonder.'"
-    },
-    {
-      "level": 3,
-      "question": "Campbell borrowed the word 'monomyth' from which James Joyce novel?",
-      "answer": "Finnegans Wake",
-      "acceptedAnswers": [
-        "Finnegans Wake",
-        "finnegans wake",
-        "finnegan's wake",
-        "finnegans",
-        "the wake"
-      ],
-      "choices": [
-        "Ulysses",
-        "Dubliners",
-        "A Portrait of the Artist as a Young Man"
-      ],
-      "explanation": "Campbell was a Joyce scholar—he co-wrote 'A Skeleton Key to Finnegans Wake' in 1944, five years before his own book."
-    },
-    {
-      "level": 4,
-      "question": "From a Finnegans Wake scholar to a movie muse: which filmmaker credited Campbell's book with shaping Star Wars?",
-      "answer": "George Lucas",
-      "acceptedAnswers": [
-        "George Lucas",
-        "george lucas",
-        "lucas"
-      ],
-      "choices": [
-        "Steven Spielberg",
-        "Francis Ford Coppola",
-        "Stanley Kubrick"
-      ],
-      "explanation": "Lucas has said Campbell's book helped him shape the saga and later called Campbell \"my Yoda.\" They did not actually meet until after Return of the Jedi—Lucas heard Campbell lecture in 1984."
-    },
-    {
-      "level": 5,
-      "question": "George Lucas hosted Campbell's famous 'Power of Myth' interviews with Bill Moyers at what California property?",
-      "answer": "Skywalker Ranch",
-      "acceptedAnswers": [
-        "Skywalker Ranch",
-        "skywalker ranch",
-        "skywalker",
-        "the ranch"
-      ],
-      "choices": [
-        "Esalen Institute",
-        "American Zoetrope",
-        "Hearst Castle"
-      ],
-      "explanation": "Moyers taped five of the six episodes at the ranch over Campbell's last two summers. The series aired in 1988, the year after he died."
+      "explanation": "Campbell was a Joyce scholar first—he co-wrote A Skeleton Key to Finnegans Wake in 1944. The word traveled from the Wake to every screenwriting lecture on Earth."
     }
   ],
-  "category": "actually",
   "deeperMode": {
-    "title": "Deeper: Myth and Mind",
+    "title": "Go Deeper: Myth and Mind",
     "description": "Bonus lore for myth obsessives",
     "questions": [
       {
@@ -117,7 +116,7 @@
           "supernatural aid stage"
         ],
         "bonus": 200,
-        "hint": "Obi-Wan with a lightsaber; a fairy godmother with a wand—Campbell's original term"
+        "hint": "Obi-Wan with a lightsaber; Campbell's original term"
       }
     ]
   },

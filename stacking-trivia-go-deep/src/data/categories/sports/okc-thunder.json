@@ -1,13 +1,13 @@
 {
   "title": "OKC: Finals Game 1, 2012",
-  "description": "A 13-point hole, 36 in the fourth-quarter takeover, and a near triple-double—Go Deep into the night OKC took Game 1 of the 2012 Finals.",
+  "description": "A double-digit hole, 36 in the takeover, and one lead change all night—Go Deep into the loudest June Chesapeake ever heard.",
   "image": "okc-thunder-paycom-center.jpg",
   "imageHint": "Chesapeake Energy Arena, June 2012, blue and orange roaring",
   "category": "sports",
   "questions": [
     {
       "level": 1,
-      "question": "In Game 1 of the 2012 NBA Finals, which Thunder star scored 36 points—including 17 in the fourth—to beat Miami?",
+      "question": "In Game 1 of the 2012 NBA Finals, which Thunder star scored 36—including 17 in the fourth—to beat Miami?",
       "answer": "Kevin Durant",
       "acceptedAnswers": [
         "Kevin Durant",
@@ -56,40 +56,43 @@
         "Dallas Mavericks",
         "Boston Celtics"
       ],
-      "explanation": "LeBron finished with 30. It wasn't enough. Final: Thunder 105, Heat 94—OKC's first Finals win as a franchise."
+      "explanation": "LeBron finished with 30. Final: Thunder 105, Heat 94—OKC's first Finals win as a franchise."
     },
     {
       "level": 4,
-      "question": "After that 105–94 Game 1, Miami won the series. How many games did the Heat win in the Finals?",
-      "answer": "4",
+      "question": "Before that Heat comeback flip, OKC had trailed by how many points in the first half of Game 1?",
+      "answer": "13",
       "acceptedAnswers": [
-        "4",
-        "four",
-        "4 games",
-        "four games"
+        "13",
+        "thirteen",
+        "13 points",
+        "by 13",
+        "down 13"
+      ],
+      "choices": [
+        "7",
+        "18",
+        "22"
+      ],
+      "explanation": "A 13-point hole at home in a Finals opener. The fourth-quarter takeover made the deficit feel like a setup."
+    },
+    {
+      "level": 5,
+      "question": "After climbing out of that 13-point hole, how many lead changes did the entire Game 1 have?",
+      "answer": "1",
+      "acceptedAnswers": [
+        "1",
+        "one",
+        "only one",
+        "just one",
+        "1 lead change"
       ],
       "choices": [
         "3",
         "5",
-        "6"
+        "7"
       ],
-      "explanation": "Heat took Games 2 through 5 for a 4–1 series. Game 1 remains the what-if night—the loudest Chesapeake ever got in June."
-    },
-    {
-      "level": 5,
-      "question": "In that Game 1 win, which Thunder big came off the bench for 10 rebounds and helped own the glass 43–35?",
-      "answer": "Nick Collison",
-      "acceptedAnswers": [
-        "Nick Collison",
-        "nick collison",
-        "collison"
-      ],
-      "choices": [
-        "Kendrick Perkins",
-        "Serge Ibaka",
-        "Nazr Mohammed"
-      ],
-      "explanation": "Collison's offensive boards fueled the fourth-quarter run. Perkins started; the glue guy cleaned up. Locals still cheer the name."
+      "explanation": "Box-score trivia locals still cite: once Westbrook put OKC ahead late in the third, the lead never flipped back. One punch. Done."
     }
   ],
   "deeperMode": {
@@ -123,7 +126,7 @@
     ]
   },
   "easterEgg": {
-    "title": "One lead change",
-    "text": "Box-score trivia from that Game 1: there was only one lead change the entire night. Once Westbrook put OKC ahead late in the third, the lead never flipped back."
+    "title": "The glue guy",
+    "text": "Nick Collison came off the bench for 10 rebounds and helped own the glass 43–35. Perkins started; the glue guy cleaned up. Locals still cheer the name."
   }
 }

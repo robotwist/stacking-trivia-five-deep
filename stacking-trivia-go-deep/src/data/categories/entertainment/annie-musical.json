@@ -1,13 +1,31 @@
 {
-  "title": "Annie: From Comic Strip to Broadway",
-  "description": "A stray dog, a billionaire, and a president who learns to sing—Go Deep into Broadway's favorite orphan.",
+  "title": "Annie: Hard-Knock Morning",
+  "description": "A laundry basket escape, a stray mutt, and a mansion that isn't an orphanage—Go Deep into one Broadway morning that changes everything.",
   "image": "annie-broadway-stage.jpg",
-  "imageHint": "Broadway stage with red curly-haired girl in red dress, NYC skyline backdrop, golden spotlight",
+  "imageHint": "Red curls, a hard-knock chorus, and a city that might say yes",
   "category": "entertainment",
   "questions": [
     {
       "level": 1,
-      "question": "Little orphan Annie promises that \"the sun'll come out\" in her signature song. What is it called?",
+      "question": "In the orphanage, Annie and the girls scrub floors while singing which bitter anthem about chores and Miss Hannigan?",
+      "answer": "It's the Hard Knock Life",
+      "acceptedAnswers": [
+        "It's the Hard Knock Life",
+        "its the hard knock life",
+        "hard knock life",
+        "the hard knock life",
+        "hard-knock life"
+      ],
+      "choices": [
+        "Maybe",
+        "Easy Street",
+        "NYC"
+      ],
+      "explanation": "Buckets, brushes, and a choreography of resentment. The sun will come out later—first they have to survive the morning."
+    },
+    {
+      "level": 2,
+      "question": "After that hard-knock chorus, Annie escapes and comforts herself with the promise that \"the sun'll come out\" in which song?",
       "answer": "Tomorrow",
       "acceptedAnswers": [
         "Tomorrow",
@@ -15,15 +33,15 @@
         "the sun will come out tomorrow"
       ],
       "choices": [
-        "It's the Hard Knock Life",
         "Maybe",
-        "Easy Street"
+        "I Don't Need Anything But You",
+        "NYC"
       ],
-      "explanation": "Lyricist Martin Charnin bought a Little Orphan Annie book as a Christmas gift in 1970, read it instead of wrapping it, and set out to get the rights. The friend never got the book."
+      "explanation": "Lyricist Martin Charnin bought a Little Orphan Annie book as a Christmas gift, read it instead of wrapping it, and chased the rights. The friend never got the book."
     },
     {
-      "level": 2,
-      "question": "Annie sings Tomorrow to a stray mutt running from the dogcatcher, then names him on the spot to fool a cop. What is his name?",
+      "level": 3,
+      "question": "Annie sings Tomorrow to a stray mutt running from the dogcatcher, then names him on the spot. What is his name?",
       "answer": "Sandy",
       "acceptedAnswers": [
         "Sandy",
@@ -35,11 +53,11 @@
         "Toto",
         "Lassie"
       ],
-      "explanation": "The original Sandy was a shelter mutt found by William Berloni, a 19-year-old apprentice promised his Equity card for it. That Sandy never missed a performance."
+      "explanation": "The original Broadway Sandy was a shelter mutt found by apprentice William Berloni. That dog never missed a performance."
     },
     {
-      "level": 3,
-      "question": "Annie and Sandy end up in the Manhattan mansion of which billionaire?",
+      "level": 4,
+      "question": "Annie and Sandy end up leaving the hard-knock life for the Manhattan mansion of which billionaire?",
       "answer": "Oliver Warbucks",
       "acceptedAnswers": [
         "Oliver Warbucks",
@@ -52,11 +70,11 @@
         "Rooster Hannigan",
         "Mr. Bundles"
       ],
-      "explanation": "The decoys are all from the show: Bert Healy is the radio host, Rooster is Miss Hannigan's con-man brother, and Mr. Bundles is the laundry man."
+      "explanation": "A two-week trial stay turns into a found family. The decoys are all from the show: radio host, con-man brother, laundry man."
     },
     {
-      "level": 4,
-      "question": "Warbucks takes Annie to the White House, where she gets a gloomy cabinet singing Tomorrow. Which president leads them?",
+      "level": 5,
+      "question": "Warbucks later takes Annie to the White House, where which president and his cabinet learn to sing Tomorrow?",
       "answer": "Franklin D. Roosevelt",
       "acceptedAnswers": [
         "Franklin D. Roosevelt",
@@ -70,24 +88,7 @@
         "Harry S. Truman",
         "Calvin Coolidge"
       ],
-      "explanation": "In the musical, Annie's optimism inspires FDR and his cabinet to dream up the New Deal. Earlier, the residents of a shantytown sing a sarcastic thank-you to Herbert Hoover."
-    },
-    {
-      "level": 5,
-      "question": "Roosevelt gets the reprise, but in Harold Gray's comic strip, Annie had a famous exclamation of her own. What was it?",
-      "answer": "Leapin' lizards",
-      "acceptedAnswers": [
-        "Leapin' lizards",
-        "leapin lizards",
-        "leaping lizards",
-        "leapin' lizards!"
-      ],
-      "choices": [
-        "Great Scott",
-        "Jumpin' Jehoshaphat",
-        "Holy moly"
-      ],
-      "explanation": "The New York Times noticed in 1977 that the musical keeps just one \"Leapin' Lizards\" and drops her other favorite, \"Gloryosky,\" entirely."
+      "explanation": "In the musical, her optimism nudges FDR toward New Deal hope. Earlier, a shantytown sings a sarcastic thank-you to Hoover. Leapin' lizards stays mostly in the comic strip."
     }
   ],
   "easterEgg": {

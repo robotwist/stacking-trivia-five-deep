@@ -1,126 +1,128 @@
 {
-  "title": "Steve Jobs: April Fools to One Device",
-  "description": "A garage startup, an ouster, and one pocket that ate three gadgets—Go Deep into April Fools to one device.",
+  "title": "Moscone 2007: Three Into One",
+  "description": "Three products on one slide, a locked badge-door floor, and a gasp from the crowd—Go Deep into the morning a pocket ate three gadgets.",
+  "imageHint": "A keynote stage, a black slab, and a crowd that forgot to breathe",
+  "category": "Science & Technology",
   "questions": [
     {
       "level": 1,
-      "question": "Jobs, Wozniak, and a third founder who sold his 10% for $800 two weeks later started Apple on April Fools' Day of what year?",
-      "answer": "1976",
+      "question": "At Macworld on Jan. 9, 2007, which Apple CEO teased \"an iPod, a phone, and an internet communicator\"—then said they were one device?",
+      "answer": "Steve Jobs",
       "acceptedAnswers": [
-        "1976",
-        "nineteen seventy-six",
-        "'76"
+        "Steve Jobs",
+        "steve jobs",
+        "jobs",
+        "steven jobs",
+        "steven p jobs"
       ],
       "choices": [
-        "1975",
-        "1977",
-        "1984"
+        "Steve Wozniak",
+        "Tim Cook",
+        "John Sculley"
       ],
-      "explanation": "Ronald Wayne drew the first Apple logo, then got spooked by the partnership's debts. That $800 slice would later be worth tens of billions."
+      "explanation": "He repeated the trio three times, then: \"Are you getting it? These are not three separate devices. This is one device.\" The room lost its mind."
     },
     {
       "level": 2,
-      "question": "The 1976 startup's first mass-produced hit, the machine that put a color computer on desks in 1977, was called what?",
-      "answer": "Apple II",
-      "acceptedAnswers": [
-        "Apple II",
-        "apple ii",
-        "apple 2",
-        "apple ii+",
-        "apple iie"
-      ],
-      "choices": [
-        "Macintosh",
-        "Lisa",
-        "Newton"
-      ],
-      "explanation": "Mostly Wozniak's design. VisiCalc, the first spreadsheet, turned it from a hobbyist toy into a business machine."
-    },
-    {
-      "level": 3,
-      "question": "After the Apple II era—and after the board pushed him out—Jobs founded what computer company Apple later bought back?",
-      "answer": "NeXT",
-      "acceptedAnswers": [
-        "NeXT",
-        "next",
-        "next computer",
-        "next software",
-        "next, inc"
-      ],
-      "choices": [
-        "Be Inc.",
-        "Atari",
-        "General Magic"
-      ],
-      "explanation": "Tim Berners-Lee built the first web server and browser on a NeXT cube at CERN. Apple paid about $429 million for the company—and for its OS."
-    },
-    {
-      "level": 4,
-      "question": "NeXT's OS became the foundation under macOS and iOS. In January 2007 Jobs teased \"an iPod, a phone, and an internet communicator\"—then revealed what one device?",
+      "question": "Jobs collapsed those three gadgets into what product name?",
       "answer": "iPhone",
       "acceptedAnswers": [
         "iPhone",
         "iphone",
-        "the iphone"
+        "the iphone",
+        "apple iphone"
       ],
       "choices": [
         "iPad",
         "iPod Touch",
         "Apple Watch"
       ],
-      "explanation": "Prototypes were so secret that employees worked on locked-down floors. The audience gasped when the three gadgets on slide one collapsed into one."
+      "explanation": "He demoed music, mail, and a call from the stage. Prototypes had been so secret that teams worked behind locked badge doors."
+    },
+    {
+      "level": 3,
+      "question": "During that iPhone demo, Jobs placed an on-stage call to which Apple design chief sitting in the audience?",
+      "answer": "Jony Ive",
+      "acceptedAnswers": [
+        "Jony Ive",
+        "jony ive",
+        "jonathan ive",
+        "ive",
+        "sir jony ive",
+        "johnny ive"
+      ],
+      "choices": [
+        "Phil Schiller",
+        "Scott Forstall",
+        "Eddy Cue"
+      ],
+      "explanation": "Ive had steered the hardware toward a single slab of glass and aluminum. Hearing his phone ring in the house sealed the trick: it was real."
+    },
+    {
+      "level": 4,
+      "question": "Before that call to Jony Ive, Apple's secret phone effort ran under what color-coded project name?",
+      "answer": "Purple",
+      "acceptedAnswers": [
+        "Purple",
+        "purple",
+        "project purple",
+        "purple project"
+      ],
+      "choices": [
+        "Titan",
+        "P1",
+        "Atlantis"
+      ],
+      "explanation": "It began life closer to a tablet. Touch screens got good enough that the team flipped the idea into a phone—then spent years hiding it from the rest of the company."
     },
     {
       "level": 5,
-      "question": "Even after the iPhone, most of Jobs's fortune came not from Apple but from what animation studio he bought from George Lucas in 1986?",
-      "answer": "Pixar",
+      "question": "Project Purple launched with an exclusive U.S. carrier deal Jobs announced that morning. Which carrier?",
+      "answer": "AT&T",
       "acceptedAnswers": [
-        "Pixar",
-        "pixar",
-        "pixar animation studios"
+        "AT&T",
+        "att",
+        "at&t",
+        "at and t",
+        "cingular",
+        "cingular wireless"
       ],
       "choices": [
-        "Disney Animation",
-        "DreamWorks",
-        "Industrial Light & Magic"
+        "Verizon",
+        "Sprint",
+        "T-Mobile"
       ],
-      "explanation": "Disney bought Pixar for $7.4 billion in stock in 2006, making Jobs its largest individual shareholder overnight—and putting him back on Disney's board."
+      "explanation": "Still branded Cingular in some materials that week. Five years of exclusivity, a $499 price for the 4 GB model, and a line around the block."
     }
   ],
-  "imageHint": "🍎 Think different - from garage startup to tech empire 📱",
-  "category": "Science & Technology",
   "deeperMode": {
-    "title": "The Perfectionist's Obsessions",
-    "description": "Perfectionism and controversy behind the brand",
+    "title": "Go Deeper: After the Gasp",
+    "description": "The box, the fortune, and the OS that came home",
     "questions": [
       {
-        "question": "Jobs was famous for his demanding perfectionism. What did he reportedly make his team redesign 67 times for the first iPhone?",
+        "question": "Jobs reportedly made the team redesign the first iPhone's packaging how many times?",
         "acceptedAnswers": [
-          "packaging",
-          "the box",
-          "iPhone box",
-          "packaging design",
-          "product packaging"
+          "67",
+          "sixty-seven",
+          "sixty seven"
         ],
         "bonus": 150,
-        "hint": "The container that holds the product - he wanted the 'unboxing experience' to be perfect"
+        "hint": "He wanted the unboxing to feel like a ceremony"
       },
       {
-        "question": "What Zen Buddhist practice did Jobs follow that influenced Apple's minimalist design philosophy?",
+        "question": "Years earlier he had bought which animation studio from George Lucas—later his largest source of personal wealth?",
         "acceptedAnswers": [
-          "meditation",
-          "zen meditation",
-          "mindfulness",
-          "buddhist meditation",
-          "zen practice"
+          "Pixar",
+          "pixar",
+          "pixar animation studios"
         ],
         "bonus": 200,
-        "hint": "A practice of mental focus and awareness that values simplicity and presence"
+        "hint": "Disney bought it in 2006 for stock"
       }
     ]
   },
   "easterEgg": {
     "title": "The first web server",
-    "text": "Tim Berners-Lee built the World Wide Web's first server and browser on a NeXT cube at CERN. When Apple bought NeXT, that same OS lineage became the heart of macOS and iOS."
+    "text": "Tim Berners-Lee built the Web's first server and browser on a NeXT cube. When Apple bought NeXT, that OS lineage became the heart of macOS—and of the iPhone Jobs unveiled at Moscone."
   }
 }
