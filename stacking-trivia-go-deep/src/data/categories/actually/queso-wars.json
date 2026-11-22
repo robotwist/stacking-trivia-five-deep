@@ -1,19 +1,18 @@
 {
   "title": "Queso Wars: Texas vs Arkansas",
-  "description": "Two states, one melty feud, and a Capitol Hill showdown—five steps into cheese-dip lore.",
+  "description": "Two states, one melty feud, and a Capitol Hill showdown—Go Deep into cheese-dip lore.",
   "questions": [
     {
       "level": 1,
-      "question": "Texas and Arkansas feud over who invented what party dip?",
+      "question": "Texas and one of its neighbors feud over who invented what melty party staple?",
       "answer": "Cheese dip",
       "acceptedAnswers": [
         "Cheese dip",
         "cheese dip",
-        "queso",
+        "melted cheese dip",
         "chile con queso",
         "chili con queso",
-        "tex-mex queso",
-        "melted cheese dip"
+        "tex-mex queso"
       ],
       "choices": [
         "Guacamole",
@@ -24,7 +23,7 @@
     },
     {
       "level": 2,
-      "question": "In the cheese dip feud, which state's senator challenged Texas to a blind Capitol taste test in December 2016?",
+      "question": "In the cheese dip feud, which state's senator tweeted the challenge that dragged Cruz and Cornyn into a Capitol taste test?",
       "answer": "Arkansas",
       "acceptedAnswers": [
         "Arkansas",
@@ -92,5 +91,9 @@
     }
   ],
   "imageHint": "A steaming bowl at a tailgate—no state names on the menu",
-  "category": "Actually"
+  "category": "Actually",
+  "easterEgg": {
+    "title": "The Senate taste test",
+    "text": "On Dec. 7, 2016, reporters and staffers blind-tasted Texas chile con queso against Arkansas cheese dip in a Capitol hearing room. Arkansas's Tom Cotton declared victory. Texas still disagrees."
+  }
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { track } from '../utils/analytics'
 import {
   APP_INSTALLED_EVENT,
   INSTALL_AVAILABLE_EVENT,
@@ -42,10 +43,12 @@ export default function InstallAppButton({ className = '' }) {
   const handleClick = async () => {
     if (canPrompt) {
       const outcome = await promptInstall()
+      track('install prompted', { outcome, platform: 'chromium' })
       if (outcome !== 'accepted') setCanPrompt(!!getDeferredInstallPrompt())
       return
     }
     setShowIosSteps(true)
+    track('install prompted', { outcome: 'ios-steps', platform: 'ios' })
   }
 
   return (

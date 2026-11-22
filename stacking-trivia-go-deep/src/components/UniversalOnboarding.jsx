@@ -60,7 +60,7 @@ const UniversalOnboarding = ({ onComplete, onSkip }) => {
       options: [
         { value: 'quick', label: 'Quick game (5-10 min)', description: 'Just a few questions' },
         { value: 'standard', label: 'Standard game (15-20 min)', description: 'Full stack experience' },
-        { value: 'deep', label: 'Deep dive (30+ min)', description: 'Multiple stacks, go deep' },
+        { value: 'deep', label: 'Go Deep (30+ min)', description: 'Multiple stacks, go deep' },
         { value: 'flexible', label: 'Flexible', description: 'I\'ll decide as I go' }
       ]
     },

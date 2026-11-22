@@ -5,7 +5,7 @@ const RecommendationDisplay = ({ recommendation, onStartGame, onBrowseAll, onCus
 
   const getModeDescription = (mode) => {
     const descriptions = {
-      'single-player': 'Perfect for solo play - dive deep into a single topic',
+      'single-player': 'Perfect for solo play — Go Deep into a single topic',
       'host': 'Great for hosting friends - everyone plays together',
       'multi-stack': 'Challenge yourself with multiple topics',
       'bar-trivia': 'Classic bar trivia night experience'
@@ -29,7 +29,7 @@ const RecommendationDisplay = ({ recommendation, onStartGame, onBrowseAll, onCus
   const getStackDescription = (stack) => {
     const descriptions = {
       'van-gogh': 'Explore the life and art of Vincent van Gogh',
-      'the_beatles': 'Dive into the world of The Beatles',
+      'the_beatles': 'Go Deep into the world of The Beatles',
       'shakespeare': 'Test your knowledge of Shakespeare\'s works',
       'leonardo-da-vinci': 'Discover the genius of Leonardo da Vinci',
       'tesla': 'Learn about Nikola Tesla\'s innovations',

@@ -1,10 +1,13 @@
 {
-  "title": "Nebraska Sports: Cornhusker Pride",
-  "description": "Cornhusker pride—stadium lore, dynasties, and football culture.",
+  "title": "Nebraska: Sea of Red",
+  "description": "From Bugeaters to a stadium that becomes a city—then the mountain-west hire who made Saturdays holy. Go Deep.",
+  "image": "memorial-stadium.jpg",
+  "imageHint": "A sea of red on game day in Lincoln",
+  "category": "sports",
   "questions": [
     {
       "level": 1,
-      "question": "What is the University of Nebraska's football team called?",
+      "question": "Nebraska's football team once played as the Bugeaters—what nickname do they go by today?",
       "answer": "Cornhuskers",
       "acceptedAnswers": [
         "Cornhuskers",
@@ -16,11 +19,12 @@
         "Hawkeyes",
         "Sooners",
         "Jayhawks"
-      ]
+      ],
+      "explanation": "Lincoln sportswriter Cy Sherman tired of \"Bugeaters\" and borrowed a name sometimes pinned on Iowa. The 1900 team was first to wear it; the state adopted it in 1945."
     },
     {
       "level": 2,
-      "question": "Where do the Cornhuskers play home football games?",
+      "question": "On Cornhuskers game days, which Lincoln venue becomes, by crowd size, Nebraska's \"third-largest city\"?",
       "answer": "Memorial Stadium",
       "acceptedAnswers": [
         "Memorial Stadium",
@@ -31,60 +35,94 @@
       "choices": [
         "Haymarket Park",
         "Kinnick Stadium",
-        "Arrowhead Stadium"
-      ]
+        "Pinnacle Bank Arena"
+      ],
+      "explanation": "Dedicated in 1923 to Nebraskans who served in the nation's wars. In 2023 a volleyball match drew 92,003 there—the largest crowd ever for a women's sporting event in the U.S."
     },
     {
       "level": 3,
-      "question": "Since 1962, Memorial Stadium has held an NCAA-record streak of consecutive what?",
-      "answer": "Sellouts",
+      "question": "Memorial Stadium's NCAA-record consecutive sellout streak began on Nov. 3 against Missouri—in what year?",
+      "answer": "1962",
       "acceptedAnswers": [
-        "Sellouts",
-        "sellouts",
-        "sellout streak",
-        "sold out games",
-        "sold-out games"
+        "1962",
+        "nineteen sixty-two",
+        "'62",
+        "62"
       ],
       "choices": [
-        "Home wins",
-        "Shutouts",
-        "Bowl games"
+        "1954",
+        "1966",
+        "1983"
       ],
-      "explanation": "The streak began Nov. 3, 1962, passed 400 games in 2024, and is more than twice as long as any other in college sports."
+      "explanation": "Attendance that day: 36,501. Sellout No. 400 landed in 2024—an overtime loss to Illinois—and the streak is still more than double any other school's."
     },
     {
       "level": 4,
-      "question": "During Memorial Stadium's consecutive sellouts, who coached Nebraska to three national titles in the 1990s?",
-      "answer": "Tom Osborne",
+      "question": "That 1962 sellout era was just starting when Nebraska hired Bob Devaney away from which mountain-west program?",
+      "answer": "Wyoming",
       "acceptedAnswers": [
-        "Tom Osborne",
-        "tom osborne",
-        "osborne",
-        "coach osborne"
+        "Wyoming",
+        "wyoming",
+        "university of wyoming",
+        "the wyoming cowboys",
+        "cowboys"
       ],
       "choices": [
-        "Bob Devaney",
-        "Frank Solich",
-        "Barry Switzer"
-      ]
+        "Colorado State",
+        "Montana",
+        "BYU"
+      ],
+      "explanation": "Devaney arrived for the 1962 season and went 9-2. Within a decade he'd turned a sleepy program into a national power—and built the Blackshirt culture that still defines Saturdays."
     },
     {
       "level": 5,
-      "question": "Osborne's dominant 1990s offensive line earned what nickname?",
-      "answer": "Pipeline",
+      "question": "Devaney, hired from Wyoming, sealed his first national title by beating which team in the Orange Bowl on Jan. 1, 1971?",
+      "answer": "LSU",
       "acceptedAnswers": [
-        "Pipeline",
-        "pipeline",
-        "the pipeline",
-        "nebraska pipeline"
+        "LSU",
+        "lsu",
+        "louisiana state",
+        "louisiana state university",
+        "the tigers"
       ],
       "choices": [
-        "Blackshirts",
-        "Hogs",
-        "Steel Curtain"
-      ]
+        "Texas",
+        "Oklahoma",
+        "Alabama"
+      ],
+      "explanation": "Final: Nebraska 17, LSU 12. That capped the 1970 season. He won again in 1971, then stepped aside so his longtime assistant could take the headset."
     }
   ],
-  "image": "memorial-stadium.jpg",
-  "imageHint": "A sea of red on game day in Lincoln"
+  "deeperMode": {
+    "title": "Go Deeper: Tunnel and Stone",
+    "description": "For anyone who has shivered through a November Tunnel Walk",
+    "questions": [
+      {
+        "question": "Nebraska players take the field to which Alan Parsons Project instrumental—the heartbeat of the Tunnel Walk?",
+        "acceptedAnswers": [
+          "Sirius",
+          "sirius",
+          "sirius by the alan parsons project",
+          "alan parsons project sirius"
+        ],
+        "bonus": 150,
+        "hint": "Same track the Bulls made famous in Chicago"
+      },
+      {
+        "question": "Carved into Memorial Stadium's southwest corner: \"Not the victory but the action; Not the goal but the game; In the deed the glory.\" Which Nebraska philosophy professor wrote those lines?",
+        "acceptedAnswers": [
+          "Hartley Burr Alexander",
+          "hartley burr alexander",
+          "hartley alexander",
+          "alexander"
+        ],
+        "bonus": 200,
+        "hint": "He also helped design inscriptions for the Nebraska State Capitol"
+      }
+    ]
+  },
+  "easterEgg": {
+    "title": "Not the victory but the action",
+    "text": "Hartley Burr Alexander's lines are carved into the stadium stone. Locals can quote them after a loss. Visitors learn them the hard way."
+  }
 }

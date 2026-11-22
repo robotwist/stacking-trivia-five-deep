@@ -7,7 +7,7 @@ const OPENING_IMAGES = [
     alt: 'Tesla coil with electric arcs',
     stack: {
       title: 'Tesla: Lightning in a Bottle',
-      description: 'From this image, dive into the mind of electricity\'s master',
+      description: 'From this image, Go Deep into the mind of electricity\'s master',
       questions: [
         {
           level: 1,
@@ -134,7 +134,7 @@ export default function OpeningImageRound({ teams, onRoundComplete }) {
               "And Now for Something Completely Deep"
             </h2>
             <p className="text-lg sm:text-xl mb-8 text-amber-700 max-w-3xl mx-auto">
-              All teams will see the same visual prompt and collaborate on a 5-deep stack dive.
+              All teams will see the same visual prompt and collaborate on a 5-level Go Deep.
               <br />
               <strong>Winner of the final question goes first in individual rounds!</strong>
             </p>

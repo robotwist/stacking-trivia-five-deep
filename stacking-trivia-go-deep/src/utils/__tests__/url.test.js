@@ -14,10 +14,10 @@ describe('play deep links', () => {
 
   it('buildPlayUrl includes stack and optional category', () => {
     expect(buildPlayUrl('queso-wars', 'actually')).toBe(
-      'https://stacking-trivia-five-deep.netlify.app/play?stack=queso-wars&category=actually'
+      'https://stacking-trivia-five-deep.netlify.app/s/queso-wars?category=actually'
     )
     expect(buildPlayUrl('serena-williams')).toBe(
-      'https://stacking-trivia-five-deep.netlify.app/play?stack=serena-williams'
+      'https://stacking-trivia-five-deep.netlify.app/s/serena-williams'
     )
   })
 
@@ -28,8 +28,9 @@ describe('play deep links', () => {
   it('round-trips a challenge through the play link', () => {
     const link = buildChallengeUrl('queso-wars', 'actually', { score: 150, code: 'gggyr', name: 'Rob' })
     vi.stubGlobal('window', { location: { origin: 'https://stacking-trivia-five-deep.netlify.app', href: link } })
+    expect(link).toBe('https://stacking-trivia-five-deep.netlify.app/s/queso-wars?category=actually&vs=150&r=gggyr&n=Rob')
     expect(parsePlayParams()).toEqual({
-      stack: 'queso-wars',
+      stack: undefined,
       category: 'actually',
       challenge: { score: 150, code: 'gggyr', name: 'Rob' },
     })

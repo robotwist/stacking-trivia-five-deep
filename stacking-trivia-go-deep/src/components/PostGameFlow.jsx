@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { submitFeedback } from '../services/feedbackService';
 import FeedbackModal from './FeedbackModal';
 import { shareRun } from '../utils/share.js';
-import { buildResultCode, ladderFromCode } from '../utils/playerRecords';
+import { answerForLevel, buildResultCode, ladderFromCode } from '../utils/playerRecords';
+import { track } from '../utils/analytics';
 
 const PLAYER_NAME_KEY = 'deepstack_player_name';
 
@@ -22,7 +23,7 @@ const getHeadToHead = (score, challenge) => {
 };
 
 const getHeadline = (levelsCleared, totalLevels) => {
-  if (levelsCleared >= totalLevels) return 'Perfect dive!';
+  if (levelsCleared >= totalLevels) return 'Perfect Go Deep!';
   if (levelsCleared === 0) return 'The story got away this time';
   return `You reached Level ${levelsCleared + 1} of ${totalLevels}`;
 };
@@ -55,7 +56,7 @@ const PostGameFlow = ({
   const levelsCleared = mainAnswers.filter((a) => a.correct).length;
   const resultCode = buildResultCode(answers, totalLevels);
   const ladder = ladderFromCode(resultCode);
-  const hasUnseenLevels = mainAnswers.length < totalLevels;
+  const hasUnseenLevels = questions.some((_, i) => !answerForLevel(answers, i));
 
   const handleNameChange = (e) => {
     const name = e.target.value.slice(0, 24);
@@ -81,6 +82,7 @@ const PostGameFlow = ({
       playerName: playerName.trim() || undefined,
       dailyNumber,
     });
+    track('result shared', { stack: stackKey, outcome: result, score, is_daily: !!dailyNumber, reply: !!challenge });
     if (result === 'copied') flash('Challenge link copied—paste it to a friend');
   };
 
@@ -100,6 +102,9 @@ const PostGameFlow = ({
               <span className="font-bold text-3xl">{score}</span>
               <span className="opacity-90"> / {maxScore} points</span>
             </p>
+            {stack?.easterEgg && levelsCleared >= totalLevels && (
+              <p className="mt-2 text-sm font-semibold">🥚 You found the easter egg</p>
+            )}
             {isNewBest && previousBest !== null && (
               <p className="mt-2 inline-block px-3 py-1 rounded-full bg-white/25 text-sm font-semibold">
                 New best! Previous: {previousBest}
@@ -154,13 +159,32 @@ const PostGameFlow = ({
           </div>
         </section>
 
+        {stack?.easterEgg && (
+          levelsCleared >= totalLevels ? (
+            <section
+              aria-label="Easter egg unlocked"
+              className="rounded-xl border-2 border-dashed border-amber-400 bg-gradient-to-br from-amber-100 to-yellow-50 dark:from-amber-900/40 dark:to-gray-800 p-5"
+            >
+              <p className="text-xs uppercase tracking-[0.25em] text-amber-700 dark:text-amber-300">🥚 Easter egg unlocked</p>
+              <h2 className="text-xl font-bold text-amber-900 dark:text-amber-100 mt-1" style={{ fontFamily: 'Baskervville, serif' }}>
+                {stack.easterEgg.title}
+              </h2>
+              <p className="mt-2 text-amber-900 dark:text-amber-100">{stack.easterEgg.text}</p>
+            </section>
+          ) : (
+            <p className="text-center text-sm text-amber-700 dark:text-amber-300">
+              🥚 This story hides an easter egg. Go all five levels deep to find it.
+            </p>
+          )
+        )}
+
         <section className="bg-white dark:bg-gray-800 rounded-xl shadow border border-amber-200 dark:border-amber-700 p-5">
           <h2 className="text-xl font-bold text-amber-800 dark:text-amber-200 mb-4" style={{ fontFamily: 'Baskervville, serif' }}>
             The story, level by level
           </h2>
           <ol className="space-y-4">
             {questions.map((q, i) => {
-              const answer = mainAnswers[i];
+              const answer = answerForLevel(answers, i);
               const seen = !!answer;
               const visible = seen || revealRest;
               const status = !seen ? 'unseen' : !answer.correct ? 'missed' : answer.usedChoices ? 'assisted' : 'correct';
@@ -200,7 +224,10 @@ const PostGameFlow = ({
           {hasUnseenLevels && !revealRest && (
             <button
               type="button"
-              onClick={() => setRevealRest(true)}
+              onClick={() => {
+                setRevealRest(true);
+                track('story revealed', { stack: stackKey, levels_unseen: totalLevels - mainAnswers.length });
+              }}
               className="mt-4 text-sm font-semibold text-amber-700 dark:text-amber-300 underline underline-offset-2"
             >
               Reveal the rest of the story (spoilers)
@@ -215,7 +242,7 @@ const PostGameFlow = ({
 
         {suggestions.length > 0 && (
           <section>
-            <h2 className="text-lg font-bold text-amber-900 dark:text-amber-100 mb-3">Dive into another story</h2>
+            <h2 className="text-lg font-bold text-amber-900 dark:text-amber-100 mb-3">Go Deep into another story</h2>
             <div className="grid gap-3">
               {suggestions.map((s) => (
                 <button
@@ -255,6 +282,7 @@ const PostGameFlow = ({
           stackTitle={stack?.title || stackKey}
           onSubmitFeedback={async ({ stackTitle, rating, category, feedback, difficultyTag }) => {
             const res = await submitFeedback({ stackTitle, rating, category, message: feedback, difficultyTag });
+            track('feedback sent', { stack: stackKey, rating, category });
             flash(res.ok ? 'Thanks! Feedback saved.' : 'Saved on this device; will sync later.');
           }}
         />

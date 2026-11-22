@@ -1,10 +1,10 @@
 {
-  "title": "Darwin: Evolution Revolution",
-  "description": "One voyage, one book—five steps from a Royal Navy ship to the theory that changed biology.",
+  "title": "Darwin: Five Weeks That Changed Biology",
+  "description": "A captain nervous about noses, five weeks among strange birds, and a book that ends on one careful word—Go Deep into a quiet revolution.",
   "questions": [
     {
       "level": 1,
-      "question": "What is the title of Darwin's groundbreaking 1859 book that introduced the theory of evolution?",
+      "question": "Darwin's 1859 bombshell never uses the word \"evolution\" in its first edition—yet ends on \"evolved.\" What is the book's title?",
       "answer": "On the Origin of Species",
       "acceptedAnswers": [
         "On the Origin of Species",
@@ -19,7 +19,8 @@
         "Principles of Geology",
         "Zoonomia"
       ],
-      "hint": "It's about the 'origin' of all living things and their different types"
+      "hint": "It's about the 'origin' of all living things and their different types",
+      "explanation": "Irony: the word \"evolution\" never appears in the first edition—its very last word is \"evolved.\" Booksellers ordered more copies than the 1,250 printed."
     },
     {
       "level": 2,
@@ -37,11 +38,12 @@
         "HMS Bounty",
         "HMS Challenger"
       ],
-      "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world"
+      "hint": "Named after a type of hunting dog, this royal navy ship sailed around the world",
+      "explanation": "Captain Robert FitzRoy, a believer in reading faces, nearly rejected Darwin over the shape of his nose. The voyage lasted almost five years; Darwin was seasick for much of it."
     },
     {
       "level": 3,
-      "question": "Aboard the Beagle, Darwin collected finches from what Pacific island chain?",
+      "question": "Aboard the Beagle, Darwin collected finches from what Pacific archipelago?",
       "answer": "Galápagos Islands",
       "acceptedAnswers": [
         "Galápagos Islands",
@@ -56,7 +58,8 @@
         "Falkland Islands",
         "Hawaiian Islands"
       ],
-      "hint": "These volcanic islands are off the coast of Ecuador, famous for unique species"
+      "hint": "These volcanic islands are off the coast of Ecuador, famous for unique species",
+      "explanation": "The Beagle stayed just five weeks. The vice-governor said he could tell a tortoise's home island by its shell—Darwin missed the hint, and the crew ate their tortoises."
     },
     {
       "level": 4,
@@ -79,7 +82,7 @@
     },
     {
       "level": 5,
-      "question": "Publishing natural selection conflicted with the clerical studies Darwin once pursued—what field was that?",
+      "question": "Long before natural selection, Darwin went to Cambridge to train as a country parson—studying what?",
       "answer": "theology",
       "acceptedAnswers": [
         "theology",
@@ -93,7 +96,8 @@
         "law",
         "botany"
       ],
-      "hint": "He originally studied to become a clergyman and understand God's word"
+      "hint": "He originally studied to become a clergyman and understand God's word",
+      "explanation": "Strictly, it was an ordinary Cambridge BA, the usual route to ordination. The twist: the would-be parson who rattled the Church was buried in Westminster Abbey, near Isaac Newton."
     }
   ],
   "imageHint": "Finches, fossils, and the puzzle of adaptation",
@@ -127,5 +131,9 @@
         "hint": "Modern doctors think it was stress-related, causing stomach problems and exhaustion"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The last word",
+    "text": "The first edition of On the Origin of Species never uses the word \"evolution.\" Its closing sentence ends on \"evolved\"—the only form of the word in the book."
   }
 }

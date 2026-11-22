@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { submitWithRetry } from '../services/netlifyForms'
+import { track } from '../utils/analytics'
 
 const FREE_NOW = [
-  'Host Night: questions on the TV, tap-to-score teams, the dive rule',
+  'Host Night: questions on the TV, tap-to-score teams, the Go Deep rule',
   'A separate TV screen, with the answer key on your laptop only',
   'Your venue name on screen, printable answer key',
   'Survives a refresh or a dead laptop battery mid-night',
@@ -30,6 +31,7 @@ export default function HostUpsell({ onBack }) {
     if (!form.email.includes('@')) return
     setStatus('sending')
     const ok = await submitWithRetry('host-pass', form)
+    track('host pass signup', { host_type: form.hostType, nights_per_month: Number(form.nightsPerMonth) || null })
     setStatus(ok ? 'sent' : 'queued')
   }
 

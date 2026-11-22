@@ -135,7 +135,7 @@ export class AutonomousStackGenerator {
   generateTitle(topic) {
     const titleFormats = [
       `${topic}`, // Simple
-      `Deep Dive: ${topic}`, // Explicit depth
+      `Go Deep: ${topic}`, // Explicit depth
       `The Complete ${topic}`, // Comprehensive
       `${topic} Mastery`, // Skill-based
       `${topic} Universe` // Expansive

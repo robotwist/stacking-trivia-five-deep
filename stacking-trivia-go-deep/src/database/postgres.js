@@ -188,7 +188,7 @@ export const initDatabase = async () => {
         ('actually', 'Actually (Misconceptions)', 'Debunking common myths and misconceptions', '🤔', '#607d8b', 6),
         ('pop-culture', 'Pop Culture', 'TV shows, celebrities, and cultural phenomena', '📺', '#ff5722', 7),
         ('kids-zone', 'Kids Zone', 'Age-appropriate content for young players', '🦕', '#4caf50', 8),
-        ('super-stacks', 'Super Stacks', 'Extended deep-dive challenges', '🚀', '#673ab7', 9)
+        ('super-stacks', 'Super Stacks', 'Extended Go Deep challenges', '🚀', '#673ab7', 9)
       ON CONFLICT (name) DO NOTHING
     `)
 

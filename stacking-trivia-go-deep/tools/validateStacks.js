@@ -53,7 +53,13 @@ unknownKeys.forEach(({ category, key }) => {
 uncategorizedKeys.forEach((key) => {
   console.log(`❌ Stack "${key}" is playable but not listed in any category`)
 })
-const catalogFailed = unknownKeys.length + uncategorizedKeys.length
+const missingPreviews = PLAYABLE_STACK_REGISTRY
+  .map(({ key }) => key)
+  .filter((key) => !fs.existsSync(path.join(root, 'public', 'og', `${key}.jpg`)))
+missingPreviews.forEach((key) => {
+  console.log(`❌ Stack "${key}" has no link-preview image; run npm run og`)
+})
+const catalogFailed = unknownKeys.length + uncategorizedKeys.length + missingPreviews.length
 if (catalogFailed === 0) console.log('✅ Every category entry is playable and every stack is reachable')
 
 console.log(`\n📊 ${passed} passed, ${failed} failed (${PLAYABLE_STACK_PATHS.length} total)`)

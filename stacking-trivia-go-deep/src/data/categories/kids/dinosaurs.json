@@ -1,11 +1,11 @@
 {
-  "title": "Dinosaurs: Rulers of the Ancient World",
-  "description": "A king of lizards, a rock from space, and a twist hiding in your backyard—dino facts for curious minds.",
+  "title": "Dinosaurs: King, Rock, Birds",
+  "description": "A name that means something fierce, a crash that ended an age, and a twist in your backyard—Go Deep into dino lore.",
   "choicesByDefault": true,
   "questions": [
     {
       "level": 1,
-      "question": "What does 'Tyrannosaurus rex' mean?",
+      "question": "Scientists named the biggest meat-eater 'Tyrannosaurus rex.' Broken into Greek and Latin, what does that name mean?",
       "answer": "Tyrant lizard king",
       "acceptedAnswers": [
         "tyrant lizard king",
@@ -19,11 +19,11 @@
         "Swift thief"
       ],
       "hint": "Tyrant + lizard + king",
-      "explanation": "'Tyrannos' is Greek for tyrant, 'sauros' means lizard, and 'rex' is Latin for king."
+      "explanation": "'Tyrannos' is Greek for tyrant, 'sauros' means lizard, and 'rex' is Latin for king—so the full name is basically 'king of the tyrant lizards.'"
     },
     {
       "level": 2,
-      "question": "The tyrant lizard king lived in which time period, the last age of the dinosaurs?",
+      "question": "That tyrant lizard king lived in which time period—the last age of the dinosaurs, after the Jurassic?",
       "answer": "Cretaceous",
       "acceptedAnswers": [
         "cretaceous",
@@ -37,11 +37,11 @@
         "Permian"
       ],
       "hint": "It starts with 'Cre-' and comes after the Jurassic",
-      "explanation": "T. rex lived near the very end of the Cretaceous—closer in time to us than to Stegosaurus!"
+      "explanation": "T. rex lived near the very end of the Cretaceous. Wild fact: it lived closer in time to you than to Stegosaurus!"
     },
     {
       "level": 3,
-      "question": "The Cretaceous ended 66 million years ago when what crashed into Earth?",
+      "question": "The Cretaceous ended 66 million years ago when what kind of space rock crashed into Earth?",
       "answer": "Asteroid",
       "acceptedAnswers": [
         "asteroid",
@@ -57,11 +57,11 @@
         "Black hole"
       ],
       "hint": "A giant rock from space",
-      "explanation": "A space rock about 6 miles wide hit so hard it changed the climate of the whole planet."
+      "explanation": "The rock was about 6 miles wide—roughly the width of a big city. It hit so hard it changed the climate of the whole planet."
     },
     {
       "level": 4,
-      "question": "That asteroid left a giant buried crater near which Mexican peninsula?",
+      "question": "That asteroid left a giant buried crater near which Mexican peninsula—home of Cancún?",
       "answer": "Yucatán",
       "acceptedAnswers": [
         "yucatán",
@@ -76,11 +76,11 @@
         "Alaska"
       ],
       "hint": "Home of Cancún",
-      "explanation": "The Chicxulub crater is more than 100 miles across and lies partly under the sea off the Yucatán."
+      "explanation": "The Chicxulub crater is more than 100 miles across and lies partly under the sea off the Yucatán. You can stand on the rim and not even know it's there."
     },
     {
       "level": 5,
-      "question": "After the Yucatán impact, one group of dinosaurs survived and still lives today—what are they?",
+      "question": "After the Yucatán impact, one group of dinosaurs survived and still lives today—look up, or at a chicken. What are they?",
       "answer": "Birds",
       "acceptedAnswers": [
         "birds",
@@ -95,7 +95,11 @@
         "Turtles"
       ],
       "hint": "Look up at the sky—or at a chicken!",
-      "explanation": "Birds are living dinosaurs. The pigeon on your sidewalk is a distant cousin of T. rex."
+      "explanation": "Birds are living dinosaurs. The pigeon on your sidewalk is a distant cousin of T. rex—and that king lived closer in time to you than to Stegosaurus."
     }
-  ]
+  ],
+  "easterEgg": {
+    "title": "Closer to us than Stegosaurus",
+    "text": "T. rex lived at the very end of the dinosaur age. Stegosaurus had already been extinct for about 80 million years. So T. rex is closer in time to you than to Stegosaurus."
+  }
 }

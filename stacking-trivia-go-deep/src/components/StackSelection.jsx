@@ -58,7 +58,7 @@ export default function StackSelection({
                     {stack.title}
                   </h2>
                 <p className="text-sm text-amber-700 mb-4">
-                  {stack.description || "Dive deep into this fascinating topic"}
+                  {stack.description || "Go Deep into this story"}
                 </p>
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-amber-600 flex items-center gap-1">

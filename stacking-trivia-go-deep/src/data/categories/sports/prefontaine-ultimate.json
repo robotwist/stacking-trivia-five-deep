@@ -1,10 +1,12 @@
 {
-  "title": "Steve Prefontaine: Go Pre",
-  "description": "A 1970s rebel who packed a historic track and challenged the system—five depths into myth and loss.",
+  "title": "Munich 5000: Fourth by a Stride",
+  "description": "A last-mile surge, a Finnish kick, and fourth place by a stride—Go Deep into Olympic heartbreak on the track.",
+  "imageHint": "A historic track under lights—legend still in the air",
+  "category": "Sports",
   "questions": [
     {
       "level": 1,
-      "question": "Which 1970s American distance runner had Hayward Field crowds chanting \"Go Pre\"?",
+      "question": "In the 1972 Munich Olympic 5000m final, which American front-runner led late, then finished fourth?",
       "answer": "Steve Prefontaine",
       "acceptedAnswers": [
         "Steve Prefontaine",
@@ -19,11 +21,45 @@
         "Jim Ryun",
         "Marty Liquori"
       ],
-      "explanation": "Steve \"Pre\" Prefontaine turned Eugene's Hayward Field into a rock concert—front-running charisma that redefined track's fan culture."
+      "explanation": "He took the lead with about four laps left and forced a hard pace—exactly the race he wanted. The kick at the end still wasn't enough."
     },
     {
       "level": 2,
-      "question": "Prefontaine ran collegiately for which university in Eugene?",
+      "question": "Who beat Prefontaine for gold in that Munich 5000m—days after falling in the 10,000m, then getting up to win?",
+      "answer": "Lasse Virén",
+      "acceptedAnswers": [
+        "Lasse Virén",
+        "lasse viren",
+        "lasse virén",
+        "viren",
+        "virén"
+      ],
+      "choices": [
+        "Mohamed Gammoudi",
+        "Emiel Puttemans",
+        "David Bedford"
+      ],
+      "explanation": "The Finn completed the 5k/10k double. In the 5000 he closed the last lap in about 56 seconds. Pre had no answer."
+    },
+    {
+      "level": 3,
+      "question": "Virén took gold; which Brit outsprinted a fading Prefontaine in the last 15 meters for bronze?",
+      "answer": "Ian Stewart",
+      "acceptedAnswers": [
+        "Ian Stewart",
+        "ian stewart",
+        "stewart"
+      ],
+      "choices": [
+        "David Bedford",
+        "Brendan Foster",
+        "Dave Bedford"
+      ],
+      "explanation": "Tunisia's Mohamed Gammoudi took silver. Stewart's late charge stole Pre's medal by 0.36 seconds—13:27.6 to 13:28.25."
+    },
+    {
+      "level": 4,
+      "question": "Before Munich and that Stewart bronze dash, Prefontaine ran collegiately for which Eugene university under Bill Bowerman?",
       "answer": "Oregon",
       "acceptedAnswers": [
         "Oregon",
@@ -37,28 +73,11 @@
         "Stanford",
         "Villanova"
       ],
-      "explanation": "He won seven NCAA titles for Oregon and lost only a handful of races at Hayward Field in his whole career—Bowerman's program became synonymous with Pre's swagger."
+      "explanation": "Seven NCAA titles. Hayward Field was his concert hall. Bowerman's waffle-iron experiments with Phil Knight were already becoming Nike."
     },
     {
-      "level": 3,
-      "question": "Pre's coach at Oregon, Bill Bowerman, co-founded what shoe company with former runner Phil Knight?",
-      "answer": "Nike",
-      "acceptedAnswers": [
-        "Nike",
-        "nike",
-        "nike inc",
-        "blue ribbon sports"
-      ],
-      "choices": [
-        "Adidas",
-        "Onitsuka Tiger",
-        "Brooks"
-      ],
-      "explanation": "Bowerman's waffle-iron sole experiments and Knight's Blue Ribbon Sports became Nike—Pre wore the prototypes that sold the dream."
-    },
-    {
-      "level": 4,
-      "question": "Nike's early prototype runner Prefontaine died May 30, 1975, when his gold British sports car flipped—a what?",
+      "level": 5,
+      "question": "Three years after his Oregon peak and Munich heartbreak, Prefontaine died when his gold British roadster flipped on Skyline Boulevard—what model?",
       "answer": "MGB",
       "acceptedAnswers": [
         "MGB",
@@ -72,26 +91,39 @@
         "Jaguar E-Type",
         "Lotus Elan"
       ],
-      "explanation": "He crashed his MGB roadster after a party in Eugene—24 years old, at the peak of his fight against amateurism's limits."
-    },
-    {
-      "level": 5,
-      "question": "After his MGB crash, Eugene honors Pre with an annual meet, usually held at Hayward Field—the what Classic?",
-      "answer": "Prefontaine",
-      "acceptedAnswers": [
-        "Prefontaine",
-        "prefontaine",
-        "prefontaine classic",
-        "pre classic",
-        "pre fontaine classic"
-      ],
-      "choices": [
-        "Bowerman",
-        "Hayward",
-        "Kip Keino"
-      ],
-      "explanation": "The Prefontaine Classic (part of the Diamond League circuit) keeps his name on the same track where \"Go Pre\" once shook the stands."
+      "explanation": "May 30, 1975. He was 24. Runners still leave bibs and medals at the crash site—Pre's Rock—and the Prefontaine Classic still brings the world to Hayward."
     }
   ],
-  "imageHint": "A historic track under lights—legend still in the air"
+  "deeperMode": {
+    "title": "Go Deeper: After Munich",
+    "description": "The first star stipend and the crash-site shrine",
+    "questions": [
+      {
+        "question": "In 1973 Prefontaine received a $5,000 stipend as the first star endorsement for which shoe company?",
+        "acceptedAnswers": [
+          "Nike",
+          "nike",
+          "nike inc",
+          "blue ribbon sports"
+        ],
+        "bonus": 150,
+        "hint": "Bowerman and Knight's company, once Blue Ribbon Sports"
+      },
+      {
+        "question": "What shrine name do runners give the Skyline Boulevard crash site where they leave bibs and medals?",
+        "acceptedAnswers": [
+          "Pre's Rock",
+          "pre's rock",
+          "pres rock",
+          "pre rock"
+        ],
+        "bonus": 200,
+        "hint": "Still visited before every Prefontaine Classic"
+      }
+    ]
+  },
+  "easterEgg": {
+    "title": "Sacrifice the gift",
+    "text": "Biographer Tom Jordan says Pre closed talks to young athletes with: \"To give anything less than your best is to sacrifice the gift.\" Nike's Hollister recalled hearing him say it at West Albany High. No tape of it exists."
+  }
 }

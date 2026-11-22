@@ -1,10 +1,10 @@
 {
-  "title": "William Shakespeare: The Eternal Bard",
-  "description": "Plays, places, and numbers—five steps through England's greatest playwright.",
+  "title": "Romeo and Juliet: Why, Not Where",
+  "description": "A balcony the play never names, a bootleg soliloquy, and a thatch fire—Go Deep into why, not where.",
   "questions": [
     {
       "level": 1,
-      "question": "Who wrote 'Romeo and Juliet'?",
+      "question": "Stage tradition stuck Juliet on a balcony—but the word \"balcony\" never appears in the play. Who wrote Romeo and Juliet, where \"Wherefore art thou Romeo?\" means \"why,\" not \"where\"?",
       "answer": "William Shakespeare",
       "acceptedAnswers": [
         "William Shakespeare",
@@ -16,11 +16,12 @@
         "Christopher Marlowe",
         "Ben Jonson",
         "Thomas Kyd"
-      ]
+      ],
+      "explanation": "Juliet isn't looking for him; she's lamenting that he's a Montague. The balcony is pure stage tradition—props and romance the text never asks for."
     },
     {
       "level": 2,
-      "question": "In which English town was Shakespeare born?",
+      "question": "Shakespeare was baptized April 26, 1564, in which English market town—tradition claims he died on that same calendar date in 1616?",
       "answer": "Stratford-upon-Avon",
       "acceptedAnswers": [
         "Stratford-upon-Avon",
@@ -32,11 +33,12 @@
         "Canterbury",
         "Warwick",
         "Coventry"
-      ]
+      ],
+      "explanation": "Only the baptism is on record; April 23 as birthday is neat folklore. He left for London, made a fortune, and came home a gentleman with a coat of arms."
     },
     {
       "level": 3,
-      "question": "After leaving Stratford-upon-Avon for London, Shakespeare wrote Hamlet—what line opens its famous soliloquy?",
+      "question": "After leaving Stratford-upon-Avon for London, he wrote Hamlet—what line opens its famous soliloquy?",
       "answer": "To be or not to be",
       "acceptedAnswers": [
         "To be or not to be",
@@ -47,11 +49,12 @@
         "Alas, poor Yorick",
         "Now is the winter of our discontent",
         "All the world's a stage"
-      ]
+      ],
+      "explanation": "In the 1603 \"bad quarto,\" it reads \"To be, or not to be—ay, there's the point.\" The version everyone quotes arrived with the Second Quarto a year later—likely a pirated, half-remembered bootleg vs. the real thing."
     },
     {
       "level": 4,
-      "question": "Which theater was associated with Shakespeare's company, the King's Men?",
+      "question": "Hamlet's 'To be or not to be' likely premiered at which Bankside playhouse, built by Shakespeare's company in 1599 from the timbers of their old venue?",
       "answer": "The Globe Theatre",
       "acceptedAnswers": [
         "The Globe Theatre",
@@ -64,11 +67,12 @@
         "The Rose Theatre",
         "The Swan Theatre",
         "The Fortune Theatre"
-      ]
+      ],
+      "explanation": "They dismantled the Theatre over Christmas 1598 and carted the timbers across the Thames. In 1613 a stage cannon set the thatch roof alight during Henry VIII; nobody died, but the Globe burned."
     },
     {
       "level": 5,
-      "question": "At the Globe Theatre, Shakespeare's company performed his plays—and how many sonnets did Shakespeare write?",
+      "question": "Beyond the Globe stage, he wrote poetry too—how many sonnets appear in his 1609 collection dedicated to the mysterious \"Mr. W.H.\"?",
       "answer": "154",
       "acceptedAnswers": [
         "154",
@@ -81,9 +85,13 @@
         "100",
         "246"
       ],
-      "explanation": "All 154 appeared in a 1609 edition published by Thomas Thorpe, possibly without Shakespeare's blessing."
+      "explanation": "Publisher Thomas Thorpe's dedication still baffles scholars. Sonnet 145 may pun on his wife, Anne Hathaway: \"'I hate' from hate away she threw\"—hate-away, Hathaway."
     }
   ],
   "image": "first-folio-1623.jpg",
-  "imageHint": "A historic 1623 folio that preserved many of his plays for posterity"
+  "imageHint": "A historic 1623 folio that preserved many of his plays for posterity",
+  "easterEgg": {
+    "title": "Ay, there's the point",
+    "text": "The 1603 \"bad quarto\" of Hamlet gives the speech as \"To be, or not to be, ay there's the point\"—likely a pirated, half-remembered bootleg. The version we know arrives in the 1604 \"good quarto.\""
+  }
 }

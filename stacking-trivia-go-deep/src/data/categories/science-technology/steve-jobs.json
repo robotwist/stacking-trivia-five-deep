@@ -1,93 +1,90 @@
 {
-  "title": "Steve Jobs: Apple Innovation",
-  "description": "Design obsession, startups, and the company that put computers in pockets.",
+  "title": "Steve Jobs: April Fools to One Device",
+  "description": "A garage startup, an ouster, and one pocket that ate three gadgets—Go Deep into April Fools to one device.",
   "questions": [
     {
       "level": 1,
-      "question": "In what year did Steve Jobs co-found Apple Computer Company with Steve Wozniak?",
+      "question": "Jobs, Wozniak, and a third founder who sold his 10% for $800 two weeks later started Apple on April Fools' Day of what year?",
       "answer": "1976",
       "acceptedAnswers": [
         "1976",
         "nineteen seventy-six",
-        "nineteen seventy six",
-        "year 1976"
+        "'76"
       ],
       "choices": [
-        "1968",
-        "1981",
+        "1975",
+        "1977",
         "1984"
       ],
-      "hint": "The same year as America's bicentennial celebration"
+      "explanation": "Ronald Wayne drew the first Apple logo, then got spooked by the partnership's debts. That $800 slice would later be worth tens of billions."
     },
     {
       "level": 2,
-      "question": "That 1976 garage startup's first mass-produced hit computer was called what?",
+      "question": "The 1976 startup's first mass-produced hit, the machine that put a color computer on desks in 1977, was called what?",
       "answer": "Apple II",
       "acceptedAnswers": [
         "Apple II",
-        "Apple 2",
-        "Apple Two",
         "apple ii",
-        "apple 2"
+        "apple 2",
+        "apple ii+",
+        "apple iie"
       ],
       "choices": [
         "Macintosh",
         "Lisa",
-        "Altair 8800"
+        "Newton"
       ],
-      "hint": "The Roman numeral for two, this computer had color graphics and was hugely successful"
+      "explanation": "Mostly Wozniak's design. VisiCalc, the first spreadsheet, turned it from a hobbyist toy into a business machine."
     },
     {
       "level": 3,
-      "question": "After the Apple II era and his ouster, Jobs founded what computer company later acquired by Apple?",
+      "question": "After the Apple II era—and after the board pushed him out—Jobs founded what computer company Apple later bought back?",
       "answer": "NeXT",
       "acceptedAnswers": [
         "NeXT",
-        "Next",
-        "NeXT Computer",
+        "next",
         "next computer",
-        "next"
+        "next software",
+        "next, inc"
       ],
       "choices": [
+        "Be Inc.",
         "Atari",
-        "General Magic",
-        "Be Inc."
+        "General Magic"
       ],
-      "hint": "It was literally what came 'after' Apple for Jobs, spelled with unusual capitalization"
+      "explanation": "Tim Berners-Lee built the first web server and browser on a NeXT cube at CERN. Apple paid about $429 million for the company—and for its OS."
     },
     {
       "level": 4,
-      "question": "NeXT's return to Apple brought what 2007 product that changed smartphones forever?",
+      "question": "NeXT's OS became the foundation under macOS and iOS. In January 2007 Jobs teased \"an iPod, a phone, and an internet communicator\"—then revealed what one device?",
       "answer": "iPhone",
       "acceptedAnswers": [
         "iPhone",
         "iphone",
-        "i phone",
-        "Apple iPhone"
+        "the iphone"
       ],
       "choices": [
-        "iPod",
         "iPad",
-        "Newton"
+        "iPod Touch",
+        "Apple Watch"
       ],
-      "hint": "A phone that starts with 'i' and put the internet in everyone's pocket"
+      "explanation": "Prototypes were so secret that employees worked on locked-down floors. The audience gasped when the three gadgets on slide one collapsed into one."
     },
     {
       "level": 5,
-      "question": "Before the iPhone era, Jobs ran what animation studio that created Toy Story and sold to Disney?",
+      "question": "Even after the iPhone, most of Jobs's fortune came not from Apple but from what animation studio he bought from George Lucas in 1986?",
       "answer": "Pixar",
       "acceptedAnswers": [
         "Pixar",
         "pixar",
-        "Pixar Animation Studios",
-        "Pixar Studios"
+        "pixar animation studios"
       ],
       "choices": [
+        "Disney Animation",
         "DreamWorks",
-        "Lucasfilm",
         "Industrial Light & Magic"
       ],
-      "hint": "Named after a computer graphics term, they revolutionized animated movies"
+      "explanation": "Disney bought Pixar for $7.4 billion in stock in 2006, making Jobs its largest individual shareholder overnight—and putting him back on Disney's board."
     }
   ],
   "imageHint": "🍎 Think different - from garage startup to tech empire 📱",
@@ -121,5 +118,9 @@
         "hint": "A practice of mental focus and awareness that values simplicity and presence"
       }
     ]
+  },
+  "easterEgg": {
+    "title": "The first web server",
+    "text": "Tim Berners-Lee built the World Wide Web's first server and browser on a NeXT cube at CERN. When Apple bought NeXT, that same OS lineage became the heart of macOS and iOS."
   }
 }

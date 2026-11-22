@@ -2,6 +2,9 @@
  * Game scoring utilities
  */
 
+const MAIN_LADDER = [10, 20, 40, 80, 160]
+const DEEPER_MODE_BONUS = 50
+
 /**
  * Calculate score for a question based on depth
  * @param {number} depth - Current question depth (0-based)
@@ -9,11 +12,21 @@
  * @returns {number} - Points for this question
  */
 export const calculateQuestionScore = (depth, isDeepMode = false) => {
-  const baseScores = [10, 20, 40, 80, 160]
-  const deeperModeBonus = 50
-  
-  const baseScore = baseScores[depth] || 160
-  return isDeepMode ? baseScore + deeperModeBonus : baseScore
+  const baseScore = MAIN_LADDER[depth] || 160
+  return isDeepMode ? baseScore + DEEPER_MODE_BONUS : baseScore
+}
+
+/**
+ * Points for one Deeper Mode question. An authored `bonus` is the score;
+ * questions without one use the depth ladder plus the flat deeper-mode bonus.
+ * @param {{ bonus?: number }} question
+ * @param {number} index - 0-based position in the bonus round
+ * @returns {number}
+ */
+export const pointsForDeeperQuestion = (question, index = 0) => {
+  const bonus = Number(question?.bonus)
+  if (Number.isFinite(bonus) && bonus > 0) return bonus
+  return calculateQuestionScore(index, true)
 }
 
 /**
@@ -24,14 +37,37 @@ export const calculateQuestionScore = (depth, isDeepMode = false) => {
 export const applyChoicesPenalty = (points) => Math.ceil(points / 2)
 
 /**
- * Calculate total possible score for a stack
- * @param {number} questionCount - Number of questions
- * @param {boolean} hasDeepMode - Whether stack has deeper mode
- * @returns {number} - Maximum possible score
+ * Deeper-mode questions to add into the ceiling.
+ * An array is scored question by question. A positive count stands in for
+ * that many questions that use the flat deeper-mode formula.
+ * @param {Array<{ bonus?: number }>|number|boolean} deeperQuestions
+ * @returns {Array<object>}
  */
-export const calculateMaxScore = (questionCount = 5, hasDeepMode = false) => {
-  const baseMax = 10 + 20 + 40 + 80 + 160 // 310
-  return hasDeepMode ? baseMax + (50 * questionCount) : baseMax
+const deeperQuestionList = (deeperQuestions) => {
+  if (Array.isArray(deeperQuestions)) return deeperQuestions
+  if (typeof deeperQuestions === 'number' && Number.isFinite(deeperQuestions) && deeperQuestions > 0) {
+    return Array.from({ length: deeperQuestions }, () => ({}))
+  }
+  return []
+}
+
+/**
+ * Highest score a run can post.
+ * The main Go Deep always ceilings at the full five-level ladder (310), including
+ * stacks with fewer questions. Pass the bonus questions actually in the round
+ * so the ceiling matches what those questions award — not one bonus per main level.
+ * @param {number} questionCount - Main questions in the stack (does not shrink the 310 ceiling)
+ * @param {Array<{ bonus?: number }>|number} [deeperQuestions] - Bonus round, or a count of formula questions
+ * @returns {number}
+ */
+export const calculateMaxScore = (questionCount = MAIN_LADDER.length, deeperQuestions = []) => {
+  // A shorter stack still publishes the five-level ceiling. questionCount stays in the
+  // signature because every caller passes the stack length.
+  const baseMax = MAIN_LADDER.reduce((sum, points) => sum + points, 0)
+  if (questionCount == null) return baseMax
+  const deeperMax = deeperQuestionList(deeperQuestions)
+    .reduce((sum, question, index) => sum + pointsForDeeperQuestion(question, index), 0)
+  return baseMax + deeperMax
 }
 
 /**
